@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-white text-slate-900 antialiased;
+}
+
+/* Headings default */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold text-slate-900;
+}
+
+/* Paragraph */
+p {
+  @apply text-slate-700 leading-relaxed;
+}
+
+/* Links */
+a {
+  @apply text-slate-900 hover:underline;
+}
+
+@keyframes mmDrop {
+  from { opacity: 0; transform: translateY(-4px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
