@@ -27,7 +27,7 @@ const solutions = [
   {
     title: "Indoor LED Display",
     desc: "High-resolution indoor LED walls for conference rooms, retail, and events.",
-    href: "/products/indoor-led-display",
+    href: "/led-display/indoor-led-display",
   },
   {
     title: "Outdoor LED Billboard",
@@ -323,3 +323,4 @@ export default function Page() {
     </main>
   );
 }
+

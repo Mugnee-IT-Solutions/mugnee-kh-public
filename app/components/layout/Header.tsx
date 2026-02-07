@@ -89,8 +89,8 @@ export default function SiteHeader() {
   ];
 
   const products: NavItem[] = [
-    { labelEn: "Indoor LED Display", labelKm: "Indoor LED Display", href: "/products/indoor-led-display" },
-    { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/products/outdoor-led-display" },
+    { labelEn: "Indoor LED Display", labelKm: "Indoor LED Display", href: "/led-display/indoor-led-display" },
+    { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
     { labelEn: "LED Controller / Processor", labelKm: "Controller / Processor", href: "/products/led-controller" },
     { labelEn: "Interactive Flat Panel (IFP)", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/products/interactive-flat-panel" },
     { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/products/turnstile-gate" },
@@ -105,16 +105,16 @@ export default function SiteHeader() {
   ];
 
   const ledDisplayMenu: NavItem[] = [
-    { labelEn: "Indoor LED Display", labelKm: "Indoor LED Display", href: "/products/indoor-led-display" },
-    { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/products/outdoor-led-display" },
-    { labelEn: "Receiving Card", labelKm: "Receiving Card", href: "/products/led-display/receiving-card" },
-    { labelEn: "Video Processor", labelKm: "Video Processor", href: "/products/led-display/video-processor" },
-    { labelEn: "Power Supply", labelKm: "Power Supply", href: "/products/led-display/power-supply" },
+    { labelEn: "Indoor LED Display", labelKm: "Indoor LED Display", href: "/led-display/indoor-led-display" },
+    { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
+    { labelEn: "Receiving Card", labelKm: "Receiving Card", href: "/led-display/receiving-card" },
+    { labelEn: "Video Processor", labelKm: "Video Processor", href: "/led-display/video-processor" },
+    { labelEn: "Power Supply", labelKm: "Power Supply", href: "/led-display/power-supply" },
   ];
 
   // ✅ Parent page mapping (IMPORTANT FIX)
   const parentHrefById: Record<string, string> = {
-    ledDisplay: "/products/led-display",
+    ledDisplay: "/led-display",
     solutions: "/solutions",
     service: "/service",
     products: "/products",
@@ -421,23 +421,23 @@ export default function SiteHeader() {
                 <div className="mt-1">
                   <p className="px-3 pb-1 text-xs font-semibold text-white/70">{t.ledDisplay}</p>
                   <div className="grid gap-1">
-                    <Link href="/products/indoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/indoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                       {t.indoorLed}
                     </Link>
-                    <Link href="/products/outdoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/outdoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                       {t.outdoorLed}
                     </Link>
                     {/* ✅ LED Display parent page */}
-                    <Link href="/products/led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                       {lang === "en" ? "All LED Display" : "LED ទាំងអស់"}
                     </Link>
-                    <Link href="/products/led-display/receiving-card" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/receiving-card" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                       {lang === "en" ? "Receiving Card" : "Receiving Card"}
                     </Link>
-                    <Link href="/products/led-display/video-processor" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/video-processor" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                       {lang === "en" ? "Video Processor" : "Video Processor"}
                     </Link>
-                    <Link href="/products/led-display/power-supply" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/power-supply" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                       {lang === "en" ? "Power Supply" : "Power Supply"}
                     </Link>
                   </div>

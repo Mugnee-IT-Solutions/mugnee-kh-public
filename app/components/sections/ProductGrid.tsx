@@ -17,7 +17,13 @@ type ProductGridProps = {
   showSort?: boolean;
   columns?: 2 | 3 | 4;
   limit?: number;
+  pageSize?: number;
+  showPagination?: boolean;
   detailBasePath?: string;
+  allowedCategoryIds?: string[];
+  filterCategoryIds?: string[];
+  categoryOrderIds?: string[];
+  topLeftContent?: React.ReactNode;
 };
 
 function getGridCols(columns: number) {
@@ -44,26 +50,64 @@ export default function ProductGrid({
   showSort = true,
   columns = 3,
   limit,
+  pageSize = 12,
+  showPagination = true,
   detailBasePath = "/products/catalog",
+  allowedCategoryIds,
+  filterCategoryIds,
+  categoryOrderIds,
+  topLeftContent,
 }: ProductGridProps) {
   const { lang } = useLang();
   const [activeCategory, setActiveCategory] = useState(categoryId || "all");
   const [sortOrder, setSortOrder] = useState<"az" | "za">("az");
+  const [page, setPage] = useState(1);
+
+  const effectiveCategory = useMemo(() => {
+    if (activeCategory === "all") return "all";
+    if (allowedCategoryIds?.length && !allowedCategoryIds.includes(activeCategory)) {
+      return "all";
+    }
+    if (filterCategoryIds?.length && !filterCategoryIds.includes(activeCategory)) {
+      return "all";
+    }
+    return activeCategory;
+  }, [activeCategory, allowedCategoryIds, filterCategoryIds]);
 
   const availableCategories = useMemo(() => {
-    const ids = new Set(
-      PRODUCTS.flatMap((p) => p.categoryIds).filter((id) => id !== "led_display")
-    );
-    const list = PRODUCT_CATEGORIES.filter((c) => ids.has(c.id));
+    const ids = new Set(PRODUCTS.flatMap((p) => p.categoryIds));
+    let list = PRODUCT_CATEGORIES.filter((c) => ids.has(c.id));
+
+    if (filterCategoryIds?.length) {
+      const filterSet = new Set(filterCategoryIds);
+      list = list.filter((c) => filterSet.has(c.id));
+    } else {
+      list = list.filter((c) => c.id !== "led_display");
+    }
+
     return list;
-  }, []);
+  }, [filterCategoryIds]);
 
   const filtered = useMemo(() => {
     let list = PRODUCTS;
-    if (activeCategory !== "all") {
-      list = PRODUCTS.filter((p) => p.categoryIds.includes(activeCategory));
+
+    if (allowedCategoryIds?.length) {
+      const allowSet = new Set(allowedCategoryIds);
+      list = list.filter((p) => p.categoryIds.some((id) => allowSet.has(id)));
+    }
+
+    if (effectiveCategory !== "all") {
+      list = list.filter((p) => p.categoryIds.includes(effectiveCategory));
     }
     const sorted = [...list].sort((a, b) => {
+      if (categoryOrderIds?.length) {
+        const order = categoryOrderIds;
+        const aIndex = order.indexOf(a.primaryCategoryId);
+        const bIndex = order.indexOf(b.primaryCategoryId);
+        const aRank = aIndex === -1 ? order.length : aIndex;
+        const bRank = bIndex === -1 ? order.length : bIndex;
+        if (aRank !== bRank) return aRank - bRank;
+      }
       const aTitle = getProductTitle(a, "en").toLowerCase();
       const bTitle = getProductTitle(b, "en").toLowerCase();
       return sortOrder === "az"
@@ -71,7 +115,25 @@ export default function ProductGrid({
         : bTitle.localeCompare(aTitle);
     });
     return limit ? sorted.slice(0, limit) : sorted;
-  }, [activeCategory, sortOrder, limit]);
+  }, [effectiveCategory, sortOrder, limit, allowedCategoryIds, categoryOrderIds]);
+
+  const totalPages = useMemo(() => {
+    if (limit || !showPagination) return 1;
+    return Math.max(1, Math.ceil(filtered.length / pageSize));
+  }, [filtered.length, limit, pageSize, showPagination]);
+
+  const currentPage = page > totalPages ? 1 : page;
+
+  const paginated = useMemo(() => {
+    if (limit || !showPagination) return filtered;
+    const start = (currentPage - 1) * pageSize;
+    return filtered.slice(start, start + pageSize);
+  }, [filtered, currentPage, pageSize, limit, showPagination]);
+
+  const pages = useMemo(() => {
+    if (totalPages <= 1) return [1];
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
+  }, [totalPages]);
 
   return (
     <div>
@@ -80,7 +142,10 @@ export default function ProductGrid({
           <div className="flex flex-wrap items-center gap-2">
             <button
               type="button"
-              onClick={() => setActiveCategory("all")}
+              onClick={() => {
+                setActiveCategory("all");
+                setPage(1);
+              }}
               className={[
                 "rounded-full border px-4 py-1.5 text-xs font-semibold transition",
                 activeCategory === "all"
@@ -94,7 +159,10 @@ export default function ProductGrid({
               <button
                 key={cat.id}
                 type="button"
-                onClick={() => setActiveCategory(cat.id)}
+                onClick={() => {
+                  setActiveCategory(cat.id);
+                  setPage(1);
+                }}
                 className={[
                   "rounded-full border px-4 py-1.5 text-xs font-semibold transition",
                   activeCategory === cat.id
@@ -107,14 +175,17 @@ export default function ProductGrid({
             ))}
           </div>
         ) : (
-          <div />
+          <div>{topLeftContent || <div />}</div>
         )}
 
         {showSort ? (
           <div className="inline-flex items-center rounded-full border border-slate-200 bg-white p-1">
             <button
               type="button"
-              onClick={() => setSortOrder("az")}
+              onClick={() => {
+                setSortOrder("az");
+                setPage(1);
+              }}
               className={[
                 "rounded-full px-3 py-1 text-xs font-semibold transition",
                 sortOrder === "az"
@@ -126,7 +197,10 @@ export default function ProductGrid({
             </button>
             <button
               type="button"
-              onClick={() => setSortOrder("za")}
+              onClick={() => {
+                setSortOrder("za");
+                setPage(1);
+              }}
               className={[
                 "rounded-full px-3 py-1 text-xs font-semibold transition",
                 sortOrder === "za"
@@ -141,7 +215,7 @@ export default function ProductGrid({
       </div>
 
       <div className={`mt-6 grid gap-4 ${getGridCols(columns)}`}>
-        {filtered.map((product) => {
+        {paginated.map((product) => {
           const detailHref = `${detailBasePath}/${product.slug}`;
           const primaryCategory = getCategoryById(product.primaryCategoryId);
           const primaryLabel = primaryCategory
@@ -213,6 +287,26 @@ export default function ProductGrid({
           );
         })}
       </div>
+
+      {showPagination && !limit && totalPages > 1 ? (
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+          {pages.map((p) => (
+            <button
+              key={`page-${p}`}
+              type="button"
+              onClick={() => setPage(p)}
+              className={[
+                "h-9 w-9 rounded-md border text-sm font-semibold transition",
+                currentPage === p
+                  ? "border-slate-900 bg-slate-900 text-white"
+                  : "border-slate-200 bg-white text-slate-700 hover:border-slate-300",
+              ].join(" ")}
+            >
+              {p}
+            </button>
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

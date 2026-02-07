@@ -1,11 +1,11 @@
-// app/products/outdoor-led-display/page.tsx
+// app/led-display/outdoor-led-display/page.tsx
 import type { Metadata } from "next";
 import OutdoorLedDisplayClient from "./OutdoorLedDisplayClient";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
 
-const PAGE_PATH = "/products/outdoor-led-display";
+const PAGE_PATH = "/led-display/outdoor-led-display";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
@@ -25,3 +25,4 @@ export const metadata: Metadata = {
 export default function Page() {
   return <OutdoorLedDisplayClient />;
 }
+

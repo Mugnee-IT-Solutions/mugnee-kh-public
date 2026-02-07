@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
 
-const PAGE_PATH = "/products/led-display/power-supply";
+const PAGE_PATH = "/led-display/power-supply";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
@@ -98,7 +98,7 @@ export default function Page() {
               Get a Free Quotation
             </Link>
             <Link
-              href="/products/led-display"
+              href="/led-display"
               className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
             >
               Explore LED Display Solutions
@@ -238,3 +238,4 @@ export default function Page() {
     </main>
   );
 }
+

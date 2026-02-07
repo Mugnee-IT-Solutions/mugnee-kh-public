@@ -53,7 +53,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     id: "indoor_led_display",
     parentId: "led_display",
-    labelEn: "Indoor LED Display",
+    labelEn: "Indoor LED Screens",
     labelKm: "អេក្រង់ LED ខាងក្នុង",
     slug: "indoor-led-display",
     descriptionEn: "Fine pitch and indoor LED modules.",
@@ -62,8 +62,8 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     id: "outdoor_led_display",
     parentId: "led_display",
-    labelEn: "Outdoor LED Display",
-    labelKm: "អេក្រង់ LED ខាងក្រៅ",
+    labelEn: "Outdoor LED Billboards",
+    labelKm: "ប៊ីលបត LED ខាងក្រៅ",
     slug: "outdoor-led-display",
     descriptionEn: "Weather-ready LED modules for outdoor use.",
     descriptionKm: "ម៉ូឌុល LED ខាងក្រៅ សម្រាប់អាកាសធាតុខាងក្រៅ។",
@@ -71,7 +71,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     id: "rental_led_display",
     parentId: "led_display",
-    labelEn: "Rental LED Display",
+    labelEn: "Rental LED Walls",
     labelKm: "អេក្រង់ LED សម្រាប់ជួល",
     slug: "rental-led-display",
     descriptionEn: "Rental LED panels for events and stage.",
@@ -80,7 +80,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     id: "led_accessories",
     parentId: "led_display",
-    labelEn: "LED Accessories",
+    labelEn: "LED Accessories & Parts",
     labelKm: "គ្រឿងបន្លាស់ LED",
     slug: "led-accessories",
     descriptionEn: "Controllers, receiving cards, power supplies and cabinets.",

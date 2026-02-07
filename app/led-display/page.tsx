@@ -1,6 +1,5 @@
-// app/led-display/page.tsx
 import type { Metadata } from "next";
-import LedDisplayClient from "./LedDisplayClient";
+import LedDisplayClient from "../products/led-display/LedDisplayClient";
 
 /** ✅ Set this in production:
  * NEXT_PUBLIC_SITE_URL=https://mugnee.com.kh
@@ -27,4 +26,3 @@ export const metadata: Metadata = {
 export default function Page() {
   return <LedDisplayClient />;
 }
-

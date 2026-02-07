@@ -7,7 +7,7 @@ import ProductGrid from "../../components/sections/ProductGrid";
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
 
-const PAGE_PATH = "/indoor-led-display/";
+const PAGE_PATH = "/led-display/indoor-led-display";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 // === SEO ===
@@ -499,7 +499,7 @@ export default function IndoorLedDisplayPage() {
             {/* Optional internal links */}
             <div className="mt-4 text-xs text-slate-500">
               Explore:{" "}
-              <Link className="underline hover:text-slate-800" href="/outdoor-led-display/">
+              <Link className="underline hover:text-slate-800" href="/led-display/outdoor-led-display">
                 Outdoor LED Display
               </Link>{" "}
               •{" "}
@@ -517,3 +517,5 @@ export default function IndoorLedDisplayPage() {
     </main>
   );
 }
+
+

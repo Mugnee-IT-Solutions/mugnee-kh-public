@@ -12,7 +12,7 @@ type Tile = {
   descEn: string;
   descKm: string;
   href: string;
-  icon: string;
+  icon: React.ReactNode;
 };
 
 type Solution = {
@@ -101,9 +101,9 @@ export default function HomeClient({
   const t = useMemo(() => {
     const en = {
       badge: "Cambodia • LED Display • Digital Signage • Smart Solutions",
-      heroTitle: "Complete LED Display & Smart Technology Solutions in Cambodia",
+      heroTitle: "LED Display & Smart Systems in Cambodia",
       heroDesc:
-        "We deliver LED display, digital signage, interactive flat panels (smart boards), turnstile gates, PA systems and access control—with site survey, installation, commissioning and local after-sales support.",
+        "MUGNEE Multiple delivers LED display, digital signage, interactive flat panels (smart boards), turnstile gates, PA systems and access control in Cambodia—plus site survey, installation, commissioning and local after-sales support for reliable, long-term performance.",
       pill1: "Project-based quotation",
       pill2: "Installation & commissioning",
       pill3: "Warranty & maintenance options",
@@ -129,12 +129,42 @@ export default function HomeClient({
       secCatalogTitle: "Cambodia LED Display, Digital Signage & Smart Systems Products",
       secCatalogDesc:
         "Browse Cambodia-focused LED display, digital signage, PA system, access control and smart classroom products—built for local projects, budgets and site conditions.",
+      secPartnersEyebrow: "Partnerships",
+      secPartnersTitle: "Empowered by International Development Partnerships",
+      secPartnersDesc:
+        "We have delivered LED display, digital signage and smart technology solutions under projects supported by internationally recognized organizations such as The World Bank, JICA, Swisscontact, GIZ and Mitsubishi—meeting institutional standards with reliable execution.",
 
       secSolutionsEyebrow: "Industry solutions",
       secSolutionsTitle: "Industry Solutions for Cambodia: LED, Signage & Smart Systems",
       secSolutionsDesc:
         "SEO-friendly solutions for Cambodia projects—LED display, digital signage, smart classroom, access control and PA systems with local installation and support.",
       exploreSolution: "Explore solution",
+
+      secAuthEyebrow: "Partners",
+      secAuthTitle: "Authorized Distributor & Certified Engineering Partner",
+      secAuthDesc:
+        "Mugnee Cambodia supplies world‑leading LED components and control systems with certified engineering support, quality assurance and Cambodia‑based service.",
+
+      secIndustryEyebrow: "Use cases",
+      secIndustryTitle: "Product Use‑Cases by Industry in Cambodia",
+      secIndustryDesc:
+        "Industry‑specific LED display, digital signage and smart system use‑cases designed for Cambodia’s retail, education, government and factory projects.",
+      secSpecsEyebrow: "Tech snapshot",
+      secSpecsTitle: "LED Display Technical Specifications Guide Cambodia",
+      secSpecsDesc:
+        "Quick technical highlights buyers compare most—pixel pitch, brightness, IP rating, refresh rate and control system options.",
+      secServiceEyebrow: "Service area",
+      secServiceTitle: "Service Areas Across Cambodia",
+      secServiceDesc:
+        "Local installation, commissioning and after‑sales support across Phnom Penh, Siem Reap, Sihanoukville and nearby provinces.",
+      secTestimonialsEyebrow: "Trust",
+      secTestimonialsTitle: "Customer Testimonials & Client References",
+      secTestimonialsDesc:
+        "Local buyer feedback and project references that highlight reliability, image quality and service response.",
+      secContactEyebrow: "Local support",
+      secContactTitle: "Cambodia Office & Project Support",
+      secContactDesc:
+        "Talk to a local engineer for site survey, sizing, pixel pitch guidance and a project‑based quotation.",
 
       secQuickEyebrow: "Popular in Cambodia",
       secQuickTitle: "Quick Access to Key Product Categories",
@@ -168,7 +198,7 @@ export default function HomeClient({
 
     const km = {
       badge: "កម្ពុជា • អេក្រង់ LED • ផ្ទាំងបង្ហាញឌីជីថល • ដំណោះស្រាយ Smart",
-      heroTitle: "ដំណោះស្រាយអេក្រង់ LED និងបច្ចេកវិទ្យា Smart ពេញលេញនៅកម្ពុជា",
+      heroTitle: "ដំណោះស្រាយអេក្រង់ LED និង Smart Systems នៅកម្ពុជា",
       heroDesc:
         "យើងផ្តល់អេក្រង់ LED, Digital Signage, អេក្រង់អន្តរកម្ម (Smart Board), Turnstile Gate, ប្រព័ន្ធ PA និង Access Control — រួមទាំងស្ទង់ទីតាំង ដំឡើង Commissioning និង after-sales support ក្នុងកម្ពុជា។",
       pill1: "តម្លៃតាមគម្រោង",
@@ -196,12 +226,42 @@ export default function HomeClient({
       secCatalogTitle: "Cambodia LED Display, Digital Signage & Smart Systems Products",
       secCatalogDesc:
         "Browse Cambodia-focused LED display, digital signage, PA system, access control and smart classroom products—built for local projects, budgets and site conditions.",
+      secPartnersEyebrow: "Partnerships",
+      secPartnersTitle: "Empowered by International Development Partnerships",
+      secPartnersDesc:
+        "យើងបានផ្គត់ផ្គង់ដំណោះស្រាយ LED display, digital signage និង smart technology ក្នុងគម្រោងដែលមានការគាំទ្រពីអង្គការអន្តរជាតិសំខាន់ៗ ដូចជា The World Bank, JICA, Swisscontact, GIZ និង Mitsubishi។",
 
       secSolutionsEyebrow: "ដំណោះស្រាយតាមឧស្សាហកម្ម",
       secSolutionsTitle: "ដំណោះស្រាយឧស្សាហកម្មនៅកម្ពុជា៖ LED, Signage និង Smart Systems",
       secSolutionsDesc:
         "ដំណោះស្រាយសម្រាប់គម្រោងនៅកម្ពុជា—LED display, digital signage, smart classroom, access control និង PA system ជាមួយការដំឡើង និងការគាំទ្រ។",
       exploreSolution: "មើលដំណោះស្រាយ",
+
+      secAuthEyebrow: "Partners",
+      secAuthTitle: "Authorized Distributor & Certified Engineering Partner",
+      secAuthDesc:
+        "Mugnee Cambodia ផ្គត់ផ្គង់ LED components និង control system កម្រិតអន្តរជាតិ ជាមួយវិស្វករដែលបានបញ្ជាក់ និងសេវាកម្មនៅកម្ពុជា។",
+
+      secIndustryEyebrow: "Use cases",
+      secIndustryTitle: "ការប្រើប្រាស់ផលិតផលតាមឧស្សាហកម្មនៅកម្ពុជា",
+      secIndustryDesc:
+        "Use‑case សម្រាប់ LED display, digital signage និង smart systems សមស្របតាមវិស័យនៅកម្ពុជា។",
+      secSpecsEyebrow: "Tech snapshot",
+      secSpecsTitle: "សេចក្តីណែនាំលក្ខណៈបច្ចេកទេសអេក្រង់ LED នៅកម្ពុជា",
+      secSpecsDesc:
+        "ពិនិត្យលក្ខណៈសំខាន់ៗដែលអ្នកទិញប្រៀបធៀបញឹកញាប់—pixel pitch, brightness, IP rating និង control system។",
+      secServiceEyebrow: "Service area",
+      secServiceTitle: "តំបន់សេវាកម្មទូទាំងកម្ពុជា",
+      secServiceDesc:
+        "សេវាដំឡើង និង after‑sales support នៅ Phnom Penh, Siem Reap, Sihanoukville និងខេត្តជិតខាង។",
+      secTestimonialsEyebrow: "Trust",
+      secTestimonialsTitle: "មតិអតិថិជន និងគម្រោងយោង",
+      secTestimonialsDesc:
+        "បទពិសោធន៍អតិថិជនក្នុងស្រុកដែលបង្ហាញពីគុណភាព និងការគាំទ្រ។",
+      secContactEyebrow: "Local support",
+      secContactTitle: "ការិយាល័យកម្ពុជា & សេវាគម្រោង",
+      secContactDesc:
+        "សូមទាក់ទងវិស្វករនៅក្នុងស្រុកសម្រាប់ site survey, sizing, pixel pitch guidance និង quotation។",
 
       secQuickEyebrow: "ពេញនិយមនៅកម្ពុជា",
       secQuickTitle: "ចូលរហ័សទៅកាន់ប្រភេទផលិតផលសំខាន់ៗ",
@@ -241,13 +301,13 @@ export default function HomeClient({
       {
         title: "Indoor LED Display",
         desc: "Meeting rooms, showrooms & indoor LED walls",
-        href: "/products/indoor-led-display",
+        href: "/led-display/indoor-led-display",
         tone: "from-sky-50 to-sky-100 border-sky-200",
       },
       {
         title: "Outdoor LED Display",
         desc: "Billboard, roadside & rooftop LED screens",
-        href: "/products/outdoor-led-display",
+        href: "/led-display/outdoor-led-display",
         tone: "from-emerald-50 to-emerald-100 border-emerald-200",
       },
       {
@@ -280,13 +340,13 @@ export default function HomeClient({
       {
         title: "Indoor LED Display",
         desc: "បន្ទប់ប្រជុំ • Showroom • LED ខាងក្នុង",
-        href: "/products/indoor-led-display",
+        href: "/led-display/indoor-led-display",
         tone: "from-sky-50 to-sky-100 border-sky-200",
       },
       {
         title: "Outdoor LED Display",
         desc: "Billboard • ផ្លូវធំ • Rooftop LED",
-        href: "/products/outdoor-led-display",
+        href: "/led-display/outdoor-led-display",
         tone: "from-emerald-50 to-emerald-100 border-emerald-200",
       },
       {
@@ -512,7 +572,42 @@ export default function HomeClient({
             descClassName="max-w-none"
           />
 
-          <ProductGrid columns={3} />
+          <ProductGrid columns={3} pageSize={12} showPagination />
+        </Container>
+      </section>
+
+      {/* =========================
+          PARTNERSHIPS
+         ========================= */}
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+        <Container>
+          <SectionTitle
+            eyebrow={t.secPartnersEyebrow}
+            title={t.secPartnersTitle}
+            desc={t.secPartnersDesc}
+            descClassName="max-w-none"
+          />
+
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {[
+              { label: "The World Bank", src: "/images/partners/world-bank.png" },
+              { label: "JICA", src: "/images/partners/jica.png" },
+              { label: "Swisscontact", src: "/images/partners/swisscontact.png" },
+              { label: "GIZ", src: "/images/partners/giz.png" },
+              { label: "Mitsubishi", src: "/images/partners/mitsubishi.png" },
+            ].map((logo) => (
+              <div
+                key={logo.label}
+                className="flex h-20 items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.label}
+                  className="h-10 w-auto object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 
@@ -525,6 +620,7 @@ export default function HomeClient({
             eyebrow={t.secSolutionsEyebrow}
             title={t.secSolutionsTitle}
             desc={t.secSolutionsDesc}
+            descClassName="max-w-none"
           />
 
           <div className="grid gap-5 lg:grid-cols-2">
@@ -559,50 +655,295 @@ export default function HomeClient({
       </section>
 
       {/* =========================
-          PROJECTS teaser
+          AUTHORIZED PARTNER
          ========================= */}
-      <section className="border-t border-slate-100 bg-white py-14 sm:py-16">
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
           <SectionTitle
-            eyebrow={t.secProjectsEyebrow}
-            title={t.secProjectsTitle}
-            desc={t.secProjectsDesc}
+            eyebrow={t.secAuthEyebrow}
+            title={t.secAuthTitle}
+            desc={t.secAuthDesc}
+            descClassName="max-w-none"
           />
 
-          <div className="grid gap-5 lg:grid-cols-3">
-            {projects.map((p) => (
-              <Link
-                key={p.href + p.titleEn}
-                href={p.href}
-                className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-7">
+            {[
+              { label: "Mean Well", src: "/images/partners/meanwell.png" },
+              { label: "G-energy", src: "/images/partners/g-energy.png" },
+              { label: "Lampro", src: "/images/partners/lampro.png" },
+              { label: "NovaStar", src: "/images/partners/novastar.png" },
+              { label: "Huidu", src: "/images/partners/huidu.png" },
+              { label: "NationStar", src: "/images/partners/nationstar.png" },
+              { label: "Colorlight", src: "/images/partners/colorlight.png" },
+            ].map((logo) => (
+              <div
+                key={logo.label}
+                className="flex h-16 items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60"
               >
-                <p className="text-sm font-medium text-slate-600">
-                  {lang === "en" ? p.metaEn : p.metaKm}
-                </p>
-                <h3 className="mt-3 text-lg font-semibold text-slate-900 group-hover:underline">
-                  {lang === "en" ? p.titleEn : p.titleKm}
-                </h3>
-                <p className="mt-4 text-base font-semibold text-slate-900">
-                  {t.viewProjects} <span aria-hidden="true">→</span>
-                </p>
-              </Link>
+                <img
+                  src={logo.src}
+                  alt={logo.label}
+                  className="h-8 w-auto object-contain"
+                />
+              </div>
             ))}
           </div>
 
-          <div className="mt-9 rounded-2xl bg-slate-900 p-7 text-white">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-lg font-semibold">{t.bannerTitle}</p>
-                <p className="mt-2 text-base leading-relaxed text-white/85">
-                  {t.bannerDesc}
+          <div className="mt-6 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-700">
+            {[
+              "ISO Certified Organization",
+              "ABC Certified Engineers",
+              "Industry Track‑Lead",
+              "24/7 Customer Support",
+              "On‑site Service",
+            ].map((badge) => (
+              <span
+                key={badge}
+                className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================
+          USE-CASES BY INDUSTRY
+         ========================= */}
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+        <Container>
+          <SectionTitle
+            eyebrow={t.secIndustryEyebrow}
+            title={t.secIndustryTitle}
+            desc={t.secIndustryDesc}
+            descClassName="max-w-none"
+          />
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                tEn: "Retail & Mall",
+                tKm: "ហាងលក់រាយ និងផ្សារ",
+                dEn:
+                  "LED video walls and digital signage to drive promotions and foot traffic.",
+                dKm: "LED video wall និង digital signage សម្រាប់ប្រូម៉ូសិន។",
+              },
+              {
+                tEn: "Education",
+                tKm: "ការអប់រំ",
+                dEn:
+                  "Interactive smart boards for classrooms, training rooms and auditoriums.",
+                dKm: "Smart board សម្រាប់ថ្នាក់រៀន និងបន្ទប់បណ្តុះបណ្តាល។",
+              },
+              {
+                tEn: "Corporate & Office",
+                tKm: "ការិយាល័យ និងក្រុមហ៊ុន",
+                dEn:
+                  "Boardroom LED displays, lobby signage and meeting room AV.",
+                dKm: "LED សម្រាប់បន្ទប់ប្រជុំ និងផ្ទាំងបង្ហាញ lobbies។",
+              },
+              {
+                tEn: "Factory & Industrial",
+                tKm: "រោងចក្រ និងឧស្សាហកម្ម",
+                dEn:
+                  "PA systems, safety displays and production status boards.",
+                dKm: "PA system និងផ្ទាំងបង្ហាញសុវត្ថិភាព។",
+              },
+              {
+                tEn: "Hospitality",
+                tKm: "សណ្ឋាគារ និងសេវាកម្ម",
+                dEn:
+                  "Welcome screens, menu boards and event displays for hotels.",
+                dKm: "Welcome screen និង menu board សម្រាប់សណ្ឋាគារ។",
+              },
+              {
+                tEn: "Government & Public",
+                tKm: "រដ្ឋាភិបាល និងសេវាសាធារណៈ",
+                dEn:
+                  "Public information displays and secure access control.",
+                dKm: "ផ្ទាំងព័ត៌មានសាធារណៈ និង access control។",
+              },
+            ].map((item) => (
+              <div
+                key={item.tEn}
+                className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 p-5 shadow-sm"
+              >
+                <h3 className="text-base font-semibold text-slate-900">
+                  {lang === "en" ? item.tEn : item.tKm}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  {lang === "en" ? item.dEn : item.dKm}
                 </p>
               </div>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-slate-900 transition hover:bg-slate-100"
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================
+          TECH SPECS SNAPSHOT
+         ========================= */}
+      <section className="border-t border-slate-100 bg-slate-50 py-12 sm:py-14">
+        <Container>
+          <SectionTitle
+            eyebrow={t.secSpecsEyebrow}
+            title={t.secSpecsTitle}
+            desc={t.secSpecsDesc}
+            descClassName="max-w-none"
+          />
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                tEn: "Pixel Pitch Range",
+                tKm: "ជួរ Pixel Pitch",
+                dEn: "P1.25 – P10 (project‑based selection)",
+                dKm: "P1.25 – P10 (ជ្រើសតាមគម្រោង)",
+              },
+              {
+                tEn: "Brightness",
+                tKm: "Brightness",
+                dEn: "Indoor 800–1200 nits / Outdoor 5500–8000 nits",
+                dKm: "Indoor 800–1200 nits / Outdoor 5500–8000 nits",
+              },
+              {
+                tEn: "Protection",
+                tKm: "ការការពារ",
+                dEn: "Outdoor IP65 front protection",
+                dKm: "IP65 សម្រាប់ខាងក្រៅ (ផ្នែកមុខ)",
+              },
+              {
+                tEn: "Control Systems",
+                tKm: "Control Systems",
+                dEn: "NovaStar / Colorlight / Huidu",
+                dKm: "NovaStar / Colorlight / Huidu",
+              },
+            ].map((spec) => (
+              <div
+                key={spec.tEn}
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
               >
-                {t.ctaQuote} <span className="ml-2">| ស្នើសុំតម្លៃ</span>
-              </Link>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  {lang === "en" ? spec.tEn : spec.tKm}
+                </p>
+                <p className="mt-2 text-sm font-semibold text-slate-900">
+                  {lang === "en" ? spec.dEn : spec.dKm}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================
+          SERVICE AREAS
+         ========================= */}
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+        <Container>
+          <SectionTitle
+            eyebrow={t.secServiceEyebrow}
+            title={t.secServiceTitle}
+            desc={t.secServiceDesc}
+            descClassName="max-w-none"
+          />
+
+          <div className="flex flex-wrap gap-2 text-sm font-semibold text-slate-700">
+            {[
+              "Phnom Penh",
+              "Siem Reap",
+              "Sihanoukville",
+              "Battambang",
+              "Kampong Cham",
+              "Kampot",
+              "Koh Kong",
+              "Banteay Meanchey",
+            ].map((city) => (
+              <a
+                key={city}
+                href="/products"
+                className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2 no-underline hover:border-slate-300"
+              >
+                {city}
+              </a>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================
+          LOCAL CONTACT
+         ========================= */}
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+        <Container>
+          <SectionTitle
+            eyebrow={t.secContactEyebrow}
+            title={t.secContactTitle}
+            desc={t.secContactDesc}
+            descClassName="max-w-none"
+          />
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+              <div>
+                <p className="text-sm text-slate-600">
+                  {lang === "en"
+                    ? "Share your location, screen size and use‑case. We’ll recommend a practical configuration and quotation."
+                    : "សូមចែករំលែកទីតាំង ទំហំអេក្រង់ និងប្រភេទប្រើប្រាស់ ដើម្បីយើងណែនាំ configuration និង quotation។"}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-3">
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-6 py-3 text-base font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(15,23,42,0.45)]"
+                  >
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-sm">
+                      →
+                    </span>
+                    {lang === "en" ? "Request a Quotation" : "ស្នើសុំតម្លៃ"}
+                  </a>
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
+                  >
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-700">
+                      ☎
+                    </span>
+                    {lang === "en" ? "Contact Cambodia Office" : "ទាក់ទងការិយាល័យកម្ពុជា"}
+                  </a>
+                </div>
+              </div>
+
+              <div className="text-sm text-slate-600">
+                <p className="font-semibold text-slate-900">
+                  {lang === "en" ? "Office (Cambodia)" : "ការិយាល័យ (កម្ពុជា)"}
+                </p>
+                <p className="mt-2">
+                  {lang === "en"
+                    ? "1st Floor, 11E0, Street 108, Night Market Area, Doun Penh, Phnom Penh, Cambodia"
+                    : "ជាន់ទី១, 11E0, ផ្លូវ 108, តំបន់ Night Market, Doun Penh, Phnom Penh, Cambodia"}
+                </p>
+                <p className="mt-2">
+                  {lang === "en" ? "Phone: +855 XXX XXX XXX" : "ទូរស័ព្ទ៖ +855 XXX XXX XXX"}
+                </p>
+                <p className="mt-2">
+                  {lang === "en"
+                    ? "Hours: Mon–Sat, 8:30am–6:00pm"
+                    : "ម៉ោង៖ ចន្ទ–សៅរ៍ 8:30am–6:00pm"}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+              <iframe
+                title="Mugnee Cambodia Office Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.3322027815047!2d104.92304627050727!3d11.573972618867787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951e6231c345b%3A0xebf28967942f76b6!2sMugnee%20Multiple%20Co.%2C%20Ltd!5e1!3m2!1sen!2sbd!4v1770445691312!5m2!1sen!2sbd"
+                width="100%"
+                height="360"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </Container>
@@ -635,7 +976,6 @@ export default function HomeClient({
             ))}
           </div>
 
-          <p className="mt-7 text-sm text-slate-500">{t.tip}</p>
         </Container>
       </section>
 
@@ -644,4 +984,3 @@ export default function HomeClient({
     </div>
   );
 }
-

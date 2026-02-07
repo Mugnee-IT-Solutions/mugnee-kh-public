@@ -210,7 +210,7 @@ export default function OutdoorLedDisplayClient() {
   const jsonLd = useMemo(() => {
     const base =
       (process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-        "http://localhost:3000") + "/products/outdoor-led-display";
+        "http://localhost:3000") + "/led-display/outdoor-led-display";
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -621,3 +621,4 @@ function MiniCard({ text }: { text: string }) {
     </div>
   );
 }
+
