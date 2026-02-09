@@ -20,9 +20,17 @@ type ProductGridConfig = {
 export default function LedDisplayClient({
   productGridOverride,
   productQuickChips,
+  afterSpecsContent,
+  pixelPitchIntroOverride,
+  pixelPitchRowsOverride,
+  pixelPitchSectionOverride,
 }: {
   productGridOverride?: ProductGridConfig;
   productQuickChips?: { label: string; href: string }[];
+  afterSpecsContent?: React.ReactNode;
+  pixelPitchIntroOverride?: string;
+  pixelPitchRowsOverride?: [string, string, string][];
+  pixelPitchSectionOverride?: React.ReactNode;
 }) {
   const { lang } = useLang();
 
@@ -63,7 +71,7 @@ export default function LedDisplayClient({
     { label: "Video Processor", href: "/led-display/video-processor" },
     { label: "Power Supply", href: "/led-display/power-supply" },
     { label: "LED Controller", href: "/products/led-controller" },
-    { label: "Interactive Flat Panel", href: "/products/interactive-flat-panel" },
+    { label: "Interactive Flat Panel", href: "/interactive-flat-panel" },
     { label: "PA System", href: "/products/pa-system" },
     { label: "Contact", href: "/contact" },
   ];
@@ -505,41 +513,43 @@ export default function LedDisplayClient({
         </div>
       </section>
 
-      {/* PIXEL PITCH GUIDE */}
-      <section className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Pixel Pitch & Viewing Distance Guide
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Choosing the right pixel pitch is the #1 factor for visual clarity and
-            budget efficiency. Use this guide as a starting point for Cambodia
-            installations.
-          </p>
-          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
-              <div className="p-3">Pixel Pitch</div>
-              <div className="p-3">Best Viewing Distance</div>
-              <div className="p-3">Typical Use</div>
-            </div>
-            {[
-              ["P1.25-P1.86", "1.5-3m", "Control room, premium boardroom"],
-              ["P2-P2.5", "2-5m", "Meeting rooms, retail, showrooms"],
-              ["P3-P4", "3-8m", "Malls, lobbies, indoor stages"],
-              ["P5-P10", "6m+", "Outdoor billboards, roadside"],
-            ].map((row) => (
-              <div
-                key={row[0]}
-                className="grid grid-cols-1 border-t border-slate-200 text-sm text-slate-700 sm:grid-cols-3"
-              >
-                <div className="p-3 font-semibold text-slate-900">{row[0]}</div>
-                <div className="p-3">{row[1]}</div>
-                <div className="p-3">{row[2]}</div>
+      {afterSpecsContent}
+
+      {pixelPitchSectionOverride ?? (
+        <section className="border-t border-slate-200 bg-white">
+          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              Pixel Pitch & Viewing Distance Guide
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              {pixelPitchIntroOverride ??
+                "Choosing the right pixel pitch is the #1 factor for visual clarity and budget efficiency. Use this guide as a starting point for Cambodia installations."}
+            </p>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+              <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
+                <div className="p-3">Pixel Pitch</div>
+                <div className="p-3">Best Viewing Distance</div>
+                <div className="p-3">Typical Use</div>
               </div>
-            ))}
+              {(pixelPitchRowsOverride ?? [
+                ["P1.25-P1.86", "1.5-3m", "Control room, premium boardroom"],
+                ["P2-P2.5", "2-5m", "Meeting rooms, retail, showrooms"],
+                ["P3-P4", "3-8m", "Malls, lobbies, indoor stages"],
+                ["P5-P10", "6m+", "Outdoor billboards, roadside"],
+              ]).map((row) => (
+                <div
+                  key={row[0]}
+                  className="grid grid-cols-1 border-t border-slate-200 text-sm text-slate-700 sm:grid-cols-3"
+                >
+                  <div className="p-3 font-semibold text-slate-900">{row[0]}</div>
+                  <div className="p-3">{row[1]}</div>
+                  <div className="p-3">{row[2]}</div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* INDOOR VS OUTDOOR */}
       <section className="border-t border-slate-200 bg-slate-50">

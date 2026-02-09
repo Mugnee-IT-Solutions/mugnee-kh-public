@@ -9,12 +9,12 @@ const PAGE_PATH = "/products/access-control-system";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Access Control System in Cambodia | Door, RFID, Face & Attendance — Mugnee",
+  title: "Access Control System in Cambodia | Door, RFID, Face & Attendance - Mugnee",
   description:
     "Access control system in Cambodia for office, factory, hotel and schools: door access, RFID/QR/Face, attendance integration, installation & after-sales support.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Access Control System in Cambodia — Installation + Support",
+    title: "Access Control System in Cambodia - Installation + Support",
     description:
       "RFID / Face recognition / Door lock access control with local installation, commissioning and maintenance options.",
     url: PAGE_URL,
@@ -27,3 +27,4 @@ export const metadata: Metadata = {
 export default function Page() {
   return <AccessControlClient />;
 }
+

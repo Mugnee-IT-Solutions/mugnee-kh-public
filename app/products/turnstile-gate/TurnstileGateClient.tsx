@@ -9,245 +9,241 @@ import { PRODUCTS } from "../../data/products";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
-export default function AccessControlClient() {
+export default function TurnstileGateClient() {
   const { lang } = useLang();
 
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
-      badge: "Cambodia - Access Control - Door Security",
-      h1: "Access Control System in Cambodia",
+      badge: "Cambodia - Turnstile Gate - Access Control",
+      h1: "Turnstile Gate in Cambodia",
       sub:
-        "Door access control for offices, factories, hotels, schools, and public facilities. We supply RFID, QR, fingerprint, and face recognition systems with controllers, locks, and attendance integration, plus installation and after-sales support in Cambodia.",
+        "Secure, controlled entry solutions for offices, factories, schools, transport hubs, and public venues. We supply flap barriers, tripod turnstiles, speed gates, and full-height turnstiles with RFID, QR, and biometric integration plus local installation and after-sales support.",
       cta1: "Get a Free Quotation",
-      cta2: "View Access Control Products",
+      cta2: "View Turnstile Products",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
 
-      quickTitle: "Browse access control categories and services",
+      quickTitle: "Browse turnstile categories and access control services",
       quickSub:
-        "Quick links help you reach access methods, device types, integrations, products, and support.",
+        "Quick links help you reach gate types, integrations, products, and support.",
 
-      specsTitle: "Access Control System Specifications for Cambodia",
+      specsTitle: "Turnstile Gate Specifications for Cambodia",
       specsSub:
-        "Use these practical ranges to plan secure entry control, attendance tracking, and reliable operation for indoor and outdoor sites.",
-      sCard1t: "Access Methods",
-      sCard1d: "RFID cards, QR, PIN, fingerprint, and face recognition.",
-      sCard2t: "Controller Capacity",
-      sCard2d: "Single-door to multi-door systems with expansion options.",
-      sCard3t: "Door Hardware",
-      sCard3d: "Maglocks, electric strikes, exit buttons, and sensors.",
-      sCard4t: "Software & Logs",
-      sCard4d: "User roles, schedules, audit logs, and reports.",
-      sCard5t: "Safety",
-      sCard5d: "Emergency release, fire alarm linkage, and fail-safe design.",
+        "Plan entry control with the right gate type, throughput, and security level for indoor and outdoor sites.",
+      sCard1t: "Gate Types",
+      sCard1d: "Tripod, flap barrier, speed gate, full-height, and swing gates.",
+      sCard2t: "Access Methods",
+      sCard2d: "RFID cards, QR tickets, fingerprint, and face recognition.",
+      sCard3t: "Safety & Emergency",
+      sCard3d: "Fire alarm linkage, emergency release, and fail-safe modes.",
+      sCard4t: "Usage Environment",
+      sCard4d: "Indoor lobbies, outdoor yards, schools, factories, stations.",
+      sCard5t: "Throughput",
+      sCard5d: "Optimized lanes for controlled traffic flow and queuing.",
       sCard6t: "Installation",
-      sCard6d: "Cabling, power design, testing, and commissioning.",
+      sCard6d: "Proper foundations, wiring, controller setup, and testing.",
 
-      basicsLabel: "ACCESS CONTROL BASICS",
-      basicsTitle: "What Is an Access Control System?",
+      basicsLabel: "TURNSTILE BASICS",
+      basicsTitle: "What Is a Turnstile Gate?",
       basicsDesc:
-        "An access control system manages who can enter specific doors or areas using cards, PINs, QR, or biometrics. It replaces keys with digital permissions, records access events, and improves safety for staff and visitors.",
-      howTitle: "How Does Access Control Work?",
+        "A turnstile gate controls the flow of people into secure areas. It prevents unauthorized entry, improves safety, and can integrate with access control, attendance, and visitor management systems.",
+      howTitle: "How Does a Turnstile Gate Work?",
       howDesc:
-        "Readers or terminals capture credentials, the controller verifies access rules, and the lock opens if authorized. Software handles users, schedules, and reporting, and can integrate with attendance and visitor management.",
+        "The gate receives a signal from an access device (RFID, QR, biometric). If authorized, the barrier unlocks and allows entry while logging the event. System controllers handle access rules, time schedules, and reports.",
       benefitTitle: "Key Benefits for Cambodia Sites",
-      b1: "Controlled entry with role-based permissions",
-      b2: "Attendance-ready logs and access history",
-      b3: "Scalable from single doors to multi-door buildings",
-      b4: "Reduced key loss and stronger security policy",
-      b5: "Integration with turnstiles, CCTV, and alarms",
+      b1: "Controlled entry and reduced tailgating",
+      b2: "Faster flow in busy locations",
+      b3: "Integration with attendance and visitor systems",
+      b4: "Durable stainless-steel construction options",
+      b5: "Emergency release and safety compliance",
 
-      methodsTitle: "Access Control Device Types",
-      methodsSub:
-        "Choose devices based on traffic flow, security level, and operating environment.",
-      m1: "RFID Card Reader",
-      m1d: "Reliable access for offices, schools, and staff entrances.",
-      m2: "Fingerprint Terminal",
-      m2d: "Secure identification for attendance and controlled areas.",
-      m3: "Face Recognition Terminal",
-      m3d: "Fast, touchless access for high-traffic sites.",
-      m4: "QR / Mobile Access",
-      m4d: "Visitor passes and temporary access for events or contractors.",
-      m5: "Controller & Door Relay",
-      m5d: "Central control for multiple doors and time schedules.",
-      m6: "Maglock / Electric Strike",
-      m6d: "Durable door locking solutions for secure entry.",
+      typesTitle: "Types of Turnstile Gates",
+      typesSub:
+        "Choose a gate type based on security level, traffic volume, and site aesthetics.",
+      t1: "Tripod Turnstile",
+      t1d: "Cost-effective entry control for staff entrances and schools.",
+      t2: "Flap Barrier",
+      t2d: "Premium, fast access for office lobbies and public buildings.",
+      t3: "Speed Gate",
+      t3d: "High-speed lanes for transport hubs and corporate HQs.",
+      t4: "Full-Height Turnstile",
+      t4d: "Maximum security for factories and restricted zones.",
+      t5: "Swing Gate / Optical",
+      t5d: "Accessible lanes for wheelchair users and wide entry.",
 
-      useTitle: "Where Access Control Is Used",
+      useTitle: "Where Turnstile Gates Are Used",
       useSub:
-        "Common deployment scenarios for access control systems in Cambodia.",
-      u1t: "Offices & Corporate Buildings",
-      u1d: "Staff entry, server rooms, restricted areas, and visitor logs.",
-      u2t: "Factories & Warehouses",
-      u2d: "Shift attendance, gate access, and multi-door control.",
-      u3t: "Hotels & Apartments",
-      u3d: "Staff zones, service doors, lift access, and time schedules.",
-      u4t: "Schools & Campuses",
-      u4d: "Classroom access, attendance terminals, and admin control.",
-      u5t: "Hospitals & Clinics",
-      u5d: "Restricted areas and staff movement control.",
-      u6t: "Banks & Sensitive Facilities",
-      u6d: "Strict access rules with audit logs and hardware planning.",
+        "Common deployment scenarios for turnstile gates in Cambodia.",
+      u1t: "Factories & Industrial Zones",
+      u1d: "Shift entry control, attendance integration, and safety compliance.",
+      u2t: "Schools & Campuses",
+      u2d: "Student access control and visitor management.",
+      u3t: "Offices & Corporate Buildings",
+      u3d: "Secure lobby access and staff-only zones.",
+      u4t: "Public Venues & Stadiums",
+      u4d: "Ticketed entry and crowd flow management.",
+      u5t: "Hospitals & Public Institutions",
+      u5d: "Restricted area access and staff tracking.",
+      u6t: "Transport Hubs",
+      u6d: "Fast, controlled access at stations and terminals.",
 
       integrationsTitle: "Integration Options",
       integrationsSub:
-        "Access control can connect with attendance, visitor, and security systems.",
-      i1: "Attendance and payroll software",
-      i2: "Visitor management systems",
-      i3: "Turnstile gates and speed gates",
-      i4: "CCTV and monitoring systems",
-      i5: "Fire alarm and emergency release",
-      i6: "Elevator and multi-floor control",
+        "Turnstiles can work with multiple access methods and back-office systems.",
+      i1: "RFID cards and keyfobs",
+      i2: "QR code tickets and mobile passes",
+      i3: "Fingerprint or face recognition",
+      i4: "Visitor management systems",
+      i5: "Attendance and payroll software",
+      i6: "Fire alarm and emergency release",
 
-      chooseTitle: "How to Choose the Right Access Control System",
+      chooseTitle: "How to Choose the Right Turnstile Gate",
       chooseSub:
-        "A short checklist to avoid wrong device selection and ensure reliable operation.",
-      c1: "How many doors and users?",
-      c2: "Online vs offline system",
-      c3: "Door type and lock selection",
-      c4: "Security level and audit needs",
-      c5: "Integration with attendance or visitors",
-      c6: "Power, cabling, and network readiness",
+        "A short checklist to avoid wrong selection and ensure smooth access flow.",
+      c1: "Traffic volume and required throughput",
+      c2: "Security level (low, medium, high)",
+      c3: "Indoor vs outdoor installation",
+      c4: "Access method (RFID/QR/biometric)",
+      c5: "Integration with attendance or visitor systems",
+      c6: "Power and network availability",
 
-      gridTitle: "Access Control Products",
+      gridTitle: "Turnstile Gate Products",
       gridSub:
-        "Browse access control devices, locks, readers, and controllers for Cambodia projects.",
+        "Browse turnstile gate models for offices, factories, schools, and public venues.",
 
       processTitle: "Installation, Setup & Training",
       processSub:
-        "A structured workflow for stable operation and clean installation.",
-      p1: "Site survey and requirement review",
-      p2: "System design and quotation",
-      p3: "Installation, wiring, and commissioning",
-      p4: "User training and after-sales support",
+        "A structured workflow for stable operation, clean wiring, and smooth entry flow.",
+      p1: "Site survey and traffic study",
+      p2: "Gate selection and layout design",
+      p3: "Installation, wiring, and testing",
+      p4: "Training, handover, and support",
 
-      faqTitle: "FAQ - Access Control System",
+      faqTitle: "FAQ - Turnstile Gate",
       finalTitle: "Get a Project-Based Quotation",
       finalSub:
-        "Send door count, credential preference (card/face/QR), and site details. We will recommend compatible devices and provide a clear quotation.",
+        "Share your site type, traffic volume, access method, and integration needs. We will recommend the right turnstile gate and provide a clear quotation.",
       finalCta: "Contact & Get Quotation",
       viewProducts: "View Products",
       note:
-        "Note: Final quotation depends on door count, lock type, cabling distance, and integration requirements.",
+        "Note: Final quotation depends on gate type, quantity, access method, installation conditions, and integration requirements.",
       getQuote: "Get Quotation",
     };
 
     const km = {
-      breadcrumb: "Products",
-      badge: "Cambodia - Access Control - Door Security",
-      h1: "Access Control System in Cambodia",
+      breadcrumb: "??????",
+      badge: "Cambodia - Turnstile Gate - Access Control",
+      h1: "Turnstile Gate in Cambodia",
       sub:
-        "Door access control for offices, factories, hotels, schools, and public facilities. We supply RFID, QR, fingerprint, and face recognition systems with controllers, locks, and attendance integration, plus installation and after-sales support in Cambodia.",
+        "Secure, controlled entry solutions for offices, factories, schools, transport hubs, and public venues. We supply flap barriers, tripod turnstiles, speed gates, and full-height turnstiles with RFID, QR, and biometric integration plus local installation and after-sales support.",
       cta1: "Get a Free Quotation",
-      cta2: "View Access Control Products",
+      cta2: "View Turnstile Products",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
 
-      quickTitle: "Browse access control categories and services",
+      quickTitle: "Browse turnstile categories and access control services",
       quickSub:
-        "Quick links help you reach access methods, device types, integrations, products, and support.",
+        "Quick links help you reach gate types, integrations, products, and support.",
 
-      specsTitle: "Access Control System Specifications for Cambodia",
+      specsTitle: "Turnstile Gate Specifications for Cambodia",
       specsSub:
-        "Use these practical ranges to plan secure entry control, attendance tracking, and reliable operation for indoor and outdoor sites.",
-      sCard1t: "Access Methods",
-      sCard1d: "RFID cards, QR, PIN, fingerprint, and face recognition.",
-      sCard2t: "Controller Capacity",
-      sCard2d: "Single-door to multi-door systems with expansion options.",
-      sCard3t: "Door Hardware",
-      sCard3d: "Maglocks, electric strikes, exit buttons, and sensors.",
-      sCard4t: "Software & Logs",
-      sCard4d: "User roles, schedules, audit logs, and reports.",
-      sCard5t: "Safety",
-      sCard5d: "Emergency release, fire alarm linkage, and fail-safe design.",
+        "Plan entry control with the right gate type, throughput, and security level for indoor and outdoor sites.",
+      sCard1t: "Gate Types",
+      sCard1d: "Tripod, flap barrier, speed gate, full-height, and swing gates.",
+      sCard2t: "Access Methods",
+      sCard2d: "RFID cards, QR tickets, fingerprint, and face recognition.",
+      sCard3t: "Safety & Emergency",
+      sCard3d: "Fire alarm linkage, emergency release, and fail-safe modes.",
+      sCard4t: "Usage Environment",
+      sCard4d: "Indoor lobbies, outdoor yards, schools, factories, stations.",
+      sCard5t: "Throughput",
+      sCard5d: "Optimized lanes for controlled traffic flow and queuing.",
       sCard6t: "Installation",
-      sCard6d: "Cabling, power design, testing, and commissioning.",
+      sCard6d: "Proper foundations, wiring, controller setup, and testing.",
 
-      basicsLabel: "ACCESS CONTROL BASICS",
-      basicsTitle: "What Is an Access Control System?",
+      basicsLabel: "TURNSTILE BASICS",
+      basicsTitle: "What Is a Turnstile Gate?",
       basicsDesc:
-        "An access control system manages who can enter specific doors or areas using cards, PINs, QR, or biometrics. It replaces keys with digital permissions, records access events, and improves safety for staff and visitors.",
-      howTitle: "How Does Access Control Work?",
+        "A turnstile gate controls the flow of people into secure areas. It prevents unauthorized entry, improves safety, and can integrate with access control, attendance, and visitor management systems.",
+      howTitle: "How Does a Turnstile Gate Work?",
       howDesc:
-        "Readers or terminals capture credentials, the controller verifies access rules, and the lock opens if authorized. Software handles users, schedules, and reporting, and can integrate with attendance and visitor management.",
+        "The gate receives a signal from an access device (RFID, QR, biometric). If authorized, the barrier unlocks and allows entry while logging the event. System controllers handle access rules, time schedules, and reports.",
       benefitTitle: "Key Benefits for Cambodia Sites",
-      b1: "Controlled entry with role-based permissions",
-      b2: "Attendance-ready logs and access history",
-      b3: "Scalable from single doors to multi-door buildings",
-      b4: "Reduced key loss and stronger security policy",
-      b5: "Integration with turnstiles, CCTV, and alarms",
+      b1: "Controlled entry and reduced tailgating",
+      b2: "Faster flow in busy locations",
+      b3: "Integration with attendance and visitor systems",
+      b4: "Durable stainless-steel construction options",
+      b5: "Emergency release and safety compliance",
 
-      methodsTitle: "Access Control Device Types",
-      methodsSub:
-        "Choose devices based on traffic flow, security level, and operating environment.",
-      m1: "RFID Card Reader",
-      m1d: "Reliable access for offices, schools, and staff entrances.",
-      m2: "Fingerprint Terminal",
-      m2d: "Secure identification for attendance and controlled areas.",
-      m3: "Face Recognition Terminal",
-      m3d: "Fast, touchless access for high-traffic sites.",
-      m4: "QR / Mobile Access",
-      m4d: "Visitor passes and temporary access for events or contractors.",
-      m5: "Controller & Door Relay",
-      m5d: "Central control for multiple doors and time schedules.",
-      m6: "Maglock / Electric Strike",
-      m6d: "Durable door locking solutions for secure entry.",
+      typesTitle: "Types of Turnstile Gates",
+      typesSub:
+        "Choose a gate type based on security level, traffic volume, and site aesthetics.",
+      t1: "Tripod Turnstile",
+      t1d: "Cost-effective entry control for staff entrances and schools.",
+      t2: "Flap Barrier",
+      t2d: "Premium, fast access for office lobbies and public buildings.",
+      t3: "Speed Gate",
+      t3d: "High-speed lanes for transport hubs and corporate HQs.",
+      t4: "Full-Height Turnstile",
+      t4d: "Maximum security for factories and restricted zones.",
+      t5: "Swing Gate / Optical",
+      t5d: "Accessible lanes for wheelchair users and wide entry.",
 
-      useTitle: "Where Access Control Is Used",
+      useTitle: "Where Turnstile Gates Are Used",
       useSub:
-        "Common deployment scenarios for access control systems in Cambodia.",
-      u1t: "Offices & Corporate Buildings",
-      u1d: "Staff entry, server rooms, restricted areas, and visitor logs.",
-      u2t: "Factories & Warehouses",
-      u2d: "Shift attendance, gate access, and multi-door control.",
-      u3t: "Hotels & Apartments",
-      u3d: "Staff zones, service doors, lift access, and time schedules.",
-      u4t: "Schools & Campuses",
-      u4d: "Classroom access, attendance terminals, and admin control.",
-      u5t: "Hospitals & Clinics",
-      u5d: "Restricted areas and staff movement control.",
-      u6t: "Banks & Sensitive Facilities",
-      u6d: "Strict access rules with audit logs and hardware planning.",
+        "Common deployment scenarios for turnstile gates in Cambodia.",
+      u1t: "Factories & Industrial Zones",
+      u1d: "Shift entry control, attendance integration, and safety compliance.",
+      u2t: "Schools & Campuses",
+      u2d: "Student access control and visitor management.",
+      u3t: "Offices & Corporate Buildings",
+      u3d: "Secure lobby access and staff-only zones.",
+      u4t: "Public Venues & Stadiums",
+      u4d: "Ticketed entry and crowd flow management.",
+      u5t: "Hospitals & Public Institutions",
+      u5d: "Restricted area access and staff tracking.",
+      u6t: "Transport Hubs",
+      u6d: "Fast, controlled access at stations and terminals.",
 
       integrationsTitle: "Integration Options",
       integrationsSub:
-        "Access control can connect with attendance, visitor, and security systems.",
-      i1: "Attendance and payroll software",
-      i2: "Visitor management systems",
-      i3: "Turnstile gates and speed gates",
-      i4: "CCTV and monitoring systems",
-      i5: "Fire alarm and emergency release",
-      i6: "Elevator and multi-floor control",
+        "Turnstiles can work with multiple access methods and back-office systems.",
+      i1: "RFID cards and keyfobs",
+      i2: "QR code tickets and mobile passes",
+      i3: "Fingerprint or face recognition",
+      i4: "Visitor management systems",
+      i5: "Attendance and payroll software",
+      i6: "Fire alarm and emergency release",
 
-      chooseTitle: "How to Choose the Right Access Control System",
+      chooseTitle: "How to Choose the Right Turnstile Gate",
       chooseSub:
-        "A short checklist to avoid wrong device selection and ensure reliable operation.",
-      c1: "How many doors and users?",
-      c2: "Online vs offline system",
-      c3: "Door type and lock selection",
-      c4: "Security level and audit needs",
-      c5: "Integration with attendance or visitors",
-      c6: "Power, cabling, and network readiness",
+        "A short checklist to avoid wrong selection and ensure smooth access flow.",
+      c1: "Traffic volume and required throughput",
+      c2: "Security level (low, medium, high)",
+      c3: "Indoor vs outdoor installation",
+      c4: "Access method (RFID/QR/biometric)",
+      c5: "Integration with attendance or visitor systems",
+      c6: "Power and network availability",
 
-      gridTitle: "Access Control Products",
+      gridTitle: "Turnstile Gate Products",
       gridSub:
-        "Browse access control devices, locks, readers, and controllers for Cambodia projects.",
+        "Browse turnstile gate models for offices, factories, schools, and public venues.",
 
       processTitle: "Installation, Setup & Training",
       processSub:
-        "A structured workflow for stable operation and clean installation.",
-      p1: "Site survey and requirement review",
-      p2: "System design and quotation",
-      p3: "Installation, wiring, and commissioning",
-      p4: "User training and after-sales support",
+        "A structured workflow for stable operation, clean wiring, and smooth entry flow.",
+      p1: "Site survey and traffic study",
+      p2: "Gate selection and layout design",
+      p3: "Installation, wiring, and testing",
+      p4: "Training, handover, and support",
 
-      faqTitle: "FAQ - Access Control System",
+      faqTitle: "FAQ - Turnstile Gate",
       finalTitle: "Get a Project-Based Quotation",
       finalSub:
-        "Send door count, credential preference (card/face/QR), and site details. We will recommend compatible devices and provide a clear quotation.",
+        "Share your site type, traffic volume, access method, and integration needs. We will recommend the right turnstile gate and provide a clear quotation.",
       finalCta: "Contact & Get Quotation",
       viewProducts: "View Products",
       note:
-        "Note: Final quotation depends on door count, lock type, cabling distance, and integration requirements.",
+        "Note: Final quotation depends on gate type, quantity, access method, installation conditions, and integration requirements.",
       getQuote: "Get Quotation",
     };
 
@@ -256,51 +252,51 @@ export default function AccessControlClient() {
 
   const faqs: FAQ[] = [
     {
-      qEn: "Which access control method is best for offices?",
+      qEn: "Which turnstile type is best for my site?",
       aEn:
-        "RFID cards or PIN access are cost-effective and easy to manage. For higher security, fingerprint or face recognition can be added.",
-      qKm: "Which access control method is best for offices?",
+        "Tripod turnstiles work well for staff entrances, flap barriers for premium lobbies, speed gates for high traffic, and full-height units for maximum security zones.",
+      qKm: "Which turnstile type is best for my site?",
       aKm:
-        "RFID cards or PIN access are cost-effective and easy to manage. For higher security, fingerprint or face recognition can be added.",
+        "Tripod turnstiles work well for staff entrances, flap barriers for premium lobbies, speed gates for high traffic, and full-height units for maximum security zones.",
     },
     {
-      qEn: "Can access control integrate with attendance?",
+      qEn: "Can you integrate turnstiles with RFID or biometric systems?",
       aEn:
-        "Yes. Many controllers and terminals support attendance logs and reporting for HR systems.",
-      qKm: "Can access control integrate with attendance?",
+        "Yes. We integrate turnstile gates with RFID, QR, fingerprint, and face recognition systems based on project requirements.",
+      qKm: "Can you integrate turnstiles with RFID or biometric systems?",
       aKm:
-        "Yes. Many controllers and terminals support attendance logs and reporting for HR systems.",
+        "Yes. We integrate turnstile gates with RFID, QR, fingerprint, and face recognition systems based on project requirements.",
     },
     {
-      qEn: "Do you install access control systems in Cambodia?",
+      qEn: "Do you provide installation and maintenance in Cambodia?",
       aEn:
-        "Yes. We provide site survey, wiring, device installation, configuration, and after-sales support nationwide.",
-      qKm: "Do you install access control systems in Cambodia?",
+        "Yes. We supply, install, configure, and provide after-sales support and maintenance services across Cambodia.",
+      qKm: "Do you provide installation and maintenance in Cambodia?",
       aKm:
-        "Yes. We provide site survey, wiring, device installation, configuration, and after-sales support nationwide.",
+        "Yes. We supply, install, configure, and provide after-sales support and maintenance services across Cambodia.",
     },
     {
-      qEn: "What information is needed for a quotation?",
+      qEn: "What about emergency evacuation?",
       aEn:
-        "Door count, door type (glass/wood/metal), access method preference, and whether you need online reporting.",
-      qKm: "What information is needed for a quotation?",
+        "Turnstiles can be configured for emergency release and linked to fire alarms for safe evacuation.",
+      qKm: "What about emergency evacuation?",
       aKm:
-        "Door count, door type (glass/wood/metal), access method preference, and whether you need online reporting.",
+        "Turnstiles can be configured for emergency release and linked to fire alarms for safe evacuation.",
     },
     {
-      qEn: "Can access control work with turnstiles or gates?",
+      qEn: "Which access methods are supported?",
       aEn:
-        "Yes. Access control systems can be integrated with turnstile gates and speed gates for secure entry flow.",
-      qKm: "Can access control work with turnstiles or gates?",
+        "Common methods include RFID cards, QR tickets, and biometric readers. The choice depends on security level and traffic flow.",
+      qKm: "Which access methods are supported?",
       aKm:
-        "Yes. Access control systems can be integrated with turnstile gates and speed gates for secure entry flow.",
+        "Common methods include RFID cards, QR tickets, and biometric readers. The choice depends on security level and traffic flow.",
     },
   ];
 
   const jsonLd = useMemo(() => {
     const site =
       process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
-    const url = site + "/products/access-control-system";
+    const url = site + "/products/turnstile-gate";
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -308,7 +304,7 @@ export default function AccessControlClient() {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site },
         { "@type": "ListItem", position: 2, name: "Products", item: site + "/products" },
-        { "@type": "ListItem", position: 3, name: "Access Control System", item: url },
+        { "@type": "ListItem", position: 3, name: "Turnstile Gate", item: url },
       ],
     };
 
@@ -328,7 +324,7 @@ export default function AccessControlClient() {
     const itemList = {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      itemListElement: PRODUCTS.filter((p) => p.primaryCategoryId === "access_control")
+      itemListElement: PRODUCTS.filter((p) => p.primaryCategoryId === "turnstile_gate")
         .slice(0, 8)
         .map((p, idx) => ({
           "@type": "ListItem",
@@ -427,7 +423,7 @@ export default function AccessControlClient() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
             {t.breadcrumb} <span className="mx-1">/</span>
-            <span className="font-semibold text-slate-700">Access Control System</span>
+            <span className="font-semibold text-slate-700">Turnstile Gate</span>
           </div>
 
           <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] text-slate-700 backdrop-blur">
@@ -505,7 +501,7 @@ export default function AccessControlClient() {
               {[
                 { label: "Specifications", href: "#specs" },
                 { label: "Basics", href: "#basics" },
-                { label: "Device Types", href: "#device-types" },
+                { label: "Gate Types", href: "#types" },
                 { label: "Use Cases", href: "#use-cases" },
                 { label: "Integrations", href: "#integrations" },
                 { label: "Products", href: "#products" },
@@ -579,18 +575,17 @@ export default function AccessControlClient() {
         </div>
       </section>
 
-      <section id="device-types" className="border-t border-slate-200 bg-white">
+      <section id="types" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.methodsTitle}</h2>
-          <p className="mt-2 text-slate-600">{t.methodsSub}</p>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.typesTitle}</h2>
+          <p className="mt-2 text-slate-600">{t.typesSub}</p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <TypeCard title={t.m1} desc={t.m1d} />
-            <TypeCard title={t.m2} desc={t.m2d} />
-            <TypeCard title={t.m3} desc={t.m3d} />
-            <TypeCard title={t.m4} desc={t.m4d} />
-            <TypeCard title={t.m5} desc={t.m5d} />
-            <TypeCard title={t.m6} desc={t.m6d} />
+            <TypeCard title={t.t1} desc={t.t1d} />
+            <TypeCard title={t.t2} desc={t.t2d} />
+            <TypeCard title={t.t3} desc={t.t3d} />
+            <TypeCard title={t.t4} desc={t.t4d} />
+            <TypeCard title={t.t5} desc={t.t5d} />
           </div>
         </div>
       </section>
@@ -640,8 +635,8 @@ export default function AccessControlClient() {
             <ProductGrid
               columns={3}
               pageSize={9}
-              allowedCategoryIds={["access_control"]}
-              filterCategoryIds={["access_control"]}
+              allowedCategoryIds={["turnstile_gate"]}
+              filterCategoryIds={["turnstile_gate"]}
               showCategoryFilters
               showSort
               showPagination

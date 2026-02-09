@@ -1,3 +1,4 @@
+"use client";
 
 "use client";
 
@@ -9,298 +10,317 @@ import { PRODUCTS } from "../../data/products";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
-export default function AccessControlClient() {
+export default function PaSystemClient() {
   const { lang } = useLang();
 
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
-      badge: "Cambodia - Access Control - Door Security",
-      h1: "Access Control System in Cambodia",
+      badge: "Cambodia - PA System - Public Address",
+      h1: "PA System in Cambodia",
       sub:
-        "Door access control for offices, factories, hotels, schools, and public facilities. We supply RFID, QR, fingerprint, and face recognition systems with controllers, locks, and attendance integration, plus installation and after-sales support in Cambodia.",
+        "Professional public address systems for factories, schools, hospitals, malls, hotels, offices, and public venues. We supply mixers, power amplifiers, speakers, paging microphones, and accessories with installation and after-sales support in Cambodia.",
       cta1: "Get a Free Quotation",
-      cta2: "View Access Control Products",
+      cta2: "View PA System Products",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
 
-      quickTitle: "Browse access control categories and services",
+      quickTitle: "Browse PA system categories and related services",
       quickSub:
-        "Quick links help you reach access methods, device types, integrations, products, and support.",
+        "Quick links help you reach speakers, amplifiers, microphones, and installation support.",
 
-      specsTitle: "Access Control System Specifications for Cambodia",
+      specsTitle: "PA System Specifications for Cambodia",
       specsSub:
-        "Use these practical ranges to plan secure entry control, attendance tracking, and reliable operation for indoor and outdoor sites.",
-      sCard1t: "Access Methods",
-      sCard1d: "RFID cards, QR, PIN, fingerprint, and face recognition.",
-      sCard2t: "Controller Capacity",
-      sCard2d: "Single-door to multi-door systems with expansion options.",
-      sCard3t: "Door Hardware",
-      sCard3d: "Maglocks, electric strikes, exit buttons, and sensors.",
-      sCard4t: "Software & Logs",
-      sCard4d: "User roles, schedules, audit logs, and reports.",
-      sCard5t: "Safety",
-      sCard5d: "Emergency release, fire alarm linkage, and fail-safe design.",
+        "Use these practical ranges to plan clear paging, safety alerts, and daily announcements for indoor and outdoor sites.",
+      sCard1t: "System Type",
+      sCard1d: "Public address, paging, and background audio solutions.",
+      sCard2t: "Speaker Types",
+      sCard2d: "Ceiling, wall, pendant, and outdoor horn speakers.",
+      sCard3t: "Coverage Planning",
+      sCard3d: "Zone-based layout for clear audio in each area.",
+      sCard4t: "Priority & Emergency",
+      sCard4d: "Priority paging, override channels, and alerts.",
+      sCard5t: "Microphones",
+      sCard5d: "Paging mics, gooseneck, and wireless options.",
       sCard6t: "Installation",
-      sCard6d: "Cabling, power design, testing, and commissioning.",
+      sCard6d: "Proper cabling, tuning, and commissioning support.",
 
-      basicsLabel: "ACCESS CONTROL BASICS",
-      basicsTitle: "What Is an Access Control System?",
+      basicsLabel: "PA SYSTEM BASICS",
+      basicsTitle: "What Is a PA System?",
       basicsDesc:
-        "An access control system manages who can enter specific doors or areas using cards, PINs, QR, or biometrics. It replaces keys with digital permissions, records access events, and improves safety for staff and visitors.",
-      howTitle: "How Does Access Control Work?",
+        "A PA (Public Address) system amplifies and distributes voice and background audio to multiple speakers across a facility. It is essential for announcements, safety alerts, paging, and clear communication in busy environments.",
+      howTitle: "How Does a PA System Work?",
       howDesc:
-        "Readers or terminals capture credentials, the controller verifies access rules, and the lock opens if authorized. Software handles users, schedules, and reporting, and can integrate with attendance and visitor management.",
+        "Sources like microphones and music players feed a mixer, then a power amplifier drives speakers across zones. A controller manages priorities, paging, and emergency overrides so key messages reach the right areas.",
       benefitTitle: "Key Benefits for Cambodia Sites",
-      b1: "Controlled entry with role-based permissions",
-      b2: "Attendance-ready logs and access history",
-      b3: "Scalable from single doors to multi-door buildings",
-      b4: "Reduced key loss and stronger security policy",
-      b5: "Integration with turnstiles, CCTV, and alarms",
+      b1: "Clear announcements for safety and daily operations",
+      b2: "Multi-zone control for offices, factories, and campuses",
+      b3: "Flexible indoor and outdoor speaker options",
+      b4: "Scalable from small buildings to large facilities",
+      b5: "Improved coordination during emergencies",
 
-      methodsTitle: "Access Control Device Types",
-      methodsSub:
-        "Choose devices based on traffic flow, security level, and operating environment.",
-      m1: "RFID Card Reader",
-      m1d: "Reliable access for offices, schools, and staff entrances.",
-      m2: "Fingerprint Terminal",
-      m2d: "Secure identification for attendance and controlled areas.",
-      m3: "Face Recognition Terminal",
-      m3d: "Fast, touchless access for high-traffic sites.",
-      m4: "QR / Mobile Access",
-      m4d: "Visitor passes and temporary access for events or contractors.",
-      m5: "Controller & Door Relay",
-      m5d: "Central control for multiple doors and time schedules.",
-      m6: "Maglock / Electric Strike",
-      m6d: "Durable door locking solutions for secure entry.",
+      guideTitle: "Speaker Type & Coverage Guide",
+      guideSub:
+        "Choose speaker types based on distance, noise level, and installation environment.",
+      guideRows: [
+        ["Classrooms & Meeting Rooms", "Ceiling / Wall Speakers", "Clear voice and even coverage"],
+        ["Corridors & Lobbies", "Wall Speakers", "Directional paging for walkways"],
+        ["Factories & Warehouses", "Horn Speakers", "High-output audio in noisy areas"],
+        ["Outdoor Yards & Gates", "Weatherproof Horn Speakers", "Long-throw coverage"],
+        ["Retail & Malls", "Ceiling / Pendant Speakers", "Balanced paging and background audio"],
+      ] as [string, string, string][],
 
-      useTitle: "Where Access Control Is Used",
-      useSub:
-        "Common deployment scenarios for access control systems in Cambodia.",
-      u1t: "Offices & Corporate Buildings",
-      u1d: "Staff entry, server rooms, restricted areas, and visitor logs.",
-      u2t: "Factories & Warehouses",
-      u2d: "Shift attendance, gate access, and multi-door control.",
-      u3t: "Hotels & Apartments",
-      u3d: "Staff zones, service doors, lift access, and time schedules.",
-      u4t: "Schools & Campuses",
-      u4d: "Classroom access, attendance terminals, and admin control.",
-      u5t: "Hospitals & Clinics",
-      u5d: "Restricted areas and staff movement control.",
-      u6t: "Banks & Sensitive Facilities",
-      u6d: "Strict access rules with audit logs and hardware planning.",
+      compTitle: "Key Components & Capabilities",
+      compSub:
+        "Build a reliable PA setup with the right mix of audio sources, amplifiers, speakers, paging microphones, and zone control.",
+      c1: "Mixers & Amplifiers",
+      c1d: "Core audio processing and stable power output for clean sound.",
+      c2: "Paging Microphones",
+      c2d: "Clear voice announcements from reception desks and control rooms.",
+      c3: "Wall & Ceiling Speakers",
+      c3d: "Indoor coverage for classrooms, offices, corridors, and retail.",
+      c4: "Horn Speakers",
+      c4d: "High-output outdoor audio for factories and large yards.",
+      c5: "Zone Controllers",
+      c5d: "Select areas, schedule paging, and set priority channels.",
+      c6: "Cables & Accessories",
+      c6d: "Reliable wiring, mounts, racks, and connectors for clean installs.",
 
-      integrationsTitle: "Integration Options",
-      integrationsSub:
-        "Access control can connect with attendance, visitor, and security systems.",
-      i1: "Attendance and payroll software",
-      i2: "Visitor management systems",
-      i3: "Turnstile gates and speed gates",
-      i4: "CCTV and monitoring systems",
-      i5: "Fire alarm and emergency release",
-      i6: "Elevator and multi-floor control",
-
-      chooseTitle: "How to Choose the Right Access Control System",
+      chooseTitle: "How to Choose the Right PA System",
       chooseSub:
-        "A short checklist to avoid wrong device selection and ensure reliable operation.",
-      c1: "How many doors and users?",
-      c2: "Online vs offline system",
-      c3: "Door type and lock selection",
-      c4: "Security level and audit needs",
-      c5: "Integration with attendance or visitors",
-      c6: "Power, cabling, and network readiness",
+        "A short checklist to avoid wrong device selection and ensure clear coverage.",
+      s1: "Coverage area and number of zones",
+      s2: "Indoor vs outdoor speaker types",
+      s3: "Power and wattage requirements",
+      s4: "Emergency priority and backup needs",
+      s5: "Integration with security or fire systems",
 
-      gridTitle: "Access Control Products",
+      gridTitle: "PA System Products",
       gridSub:
-        "Browse access control devices, locks, readers, and controllers for Cambodia projects.",
+        "Browse amplifiers, mixers, speakers, microphones, and accessories for Cambodia projects.",
+
+      useTitle: "Where PA Systems Are Used",
+      useSub:
+        "Common PA system deployments for public facilities and commercial sites in Cambodia.",
+      u1t: "Factories & Warehouses",
+      u1d: "Shift calls, safety alerts, and production announcements.",
+      u2t: "Schools & Campuses",
+      u2d: "Classroom paging, assembly alerts, and campus-wide messages.",
+      u3t: "Hospitals & Clinics",
+      u3d: "Emergency alerts, staff coordination, and patient announcements.",
+      u4t: "Retail & Shopping Malls",
+      u4d: "Customer announcements, promotions, and background audio.",
+      u5t: "Hotels & Public Venues",
+      u5d: "Event announcements, guest communication, and zoned paging.",
+      u6t: "Airports & Government",
+      u6d: "Public announcements and safety messaging in large facilities.",
 
       processTitle: "Installation, Setup & Training",
       processSub:
-        "A structured workflow for stable operation and clean installation.",
-      p1: "Site survey and requirement review",
-      p2: "System design and quotation",
-      p3: "Installation, wiring, and commissioning",
-      p4: "User training and after-sales support",
+        "A structured workflow for stable operation, clean wiring, and clear audio.",
+      p1: "Site survey and coverage planning",
+      p2: "System design and equipment selection",
+      p3: "Installation, wiring, and tuning",
+      p4: "User training and handover support",
 
-      faqTitle: "FAQ - Access Control System",
+      faqTitle: "FAQ - PA System",
       finalTitle: "Get a Project-Based Quotation",
       finalSub:
-        "Send door count, credential preference (card/face/QR), and site details. We will recommend compatible devices and provide a clear quotation.",
+        "Share your building size, zones, and use-case (factory, school, office, or mall). We will recommend the right PA system and provide a clear quotation.",
       finalCta: "Contact & Get Quotation",
       viewProducts: "View Products",
       note:
-        "Note: Final quotation depends on door count, lock type, cabling distance, and integration requirements.",
+        "Note: Final quotation depends on coverage area, zone count, speaker type, cabling distance, and installation requirements.",
       getQuote: "Get Quotation",
     };
 
     const km = {
-      breadcrumb: "Products",
-      badge: "Cambodia - Access Control - Door Security",
-      h1: "Access Control System in Cambodia",
+      breadcrumb: "ផលិតផល",
+      badge: "Cambodia - PA System - Public Address",
+      h1: "PA System in Cambodia",
       sub:
-        "Door access control for offices, factories, hotels, schools, and public facilities. We supply RFID, QR, fingerprint, and face recognition systems with controllers, locks, and attendance integration, plus installation and after-sales support in Cambodia.",
+        "Professional public address systems for factories, schools, hospitals, malls, hotels, offices, and public venues. We supply mixers, power amplifiers, speakers, paging microphones, and accessories with installation and after-sales support in Cambodia.",
       cta1: "Get a Free Quotation",
-      cta2: "View Access Control Products",
+      cta2: "View PA System Products",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
 
-      quickTitle: "Browse access control categories and services",
+      quickTitle: "Browse PA system categories and related services",
       quickSub:
-        "Quick links help you reach access methods, device types, integrations, products, and support.",
+        "Quick links help you reach speakers, amplifiers, microphones, and installation support.",
 
-      specsTitle: "Access Control System Specifications for Cambodia",
+      specsTitle: "PA System Specifications for Cambodia",
       specsSub:
-        "Use these practical ranges to plan secure entry control, attendance tracking, and reliable operation for indoor and outdoor sites.",
-      sCard1t: "Access Methods",
-      sCard1d: "RFID cards, QR, PIN, fingerprint, and face recognition.",
-      sCard2t: "Controller Capacity",
-      sCard2d: "Single-door to multi-door systems with expansion options.",
-      sCard3t: "Door Hardware",
-      sCard3d: "Maglocks, electric strikes, exit buttons, and sensors.",
-      sCard4t: "Software & Logs",
-      sCard4d: "User roles, schedules, audit logs, and reports.",
-      sCard5t: "Safety",
-      sCard5d: "Emergency release, fire alarm linkage, and fail-safe design.",
+        "Use these practical ranges to plan clear paging, safety alerts, and daily announcements for indoor and outdoor sites.",
+      sCard1t: "System Type",
+      sCard1d: "Public address, paging, and background audio solutions.",
+      sCard2t: "Speaker Types",
+      sCard2d: "Ceiling, wall, pendant, and outdoor horn speakers.",
+      sCard3t: "Coverage Planning",
+      sCard3d: "Zone-based layout for clear audio in each area.",
+      sCard4t: "Priority & Emergency",
+      sCard4d: "Priority paging, override channels, and alerts.",
+      sCard5t: "Microphones",
+      sCard5d: "Paging mics, gooseneck, and wireless options.",
       sCard6t: "Installation",
-      sCard6d: "Cabling, power design, testing, and commissioning.",
+      sCard6d: "Proper cabling, tuning, and commissioning support.",
 
-      basicsLabel: "ACCESS CONTROL BASICS",
-      basicsTitle: "What Is an Access Control System?",
+      basicsLabel: "PA SYSTEM BASICS",
+      basicsTitle: "What Is a PA System?",
       basicsDesc:
-        "An access control system manages who can enter specific doors or areas using cards, PINs, QR, or biometrics. It replaces keys with digital permissions, records access events, and improves safety for staff and visitors.",
-      howTitle: "How Does Access Control Work?",
+        "A PA (Public Address) system amplifies and distributes voice and background audio to multiple speakers across a facility. It is essential for announcements, safety alerts, paging, and clear communication in busy environments.",
+      howTitle: "How Does a PA System Work?",
       howDesc:
-        "Readers or terminals capture credentials, the controller verifies access rules, and the lock opens if authorized. Software handles users, schedules, and reporting, and can integrate with attendance and visitor management.",
+        "Sources like microphones and music players feed a mixer, then a power amplifier drives speakers across zones. A controller manages priorities, paging, and emergency overrides so key messages reach the right areas.",
       benefitTitle: "Key Benefits for Cambodia Sites",
-      b1: "Controlled entry with role-based permissions",
-      b2: "Attendance-ready logs and access history",
-      b3: "Scalable from single doors to multi-door buildings",
-      b4: "Reduced key loss and stronger security policy",
-      b5: "Integration with turnstiles, CCTV, and alarms",
+      b1: "Clear announcements for safety and daily operations",
+      b2: "Multi-zone control for offices, factories, and campuses",
+      b3: "Flexible indoor and outdoor speaker options",
+      b4: "Scalable from small buildings to large facilities",
+      b5: "Improved coordination during emergencies",
 
-      methodsTitle: "Access Control Device Types",
-      methodsSub:
-        "Choose devices based on traffic flow, security level, and operating environment.",
-      m1: "RFID Card Reader",
-      m1d: "Reliable access for offices, schools, and staff entrances.",
-      m2: "Fingerprint Terminal",
-      m2d: "Secure identification for attendance and controlled areas.",
-      m3: "Face Recognition Terminal",
-      m3d: "Fast, touchless access for high-traffic sites.",
-      m4: "QR / Mobile Access",
-      m4d: "Visitor passes and temporary access for events or contractors.",
-      m5: "Controller & Door Relay",
-      m5d: "Central control for multiple doors and time schedules.",
-      m6: "Maglock / Electric Strike",
-      m6d: "Durable door locking solutions for secure entry.",
+      guideTitle: "Speaker Type & Coverage Guide",
+      guideSub:
+        "Choose speaker types based on distance, noise level, and installation environment.",
+      guideRows: [
+        ["Classrooms & Meeting Rooms", "Ceiling / Wall Speakers", "Clear voice and even coverage"],
+        ["Corridors & Lobbies", "Wall Speakers", "Directional paging for walkways"],
+        ["Factories & Warehouses", "Horn Speakers", "High-output audio in noisy areas"],
+        ["Outdoor Yards & Gates", "Weatherproof Horn Speakers", "Long-throw coverage"],
+        ["Retail & Malls", "Ceiling / Pendant Speakers", "Balanced paging and background audio"],
+      ] as [string, string, string][],
 
-      useTitle: "Where Access Control Is Used",
-      useSub:
-        "Common deployment scenarios for access control systems in Cambodia.",
-      u1t: "Offices & Corporate Buildings",
-      u1d: "Staff entry, server rooms, restricted areas, and visitor logs.",
-      u2t: "Factories & Warehouses",
-      u2d: "Shift attendance, gate access, and multi-door control.",
-      u3t: "Hotels & Apartments",
-      u3d: "Staff zones, service doors, lift access, and time schedules.",
-      u4t: "Schools & Campuses",
-      u4d: "Classroom access, attendance terminals, and admin control.",
-      u5t: "Hospitals & Clinics",
-      u5d: "Restricted areas and staff movement control.",
-      u6t: "Banks & Sensitive Facilities",
-      u6d: "Strict access rules with audit logs and hardware planning.",
+      compTitle: "Key Components & Capabilities",
+      compSub:
+        "Build a reliable PA setup with the right mix of audio sources, amplifiers, speakers, paging microphones, and zone control.",
+      c1: "Mixers & Amplifiers",
+      c1d: "Core audio processing and stable power output for clean sound.",
+      c2: "Paging Microphones",
+      c2d: "Clear voice announcements from reception desks and control rooms.",
+      c3: "Wall & Ceiling Speakers",
+      c3d: "Indoor coverage for classrooms, offices, corridors, and retail.",
+      c4: "Horn Speakers",
+      c4d: "High-output outdoor audio for factories and large yards.",
+      c5: "Zone Controllers",
+      c5d: "Select areas, schedule paging, and set priority channels.",
+      c6: "Cables & Accessories",
+      c6d: "Reliable wiring, mounts, racks, and connectors for clean installs.",
 
-      integrationsTitle: "Integration Options",
-      integrationsSub:
-        "Access control can connect with attendance, visitor, and security systems.",
-      i1: "Attendance and payroll software",
-      i2: "Visitor management systems",
-      i3: "Turnstile gates and speed gates",
-      i4: "CCTV and monitoring systems",
-      i5: "Fire alarm and emergency release",
-      i6: "Elevator and multi-floor control",
-
-      chooseTitle: "How to Choose the Right Access Control System",
+      chooseTitle: "How to Choose the Right PA System",
       chooseSub:
-        "A short checklist to avoid wrong device selection and ensure reliable operation.",
-      c1: "How many doors and users?",
-      c2: "Online vs offline system",
-      c3: "Door type and lock selection",
-      c4: "Security level and audit needs",
-      c5: "Integration with attendance or visitors",
-      c6: "Power, cabling, and network readiness",
+        "A short checklist to avoid wrong device selection and ensure clear coverage.",
+      s1: "Coverage area and number of zones",
+      s2: "Indoor vs outdoor speaker types",
+      s3: "Power and wattage requirements",
+      s4: "Emergency priority and backup needs",
+      s5: "Integration with security or fire systems",
 
-      gridTitle: "Access Control Products",
+      gridTitle: "PA System Products",
       gridSub:
-        "Browse access control devices, locks, readers, and controllers for Cambodia projects.",
+        "Browse amplifiers, mixers, speakers, microphones, and accessories for Cambodia projects.",
+
+      useTitle: "Where PA Systems Are Used",
+      useSub:
+        "Common PA system deployments for public facilities and commercial sites in Cambodia.",
+      u1t: "Factories & Warehouses",
+      u1d: "Shift calls, safety alerts, and production announcements.",
+      u2t: "Schools & Campuses",
+      u2d: "Classroom paging, assembly alerts, and campus-wide messages.",
+      u3t: "Hospitals & Clinics",
+      u3d: "Emergency alerts, staff coordination, and patient announcements.",
+      u4t: "Retail & Shopping Malls",
+      u4d: "Customer announcements, promotions, and background audio.",
+      u5t: "Hotels & Public Venues",
+      u5d: "Event announcements, guest communication, and zoned paging.",
+      u6t: "Airports & Government",
+      u6d: "Public announcements and safety messaging in large facilities.",
 
       processTitle: "Installation, Setup & Training",
       processSub:
-        "A structured workflow for stable operation and clean installation.",
-      p1: "Site survey and requirement review",
-      p2: "System design and quotation",
-      p3: "Installation, wiring, and commissioning",
-      p4: "User training and after-sales support",
+        "A structured workflow for stable operation, clean wiring, and clear audio.",
+      p1: "Site survey and coverage planning",
+      p2: "System design and equipment selection",
+      p3: "Installation, wiring, and tuning",
+      p4: "User training and handover support",
 
-      faqTitle: "FAQ - Access Control System",
+      faqTitle: "FAQ - PA System",
       finalTitle: "Get a Project-Based Quotation",
       finalSub:
-        "Send door count, credential preference (card/face/QR), and site details. We will recommend compatible devices and provide a clear quotation.",
+        "Share your building size, zones, and use-case (factory, school, office, or mall). We will recommend the right PA system and provide a clear quotation.",
       finalCta: "Contact & Get Quotation",
       viewProducts: "View Products",
       note:
-        "Note: Final quotation depends on door count, lock type, cabling distance, and integration requirements.",
+        "Note: Final quotation depends on coverage area, zone count, speaker type, cabling distance, and installation requirements.",
       getQuote: "Get Quotation",
     };
 
     return lang === "en" ? en : km;
   }, [lang]);
 
-  const faqs: FAQ[] = [
-    {
-      qEn: "Which access control method is best for offices?",
-      aEn:
-        "RFID cards or PIN access are cost-effective and easy to manage. For higher security, fingerprint or face recognition can be added.",
-      qKm: "Which access control method is best for offices?",
-      aKm:
-        "RFID cards or PIN access are cost-effective and easy to manage. For higher security, fingerprint or face recognition can be added.",
-    },
-    {
-      qEn: "Can access control integrate with attendance?",
-      aEn:
-        "Yes. Many controllers and terminals support attendance logs and reporting for HR systems.",
-      qKm: "Can access control integrate with attendance?",
-      aKm:
-        "Yes. Many controllers and terminals support attendance logs and reporting for HR systems.",
-    },
-    {
-      qEn: "Do you install access control systems in Cambodia?",
-      aEn:
-        "Yes. We provide site survey, wiring, device installation, configuration, and after-sales support nationwide.",
-      qKm: "Do you install access control systems in Cambodia?",
-      aKm:
-        "Yes. We provide site survey, wiring, device installation, configuration, and after-sales support nationwide.",
-    },
-    {
-      qEn: "What information is needed for a quotation?",
-      aEn:
-        "Door count, door type (glass/wood/metal), access method preference, and whether you need online reporting.",
-      qKm: "What information is needed for a quotation?",
-      aKm:
-        "Door count, door type (glass/wood/metal), access method preference, and whether you need online reporting.",
-    },
-    {
-      qEn: "Can access control work with turnstiles or gates?",
-      aEn:
-        "Yes. Access control systems can be integrated with turnstile gates and speed gates for secure entry flow.",
-      qKm: "Can access control work with turnstiles or gates?",
-      aKm:
-        "Yes. Access control systems can be integrated with turnstile gates and speed gates for secure entry flow.",
-    },
-  ];
+  const faqs: FAQ[] = useMemo(
+    () => [
+      {
+        qEn: "What is a PA system used for?",
+        aEn:
+          "A PA system delivers clear announcements and emergency alerts across buildings or outdoor areas. It is widely used for safety, paging, and coordination.",
+        qKm: "What is a PA system used for?",
+        aKm:
+          "A PA system delivers clear announcements and emergency alerts across buildings or outdoor areas. It is widely used for safety, paging, and coordination.",
+      },
+      {
+        qEn: "Can you design a PA system for my building?",
+        aEn:
+          "Yes. We provide site assessment, zone planning, speaker placement, and full installation for optimal clarity.",
+        qKm: "Can you design a PA system for my building?",
+        aKm:
+          "Yes. We provide site assessment, zone planning, speaker placement, and full installation for optimal clarity.",
+      },
+      {
+        qEn: "Do you install indoor and outdoor PA systems?",
+        aEn:
+          "Yes. We supply and install indoor wall or ceiling speakers and outdoor horn speakers depending on your environment.",
+        qKm: "Do you install indoor and outdoor PA systems?",
+        aKm:
+          "Yes. We supply and install indoor wall or ceiling speakers and outdoor horn speakers depending on your environment.",
+      },
+      {
+        qEn: "How many zones can a PA system support?",
+        aEn:
+          "That depends on the amplifier and controller. We design multi-zone systems for campuses, factories, and malls.",
+        qKm: "How many zones can a PA system support?",
+        aKm:
+          "That depends on the amplifier and controller. We design multi-zone systems for campuses, factories, and malls.",
+      },
+      {
+        qEn: "Which PA system components are most important?",
+        aEn:
+          "Key components include mixers, power amplifiers, speakers, paging microphones, and zone controllers. The right mix depends on coverage, noise level, and emergency needs.",
+        qKm: "Which PA system components are most important?",
+        aKm:
+          "Key components include mixers, power amplifiers, speakers, paging microphones, and zone controllers. The right mix depends on coverage, noise level, and emergency needs.",
+      },
+      {
+        qEn: "Can a PA system be used for both announcements and background music?",
+        aEn:
+          "Yes. Most systems can handle paging plus background audio by using separate inputs and zone control for different areas.",
+        qKm: "Can a PA system be used for both announcements and background music?",
+        aKm:
+          "Yes. Most systems can handle paging plus background audio by using separate inputs and zone control for different areas.",
+      },
+      {
+        qEn: "Do you provide after-sales support in Cambodia?",
+        aEn:
+          "Yes. We provide commissioning, training, and maintenance options after installation.",
+        qKm: "Do you provide after-sales support in Cambodia?",
+        aKm:
+          "Yes. We provide commissioning, training, and maintenance options after installation.",
+      },
+    ],
+    []
+  );
 
   const jsonLd = useMemo(() => {
     const site =
       process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
-    const url = site + "/products/access-control-system";
+    const url = site + "/products/pa-system";
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -308,7 +328,7 @@ export default function AccessControlClient() {
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site },
         { "@type": "ListItem", position: 2, name: "Products", item: site + "/products" },
-        { "@type": "ListItem", position: 3, name: "Access Control System", item: url },
+        { "@type": "ListItem", position: 3, name: "PA System", item: url },
       ],
     };
 
@@ -328,7 +348,7 @@ export default function AccessControlClient() {
     const itemList = {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      itemListElement: PRODUCTS.filter((p) => p.primaryCategoryId === "access_control")
+      itemListElement: PRODUCTS.filter((p) => p.primaryCategoryId === "pa_system")
         .slice(0, 8)
         .map((p, idx) => ({
           "@type": "ListItem",
@@ -402,7 +422,6 @@ export default function AccessControlClient() {
           }
         }
       `}</style>
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.breadcrumb) }}
@@ -416,6 +435,7 @@ export default function AccessControlClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.itemList) }}
       />
 
+      {/* HERO */}
       <section className="relative isolate overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
@@ -427,7 +447,7 @@ export default function AccessControlClient() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
             {t.breadcrumb} <span className="mx-1">/</span>
-            <span className="font-semibold text-slate-700">Access Control System</span>
+            <span className="font-semibold text-slate-700">PA System</span>
           </div>
 
           <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] text-slate-700 backdrop-blur">
@@ -458,6 +478,20 @@ export default function AccessControlClient() {
               </div>
 
               <p className="mt-4 text-xs text-slate-600">{t.serving}</p>
+
+              <div className="mt-5 rounded-2xl border border-slate-200 bg-white/85 p-4 backdrop-blur">
+                <div className="text-sm font-bold text-slate-900">{t.compTitle}</div>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{t.compSub}</p>
+
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  <KeyRow title={t.c1} desc={t.c1d} />
+                  <KeyRow title={t.c2} desc={t.c2d} />
+                  <KeyRow title={t.c3} desc={t.c3d} />
+                  <KeyRow title={t.c4} desc={t.c4d} />
+                  <KeyRow title={t.c5} desc={t.c5d} />
+                  <KeyRow title={t.c6} desc={t.c6d} />
+                </div>
+              </div>
             </div>
 
             <div className="lg:col-span-5">
@@ -466,7 +500,7 @@ export default function AccessControlClient() {
                 <p className="mt-1 text-sm leading-relaxed text-slate-700">{t.chooseSub}</p>
 
                 <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                  {[t.c1, t.c2, t.c3, t.c4, t.c5, t.c6].map((item) => (
+                  {[t.s1, t.s2, t.s3, t.s4, t.s5].map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-900" />
                       <span>{item}</span>
@@ -488,6 +522,7 @@ export default function AccessControlClient() {
         </div>
       </section>
 
+      {/* QUICK LINKS */}
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-2 py-10 sm:px-4 lg:px-6">
           <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-white p-4 shadow-sm sm:p-6">
@@ -505,9 +540,8 @@ export default function AccessControlClient() {
               {[
                 { label: "Specifications", href: "#specs" },
                 { label: "Basics", href: "#basics" },
-                { label: "Device Types", href: "#device-types" },
+                { label: "Coverage Guide", href: "#coverage-guide" },
                 { label: "Use Cases", href: "#use-cases" },
-                { label: "Integrations", href: "#integrations" },
                 { label: "Products", href: "#products" },
                 { label: "Process", href: "#process" },
                 { label: "FAQ", href: "#faq" },
@@ -526,6 +560,7 @@ export default function AccessControlClient() {
         </div>
       </section>
 
+      {/* SPECS */}
       <section id="specs" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.specsTitle}</h2>
@@ -542,6 +577,7 @@ export default function AccessControlClient() {
         </div>
       </section>
 
+      {/* BASICS */}
       <section id="basics" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-12 lg:items-start">
@@ -579,22 +615,32 @@ export default function AccessControlClient() {
         </div>
       </section>
 
-      <section id="device-types" className="border-t border-slate-200 bg-white">
+      {/* COVERAGE GUIDE */}
+      <section id="coverage-guide" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.methodsTitle}</h2>
-          <p className="mt-2 text-slate-600">{t.methodsSub}</p>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.guideTitle}</h2>
+          <p className="mt-2 text-slate-600">{t.guideSub}</p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <TypeCard title={t.m1} desc={t.m1d} />
-            <TypeCard title={t.m2} desc={t.m2d} />
-            <TypeCard title={t.m3} desc={t.m3d} />
-            <TypeCard title={t.m4} desc={t.m4d} />
-            <TypeCard title={t.m5} desc={t.m5d} />
-            <TypeCard title={t.m6} desc={t.m6d} />
+          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="grid grid-cols-3 gap-0 border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600">
+              <div>Area Type</div>
+              <div>Recommended Speaker</div>
+              <div>Typical Use</div>
+            </div>
+            <div className="divide-y divide-slate-200 text-sm text-slate-700">
+              {t.guideRows.map((row) => (
+                <div key={row[0]} className="grid grid-cols-3 gap-0 px-4 py-3">
+                  <div className="font-semibold text-slate-900">{row[0]}</div>
+                  <div>{row[1]}</div>
+                  <div>{row[2]}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
+      {/* USE CASES */}
       <section id="use-cases" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.useTitle}</h2>
@@ -611,26 +657,7 @@ export default function AccessControlClient() {
         </div>
       </section>
 
-      <section id="integrations" className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {t.integrationsTitle}
-          </h2>
-          <p className="mt-2 text-slate-600">{t.integrationsSub}</p>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[t.i1, t.i2, t.i3, t.i4, t.i5, t.i6].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* PRODUCTS */}
       <section id="products" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.gridTitle}</h2>
@@ -640,8 +667,8 @@ export default function AccessControlClient() {
             <ProductGrid
               columns={3}
               pageSize={9}
-              allowedCategoryIds={["access_control"]}
-              filterCategoryIds={["access_control"]}
+              allowedCategoryIds={["pa_system"]}
+              filterCategoryIds={["pa_system"]}
               showCategoryFilters
               showSort
               showPagination
@@ -652,6 +679,7 @@ export default function AccessControlClient() {
         </div>
       </section>
 
+      {/* PROCESS */}
       <section id="process" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.processTitle}</h2>
@@ -666,6 +694,7 @@ export default function AccessControlClient() {
         </div>
       </section>
 
+      {/* FAQ */}
       <section id="faq" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.faqTitle}</h2>
@@ -697,6 +726,7 @@ export default function AccessControlClient() {
         </div>
       </section>
 
+      {/* FINAL CTA */}
       <section id="contact" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
@@ -724,20 +754,11 @@ export default function AccessControlClient() {
   );
 }
 
-function SpecCard({ title, desc }: { title: string; desc: string }) {
+function KeyRow({ title, desc }: { title: string; desc: string }) {
   return (
-    <div className="spec-card rounded-2xl bg-white p-5 shadow-sm">
-      <div className="text-sm font-semibold text-slate-900">{title}</div>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
-    </div>
-  );
-}
-
-function TypeCard({ title, desc }: { title: string; desc: string }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="text-sm font-semibold text-slate-900">{title}</div>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+    <div className="rounded-xl border border-slate-200 bg-slate-50/90 px-4 py-3">
+      <div className="text-sm font-bold text-slate-900">{title}</div>
+      <div className="mt-1 text-sm leading-relaxed text-slate-700">{desc}</div>
     </div>
   );
 }
@@ -745,6 +766,15 @@ function TypeCard({ title, desc }: { title: string; desc: string }) {
 function UseCard({ title, desc }: { title: string; desc: string }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div className="text-sm font-semibold text-slate-900">{title}</div>
+      <p className="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+    </div>
+  );
+}
+
+function SpecCard({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="spec-card rounded-2xl bg-white p-5 shadow-sm">
       <div className="text-sm font-semibold text-slate-900">{title}</div>
       <p className="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
     </div>

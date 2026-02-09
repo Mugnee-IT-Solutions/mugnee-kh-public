@@ -319,7 +319,7 @@ export default function HomeClient({
       {
         title: "Interactive Flat Panel",
         desc: "Smart classroom & meeting display",
-        href: "/products/interactive-flat-panel",
+        href: "/interactive-flat-panel",
         tone: "from-violet-50 to-violet-100 border-violet-200",
       },
       {
@@ -358,7 +358,7 @@ export default function HomeClient({
       {
         title: "Interactive Flat Panel",
         desc: "Smart classroom & meeting display",
-        href: "/products/interactive-flat-panel",
+        href: "/interactive-flat-panel",
         tone: "from-violet-50 to-violet-100 border-violet-200",
       },
       {
@@ -984,3 +984,4 @@ export default function HomeClient({
     </div>
   );
 }
+

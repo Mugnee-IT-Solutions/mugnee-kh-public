@@ -241,7 +241,7 @@ const CATEGORY_TILES = [
     titleKm: "អេក្រង់អន្តរកម្ម (IFP)",
     descEn: "Smart board solutions for classrooms, training rooms and boardrooms.",
     descKm: "Smart Board សម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងបន្ទប់ប្រជុំ។",
-    href: "/products/interactive-flat-panel",
+    href: "/interactive-flat-panel",
     icon: <IconPresentation className="h-5 w-5 text-slate-700" />,
   },
   {
@@ -376,7 +376,7 @@ const QUICK_LINKS = [
   { labelEn: "Indoor LED Display", labelKm: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
   { labelEn: "Outdoor LED Display", labelKm: "អេក្រង់ LED ក្រៅអគារ", href: "/led-display/outdoor-led-display" },
   { labelEn: "LED Controller / Processor", labelKm: "Controller / Processor", href: "/products/led-controller" },
-  { labelEn: "Interactive Flat Panel", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/products/interactive-flat-panel" },
+  { labelEn: "Interactive Flat Panel", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
   { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/products/turnstile-gate" },
   { labelEn: "Access Control System", labelKm: "Access Control", href: "/products/access-control-system" },
   { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/products/pa-system" },
@@ -498,6 +498,7 @@ export default function HomePage() {
     </main>
   );
 }
+
 
 
 

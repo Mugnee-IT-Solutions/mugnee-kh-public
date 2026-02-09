@@ -179,7 +179,7 @@ export default function ProductGrid({
         )}
 
         {showSort ? (
-          <div className="inline-flex items-center rounded-full border border-slate-200 bg-white p-1">
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2 py-1">
             <button
               type="button"
               onClick={() => {
@@ -187,13 +187,14 @@ export default function ProductGrid({
                 setPage(1);
               }}
               className={[
-                "rounded-full px-3 py-1 text-xs font-semibold transition",
+                "flex h-9 w-12 items-center justify-center rounded-full text-[11px] font-semibold leading-none tracking-wide transition",
                 sortOrder === "az"
                   ? "bg-slate-900 text-white"
                   : "text-slate-600 hover:text-slate-900",
               ].join(" ")}
+              aria-label="Sort A to Z"
             >
-              A–Z
+              A-Z
             </button>
             <button
               type="button"
@@ -202,13 +203,14 @@ export default function ProductGrid({
                 setPage(1);
               }}
               className={[
-                "rounded-full px-3 py-1 text-xs font-semibold transition",
+                "flex h-9 w-12 items-center justify-center rounded-full text-[11px] font-semibold leading-none tracking-wide transition",
                 sortOrder === "za"
                   ? "bg-slate-900 text-white"
                   : "text-slate-600 hover:text-slate-900",
               ].join(" ")}
+              aria-label="Sort Z to A"
             >
-              Z–A
+              Z-A
             </button>
           </div>
         ) : null}
@@ -273,7 +275,7 @@ export default function ProductGrid({
                     href="/contact"
                     className="rounded-full bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white no-underline hover:bg-slate-800"
                   >
-                    {lang === "en" ? "Get Quote" : "ស្នើសុំតម្លៃ"}
+                    {lang === "en" ? "Get Quotation" : "ស្នើសុំតម្លៃ"}
                   </Link>
                   <Link
                     href={detailHref}

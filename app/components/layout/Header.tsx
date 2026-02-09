@@ -92,7 +92,7 @@ export default function SiteHeader() {
     { labelEn: "Indoor LED Display", labelKm: "Indoor LED Display", href: "/led-display/indoor-led-display" },
     { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
     { labelEn: "LED Controller / Processor", labelKm: "Controller / Processor", href: "/products/led-controller" },
-    { labelEn: "Interactive Flat Panel (IFP)", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/products/interactive-flat-panel" },
+    { labelEn: "Interactive Flat Panel (IFP)", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
     { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/products/turnstile-gate" },
     { labelEn: "Access Control System", labelKm: "Access Control", href: "/products/access-control-system" },
     { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/products/pa-system" },
@@ -370,7 +370,7 @@ export default function SiteHeader() {
             <Dropdown id="ledDisplay" title={t.ledDisplay} items={ledDisplayMenu} />
 
             <Link
-              href="/products/interactive-flat-panel"
+              href="/interactive-flat-panel"
               className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10 whitespace-nowrap leading-none"
             >
               {t.ifp}
@@ -443,7 +443,7 @@ export default function SiteHeader() {
                   </div>
                 </div>
 
-                <Link href="/products/interactive-flat-panel" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/interactive-flat-panel" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                   {t.ifp}
                 </Link>
                 <Link href="/products/pa-system" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
@@ -474,6 +474,7 @@ export default function SiteHeader() {
     </header>
   );
 }
+
 
 
 

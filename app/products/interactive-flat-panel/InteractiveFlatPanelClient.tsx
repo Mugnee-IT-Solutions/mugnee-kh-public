@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
-import { IFP_PRODUCTS, type IFPProduct } from "./ifpProducts";
+import ProductGrid from "../../components/sections/ProductGrid";
+import { PRODUCTS } from "../../data/products";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
@@ -12,34 +13,34 @@ export default function InteractiveFlatPanelClient() {
 
   const t = useMemo(() => {
     const en = {
-      breadcrumb: "Products",
-      badge: "Cambodia • Interactive Flat Panel • Smart Board",
-      h1: "Interactive Flat Panel in Cambodia",
+      breadcrumb: "Interactive Flat Panel",
+      badge: "Cambodia - Interactive Flat Panel - Smart Board",
+      h1: "Interactive Flat Panel Price in Cambodia",
       sub:
-        "4K touchscreen Interactive Flat Panels (IFP) for classrooms, meeting rooms and training centers. Built-in whiteboard, wireless screen sharing and reliable installation with local after-sales support.",
+        "4K UHD interactive flat panels (smart boards) for classrooms, meeting rooms, training centers, and hospitals. Multi-touch writing, wireless screen sharing, and Android with optional OPS/Windows help teams collaborate and teach with clarity.",
       cta1: "Get a Free Quotation",
       cta2: "View IFP Models",
-      serving: "Serving: Phnom Penh • Siem Reap • Sihanoukville",
+      serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
 
       seoTitle: "Smart Board & Interactive Display Solutions",
       seoText:
-        "Interactive Flat Panels (also called smart boards) are designed for modern teaching and collaboration. For Cambodia projects, we recommend choosing the right screen size, touch performance, connectivity ports and mounting method. We supply, install and support interactive panels for schools, universities, offices and training centers with project-based quotation.",
+        "Interactive flat panels (smart boards) are 4K touch displays built for modern teaching and collaboration. Choose screen size, touch performance, operating system, and connectivity based on room size and use case. Popular sizes include 65, 75, 86, 98, and 110 inches.",
 
-      keyTitle: "Key Specifications (Interactive Flat Panel)",
+      keyTitle: "Interactive Flat Panel Specifications for Cambodia",
       keySub:
-        "Common requirements for smooth writing, clear visuals and reliable daily operation.",
+        "Common requirements for smooth writing, clear visuals, and reliable daily operation.",
       k1: "Display & Resolution",
-      k1d: "4K UHD display with anti-glare glass for clear viewing in bright rooms.",
+      k1d: "4K UHD panels with wide viewing angles for clear visibility.",
       k2: "Touch Performance",
-      k2d: "Multi-touch support for smooth writing, annotation and collaboration.",
+      k2d: "20 to 40-point multi-touch with fast response for writing and collaboration.",
       k3: "Operating System",
-      k3d: "Android built-in; OPS/PC optional for Windows apps and advanced meetings.",
+      k3d: "Android built-in with optional OPS/Windows support.",
       k4: "Connectivity",
-      k4d: "HDMI/USB/USB-C, Wi-Fi/LAN, screen sharing options and audio output.",
+      k4d: "HDMI, USB, USB-C, LAN, and wireless connectivity options.",
 
       productTitle: "Interactive Flat Panel Models",
       productSub:
-        "Select a size based on room dimension and viewing distance. For exact recommendation, contact us with room size and use-case.",
+        "Select a size based on room dimensions and viewing distance. Share room size and use case for the right recommendation.",
 
       useTitle: "Best Use Cases in Cambodia",
       useSub:
@@ -63,7 +64,7 @@ export default function InteractiveFlatPanelClient() {
 
       setupTitle: "Installation, Setup & Training",
       setupSub:
-        "We ensure safe mounting, correct wiring and provide user training for smooth operation.",
+        "We ensure safe mounting, correct wiring, and user training for smooth operation.",
       s1: "Site check & mounting plan",
       s2: "Wall mount / floor stand setup",
       s3: "Apps, Wi-Fi/LAN and screen sharing configuration",
@@ -71,24 +72,24 @@ export default function InteractiveFlatPanelClient() {
 
       softwareTitle: "Software & Compatibility",
       softwareSub:
-        "Works with laptops, smartphones and popular meeting/learning workflows.",
+        "Works with laptops, smartphones, and popular meeting or learning workflows.",
       sw1: "Whiteboard + annotation apps",
       sw2: "Wireless casting (Windows/macOS/Android/iOS)",
       sw3: "OPS/PC option for Windows applications",
       sw4: "HDMI/USB-C support for quick plug & play",
 
-      faqTitle: "FAQ — Interactive Flat Panel",
+      faqTitle: "FAQ - Interactive Flat Panel",
       finalTitle: "Get a Project-Based Quotation",
       finalSub:
-        "Share your room size, preferred screen size and usage (classroom or meeting). We’ll recommend the best model with installation and support options.",
-      finalCta: "Contact & Get Quote",
+        "Share your room size, preferred screen size, and usage (classroom or meeting). We will recommend the best model with installation and support options.",
+      finalCta: "Contact & Get Quotation",
       seeProjects: "See Projects",
       note:
         "Note: Final configuration (ports, OPS, mount type) depends on project requirements.",
     };
 
     const km = {
-      breadcrumb: "ផលិតផល",
+      breadcrumb: "Interactive Flat Panel",
       badge: "កម្ពុជា • Interactive Flat Panel • Smart Board",
       h1: "Interactive Flat Panel នៅកម្ពុជា",
       sub:
@@ -101,7 +102,7 @@ export default function InteractiveFlatPanelClient() {
       seoText:
         "Interactive Flat Panel (smart board) គឺសម្រាប់ការបង្រៀន និងការសហការ modern។ ជ្រើស model ត្រូវគិតពី screen size, touch performance, connectivity ports និង mounting method។ យើងផ្គត់ផ្គង់ ដំឡើង និង support សម្រាប់ schools, universities, offices និង training centers ជាមួយ quotation តាមគម្រោង។",
 
-      keyTitle: "Key Specifications (Interactive Flat Panel)",
+      keyTitle: "Interactive Flat Panel Specifications for Cambodia",
       keySub:
         "តម្រូវការសម្រាប់ writing ស្មੂត និងរូបភាពច្បាស់សម្រាប់ប្រើរៀងរាល់ថ្ងៃ។",
       k1: "Display & Resolution",
@@ -153,7 +154,7 @@ export default function InteractiveFlatPanelClient() {
       sw3: "OPS/PC option for Windows applications",
       sw4: "HDMI/USB-C plug & play",
 
-      faqTitle: "FAQ — Interactive Flat Panel",
+      faqTitle: "FAQ - Interactive Flat Panel",
       finalTitle: "ស្នើសុំ Quotation តាមគម្រោង",
       finalSub:
         "ផ្ញើ room size, screen size និង use-case (classroom/meeting)। យើងនឹងណែនាំ model + installation + support options។",
@@ -166,45 +167,110 @@ export default function InteractiveFlatPanelClient() {
     return lang === "en" ? en : km;
   }, [lang]);
 
-  const faqs: FAQ[] = [
+  const ifpProducts = useMemo(
+    () =>
+      PRODUCTS.filter((p) => p.categoryIds.includes("smart_board")).sort((a, b) => {
+        const aSize = parseInt(
+          a.specs.find((s) => s.labelEn === "Display Size")?.valueEn || "0",
+          10
+        );
+        const bSize = parseInt(
+          b.specs.find((s) => s.labelEn === "Display Size")?.valueEn || "0",
+          10
+        );
+        return aSize - bSize;
+      }),
+    []
+  );
+
+  const getSpecValue = (label: string, fallback = "-") => {
+    return (p: (typeof ifpProducts)[number]) =>
+      p.specs.find((s) => s.labelEn === label)?.valueEn || fallback;
+  };
+
+  const [viewDistance, setViewDistance] = useState("");
+
+  const recommendedSize = useMemo(() => {
+    const distance = Number.parseFloat(viewDistance);
+    if (!Number.isFinite(distance)) return null;
+    if (distance <= 2) return "55-65 inch";
+    if (distance <= 3) return "65-75 inch";
+    if (distance <= 4) return "75-86 inch";
+    if (distance <= 5) return "86-98 inch";
+    return "98-110 inch";
+  }, [viewDistance]);
+
+    const faqs: FAQ[] = [
     {
-      qEn: "Which size is best for a classroom in Cambodia?",
+      qEn: "What size interactive flat panel should I choose for a classroom?",
       aEn:
-        "Most classrooms choose 65–75 inch depending on room depth and student seating distance. We recommend after checking room size and viewing angle.",
-      qKm: "Classroom សម្រាប់ size មួយណាល្អ?",
+        "Choose based on viewing distance and room size. Common classroom sizes range from 65 to 86 inch, while larger halls often use 98 to 110 inch.",
+      qKm: "What size interactive flat panel should I choose for a classroom?",
       aKm:
-        "ភាគច្រើន classroom ជ្រើស 65–75 inch តាម room depth និងចម្ងាយអង្គុយ។ យើងណែនាំក្រោយពិនិត្យ room size។",
+        "Choose based on viewing distance and room size. Common classroom sizes range from 65 to 86 inch, while larger halls often use 98 to 110 inch.",
     },
     {
-      qEn: "Do you provide wall mount or floor stand installation?",
+      qEn: "How far should students sit from a smart board?",
       aEn:
-        "Yes. We provide wall mount and floor stand setup with safe wiring, power routing and proper finishing.",
-      qKm: "មាន wall mount / floor stand installation ដែរឬទេ?",
+        "Viewing distance depends on screen size. As a general guide, 65-inch panels suit around 2 to 3.5 meters, 75-inch suits around 2.5 to 4 meters, and 86-inch around 3 to 5 meters.",
+      qKm: "How far should students sit from a smart board?",
       aKm:
-        "មាន។ យើងដំឡើង wall mount និង floor stand ជាមួយ wiring និង finishing ត្រឹមត្រូវ។",
+        "Viewing distance depends on screen size. As a general guide, 65-inch panels suit around 2 to 3.5 meters, 75-inch suits around 2.5 to 4 meters, and 86-inch around 3 to 5 meters.",
     },
     {
-      qEn: "Can it connect to laptops and phones wirelessly?",
+      qEn: "Do interactive flat panels support Android and Windows?",
       aEn:
-        "Yes. Most panels support wireless screen sharing and also offer HDMI/USB-C for plug & play.",
-      qKm: "Laptop/phone wireless connect បានទេ?",
+        "Most models include Android, and many offer OPS/Windows compatibility. Check the exact model for OS version and OPS options.",
+      qKm: "Do interactive flat panels support Android and Windows?",
       aKm:
-        "បាន។ មាន wireless screen sharing និង HDMI/USB-C សម្រាប់ plug & play។",
+        "Most models include Android, and many offer OPS/Windows compatibility. Check the exact model for OS version and OPS options.",
     },
     {
-      qEn: "Do you provide training and after-sales support in Cambodia?",
+      qEn: "How many touch points does an IFP support?",
       aEn:
-        "Yes. We provide user training, configuration support and maintenance options (AMC) depending on project needs.",
-      qKm: "Training + after-sales support មានទេ?",
+        "Multi-touch is standard. For example, some models support 20-point touch, and higher-end models support 40-point touch.",
+      qKm: "How many touch points does an IFP support?",
       aKm:
-        "មាន។ មាន training, configuration support និង maintenance options (AMC) តាមគម្រោង។",
+        "Multi-touch is standard. For example, some models support 20-point touch, and higher-end models support 40-point touch.",
+    },
+    {
+      qEn: "Can I connect laptops and phones wirelessly?",
+      aEn:
+        "Yes. Many models support wireless screen sharing, plus HDMI and USB-C for plug-and-play connectivity.",
+      qKm: "Can I connect laptops and phones wirelessly?",
+      aKm:
+        "Yes. Many models support wireless screen sharing, plus HDMI and USB-C for plug-and-play connectivity.",
+    },
+    {
+      qEn: "Do you provide installation and user training in Cambodia?",
+      aEn:
+        "Yes. We provide installation, configuration, and training for classrooms, meeting rooms, and training centers.",
+      qKm: "Do you provide installation and user training in Cambodia?",
+      aKm:
+        "Yes. We provide installation, configuration, and training for classrooms, meeting rooms, and training centers.",
+    },
+    {
+      qEn: "What are the key ports I should check?",
+      aEn:
+        "Look for HDMI, USB, USB-C, and LAN connectivity. These cover most classroom and meeting room setups.",
+      qKm: "What are the key ports I should check?",
+      aKm:
+        "Look for HDMI, USB, USB-C, and LAN connectivity. These cover most classroom and meeting room setups.",
+    },
+    {
+      qEn: "Do you offer warranty and after-sales support?",
+      aEn:
+        "Yes. Warranty terms depend on the model and project scope. We share the coverage details during quotation.",
+      qKm: "Do you offer warranty and after-sales support?",
+      aKm:
+        "Yes. Warranty terms depend on the model and project scope. We share the coverage details during quotation.",
     },
   ];
 
   const jsonLd = useMemo(() => {
     const base =
       (process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-        "http://localhost:3000") + "/products/interactive-flat-panel";
+        "http://localhost:3000") + "/interactive-flat-panel";
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -218,15 +284,7 @@ export default function InteractiveFlatPanelClient() {
             process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
             "http://localhost:3000",
         },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Products",
-          item:
-            (process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-              "http://localhost:3000") + "/products",
-        },
-        { "@type": "ListItem", position: 3, name: "Interactive Flat Panel", item: base },
+        { "@type": "ListItem", position: 2, name: "Interactive Flat Panel", item: base },
       ],
     };
 
@@ -243,11 +301,97 @@ export default function InteractiveFlatPanelClient() {
       })),
     };
 
-    return { breadcrumb, faqSchema };
+    const orgSchema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Mugnee Cambodia",
+      url: base,
+      areaServed: ["Phnom Penh", "Siem Reap", "Sihanoukville"],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          availableLanguage: ["en", "km"],
+        },
+      ],
+    };
+
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: "Interactive Flat Panel Installation",
+      serviceType: "Interactive Flat Panel Solutions",
+      areaServed: ["Phnom Penh", "Siem Reap", "Sihanoukville"],
+      provider: {
+        "@type": "Organization",
+        name: "Mugnee Cambodia",
+      },
+    };
+
+    return { breadcrumb, faqSchema, orgSchema, serviceSchema };
   }, [faqs, lang]);
 
   return (
     <main className="bg-white text-slate-900">
+      <style jsx global>{`
+        .quick-link {
+          position: relative;
+          border: 1px solid transparent;
+          background:
+            linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(
+              90deg,
+              rgba(14, 116, 144, 0),
+              rgba(14, 116, 144, 0.85),
+              rgba(2, 132, 199, 0.9),
+              rgba(14, 116, 144, 0)
+            )
+              border-box;
+          background-size: 100% 100%, 240% 240%;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .quick-link:hover {
+          animation: quickLinkBorder 1.2s linear infinite;
+          box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
+        }
+        @keyframes quickLinkBorder {
+          0% {
+            background-position: 0 0, 0 0;
+          }
+          100% {
+            background-position: 0 0, 220% 0;
+          }
+        }
+
+        .spec-card {
+          position: relative;
+          border: 1px solid transparent;
+          background:
+            linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(
+              120deg,
+              rgba(14, 116, 144, 0.1),
+              rgba(2, 132, 199, 0.45),
+              rgba(59, 130, 246, 0.45),
+              rgba(14, 116, 144, 0.1)
+            )
+              border-box;
+          background-size: 100% 100%, 260% 260%;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .spec-card:hover {
+          animation: specBorder 2s linear infinite;
+          box-shadow: 0 12px 28px rgba(2, 6, 23, 0.12);
+        }
+        @keyframes specBorder {
+          0% {
+            background-position: 0 0, 0 0;
+          }
+          100% {
+            background-position: 0 0, 260% 0;
+          }
+        }
+      `}</style>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -257,81 +401,54 @@ export default function InteractiveFlatPanelClient() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.orgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.serviceSchema) }}
+      />
 
       {/* HERO */}
-      <section className="relative isolate overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(2,132,199,0.14),transparent_55%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(15,23,42,0.07),transparent_60%)]" />
-          <div className="absolute inset-0 opacity-[0.06] [background:radial-gradient(circle_at_1px_1px,rgba(0,0,0,.28)_1px,transparent_0)] [background-size:18px_18px]" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <section className="border-b border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
-            {t.breadcrumb} <span className="mx-1">/</span>
-            <span className="font-semibold text-slate-700">Interactive Flat Panel</span>
+            <span className="font-semibold text-slate-700">{t.breadcrumb}</span>
           </div>
 
-          <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] text-slate-700 backdrop-blur">
+          <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-[11px] text-slate-700">
             <span className="h-1.5 w-1.5 rounded-full bg-slate-900" />
             {t.badge}
           </div>
 
-          <div className="mt-4 grid gap-6 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-7">
-              <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-                {t.h1}
-              </h1>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base">
-                {t.sub}
-              </p>
+          <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
+            {t.h1}
+          </h1>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+            {t.sub}
+          </p>
 
-              <div className="mt-4 flex flex-wrap items-center gap-2.5">
-                <Link
-                  href="/contact"
-                  className="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
-                >
-                  {t.cta1}
-                </Link>
-                <a
-                  href="#models"
-                  className="rounded-xl border border-slate-200 bg-white/85 px-4 py-2.5 text-sm font-semibold text-slate-900 backdrop-blur hover:bg-white"
-                >
-                  {t.cta2}
-                </a>
-              </div>
+          <div className="mt-5 flex flex-wrap gap-2.5">
+            <Link
+              href="/contact"
+              className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
+            >
+              {t.cta1}
+            </Link>
+            <a
+              href="#models"
+              className="rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-100"
+            >
+              {t.cta2}
+            </a>
+          </div>
 
-              <p className="mt-4 text-xs text-slate-600">{t.serving}</p>
+          <p className="mt-4 text-xs text-slate-600">{t.serving}</p>
 
-              <div className="mt-5 rounded-2xl border border-slate-200 bg-white/85 p-4 backdrop-blur">
-                <div className="text-sm font-bold text-slate-900">{t.seoTitle}</div>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{t.seoText}</p>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5">
-              <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm backdrop-blur">
-                <div className="text-base font-bold text-slate-900">{t.keyTitle}</div>
-                <p className="mt-1 text-sm leading-relaxed text-slate-700">{t.keySub}</p>
-
-                <div className="mt-4 grid gap-3">
-                  <SpecRow title={t.k1} desc={t.k1d} />
-                  <SpecRow title={t.k2} desc={t.k2d} />
-                  <SpecRow title={t.k3} desc={t.k3d} />
-                  <SpecRow title={t.k4} desc={t.k4d} />
-                </div>
-
-                <div className="mt-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
-                  >
-                    {t.finalCta}
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-4">
+            <div className="text-sm font-bold text-slate-900">{t.seoTitle}</div>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">{t.seoText}</p>
           </div>
         </div>
       </section>
@@ -340,111 +457,428 @@ export default function InteractiveFlatPanelClient() {
       <section id="models" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {t.productTitle}
+            Interactive Flat Panel Products
           </h2>
-          <p className="mt-2 text-slate-600">{t.productSub}</p>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {IFP_PRODUCTS.map((p) => (
-              <ProductCard key={p.id} p={p} />
-            ))}
-          </div>
-
-          <p className="mt-4 text-xs text-slate-500">{t.note}</p>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
-            >
-              {t.finalCta}
-            </Link>
-            <Link
-              href="/projects"
-              className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-            >
-              {t.seeProjects}
-            </Link>
+          <div className="mt-6">
+            <ProductGrid
+              columns={3}
+              pageSize={9}
+              allowedCategoryIds={["smart_board", "interactive_panel"]}
+              filterCategoryIds={["smart_board", "interactive_panel"]}
+              showCategoryFilters
+              showSort
+              showPagination
+            />
           </div>
         </div>
       </section>
 
-      {/* USE CASES */}
+      {/* QUICK LINKS */}
+      <section className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-2 py-10 sm:px-4 lg:px-6">
+          <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-white p-4 shadow-sm sm:p-6">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div className="text-sm font-semibold text-slate-900">
+                  Quick Links for Interactive Flat Panel
+                </div>
+                <div className="mt-1 text-xs text-slate-600">
+                  Jump to the buying guide, decision matrix, specs, and support details.
+                </div>
+              </div>
+              <div className="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 sm:block">
+                Quick Links
+              </div>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {[
+                { label: "Buying Guide", href: "#buying-guide" },
+                { label: "Decision Matrix", href: "#decision-matrix" },
+                { label: "Specs Comparison", href: "#specs-comparison" },
+                { label: "Installation", href: "#installation" },
+                { label: "Case Studies", href: "#case-studies" },
+                { label: "Warranty & Support", href: "#warranty-support" },
+                { label: "FAQ", href: "#faq" },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="quick-link rounded-full px-4 py-1.5 text-xs font-semibold text-slate-700 hover:text-slate-900"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT IS IFP */}
       <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {t.useTitle}
-          </h2>
-          <p className="mt-2 text-slate-600">{t.useSub}</p>
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                Interactive Flat Panel Basics
+              </p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
+                What Is an Interactive Flat Panel (IFP)?
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                An interactive flat panel is a large 4K touchscreen display that combines
+                a digital whiteboard, presentation screen, and collaboration tools in one
+                device. It is commonly used in classrooms, meeting rooms, training centers,
+                and healthcare briefings because it supports real-time writing, annotation,
+                and wireless screen sharing.
+              </p>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <UseCaseCard title={t.u1} desc={t.u1d} chips={["Education", "Whiteboard", "Interactive"]} />
-            <UseCaseCard title={t.u2} desc={t.u2d} chips={["Meeting", "Presentation", "Wireless share"]} />
-            <UseCaseCard title={t.u3} desc={t.u3d} chips={["Training", "Annotation", "4K"]} />
-            <UseCaseCard title={t.u4} desc={t.u4d} chips={["Institution", "Daily use", "Reliable"]} />
+              <h3 className="mt-6 text-2xl font-bold tracking-tight text-slate-900">
+                How Does an Interactive Flat Panel Work?
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                The panel uses a high-resolution LCD with a multi-touch layer that detects
+                finger or stylus input. Built-in Android software runs whiteboard and
+                collaboration apps, while HDMI/USB-C/LAN ports and wireless casting allow
+                laptops and phones to share content instantly. Optional OPS/Windows modules
+                turn the screen into a full PC for advanced applications.
+              </p>
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:mt-20">
+              <div className="text-sm font-semibold text-slate-900">
+                Key Benefits for Cambodia Buyers
+              </div>
+              <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                {[
+                  "4K UHD clarity for classrooms and meetings",
+                  "Multi-touch writing and annotation",
+                  "Wireless screen sharing and plug-and-play ports",
+                  "Android built-in with optional OPS/Windows",
+                  "Lower maintenance than projector systems",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* COMPARISON */}
-      <section className="border-t border-slate-200 bg-white">
+      {/* DECISION MATRIX */}
+      <section id="decision-matrix" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {t.compareTitle}
+            Interactive Flat Panel Use-Case Selection Guide
           </h2>
-          <p className="mt-2 text-slate-600">{t.compareSub}</p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            Match your environment to the best screen size and features. This quick matrix
+            helps you shortlist the right interactive flat panel.
+          </p>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+            <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
+              <div className="p-3">Use Case</div>
+              <div className="p-3">Recommended Size</div>
+              <div className="p-3">Key Focus</div>
+            </div>
+            {[
+              ["Classrooms", "65 - 86 inch", "4K clarity, multi-touch, whiteboard tools"],
+              ["Meeting Rooms", "65 - 75 inch", "Wireless sharing, HDMI/USB-C"],
+              ["Training Centers", "75 - 98 inch", "Large visibility, multi-user touch"],
+              ["Auditoriums", "98 - 110 inch", "Ultra-large screen, wide viewing angle"],
+              ["Hospitals", "65 - 86 inch", "Clean visuals, quick annotation"],
+            ].map((row) => (
+              <div
+                key={row[0]}
+                className="grid grid-cols-1 border-t border-slate-200 text-sm text-slate-700 sm:grid-cols-3"
+              >
+                <div className="p-3 font-semibold text-slate-900">{row[0]}</div>
+                <div className="p-3">{row[1]}</div>
+                <div className="p-3">{row[2]}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <MiniCard text={t.cA} />
-            <MiniCard text={t.cB} />
-            <MiniCard text={t.cC} />
-            <MiniCard text={t.cD} />
+            {/* SPECS COMPARISON */}
+      <section id="specs-comparison" className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            Interactive Flat Panel Specifications Comparison by Size
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            Compare size, 4K resolution, touch points, OS support, and connectivity to
+            select the best interactive flat panel for classrooms, meeting rooms, and
+            training centers in Cambodia.
+          </p>
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-white">
+            <div className="hidden sm:block">
+              <div className="grid grid-cols-3 bg-slate-100 text-sm font-semibold text-slate-900">
+                <div className="p-3">Model</div>
+                <div className="p-3">Best Use</div>
+                <div className="p-3">Highlights</div>
+              </div>
+              {ifpProducts.map((p) => {
+                const highlights = p.featuresEn.slice(0, 2).join(" • ");
+                return (
+                  <div
+                    key={p.id}
+                    className="grid grid-cols-3 border-t border-slate-200 text-sm text-slate-700"
+                  >
+                    <div className="p-3 font-semibold text-slate-900">{p.titleEn}</div>
+                    <div className="p-3">{p.shortDescEn}</div>
+                    <div className="p-3">{highlights}</div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="grid gap-3 p-3 sm:hidden">
+              {ifpProducts.map((p) => (
+                <div
+                  key={p.id}
+                  className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700"
+                >
+                  <div className="text-sm font-semibold text-slate-900">{p.titleEn}</div>
+                  <div className="mt-2 grid gap-2">
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="font-semibold text-slate-700">Best Use</span>
+                      <span className="text-right">{p.shortDescEn}</span>
+                    </div>
+                    <div className="flex items-start justify-between gap-3">
+                      <span className="font-semibold text-slate-700">Highlights</span>
+                      <span className="text-right">
+                        {p.featuresEn.slice(0, 2).join(" • ")}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* BUYING GUIDE */}
+      <section id="buying-guide" className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                Buying Guide
+              </p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
+                Screen Size & Viewing Distance Guide
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                Choose the screen size based on seating distance, room size, and content
+                type. Classroom environments often use 65-86 inch, while auditoriums and
+                large training halls prefer 98-110 inch panels.
+              </p>
+
+              <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
+                  <div className="p-3">Viewing Distance</div>
+                  <div className="p-3">Recommended Size</div>
+                  <div className="p-3">Typical Room</div>
+                </div>
+                {[
+                  ["1.5 - 2 m", "55 - 65 inch", "Small classrooms"],
+                  ["2 - 3 m", "65 - 75 inch", "Standard classrooms"],
+                  ["3 - 4 m", "75 - 86 inch", "Training rooms"],
+                  ["4 - 5 m", "86 - 98 inch", "Large classrooms"],
+                  ["5 m+", "98 - 110 inch", "Auditoriums & halls"],
+                ].map((row) => (
+                  <div
+                    key={row[0]}
+                    className="grid grid-cols-1 border-t border-slate-200 text-sm text-slate-700 sm:grid-cols-3"
+                  >
+                    <div className="p-3 font-semibold text-slate-900">{row[0]}</div>
+                    <div className="p-3">{row[1]}</div>
+                    <div className="p-3">{row[2]}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="text-sm font-semibold text-slate-900">
+                Quick Recommendation Calculator
+              </div>
+              <p className="mt-2 text-xs text-slate-600">
+                Enter the approximate viewing distance (meters). We will suggest a screen
+                size range.
+              </p>
+              <label className="mt-4 block text-xs font-semibold text-slate-700">
+                Viewing distance (m)
+              </label>
+              <input
+                value={viewDistance}
+                onChange={(e) => setViewDistance(e.target.value)}
+                inputMode="decimal"
+                placeholder="e.g. 3.5"
+                className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-slate-400 focus:outline-none"
+              />
+              <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-700 shadow-sm">
+                <div className="h-1 w-full rounded-full bg-gradient-to-r from-slate-900 via-sky-500 to-cyan-500" />
+                <div className="mt-3">
+                  {recommendedSize
+                    ? `Recommended size: ${recommendedSize}`
+                    : "Enter a viewing distance to get a recommendation."}
+                </div>
+              </div>
+              <p className="mt-3 text-xs text-slate-500">
+                Final size depends on content type, audience seating, and room lighting.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* SETUP */}
-      <section className="border-t border-slate-200 bg-slate-50">
+      <section id="installation" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {t.setupTitle}
           </h2>
-          <p className="mt-2 text-slate-600">{t.setupSub}</p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            End-to-end installation for interactive flat panels in Cambodia includes site
+            survey, mounting, cabling, network setup, and user training. We optimize the
+            screen height, viewing angle, and cable routing to ensure reliable daily use
+            for classrooms, meeting rooms, and training centers.
+          </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <StepCard n="01" title={t.s1} desc="" />
-            <StepCard n="02" title={t.s2} desc="" />
-            <StepCard n="03" title={t.s3} desc="" />
-            <StepCard n="04" title={t.s4} desc="" />
+            <StepCard
+              n="01"
+              title="Site survey and room assessment"
+              desc="Measure room size, seating distance, wall strength, and lighting. Confirm the best screen size, mounting height, and cable path."
+            />
+            <StepCard
+              n="02"
+              title="Wall mount or floor stand setup"
+              desc="Install wall brackets or floor stand with safe load rating, correct tilt, and clean finishing for professional presentation spaces."
+            />
+            <StepCard
+              n="03"
+              title="Power, network, and OPS setup"
+              desc="Connect power, LAN/Wi-Fi, HDMI/USB-C, and configure Android or OPS/Windows for content sharing and classroom apps."
+            />
+            <StepCard
+              n="04"
+              title="User training and handover"
+              desc="Hands-on training for whiteboard tools, wireless casting, file sharing, and daily maintenance checks for smooth operation."
+            />
           </div>
         </div>
       </section>
 
-      {/* SOFTWARE */}
-      <section className="border-t border-slate-200 bg-white">
+      {/* CASE STUDIES */}
+      <section id="case-studies" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {t.softwareTitle}
+            Interactive Flat Panel Use Cases in Cambodia (Education, Corporate, Healthcare)
           </h2>
-          <p className="mt-2 text-slate-600">{t.softwareSub}</p>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            Real-world scenarios where interactive flat panels improve teaching, training,
+            and presentation workflows across Cambodia schools, offices, and hospitals.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              [
+                "School Classroom Upgrade",
+                "65-86 inch 4K smart boards with multi-touch writing, annotation, and wireless casting for daily lessons. Supports whiteboard apps, lesson playback, and interactive teaching.",
+                ["Education", "Whiteboard", "4K"],
+              ],
+              [
+                "Corporate Meeting Room",
+                "65-75 inch interactive panels with HDMI/USB-C, LAN/Wi-Fi, and screen sharing for presentations, brainstorming, and hybrid meetings.",
+                ["Meeting", "Wireless", "USB-C"],
+              ],
+              [
+                "Training Center",
+                "75-98 inch panels for clear visibility, multi-user collaboration, and hands-on demonstrations during workshops and onboarding.",
+                ["Training", "Multi-touch", "Large screen"],
+              ],
+              [
+                "Hospital Briefing Room",
+                "65-86 inch panels for clinical training, medical briefings, and patient education with quick annotation and reliable daily use.",
+                ["Healthcare", "Briefing", "Reliable"],
+              ],
+            ].map(([title, desc, chips]) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm"
+              >
+                <div className="text-sm font-semibold text-slate-900">{title}</div>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{desc}</p>
+                <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-700">
+                  {chips.map((c) => (
+                    <span
+                      key={c}
+                      className="rounded-full border border-slate-200 bg-white px-2.5 py-1"
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <MiniCard text={t.sw1} />
-            <MiniCard text={t.sw2} />
-            <MiniCard text={t.sw3} />
-            <MiniCard text={t.sw4} />
+      {/* WARRANTY & POLICY */}
+      <section id="warranty-support" className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            Interactive Flat Panel Warranty, Support & After-Sales Service in Cambodia
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            Our interactive flat panel service in Cambodia covers quotation, delivery,
+            installation, training, and long-term support. We focus on reliable classroom
+            and meeting room operations with clear warranty terms, responsive on-site
+            service, and optional maintenance plans.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              [
+                "Warranty Coverage & Documentation",
+                "Warranty depends on the chosen model, configuration, and usage. We provide clear coverage details, warranty duration, and scope during quotation and handover.",
+              ],
+              [
+                "On-site Support & Troubleshooting",
+                "Our team handles installation, calibration, firmware checks, and troubleshooting to keep smart boards stable for daily classroom and office use.",
+              ],
+              [
+                "Maintenance & AMC Plans",
+                "Preventive maintenance, cleaning guidance, and AMC plans are available for schools, universities, and corporate deployments.",
+              ],
+            ].map(([title, desc]) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+              >
+                <div className="text-sm font-semibold text-slate-900">{title}</div>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ + FINAL CTA */}
-      <section className="border-t border-slate-200 bg-white">
+      <section id="faq" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {t.faqTitle}
           </h2>
 
-          <div className="mt-6 grid gap-3">
+          <div className="mt-6 grid gap-3 md:grid-cols-2">
             {faqs.map((f) => (
               <details
                 key={f.qEn}
@@ -456,7 +890,7 @@ export default function InteractiveFlatPanelClient() {
                       {lang === "en" ? f.qEn : f.qKm}
                     </div>
                     <span className="mt-0.5 text-slate-400 transition group-open:rotate-180">
-                      ▾
+                      v
                     </span>
                   </div>
                   <div className="mt-2 hidden h-px w-full bg-slate-100 group-open:block" />
@@ -480,10 +914,10 @@ export default function InteractiveFlatPanelClient() {
                 {t.finalCta}
               </Link>
               <Link
-                href="/projects"
+                href="/interactive-flat-panel#models"
                 className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
               >
-                {t.seeProjects}
+                View Products
               </Link>
             </div>
           </div>
@@ -496,85 +930,6 @@ export default function InteractiveFlatPanelClient() {
 /* ======================
    Small UI components
    ====================== */
-
-function SpecRow({ title, desc }: { title: string; desc: string }) {
-  return (
-    <div className="rounded-xl border border-slate-200 bg-slate-50/90 px-4 py-3">
-      <div className="text-sm font-bold text-slate-900">{title}</div>
-      <div className="mt-1 text-sm leading-relaxed text-slate-700">{desc}</div>
-    </div>
-  );
-}
-
-function ProductCard({ p }: { p: IFPProduct }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-      <div className="text-sm font-semibold text-slate-900">{p.name}</div>
-
-      <div className="mt-2 grid gap-1 text-xs text-slate-600">
-        <div>
-          <span className="font-semibold text-slate-900">Size:</span> {p.size}
-        </div>
-        <div>
-          <span className="font-semibold text-slate-900">Resolution:</span>{" "}
-          {p.resolution}
-        </div>
-        <div>
-          <span className="font-semibold text-slate-900">Touch:</span> {p.touch}
-        </div>
-        <div>
-          <span className="font-semibold text-slate-900">OS:</span> {p.os}
-        </div>
-        <div className="pt-1">
-          <span className="font-semibold text-slate-900">Best for:</span>{" "}
-          {p.bestFor}
-        </div>
-      </div>
-
-      <ul className="mt-3 list-disc space-y-1 pl-5 text-xs text-slate-600">
-        {p.highlights.map((h) => (
-          <li key={h}>{h}</li>
-        ))}
-      </ul>
-
-      <div className="mt-4">
-        <Link
-          href="/contact"
-          className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
-        >
-          Get Quote
-        </Link>
-      </div>
-    </div>
-  );
-}
-
-function UseCaseCard({
-  title,
-  desc,
-  chips,
-}: {
-  title: string;
-  desc: string;
-  chips: string[];
-}) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="text-sm font-semibold text-slate-900">{title}</div>
-      <p className="mt-1 text-sm leading-relaxed text-slate-600">{desc}</p>
-      <div className="mt-3 flex flex-wrap gap-2">
-        {chips.map((c) => (
-          <span
-            key={c}
-            className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-700"
-          >
-            {c}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 function StepCard({
   n,
@@ -594,10 +949,16 @@ function StepCard({
   );
 }
 
-function MiniCard({ text }: { text: string }) {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm">
-      {text}
-    </div>
-  );
-}
+
+
+
+
+
+
+
+
+
+
+
+
+

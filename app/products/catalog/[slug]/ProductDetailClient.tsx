@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import type { MouseEvent } from "react";
 import { useLang } from "../../../components/layout/LanguageProvider";
 import type { Product } from "../../../data/products";
-import { PRODUCTS } from "../../../data/products";
+import { PRODUCTS, PRODUCT_CATEGORIES } from "../../../data/products";
 
 export default function ProductDetailClient({ product }: { product: Product }) {
   const { lang } = useLang();
@@ -27,11 +27,38 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   );
   const [zoom, setZoom] = useState({ x: 50, y: 50, show: false, px: 0, py: 0 });
   const relatedProducts = useMemo(() => {
-    return PRODUCTS.filter((item) => {
+    const categoryMap = new Map(
+      PRODUCT_CATEGORIES.map((category) => [category.id, category])
+    );
+    const primaryCategory = categoryMap.get(product.primaryCategoryId);
+    const parentCategoryId = primaryCategory?.parentId ?? null;
+
+    const samePrimary = PRODUCTS.filter((item) => {
       if (item.slug === product.slug) return false;
-      if (item.primaryCategoryId === product.primaryCategoryId) return true;
-      return item.categoryIds.some((id) => product.categoryIds.includes(id));
-    }).slice(0, 8);
+      return item.primaryCategoryId === product.primaryCategoryId;
+    });
+
+    if (samePrimary.length >= 8) return samePrimary.slice(0, 8);
+
+    const sameParent = PRODUCTS.filter((item) => {
+      if (item.slug === product.slug) return false;
+      const itemPrimary = categoryMap.get(item.primaryCategoryId);
+      return (
+        parentCategoryId &&
+        itemPrimary?.parentId &&
+        itemPrimary.parentId === parentCategoryId
+      );
+    });
+
+    const merged = [...samePrimary];
+    for (const item of sameParent) {
+      if (!merged.some((p) => p.slug === item.slug)) {
+        merged.push(item);
+      }
+      if (merged.length >= 8) break;
+    }
+
+    return merged.slice(0, 8);
   }, [product]);
 
   const handleZoomMove = (event: MouseEvent<HTMLDivElement>) => {
@@ -48,8 +75,8 @@ export default function ProductDetailClient({ product }: { product: Product }) {
       <section className="border-b border-slate-100">
         <div className="mx-auto w-full max-w-6xl px-4 pb-10 pt-8 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="grid gap-4 sm:grid-cols-[0.2fr_0.8fr]">
-              {galleryImages.length > 1 ? (
+            {galleryImages.length > 1 ? (
+              <div className="grid gap-4 sm:grid-cols-[0.2fr_0.8fr]">
                 <div className="order-2 flex gap-3 overflow-x-auto pb-2 sm:order-1 sm:flex-col sm:overflow-visible sm:pb-0">
                   {galleryImages.map((img) => {
                     const isActive = img === activeImage;
@@ -77,9 +104,48 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                     );
                   })}
                 </div>
-              ) : null}
 
-              <div className="order-1 sm:order-2">
+                <div className="order-1 sm:order-2">
+                  <div
+                    className="relative"
+                    onMouseMove={handleZoomMove}
+                    onMouseEnter={() => setZoom((prev) => ({ ...prev, show: true }))}
+                    onMouseLeave={() => setZoom((prev) => ({ ...prev, show: false }))}
+                  >
+                    <div className="relative flex aspect-[5/4] items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 sm:aspect-[5/4] lg:aspect-[4/3]">
+                      <Image
+                        src={activeImage || product.heroImage}
+                        alt={title}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 1024px) 100vw, 55vw"
+                      />
+                    </div>
+
+                    {zoom.show ? (
+                      <div
+                        className="pointer-events-none absolute z-20 hidden h-44 w-56 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border border-slate-200/50 bg-white p-2 shadow-md lg:block"
+                        style={{
+                          left: zoom.px,
+                          top: zoom.py,
+                        }}
+                      >
+                        <div
+                          className="h-full w-full rounded-xl bg-slate-50"
+                          style={{
+                            backgroundImage: `url(${activeImage || product.heroImage})`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: `${zoom.x}% ${zoom.y}%`,
+                            backgroundSize: "260%",
+                          }}
+                        />
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div>
                 <div
                   className="relative"
                   onMouseMove={handleZoomMove}
@@ -117,7 +183,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   ) : null}
                 </div>
               </div>
-            </div>
+            )}
             <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
                 {lang === "en" ? "Product" : "ផលិតផល"}
@@ -143,13 +209,13 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white no-underline hover:bg-slate-800"
+                  className="cta-anim relative rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white no-underline hover:bg-slate-800"
                 >
-                  {lang === "en" ? "Get Quote" : "ស្នើសុំតម្លៃ"}
+                  {lang === "en" ? "Get Quotation" : "ស្នើសុំតម្លៃ"}
                 </Link>
                 <Link
                   href="/products"
-                  className="rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 no-underline hover:border-slate-300"
+                  className="cta-anim relative rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 no-underline hover:border-slate-300"
                 >
                   {lang === "en" ? "Back to Products" : "ត្រឡប់ទៅផលិតផល"}
                 </Link>
@@ -159,10 +225,10 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 <h2 className="text-base font-semibold text-slate-900">
                   {lang === "en" ? "Key Features" : "លក្ខណៈពិសេស"}
                 </h2>
-                <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                <ul className="mt-3 space-y-2 text-sm font-medium text-black">
                   {features.map((item) => (
                     <li key={item} className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400" />
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-black" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -270,6 +336,45 @@ export default function ProductDetailClient({ product }: { product: Product }) {
           </div>
         </section>
       ) : null}
+      <style jsx>{`
+        .cta-anim {
+          position: relative;
+          overflow: hidden;
+        }
+        .cta-anim::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: 9999px;
+          padding: 1px;
+          background: linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0) 0%,
+            rgba(56, 189, 248, 0.9) 45%,
+            rgba(14, 165, 233, 1) 55%,
+            rgba(15, 23, 42, 0) 100%
+          );
+          -webkit-mask: linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          opacity: 0;
+          transform: translateX(-120%);
+          transition: opacity 200ms ease;
+        }
+        .cta-anim:hover::before {
+          opacity: 1;
+          animation: cta-border-sweep 1.4s linear infinite;
+        }
+        @keyframes cta-border-sweep {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+      `}</style>
     </div>
   );
 }

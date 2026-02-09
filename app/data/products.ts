@@ -1,4 +1,4 @@
-﻿export type ProductSpec = {
+export type ProductSpec = {
   labelEn: string;
   labelKm: string;
   valueEn: string;
@@ -45,126 +45,152 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
   {
     id: "led_display",
     labelEn: "LED Display",
-    labelKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED",
+    labelKm: "á¢áááááá LED",
     slug: "led-display",
     descriptionEn: "Indoor, outdoor and rental LED display systems.",
-    descriptionKm: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áŸ’áž“áž»áž„ áž¢áž€áŸ’ážšáŸ… áž“áž·áž„áž‡áž½áž›áŸ”",
+    descriptionKm: "ááááááááá¢áááááá LED ááááá¶áááááá»á á¢áááá áá·ááá½áá",
   },
   {
     id: "indoor_led_display",
     parentId: "led_display",
     labelEn: "Indoor LED Screens",
-    labelKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’áž“áž»áž„",
+    labelKm: "á¢áááááá LED áá¶ááááá»á",
     slug: "indoor-led-display",
     descriptionEn: "Fine pitch and indoor LED modules.",
-    descriptionKm: "áž˜áŸ‰áž¼ážŒáž»áž› LED ážáž¶áž„áž€áŸ’áž“áž»áž„ áž“áž·áž„ Fine PitcháŸ”",
+    descriptionKm: "ááá¼áá»á LED áá¶ááááá»á áá·á Fine Pitchá",
   },
   {
     id: "outdoor_led_display",
     parentId: "led_display",
     labelEn: "Outdoor LED Billboards",
-    labelKm: "áž”áŸŠáž¸áž›áž”áž LED ážáž¶áž„áž€áŸ’ážšáŸ…",
+    labelKm: "ááá¸ááá LED áá¶ááááá",
     slug: "outdoor-led-display",
     descriptionEn: "Weather-ready LED modules for outdoor use.",
-    descriptionKm: "áž˜áŸ‰áž¼ážŒáž»áž› LED ážáž¶áž„áž€áŸ’ážšáŸ… ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»ážáž¶áž„áž€áŸ’ážšáŸ…áŸ”",
+    descriptionKm: "ááá¼áá»á LED áá¶ááááá ááááá¶ááá¢á¶áá¶ááá¶áá»áá¶áááááá",
   },
   {
     id: "rental_led_display",
     parentId: "led_display",
     labelEn: "Rental LED Walls",
-    labelKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‡áž½áž›",
+    labelKm: "á¢áááááá LED ááááá¶áááá½á",
     slug: "rental-led-display",
     descriptionEn: "Rental LED panels for events and stage.",
-    descriptionKm: "áž”áž“áŸ’áž‘áŸ‡ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‡áž½áž› áž“áž·áž„áž–áŸ’ážšáž¹ážáŸ’ážáž·áž€áž¶ážšážŽáŸáŸ”",
+    descriptionKm: "ááááá LED ááááá¶áááá½á áá·ááááá¹áááá·áá¶áááá",
   },
   {
     id: "led_accessories",
     parentId: "led_display",
     labelEn: "LED Accessories & Parts",
-    labelKm: "áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ LED",
+    labelKm: "áááá¿áááááá¶áá LED",
     slug: "led-accessories",
     descriptionEn: "Controllers, receiving cards, power supplies and cabinets.",
-    descriptionKm: "áž€áž»áž„ážáŸ’ážšáž¼áž›ëŸ¬, receiving card, power supply áž“áž·áž„ cabinetáŸ”",
+    descriptionKm: "áá»ááááá¼áë¬, receiving card, power supply áá·á cabinetá",
+  },
+  {
+    id: "power_supply",
+    parentId: "led_display",
+    labelEn: "Power Supply",
+    labelKm: "Power Supply",
+    slug: "power-supply",
+    descriptionEn: "LED display power supplies and SMPS units.",
+    descriptionKm: "LED display power supplies and SMPS units.",
+  },
+  {
+    id: "video_processor",
+    parentId: "led_display",
+    labelEn: "Video Processor",
+    labelKm: "Video Processor",
+    slug: "video-processor",
+    descriptionEn: "LED video processors and scalers for LED screens.",
+    descriptionKm: "LED video processors and scalers for LED screens.",
   },
   {
     id: "smart_board",
     labelEn: "Smart Board",
-    labelKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ",
+    labelKm: "áááá¶ááá¼á",
     slug: "smart-board",
     descriptionEn: "Interactive flat panels and smart classroom displays.",
-    descriptionKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+    descriptionKm: "á¢ááááááá¢ááááááááááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
+  },  {
+    id: "interactive_panel",
+    parentId: "smart_board",
+    labelEn: "Interactive Panel",
+    labelKm: "Interactive Panel",
+    slug: "interactive-panel",
+    descriptionEn: "Interactive flat panels for classrooms and meeting rooms.",
+    descriptionKm: "Interactive flat panels for classrooms and meeting rooms.",
   },
   {
     id: "digital_signage",
     labelEn: "Digital Signage",
-    labelKm: "ážŸáŸ’áž›áž¶áž€ážŒáž¸áž‡áž¸ážáž›",
+    labelKm: "áááá¶ááá¸áá¸áá",
     slug: "digital-signage",
     descriptionEn: "Commercial digital signage displays and kiosks.",
-    descriptionKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ážŸáŸ’áž›áž¶áž€ážŒáž¸áž‡áž¸ážáž› áž“áž·áž„áž€áŸ’áž™áž¼ážŸážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž–áž¶ážŽáž·áž‡áŸ’áž‡áž€áž˜áŸ’áž˜áŸ”",
+    descriptionKm: "á¢áááááááááá¶ááá¸áá¸áá áá·ááááá¼áááááá¶áááá¶áá·áááááááá",
   },
   {
     id: "pa_system",
     labelEn: "PA System",
-    labelKm: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA",
+    labelKm: "áááááááá PA",
     slug: "pa-system",
     descriptionEn: "Public address sound systems and audio solutions.",
-    descriptionKm: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™ážŸáŸ†áž¡áŸáž„ áž“áž·áž„audio solutionsáŸ”",
+    descriptionKm: "áááááááááááááááááá¶áááá¡áá áá·áaudio solutionsá",
   },
   {
     id: "smart_home",
     labelEn: "Smart Home",
-    labelKm: "ážŸáŸ’áž˜áž¶ážáž áŸ„áž˜",
+    labelKm: "áááá¶áá áá",
     slug: "smart-home",
     descriptionEn: "Smart home automation devices.",
-    descriptionKm: "áž§áž”áž€ážšážŽáŸážŸáŸ’áž˜áž¶ážáž áŸ„áž˜ áž“áž·áž„ automationáŸ”",
+    descriptionKm: "á§ááááááááá¶áá áá áá·á automationá",
   },
   {
     id: "smart_office",
     labelEn: "Smart Office",
-    labelKm: "ážŸáŸ’áž˜áž¶ážáž€áž¶ážšáž·áž™áž¶áž›áŸáž™",
+    labelKm: "áááá¶ááá¶áá·áá¶ááá",
     slug: "smart-office",
     descriptionEn: "Office automation and meeting solutions.",
-    descriptionKm: "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™áž†áŸ’áž›áž¶ážážœáŸƒ áž“áž·áž„ážŸáž˜áŸ’áž—áž¶ážšáŸˆáž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+    descriptionKm: "áá¶áá·áá¶ááááááá¶ááá áá·áááááá¶ááááááááááááá»áá",
   },
   {
     id: "security",
     labelEn: "Security",
-    labelKm: "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–",
+    labelKm: "áá»ááááá·áá¶á",
     slug: "security",
     descriptionEn: "Security monitoring and surveillance devices.",
-    descriptionKm: "áž§áž”áž€ážšážŽáŸážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„ážŸáž˜áŸ’áž„áž¶ážáŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áŸ”",
+    descriptionKm: "á§ááááááá»ááááá·áá¶á áá·áááááá¶áááááááááááá",
   },
   {
     id: "access_control",
     labelEn: "Access Control",
-    labelKm: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰",
+    labelKm: "ááááááááááááááááááá¼áááá",
     slug: "access-control",
     descriptionEn: "RFID, biometric and access control systems.",
-    descriptionKm: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ RFID, biometric áž“áž·áž„áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    descriptionKm: "áááááááá RFID, biometric áá·ááá¶áááááááááááá¼ááááá",
   },
   {
     id: "turnstile_gate",
     labelEn: "Turnstile Gate",
-    labelKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile",
+    labelKm: "áááááááá¶á Turnstile",
     slug: "turnstile-gate",
     descriptionEn: "Entry control turnstile gates and barriers.",
-    descriptionKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš áž“áž·áž„áž‘áŸ’ážœáž¶ážšážšáž¶ážšáž¶áŸ†áž„ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    descriptionKm: "áááááááá¶á áá·ááááá¶ááá¶áá¶ááááááá¶ááááááááááááá¼ááááá",
   },
   {
     id: "industrial_solution",
     labelEn: "Industrial Solution",
-    labelKm: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜",
+    labelKm: "ááááááááá¶áá§áááá¶á áááá",
     slug: "industrial-solution",
     descriptionEn: "Industrial equipment and project solutions.",
-    descriptionKm: "áž§áž”áž€ážšážŽáŸáž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜ áž“áž·áž„ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž‚áž˜áŸ’ážšáŸ„áž„áŸ”",
+    descriptionKm: "á§áááááá§áááá¶á áááá áá·áááááááááá¶áááááááá",
   },
   {
     id: "machineries",
     labelEn: "Machineries",
-    labelKm: "áž˜áŸ‰áž¶ážŸáŸŠáž¸áž“áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜",
+    labelKm: "ááá¶ááá¸áá§áááá¶á áááá",
     slug: "machineries",
     descriptionEn: "Industrial machineries and hardware.",
-    descriptionKm: "áž˜áŸ‰áž¶ážŸáŸŠáž¸áž“áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜ áž“áž·áž„áž§áž”áž€ážšážŽáŸáž–áž¶áž€áŸ‹áž–áŸáž“áŸ’áž’áŸ”",
+    descriptionKm: "ááá¶ááá¸áá§áááá¶á áááá áá·áá§ááááááá¶áááááááá",
   },
 ];
 
@@ -361,9 +387,9 @@ export const PRODUCTS: Product[] = [
     seoTitleEn: "P1.25mm Indoor LED Display Module",
     seoTitleKm: "P1.25mm Indoor LED Display Module",
     seoDescEn:
-      "Buy P1.25mm Indoor LED Display Module from Mugnee – ultra-high resolution display for control rooms, studios, and premium indoor signage.",
+      "Buy P1.25mm Indoor LED Display Module from Mugnee  ultra-high resolution display for control rooms, studios, and premium indoor signage.",
     seoDescKm:
-      "Buy P1.25mm Indoor LED Display Module from Mugnee – ultra-high resolution display for control rooms, studios, and premium indoor signage.",
+      "Buy P1.25mm Indoor LED Display Module from Mugnee  ultra-high resolution display for control rooms, studios, and premium indoor signage.",
   },
   {
     id: "p1-53-indoor-led-module",
@@ -2936,29 +2962,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Premium Quality Interactive Screen 98\"",
-    titleKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áž‚áž»ážŽáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ 98\"",
+    titleKm: "á¢ááááááá¢áááááááááá»ááá¶áááááá 98\"",
     shortDescEn: "Large format interactive flat panel for classrooms and boardrooms.",
-    shortDescKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áž‘áŸ†áž áŸ†áž’áŸ† ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+    shortDescKm: "á¢ááááááá¢ááááááááááá ááá ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     descriptionEn:
       "Premium 98-inch interactive screen designed for smart classrooms, training rooms and large meeting spaces with multi-touch collaboration.",
     descriptionKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 98\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž¬áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áž’áŸ†áŸ— áž‡áž¶áž˜áž½áž™ multi-toucháŸ”",
+      "á¢ááááááá¢áááááááá 98\" ááááá¶áááááá¶ááááá á¬ááááááááááá»áááá áá¶áá½á multi-touchá",
     featuresEn: ["Large 98\" display", "Multi-touch collaboration", "Smart classroom use"],
-    featuresKm: ["áž¢áŸáž€áŸ’ážšáž„áŸ‹ 98\"", "Multi-touch", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž†áŸ’áž›áž¶ážážœáŸƒ"],
+    featuresKm: ["á¢áááááá 98\"", "Multi-touch", "ááááá¶áááááá¶ááááááááá¶ááá"],
     applicationsEn: ["Classroom", "Training room", "Boardroom"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»áááááá¶á", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "98 inch",
-        valueKm: "98 áž¢áŸŠáž¸áž‰",
+        valueKm: "98 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -2967,13 +2993,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "98\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 98\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 98\" ááááááá»áá¶",
     seoDescEn:
       "Premium 98-inch interactive screen for smart classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 98\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "á¢ááááááá¢áááááááá 98\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "interactive-screen-85",
@@ -2981,29 +3007,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Premium Quality Interactive Screen 85\"",
-    titleKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áž‚áž»ážŽáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ 85\"",
+    titleKm: "á¢ááááááá¢áááááááááá»ááá¶áááááá 85\"",
     shortDescEn: "Large interactive screen for classrooms and boardrooms.",
-    shortDescKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áž‘áŸ†áž áŸ†áž’áŸ† ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+    shortDescKm: "á¢ááááááá¢ááááááááááá ááá ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     descriptionEn:
       "Premium 85-inch interactive screen for smart classrooms and meeting rooms.",
     descriptionKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 85\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+      "á¢ááááááá¢áááááááá 85\" ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     featuresEn: ["85\" display", "Multi-touch", "Smart classroom"],
-    featuresKm: ["áž¢áŸáž€áŸ’ážšáž„áŸ‹ 85\"", "Multi-touch", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž†áŸ’áž›áž¶ážážœáŸƒ"],
+    featuresKm: ["á¢áááááá 85\"", "Multi-touch", "ááááá¶áááááá¶ááááááááá¶ááá"],
     applicationsEn: ["Classroom", "Training room", "Boardroom"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»áááááá¶á", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "85 inch",
-        valueKm: "85 áž¢áŸŠáž¸áž‰",
+        valueKm: "85 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -3012,13 +3038,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "85\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 85\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 85\" ááááááá»áá¶",
     seoDescEn:
       "Premium 85-inch interactive screen for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 85\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "á¢ááááááá¢áááááááá 85\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "interactive-screen-75",
@@ -3026,29 +3052,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Premium Quality Interactive Screen 75\"",
-    titleKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áž‚áž»ážŽáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ 75\"",
+    titleKm: "á¢ááááááá¢áááááááááá»ááá¶áááááá 75\"",
     shortDescEn: "Interactive screen for classrooms and meetings.",
-    shortDescKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+    shortDescKm: "á¢ááááááá¢ááááááááááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     descriptionEn:
       "Premium 75-inch interactive screen for smart classrooms and meeting rooms.",
     descriptionKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 75\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+      "á¢ááááááá¢áááááááá 75\" ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     featuresEn: ["75\" display", "Multi-touch", "Smart classroom"],
-    featuresKm: ["áž¢áŸáž€áŸ’ážšáž„áŸ‹ 75\"", "Multi-touch", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž†áŸ’áž›áž¶ážážœáŸƒ"],
+    featuresKm: ["á¢áááááá 75\"", "Multi-touch", "ááááá¶áááááá¶ááááááááá¶ááá"],
     applicationsEn: ["Classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "75 inch",
-        valueKm: "75 áž¢áŸŠáž¸áž‰",
+        valueKm: "75 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -3057,13 +3083,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "75\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 75\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 75\" ááááááá»áá¶",
     seoDescEn:
       "Premium 75-inch interactive screen for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 75\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "á¢ááááááá¢áááááááá 75\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "interactive-screen-65",
@@ -3071,29 +3097,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Premium Quality Interactive Screen 65\"",
-    titleKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áž‚áž»ážŽáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ 65\"",
+    titleKm: "á¢ááááááá¢áááááááááá»ááá¶áááááá 65\"",
     shortDescEn: "Interactive screen for classrooms and meetings.",
-    shortDescKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+    shortDescKm: "á¢ááááááá¢ááááááááááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     descriptionEn:
       "Premium 65-inch interactive screen for smart classrooms and meeting rooms.",
     descriptionKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 65\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+      "á¢ááááááá¢áááááááá 65\" ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     featuresEn: ["65\" display", "Multi-touch", "Smart classroom"],
-    featuresKm: ["áž¢áŸáž€áŸ’ážšáž„áŸ‹ 65\"", "Multi-touch", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž†áŸ’áž›áž¶ážážœáŸƒ"],
+    featuresKm: ["á¢áááááá 65\"", "Multi-touch", "ááááá¶áááááá¶ááááááááá¶ááá"],
     applicationsEn: ["Classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "65 inch",
-        valueKm: "65 áž¢áŸŠáž¸áž‰",
+        valueKm: "65 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -3102,13 +3128,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "65\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 65\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 65\" ááááááá»áá¶",
     seoDescEn:
       "Premium 65-inch interactive screen for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 65\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "á¢ááááááá¢áááááááá 65\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "interactive-screen-55",
@@ -3116,29 +3142,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Premium Quality Interactive Screen 55\"",
-    titleKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áž‚áž»ážŽáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ 55\"",
+    titleKm: "á¢ááááááá¢áááááááááá»ááá¶áááááá 55\"",
     shortDescEn: "Compact interactive screen for small rooms.",
-    shortDescKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áž‘áŸ†áž áŸ†ážáž¼áž… ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áž“áŸ’áž‘áž”áŸ‹ážáž¼áž…áŸ”",
+    shortDescKm: "á¢ááááááá¢ááááááááááá ááá¼á ááááá¶áááááááááá¼áá",
     descriptionEn:
       "Premium 55-inch interactive screen for small classrooms and meeting rooms.",
     descriptionKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 55\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ážáž¼áž… áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†ážáž¼áž…áŸ”",
+      "á¢ááááááá¢áááááááá 55\" ááááá¶áááááá¶ááááááá¼á áá·áááááááááááá»ááá¼áá",
     featuresEn: ["55\" display", "Multi-touch", "Compact size"],
-    featuresKm: ["áž¢áŸáž€áŸ’ážšáž„áŸ‹ 55\"", "Multi-touch", "áž‘áŸ†áž áŸ†ážáž¼áž…"],
+    featuresKm: ["á¢áááááá 55\"", "Multi-touch", "ááá ááá¼á"],
     applicationsEn: ["Small classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ážáž¼áž…", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†ážáž¼áž…"],
+    applicationsKm: ["áááá¶ááááááá¼á", "ááááááááááá»ááá¼á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "55 inch",
-        valueKm: "55 áž¢áŸŠáž¸áž‰",
+        valueKm: "55 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -3147,13 +3173,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "55\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 55\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 55\" ááááááá»áá¶",
     seoDescEn:
       "Premium 55-inch interactive screen for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 55\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "á¢ááááááá¢áááááááá 55\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "vanwinda-75",
@@ -3163,25 +3189,25 @@ export const PRODUCTS: Product[] = [
     titleEn: "VANWINDA Smart Board 4K UHD 75\"",
     titleKm: "VANWINDA Smart Board 4K UHD 75\"",
     shortDescEn: "Smart board for classrooms and meeting rooms.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+    shortDescKm: "áááá¶ááá¼áááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     descriptionEn:
       "VANWINDA 75-inch 4K smart board with multi-touch features for education and collaboration.",
     descriptionKm:
-      "VANWINDA 75\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšážŸáž áž€áž¶ážšáž“áž·áž„áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†áŸ”",
+      "VANWINDA 75\" 4K ááááá¶áááá¶ááá áá¶ááá·ááá¶áá¢ááááá",
     featuresEn: ["4K UHD", "Multi-touch", "Screen sharing support"],
     featuresKm: ["4K UHD", "Multi-touch", "Screen sharing"],
     applicationsEn: ["Classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "75 inch",
-        valueKm: "75 áž¢áŸŠáž¸áž‰",
+        valueKm: "75 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD",
         valueKm: "4K UHD",
       },
@@ -3192,13 +3218,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "VANWINDA 75\" 4K Smart Board in Cambodia",
-    seoTitleKm: "VANWINDA 75\" 4K ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "VANWINDA 75\" 4K áááá¶ááá¼á ááááááá»áá¶",
     seoDescEn:
       "VANWINDA 75-inch 4K smart board for classrooms and meetings in Cambodia.",
     seoDescKm:
-      "VANWINDA 75\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "VANWINDA 75\" 4K ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "vanwinda-65",
@@ -3208,25 +3234,25 @@ export const PRODUCTS: Product[] = [
     titleEn: "VANWINDA Smart Board 4K UHD 65\"",
     titleKm: "VANWINDA Smart Board 4K UHD 65\"",
     shortDescEn: "65-inch smart board for classrooms and meeting rooms.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 65\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+    shortDescKm: "áááá¶ááá¼á 65\" ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     descriptionEn:
       "VANWINDA 65-inch 4K smart board with multi-touch for education and collaboration.",
     descriptionKm:
-      "VANWINDA 65\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšážŸáž áž€áž¶ážš áž“áž·áž„áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†áŸ”",
+      "VANWINDA 65\" 4K ááááá¶áááá¶ááá áá¶á áá·ááá¶áá¢ááááá",
     featuresEn: ["4K UHD", "Multi-touch", "Screen sharing support"],
     featuresKm: ["4K UHD", "Multi-touch", "Screen sharing"],
     applicationsEn: ["Classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "65 inch",
-        valueKm: "65 áž¢áŸŠáž¸áž‰",
+        valueKm: "65 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD",
         valueKm: "4K UHD",
       },
@@ -3237,13 +3263,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "VANWINDA 65\" 4K Smart Board in Cambodia",
-    seoTitleKm: "VANWINDA 65\" 4K ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "VANWINDA 65\" 4K áááá¶ááá¼á ááááááá»áá¶",
     seoDescEn:
       "VANWINDA 65-inch 4K smart board for classrooms and meetings in Cambodia.",
     seoDescKm:
-      "VANWINDA 65\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "VANWINDA 65\" 4K ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "vanwinda-86",
@@ -3253,25 +3279,25 @@ export const PRODUCTS: Product[] = [
     titleEn: "VANWINDA Smart Board 4K UHD 86\"",
     titleKm: "VANWINDA Smart Board 4K UHD 86\"",
     shortDescEn: "Large 86-inch smart board for big classrooms.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 86\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž’áŸ†áŸ—áŸ”",
+    shortDescKm: "áááá¶ááá¼á 86\" ááááá¶áááááá¶ááááááááá",
     descriptionEn:
       "VANWINDA 86-inch 4K smart board with multi-touch for training and large meeting rooms.",
     descriptionKm:
-      "VANWINDA 86\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áž’áŸ†áŸ—áŸ”",
+      "VANWINDA 86\" 4K ááááá¶áááá¶áááááá»áááááá¶á áá·áááááááááááá»ááááá",
     featuresEn: ["Large 86\" display", "Multi-touch", "4K UHD"],
-    featuresKm: ["áž¢áŸáž€áŸ’ážšáž„áŸ‹ 86\"", "Multi-touch", "4K UHD"],
+    featuresKm: ["á¢áááááá 86\"", "Multi-touch", "4K UHD"],
     applicationsEn: ["Training room", "Conference room"],
-    applicationsKm: ["áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["ááááááááááá»áááááá¶á", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "86 inch",
-        valueKm: "86 áž¢áŸŠáž¸áž‰",
+        valueKm: "86 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD",
         valueKm: "4K UHD",
       },
@@ -3282,13 +3308,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Training"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›"],
+    tagsKm: ["áááá¶ááá¼á", "ááááá»áááááá¶á"],
     seoTitleEn: "VANWINDA 86\" 4K Smart Board in Cambodia",
-    seoTitleKm: "VANWINDA 86\" 4K ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "VANWINDA 86\" 4K áááá¶ááá¼á ááááááá»áá¶",
     seoDescEn:
       "VANWINDA 86-inch 4K smart board for large classrooms and training rooms in Cambodia.",
     seoDescKm:
-      "VANWINDA 86\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž’áŸ† áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "VANWINDA 86\" 4K ááááá¶áááááá¶ááááááá áá·áááááááááááá»áááááá¶á ááááááá»áá¶á",
   },
   {
     id: "skyworth-86",
@@ -3298,25 +3324,25 @@ export const PRODUCTS: Product[] = [
     titleEn: "Skyworth Smart Board 4K 86\"",
     titleKm: "Skyworth Smart Board 4K 86\"",
     shortDescEn: "Large 86-inch smart board for premium classrooms.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 86\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž‚áž»ážŽáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹áŸ”",
+    shortDescKm: "áááá¶ááá¼á 86\" ááááá¶áááááá¶ááááááá»ááá¶ááááááá",
     descriptionEn:
       "Skyworth 86-inch 4K smart board for premium classrooms and large meeting rooms.",
     descriptionKm:
-      "Skyworth 86\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž‚áž»ážŽáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áž’áŸ†áŸ—áŸ”",
+      "Skyworth 86\" 4K ááááá¶áááááá¶ááááááá»ááá¶áááááá áá·áááááááááááá»ááááá",
     featuresEn: ["Large screen", "4K UHD", "Multi-touch"],
-    featuresKm: ["áž¢áŸáž€áŸ’ážšáž„áŸ‹áž’áŸ†", "4K UHD", "Multi-touch"],
+    featuresKm: ["á¢áááááááá", "4K UHD", "Multi-touch"],
     applicationsEn: ["Classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "86 inch",
-        valueKm: "86 áž¢áŸŠáž¸áž‰",
+        valueKm: "86 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD",
         valueKm: "4K UHD",
       },
@@ -3327,13 +3353,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "Skyworth 86\" 4K Smart Board in Cambodia",
-    seoTitleKm: "Skyworth 86\" 4K ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "Skyworth 86\" 4K áááá¶ááá¼á ááááááá»áá¶",
     seoDescEn:
       "Skyworth 86-inch 4K smart board for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "Skyworth 86\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "Skyworth 86\" 4K ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "skyworth-75",
@@ -3343,25 +3369,25 @@ export const PRODUCTS: Product[] = [
     titleEn: "Skyworth Smart Board 4K 75\"",
     titleKm: "Skyworth Smart Board 4K 75\"",
     shortDescEn: "75-inch smart board for classrooms and training rooms.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 75\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áŸ”",
+    shortDescKm: "áááá¶ááá¼á 75\" ááááá¶áááááá¶ááááá áá·áááááááááááá»áááááá¶áá",
     descriptionEn:
       "Skyworth 75-inch 4K smart board for education, training and meeting spaces.",
     descriptionKm:
-      "Skyworth 75\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ† áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+      "Skyworth 75\" 4K ááááá¶áááá¶áá¢áááá áá·áááááááááááá»áá",
     featuresEn: ["4K UHD", "Multi-touch", "Classroom ready"],
-    featuresKm: ["4K UHD", "Multi-touch", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“"],
+    featuresKm: ["4K UHD", "Multi-touch", "ááááá¶áááááá¶ááááá"],
     applicationsEn: ["Classroom", "Training room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»áááááá¶á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "75 inch",
-        valueKm: "75 áž¢áŸŠáž¸áž‰",
+        valueKm: "75 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD",
         valueKm: "4K UHD",
       },
@@ -3372,13 +3398,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board", "Education"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ", "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†"],
+    tagsKm: ["áááá¶ááá¼á", "áá¶áá¢áááá"],
     seoTitleEn: "Skyworth 75\" 4K Smart Board in Cambodia",
-    seoTitleKm: "Skyworth 75\" 4K ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "Skyworth 75\" 4K áááá¶ááá¼á ááááááá»áá¶",
     seoDescEn:
       "Skyworth 75-inch 4K smart board for classrooms and training rooms in Cambodia.",
     seoDescKm:
-      "Skyworth 75\" 4K ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "Skyworth 75\" 4K ááááá¶áááááá¶ááááá áá·áááááááááááá»áááááá¶á ááááááá»áá¶á",
   },
   {
     id: "smart-board-86",
@@ -3386,29 +3412,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Smart Board 86\"",
-    titleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 86\"",
+    titleKm: "áááá¶ááá¼á 86\"",
     shortDescEn: "86-inch interactive smart board.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠáž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 86\"áŸ”",
+    shortDescKm: "áááá¶ááá¼áá¢áááááááá 86\"á",
     descriptionEn:
       "General-purpose 86-inch smart board for classrooms and meeting spaces.",
     descriptionKm:
-      "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 86\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+      "áááá¶ááá¼á 86\" ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     featuresEn: ["Large screen", "Interactive", "4K UHD (typical)"],
-    featuresKm: ["áž¢áŸáž€áŸ’ážšáž„áŸ‹áž’áŸ†", "áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜", "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)"],
+    featuresKm: ["á¢áááááááá", "á¢áááááááá", "4K UHD (áá¶áá¼áá)"],
     applicationsEn: ["Classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "86 inch",
-        valueKm: "86 áž¢áŸŠáž¸áž‰",
+        valueKm: "86 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -3417,13 +3443,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ"],
+    tagsKm: ["áááá¶ááá¼á"],
     seoTitleEn: "Smart Board 86\" in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 86\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 86\" ááááááá»áá¶",
     seoDescEn:
       "86-inch interactive smart board for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 86\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááá¶ááá¼á 86\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "smart-board-75",
@@ -3431,29 +3457,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Smart Board 75\"",
-    titleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 75\"",
+    titleKm: "áááá¶ááá¼á 75\"",
     shortDescEn: "75-inch interactive smart board.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠáž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 75\"áŸ”",
+    shortDescKm: "áááá¶ááá¼áá¢áááááááá 75\"á",
     descriptionEn:
       "General-purpose 75-inch smart board for classrooms and meeting spaces.",
     descriptionKm:
-      "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 75\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+      "áááá¶ááá¼á 75\" ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     featuresEn: ["Interactive display", "4K UHD (typical)", "Classroom ready"],
-    featuresKm: ["áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜", "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“"],
+    featuresKm: ["á¢áááááááá", "4K UHD (áá¶áá¼áá)", "ááááá¶áááááá¶ááááá"],
     applicationsEn: ["Classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "75 inch",
-        valueKm: "75 áž¢áŸŠáž¸áž‰",
+        valueKm: "75 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -3462,13 +3488,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ"],
+    tagsKm: ["áááá¶ááá¼á"],
     seoTitleEn: "Smart Board 75\" in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 75\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 75\" ááááááá»áá¶",
     seoDescEn:
       "75-inch interactive smart board for classrooms and meetings in Cambodia.",
     seoDescKm:
-      "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 75\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááá¶ááá¼á 75\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "smart-board-65",
@@ -3476,29 +3502,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Smart Board 65\"",
-    titleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 65\"",
+    titleKm: "áááá¶ááá¼á 65\"",
     shortDescEn: "65-inch interactive smart board.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠáž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 65\"áŸ”",
+    shortDescKm: "áááá¶ááá¼áá¢áááááááá 65\"á",
     descriptionEn:
       "General-purpose 65-inch smart board for classrooms and meeting spaces.",
     descriptionKm:
-      "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 65\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
+      "áááá¶ááá¼á 65\" ááááá¶áááááá¶ááááá áá·áááááááááááá»áá",
     featuresEn: ["Interactive display", "4K UHD (typical)", "Compact size"],
-    featuresKm: ["áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜", "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)", "áž‘áŸ†áž áŸ†ážŸáž˜ážšáž˜áŸ’áž™"],
+    featuresKm: ["á¢áááááááá", "4K UHD (áá¶áá¼áá)", "ááá ááááááá"],
     applicationsEn: ["Classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááá", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "65 inch",
-        valueKm: "65 áž¢áŸŠáž¸áž‰",
+        valueKm: "65 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -3507,13 +3533,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ"],
+    tagsKm: ["áááá¶ááá¼á"],
     seoTitleEn: "Smart Board 65\" in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 65\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 65\" ááááááá»áá¶",
     seoDescEn:
       "65-inch interactive smart board for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 65\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááá¶ááá¼á 65\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "smart-board-55",
@@ -3521,29 +3547,29 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["smart_board"],
     primaryCategoryId: "smart_board",
     titleEn: "Smart Board 55\"",
-    titleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 55\"",
+    titleKm: "áááá¶ááá¼á 55\"",
     shortDescEn: "55-inch interactive smart board.",
-    shortDescKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠáž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ 55\"áŸ”",
+    shortDescKm: "áááá¶ááá¼áá¢áááááááá 55\"á",
     descriptionEn:
       "Compact 55-inch smart board for small classrooms and meeting rooms.",
     descriptionKm:
-      "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 55\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ážáž¼áž… áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†ážáž¼áž…áŸ”",
+      "áááá¶ááá¼á 55\" ááááá¶áááááá¶ááááááá¼á áá·áááááááááááá»ááá¼áá",
     featuresEn: ["Compact size", "Interactive", "4K UHD (typical)"],
-    featuresKm: ["áž‘áŸ†áž áŸ†ážáž¼áž…", "áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜", "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)"],
+    featuresKm: ["ááá ááá¼á", "á¢áááááááá", "4K UHD (áá¶áá¼áá)"],
     applicationsEn: ["Small classroom", "Meeting room"],
-    applicationsKm: ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ážáž¼áž…", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†"],
+    applicationsKm: ["áááá¶ááááááá¼á", "ááááááááááá»á"],
     specs: [
       {
         labelEn: "Screen Size",
-        labelKm: "áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹",
+        labelKm: "ááá áá¢áááááá",
         valueEn: "55 inch",
-        valueKm: "55 áž¢áŸŠáž¸áž‰",
+        valueKm: "55 á¢áá¸á",
       },
       {
         labelEn: "Resolution",
-        labelKm: "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰",
+        labelKm: "áá»ááá¶ááááá á¶á",
         valueEn: "4K UHD (typical)",
-        valueKm: "4K UHD (áž‡áž¶áž‘áž¼áž‘áŸ…)",
+        valueKm: "4K UHD (áá¶áá¼áá)",
       },
     ],
     heroImage:
@@ -3552,13 +3578,13 @@ export const PRODUCTS: Product[] = [
       "/images/products/DSC07047-1.jpg",
     ],
     tagsEn: ["Smart Board"],
-    tagsKm: ["ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ"],
+    tagsKm: ["áááá¶ááá¼á"],
     seoTitleEn: "Smart Board 55\" in Cambodia",
-    seoTitleKm: "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 55\" áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááá¶ááá¼á 55\" ááááááá»áá¶",
     seoDescEn:
       "55-inch interactive smart board for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
-      "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ 55\" ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááá¶ááá¼á 55\" ááááá¶áááááá¶ááááá áá·áááááááááááá»á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-q20",
@@ -3566,42 +3592,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-Q20 Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-Q20",
+    titleKm: "áááááááá¶á Turnstile DS-Q20",
     shortDescEn: "Full-height turnstile gate for secure entry control.",
-    shortDescKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážšáž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    shortDescKm: "áááááááá¶áááááááááá ááááá¶ááááááááááááá¼ááááá",
     descriptionEn:
       "DS-Q20 full-height turnstile gate for secure entry control in factories, offices and restricted areas. Durable design with smooth pedestrian flow.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-Q20 áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…ážšáŸ„áž„áž…áž€áŸ’ážš áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„ážáŸ†áž”áž“áŸ‹áž˜áž¶áž“áž€áž¶ážšáž€áž¶ážšáž–áž¶ážšáŸ”",
+      "áááááááá¶á DS-Q20 ááááááááá ááááá¶ááááááááááááá¼ááááááááááááá áá¶áá·áá¶ááá áá·áááááááá¶ááá¶ááá¶ááá¶áá",
     featuresEn: ["Full-height security", "Durable construction", "Smooth flow"],
-    featuresKm: ["ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰", "ážšáž…áž“áž¶áž¢áž¶áž™áž»áž€áž¶áž›ážœáŸ‚áž„", "áž…áž›áž“áž¶ážšáž›áž¼áž“"],
+    featuresKm: ["áá»ááááá·áá¶áááááááááá", "áááá¶á¢á¶áá»áá¶áááá", "áááá¶ááá¼á"],
     applicationsEn: ["Factory", "Office", "Restricted area"],
-    applicationsKm: ["ážšáŸ„áž„áž…áž€áŸ’ážš", "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™", "ážáŸ†áž”áž“áŸ‹áž˜áž¶áž“áž€áž¶ážšáž€áž¶ážšáž–áž¶ážš"],
+    applicationsKm: ["ááááááá", "áá¶áá·áá¶ááá", "ááááááá¶ááá¶ááá¶ááá¶á"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Full-height turnstile",
-        valueKm: "Turnstile áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰",
+        valueKm: "Turnstile ááááááááá",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Security", "Turnstile"],
-    tagsKm: ["ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–", "Turnstile"],
+    tagsKm: ["áá»ááááá·áá¶á", "Turnstile"],
     seoTitleEn: "DS-Q20 Full Height Turnstile in Cambodia",
-    seoTitleKm: "DS-Q20 Turnstile áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰ áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "DS-Q20 Turnstile ááááááááá ááááááá»áá¶",
     seoDescEn:
       "DS-Q20 full-height turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-Q20 ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-Q20 ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-306",
@@ -3609,42 +3635,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-306 Double Side Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-306",
+    titleKm: "áááááááá¶á Turnstile DS-306",
     shortDescEn: "Double side turnstile for controlled entry.",
-    shortDescKm: "Turnstile áž–áž¸ážšáž•áŸ’áž›áž¼ážœážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    shortDescKm: "Turnstile áá¸ááááá¼áááááá¶ááááááááááááá¼ááááá",
     descriptionEn:
       "DS-306 double side turnstile gate for secure entry control in offices, factories and venues.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-306 ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž€áŸ’áž“áž»áž„áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„ážšáŸ„áž„áž…áž€áŸ’ážšáŸ”",
+      "áááááááá¶á DS-306 ááááá¶ááááááááááááá¼áááááááá»ááá¶áá·áá¶ááá áá·ááááááááá",
     featuresEn: ["Double side passage", "Durable build", "Access control ready"],
-    featuresKm: ["áž…áŸ’ážšáž€áž–áž¸ážšáž•áŸ’áž›áž¼ážœ", "áž’áž“áŸ‹áž“áž¹áž„áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["áááááá¸ááááá¼á", "ááááá¹ááá¶ááááá¾áááá¶áá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Office", "Factory", "Venue"],
-    applicationsKm: ["áž€áž¶ážšáž·áž™áž¶áž›áŸáž™", "ážšáŸ„áž„áž…áž€áŸ’ážš", "áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆ"],
+    applicationsKm: ["áá¶áá·áá¶ááá", "ááááááá", "áá¸áá¶áááá¶áá¶ááá"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Double side turnstile",
-        valueKm: "Turnstile áž–áž¸ážšáž•áŸ’áž›áž¼ážœ",
+        valueKm: "Turnstile áá¸ááááá¼á",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-306 Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-306 áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-306 ááááááá»áá¶",
     seoDescEn:
       "DS-306 double side turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-306 ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-306 ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-1500f",
@@ -3652,42 +3678,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-1500F Full Height Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-1500F",
+    titleKm: "áááááááá¶á Turnstile DS-1500F",
     shortDescEn: "Full height turnstile for secure areas.",
-    shortDescKm: "Turnstile áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ†áž”áž“áŸ‹áž˜áž¶áž“áž€áž¶ážšáž€áž¶ážšáž–áž¶ážšáŸ”",
+    shortDescKm: "Turnstile áááááááááááááá¶ááááááááá¶ááá¶ááá¶ááá¶áá",
     descriptionEn:
       "DS-1500F full height turnstile gate for secure access control in restricted areas.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-1500F áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ†áž”áž“áŸ‹áž˜áž¶áž“áž€áž¶ážšáž€áž¶ážšáž–áž¶ážšáŸ”",
+      "áááááááá¶á DS-1500F ááááááááá ááááá¶ááááááááá¶ááá¶ááá¶ááá¶áá",
     featuresEn: ["Full height security", "Durable frame", "Access control ready"],
-    featuresKm: ["ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰", "áž‚áŸ’ážšáž¿áž„áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["áá»ááááá·áá¶áááááááááá", "áááá¿áááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Factory", "Industrial site", "Restricted area"],
-    applicationsKm: ["ážšáŸ„áž„áž…áž€áŸ’ážš", "áž‘áž¸ážáž¶áŸ†áž„áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜", "ážáŸ†áž”áž“áŸ‹áž˜áž¶áž“áž€áž¶ážšáž€áž¶ážšáž–áž¶ážš"],
+    applicationsKm: ["ááááááá", "áá¸áá¶ááá§áááá¶á áááá", "ááááááá¶ááá¶ááá¶ááá¶á"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Full height turnstile",
-        valueKm: "Turnstile áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰",
+        valueKm: "Turnstile ááááááááá",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Full Height", "Security"],
-    tagsKm: ["áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["ááááááááá", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-1500F Full Height Turnstile in Cambodia",
-    seoTitleKm: "DS-1500F Turnstile áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰ áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "DS-1500F Turnstile ááááááááá ááááááá»áá¶",
     seoDescEn:
       "DS-1500F full height turnstile gate for secure access control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-1500F ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-1500F ááááá¶áááá¶áááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-2000d",
@@ -3695,42 +3721,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-2000D Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-2000D",
+    titleKm: "áááááááá¶á Turnstile DS-2000D",
     shortDescEn: "Durable turnstile for entry control.",
-    shortDescKm: "Turnstile áž’áž“áŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    shortDescKm: "Turnstile áááááááá¶ááááááááááááá¼ááááá",
     descriptionEn:
       "DS-2000D turnstile gate for secure access control in offices and public venues.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000D ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”",
+      "áááááááá¶á DS-2000D ááááá¶ááááááááááááá¼áááááááá¶áá·áá¶ááá áá·ááá¸áá¶áááá¶áá¶áááá",
     featuresEn: ["Secure entry", "Durable design", "Access control ready"],
-    featuresKm: ["áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–", "ážšáž…áž“áž¶áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["áá¼áááááá¶ááá»ááááá·áá¶á", "áááá¶ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Office", "Public venue"],
-    applicationsKm: ["áž€áž¶ážšáž·áž™áž¶áž›áŸáž™", "áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆ"],
+    applicationsKm: ["áá¶áá·áá¶ááá", "áá¸áá¶áááá¶áá¶ááá"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-2000D Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000D áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-2000D ááááááá»áá¶",
     seoDescEn:
       "DS-2000D turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000D ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-2000D ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-2000f",
@@ -3738,42 +3764,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-2000F Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-2000F",
+    titleKm: "áááááááá¶á Turnstile DS-2000F",
     shortDescEn: "Turnstile gate for controlled entry.",
-    shortDescKm: "Turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    shortDescKm: "Turnstile ááááá¶ááááááááááááá¼ááááá",
     descriptionEn:
       "DS-2000F turnstile gate for reliable access control in offices and facilities.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000F ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž¢áž‚áž¶ážšáŸ”",
+      "áááááááá¶á DS-2000F ááááá¶ááááááááááááá¼áááááááá¶áá·áá¶ááá áá·áá¢áá¶áá",
     featuresEn: ["Reliable entry control", "Durable build", "Access control ready"],
-    featuresKm: ["áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáŸ’ážáŸážšáž—áž¶áž–", "ážšáž…áž“áž¶áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["ááááááááááá¼áááááá¶áááááááá¶á", "áááá¶ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Office", "Facility"],
-    applicationsKm: ["áž€áž¶ážšáž·áž™áž¶áž›áŸáž™", "áž¢áž‚áž¶ážš"],
+    applicationsKm: ["áá¶áá·áá¶ááá", "á¢áá¶á"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-2000F Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000F áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-2000F ááááááá»áá¶",
     seoDescEn:
       "DS-2000F turnstile gate for secure access control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000F ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-2000F ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-2000h",
@@ -3781,42 +3807,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-2000H Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-2000H",
+    titleKm: "áááááááá¶á Turnstile DS-2000H",
     shortDescEn: "Turnstile gate for secure flow control.",
-    shortDescKm: "Turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž›áž“áž¶áŸ”",
+    shortDescKm: "Turnstile ááááá¶ááááááááááááááá¶á",
     descriptionEn:
       "DS-2000H turnstile gate for secure entry flow in commercial and public facilities.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000H ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…áž‘áž¸ážáž¶áŸ†áž„áž–áž¶ážŽáž·áž‡áŸ’áž‡áž€áž˜áŸ’áž˜áŸ”",
+      "áááááááá¶á DS-2000H ááááá¶ááááááááááááá¼áááááááá¸áá¶áááá¶áá·áááááááá",
     featuresEn: ["Secure flow", "Durable structure", "Access control ready"],
-    featuresKm: ["áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž›áž“áž¶", "ážšáž…áž“áž¶áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["ááááááááááááá¶", "áááá¶ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Commercial", "Public facility"],
-    applicationsKm: ["áž–áž¶ážŽáž·áž‡áŸ’áž‡áž€áž˜áŸ’áž˜", "áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆ"],
+    applicationsKm: ["áá¶áá·ááááááá", "áá¸áá¶áááá¶áá¶ááá"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-2000H Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000H áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-2000H ááááááá»áá¶",
     seoDescEn:
       "DS-2000H turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000H ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-2000H ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-2000r",
@@ -3824,42 +3850,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-2000R Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-2000R",
+    titleKm: "áááááááá¶á Turnstile DS-2000R",
     shortDescEn: "Turnstile gate for controlled access.",
-    shortDescKm: "Turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    shortDescKm: "Turnstile ááááá¶ááááááááááááá¼ááááá",
     descriptionEn:
       "DS-2000R turnstile gate for access control in offices and public venues.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000R ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”",
+      "áááááááá¶á DS-2000R ááááá¶ááááááááááááá¼áááááááá¶áá·áá¶ááá áá·ááá¸áá¶áááá¶áá¶áááá",
     featuresEn: ["Secure entry", "Durable", "Access control ready"],
-    featuresKm: ["áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–", "áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["áá¼áááááá¶ááá»ááááá·áá¶á", "ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Office", "Public venue"],
-    applicationsKm: ["áž€áž¶ážšáž·áž™áž¶áž›áŸáž™", "áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆ"],
+    applicationsKm: ["áá¶áá·áá¶ááá", "áá¸áá¶áááá¶áá¶ááá"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-2000R Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000R áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-2000R ááááááá»áá¶",
     seoDescEn:
       "DS-2000R turnstile gate for secure access control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2000R ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-2000R ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-2100s",
@@ -3867,42 +3893,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-2100S Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-2100S",
+    titleKm: "áááááááá¶á Turnstile DS-2100S",
     shortDescEn: "Turnstile gate for secure access flow.",
-    shortDescKm: "Turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    shortDescKm: "Turnstile ááááá¶áááá¶áááááááááááá¼ááááá",
     descriptionEn:
       "DS-2100S turnstile gate for high-traffic access control in offices and facilities.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2100S ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…áž‘áž¸ážáž¶áŸ†áž„áž˜áž¶áž“áž…ážšáž¶áž…ážšáž…áŸ’ážšáž¾áž“áŸ”",
+      "áááááááá¶á DS-2100S ááááá¶ááááááááááááá¼áááááááá¸áá¶áááá¶áááá¶áááááá¾áá",
     featuresEn: ["High traffic ready", "Durable", "Access control ready"],
-    featuresKm: ["ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…ážšáž¶áž…ážšáž…áŸ’ážšáž¾áž“", "áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["ááááá¶ááááá¶áááááá¾á", "ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Office", "Facility"],
-    applicationsKm: ["áž€áž¶ážšáž·áž™áž¶áž›áŸáž™", "áž¢áž‚áž¶ážš"],
+    applicationsKm: ["áá¶áá·áá¶ááá", "á¢áá¶á"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-2100S Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2100S áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-2100S ááááááá»áá¶",
     seoDescEn:
       "DS-2100S turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-2100S ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-2100S ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-8000h",
@@ -3910,42 +3936,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-8000H Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-8000H",
+    titleKm: "áááááááá¶á Turnstile DS-8000H",
     shortDescEn: "Turnstile gate for secure access control.",
-    shortDescKm: "Turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    shortDescKm: "Turnstile ááááá¶ááááááááááááá¼ááááá",
     descriptionEn:
       "DS-8000H turnstile gate for secure entry control in commercial areas.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-8000H ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…ážáŸ†áž”áž“áŸ‹áž–áž¶ážŽáž·áž‡áŸ’áž‡áž€áž˜áŸ’áž˜áŸ”",
+      "áááááááá¶á DS-8000H ááááá¶ááááááááááááá¼ááááááááááááá¶áá·áááááááá",
     featuresEn: ["Secure access", "Durable build", "Access control ready"],
-    featuresKm: ["áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–", "ážšáž…áž“áž¶áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["áá¼áááááá¶ááá»ááááá·áá¶á", "áááá¶ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Commercial", "Office"],
-    applicationsKm: ["áž–áž¶ážŽáž·áž‡áŸ’áž‡áž€áž˜áŸ’áž˜", "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™"],
+    applicationsKm: ["áá¶áá·ááááááá", "áá¶áá·áá¶ááá"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-8000H Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-8000H áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-8000H ááááááá»áá¶",
     seoDescEn:
       "DS-8000H turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-8000H ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-8000H ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-tm",
@@ -3953,42 +3979,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-TM Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-TM",
+    titleKm: "áááááááá¶á Turnstile DS-TM",
     shortDescEn: "Turnstile gate for controlled access.",
-    shortDescKm: "Turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áŸ”",
+    shortDescKm: "Turnstile ááááá¶ááááááááááááá¼ááááá",
     descriptionEn:
       "DS-TM turnstile gate for reliable access control in offices and venues.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TM ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”",
+      "áááááááá¶á DS-TM ááááá¶ááááááááááááá¼áááááááá¶áá·áá¶ááá áá·ááá¸áá¶áááá¶áá¶áááá",
     featuresEn: ["Secure entry", "Durable", "Access control ready"],
-    featuresKm: ["áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–", "áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["áá¼áááááá¶ááá»ááááá·áá¶á", "ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Office", "Venue"],
-    applicationsKm: ["áž€áž¶ážšáž·áž™áž¶áž›áŸáž™", "áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆ"],
+    applicationsKm: ["áá¶áá·áá¶ááá", "áá¸áá¶áááá¶áá¶ááá"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-TM Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TM áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-TM ááááááá»áá¶",
     seoDescEn:
       "DS-TM turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TM ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-TM ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-tmg",
@@ -3996,42 +4022,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-TMG Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-TMG",
+    titleKm: "áááááááá¶á Turnstile DS-TMG",
     shortDescEn: "Turnstile gate for secure entry.",
-    shortDescKm: "Turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”",
+    shortDescKm: "Turnstile ááááá¶áááá¼áááááá¶ááá»ááááá·áá¶áá",
     descriptionEn:
       "DS-TMG turnstile gate for secure access control in facilities.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TMG ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…áž¢áž‚áž¶ážšáŸ”",
+      "áááááááá¶á DS-TMG ááááá¶ááááááááááááá¼ááááááá¢áá¶áá",
     featuresEn: ["Secure access", "Durable build", "Access control ready"],
-    featuresKm: ["áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–", "ážšáž…áž“áž¶áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["áá¼áááááá¶ááá»ááááá·áá¶á", "áááá¶ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Facility", "Office"],
-    applicationsKm: ["áž¢áž‚áž¶ážš", "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™"],
+    applicationsKm: ["á¢áá¶á", "áá¶áá·áá¶ááá"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-TMG Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TMG áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-TMG ááááááá»áá¶",
     seoDescEn:
       "DS-TMG turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TMG ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-TMG ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "turnstile-ds-tms",
@@ -4039,42 +4065,42 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "DS-TMS Turnstile Gate",
-    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile DS-TMS",
+    titleKm: "áááááááá¶á Turnstile DS-TMS",
     shortDescEn: "Turnstile gate for secure access.",
-    shortDescKm: "Turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”",
+    shortDescKm: "Turnstile ááááá¶áááá¼áááááá¶ááá»ááááá·áá¶áá",
     descriptionEn:
       "DS-TMS turnstile gate for reliable access control in commercial spaces.",
     descriptionKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TMS ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž“áŸ…ážáŸ†áž”áž“áŸ‹áž–áž¶ážŽáž·áž‡áŸ’áž‡áž€áž˜áŸ’áž˜áŸ”",
+      "áááááááá¶á DS-TMS ááááá¶ááááááááááááá¼ááááááááááááá¶áá·áááááááá",
     featuresEn: ["Secure entry", "Durable build", "Access control ready"],
-    featuresKm: ["áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–", "ážšáž…áž“áž¶áž’áž“áŸ‹", "áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control áž”áž¶áž“"],
+    featuresKm: ["áá¼áááááá¶ááá»ááááá·áá¶á", "áááá¶ááá", "áááá¶áá Access Control áá¶á"],
     applicationsEn: ["Commercial", "Office"],
-    applicationsKm: ["áž–áž¶ážŽáž·áž‡áŸ’áž‡áž€áž˜áŸ’áž˜", "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™"],
+    applicationsKm: ["áá¶áá·ááááááá", "áá¶áá·áá¶ááá"],
     specs: [
       {
         labelEn: "Gate Type",
-        labelKm: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
+        labelKm: "áááááááááá",
         valueEn: "Turnstile gate",
         valueKm: "Turnstile gate",
       },
       {
         labelEn: "Integration",
-        labelKm: "áž€áž¶ážšáž—áŸ’áž‡áž¶áž”áŸ‹",
+        labelKm: "áá¶ááááá¶áá",
         valueEn: "Access control ready",
-        valueKm: "áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ Access Control",
+        valueKm: "á¢á¶ááááá¶áá Access Control",
       },
     ],
     heroImage:
       "/images/products/DS-Q20.jpg",
     gallery: ["/images/products/DS-Q20.jpg"],
     tagsEn: ["Turnstile", "Security"],
-    tagsKm: ["Turnstile", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
+    tagsKm: ["Turnstile", "áá»ááááá·áá¶á"],
     seoTitleEn: "DS-TMS Turnstile Gate in Cambodia",
-    seoTitleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TMS áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+    seoTitleKm: "áááááááá¶á DS-TMS ááááááá»áá¶",
     seoDescEn:
       "DS-TMS turnstile gate for secure entry control in Cambodia.",
     seoDescKm:
-      "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš DS-TMS ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      "áááááááá¶á DS-TMS ááááá¶ááááááááááááá¼áááááá¶ááá»ááááá·áá¶á ááááááá»áá¶á",
   },
   {
     id: "hd-r716-receiving-card",
@@ -4576,6 +4602,845 @@ export const PRODUCTS: Product[] = [
     seoDescKm:
       "R-712 receiving card with 12 HUB75E ports, 131,072 pixel capacity, and synchronous/asynchronous control support for LED display systems.",
   },
+  {
+    id: "g-energy-5v-30a-power-supply",
+    slug: "g-energy-5v-30a-power-supply",
+    categoryIds: ["led_display", "power_supply"],
+    primaryCategoryId: "power_supply",
+    titleEn: "G-Energy 5V 30A Power Supply",
+    titleKm: "G-Energy 5V 30A Power Supply",
+    shortDescEn: "5V 30A (150W) LED display power supply for stable output.",
+    shortDescKm: "5V 30A (150W) LED display power supply for stable output.",
+    descriptionEn:
+      "G-Energy 5V 30A power supply delivers stable 150W output for LED display cabinets and modules. It supports AC 180-264V input and is designed for reliable performance in continuous LED display use.",
+    descriptionKm:
+      "G-Energy 5V 30A power supply delivers stable 150W output for LED display cabinets and modules. It supports AC 180-264V input and is designed for reliable performance in continuous LED display use.",
+    featuresEn: [
+      "Output: 5V 30A (150W)",
+      "Input: AC 180-264V",
+      "Stable 5V DC output for LED modules",
+      "Designed for LED display cabinets",
+      "Reliable continuous operation",
+    ],
+    featuresKm: [
+      "Output: 5V 30A (150W)",
+      "Input: AC 180-264V",
+      "Stable 5V DC output for LED modules",
+      "Designed for LED display cabinets",
+      "Reliable continuous operation",
+    ],
+    applicationsEn: [
+      "LED display cabinets",
+      "Indoor LED screens",
+      "Outdoor LED modules",
+      "Signage power systems",
+    ],
+    applicationsKm: [
+      "LED display cabinets",
+      "Indoor LED screens",
+      "Outdoor LED modules",
+      "Signage power systems",
+    ],
+    specs: [
+      { labelEn: "Model", labelKm: "Model", valueEn: "G-Energy 5V 30A", valueKm: "G-Energy 5V 30A" },
+      { labelEn: "Input Voltage", labelKm: "Input Voltage", valueEn: "AC 180-264V", valueKm: "AC 180-264V" },
+      { labelEn: "Output", labelKm: "Output", valueEn: "5V 30A", valueKm: "5V 30A" },
+      { labelEn: "Power", labelKm: "Power", valueEn: "150W", valueKm: "150W" },
+    ],
+    heroImage: "/images/products/g-energy-5v-30a.webp",
+    gallery: ["/images/products/g-energy-5v-30a.webp"],
+    tagsEn: ["Power Supply", "5V 30A", "G-Energy", "LED Display"],
+    tagsKm: ["Power Supply", "5V 30A", "G-Energy", "LED Display"],
+    seoTitleEn: "G-Energy 5V 30A Power Supply | LED Display SMPS",
+    seoTitleKm: "G-Energy 5V 30A Power Supply | LED Display SMPS",
+    seoDescEn:
+      "G-Energy 5V 30A (150W) LED display power supply with stable output and wide AC input for LED cabinets.",
+    seoDescKm:
+      "G-Energy 5V 30A (150W) LED display power supply with stable output and wide AC input for LED cabinets.",
+  },
+  {
+    id: "smps-5v-20a-power-supply",
+    slug: "5v-20a-dc-switch-mode-power-supply-smps",
+    categoryIds: ["led_display", "power_supply"],
+    primaryCategoryId: "power_supply",
+    titleEn: "5V 20A DC Switch Mode Power Supply (SMPS)",
+    titleKm: "5V 20A DC Switch Mode Power Supply (SMPS)",
+    shortDescEn: "5V 20A (100W) SMPS for LED displays and signage.",
+    shortDescKm: "5V 20A (100W) SMPS for LED displays and signage.",
+    descriptionEn:
+      "This 5V 20A SMPS provides 100W output for LED display modules, control boxes, and signage. It supports AC 110/220V input and delivers stable 5V DC output.",
+    descriptionKm:
+      "This 5V 20A SMPS provides 100W output for LED display modules, control boxes, and signage. It supports AC 110/220V input and delivers stable 5V DC output.",
+    featuresEn: [
+      "Output: 5V 20A (100W)",
+      "Input: AC 110/220V",
+      "Stable 5V DC output",
+      "Compact SMPS design",
+      "Suitable for LED modules and signage",
+    ],
+    featuresKm: [
+      "Output: 5V 20A (100W)",
+      "Input: AC 110/220V",
+      "Stable 5V DC output",
+      "Compact SMPS design",
+      "Suitable for LED modules and signage",
+    ],
+    applicationsEn: [
+      "LED modules",
+      "LED signage",
+      "Control boxes",
+      "Indoor display power",
+    ],
+    applicationsKm: [
+      "LED modules",
+      "LED signage",
+      "Control boxes",
+      "Indoor display power",
+    ],
+    specs: [
+      { labelEn: "Model", labelKm: "Model", valueEn: "5V 20A SMPS", valueKm: "5V 20A SMPS" },
+      { labelEn: "Input Voltage", labelKm: "Input Voltage", valueEn: "AC 110/220V", valueKm: "AC 110/220V" },
+      { labelEn: "Output", labelKm: "Output", valueEn: "5V 20A", valueKm: "5V 20A" },
+      { labelEn: "Power", labelKm: "Power", valueEn: "100W", valueKm: "100W" },
+    ],
+    heroImage: "/images/products/smps-5v-20a.webp",
+    gallery: ["/images/products/smps-5v-20a.webp"],
+    tagsEn: ["Power Supply", "5V 20A", "SMPS", "LED Display"],
+    tagsKm: ["Power Supply", "5V 20A", "SMPS", "LED Display"],
+    seoTitleEn: "5V 20A SMPS Power Supply | LED Display 100W",
+    seoTitleKm: "5V 20A SMPS Power Supply | LED Display 100W",
+    seoDescEn:
+      "5V 20A (100W) SMPS power supply for LED modules and signage with AC 110/220V input.",
+    seoDescKm:
+      "5V 20A (100W) SMPS power supply for LED modules and signage with AC 110/220V input.",
+  },
+  {
+    id: "g-energy-5v-40a-power-supply",
+    slug: "g-energy-5v-40a-led-display-power-supply",
+    categoryIds: ["led_display", "power_supply"],
+    primaryCategoryId: "power_supply",
+    titleEn: "G-Energy 5V 40A LED Display Power Supply",
+    titleKm: "G-Energy 5V 40A LED Display Power Supply",
+    shortDescEn: "5V 40A (200W) power supply for LED display cabinets.",
+    shortDescKm: "5V 40A (200W) power supply for LED display cabinets.",
+    descriptionEn:
+      "G-Energy 5V 40A power supply delivers 200W output for LED display cabinets with stable performance. It supports AC 180-264V input and is designed for continuous LED display operation.",
+    descriptionKm:
+      "G-Energy 5V 40A power supply delivers 200W output for LED display cabinets with stable performance. It supports AC 180-264V input and is designed for continuous LED display operation.",
+    featuresEn: [
+      "Output: 5V 40A (200W)",
+      "Input: AC 180-264V",
+      "Stable 5V DC output",
+      "Suitable for LED display cabinets",
+      "Reliable for continuous use",
+    ],
+    featuresKm: [
+      "Output: 5V 40A (200W)",
+      "Input: AC 180-264V",
+      "Stable 5V DC output",
+      "Suitable for LED display cabinets",
+      "Reliable for continuous use",
+    ],
+    applicationsEn: [
+      "LED display cabinets",
+      "Outdoor LED screens",
+      "Large LED modules",
+      "Signage power systems",
+    ],
+    applicationsKm: [
+      "LED display cabinets",
+      "Outdoor LED screens",
+      "Large LED modules",
+      "Signage power systems",
+    ],
+    specs: [
+      { labelEn: "Model", labelKm: "Model", valueEn: "G-Energy 5V 40A", valueKm: "G-Energy 5V 40A" },
+      { labelEn: "Input Voltage", labelKm: "Input Voltage", valueEn: "AC 180-264V", valueKm: "AC 180-264V" },
+      { labelEn: "Output", labelKm: "Output", valueEn: "5V 40A", valueKm: "5V 40A" },
+      { labelEn: "Power", labelKm: "Power", valueEn: "200W", valueKm: "200W" },
+    ],
+    heroImage: "/images/products/g-energy-5v-40a.png",
+    gallery: ["/images/products/g-energy-5v-40a.png"],
+    tagsEn: ["Power Supply", "5V 40A", "G-Energy", "LED Display"],
+    tagsKm: ["Power Supply", "5V 40A", "G-Energy", "LED Display"],
+    seoTitleEn: "G-Energy 5V 40A Power Supply | LED Display 200W",
+    seoTitleKm: "G-Energy 5V 40A Power Supply | LED Display 200W",
+    seoDescEn:
+      "G-Energy 5V 40A (200W) LED display power supply with stable output and wide AC input.",
+    seoDescKm:
+      "G-Energy 5V 40A (200W) LED display power supply with stable output and wide AC input.",
+  },
+  {
+    id: "hd-vp-210h-video-processor",
+    slug: "led-video-processor",
+    categoryIds: ["led_display", "video_processor"],
+    primaryCategoryId: "video_processor",
+    titleEn: "LED Video Processor (HD-VP-210H)",
+    titleKm: "LED Video Processor (HD-VP-210H)",
+    shortDescEn:
+      "4K-capable LED video processor with multi-input switching for LED walls.",
+    shortDescKm:
+      "4K-capable LED video processor with multi-input switching for LED walls.",
+    descriptionEn:
+      "The Huidu HD-VP-210H is a 4K LED video processor designed for stable control of LED video walls. It supports multiple input interfaces such as HDMI, DVI, and USB (SDI optional) and delivers smooth scaling and seamless switching for fixed and rental LED screens.",
+    descriptionKm:
+      "The Huidu HD-VP-210H is a 4K LED video processor designed for stable control of LED video walls. It supports multiple input interfaces such as HDMI, DVI, and USB (SDI optional) and delivers smooth scaling and seamless switching for fixed and rental LED screens.",
+    featuresEn: [
+      "4K ultra HD input support",
+      "Multiple input interfaces (HDMI/DVI/USB, SDI optional)",
+      "Seamless switching and smooth scaling",
+      "High refresh and grayscale processing",
+      "Stable output for LED video walls",
+    ],
+    featuresKm: [
+      "4K ultra HD input support",
+      "Multiple input interfaces (HDMI/DVI/USB, SDI optional)",
+      "Seamless switching and smooth scaling",
+      "High refresh and grayscale processing",
+      "Stable output for LED video walls",
+    ],
+    applicationsEn: [
+      "LED video walls",
+      "Outdoor billboards",
+      "Rental LED screens",
+      "Fixed LED installations",
+    ],
+    applicationsKm: [
+      "LED video walls",
+      "Outdoor billboards",
+      "Rental LED screens",
+      "Fixed LED installations",
+    ],
+    specs: [
+      {
+        labelEn: "Model",
+        labelKm: "Model",
+        valueEn: "HD-VP-210H",
+        valueKm: "HD-VP-210H",
+      },
+      {
+        labelEn: "Input Interfaces",
+        labelKm: "Input Interfaces",
+        valueEn: "HDMI / DVI / USB (SDI optional)",
+        valueKm: "HDMI / DVI / USB (SDI optional)",
+      },
+      {
+        labelEn: "Output Support",
+        labelKm: "Output Support",
+        valueEn: "4K-capable LED wall output",
+        valueKm: "4K-capable LED wall output",
+      },
+      {
+        labelEn: "Functions",
+        labelKm: "Functions",
+        valueEn: "Scaling, seamless switching",
+        valueKm: "Scaling, seamless switching",
+      },
+    ],
+    heroImage: "/images/products/hd-vp-210h.webp",
+    gallery: ["/images/products/hd-vp-210h.webp"],
+    tagsEn: ["Video Processor", "4K", "Huidu", "LED Display"],
+    tagsKm: ["Video Processor", "4K", "Huidu", "LED Display"],
+    seoTitleEn: "HD-VP-210H LED Video Processor | 4K LED Wall Controller",
+    seoTitleKm: "HD-VP-210H LED Video Processor | 4K LED Wall Controller",
+    seoDescEn:
+      "HD-VP-210H LED video processor with multi-input switching and smooth scaling for LED video walls and billboards.",
+    seoDescKm:
+      "HD-VP-210H LED video processor with multi-input switching and smooth scaling for LED video walls and billboards.",
+  },
+  {
+    id: "hd-vp-620-video-processor",
+    slug: "huidu-hd-vp-620",
+    categoryIds: ["led_display", "video_processor"],
+    primaryCategoryId: "video_processor",
+    titleEn: "Huidu HD-VP620 LED Video Processor",
+    titleKm: "Huidu HD-VP620 LED Video Processor",
+    shortDescEn:
+      "6-channel input video processor with 4K output and multi-window display.",
+    shortDescKm:
+      "6-channel input video processor with 4K output and multi-window display.",
+    descriptionEn:
+      "The Huidu HD-VP620 is built for medium to large LED screen projects. It supports 6-channel video input, up to 4K output, and multi-window display options to handle complex live events and LED wall layouts.",
+    descriptionKm:
+      "The Huidu HD-VP620 is built for medium to large LED screen projects. It supports 6-channel video input, up to 4K output, and multi-window display options to handle complex live events and LED wall layouts.",
+    featuresEn: [
+      "6-channel video input",
+      "Up to 4K output support",
+      "Multi-window and picture-in-picture",
+      "Stable processing for live content",
+      "Seamless switching for LED walls",
+    ],
+    featuresKm: [
+      "6-channel video input",
+      "Up to 4K output support",
+      "Multi-window and picture-in-picture",
+      "Stable processing for live content",
+      "Seamless switching for LED walls",
+    ],
+    applicationsEn: [
+      "Stage and event LED screens",
+      "LED video walls",
+      "Rental LED displays",
+      "Conference halls",
+    ],
+    applicationsKm: [
+      "Stage and event LED screens",
+      "LED video walls",
+      "Rental LED displays",
+      "Conference halls",
+    ],
+    specs: [
+      {
+        labelEn: "Model",
+        labelKm: "Model",
+        valueEn: "HD-VP620",
+        valueKm: "HD-VP620",
+      },
+      {
+        labelEn: "Input Channels",
+        labelKm: "Input Channels",
+        valueEn: "6-channel video input",
+        valueKm: "6-channel video input",
+      },
+      {
+        labelEn: "Output Support",
+        labelKm: "Output Support",
+        valueEn: "Up to 4K output",
+        valueKm: "Up to 4K output",
+      },
+      {
+        labelEn: "Display Features",
+        labelKm: "Display Features",
+        valueEn: "Multi-window / PIP",
+        valueKm: "Multi-window / PIP",
+      },
+    ],
+    heroImage: "/images/products/hd-vp-620.webp",
+    gallery: ["/images/products/hd-vp-620.webp"],
+    tagsEn: ["Video Processor", "4K", "Huidu", "LED Display"],
+    tagsKm: ["Video Processor", "4K", "Huidu", "LED Display"],
+    seoTitleEn: "HD-VP620 LED Video Processor | 6-Channel 4K Output",
+    seoTitleKm: "HD-VP620 LED Video Processor | 6-Channel 4K Output",
+    seoDescEn:
+      "HD-VP620 video processor with 6-channel input, 4K output and multi-window display for LED video walls and rental screens.",
+    seoDescKm:
+      "HD-VP620 video processor with 6-channel input, 4K output and multi-window display for LED video walls and rental screens.",
+  },
+  {
+    id: "hd-vp-820-video-processor",
+    slug: "hd-vp820-huidu-video-processor",
+    categoryIds: ["led_display", "video_processor"],
+    primaryCategoryId: "video_processor",
+    titleEn: "HD-VP820 Huidu Video Processor",
+    titleKm: "HD-VP820 Huidu Video Processor",
+    shortDescEn:
+      "8-channel input video processor with 4K output for large LED walls.",
+    shortDescKm:
+      "8-channel input video processor with 4K output for large LED walls.",
+    descriptionEn:
+      "The HD-VP820 is designed for large LED video walls and complex display layouts. It supports 8-channel video input, 4K output, and multi-window display, making it suitable for stage, rental, and advertising screens.",
+    descriptionKm:
+      "The HD-VP820 is designed for large LED video walls and complex display layouts. It supports 8-channel video input, 4K output, and multi-window display, making it suitable for stage, rental, and advertising screens.",
+    featuresEn: [
+      "8-channel video input",
+      "4K output support",
+      "Multi-window display",
+      "Smooth scaling for large LED walls",
+      "Stable processing for live events",
+    ],
+    featuresKm: [
+      "8-channel video input",
+      "4K output support",
+      "Multi-window display",
+      "Smooth scaling for large LED walls",
+      "Stable processing for live events",
+    ],
+    applicationsEn: [
+      "Large LED video walls",
+      "Stage and rental screens",
+      "Outdoor advertising",
+      "Corporate events",
+    ],
+    applicationsKm: [
+      "Large LED video walls",
+      "Stage and rental screens",
+      "Outdoor advertising",
+      "Corporate events",
+    ],
+    specs: [
+      {
+        labelEn: "Model",
+        labelKm: "Model",
+        valueEn: "HD-VP820",
+        valueKm: "HD-VP820",
+      },
+      {
+        labelEn: "Input Channels",
+        labelKm: "Input Channels",
+        valueEn: "8-channel video input",
+        valueKm: "8-channel video input",
+      },
+      {
+        labelEn: "Output Support",
+        labelKm: "Output Support",
+        valueEn: "Up to 4K output",
+        valueKm: "Up to 4K output",
+      },
+      {
+        labelEn: "Display Features",
+        labelKm: "Display Features",
+        valueEn: "Multi-window",
+        valueKm: "Multi-window",
+      },
+    ],
+    heroImage: "/images/products/hd-vp-820.webp",
+    gallery: ["/images/products/hd-vp-820.webp"],
+    tagsEn: ["Video Processor", "4K", "Huidu", "LED Display"],
+    tagsKm: ["Video Processor", "4K", "Huidu", "LED Display"],
+    seoTitleEn: "HD-VP820 Video Processor | 8-Channel 4K Output",
+    seoTitleKm: "HD-VP820 Video Processor | 8-Channel 4K Output",
+    seoDescEn:
+      "HD-VP820 video processor with 8-channel input, 4K output and multi-window display for large LED video walls.",
+    seoDescKm:
+      "HD-VP820 video processor with 8-channel input, 4K output and multi-window display for large LED video walls.",
+  },
+  {
+    id: "hd-vp-410-video-processor",
+    slug: "hd-vp-410-video-processor",
+    categoryIds: ["led_display", "video_processor"],
+    primaryCategoryId: "video_processor",
+    titleEn: "HD-VP410 LED Video Processor",
+    titleKm: "HD-VP410 LED Video Processor",
+    shortDescEn:
+      "4-input LED video processor for medium LED screens and rentals.",
+    shortDescKm:
+      "4-input LED video processor for medium LED screens and rentals.",
+    descriptionEn:
+      "The HD-VP410 video processor offers four video input ports with stable scaling and switching for medium LED screens. It is a practical choice for indoor displays, small stages, and rental setups.",
+    descriptionKm:
+      "The HD-VP410 video processor offers four video input ports with stable scaling and switching for medium LED screens. It is a practical choice for indoor displays, small stages, and rental setups.",
+    featuresEn: [
+      "4 video input ports",
+      "Stable scaling and switching",
+      "Reliable output for LED screens",
+      "Compact and practical design",
+      "Suitable for rental and fixed installs",
+    ],
+    featuresKm: [
+      "4 video input ports",
+      "Stable scaling and switching",
+      "Reliable output for LED screens",
+      "Compact and practical design",
+      "Suitable for rental and fixed installs",
+    ],
+    applicationsEn: [
+      "Indoor LED screens",
+      "Small stages",
+      "Retail signage",
+      "Rental LED displays",
+    ],
+    applicationsKm: [
+      "Indoor LED screens",
+      "Small stages",
+      "Retail signage",
+      "Rental LED displays",
+    ],
+    specs: [
+      {
+        labelEn: "Model",
+        labelKm: "Model",
+        valueEn: "HD-VP410",
+        valueKm: "HD-VP410",
+      },
+      {
+        labelEn: "Input Ports",
+        labelKm: "Input Ports",
+        valueEn: "4 video input ports",
+        valueKm: "4 video input ports",
+      },
+      {
+        labelEn: "Output",
+        labelKm: "Output",
+        valueEn: "LED wall output (HD)",
+        valueKm: "LED wall output (HD)",
+      },
+      {
+        labelEn: "Functions",
+        labelKm: "Functions",
+        valueEn: "Scaling and switching",
+        valueKm: "Scaling and switching",
+      },
+    ],
+    heroImage: "/images/products/hd-vp-410.webp",
+    gallery: ["/images/products/hd-vp-410.webp"],
+    tagsEn: ["Video Processor", "Huidu", "LED Display"],
+    tagsKm: ["Video Processor", "Huidu", "LED Display"],
+    seoTitleEn: "HD-VP410 LED Video Processor | 4 Input LED Controller",
+    seoTitleKm: "HD-VP410 LED Video Processor | 4 Input LED Controller",
+    seoDescEn:
+      "HD-VP410 video processor with 4 input ports and stable scaling for medium LED screens, rentals, and indoor installations.",
+    seoDescKm:
+      "HD-VP410 video processor with 4 input ports and stable scaling for medium LED screens, rentals, and indoor installations.",
+  },
+  {
+    id: "ifp-18-55",
+    slug: "ingscreen-interactive-panel-18-series-55",
+    categoryIds: ["interactive_panel"],
+    primaryCategoryId: "interactive_panel",
+    titleEn: "Ingscreen Interactive Panel 18 Series 55 Inch",
+    titleKm: "Ingscreen Interactive Panel 18 Series 55 Inch",
+    shortDescEn:
+      "55-inch 4K UHD interactive flat panel with 20-point touch for classrooms and meeting rooms.",
+    shortDescKm:
+      "55-inch 4K UHD interactive flat panel with 20-point touch for classrooms and meeting rooms.",
+    descriptionEn:
+      "The 18 series 55-inch interactive panel delivers 4K UHD visuals with 20-point touch for smart classrooms and meeting rooms. It includes Android OS, wireless screen sharing, and multiple I/O ports for easy device connectivity.",
+    descriptionKm:
+      "The 18 series 55-inch interactive panel delivers 4K UHD visuals with 20-point touch for smart classrooms and meeting rooms. It includes Android OS, wireless screen sharing, and multiple I/O ports for easy device connectivity.",
+    featuresEn: [
+      "55-inch 4K UHD display with anti-glare glass",
+      "20-point multi-touch writing and annotation",
+      "Android OS with OPS/Windows optional",
+      "Wi-Fi 6 and Bluetooth connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    featuresKm: [
+      "55-inch 4K UHD display with anti-glare glass",
+      "20-point multi-touch writing and annotation",
+      "Android OS with OPS/Windows optional",
+      "Wi-Fi 6 and Bluetooth connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    applicationsEn: [
+      "Smart classrooms",
+      "Meeting rooms",
+      "Training centers",
+      "Education labs",
+    ],
+    applicationsKm: [
+      "Smart classrooms",
+      "Meeting rooms",
+      "Training centers",
+      "Education labs",
+    ],
+    specs: [
+      { labelEn: "Display Size", labelKm: "Display Size", valueEn: "55 inch", valueKm: "55 inch" },
+      { labelEn: "Resolution", labelKm: "Resolution", valueEn: "3840 x 2160 (4K UHD)", valueKm: "3840 x 2160 (4K UHD)" },
+      { labelEn: "Touch Points", labelKm: "Touch Points", valueEn: "20-point touch", valueKm: "20-point touch" },
+      { labelEn: "Operating System", labelKm: "Operating System", valueEn: "Android (OPS optional)", valueKm: "Android (OPS optional)" },
+      { labelEn: "Brightness", labelKm: "Brightness", valueEn: "350 nits", valueKm: "350 nits" },
+      { labelEn: "Contrast Ratio", labelKm: "Contrast Ratio", valueEn: "4000:1", valueKm: "4000:1" },
+    ],
+    heroImage: "/images/products/ifp-18-55.webp",
+    gallery: ["/images/products/ifp-18-55.webp"],
+    tagsEn: ["Smart Board", "55 inch", "4K", "Interactive Flat Panel"],
+    tagsKm: ["Smart Board", "55 inch", "4K", "Interactive Flat Panel"],
+    seoTitleEn: "Ingscreen Interactive Panel 18 Series 55 Inch | 4K Smart Board",
+    seoTitleKm: "Ingscreen Interactive Panel 18 Series 55 Inch | 4K Smart Board",
+    seoDescEn:
+      "55-inch 4K UHD interactive flat panel with 20-point touch, Android OS, and wireless sharing for classrooms and meetings.",
+    seoDescKm:
+      "55-inch 4K UHD interactive flat panel with 20-point touch, Android OS, and wireless sharing for classrooms and meetings.",
+  },
+  {
+    id: "ifp-18-65",
+    slug: "ingscreen-interactive-panel-18-series-65",
+    categoryIds: ["interactive_panel"],
+    primaryCategoryId: "interactive_panel",
+    titleEn: "Ingscreen Interactive Panel 18 Series 65 Inch",
+    titleKm: "Ingscreen Interactive Panel 18 Series 65 Inch",
+    shortDescEn:
+      "65-inch 4K UHD smart board with 20-point touch and Android OS for classrooms and offices.",
+    shortDescKm:
+      "65-inch 4K UHD smart board with 20-point touch and Android OS for classrooms and offices.",
+    descriptionEn:
+      "The 18 series 65-inch interactive flat panel combines 4K UHD clarity with 20-point touch. It supports Android OS with OPS option, Wi-Fi 6, Bluetooth, and multiple connectivity ports for daily teaching and presentations.",
+    descriptionKm:
+      "The 18 series 65-inch interactive flat panel combines 4K UHD clarity with 20-point touch. It supports Android OS with OPS option, Wi-Fi 6, Bluetooth, and multiple connectivity ports for daily teaching and presentations.",
+    featuresEn: [
+      "65-inch 4K UHD interactive display",
+      "20-point touch for smooth writing",
+      "Android OS with OPS/Windows optional",
+      "Wi-Fi 6 and Bluetooth connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    featuresKm: [
+      "65-inch 4K UHD interactive display",
+      "20-point touch for smooth writing",
+      "Android OS with OPS/Windows optional",
+      "Wi-Fi 6 and Bluetooth connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    applicationsEn: [
+      "Classrooms",
+      "Meeting rooms",
+      "Training centers",
+      "Corporate presentations",
+    ],
+    applicationsKm: [
+      "Classrooms",
+      "Meeting rooms",
+      "Training centers",
+      "Corporate presentations",
+    ],
+    specs: [
+      { labelEn: "Display Size", labelKm: "Display Size", valueEn: "65 inch", valueKm: "65 inch" },
+      { labelEn: "Resolution", labelKm: "Resolution", valueEn: "3840 x 2160 (4K UHD)", valueKm: "3840 x 2160 (4K UHD)" },
+      { labelEn: "Touch Points", labelKm: "Touch Points", valueEn: "20-point touch", valueKm: "20-point touch" },
+      { labelEn: "Operating System", labelKm: "Operating System", valueEn: "Android (OPS optional)", valueKm: "Android (OPS optional)" },
+      { labelEn: "Brightness", labelKm: "Brightness", valueEn: "350 nits", valueKm: "350 nits" },
+      { labelEn: "Contrast Ratio", labelKm: "Contrast Ratio", valueEn: "4000:1", valueKm: "4000:1" },
+    ],
+    heroImage: "/images/products/ifp-18-65.webp",
+    gallery: ["/images/products/ifp-18-65.webp"],
+    tagsEn: ["Smart Board", "65 inch", "4K", "Interactive Flat Panel"],
+    tagsKm: ["Smart Board", "65 inch", "4K", "Interactive Flat Panel"],
+    seoTitleEn: "Ingscreen Interactive Panel 18 Series 65 Inch | 4K Smart Board",
+    seoTitleKm: "Ingscreen Interactive Panel 18 Series 65 Inch | 4K Smart Board",
+    seoDescEn:
+      "65-inch 4K UHD interactive flat panel with 20-point touch, Android OS, and wireless sharing for classrooms and offices.",
+    seoDescKm:
+      "65-inch 4K UHD interactive flat panel with 20-point touch, Android OS, and wireless sharing for classrooms and offices.",
+  },
+  {
+    id: "ifp-18-75",
+    slug: "interactive-panel-18-series-75",
+    categoryIds: ["interactive_panel"],
+    primaryCategoryId: "interactive_panel",
+    titleEn: "Interactive Panel 18 Series 75 Inch",
+    titleKm: "Interactive Panel 18 Series 75 Inch",
+    shortDescEn:
+      "75-inch 4K smart board with 20/40-point touch for training rooms and classrooms.",
+    shortDescKm:
+      "75-inch 4K smart board with 20/40-point touch for training rooms and classrooms.",
+    descriptionEn:
+      "The 18 series 75-inch interactive panel provides 4K UHD visuals with 20/40-point touch. It supports Android OS, optional OPS, and wireless screen sharing for collaborative classrooms and meeting rooms.",
+    descriptionKm:
+      "The 18 series 75-inch interactive panel provides 4K UHD visuals with 20/40-point touch. It supports Android OS, optional OPS, and wireless screen sharing for collaborative classrooms and meeting rooms.",
+    featuresEn: [
+      "75-inch 4K UHD display for clear visibility",
+      "20/40-point touch for multi-user collaboration",
+      "Android OS with OPS/Windows optional",
+      "Wi-Fi 6 and Bluetooth connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    featuresKm: [
+      "75-inch 4K UHD display for clear visibility",
+      "20/40-point touch for multi-user collaboration",
+      "Android OS with OPS/Windows optional",
+      "Wi-Fi 6 and Bluetooth connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    applicationsEn: [
+      "Training rooms",
+      "Classrooms",
+      "Boardrooms",
+      "Workshops",
+    ],
+    applicationsKm: [
+      "Training rooms",
+      "Classrooms",
+      "Boardrooms",
+      "Workshops",
+    ],
+    specs: [
+      { labelEn: "Display Size", labelKm: "Display Size", valueEn: "75 inch", valueKm: "75 inch" },
+      { labelEn: "Resolution", labelKm: "Resolution", valueEn: "3840 x 2160 (4K UHD)", valueKm: "3840 x 2160 (4K UHD)" },
+      { labelEn: "Touch Points", labelKm: "Touch Points", valueEn: "20/40-point touch", valueKm: "20/40-point touch" },
+      { labelEn: "Operating System", labelKm: "Operating System", valueEn: "Android (OPS optional)", valueKm: "Android (OPS optional)" },
+      { labelEn: "Brightness", labelKm: "Brightness", valueEn: "350 nits", valueKm: "350 nits" },
+      { labelEn: "Contrast Ratio", labelKm: "Contrast Ratio", valueEn: "4000:1", valueKm: "4000:1" },
+    ],
+    heroImage: "/images/products/ifp-18-75.webp",
+    gallery: ["/images/products/ifp-18-75.webp"],
+    tagsEn: ["Smart Board", "75 inch", "4K", "Interactive Flat Panel"],
+    tagsKm: ["Smart Board", "75 inch", "4K", "Interactive Flat Panel"],
+    seoTitleEn: "Interactive Panel 18 Series 75 Inch | 4K Smart Board",
+    seoTitleKm: "Interactive Panel 18 Series 75 Inch | 4K Smart Board",
+    seoDescEn:
+      "75-inch 4K UHD interactive flat panel with 20/40-point touch for smart classrooms and training rooms.",
+    seoDescKm:
+      "75-inch 4K UHD interactive flat panel with 20/40-point touch for smart classrooms and training rooms.",
+  },
+  {
+    id: "ifp-18-86",
+    slug: "ingscreen-interactive-panel-18-series-86",
+    categoryIds: ["interactive_panel"],
+    primaryCategoryId: "interactive_panel",
+    titleEn: "Ingscreen Interactive Panel 18 Series 86 Inch",
+    titleKm: "Ingscreen Interactive Panel 18 Series 86 Inch",
+    shortDescEn:
+      "86-inch 4K interactive flat panel for large classrooms and boardrooms.",
+    shortDescKm:
+      "86-inch 4K interactive flat panel for large classrooms and boardrooms.",
+    descriptionEn:
+      "The 18 series 86-inch smart board delivers large-format 4K UHD visuals with 20-point touch. Android OS, wireless sharing, and multi-port connectivity support daily teaching and presentations.",
+    descriptionKm:
+      "The 18 series 86-inch smart board delivers large-format 4K UHD visuals with 20-point touch. Android OS, wireless sharing, and multi-port connectivity support daily teaching and presentations.",
+    featuresEn: [
+      "86-inch 4K UHD interactive display",
+      "20-point touch for smooth collaboration",
+      "Android OS with OPS/Windows optional",
+      "Wi-Fi 6 and Bluetooth connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    featuresKm: [
+      "86-inch 4K UHD interactive display",
+      "20-point touch for smooth collaboration",
+      "Android OS with OPS/Windows optional",
+      "Wi-Fi 6 and Bluetooth connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    applicationsEn: [
+      "Large classrooms",
+      "Boardrooms",
+      "Training halls",
+      "Auditoriums",
+    ],
+    applicationsKm: [
+      "Large classrooms",
+      "Boardrooms",
+      "Training halls",
+      "Auditoriums",
+    ],
+    specs: [
+      { labelEn: "Display Size", labelKm: "Display Size", valueEn: "86 inch", valueKm: "86 inch" },
+      { labelEn: "Resolution", labelKm: "Resolution", valueEn: "3840 x 2160 (4K UHD)", valueKm: "3840 x 2160 (4K UHD)" },
+      { labelEn: "Touch Points", labelKm: "Touch Points", valueEn: "20-point touch", valueKm: "20-point touch" },
+      { labelEn: "Operating System", labelKm: "Operating System", valueEn: "Android (OPS optional)", valueKm: "Android (OPS optional)" },
+      { labelEn: "Brightness", labelKm: "Brightness", valueEn: "350 nits", valueKm: "350 nits" },
+      { labelEn: "Contrast Ratio", labelKm: "Contrast Ratio", valueEn: "4000:1", valueKm: "4000:1" },
+    ],
+    heroImage: "/images/products/ifp-18-86.webp",
+    gallery: ["/images/products/ifp-18-86.webp"],
+    tagsEn: ["Smart Board", "86 inch", "4K", "Interactive Flat Panel"],
+    tagsKm: ["Smart Board", "86 inch", "4K", "Interactive Flat Panel"],
+    seoTitleEn: "Ingscreen Interactive Panel 18 Series 86 Inch | 4K Smart Board",
+    seoTitleKm: "Ingscreen Interactive Panel 18 Series 86 Inch | 4K Smart Board",
+    seoDescEn:
+      "86-inch 4K UHD interactive flat panel with 20-point touch for large classrooms and meeting rooms.",
+    seoDescKm:
+      "86-inch 4K UHD interactive flat panel with 20-point touch for large classrooms and meeting rooms.",
+  },
+  {
+    id: "ifp-18-96",
+    slug: "ingscreen-interactive-panel-18-series-96",
+    categoryIds: ["interactive_panel"],
+    primaryCategoryId: "interactive_panel",
+    titleEn: "Ingscreen Interactive Panel 18 Series 96 Inch",
+    titleKm: "Ingscreen Interactive Panel 18 Series 96 Inch",
+    shortDescEn:
+      "96-inch 4K interactive flat panel for large classrooms and training halls.",
+    shortDescKm:
+      "96-inch 4K interactive flat panel for large classrooms and training halls.",
+    descriptionEn:
+      "The 18 series 96-inch interactive flat panel provides large-format 4K UHD visuals with multi-touch collaboration. It supports Android OS, optional OPS, and wireless sharing for classrooms and conference spaces.",
+    descriptionKm:
+      "The 18 series 96-inch interactive flat panel provides large-format 4K UHD visuals with multi-touch collaboration. It supports Android OS, optional OPS, and wireless sharing for classrooms and conference spaces.",
+    featuresEn: [
+      "96-inch 4K UHD display for large rooms",
+      "Multi-touch writing and annotation",
+      "Android OS with OPS/Windows optional",
+      "Wireless screen sharing and connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    featuresKm: [
+      "96-inch 4K UHD display for large rooms",
+      "Multi-touch writing and annotation",
+      "Android OS with OPS/Windows optional",
+      "Wireless screen sharing and connectivity",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    applicationsEn: [
+      "Auditoriums",
+      "Large classrooms",
+      "Training halls",
+      "Conference rooms",
+    ],
+    applicationsKm: [
+      "Auditoriums",
+      "Large classrooms",
+      "Training halls",
+      "Conference rooms",
+    ],
+    specs: [
+      { labelEn: "Display Size", labelKm: "Display Size", valueEn: "96 inch", valueKm: "96 inch" },
+      { labelEn: "Resolution", labelKm: "Resolution", valueEn: "3840 x 2160 (4K UHD)", valueKm: "3840 x 2160 (4K UHD)" },
+      { labelEn: "Touch Points", labelKm: "Touch Points", valueEn: "Multi-touch", valueKm: "Multi-touch" },
+      { labelEn: "Operating System", labelKm: "Operating System", valueEn: "Android (OPS optional)", valueKm: "Android (OPS optional)" },
+      { labelEn: "Connectivity", labelKm: "Connectivity", valueEn: "HDMI, USB, USB-C, LAN", valueKm: "HDMI, USB, USB-C, LAN" },
+    ],
+    heroImage: "/images/products/ifp-18-96.webp",
+    gallery: ["/images/products/ifp-18-96.webp"],
+    tagsEn: ["Smart Board", "96 inch", "4K", "Interactive Flat Panel"],
+    tagsKm: ["Smart Board", "96 inch", "4K", "Interactive Flat Panel"],
+    seoTitleEn: "Ingscreen Interactive Panel 18 Series 96 Inch | 4K Smart Board",
+    seoTitleKm: "Ingscreen Interactive Panel 18 Series 96 Inch | 4K Smart Board",
+    seoDescEn:
+      "96-inch 4K UHD interactive flat panel with multi-touch and Android OS for large classrooms and conference rooms.",
+    seoDescKm:
+      "96-inch 4K UHD interactive flat panel with multi-touch and Android OS for large classrooms and conference rooms.",
+  },
+  {
+    id: "ifp-18-110",
+    slug: "ingscreen-interactive-panel-18-series-110",
+    categoryIds: ["interactive_panel"],
+    primaryCategoryId: "interactive_panel",
+    titleEn: "Ingscreen Interactive Panel 18 Series 110 Inch",
+    titleKm: "Ingscreen Interactive Panel 18 Series 110 Inch",
+    shortDescEn:
+      "110-inch 4K interactive flat panel for auditoriums and premium boardrooms.",
+    shortDescKm:
+      "110-inch 4K interactive flat panel for auditoriums and premium boardrooms.",
+    descriptionEn:
+      "The 18 series 110-inch interactive panel delivers ultra-large 4K UHD visuals with 20-point touch. It supports Android OS, wireless screen sharing, and multiple connectivity options for large venues.",
+    descriptionKm:
+      "The 18 series 110-inch interactive panel delivers ultra-large 4K UHD visuals with 20-point touch. It supports Android OS, wireless screen sharing, and multiple connectivity options for large venues.",
+    featuresEn: [
+      "110-inch 4K UHD display for large venues",
+      "20-point multi-touch collaboration",
+      "Android OS with OPS/Windows optional",
+      "Wireless screen sharing",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    featuresKm: [
+      "110-inch 4K UHD display for large venues",
+      "20-point multi-touch collaboration",
+      "Android OS with OPS/Windows optional",
+      "Wireless screen sharing",
+      "HDMI, USB, USB-C, and LAN ports",
+    ],
+    applicationsEn: [
+      "Auditoriums",
+      "Premium boardrooms",
+      "Large training halls",
+      "Public presentations",
+    ],
+    applicationsKm: [
+      "Auditoriums",
+      "Premium boardrooms",
+      "Large training halls",
+      "Public presentations",
+    ],
+    specs: [
+      { labelEn: "Display Size", labelKm: "Display Size", valueEn: "110 inch", valueKm: "110 inch" },
+      { labelEn: "Resolution", labelKm: "Resolution", valueEn: "3840 x 2160 (4K UHD)", valueKm: "3840 x 2160 (4K UHD)" },
+      { labelEn: "Touch Points", labelKm: "Touch Points", valueEn: "20-point touch", valueKm: "20-point touch" },
+      { labelEn: "Operating System", labelKm: "Operating System", valueEn: "Android (OPS optional)", valueKm: "Android (OPS optional)" },
+      { labelEn: "Brightness", labelKm: "Brightness", valueEn: "350 nits", valueKm: "350 nits" },
+      { labelEn: "Contrast Ratio", labelKm: "Contrast Ratio", valueEn: "4000:1", valueKm: "4000:1" },
+    ],
+    heroImage: "/images/products/ifp-18-110.webp",
+    gallery: ["/images/products/ifp-18-110.webp"],
+    tagsEn: ["Smart Board", "110 inch", "4K", "Interactive Flat Panel"],
+    tagsKm: ["Smart Board", "110 inch", "4K", "Interactive Flat Panel"],
+    seoTitleEn: "Ingscreen Interactive Panel 18 Series 110 Inch | 4K Smart Board",
+    seoTitleKm: "Ingscreen Interactive Panel 18 Series 110 Inch | 4K Smart Board",
+    seoDescEn:
+      "110-inch 4K UHD interactive flat panel with 20-point touch for auditoriums and premium boardrooms.",
+    seoDescKm:
+      "110-inch 4K UHD interactive flat panel with 20-point touch for auditoriums and premium boardrooms.",
+  },
 ];
 
 export function getAllProducts() {
@@ -4596,9 +5461,6 @@ export function getProductsByCategory(categoryId: string) {
 export function getCategoryById(categoryId: string) {
   return PRODUCT_CATEGORIES.find((c) => c.id === categoryId);
 }
-
-
-
 
 
 
