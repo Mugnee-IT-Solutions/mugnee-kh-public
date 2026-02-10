@@ -8,7 +8,13 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return getAllProducts().map((product) => ({ slug: product.slug }));
+  const params = new Set<string>();
+  for (const product of getAllProducts()) {
+    if (product.slug) params.add(product.slug);
+    if (product.id) params.add(product.id);
+    if (product.id?.startsWith("pa-")) params.add(product.id.replace(/^pa-/, ""));
+  }
+  return Array.from(params).map((slug) => ({ slug }));
 }
 
 export function generateMetadata({ params }: PageProps): Metadata {

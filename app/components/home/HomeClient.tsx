@@ -325,13 +325,13 @@ export default function HomeClient({
       {
         title: "PA / Sound System",
         desc: "Speakers, amplifier & microphone",
-        href: "/products/pa-system",
+        href: "/pa-system",
         tone: "from-rose-50 to-rose-100 border-rose-200",
       },
       {
         title: "Turnstile Gate System",
         desc: "Face & RFID access control",
-        href: "/products/turnstile-gate",
+        href: "/turnstile-gate",
         tone: "from-slate-50 to-slate-100 border-slate-200",
       },
     ];
@@ -364,13 +364,13 @@ export default function HomeClient({
       {
         title: "PA / Sound System",
         desc: "Speaker, amplifier & microphone",
-        href: "/products/pa-system",
+        href: "/pa-system",
         tone: "from-rose-50 to-rose-100 border-rose-200",
       },
       {
         title: "Turnstile Gate System",
         desc: "Face & RFID access control",
-        href: "/products/turnstile-gate",
+        href: "/turnstile-gate",
         tone: "from-slate-50 to-slate-100 border-slate-200",
       },
     ];
@@ -984,4 +984,6 @@ export default function HomeClient({
     </div>
   );
 }
+
+
 

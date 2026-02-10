@@ -250,17 +250,8 @@ const CATEGORY_TILES = [
     titleKm: "ច្រកទ្វារ Turnstile",
     descEn: "Tripod, swing, flap barrier and speed gates for secure entry control.",
     descKm: "Tripod / Swing / Flap Barrier / Speed Gate សម្រាប់គ្រប់គ្រងច្រកចូលដោយសុវត្ថិភាព។",
-    href: "/products/turnstile-gate",
+    href: "/turnstile-gate",
     icon: <IconBarrier className="h-5 w-5 text-slate-700" />,
-  },
-  {
-    key: "access_control",
-    titleEn: "Access Control",
-    titleKm: "ប្រព័ន្ធគ្រប់គ្រងការចូល",
-    descEn: "RFID & biometric access control with attendance and door integration.",
-    descKm: "RFID និង Biometrics ជាមួយ attendance និងការរួមបញ្ចូលទ្វារ។",
-    href: "/products/access-control-system",
-    icon: <IconLock className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "pa_system",
@@ -268,7 +259,7 @@ const CATEGORY_TILES = [
     titleKm: "ប្រព័ន្ធ PA",
     descEn: "Public address systems for factories, schools, buildings and venues.",
     descKm: "ប្រព័ន្ធផ្សព្វផ្សាយសំឡេងសម្រាប់រោងចក្រ សាលារៀន អគារ និងទីកន្លែងព្រឹត្តិការណ៍។",
-    href: "/products/pa-system",
+    href: "/pa-system",
     icon: <IconMic className="h-5 w-5 text-slate-700" />,
   },
 ];
@@ -377,9 +368,8 @@ const QUICK_LINKS = [
   { labelEn: "Outdoor LED Display", labelKm: "អេក្រង់ LED ក្រៅអគារ", href: "/led-display/outdoor-led-display" },
   { labelEn: "LED Controller / Processor", labelKm: "Controller / Processor", href: "/products/led-controller" },
   { labelEn: "Interactive Flat Panel", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
-  { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/products/turnstile-gate" },
-  { labelEn: "Access Control System", labelKm: "Access Control", href: "/products/access-control-system" },
-  { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/products/pa-system" },
+  { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/turnstile-gate" },
+  { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/pa-system" },
 ];
 
 const FAQ = [
@@ -498,6 +488,8 @@ export default function HomePage() {
     </main>
   );
 }
+
+
 
 
 

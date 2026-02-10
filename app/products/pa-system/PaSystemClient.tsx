@@ -15,11 +15,11 @@ export default function PaSystemClient() {
 
   const t = useMemo(() => {
     const en = {
-      breadcrumb: "Products",
+      breadcrumb: "" ,
       badge: "Cambodia - PA System - Public Address",
-      h1: "PA System in Cambodia",
+      h1: "Mugnee PA System Solutions in Cambodia",
       sub:
-        "Professional public address systems for factories, schools, hospitals, malls, hotels, offices, and public venues. We supply mixers, power amplifiers, speakers, paging microphones, and accessories with installation and after-sales support in Cambodia.",
+        "Mugnee Cambodia delivers professional public address (PA) systems tailored for local factories, schools, hospitals, malls, hotels, offices, and public venues. We design and supply mixers, power amplifiers, paging microphones, indoor/outdoor speakers, and accessories, with zone planning, cabling, installation, commissioning, and after-sales support across Phnom Penh, Siem Reap, and Sihanoukville.",
       cta1: "Get a Free Quotation",
       cta2: "View PA System Products",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
@@ -47,10 +47,10 @@ export default function PaSystemClient() {
       basicsLabel: "PA SYSTEM BASICS",
       basicsTitle: "What Is a PA System?",
       basicsDesc:
-        "A PA (Public Address) system amplifies and distributes voice and background audio to multiple speakers across a facility. It is essential for announcements, safety alerts, paging, and clear communication in busy environments.",
+        "A PA (Public Address) system is a centralized audio solution that amplifies voice and music and distributes it to speakers across multiple zones. It is used for paging, announcements, safety alerts, and day-to-day communication in factories, schools, malls, offices, hospitals, and public venues.",
       howTitle: "How Does a PA System Work?",
       howDesc:
-        "Sources like microphones and music players feed a mixer, then a power amplifier drives speakers across zones. A controller manages priorities, paging, and emergency overrides so key messages reach the right areas.",
+        "Audio sources such as microphones, media players, and alarm inputs feed a mixer or controller. The signal is processed, amplified, and sent to zone speakers (ceiling, wall, horn, or column). Priority paging and emergency overrides ensure critical messages reach the correct areas clearly and on time.",
       benefitTitle: "Key Benefits for Cambodia Sites",
       b1: "Clear announcements for safety and daily operations",
       b2: "Multi-zone control for offices, factories, and campuses",
@@ -58,9 +58,9 @@ export default function PaSystemClient() {
       b4: "Scalable from small buildings to large facilities",
       b5: "Improved coordination during emergencies",
 
-      guideTitle: "Speaker Type & Coverage Guide",
+      guideTitle: "PA Speaker Selection & Coverage Guide (Cambodia)",
       guideSub:
-        "Choose speaker types based on distance, noise level, and installation environment.",
+        "Choose the right PA speaker type for Cambodia projects. Match coverage distance, ambient noise, and mounting options to keep paging clear in schools, factories, malls, hospitals, and public venues.",
       guideRows: [
         ["Classrooms & Meeting Rooms", "Ceiling / Wall Speakers", "Clear voice and even coverage"],
         ["Corridors & Lobbies", "Wall Speakers", "Directional paging for walkways"],
@@ -69,25 +69,25 @@ export default function PaSystemClient() {
         ["Retail & Malls", "Ceiling / Pendant Speakers", "Balanced paging and background audio"],
       ] as [string, string, string][],
 
-      compTitle: "Key Components & Capabilities",
+      compTitle: "PA System Components & Architecture (Cambodia)",
       compSub:
-        "Build a reliable PA setup with the right mix of audio sources, amplifiers, speakers, paging microphones, and zone control.",
+        "A complete PA system includes audio sources, mixing/control, amplification, and the right speaker types for each zone. Use this checklist to plan scalable, reliable public address systems for factories, schools, malls, hospitals, offices, and public venues across Cambodia.",
       c1: "Mixers & Amplifiers",
-      c1d: "Core audio processing and stable power output for clean sound.",
+      c1d: "High-headroom mixing and amplification that keeps speech intelligible and music balanced, even at peak volume across multiple PA zones.",
       c2: "Paging Microphones",
-      c2d: "Clear voice announcements from reception desks and control rooms.",
+      c2d: "Paging microphones with priority override for security desks, receptions, and control rooms, ensuring emergency and routine announcements cut through background noise.",
       c3: "Wall & Ceiling Speakers",
-      c3d: "Indoor coverage for classrooms, offices, corridors, and retail.",
+      c3d: "Ceiling and wall speakers designed for uniform indoor coverage in classrooms, offices, corridors, and retail spaces with low visual impact.",
       c4: "Horn Speakers",
-      c4d: "High-output outdoor audio for factories and large yards.",
+      c4d: "Weather-resistant horn speakers for long-throw coverage in factories, loading bays, gates, and outdoor yards with high ambient noise.",
       c5: "Zone Controllers",
-      c5d: "Select areas, schedule paging, and set priority channels.",
+      c5d: "Zone controllers and matrices that handle routing, scheduling, and priority paging so the right message reaches the right area at the right time.",
       c6: "Cables & Accessories",
-      c6d: "Reliable wiring, mounts, racks, and connectors for clean installs.",
+      c6d: "Professional cabling, racks, mounts, and surge protection that improve reliability, simplify maintenance, and keep PA systems compliant with site safety standards.",
 
-      chooseTitle: "How to Choose the Right PA System",
+      chooseTitle: "Mugnee PA System Selection Guide for Cambodia",
       chooseSub:
-        "A short checklist to avoid wrong device selection and ensure clear coverage.",
+        "Mugnee Cambodia helps you choose the right PA system for your building by matching coverage area, ambient noise, and safety requirements. Use this selection guide to plan zone-by-zone paging, choose indoor or outdoor speaker types, calculate amplifier power, and set priority/emergency override so announcements are clear in factories, schools, malls, offices, hospitals, and public venues. We also consider room acoustics, mounting height, power budget, and future expansion so your PA system remains reliable as your site grows.",
       s1: "Coverage area and number of zones",
       s2: "Indoor vs outdoor speaker types",
       s3: "Power and wattage requirements",
@@ -98,31 +98,39 @@ export default function PaSystemClient() {
       gridSub:
         "Browse amplifiers, mixers, speakers, microphones, and accessories for Cambodia projects.",
 
-      useTitle: "Where PA Systems Are Used",
+      useTitle: "PA System Applications in Cambodia",
       useSub:
-        "Common PA system deployments for public facilities and commercial sites in Cambodia.",
+        "Explore the most common PA system use cases in Cambodia, from factories and schools to hospitals, malls, hotels, and government facilities. Each environment needs the right speaker type, paging priority, and zone design to ensure clear announcements and safety messaging.",
       u1t: "Factories & Warehouses",
-      u1d: "Shift calls, safety alerts, and production announcements.",
+      u1d: "Shift calls, safety alerts, and production updates across noisy factory floors with long-throw coverage.",
       u2t: "Schools & Campuses",
-      u2d: "Classroom paging, assembly alerts, and campus-wide messages.",
+      u2d: "Classroom paging, assembly alerts, and campus-wide announcements with multi-zone scheduling.",
       u3t: "Hospitals & Clinics",
-      u3d: "Emergency alerts, staff coordination, and patient announcements.",
+      u3d: "Emergency alerts, staff coordination, and patient communications with priority override.",
       u4t: "Retail & Shopping Malls",
-      u4d: "Customer announcements, promotions, and background audio.",
+      u4d: "Customer announcements, promotional messaging, and consistent background audio across retail zones.",
       u5t: "Hotels & Public Venues",
-      u5d: "Event announcements, guest communication, and zoned paging.",
+      u5d: "Event announcements, guest guidance, and zoned paging for lobbies, halls, and outdoor areas.",
       u6t: "Airports & Government",
-      u6d: "Public announcements and safety messaging in large facilities.",
+      u6d: "Public announcements, security messaging, and evacuation guidance in large facilities.",
 
-      processTitle: "Installation, Setup & Training",
+      processTitle: "PA System Installation, Setup & Training in Cambodia",
       processSub:
-        "A structured workflow for stable operation, clean wiring, and clear audio.",
-      p1: "Site survey and coverage planning",
-      p2: "System design and equipment selection",
-      p3: "Installation, wiring, and tuning",
-      p4: "User training and handover support",
+        "From site survey to final commissioning, our team delivers a complete PA system installation in Cambodia. We handle coverage planning, clean cabling, equipment configuration, and end-user training so announcements stay clear, safe, and reliable long after handover.",
+      p1: "Site survey, noise mapping, and coverage planning",
+      p1d:
+        "Assess room size, ambient noise, and mounting points to calculate speaker quantity, placement, and coverage zones.",
+      p2: "System design, equipment selection, and zone layout",
+      p2d:
+        "Select amplifiers, mixers, paging microphones, and speakers that match power, impedance, and usage requirements.",
+      p3: "Installation, cabling, labeling, and audio tuning",
+      p3d:
+        "Run clean cabling, label all lines, configure controllers, and tune EQ/volume for clear speech intelligibility.",
+      p4: "User training, documentation, and handover support",
+      p4d:
+        "Train staff on paging, scheduling, and emergency override with full documentation and maintenance guidelines.",
 
-      faqTitle: "FAQ - PA System",
+      faqTitle: "PA System FAQ for Cambodia Buyers",
       finalTitle: "Get a Project-Based Quotation",
       finalSub:
         "Share your building size, zones, and use-case (factory, school, office, or mall). We will recommend the right PA system and provide a clear quotation.",
@@ -134,11 +142,11 @@ export default function PaSystemClient() {
     };
 
     const km = {
-      breadcrumb: "ផលិតផល",
+      breadcrumb: "" ,
       badge: "Cambodia - PA System - Public Address",
-      h1: "PA System in Cambodia",
+      h1: "Mugnee PA System Solutions in Cambodia",
       sub:
-        "Professional public address systems for factories, schools, hospitals, malls, hotels, offices, and public venues. We supply mixers, power amplifiers, speakers, paging microphones, and accessories with installation and after-sales support in Cambodia.",
+        "Mugnee Cambodia delivers professional public address (PA) systems tailored for local factories, schools, hospitals, malls, hotels, offices, and public venues. We design and supply mixers, power amplifiers, paging microphones, indoor/outdoor speakers, and accessories, with zone planning, cabling, installation, commissioning, and after-sales support across Phnom Penh, Siem Reap, and Sihanoukville.",
       cta1: "Get a Free Quotation",
       cta2: "View PA System Products",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
@@ -166,10 +174,10 @@ export default function PaSystemClient() {
       basicsLabel: "PA SYSTEM BASICS",
       basicsTitle: "What Is a PA System?",
       basicsDesc:
-        "A PA (Public Address) system amplifies and distributes voice and background audio to multiple speakers across a facility. It is essential for announcements, safety alerts, paging, and clear communication in busy environments.",
+        "A PA (Public Address) system is a centralized audio solution that amplifies voice and music and distributes it to speakers across multiple zones. It is used for paging, announcements, safety alerts, and day-to-day communication in factories, schools, malls, offices, hospitals, and public venues.",
       howTitle: "How Does a PA System Work?",
       howDesc:
-        "Sources like microphones and music players feed a mixer, then a power amplifier drives speakers across zones. A controller manages priorities, paging, and emergency overrides so key messages reach the right areas.",
+        "Audio sources such as microphones, media players, and alarm inputs feed a mixer or controller. The signal is processed, amplified, and sent to zone speakers (ceiling, wall, horn, or column). Priority paging and emergency overrides ensure critical messages reach the correct areas clearly and on time.",
       benefitTitle: "Key Benefits for Cambodia Sites",
       b1: "Clear announcements for safety and daily operations",
       b2: "Multi-zone control for offices, factories, and campuses",
@@ -177,9 +185,9 @@ export default function PaSystemClient() {
       b4: "Scalable from small buildings to large facilities",
       b5: "Improved coordination during emergencies",
 
-      guideTitle: "Speaker Type & Coverage Guide",
+      guideTitle: "PA Speaker Selection & Coverage Guide (Cambodia)",
       guideSub:
-        "Choose speaker types based on distance, noise level, and installation environment.",
+        "Choose the right PA speaker type for Cambodia projects. Match coverage distance, ambient noise, and mounting options to keep paging clear in schools, factories, malls, hospitals, and public venues.",
       guideRows: [
         ["Classrooms & Meeting Rooms", "Ceiling / Wall Speakers", "Clear voice and even coverage"],
         ["Corridors & Lobbies", "Wall Speakers", "Directional paging for walkways"],
@@ -188,25 +196,25 @@ export default function PaSystemClient() {
         ["Retail & Malls", "Ceiling / Pendant Speakers", "Balanced paging and background audio"],
       ] as [string, string, string][],
 
-      compTitle: "Key Components & Capabilities",
+      compTitle: "PA System Components & Architecture (Cambodia)",
       compSub:
-        "Build a reliable PA setup with the right mix of audio sources, amplifiers, speakers, paging microphones, and zone control.",
+        "A complete PA system includes audio sources, mixing/control, amplification, and the right speaker types for each zone. Use this checklist to plan scalable, reliable public address systems for factories, schools, malls, hospitals, offices, and public venues across Cambodia.",
       c1: "Mixers & Amplifiers",
-      c1d: "Core audio processing and stable power output for clean sound.",
+      c1d: "High-headroom mixing and amplification that keeps speech intelligible and music balanced, even at peak volume across multiple PA zones.",
       c2: "Paging Microphones",
-      c2d: "Clear voice announcements from reception desks and control rooms.",
+      c2d: "Paging microphones with priority override for security desks, receptions, and control rooms, ensuring emergency and routine announcements cut through background noise.",
       c3: "Wall & Ceiling Speakers",
-      c3d: "Indoor coverage for classrooms, offices, corridors, and retail.",
+      c3d: "Ceiling and wall speakers designed for uniform indoor coverage in classrooms, offices, corridors, and retail spaces with low visual impact.",
       c4: "Horn Speakers",
-      c4d: "High-output outdoor audio for factories and large yards.",
+      c4d: "Weather-resistant horn speakers for long-throw coverage in factories, loading bays, gates, and outdoor yards with high ambient noise.",
       c5: "Zone Controllers",
-      c5d: "Select areas, schedule paging, and set priority channels.",
+      c5d: "Zone controllers and matrices that handle routing, scheduling, and priority paging so the right message reaches the right area at the right time.",
       c6: "Cables & Accessories",
-      c6d: "Reliable wiring, mounts, racks, and connectors for clean installs.",
+      c6d: "Professional cabling, racks, mounts, and surge protection that improve reliability, simplify maintenance, and keep PA systems compliant with site safety standards.",
 
-      chooseTitle: "How to Choose the Right PA System",
+      chooseTitle: "Mugnee PA System Selection Guide for Cambodia",
       chooseSub:
-        "A short checklist to avoid wrong device selection and ensure clear coverage.",
+        "Mugnee Cambodia helps you choose the right PA system for your building by matching coverage area, ambient noise, and safety requirements. Use this selection guide to plan zone-by-zone paging, choose indoor or outdoor speaker types, calculate amplifier power, and set priority/emergency override so announcements are clear in factories, schools, malls, offices, hospitals, and public venues. We also consider room acoustics, mounting height, power budget, and future expansion so your PA system remains reliable as your site grows.",
       s1: "Coverage area and number of zones",
       s2: "Indoor vs outdoor speaker types",
       s3: "Power and wattage requirements",
@@ -217,31 +225,39 @@ export default function PaSystemClient() {
       gridSub:
         "Browse amplifiers, mixers, speakers, microphones, and accessories for Cambodia projects.",
 
-      useTitle: "Where PA Systems Are Used",
+      useTitle: "PA System Applications in Cambodia",
       useSub:
-        "Common PA system deployments for public facilities and commercial sites in Cambodia.",
+        "Explore the most common PA system use cases in Cambodia, from factories and schools to hospitals, malls, hotels, and government facilities. Each environment needs the right speaker type, paging priority, and zone design to ensure clear announcements and safety messaging.",
       u1t: "Factories & Warehouses",
-      u1d: "Shift calls, safety alerts, and production announcements.",
+      u1d: "Shift calls, safety alerts, and production updates across noisy factory floors with long-throw coverage.",
       u2t: "Schools & Campuses",
-      u2d: "Classroom paging, assembly alerts, and campus-wide messages.",
+      u2d: "Classroom paging, assembly alerts, and campus-wide announcements with multi-zone scheduling.",
       u3t: "Hospitals & Clinics",
-      u3d: "Emergency alerts, staff coordination, and patient announcements.",
+      u3d: "Emergency alerts, staff coordination, and patient communications with priority override.",
       u4t: "Retail & Shopping Malls",
-      u4d: "Customer announcements, promotions, and background audio.",
+      u4d: "Customer announcements, promotional messaging, and consistent background audio across retail zones.",
       u5t: "Hotels & Public Venues",
-      u5d: "Event announcements, guest communication, and zoned paging.",
+      u5d: "Event announcements, guest guidance, and zoned paging for lobbies, halls, and outdoor areas.",
       u6t: "Airports & Government",
-      u6d: "Public announcements and safety messaging in large facilities.",
+      u6d: "Public announcements, security messaging, and evacuation guidance in large facilities.",
 
-      processTitle: "Installation, Setup & Training",
+      processTitle: "PA System Installation, Setup & Training in Cambodia",
       processSub:
-        "A structured workflow for stable operation, clean wiring, and clear audio.",
-      p1: "Site survey and coverage planning",
-      p2: "System design and equipment selection",
-      p3: "Installation, wiring, and tuning",
-      p4: "User training and handover support",
+        "From site survey to final commissioning, our team delivers a complete PA system installation in Cambodia. We handle coverage planning, clean cabling, equipment configuration, and end-user training so announcements stay clear, safe, and reliable long after handover.",
+      p1: "Site survey, noise mapping, and coverage planning",
+      p1d:
+        "Assess room size, ambient noise, and mounting points to calculate speaker quantity, placement, and coverage zones.",
+      p2: "System design, equipment selection, and zone layout",
+      p2d:
+        "Select amplifiers, mixers, paging microphones, and speakers that match power, impedance, and usage requirements.",
+      p3: "Installation, cabling, labeling, and audio tuning",
+      p3d:
+        "Run clean cabling, label all lines, configure controllers, and tune EQ/volume for clear speech intelligibility.",
+      p4: "User training, documentation, and handover support",
+      p4d:
+        "Train staff on paging, scheduling, and emergency override with full documentation and maintenance guidelines.",
 
-      faqTitle: "FAQ - PA System",
+      faqTitle: "PA System FAQ for Cambodia Buyers",
       finalTitle: "Get a Project-Based Quotation",
       finalSub:
         "Share your building size, zones, and use-case (factory, school, office, or mall). We will recommend the right PA system and provide a clear quotation.",
@@ -258,60 +274,68 @@ export default function PaSystemClient() {
   const faqs: FAQ[] = useMemo(
     () => [
       {
-        qEn: "What is a PA system used for?",
+        qEn: "What is a PA system and where is it used in Cambodia?",
         aEn:
-          "A PA system delivers clear announcements and emergency alerts across buildings or outdoor areas. It is widely used for safety, paging, and coordination.",
-        qKm: "What is a PA system used for?",
+          "A PA (public address) system amplifies voice and music to multiple speakers across zones. In Cambodia, it is widely used in factories, schools, hospitals, malls, hotels, and public venues for paging, safety alerts, and daily announcements.",
+        qKm: "What is a PA system and where is it used in Cambodia?",
         aKm:
-          "A PA system delivers clear announcements and emergency alerts across buildings or outdoor areas. It is widely used for safety, paging, and coordination.",
+          "A PA (public address) system amplifies voice and music to multiple speakers across zones. In Cambodia, it is widely used in factories, schools, hospitals, malls, hotels, and public venues for paging, safety alerts, and daily announcements.",
       },
       {
-        qEn: "Can you design a PA system for my building?",
+        qEn: "How do I choose speakers for factories, schools, or retail?",
         aEn:
-          "Yes. We provide site assessment, zone planning, speaker placement, and full installation for optimal clarity.",
-        qKm: "Can you design a PA system for my building?",
+          "Speaker type depends on noise level and coverage. Horn speakers suit factories and outdoor yards, while ceiling or wall speakers are ideal for classrooms, offices, corridors, and retail areas for even indoor coverage.",
+        qKm: "How do I choose speakers for factories, schools, or retail?",
         aKm:
-          "Yes. We provide site assessment, zone planning, speaker placement, and full installation for optimal clarity.",
+          "Speaker type depends on noise level and coverage. Horn speakers suit factories and outdoor yards, while ceiling or wall speakers are ideal for classrooms, offices, corridors, and retail areas for even indoor coverage.",
       },
       {
-        qEn: "Do you install indoor and outdoor PA systems?",
+        qEn: "How many zones should a PA system have?",
         aEn:
-          "Yes. We supply and install indoor wall or ceiling speakers and outdoor horn speakers depending on your environment.",
-        qKm: "Do you install indoor and outdoor PA systems?",
+          "Zone count depends on your site layout. We typically separate offices, production floors, corridors, and outdoor areas so messages can be targeted without disturbing other zones.",
+        qKm: "How many zones should a PA system have?",
         aKm:
-          "Yes. We supply and install indoor wall or ceiling speakers and outdoor horn speakers depending on your environment.",
+          "Zone count depends on your site layout. We typically separate offices, production floors, corridors, and outdoor areas so messages can be targeted without disturbing other zones.",
       },
       {
-        qEn: "How many zones can a PA system support?",
+        qEn: "What amplifier power do I need for clear paging?",
         aEn:
-          "That depends on the amplifier and controller. We design multi-zone systems for campuses, factories, and malls.",
-        qKm: "How many zones can a PA system support?",
+          "Amplifier power depends on speaker quantity, wattage, cable distance, and ambient noise. Our engineers calculate load and headroom so speech stays clear without distortion.",
+        qKm: "What amplifier power do I need for clear paging?",
         aKm:
-          "That depends on the amplifier and controller. We design multi-zone systems for campuses, factories, and malls.",
+          "Amplifier power depends on speaker quantity, wattage, cable distance, and ambient noise. Our engineers calculate load and headroom so speech stays clear without distortion.",
       },
       {
-        qEn: "Which PA system components are most important?",
+        qEn: "Can a PA system integrate with fire alarm or security?",
         aEn:
-          "Key components include mixers, power amplifiers, speakers, paging microphones, and zone controllers. The right mix depends on coverage, noise level, and emergency needs.",
-        qKm: "Which PA system components are most important?",
+          "Yes. We can integrate priority paging and emergency override with fire alarm or security systems so evacuation messages play instantly in critical zones.",
+        qKm: "Can a PA system integrate with fire alarm or security?",
         aKm:
-          "Key components include mixers, power amplifiers, speakers, paging microphones, and zone controllers. The right mix depends on coverage, noise level, and emergency needs.",
+          "Yes. We can integrate priority paging and emergency override with fire alarm or security systems so evacuation messages play instantly in critical zones.",
       },
       {
-        qEn: "Can a PA system be used for both announcements and background music?",
+        qEn: "Do you install both indoor and outdoor PA systems?",
         aEn:
-          "Yes. Most systems can handle paging plus background audio by using separate inputs and zone control for different areas.",
-        qKm: "Can a PA system be used for both announcements and background music?",
+          "Yes. We supply indoor ceiling and wall speakers as well as weather‑resistant outdoor horn or column speakers for yards, gates, and large open areas.",
+        qKm: "Do you install both indoor and outdoor PA systems?",
         aKm:
-          "Yes. Most systems can handle paging plus background audio by using separate inputs and zone control for different areas.",
+          "Yes. We supply indoor ceiling and wall speakers as well as weather‑resistant outdoor horn or column speakers for yards, gates, and large open areas.",
       },
       {
-        qEn: "Do you provide after-sales support in Cambodia?",
+        qEn: "How long does PA system installation take in Cambodia?",
         aEn:
-          "Yes. We provide commissioning, training, and maintenance options after installation.",
-        qKm: "Do you provide after-sales support in Cambodia?",
+          "Timeline depends on site size and zone count. Small offices can be completed quickly, while factories or campuses may take longer for cabling, tuning, and testing.",
+        qKm: "How long does PA system installation take in Cambodia?",
         aKm:
-          "Yes. We provide commissioning, training, and maintenance options after installation.",
+          "Timeline depends on site size and zone count. Small offices can be completed quickly, while factories or campuses may take longer for cabling, tuning, and testing.",
+      },
+      {
+        qEn: "Do you provide warranty and after‑sales support?",
+        aEn:
+          "Yes. We provide commissioning, user training, and maintenance options. Warranty depends on equipment type and configuration, and local support is available in Cambodia.",
+        qKm: "Do you provide warranty and after‑sales support?",
+        aKm:
+          "Yes. We provide commissioning, user training, and maintenance options. Warranty depends on equipment type and configuration, and local support is available in Cambodia.",
       },
     ],
     []
@@ -320,15 +344,14 @@ export default function PaSystemClient() {
   const jsonLd = useMemo(() => {
     const site =
       process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
-    const url = site + "/products/pa-system";
+    const url = site + "/pa-system";
 
     const breadcrumb = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site },
-        { "@type": "ListItem", position: 2, name: "Products", item: site + "/products" },
-        { "@type": "ListItem", position: 3, name: "PA System", item: url },
+        { "@type": "ListItem", position: 2, name: "PA System", item: url },
       ],
     };
 
@@ -446,7 +469,7 @@ export default function PaSystemClient() {
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
-            {t.breadcrumb} <span className="mx-1">/</span>
+            
             <span className="font-semibold text-slate-700">PA System</span>
           </div>
 
@@ -455,10 +478,10 @@ export default function PaSystemClient() {
             {t.badge}
           </div>
 
-          <div className="mt-4 grid gap-6 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-7">
+          <div className="mt-4">
+            <div>
               <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{t.h1}</h1>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base">
+              <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base max-w-none">
                 {t.sub}
               </p>
 
@@ -477,47 +500,29 @@ export default function PaSystemClient() {
                 </a>
               </div>
 
-              <p className="mt-4 text-xs text-slate-600">{t.serving}</p>
-
-              <div className="mt-5 rounded-2xl border border-slate-200 bg-white/85 p-4 backdrop-blur">
-                <div className="text-sm font-bold text-slate-900">{t.compTitle}</div>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{t.compSub}</p>
-
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  <KeyRow title={t.c1} desc={t.c1d} />
-                  <KeyRow title={t.c2} desc={t.c2d} />
-                  <KeyRow title={t.c3} desc={t.c3d} />
-                  <KeyRow title={t.c4} desc={t.c4d} />
-                  <KeyRow title={t.c5} desc={t.c5d} />
-                  <KeyRow title={t.c6} desc={t.c6d} />
-                </div>
-              </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="lg:col-span-5">
-              <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm backdrop-blur">
-                <div className="text-base font-bold text-slate-900">{t.chooseTitle}</div>
-                <p className="mt-1 text-sm leading-relaxed text-slate-700">{t.chooseSub}</p>
+      {/* HERO PRODUCTS */}
+      <section className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            {t.gridTitle}
+          </h2>
+          <p className="mt-2 text-slate-600">{t.gridSub}</p>
 
-                <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                  {[t.s1, t.s2, t.s3, t.s4, t.s5].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-900" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-4">
-                  <Link
-                    href="/contact"
-                    className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
-                  >
-                    {t.finalCta}
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div className="mt-6">
+            <ProductGrid
+              columns={3}
+              pageSize={9}
+              allowedCategoryIds={["pa_system","pa_speakers","pa_microphones","pa_amplifiers","pa_controllers","pa_network","pa_software","pa_accessories"]}
+              filterCategoryIds={["pa_speakers","pa_microphones","pa_amplifiers","pa_controllers","pa_network","pa_software","pa_accessories"]}
+              showCategoryFilters
+              showSort
+              showPagination
+            />
           </div>
         </div>
       </section>
@@ -541,6 +546,8 @@ export default function PaSystemClient() {
                 { label: "Specifications", href: "#specs" },
                 { label: "Basics", href: "#basics" },
                 { label: "Coverage Guide", href: "#coverage-guide" },
+                { label: "Components", href: "#components" },
+                { label: "Selection Guide", href: "#selection-guide" },
                 { label: "Use Cases", href: "#use-cases" },
                 { label: "Products", href: "#products" },
                 { label: "Process", href: "#process" },
@@ -560,23 +567,6 @@ export default function PaSystemClient() {
         </div>
       </section>
 
-      {/* SPECS */}
-      <section id="specs" className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.specsTitle}</h2>
-          <p className="mt-2 text-slate-600">{t.specsSub}</p>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <SpecCard title={t.sCard1t} desc={t.sCard1d} />
-            <SpecCard title={t.sCard2t} desc={t.sCard2d} />
-            <SpecCard title={t.sCard3t} desc={t.sCard3d} />
-            <SpecCard title={t.sCard4t} desc={t.sCard4d} />
-            <SpecCard title={t.sCard5t} desc={t.sCard5d} />
-            <SpecCard title={t.sCard6t} desc={t.sCard6d} />
-          </div>
-        </div>
-      </section>
-
       {/* BASICS */}
       <section id="basics" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -592,7 +582,9 @@ export default function PaSystemClient() {
                 {t.basicsDesc}
               </p>
 
-              <h3 className="mt-6 text-lg font-semibold text-slate-900">{t.howTitle}</h3>
+              <h3 className="mt-6 text-2xl font-bold tracking-tight text-slate-900">
+                {t.howTitle}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">
                 {t.howDesc}
               </p>
@@ -640,6 +632,72 @@ export default function PaSystemClient() {
         </div>
       </section>
 
+      {/* SPECS */}
+      <section id="specs" className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.specsTitle}</h2>
+          <p className="mt-2 text-slate-600">{t.specsSub}</p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <SpecCard title={t.sCard1t} desc={t.sCard1d} />
+            <SpecCard title={t.sCard2t} desc={t.sCard2d} />
+            <SpecCard title={t.sCard3t} desc={t.sCard3d} />
+            <SpecCard title={t.sCard4t} desc={t.sCard4d} />
+            <SpecCard title={t.sCard5t} desc={t.sCard5d} />
+            <SpecCard title={t.sCard6t} desc={t.sCard6d} />
+          </div>
+        </div>
+      </section>
+
+      {/* COMPONENTS */}
+      <section id="components" className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.compTitle}</h2>
+          <p className="mt-2 text-slate-600">{t.compSub}</p>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <KeyRow title={t.c1} desc={t.c1d} />
+            <KeyRow title={t.c2} desc={t.c2d} />
+            <KeyRow title={t.c3} desc={t.c3d} />
+            <KeyRow title={t.c4} desc={t.c4d} />
+            <KeyRow title={t.c5} desc={t.c5d} />
+            <KeyRow title={t.c6} desc={t.c6d} />
+          </div>
+        </div>
+      </section>
+
+      {/* SELECTION GUIDE */}
+      <section id="selection-guide" className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-12 lg:items-start">
+            <div className="lg:col-span-7">
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.chooseTitle}</h2>
+              <p className="mt-2 text-justify text-slate-600">{t.chooseSub}</p>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <ul className="space-y-2 text-sm text-slate-700">
+                  {[t.s1, t.s2, t.s3, t.s4, t.s5].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-900" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
+                  >
+                    {t.finalCta}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* USE CASES */}
       <section id="use-cases" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -658,26 +716,6 @@ export default function PaSystemClient() {
       </section>
 
       {/* PRODUCTS */}
-      <section id="products" className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.gridTitle}</h2>
-          <p className="mt-2 text-slate-600">{t.gridSub}</p>
-
-          <div className="mt-6">
-            <ProductGrid
-              columns={3}
-              pageSize={9}
-              allowedCategoryIds={["pa_system"]}
-              filterCategoryIds={["pa_system"]}
-              showCategoryFilters
-              showSort
-              showPagination
-            />
-          </div>
-
-          <p className="mt-4 text-xs text-slate-500">{t.note}</p>
-        </div>
-      </section>
 
       {/* PROCESS */}
       <section id="process" className="border-t border-slate-200 bg-slate-50">
@@ -686,10 +724,10 @@ export default function PaSystemClient() {
           <p className="mt-2 text-slate-600">{t.processSub}</p>
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <StepCard n="01" title={t.p1} />
-            <StepCard n="02" title={t.p2} />
-            <StepCard n="03" title={t.p3} />
-            <StepCard n="04" title={t.p4} />
+            <StepCard n="01" title={t.p1} desc={t.p1d} />
+            <StepCard n="02" title={t.p2} desc={t.p2d} />
+            <StepCard n="03" title={t.p3} desc={t.p3d} />
+            <StepCard n="04" title={t.p4} desc={t.p4d} />
           </div>
         </div>
       </section>
@@ -781,11 +819,28 @@ function SpecCard({ title, desc }: { title: string; desc: string }) {
   );
 }
 
-function StepCard({ n, title }: { n: string; title: string }) {
+function StepCard({ n, title, desc }: { n: string; title: string; desc: string }) {
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="text-xs font-semibold text-slate-500">{n}</div>
       <div className="mt-2 text-sm font-semibold text-slate-900">{title}</div>
+      <div className="mt-2 text-xs leading-relaxed text-slate-600">{desc}</div>
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

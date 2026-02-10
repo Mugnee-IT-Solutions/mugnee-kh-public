@@ -23,6 +23,7 @@ type ProductGridProps = {
   allowedCategoryIds?: string[];
   filterCategoryIds?: string[];
   categoryOrderIds?: string[];
+  excludeSlugs?: string[];
   topLeftContent?: React.ReactNode;
 };
 
@@ -56,6 +57,7 @@ export default function ProductGrid({
   allowedCategoryIds,
   filterCategoryIds,
   categoryOrderIds,
+  excludeSlugs,
   topLeftContent,
 }: ProductGridProps) {
   const { lang } = useLang();
@@ -65,10 +67,13 @@ export default function ProductGrid({
 
   const effectiveCategory = useMemo(() => {
     if (activeCategory === "all") return "all";
-    if (allowedCategoryIds?.length && !allowedCategoryIds.includes(activeCategory)) {
-      return "all";
+    if (filterCategoryIds?.length && filterCategoryIds.includes(activeCategory)) {
+      return activeCategory;
     }
-    if (filterCategoryIds?.length && !filterCategoryIds.includes(activeCategory)) {
+    if (allowedCategoryIds?.length && allowedCategoryIds.includes(activeCategory)) {
+      return activeCategory;
+    }
+    if (filterCategoryIds?.length || allowedCategoryIds?.length) {
       return "all";
     }
     return activeCategory;
@@ -90,6 +95,11 @@ export default function ProductGrid({
 
   const filtered = useMemo(() => {
     let list = PRODUCTS;
+
+    if (excludeSlugs?.length) {
+      const excludeSet = new Set(excludeSlugs);
+      list = list.filter((p) => !excludeSet.has(p.slug));
+    }
 
     if (allowedCategoryIds?.length) {
       const allowSet = new Set(allowedCategoryIds);
@@ -115,7 +125,7 @@ export default function ProductGrid({
         : bTitle.localeCompare(aTitle);
     });
     return limit ? sorted.slice(0, limit) : sorted;
-  }, [effectiveCategory, sortOrder, limit, allowedCategoryIds, categoryOrderIds]);
+  }, [effectiveCategory, sortOrder, limit, allowedCategoryIds, categoryOrderIds, excludeSlugs]);
 
   const totalPages = useMemo(() => {
     if (limit || !showPagination) return 1;

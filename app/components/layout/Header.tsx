@@ -30,7 +30,6 @@ export default function SiteHeader() {
       indoorLed: "Indoor LED Display",
       outdoorLed: "Outdoor LED Display",
       ifp: "Interactive Flat Panel",
-      accessControl: "Access Control System",
       ledController: "LED Controller",
       paSystem: "PA System",
       turnstile: "Turnstile Gate",
@@ -52,7 +51,6 @@ export default function SiteHeader() {
       indoorLed: "អេក្រង់ LED ក្នុងអគារ",
       outdoorLed: "អេក្រង់ LED ក្រៅអគារ",
       ifp: "អេក្រង់អន្តរកម្ម (IFP)",
-      accessControl: "ប្រព័ន្ធ Access Control",
       ledController: "LED Controller",
       paSystem: "ប្រព័ន្ធ PA",
       turnstile: "Turnstile Gate",
@@ -93,9 +91,8 @@ export default function SiteHeader() {
     { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
     { labelEn: "LED Controller / Processor", labelKm: "Controller / Processor", href: "/products/led-controller" },
     { labelEn: "Interactive Flat Panel (IFP)", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
-    { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/products/turnstile-gate" },
-    { labelEn: "Access Control System", labelKm: "Access Control", href: "/products/access-control-system" },
-    { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/products/pa-system" },
+    { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/turnstile-gate" },
+    { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/pa-system" },
   ];
 
   const service: NavItem[] = [
@@ -375,22 +372,15 @@ export default function SiteHeader() {
             >
               {t.ifp}
             </Link>
-            <Link href="/products/access-control-system"
-              className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10 whitespace-nowrap leading-none"
-            >
-              {t.accessControl}
-            </Link>
-
-
-<Link
-              href="/products/pa-system"
+            <Link
+              href="/pa-system"
               className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10 whitespace-nowrap leading-none"
             >
               {t.paSystem}
             </Link>
 
             <Link
-              href="/products/turnstile-gate"
+              href="/turnstile-gate"
               className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10 whitespace-nowrap leading-none"
             >
               {t.turnstile}
@@ -446,11 +436,11 @@ export default function SiteHeader() {
                 <Link href="/interactive-flat-panel" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                   {t.ifp}
                 </Link>
-                <Link href="/products/pa-system" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/pa-system" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                   {t.paSystem}
                 </Link>
 
-                <Link href="/products/turnstile-gate" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/turnstile-gate" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
                   {t.turnstile}
                 </Link>
 
@@ -474,6 +464,8 @@ export default function SiteHeader() {
     </header>
   );
 }
+
+
 
 
 

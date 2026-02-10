@@ -72,7 +72,7 @@ export default function LedDisplayClient({
     { label: "Power Supply", href: "/led-display/power-supply" },
     { label: "LED Controller", href: "/products/led-controller" },
     { label: "Interactive Flat Panel", href: "/interactive-flat-panel" },
-    { label: "PA System", href: "/products/pa-system" },
+    { label: "PA System", href: "/pa-system" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -944,4 +944,5 @@ export default function LedDisplayClient({
     </main>
   );
 }
+
 
