@@ -23,13 +23,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-const summaryBullets = [
-  "End-to-end service from survey and setup to long-term support",
-  "Local Cambodia response team for preventive and corrective maintenance",
-  "AMC plans with scheduled inspections and performance optimization",
-  "Warranty and spare-parts support for reduced operational downtime",
-];
-
 const pillars = [
   {
     title: "Site Survey, Audit, and Service Planning",
@@ -113,18 +106,85 @@ const serviceTiers = [
   {
     title: "Standard Support",
     detail:
-      "Planned support window for routine issues, non-critical faults, and periodic health checks.",
+      "Ideal for routine AMC in Cambodia, including scheduled inspections, preventive maintenance, software checks, and non-critical fault resolution for LED display, PA, and access control systems.",
   },
   {
     title: "Priority Support",
     detail:
-      "Faster response for business-critical systems that require tighter operational uptime targets.",
+      "Best for business-critical operations that need faster SLA response, rapid onsite troubleshooting, and higher uptime assurance for digital signage networks and security entry infrastructure.",
   },
   {
     title: "Emergency Support",
     detail:
-      "Urgent intervention for security, safety, and major outage events requiring immediate action.",
+      "Designed for urgent outages, safety incidents, and access-control failures requiring immediate intervention, escalation handling, and high-priority technical recovery support.",
   },
+];
+
+const commonIssues = [
+  {
+    title: "LED Display Black Screen or Module Failure",
+    detail:
+      "Diagnosis for power, controller, receiving card, and module-level faults with targeted replacement and stability checks.",
+  },
+  {
+    title: "Digital Signage Content or CMS Sync Problems",
+    detail:
+      "Playback error fixes, scheduler correction, network connectivity checks, and CMS synchronization recovery for reliable content delivery.",
+  },
+  {
+    title: "Access Control, Biometric, and Turnstile Errors",
+    detail:
+      "Reader failure, credential mismatch, controller communication issues, and gate logic troubleshooting with integration validation.",
+  },
+  {
+    title: "PA System Audio Zone and Paging Faults",
+    detail:
+      "Amplifier diagnostics, speaker line testing, zone routing correction, and voice clarity optimization for critical announcements.",
+  },
+  {
+    title: "Power, Cabling, and Signal Integrity Issues",
+    detail:
+      "Grounding, surge protection, structured cabling, and interference checks to reduce recurring faults and unstable performance.",
+  },
+  {
+    title: "Firmware, Configuration, and Integration Drift",
+    detail:
+      "Version alignment, parameter rollback, and cross-system integration testing to restore expected operations and reporting.",
+  },
+];
+
+const slaMatrix = [
+  {
+    tier: "Standard",
+    response: "Planned response window",
+    bestFor: "Routine maintenance, non-critical faults, scheduled health checks",
+  },
+  {
+    tier: "Priority",
+    response: "Accelerated response and escalation",
+    bestFor: "Business-critical systems with tighter uptime requirements",
+  },
+  {
+    tier: "Emergency",
+    response: "Immediate intervention workflow",
+    bestFor: "Safety incidents, major outages, and high-impact failures",
+  },
+];
+
+const pricingFactors = [
+  "System type and size (LED area, number of controllers/readers/zones)",
+  "SLA tier selection (Standard, Priority, or Emergency support)",
+  "Preventive visit frequency and service scope depth",
+  "Onsite location, travel requirements, and branch coverage model",
+  "Spare-part readiness level and warranty handling requirements",
+  "Integration complexity with CMS, HR, visitor, or security platforms",
+];
+
+const outcomes = [
+  "Reduced unplanned downtime through preventive maintenance and faster fault isolation",
+  "Improved operational continuity with SLA-based escalation and response planning",
+  "Cleaner compliance records using structured service reports and technical checklists",
+  "Longer system lifespan from proper calibration, firmware control, and part replacement",
 ];
 
 const checklist = [
@@ -138,28 +198,44 @@ const checklist = [
 
 const faqs = [
   {
-    q: "Do you provide AMC for existing LED and access systems in Cambodia?",
-    a: "Yes. We provide AMC and preventive maintenance for Mugnee and eligible third-party systems based on technical condition and service scope.",
+    q: "What does your AMC service in Cambodia include?",
+    a: "Our AMC service typically includes scheduled preventive maintenance, health checks, cleaning, calibration, firmware/controller verification, fault diagnostics, and service reporting for LED, signage, PA, and access control systems.",
   },
   {
-    q: "What is included in your preventive maintenance service?",
-    a: "Preventive service includes inspection, cleaning, calibration, wiring checks, controller validation, and a service report with recommended actions.",
+    q: "Do you provide AMC for systems installed by other vendors?",
+    a: "Yes. We can support many third-party installations after a technical assessment of hardware condition, wiring quality, software environment, and parts availability.",
   },
   {
-    q: "Can you support urgent breakdowns and business-critical outages?",
-    a: "Yes. We offer priority and emergency response workflows for critical failures affecting operations, safety, or customer service.",
+    q: "How fast is your service response for urgent system failures?",
+    a: "Response depends on SLA tier, location, and issue severity. Priority and emergency plans are designed for faster intervention on business-critical outages and safety-related incidents.",
   },
   {
-    q: "Do you provide spare parts and warranty handling?",
-    a: "Yes. We support warranty claims, component replacement, and spare-part planning to reduce repair delays and repeat failures.",
+    q: "Do you offer onsite troubleshooting for LED display and digital signage issues?",
+    a: "Yes. Our engineers provide onsite troubleshooting for display failure, controller issues, pixel faults, communication errors, content display problems, and related infrastructure faults.",
   },
   {
-    q: "Is training provided after installation or repair?",
-    a: "Yes. We provide operator guidance and SOP handover so your internal team can manage daily usage and basic troubleshooting.",
+    q: "Can you handle access control and turnstile repair with software integration checks?",
+    a: "Yes. We diagnose and repair access controllers, readers, locks, and turnstile gates, and verify integration with attendance, visitor management, and HR-connected workflows.",
   },
   {
-    q: "Which locations do you cover for service support?",
-    a: "We cover Phnom Penh, Siem Reap, Sihanoukville, and additional provinces based on project location and response requirements.",
+    q: "Do you provide PA system maintenance and audio zone testing?",
+    a: "Yes. We perform PA amplifier checks, speaker line testing, zone verification, paging clarity validation, and configuration tuning for stable announcement performance.",
+  },
+  {
+    q: "How do you reduce downtime during maintenance or repair?",
+    a: "We follow structured diagnosis, pre-checklists, prioritized issue handling, and validated handover procedures to minimize disruption and restore system uptime faster.",
+  },
+  {
+    q: "Is training included after service completion?",
+    a: "Yes. We provide practical operator training and SOP guidance so your team can run daily operations, handle first-level checks, and escalate issues correctly.",
+  },
+  {
+    q: "Which cities in Cambodia do you cover for service support?",
+    a: "We provide service across Phnom Penh, Siem Reap, Sihanoukville, and additional provinces based on project scope, SLA level, and onsite access requirements.",
+  },
+  {
+    q: "How can we request a quotation for AMC, repair, or support SLA?",
+    a: "Share your system type, location, issue profile, and uptime target. We will propose a suitable AMC or support plan with scope, SLA options, and service cost details.",
   },
 ];
 
@@ -178,13 +254,16 @@ export default function Page() {
                 <span className="font-semibold text-slate-700">Service & Support</span>
               </div>
               <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                Cambodia Service & Support for LED, PA & Access Control Systems
+                Cambodia Service & Support for LED, PA & Access Control
               </h1>
               <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-                Mugnee Cambodia delivers full lifecycle support from installation and commissioning
-                to preventive maintenance, troubleshooting, and warranty service. We help
-                businesses keep LED display, digital signage, PA systems, and access control
-                infrastructure stable, safe, and operational across Cambodia.
+                Mugnee Cambodia provides end-to-end technical service in Cambodia for LED display,
+                digital signage, PA systems, and access control infrastructure. Our local engineers
+                handle site audit, installation, commissioning, preventive maintenance, emergency
+                troubleshooting, component replacement, and warranty support to reduce downtime and
+                improve system reliability. From retail and corporate offices to factories, schools,
+                hospitals, and public-sector sites, we deliver structured support plans that keep
+                critical communication and security systems safe, compliant, and fully operational.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
@@ -205,14 +284,6 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 bg-white/95 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <h2 className="text-base font-semibold text-slate-900">Quick Summary</h2>
-              <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm text-slate-700">
-                {summaryBullets.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </section>
@@ -220,7 +291,7 @@ export default function Page() {
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Core Service Pillars for Cambodia Installations
+            Core LED, PA & Access Control Service Pillars in Cambodia
           </h2>
           <p className="mt-2 text-slate-600">
             Our service model is designed for long-term system health, reduced downtime, and
@@ -243,7 +314,30 @@ export default function Page() {
       <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Cambodia Service Coverage and Onsite Support Reach
+            Common LED, Signage, PA & Access Control Issues We Resolve
+          </h2>
+          <p className="mt-2 text-slate-600">
+            High-intent service requests usually start with recurring technical faults. Our team
+            resolves both root-cause issues and repeat failure patterns to stabilize operations.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {commonIssues.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"
+              >
+                <div className="text-sm font-semibold text-slate-900">{item.title}</div>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            Cambodia Onsite Service Response for LED, Signage, PA & Access
           </h2>
           <p className="mt-2 text-slate-600">
             We align field support by location and urgency to ensure responsive service across key
@@ -266,7 +360,7 @@ export default function Page() {
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Service Workflow: Request, Diagnosis, Repair, and Handover
+            Service Workflow in Cambodia: Diagnosis, Repair & Handover
           </h2>
           <p className="mt-2 text-slate-600">
             Our structured process helps clients track service progress with clear timelines,
@@ -289,11 +383,24 @@ export default function Page() {
       <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            AMC and Response Priority Options in Cambodia
+            Cambodia AMC Plans and Priority Support Response Options
           </h2>
           <p className="mt-2 text-slate-600">
             Choose the support model that matches your risk profile, uptime needs, and business
             criticality.
+          </p>
+          <p className="mt-2 max-w-5xl text-sm leading-relaxed text-slate-600">
+            Our Annual Maintenance Contract (AMC) options in Cambodia are designed for LED display,
+            digital signage, PA systems, and access control infrastructure that require predictable
+            uptime and controlled maintenance cost. Each plan defines response priority,
+            preventive-visit frequency, reporting scope, and escalation workflow so operations teams
+            can reduce unplanned downtime and service uncertainty.
+          </p>
+          <p className="mt-2 max-w-5xl text-sm leading-relaxed text-slate-600">
+            We align SLA structure by business environment, from retail and office sites to
+            factories, hospitals, and public facilities. This helps organizations choose the right
+            balance of routine maintenance, fast fault response, and emergency coverage based on
+            system criticality and compliance requirements.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {serviceTiers.map((item) => (
@@ -306,17 +413,68 @@ export default function Page() {
               </div>
             ))}
           </div>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <div className="grid grid-cols-1 border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-600 sm:grid-cols-3">
+              <div className="px-4 py-3">Support Tier</div>
+              <div className="px-4 py-3">Response Model</div>
+              <div className="px-4 py-3">Best For</div>
+            </div>
+            {slaMatrix.map((row) => (
+              <div
+                key={row.tier}
+                className="grid grid-cols-1 border-b border-slate-100 text-sm text-slate-700 last:border-b-0 sm:grid-cols-3"
+              >
+                <div className="px-4 py-3 font-semibold text-slate-900">{row.tier}</div>
+                <div className="px-4 py-3">{row.response}</div>
+                <div className="px-4 py-3">{row.bestFor}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Technical Compliance and Service Readiness Checklist
+            Cambodia AMC Pricing and Service Scope Planning Factors
+          </h2>
+          <p className="mt-2 text-slate-600">
+            AMC and support pricing is shaped by technical scope, SLA expectations, and coverage
+            requirements. We use transparent scope mapping so procurement teams can compare plans
+            clearly.
+          </p>
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+            <ul className="grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
+              {pricingFactors.map((item) => (
+                <li key={item} className="rounded-xl border border-slate-100 bg-slate-50 px-3 py-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            Cambodia Technical Service Compliance & Readiness Checklist
           </h2>
           <p className="mt-2 text-slate-600">
             Before closure, we validate technical and safety checkpoints to ensure stable,
             compliant, and maintainable operation.
+          </p>
+          <p className="mt-2 max-w-5xl text-sm leading-relaxed text-slate-600">
+            This compliance checklist is built for Cambodia service environments where LED display,
+            digital signage, PA systems, and access control infrastructure must meet operational
+            safety, reliability, and audit requirements. It helps facility, IT, and operations
+            teams confirm that installation quality, service readiness, and long-term maintenance
+            standards are fully aligned before project sign-off.
+          </p>
+          <p className="mt-2 max-w-5xl text-sm leading-relaxed text-slate-600">
+            By validating power integrity, firmware consistency, network health, emergency logic,
+            and documentation, organizations can reduce repeat faults, improve system uptime, and
+            maintain clearer compliance records for internal governance and external reviews.
           </p>
           <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <ul className="grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
@@ -333,7 +491,29 @@ export default function Page() {
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Service & Support FAQs for Cambodia Projects
+            Service Outcomes for Business Uptime and System Reliability
+          </h2>
+          <p className="mt-2 text-slate-600">
+            Our service framework is designed to improve continuity, reduce repeat incidents, and
+            keep communication and security systems operational across Cambodia sites.
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {outcomes.map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-md"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            Cambodia Service & Support FAQs: AMC, Repair, Warranty, and SLA
           </h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             {faqs.map((item) => (
@@ -360,7 +540,7 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
             <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-              Request a Cambodia Service and Maintenance Plan
+              Request a Cambodia AMC, Repair & Maintenance Service Plan
             </h2>
             <p className="mt-2 text-slate-600">
               Share your system type, issue category, and site location. We will recommend the

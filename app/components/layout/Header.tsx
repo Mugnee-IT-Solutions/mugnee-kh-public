@@ -208,17 +208,17 @@ export default function SiteHeader() {
 
           {/* Search (Desktop) */}
           <form onSubmit={onSearch} className="hidden flex-1 lg:block">
-            <div className="relative">
+            <div className="flex items-center rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder={t.searchPlaceholder}
                 aria-label={t.searchAria}
-                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-2.5 pr-24 text-sm text-slate-900 outline-none ring-0 placeholder:text-slate-400 focus:border-slate-300"
+                className="min-w-0 flex-1 bg-transparent px-3 py-1.5 text-sm text-slate-900 outline-none ring-0 placeholder:text-slate-400"
               />
               <button
                 type="submit"
-                className="absolute right-1.5 top-1.5 rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+                className="shrink-0 rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
               >
                 {t.go}
               </button>
@@ -275,17 +275,17 @@ export default function SiteHeader() {
         {/* Search (Mobile/Tablet) */}
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-3 lg:hidden">
           <form onSubmit={onSearch}>
-            <div className="relative">
+            <div className="flex items-center rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder={t.searchPlaceholder}
                 aria-label={t.searchAria}
-                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-2.5 pr-24 text-sm text-slate-900 outline-none placeholder:text-slate-400 focus:border-slate-300"
+                className="min-w-0 flex-1 bg-transparent px-3 py-1.5 text-sm text-slate-900 outline-none placeholder:text-slate-400"
               />
               <button
                 type="submit"
-                className="absolute right-1.5 top-1.5 rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
+                className="shrink-0 rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
               >
                 {t.go}
               </button>
@@ -327,8 +327,8 @@ export default function SiteHeader() {
 
       {/* MENU BAR */}
       <div className="border-b border-slate-900/10 bg-slate-900">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
-          <nav className="hidden items-center gap-1 lg:flex flex-nowrap whitespace-nowrap" aria-label="Primary">
+        <div className="mx-auto flex w-full max-w-7xl items-center px-4 sm:px-6 lg:px-8 py-2">
+          <nav className="hidden w-full items-center justify-between lg:flex flex-nowrap whitespace-nowrap" aria-label="Primary">
             <Dropdown id="ledDisplay" title={t.ledDisplay} items={ledDisplayMenu} />
 
             <Link
