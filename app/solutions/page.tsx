@@ -249,14 +249,17 @@ export default function Page() {
           </div>
 
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            Solutions in Cambodia for LED Display, Signage, Access Control, and Smart Systems
+            Business Solutions in Cambodia: LED Display, Digital Signage, Access Control, PA System, and Turnstile Integration
           </h1>
 
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-            Mugnee Cambodia delivers end-to-end solutions for LED display, digital signage, smart
-            classrooms, access control, PA systems, and turnstile gates. We design, install, and
-            support integrated systems that improve communication, security, and customer
-            experience across Cambodia.
+            Mugnee Cambodia provides end-to-end business technology solutions in Cambodia for retail,
+            corporate offices, factories, education, healthcare, hospitality, and public-sector sites.
+            Our team handles site survey, system design, BOQ planning, installation, commissioning,
+            integration, training, and after-sales support for LED display, digital signage, access
+            control, PA systems, and turnstile gates. We help organizations improve brand visibility,
+            operational efficiency, safety compliance, and secure entry management with scalable
+            solutions built for real Cambodia market conditions.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -267,10 +270,10 @@ export default function Page() {
               Get a Free Quotation
             </Link>
             <Link
-              href="/projects"
+              href="/products"
               className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50"
             >
-              View Projects
+              View Products
             </Link>
           </div>
 

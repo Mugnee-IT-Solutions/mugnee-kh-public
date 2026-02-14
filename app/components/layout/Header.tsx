@@ -57,35 +57,6 @@ export default function SiteHeader() {
     };
     return lang === "en" ? en : km;
   }, [lang]);
-
-  const solutions: NavItem[] = [
-    {
-      labelEn: "LED Billboard & Outdoor Advertising",
-      labelKm: "ប៊ីលបត LED ក្រៅអគារ",
-      href: "/solutions/led-billboard-cambodia",
-    },
-    {
-      labelEn: "Retail & Mall Digital Signage",
-      labelKm: "Digital Signage សម្រាប់ផ្សារ/ហាង",
-      href: "/solutions/digital-signage-cambodia",
-    },
-    {
-      labelEn: "Smart Classroom Solutions",
-      labelKm: "Smart Classroom",
-      href: "/solutions/smart-classroom-cambodia",
-    },
-    {
-      labelEn: "Office & Building Access Control",
-      labelKm: "Access Control សម្រាប់អគារ",
-      href: "/solutions/access-control-cambodia",
-    },
-    {
-      labelEn: "Factory PA & Announcement System",
-      labelKm: "ប្រព័ន្ធ PA សម្រាប់រោងចក្រ",
-      href: "/solutions/pa-system-cambodia",
-    },
-  ];
-
   const products: NavItem[] = [
     { labelEn: "Indoor LED Display", labelKm: "Indoor LED Display", href: "/led-display/indoor-led-display" },
     { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
@@ -93,12 +64,6 @@ export default function SiteHeader() {
     { labelEn: "Interactive Flat Panel (IFP)", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
     { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/turnstile-gate" },
     { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/pa-system" },
-  ];
-
-  const service: NavItem[] = [
-    { labelEn: "Installation & Commissioning", labelKm: "ដំឡើង & Commissioning", href: "/service/installation" },
-    { labelEn: "Maintenance & AMC", labelKm: "ថែទាំ & AMC", href: "/service/maintenance" },
-    { labelEn: "Warranty Policy", labelKm: "គោលនយោបាយធានា", href: "/service/warranty" },
   ];
 
   const ledDisplayMenu: NavItem[] = [
@@ -386,8 +351,15 @@ export default function SiteHeader() {
               {t.turnstile}
             </Link>
 
-            <Dropdown id="solutions" title={t.solutions} items={solutions} />
-            <Dropdown id="service" title={t.service} items={service} />
+            <Link
+              href="/solutions"
+              className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10"
+            >
+              {t.solutions}
+            </Link>
+            <Link href="/service" className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10">
+              {t.service}
+            </Link>
             <Link href="/about" className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10">
               {t.about}
             </Link>
@@ -464,6 +436,7 @@ export default function SiteHeader() {
     </header>
   );
 }
+
 
 
 
