@@ -49,9 +49,11 @@ export default function OutdoorLedDisplayPage() {
                   "Weather-ready rental panels for outdoor events and stages, designed for fast setup, modular splicing, and safe cabling.",
                   ["Fast setup", "Rugged", "Event ready"],
                 ],
-              ].map(([t, d, chips]) => (
+              ].map((item, idx) => {
+                const [t, d, chips] = item as [string, string, string[]];
+                return (
                 <div
-                  key={t}
+                  key={`${t}-${idx}`}
                   className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
                 >
                   <div className="text-sm font-semibold text-slate-900">{t}</div>
@@ -67,7 +69,8 @@ export default function OutdoorLedDisplayPage() {
                     ))}
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

@@ -49,9 +49,11 @@ export default function IndoorLedDisplayPage() {
                   "Standard indoor SMD panels are cost-efficient and versatile for general indoor screens, signage, and mid-distance viewing where budget matters.",
                   ["P1.5 to P3.9", "Budget friendly", "General indoor use"],
                 ],
-              ].map(([t, d, chips]) => (
+              ].map((item, idx) => {
+                const [t, d, chips] = item as [string, string, string[]];
+                return (
                 <div
-                  key={t}
+                  key={`${t}-${idx}`}
                   className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
                 >
                   <div className="text-sm font-semibold text-slate-900">{t}</div>
@@ -67,7 +69,8 @@ export default function IndoorLedDisplayPage() {
                     ))}
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

@@ -2,12 +2,14 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useLang } from "./LanguageProvider";
 
 type NavItem = { labelEn: string; labelKm: string; href: string };
 
 export default function SiteHeader() {
   const { lang, setLang } = useLang();
+  const pathname = usePathname();
   const [openMobile, setOpenMobile] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [q, setQ] = useState("");
@@ -82,6 +84,18 @@ export default function SiteHeader() {
     products: "/products",
   };
 
+  const isPathActive = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
+
+  const desktopNavLinkClass = (active: boolean) =>
+    [
+      "relative rounded-xl px-3 py-2 text-sm font-semibold whitespace-nowrap leading-none transition no-underline hover:no-underline",
+      "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30",
+      active ? "text-white bg-white/10" : "text-slate-100 hover:bg-white/10",
+      "after:content-[''] after:absolute after:left-3 after:right-3 after:bottom-0.5 after:h-0.5 after:rounded-full after:transition-opacity",
+      active ? "after:opacity-100 after:bg-sky-300" : "after:opacity-0 after:bg-transparent",
+    ].join(" ");
+
   function Dropdown({
     id,
     title,
@@ -97,6 +111,7 @@ export default function SiteHeader() {
     const panelPos = align === "center" ? "left-1/2 -translate-x-1/2" : "left-0";
 
     const parentHref = parentHrefById[id] || "#";
+    const isActive = isPathActive(parentHref);
 
     return (
       <div
@@ -109,17 +124,13 @@ export default function SiteHeader() {
           className={[
             "inline-flex items-center overflow-hidden rounded-xl",
             "whitespace-nowrap",
-            isOpen ? "bg-white/10" : "hover:bg-white/10",
+            isOpen || isActive ? "bg-white/10" : "hover:bg-white/10",
           ].join(" ")}
         >
           {/* ✅ Click = go to parent page */}
           <Link
             href={parentHref}
-            className={[
-              "px-3 py-2 text-sm font-semibold text-slate-100 transition",
-              "whitespace-nowrap leading-none",
-              "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30",
-            ].join(" ")}
+            className={desktopNavLinkClass(isActive)}
             onClick={() => setOpenMenu(null)}
           >
             {title}
@@ -129,7 +140,7 @@ export default function SiteHeader() {
           <button
             type="button"
             className={[
-              "px-2 py-2 text-slate-100/90 transition",
+              "px-2.5 py-2 text-slate-100/95 transition",
               "whitespace-nowrap leading-none",
               "hover:text-white",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30",
@@ -139,7 +150,18 @@ export default function SiteHeader() {
             aria-expanded={isOpen}
             onClick={() => setOpenMenu(isOpen ? null : id)}
           >
-            <span className={`text-[11px] transition ${isOpen ? "rotate-180" : ""}`}>▾</span>
+            <svg
+              viewBox="0 0 20 20"
+              aria-hidden="true"
+              className={`h-4 w-4 text-white transition-transform ${isOpen ? "rotate-180" : ""}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 7.5l5 5 5-5" />
+            </svg>
           </button>
         </div>
 
@@ -165,7 +187,7 @@ export default function SiteHeader() {
                     key={it.href}
                     href={it.href}
                     className={[
-                      "block rounded-xl px-3 py-2.5 text-sm",
+                      "block rounded-xl px-3 py-2.5 text-sm no-underline hover:no-underline focus:no-underline",
                       "text-slate-100/90",
                       "transition",
                       "hover:bg-white/10 hover:text-white",
@@ -208,13 +230,13 @@ export default function SiteHeader() {
 
           {/* Search (Desktop) */}
           <form onSubmit={onSearch} className="hidden flex-1 lg:block">
-            <div className="flex items-center rounded-2xl border border-slate-200 bg-white p-1.5">
+            <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder={t.searchPlaceholder}
                 aria-label={t.searchAria}
-                className="min-w-0 flex-1 bg-transparent px-3 py-1.5 text-sm text-slate-900 outline-none ring-0 placeholder:text-slate-400"
+                className="min-w-0 flex-1 rounded-none bg-transparent px-3 py-1.5 text-sm text-slate-900 outline-none ring-0 placeholder:text-slate-400"
               />
               <button
                 type="submit"
@@ -275,13 +297,13 @@ export default function SiteHeader() {
         {/* Search (Mobile/Tablet) */}
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-3 lg:hidden">
           <form onSubmit={onSearch}>
-            <div className="flex items-center rounded-2xl border border-slate-200 bg-white p-1.5">
+            <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder={t.searchPlaceholder}
                 aria-label={t.searchAria}
-                className="min-w-0 flex-1 bg-transparent px-3 py-1.5 text-sm text-slate-900 outline-none placeholder:text-slate-400"
+                className="min-w-0 flex-1 rounded-none bg-transparent px-3 py-1.5 text-sm text-slate-900 outline-none placeholder:text-slate-400"
               />
               <button
                 type="submit"
@@ -333,37 +355,37 @@ export default function SiteHeader() {
 
             <Link
               href="/interactive-flat-panel"
-              className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10 whitespace-nowrap leading-none"
+              className={desktopNavLinkClass(isPathActive("/interactive-flat-panel"))}
             >
               {t.ifp}
             </Link>
             <Link
               href="/pa-system"
-              className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10 whitespace-nowrap leading-none"
+              className={desktopNavLinkClass(isPathActive("/pa-system"))}
             >
               {t.paSystem}
             </Link>
 
             <Link
               href="/turnstile-gate"
-              className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10 whitespace-nowrap leading-none"
+              className={desktopNavLinkClass(isPathActive("/turnstile-gate"))}
             >
               {t.turnstile}
             </Link>
 
             <Link
               href="/solutions"
-              className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10"
+              className={desktopNavLinkClass(isPathActive("/solutions"))}
             >
               {t.solutions}
             </Link>
-            <Link href="/service" className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10">
+            <Link href="/service" className={desktopNavLinkClass(isPathActive("/service"))}>
               {t.service}
             </Link>
-            <Link href="/about" className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10">
+            <Link href="/about" className={desktopNavLinkClass(isPathActive("/about"))}>
               {t.about}
             </Link>
-            <Link href="/contact" className="rounded-xl px-3 py-2 text-sm font-semibold text-slate-100 hover:bg-white/10">
+            <Link href="/contact" className={desktopNavLinkClass(isPathActive("/contact"))}>
               {t.contact}
             </Link>
           </nav>

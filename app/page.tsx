@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import HomeClient from "./components/home/HomeClient";
 
 type IconProps = { className?: string };
@@ -156,7 +156,7 @@ function IconMic({ className }: IconProps) {
 }
 
 
-/** ✅ Set this in production:
+/** âœ… Set this in production:
  * NEXT_PUBLIC_SITE_URL=https://mugnee.com.kh
  */
 const SITE_URL =
@@ -190,7 +190,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "LED Display & Digital Signage Solutions in Cambodia | Mugnee Cambodia",
     description:
-      "LED Display, Digital Signage, Smart Boards, Turnstile Gates, PA Systems & Access Control — Cambodia.",
+      "LED Display, Digital Signage, Smart Boards, Turnstile Gates, PA Systems & Access Control â€” Cambodia.",
     images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
   },
 };
@@ -201,11 +201,11 @@ const CATEGORY_TILES = [
   {
     key: "led_display",
     titleEn: "LED Display",
-    titleKm: "អេក្រង់ LED",
+    titleKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED",
     descEn:
       "Indoor & outdoor LED video wall solutions for retail, events and advertising.",
     descKm:
-      "ដំណោះស្រាយអេក្រង់ LED ក្នុង/ក្រៅអគារ សម្រាប់លក់រាយ ព្រឹត្តិការណ៍ និងការផ្សព្វផ្សាយ។",
+      "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž€áŸ’áž“áž»áž„/áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž›áž€áŸ‹ážšáž¶áž™ áž–áŸ’ážšáž¹ážáŸ’ážáž·áž€áž¶ážšážŽáŸ áž“áž·áž„áž€áž¶ážšáž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™áŸ”",
     href: "/led-display",
     icon: <IconMonitor className="h-5 w-5 text-slate-700" />,
   },
@@ -214,53 +214,62 @@ const CATEGORY_TILES = [
     titleEn: "Indoor LED Display",
     titleKm: "Indoor LED Display",
     descEn: "Meeting rooms, showrooms & indoor LED walls.",
-    descKm: "Meeting rooms � Showrooms � Indoor LED walls",
+    descKm: "Meeting rooms ï¿½ Showrooms ï¿½ Indoor LED walls",
     href: "/led-display/indoor-led-display",
     icon: <IconSparkles className="h-5 w-5 text-slate-700" />,
   },{
     key: "outdoor_billboard",
     titleEn: "Outdoor LED Billboard",
-    titleKm: "ប៊ីលបត LED ក្រៅអគារ",
+    titleKm: "áž”áŸŠáž¸áž›áž”áž LED áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš",
     descEn: "High-brightness LED screens built for heat, rain and 24/7 operation.",
-    descKm: "អេក្រង់ភ្លឺខ្លាំង អាចធន់កម្ដៅ ភ្លៀង និងដំណើរការ 24/7។",
+    descKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž—áŸ’áž›ážºážáŸ’áž›áž¶áŸ†áž„ áž¢áž¶áž…áž’áž“áŸ‹áž€áž˜áŸ’ážŠáŸ… áž—áŸ’áž›áŸ€áž„ áž“áž·áž„ážŠáŸ†ážŽáž¾ážšáž€áž¶ážš 24/7áŸ”",
     href: "/solutions/led-billboard-cambodia",
     icon: <IconAntenna className="h-5 w-5 text-slate-700" />,
   },
   {
-    key: "digital_signage",
-    titleEn: "Digital Signage",
-    titleKm: "ផ្ទាំងបង្ហាញឌីជីថល",
-    descEn: "Mall, hotel and store signage to engage customers and drive sales.",
-    descKm: "សម្រាប់ផ្សារ សណ្ឋាគារ និងហាង ដើម្បីទាក់ទាញអតិថិជន និងបង្កើនការលក់។",
-    href: "/solutions/digital-signage-cambodia",
-    icon: <IconTv className="h-5 w-5 text-slate-700" />,
+    key: "receiving_card",
+    titleEn: "Receiving Card",
+    titleKm: "Receiving Card",
+    descEn: "Reliable LED receiving cards for stable signal distribution and display control.",
+    descKm: "Reliable LED receiving cards for stable signal distribution and display control.",
+    href: "/led-display/receiving-card",
+    icon: <IconLock className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "ifp",
     titleEn: "Interactive Flat Panel",
-    titleKm: "អេក្រង់អន្តរកម្ម (IFP)",
+    titleKm: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ (IFP)",
     descEn: "Smart board solutions for classrooms, training rooms and boardrooms.",
-    descKm: "Smart Board សម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងបន្ទប់ប្រជុំ។",
+    descKm: "Smart Board ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áŸ”",
     href: "/interactive-flat-panel",
     icon: <IconPresentation className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "turnstile",
     titleEn: "Turnstile Gates",
-    titleKm: "ច្រកទ្វារ Turnstile",
+    titleKm: "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile",
     descEn: "Tripod, swing, flap barrier and speed gates for secure entry control.",
-    descKm: "Tripod / Swing / Flap Barrier / Speed Gate សម្រាប់គ្រប់គ្រងច្រកចូលដោយសុវត្ថិភាព។",
+    descKm: "Tripod / Swing / Flap Barrier / Speed Gate ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áŸ’ážšáž€áž…áž¼áž›ážŠáŸ„áž™ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”",
     href: "/turnstile-gate",
     icon: <IconBarrier className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "pa_system",
     titleEn: "PA System",
-    titleKm: "ប្រព័ន្ធ PA",
+    titleKm: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA",
     descEn: "Public address systems for factories, schools, buildings and venues.",
-    descKm: "ប្រព័ន្ធផ្សព្វផ្សាយសំឡេងសម្រាប់រោងចក្រ សាលារៀន អគារ និងទីកន្លែងព្រឹត្តិការណ៍។",
+    descKm: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™ážŸáŸ†áž¡áŸáž„ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž¢áž‚áž¶ážš áž“áž·áž„áž‘áž¸áž€áž“áŸ’áž›áŸ‚áž„áž–áŸ’ážšáž¹ážáŸ’ážáž·áž€áž¶ážšážŽáŸáŸ”",
     href: "/pa-system",
     icon: <IconMic className="h-5 w-5 text-slate-700" />,
+  },
+  {
+    key: "video_processor",
+    titleEn: "Video Processor",
+    titleKm: "Video Processor",
+    descEn: "Advanced video processors for multi-input scaling, switching and LED screen optimization.",
+    descKm: "Advanced video processors for multi-input scaling, switching and LED screen optimization.",
+    href: "/led-display/video-processor",
+    icon: <IconTv className="h-5 w-5 text-slate-700" />,
   },
 ];
 
@@ -268,155 +277,163 @@ const SOLUTIONS = [
   {
     key: "indoor_led",
     titleEn: "Indoor LED Display Solutions",
-    titleKm: "ដំណោះស្រាយអេក្រង់ LED ខាងក្នុង",
+    titleKm: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’áž“áž»áž„",
     pointsEn: [
       "Fine-pitch LED options for clear close-viewing",
       "Ideal for boardrooms, showrooms and control rooms",
       "Professional installation & calibration support",
     ],
     pointsKm: [
-      "ជម្រើស Fine Pitch សម្រាប់មើលជិតបានច្បាស់",
-      "សមស្របសម្រាប់បន្ទប់ប្រជុំ, showroom និងបន្ទប់បញ្ជា",
-      "ដំឡើង និង calibration ដោយក្រុមជំនាញ",
+      "áž‡áž˜áŸ’ážšáž¾ážŸ Fine Pitch ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž˜áž¾áž›áž‡áž·ážáž”áž¶áž“áž…áŸ’áž”áž¶ážŸáŸ‹",
+      "ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†, showroom áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áž‰áŸ’áž‡áž¶",
+      "ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ calibration ážŠáŸ„áž™áž€áŸ’ážšáž»áž˜áž‡áŸ†áž“áž¶áž‰",
     ],
     href: "/led-display/indoor-led-display",
   },
   {
     key: "billboard",
     titleEn: "LED Billboard & Outdoor Advertising",
-    titleKm: "ប៊ីលបត LED និងការផ្សព្វផ្សាយក្រៅអគារ",
+    titleKm: "áž”áŸŠáž¸áž›áž”áž LED áž“áž·áž„áž€áž¶ážšáž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš",
     pointsEn: [
       "Best viewing distance planning (pixel pitch guidance)",
       "High brightness, weather protection & stable power design",
       "Installation, commissioning & maintenance support in Cambodia",
     ],
     pointsKm: [
-      "ផែនការចម្ងាយមើល (ការណែនាំ pixel pitch)",
-      "ពន្លឺខ្ពស់ ការការពារអាកាសធាតុ និងប្រព័ន្ធថាមពលមានស្ថេរភាព",
-      "ដំឡើង Commissioning និងសេវាកម្មថែទាំនៅកម្ពុជា",
+      "áž•áŸ‚áž“áž€áž¶ážšáž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› (áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ† pixel pitch)",
+      "áž–áž“áŸ’áž›ážºážáŸ’áž–ážŸáŸ‹ áž€áž¶ážšáž€áž¶ážšáž–áž¶ážšáž¢áž¶áž€áž¶ážŸáž’áž¶ážáž» áž“áž·áž„áž”áŸ’ážšáž–áŸáž“áŸ’áž’ážáž¶áž˜áž–áž›áž˜áž¶áž“ážŸáŸ’ážáŸážšáž—áž¶áž–",
+      "ážŠáŸ†áž¡áž¾áž„ Commissioning áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜ážáŸ‚áž‘áž¶áŸ†áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
     ],
     href: "/solutions/led-billboard-cambodia",
   },
   {
     key: "signage",
     titleEn: "Retail & Mall Digital Signage",
-    titleKm: "Digital Signage សម្រាប់ហាង និងផ្សារ",
+    titleKm: "Digital Signage ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž áž¶áž„ áž“áž·áž„áž•áŸ’ážŸáž¶ážš",
     pointsEn: [
       "Storefront LED & indoor video wall displays",
       "Content-ready signage for promotions and branding",
       "Reliable performance with service support",
     ],
     pointsKm: [
-      "LED storefront និង video wall ក្នុងអគារ",
-      "សម្រាប់ប្រូម៉ូសិន និង branding (content-ready)",
-      "ប្រសិទ្ធភាពមានស្ថេរភាពជាមួយសេវាកម្មគាំទ្រ",
+      "LED storefront áž“áž·áž„ video wall áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš",
+      "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áŸ’ážšáž¼áž˜áŸ‰áž¼ážŸáž·áž“ áž“áž·áž„ branding (content-ready)",
+      "áž”áŸ’ážšážŸáž·áž‘áŸ’áž’áž—áž¶áž–áž˜áž¶áž“ážŸáŸ’ážáŸážšáž—áž¶áž–áž‡áž¶áž˜áž½áž™ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž‚áž¶áŸ†áž‘áŸ’ážš",
     ],
     href: "/solutions/digital-signage-cambodia",
   },
   {
     key: "smart_classroom",
     titleEn: "Smart Classroom Solutions",
-    titleKm: "ដំណោះស្រាយ Smart Classroom",
+    titleKm: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ Smart Classroom",
     pointsEn: [
       "IFP smart board (65/75/86) for teaching & training",
       "OPS/PC integration, wireless sharing & touch annotation",
       "Project-based setup with user training support",
     ],
     pointsKm: [
-      "IFP Smart Board (65/75/86) សម្រាប់បង្រៀន និងបណ្តុះបណ្តាល",
-      "រួមបញ្ចូល OPS/PC, wireless sharing និង touch annotation",
-      "ការតំឡើងតាមគម្រោង + ការបណ្តុះបណ្តាលអ្នកប្រើ",
+      "IFP Smart Board (65/75/86) ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áž„áŸ’ážšáŸ€áž“ áž“áž·áž„áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›",
+      "ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› OPS/PC, wireless sharing áž“áž·áž„ touch annotation",
+      "áž€áž¶ážšážáŸ†áž¡áž¾áž„ážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„ + áž€áž¶ážšáž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾",
     ],
     href: "/solutions/smart-classroom-cambodia",
   },
   {
     key: "access",
     titleEn: "Office & Building Access Control",
-    titleKm: "Access Control សម្រាប់ការិយាល័យ និងអគារ",
+    titleKm: "Access Control ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž¢áž‚áž¶ážš",
     pointsEn: [
       "Turnstiles + biometric/RFID access control integration",
       "Visitor flow control for offices, condos and institutions",
       "Local installation and after-sales support",
     ],
     pointsKm: [
-      "រួមបញ្ចូល Turnstile ជាមួយ biometric/RFID",
-      "គ្រប់គ្រងចរាចរអ្នកចូលសម្រាប់ office/condo/ស្ថាប័ន",
-      "ដំឡើងក្នុងប្រទេស + after-sales support",
+      "ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› Turnstile áž‡áž¶áž˜áž½áž™ biometric/RFID",
+      "áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…ážšáž¶áž…ážšáž¢áŸ’áž“áž€áž…áž¼áž›ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ office/condo/ážŸáŸ’ážáž¶áž”áŸáž“",
+      "ážŠáŸ†áž¡áž¾áž„áž€áŸ’áž“áž»áž„áž”áŸ’ážšáž‘áŸážŸ + after-sales support",
     ],
     href: "/solutions/access-control-cambodia",
   },
   {
     key: "pa",
     titleEn: "Factory PA & Announcement System",
-    titleKm: "ប្រព័ន្ធ PA និងការប្រកាសសម្រាប់រោងចក្រ",
+    titleKm: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA áž“áž·áž„áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážšáŸ„áž„áž…áž€áŸ’ážš",
     pointsEn: [
       "Zoning, paging and emergency announcement capability",
       "Factory-grade speaker and amplifier configuration",
       "Maintenance and support services",
     ],
     pointsKm: [
-      "Zoning, paging និង emergency announcement",
-      "Speaker/Amplifier ស្តង់ដារ industrial",
-      "សេវាថែទាំ និងគាំទ្រ",
+      "Zoning, paging áž“áž·áž„ emergency announcement",
+      "Speaker/Amplifier ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážš industrial",
+      "ážŸáŸážœáž¶ážáŸ‚áž‘áž¶áŸ† áž“áž·áž„áž‚áž¶áŸ†áž‘áŸ’ážš",
     ],
     href: "/solutions/pa-system-cambodia",
   },
 ];
 
-const QUICK_LINKS = [
-  { labelEn: "Indoor LED Display", labelKm: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
-  { labelEn: "Outdoor LED Display", labelKm: "អេក្រង់ LED ក្រៅអគារ", href: "/led-display/outdoor-led-display" },
-  { labelEn: "LED Controller / Processor", labelKm: "Controller / Processor", href: "/products/led-controller" },
-  { labelEn: "Interactive Flat Panel", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
-  { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/turnstile-gate" },
-  { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/pa-system" },
-];
-
 const FAQ = [
   {
     qEn: "Do you provide LED display installation across Cambodia?",
-    aEn: "Yes. We handle site survey, installation, commissioning and after‑sales support for projects in Phnom Penh, Siem Reap, Sihanoukville and nearby provinces.",
-    qKm: "តើអ្នកផ្តល់សេវាដំឡើងអេក្រង់ LED ទូទាំងកម្ពុជាទេ?",
-    aKm: "បាទ/ចាស។ យើងស្ទង់ទីតាំង ដំឡើង Commissioning និង after‑sales support សម្រាប់គម្រោងនៅ Phnom Penh, Siem Reap, Sihanoukville និងខេត្តជិតខាង។",
+    aEn: "Yes. We provide site survey, installation, commissioning, and after-sales support for projects in Phnom Penh, Siem Reap, Sihanoukville, and other provinces.",
+    qKm: "Do you provide LED display installation across Cambodia?",
+    aKm: "Yes. We provide site survey, installation, commissioning, and after-sales support for projects in Phnom Penh, Siem Reap, Sihanoukville, and other provinces.",
   },
   {
     qEn: "How do I choose the right pixel pitch for my project?",
-    aEn: "Rule of thumb: optimal viewing distance is about pixel pitch × 2.5 in meters. We match pitch to your room size, content type and viewing distance.",
-    qKm: "តើជ្រើស pixel pitch ដូចម្តេចឱ្យត្រឹមត្រូវ?",
-    aKm: "របៀបសាមញ្ញ៖ ចម្ងាយមើលសមរម្យ ≈ pixel pitch × 2.5 (ជាម៉ែត្រ)។ យើងជ្រើសតាមទំហំបន្ទប់ ប្រភេទ content និងចម្ងាយមើល។",
+    aEn: "A practical method is to match pixel pitch with viewing distance and content type. We recommend the right pitch based on room size, audience distance, and budget.",
+    qKm: "How do I choose the right pixel pitch for my project?",
+    aKm: "A practical method is to match pixel pitch with viewing distance and content type. We recommend the right pitch based on room size, audience distance, and budget.",
   },
   {
-    qEn: "What brightness and IP rating are typical for outdoor LED screens?",
-    aEn: "Outdoor LED screens commonly use high brightness around 6000+ nits with IP65 protection; some cabinets are rated IP66 depending on design.",
-    qKm: "Outdoor LED តម្រូវឱ្យមាន brightness និង IP rating ប្រហែលប៉ុន្មាន?",
-    aKm: "Outdoor LED 通常មាន brightness ប្រហែល 6000+ nits និង IP65; ខ្លះមាន IP66 អាស្រ័យលើរចនា។",
+    qEn: "What brightness and IP rating are recommended for outdoor LED screens?",
+    aEn: "Most outdoor projects use high-brightness panels with IP65 or higher weather protection. Final specs depend on sunlight exposure, installation height, and operating hours.",
+    qKm: "What brightness and IP rating are recommended for outdoor LED screens?",
+    aKm: "Most outdoor projects use high-brightness panels with IP65 or higher weather protection. Final specs depend on sunlight exposure, installation height, and operating hours.",
   },
   {
-    qEn: "Indoor vs outdoor LED display—what’s the difference?",
-    aEn: "Indoor LED focuses on finer pixel pitch and close viewing, while outdoor LED prioritizes high brightness, weather protection and long‑distance visibility.",
-    qKm: "Indoor និង Outdoor LED មានភាពខុសគ្នាអ្វីខ្លះ?",
-    aKm: "Indoor LED ផ្តោតលើ pixel pitch តូច និងមើលជិត ខណៈ Outdoor LED ផ្តោតលើពន្លឺខ្ពស់ ការការពារអាកាសធាតុ និងមើលឆ្ងាយ។",
+    qEn: "What is the difference between indoor and outdoor LED display?",
+    aEn: "Indoor LED is optimized for close viewing and finer pixel pitch, while outdoor LED is designed for stronger brightness, weather resistance, and long-distance visibility.",
+    qKm: "What is the difference between indoor and outdoor LED display?",
+    aKm: "Indoor LED is optimized for close viewing and finer pixel pitch, while outdoor LED is designed for stronger brightness, weather resistance, and long-distance visibility.",
   },
   {
-    qEn: "Do you supply digital signage for retail, malls and hotels?",
-    aEn: "Yes. We provide digital signage solutions for retail, malls, hotels and showrooms with content control and installation support.",
-    qKm: "តើមាន digital signage សម្រាប់ហាងលក់រាយ និងសណ្ឋាគារទេ?",
-    aKm: "មាន។ យើងផ្គត់ផ្គង់ digital signage សម្រាប់ retail, mall, hotel និង showroom ជាមួយការគាំទ្រដំឡើង។",
+    qEn: "Do you supply digital signage solutions for malls, hotels, and retail stores?",
+    aEn: "Yes. We design and install digital signage systems for promotions, menu boards, wayfinding, and brand communication across retail and hospitality environments.",
+    qKm: "Do you supply digital signage solutions for malls, hotels, and retail stores?",
+    aKm: "Yes. We design and install digital signage systems for promotions, menu boards, wayfinding, and brand communication across retail and hospitality environments.",
   },
   {
-    qEn: "Can you integrate turnstile gates with biometric access control?",
-    aEn: "Yes. We integrate turnstile gates with RFID/biometric access control and attendance systems for offices, condos, factories and institutions.",
-    qKm: "តើអ្នកអាចរួមបញ្ចូល Turnstile ជាមួយ biometric access control បានទេ?",
-    aKm: "បាន។ យើងរួមបញ្ចូល Turnstile ជាមួយ RFID/biometric និង attendance systems សម្រាប់ office, condo, factory និងស្ថាប័ន។",
+    qEn: "Can you integrate turnstile gates with RFID and biometric access control?",
+    aEn: "Yes. We integrate turnstile gates with RFID cards, fingerprint, face recognition, and attendance platforms for offices, factories, and institutions.",
+    qKm: "Can you integrate turnstile gates with RFID and biometric access control?",
+    aKm: "Yes. We integrate turnstile gates with RFID cards, fingerprint, face recognition, and attendance platforms for offices, factories, and institutions.",
   },
   {
-    qEn: "Do you provide warranty and maintenance support?",
-    aEn: "Yes. We provide warranty support and maintenance options to keep your system stable and reduce downtime.",
-    qKm: "តើមានសេវាធានា និងថែទាំទេ?",
-    aKm: "មាន។ យើងផ្តល់សេវាធានា និងជម្រើសថែទាំ ដើម្បីរក្សាស្ថេរភាព និងកាត់បន្ថយ downtime។",
+    qEn: "Do you provide PA system design and installation for factories and campuses?",
+    aEn: "Yes. We provide PA system planning, zoning, amplifier and speaker configuration, emergency announcement setup, and long-term maintenance support.",
+    qKm: "Do you provide PA system design and installation for factories and campuses?",
+    aKm: "Yes. We provide PA system planning, zoning, amplifier and speaker configuration, emergency announcement setup, and long-term maintenance support.",
+  },
+  {
+    qEn: "How long does a typical LED display project take from survey to handover?",
+    aEn: "Timeline depends on site readiness and scope, but most projects follow a structured workflow from survey and BOQ to installation, testing, and final handover.",
+    qKm: "How long does a typical LED display project take from survey to handover?",
+    aKm: "Timeline depends on site readiness and scope, but most projects follow a structured workflow from survey and BOQ to installation, testing, and final handover.",
+  },
+  {
+    qEn: "Do you offer warranty and preventive maintenance plans?",
+    aEn: "Yes. We provide warranty coverage, preventive maintenance, health checks, and support plans to reduce downtime and improve system reliability.",
+    qKm: "Do you offer warranty and preventive maintenance plans?",
+    aKm: "Yes. We provide warranty coverage, preventive maintenance, health checks, and support plans to reduce downtime and improve system reliability.",
+  },
+  {
+    qEn: "How can I get a quotation for LED display, signage, or access control in Cambodia?",
+    aEn: "Share your site location, required screen size or lane count, usage type, and timeline. Our team will recommend a practical configuration and provide a project-based quotation.",
+    qKm: "How can I get a quotation for LED display, signage, or access control in Cambodia?",
+    aKm: "Share your site location, required screen size or lane count, usage type, and timeline. Our team will recommend a practical configuration and provide a project-based quotation.",
   },
 ];
-
 export default function HomePage() {
   // ---------- JSON-LD (Organization + Website + FAQPage) ----------
   const orgJsonLd = {
@@ -478,16 +495,15 @@ export default function HomePage() {
       />
 
       <HomeClient
-        siteUrl={SITE_URL}
         cities={CITIES}
         categoryTiles={CATEGORY_TILES}
         solutions={SOLUTIONS}
-        quickLinks={QUICK_LINKS}
         faq={FAQ}
       />
     </main>
   );
 }
+
 
 
 

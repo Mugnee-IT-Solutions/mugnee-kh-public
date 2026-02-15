@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1089.88 579.83">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff200;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #231f20;
+      }
+
+      .cls-3 {
+        fill: #00aeef;
+      }
+
+      .cls-4 {
+        fill: #ec008c;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M178.65,0h116.74v477.78h195.6v102.05H178.65V0Z"/>
+  <path class="cls-2" d="M935.97,172.4c0,95.86-74.99,168.54-171.63,168.54h-122.92v238.89h-116.74V0h239.66c96.64,0,171.63,77.31,171.63,172.4ZM830.06,173.18c0-42.52-34.02-71.9-76.54-71.9h-112.1v144.57h112.1c42.52,0,76.54-28.6,76.54-72.67Z"/>
+  <path class="cls-2" d="M962.32,63.39c0-34.79,29.38-63.39,63.39-63.39s64.17,28.6,64.17,63.39-29.38,63.39-64.17,63.39-63.39-28.6-63.39-63.39Z"/>
+  <rect class="cls-2" x="969.47" y="193.28" width="112.87" height="386.55"/>
+  <g>
+    <rect class="cls-2" x="0" width="144.96" height="144.96"/>
+    <rect class="cls-1" x="0" y="144.96" width="144.96" height="144.96"/>
+    <rect class="cls-4" x="0" y="289.91" width="144.96" height="144.96"/>
+    <rect class="cls-3" x="0" y="434.87" width="144.96" height="144.96"/>
+  </g>
+</svg>

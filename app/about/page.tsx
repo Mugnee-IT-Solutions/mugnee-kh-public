@@ -207,23 +207,17 @@ const achievements = [
     title: "Support & Maintenance Capability",
     desc: "Dedicated support team, spare parts planning, and preventive maintenance systems.",
   },
-];
-
-const sisterConcerns = [
   {
-    title: "Mugnee Multiple Co., Ltd",
-    desc:
-      "Technology and engineering solutions for LED display, smart board, PA system, and turnstile gates with end-to-end delivery.",
+    title: "Cambodia Market-Focused Solution Engineering",
+    desc: "Site-ready solution design tailored for Phnom Penh, Siem Reap, Sihanoukville, and nationwide operating conditions.",
   },
   {
-    title: "Mugnee IT Solutions",
-    desc:
-      "Web, software, and application development for secure, scalable business platforms.",
+    title: "End-to-End LED, Signage & Access Integration",
+    desc: "Successful delivery of integrated LED display, digital signage, PA, and access control systems for business-critical environments.",
   },
   {
-    title: "Mugnee Service Limited",
-    desc:
-      "Outsourcing manpower solutions with technical staff and operational support teams.",
+    title: "Faster Deployment With Structured Project Workflow",
+    desc: "Survey-to-commissioning process with BOQ planning, testing, documentation, and post-install support for long-term performance.",
   },
 ];
 
@@ -495,23 +489,6 @@ export default function Page() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">Our Achievements</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {achievements.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"
-              >
-                <div className="text-sm font-semibold text-slate-900">{item.title}</div>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Our Sister Concerns</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sisterConcerns.map((item) => (
               <div
                 key={item.title}
                 className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"

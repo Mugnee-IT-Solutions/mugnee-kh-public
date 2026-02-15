@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { MouseEvent } from "react";
 import { useLang } from "../../../components/layout/LanguageProvider";
 import type { Product } from "../../../data/products";
@@ -10,6 +10,21 @@ import { PRODUCTS, PRODUCT_CATEGORIES } from "../../../data/products";
 
 export default function ProductDetailClient({ product }: { product: Product }) {
   const { lang } = useLang();
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    });
+
+    const timer = window.setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }, 0);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
+  }, [product.slug]);
 
   const title = lang === "en" ? product.titleEn : product.titleKm;
   const shortDesc = lang === "en" ? product.shortDescEn : product.shortDescKm;

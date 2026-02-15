@@ -17,7 +17,7 @@ export default function InteractiveFlatPanelClient() {
       badge: "Cambodia - Interactive Flat Panel - Smart Board",
       h1: "Interactive Flat Panel Price in Cambodia",
       sub:
-        "4K UHD interactive flat panels (smart boards) for classrooms, meeting rooms, training centers, and hospitals. Multi-touch writing, wireless screen sharing, and Android with optional OPS/Windows help teams collaborate and teach with clarity.",
+        "Mugnee Multiple provides Interactive Flat Panel (smart board) solutions in Cambodia for schools, universities, training centers, corporate meeting rooms, and government institutions. We deliver 4K touch displays with wireless screen sharing, Android/OPS options, professional installation, user training, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville for long-term performance.",
       cta1: "Get a Free Quotation",
       cta2: "View IFP Models",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
@@ -183,11 +183,6 @@ export default function InteractiveFlatPanelClient() {
     []
   );
 
-  const getSpecValue = (label: string, fallback = "-") => {
-    return (p: (typeof ifpProducts)[number]) =>
-      p.specs.find((s) => s.labelEn === label)?.valueEn || fallback;
-  };
-
   const [viewDistance, setViewDistance] = useState("");
 
   const recommendedSize = useMemo(() => {
@@ -200,7 +195,8 @@ export default function InteractiveFlatPanelClient() {
     return "98-110 inch";
   }, [viewDistance]);
 
-    const faqs: FAQ[] = [
+  const faqs = useMemo<FAQ[]>(
+    () => [
     {
       qEn: "What size interactive flat panel should I choose for a classroom?",
       aEn:
@@ -265,7 +261,9 @@ export default function InteractiveFlatPanelClient() {
       aKm:
         "Yes. Warranty terms depend on the model and project scope. We share the coverage details during quotation.",
     },
-  ];
+    ],
+    []
+  );
 
   const jsonLd = useMemo(() => {
     const base =
@@ -446,10 +444,6 @@ export default function InteractiveFlatPanelClient() {
 
           <p className="mt-4 text-xs text-slate-600">{t.serving}</p>
 
-          <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-4">
-            <div className="text-sm font-bold text-slate-900">{t.seoTitle}</div>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600">{t.seoText}</p>
-          </div>
         </div>
       </section>
 
@@ -809,9 +803,11 @@ export default function InteractiveFlatPanelClient() {
                 "65-86 inch panels for clinical training, medical briefings, and patient education with quick annotation and reliable daily use.",
                 ["Healthcare", "Briefing", "Reliable"],
               ],
-            ].map(([title, desc, chips]) => (
+            ].map((item, idx) => {
+              const [title, desc, chips] = item as [string, string, string[]];
+              return (
               <div
-                key={title}
+                key={`${title}-${idx}`}
                 className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm"
               >
                 <div className="text-sm font-semibold text-slate-900">{title}</div>
@@ -827,7 +823,8 @@ export default function InteractiveFlatPanelClient() {
                   ))}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -948,7 +945,6 @@ function StepCard({
     </div>
   );
 }
-
 
 
 

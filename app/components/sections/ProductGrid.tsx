@@ -34,15 +34,49 @@ function getGridCols(columns: number) {
 }
 
 function getProductTitle(product: Product, lang: "en" | "km") {
-  return lang === "en" ? product.titleEn : product.titleKm;
+  if (lang === "en") return product.titleEn;
+  return sanitizeKhmer(product.titleKm, product.titleEn);
 }
 
 function getProductDesc(product: Product, lang: "en" | "km") {
-  return lang === "en" ? product.shortDescEn : product.shortDescKm;
+  if (lang === "en") return product.shortDescEn;
+  return sanitizeKhmer(product.shortDescKm, product.shortDescEn);
 }
 
 function getTags(product: Product, lang: "en" | "km") {
-  return lang === "en" ? product.tagsEn : product.tagsKm;
+  if (lang === "en") return product.tagsEn;
+  return product.tagsKm.map((tag, i) => sanitizeKhmer(tag, product.tagsEn[i] || tag));
+}
+
+const MOJIBAKE_RE = /Ã|Â|â|ƒ|�/;
+
+function decodeLatin1AsUtf8(str: string) {
+  const bytes = Uint8Array.from(Array.from(str).map((ch) => ch.charCodeAt(0) & 0xff));
+  return new TextDecoder("utf-8").decode(bytes);
+}
+
+function repairMojibake(input: string) {
+  let out = input;
+  for (let i = 0; i < 3; i += 1) {
+    if (!MOJIBAKE_RE.test(out)) break;
+    try {
+      const decoded = decodeLatin1AsUtf8(out);
+      if (!decoded || decoded === out) break;
+      out = decoded;
+    } catch {
+      break;
+    }
+  }
+  return out;
+}
+
+function sanitizeKhmer(value: string, fallback: string) {
+  if (!value?.trim()) return fallback;
+  if (!MOJIBAKE_RE.test(value)) return value;
+  const repaired = repairMojibake(value).trim();
+  if (!repaired) return fallback;
+  if (MOJIBAKE_RE.test(repaired)) return fallback;
+  return repaired;
 }
 
 export default function ProductGrid({
@@ -180,7 +214,7 @@ export default function ProductGrid({
                     : "border-slate-200 bg-white text-slate-700 hover:border-slate-300",
                 ].join(" ")}
               >
-                {lang === "en" ? cat.labelEn : cat.labelKm}
+                {lang === "en" ? cat.labelEn : sanitizeKhmer(cat.labelKm, cat.labelEn)}
               </button>
             ))}
           </div>
@@ -233,7 +267,7 @@ export default function ProductGrid({
           const primaryLabel = primaryCategory
             ? lang === "en"
               ? primaryCategory.labelEn
-              : primaryCategory.labelKm
+              : sanitizeKhmer(primaryCategory.labelKm, primaryCategory.labelEn)
             : lang === "en"
               ? "Product"
               : "ផលិតផល";

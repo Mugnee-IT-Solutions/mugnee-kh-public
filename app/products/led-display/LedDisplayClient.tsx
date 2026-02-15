@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useMemo } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
 import ProductGrid from "../../components/sections/ProductGrid";
@@ -39,7 +40,7 @@ export default function LedDisplayClient({
       breadcrumb: "Products",
       h1: "LED Display Price in Cambodia",    
       intro:
-        "MUGNEE Multiple delivers Indoor LED Display, Outdoor LED Display, LED Video Wall, LED Screen Panel, LED Billboard, Digital LED Display, Advertising LED Display, and LED Signage Display solutions in Cambodia. We support retail, malls, hotels, corporate lobbies, events, and outdoor advertising with site survey, pixel-pitch guidance, structure design, installation, commissioning, and local after-sales support. Get a project-based quotation from our Cambodia team in Phnom Penh, Siem Reap, and Sihanoukville.",
+        "Mugnee Multiple delivers Indoor LED Display, Outdoor LED Display, LED Video Wall, LED Screen Panel, LED Billboard, Digital LED Display, Advertising LED Display, and LED Signage Display solutions in Cambodia. We support retail, malls, hotels, corporate lobbies, events, and outdoor advertising with site survey, pixel-pitch guidance, structure design, installation, commissioning, and local after-sales support. Get a project-based quotation from our Cambodia team in Phnom Penh, Siem Reap, and Sihanoukville.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
@@ -140,7 +141,6 @@ export default function LedDisplayClient({
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             {
@@ -369,7 +369,7 @@ export default function LedDisplayClient({
                 ["Power & Signal", "Stable power, clean cabling, and grounding for safety."],
               ].map(([t, d]) => (
                 <div
-                  key={t}
+                  key={String(t)}
                   className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
                 >
                   <div className="text-sm font-semibold text-slate-900">{t}</div>
@@ -454,9 +454,11 @@ export default function LedDisplayClient({
                   "Controllers, receiving cards, power supplies, cabinets, and spare parts.",
                   ["Controllers", "Power", "Spare parts"],
                 ],
-              ].map(([t, d, chips]) => (
+              ].map((item, idx) => {
+                const [t, d, chips] = item as [string, string, string[]];
+                return (
                 <div
-                  key={t}
+                  key={`${t}-${idx}`}
                   className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
                 >
                   <div className="text-sm font-semibold text-slate-900">{t}</div>
@@ -472,7 +474,8 @@ export default function LedDisplayClient({
                     ))}
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -502,7 +505,7 @@ export default function LedDisplayClient({
               ["Lifespan", "50,000?100,000 hours with proper maintenance"],
             ].map(([t, d]) => (
               <div
-                key={t}
+                key={String(t)}
                 className="spec-card rounded-2xl p-4 shadow-sm"
               >
                 <div className="text-sm font-semibold text-slate-900">{t}</div>
@@ -575,9 +578,11 @@ export default function LedDisplayClient({
                 "Typical IP: IP65+ (front)",
                 ["High brightness", "Weatherproof", "Structure safety", "Sunlight ready"],
               ],
-            ].map(([t, d, ip, chips]) => (
+            ].map((item, idx) => {
+              const [t, d, ip, chips] = item as [string, string, string, string[]];
+              return (
               <div
-                key={t}
+                key={`${t}-${idx}`}
                 className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
               >
                 <div className="text-sm font-semibold text-slate-900">{t}</div>
@@ -594,7 +599,8 @@ export default function LedDisplayClient({
                   ))}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -707,9 +713,11 @@ export default function LedDisplayClient({
                 "Operator training, content support, spare parts planning, maintenance schedule, and AMC options.",
                 ["Training", "Spare parts", "AMC"],
               ],
-            ].map(([t, d, chips]) => (
+            ].map((item, idx) => {
+              const [t, d, chips] = item as [string, string, string[]];
+              return (
               <div
-                key={t}
+                key={`${t}-${idx}`}
                 className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm"
               >
                 <div className="text-sm font-semibold text-slate-900">{t}</div>
@@ -725,7 +733,8 @@ export default function LedDisplayClient({
                   ))}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -762,7 +771,7 @@ export default function LedDisplayClient({
               ],
             ].map(([t, d]) => (
               <div
-                key={t}
+                key={String(t)}
                 className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm"
               >
                 <div className="text-sm font-semibold text-slate-900">{t}</div>
@@ -818,7 +827,13 @@ export default function LedDisplayClient({
                 key={alt}
                 className="flex items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-4"
               >
-                <img src={src} alt={alt} className="h-8 w-auto object-contain" />
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={160}
+                  height={32}
+                  className="h-8 w-auto object-contain"
+                />
               </div>
             ))}
           </div>
