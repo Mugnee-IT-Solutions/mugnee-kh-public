@@ -1,20 +1,139 @@
-export { metadata } from "../../products/outdoor-led-display/page";
+import type { Metadata } from "next";
 import LedDisplayClient from "../../products/led-display/LedDisplayClient";
 import { PRODUCTS } from "../../data/products";
+import { SITE_URL } from "../../lib/site";
+
+const PAGE_PATH = "/led-display/outdoor-led-display";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+export const metadata: Metadata = {
+  title: "Outdoor LED Display in Cambodia | Billboard & Digital Signage Solutions",
+  description:
+    "Outdoor LED display solutions in Cambodia for roadside billboards, facade screens, and public signage with IP-rated panels, structure planning, installation, and local support.",
+  keywords: [
+    "outdoor LED display Cambodia",
+    "LED billboard Cambodia",
+    "outdoor digital signage Cambodia",
+    "IP65 LED screen Cambodia",
+    "roadside LED billboard Phnom Penh",
+  ],
+  alternates: { canonical: PAGE_URL },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "Outdoor LED Display in Cambodia | Billboard & Digital Signage Solutions",
+    description:
+      "High-brightness outdoor LED billboard and signage solutions in Cambodia with structure design, commissioning, and after-sales support.",
+    url: PAGE_URL,
+    siteName: "Mugnee Cambodia",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Outdoor LED display and billboard in Cambodia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Outdoor LED Display in Cambodia | Mugnee Cambodia",
+    description:
+      "Outdoor LED billboard and digital signage solutions in Cambodia with local installation and support.",
+    images: [`${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`],
+  },
+};
 
 export default function OutdoorLedDisplayPage() {
   const outdoorProducts = PRODUCTS.filter((p) =>
     p.categoryIds.includes("outdoor_led_display")
   ).slice(0, 8);
+  const outdoorSchemaProducts = PRODUCTS.filter((p) =>
+    p.categoryIds.includes("outdoor_led_display")
+  ).slice(0, 9);
 
   const productQuickChips = outdoorProducts.map((p) => ({
     label: p.titleEn,
     href: `/products/catalog/${p.slug}`,
   }));
+  const outdoorItemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Outdoor LED Display Products in Cambodia",
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    numberOfItems: outdoorSchemaProducts.length,
+    itemListElement: outdoorSchemaProducts.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${SITE_URL}/products/catalog/${product.slug}`,
+      name: product.titleEn,
+      image: `${SITE_URL}${product.heroImage}`,
+    })),
+  };
+
+  const outdoorFaq = [
+    {
+      q: "What brightness is recommended for outdoor LED billboards in Cambodia?",
+      a: "Outdoor LED screens commonly require high brightness for daylight visibility. Final brightness depends on sunlight direction, mounting height, and viewing distance.",
+    },
+    {
+      q: "Which pixel pitch is suitable for outdoor LED display?",
+      a: "For city roads, P4-P6 is common. For longer distances such as highways, larger pitch like P8-P10 may be more practical.",
+    },
+    {
+      q: "Why is IP rating important for outdoor LED in Cambodia?",
+      a: "Outdoor screens are exposed to rain, dust, and heat. Proper IP-rated protection, cabinet design, and sealing improve long-term reliability.",
+    },
+    {
+      q: "Do you provide structure and installation for outdoor LED projects?",
+      a: "Yes. We support survey, structure concept, safe mounting, wiring, grounding, controller setup, and commissioning.",
+    },
+    {
+      q: "How is outdoor LED quotation prepared?",
+      a: "Outdoor quotation is project-based and includes screen size, pixel pitch, brightness, structure complexity, electrical scope, and support coverage.",
+    },
+  ];
+
+  const outdoorCluster = [
+    { title: "Parent LED Display Page", href: "/led-display" },
+    { title: "Indoor LED Display in Cambodia", href: "/led-display/indoor-led-display" },
+    { title: "Outdoor LED Product Catalog", href: "/products/catalog/outdoor-led-display" },
+    { title: "LED Video Processor Guide", href: "/led-display/video-processor" },
+    { title: "Installation & Service Support", href: "/service" },
+    { title: "Cambodia Industry Solutions", href: "/solutions" },
+    { title: "Project References", href: "/projects" },
+    { title: "Request Outdoor LED Quotation", href: "/contact" },
+  ];
+
+  const outdoorTrustSignals = [
+    "Outdoor-specific FAQ structured data and entity signals applied",
+    "IP protection, brightness, and structure safety planning workflow",
+    "Local commissioning and support coverage across key Cambodia cities",
+    "Roadside billboard, facade, and public-display deployment focus",
+  ];
 
   return (
-    <LedDisplayClient
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(outdoorItemListJsonLd) }}
+      />
+      <LedDisplayClient
       productQuickChips={productQuickChips}
+      faqItemsOverride={outdoorFaq}
+      internalLinkClusterOverride={outdoorCluster}
+      trustSignalsOverride={outdoorTrustSignals}
+      trustTitleOverride="Trust & Delivery Signals for Outdoor LED Projects in Cambodia"
+      trustDescOverride="This outdoor LED page is optimized for billboard and facade deployment intent with structured FAQ, local support proof, and clear parent-child internal linking."
+      internalLinkTitleOverride="Outdoor LED Internal Linking Cluster"
+      internalLinkDescOverride="Navigate outdoor buying paths by billboard type, technical components, related pages, and quotation routes."
+      schemaPathOverride="/led-display/outdoor-led-display"
+      schemaNameOverride="Outdoor LED Display"
+      schemaServiceNameOverride="Outdoor LED Display in Cambodia"
+      schemaServiceDescOverride="Outdoor LED billboard and digital signage solutions in Cambodia with structure design, installation, commissioning, and after-sales support."
+      breadcrumbOverride="Outdoor LED Display"
+      heroTitleOverride="Outdoor LED Display in Cambodia"
+      heroIntroOverride="Mugnee delivers outdoor LED display solutions in Cambodia for roadside billboards, facade screens, and public digital signage. We handle site survey, brightness and pixel-pitch planning, structure safety, installation, commissioning, and local support."
       afterSpecsContent={
         <section className="border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -59,9 +178,9 @@ export default function OutdoorLedDisplayPage() {
                   <div className="text-sm font-semibold text-slate-900">{t}</div>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">{d}</p>
                   <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-700">
-                    {chips.map((c) => (
+                    {chips.map((c, chipIdx) => (
                       <span
-                        key={c}
+                        key={`${t}-${c}-${chipIdx}`}
                         className="rounded-full border border-slate-200 bg-white px-2.5 py-1"
                       >
                         {c}
@@ -106,6 +225,7 @@ export default function OutdoorLedDisplayPage() {
         categoryOrderIds: ["outdoor_led_display"],
         showCategoryFilters: false,
       }}
-    />
+      />
+    </>
   );
 }

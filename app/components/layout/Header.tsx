@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useLang } from "./LanguageProvider";
 
@@ -10,9 +10,30 @@ type NavItem = { labelEn: string; labelKm: string; href: string };
 export default function SiteHeader() {
   const { lang, setLang } = useLang();
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement | null>(null);
   const [openMobile, setOpenMobile] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [q, setQ] = useState("");
+
+  useLayoutEffect(() => {
+    const headerEl = headerRef.current;
+    if (!headerEl) return;
+
+    const applyHeaderHeight = () => {
+      const height = Math.ceil(headerEl.getBoundingClientRect().height);
+      document.documentElement.style.setProperty("--header-height", `${height}px`);
+    };
+
+    applyHeaderHeight();
+    const ro = new ResizeObserver(applyHeaderHeight);
+    ro.observe(headerEl);
+    window.addEventListener("resize", applyHeaderHeight);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", applyHeaderHeight);
+    };
+  }, []);
 
   const t = useMemo(() => {
     const en = {
@@ -131,7 +152,10 @@ export default function SiteHeader() {
           <Link
             href={parentHref}
             className={desktopNavLinkClass(isActive)}
-            onClick={() => setOpenMenu(null)}
+            onClick={() => {
+              forceScrollTop();
+              setOpenMenu(null);
+            }}
           >
             {title}
           </Link>
@@ -193,7 +217,10 @@ export default function SiteHeader() {
                       "hover:bg-white/10 hover:text-white",
                       "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20",
                     ].join(" ")}
-                    onClick={() => setOpenMenu(null)}
+                    onClick={() => {
+                      forceScrollTop();
+                      setOpenMenu(null);
+                    }}
                   >
                     {lang === "en" ? it.labelEn : it.labelKm}
                   </Link>
@@ -213,13 +240,21 @@ export default function SiteHeader() {
     window.location.href = `/products?search=${encodeURIComponent(query)}`;
   };
 
+  const forceScrollTop = () => {
+    const scrollingEl = document.scrollingElement || document.documentElement;
+    scrollingEl.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full">
+    <header ref={headerRef} className="fixed top-0 z-50 w-full">
       {/* TOP BAR */}
       <div className="border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8 py-3">
           {/* Logo + Name */}
-          <Link href="/" className="flex shrink-0 items-center gap-2 font-semibold text-slate-900">
+          <Link href="/" onClick={forceScrollTop} className="flex shrink-0 items-center gap-2 font-semibold text-slate-900">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-white">
               M
             </span>
@@ -277,6 +312,7 @@ export default function SiteHeader() {
             {/* CTA */}
             <Link
               href="/contact"
+              onClick={forceScrollTop}
               className="hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 lg:inline-flex"
             >
               {t.quote}
@@ -338,6 +374,7 @@ export default function SiteHeader() {
 
               <Link
                 href="/contact"
+                onClick={forceScrollTop}
                 className="rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white hover:bg-slate-800"
               >
                 {t.quote}
@@ -355,12 +392,14 @@ export default function SiteHeader() {
 
             <Link
               href="/interactive-flat-panel"
+              onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/interactive-flat-panel"))}
             >
               {t.ifp}
             </Link>
             <Link
               href="/pa-system"
+              onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/pa-system"))}
             >
               {t.paSystem}
@@ -368,6 +407,7 @@ export default function SiteHeader() {
 
             <Link
               href="/turnstile-gate"
+              onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/turnstile-gate"))}
             >
               {t.turnstile}
@@ -375,17 +415,18 @@ export default function SiteHeader() {
 
             <Link
               href="/solutions"
+              onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/solutions"))}
             >
               {t.solutions}
             </Link>
-            <Link href="/service" className={desktopNavLinkClass(isPathActive("/service"))}>
+            <Link href="/service" onClick={forceScrollTop} className={desktopNavLinkClass(isPathActive("/service"))}>
               {t.service}
             </Link>
-            <Link href="/about" className={desktopNavLinkClass(isPathActive("/about"))}>
+            <Link href="/about" onClick={forceScrollTop} className={desktopNavLinkClass(isPathActive("/about"))}>
               {t.about}
             </Link>
-            <Link href="/contact" className={desktopNavLinkClass(isPathActive("/contact"))}>
+            <Link href="/contact" onClick={forceScrollTop} className={desktopNavLinkClass(isPathActive("/contact"))}>
               {t.contact}
             </Link>
           </nav>
@@ -405,49 +446,49 @@ export default function SiteHeader() {
                 <div className="mt-1">
                   <p className="px-3 pb-1 text-xs font-semibold text-white/70">{t.ledDisplay}</p>
                   <div className="grid gap-1">
-                    <Link href="/led-display/indoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/indoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                       {t.indoorLed}
                     </Link>
-                    <Link href="/led-display/outdoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/outdoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                       {t.outdoorLed}
                     </Link>
                     {/* ✅ LED Display parent page */}
-                    <Link href="/led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                       {lang === "en" ? "All LED Display" : "LED ទាំងអស់"}
                     </Link>
-                    <Link href="/led-display/receiving-card" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/receiving-card" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                       {lang === "en" ? "Receiving Card" : "Receiving Card"}
                     </Link>
-                    <Link href="/led-display/video-processor" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/video-processor" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                       {lang === "en" ? "Video Processor" : "Video Processor"}
                     </Link>
-                    <Link href="/led-display/power-supply" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                    <Link href="/led-display/power-supply" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                       {lang === "en" ? "Power Supply" : "Power Supply"}
                     </Link>
                   </div>
                 </div>
 
-                <Link href="/interactive-flat-panel" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/interactive-flat-panel" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                   {t.ifp}
                 </Link>
-                <Link href="/pa-system" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/pa-system" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                   {t.paSystem}
                 </Link>
 
-                <Link href="/turnstile-gate" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/turnstile-gate" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                   {t.turnstile}
                 </Link>
 
-                <Link href="/solutions" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/solutions" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                   {t.solutions}
                 </Link>
-                <Link href="/service" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/service" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                   {t.service}
                 </Link>
-                <Link href="/about" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/about" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                   {t.about}
                 </Link>
-                <Link href="/contact" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => setOpenMobile(false)}>
+                <Link href="/contact" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
                   {t.contact}
                 </Link>
               </div>

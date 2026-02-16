@@ -248,42 +248,39 @@ export default function Page() {
           <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-            <div>
-              <div className="text-xs text-slate-500">
-                <span className="font-semibold text-slate-700">Service & Support</span>
-              </div>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                Cambodia Service & Support for LED, PA & Access Control
-              </h1>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-                Mugnee Cambodia provides end-to-end technical service in Cambodia for LED display,
-                digital signage, PA systems, and access control infrastructure. Our local engineers
-                handle site audit, installation, commissioning, preventive maintenance, emergency
-                troubleshooting, component replacement, and warranty support to reduce downtime and
-                improve system reliability. From retail and corporate offices to factories, schools,
-                hospitals, and public-sector sites, we deliver structured support plans that keep
-                critical communication and security systems safe, compliant, and fully operational.
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href="/contact"
-                  className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
-                >
-                  Request Service
-                </Link>
-                <Link
-                  href="/products"
-                  className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
-                >
-                  View Products
-                </Link>
-              </div>
-              <div className="mt-4 text-xs text-slate-500">
-                Serving Phnom Penh - Siem Reap - Sihanoukville and nationwide service calls
-              </div>
+          <div>
+            <div className="text-xs text-slate-500">
+              <span className="font-semibold text-slate-700">Service & Support</span>
             </div>
-
+            <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+              Cambodia Service & Support for LED, PA & Access Control
+            </h1>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+              Mugnee Cambodia provides end-to-end technical service in Cambodia for LED display,
+              digital signage, PA systems, and access control infrastructure. Our local engineers
+              handle site audit, installation, commissioning, preventive maintenance, emergency
+              troubleshooting, component replacement, and warranty support to reduce downtime and
+              improve system reliability. From retail and corporate offices to factories, schools,
+              hospitals, and public-sector sites, we deliver structured support plans that keep
+              critical communication and security systems safe, compliant, and fully operational.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
+              >
+                Request Service
+              </Link>
+              <Link
+                href="/products"
+                className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
+              >
+                View Products
+              </Link>
+            </div>
+            <div className="mt-4 text-xs text-slate-500">
+              Serving Phnom Penh - Siem Reap - Sihanoukville and nationwide service calls
+            </div>
           </div>
         </div>
       </section>

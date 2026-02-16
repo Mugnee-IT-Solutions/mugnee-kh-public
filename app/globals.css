@@ -11,6 +11,11 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  --header-height: 142px;
+  scroll-padding-top: var(--header-height);
+}
+
 body {
   @apply bg-white text-slate-900 antialiased;
 }

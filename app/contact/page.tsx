@@ -207,17 +207,38 @@ export default function Page() {
                 <h3 className="text-sm font-semibold text-slate-900">Follow Us</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {socialLinks.map((s) => (
-                    <a
-                      key={s.label}
-                      href={s.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={s.label}
-                      title={s.label}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-700"
-                    >
-                      <SocialIcon platform={s.platform} />
-                    </a>
+                    (() => {
+                      const toneClass =
+                        s.platform === "facebook"
+                          ? "bg-[#1877F2] text-white"
+                          : s.platform === "youtube"
+                            ? "bg-[#FF0000] text-white"
+                            : s.platform === "linkedin"
+                              ? "bg-[#0A66C2] text-white"
+                              : s.platform === "x"
+                                ? "bg-black text-white"
+                                : s.platform === "instagram"
+                                  ? "bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white"
+                                  : "bg-[#E60023] text-white";
+
+                      return (
+                        <a
+                          key={s.label}
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={s.label}
+                          title={s.label}
+                          className={[
+                            "inline-flex h-10 w-10 items-center justify-center rounded-full no-underline shadow-sm transition-all duration-300",
+                            "hover:-translate-y-0.5 hover:shadow-md hover:no-underline",
+                            toneClass,
+                          ].join(" ")}
+                        >
+                          <SocialIcon platform={s.platform} />
+                        </a>
+                      );
+                    })()
                   ))}
                 </div>
               </div>

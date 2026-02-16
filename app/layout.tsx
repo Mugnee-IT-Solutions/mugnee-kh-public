@@ -4,10 +4,14 @@ import { LanguageProvider } from "./components/layout/LanguageProvider";
 import SiteHeader from "./components/layout/Header";
 import SiteFooter from "./components/layout/Footer";
 import ScrollToTopOnRoute from "./components/layout/ScrollToTopOnRoute";
+import FloatingContactChat from "./components/layout/FloatingContactChat";
+import GlobalBackToTop from "./components/layout/GlobalBackToTop";
+import { SITE_URL } from "./lib/site";
 
 export const metadata: Metadata = {
   title: "Mugnee Cambodia",
   description: "LED Display & Smart Solutions in Cambodia",
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -17,8 +21,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageProvider>
           <ScrollToTopOnRoute />
           <SiteHeader />
-          {children}
+          <main className="pt-[var(--header-height)]">{children}</main>
           <SiteFooter />
+          <FloatingContactChat />
+          <GlobalBackToTop />
         </LanguageProvider>
       </body>
     </html>

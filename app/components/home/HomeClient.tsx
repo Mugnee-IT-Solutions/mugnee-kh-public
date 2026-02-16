@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLang } from "../layout/LanguageProvider";
 import ProductGrid from "../sections/ProductGrid";
 
@@ -31,6 +31,29 @@ type Faq = {
   qKm: string;
   aKm: string;
 };
+
+const HERO_SLIDES = [
+  {
+    src: "/images/hero/cambodia-led-hero.webp",
+    alt: "Cambodia LED display and smart systems solution",
+  },
+  {
+    src: "/images/hero/cambodia-led-billboard-advertising.webp",
+    alt: "Outdoor LED billboard advertising solution in Cambodia",
+  },
+  {
+    src: "/images/hero/cambodia-indoor-led-video-wall-retail.webp",
+    alt: "Indoor LED video wall display solution for Cambodia retail spaces",
+  },
+  {
+    src: "/images/hero/cambodia-smart-classroom-interactive-flat-panel.webp",
+    alt: "Smart classroom interactive flat panel solution in Cambodia",
+  },
+  {
+    src: "/images/hero/cambodia-access-control-turnstile-pa-system.webp",
+    alt: "Turnstile access control and PA system solution in Cambodia",
+  },
+];
 
 function Container({ children }: { children: React.ReactNode }) {
   return (
@@ -87,6 +110,27 @@ export default function HomeClient({
   solutions: Solution[];
   faq: Faq[];
 }) {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+
+  const goToPrevSlide = () => {
+    setActiveSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  };
+
+  const goToNextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
+
+  useEffect(() => {
+    if (isCarouselPaused) return;
+
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [isCarouselPaused]);
+
   const { lang } = useLang();
 
   const t = useMemo(() => {
@@ -292,23 +336,42 @@ export default function HomeClient({
       {/* =========================
     HERO (No extra container box)
    ========================= */}
-<section className="relative overflow-hidden border-b border-slate-100">
+<section
+  className="relative overflow-hidden border-b border-slate-100"
+  onMouseEnter={() => setIsCarouselPaused(true)}
+  onMouseLeave={() => setIsCarouselPaused(false)}
+>
   {/* Background */}
   <div className="absolute inset-0">
-    {/* background image */}
-    <div
-      className="absolute inset-0 bg-[url('/images/hero/cambodia-led-hero.webp')] bg-cover bg-center"
-      aria-hidden="true"
-    />
+    {HERO_SLIDES.map((slide, idx) => (
+      <div
+        key={slide.src}
+        className={[
+          "absolute inset-0 transition-opacity duration-700",
+          idx === activeSlide ? "opacity-100" : "opacity-0",
+        ].join(" ")}
+        aria-hidden={idx !== activeSlide}
+      >
+        <Image
+          src={slide.src}
+          alt={slide.alt}
+          fill
+          priority={idx === 0}
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
+    ))}
 
     {/* âœ… Readability overlays (tuned) */}
-    <div className="absolute inset-0 bg-slate-950/45" />
-    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-950/45 to-slate-950/10" />
-    <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
+    <div className="absolute inset-0 bg-slate-950/54" />
+    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/76 via-slate-950/50 to-slate-950/24" />
+    <div className="absolute inset-0 bg-gradient-to-b from-black/34 via-transparent to-black/48" />
+    <div className="absolute inset-y-0 left-0 w-[72%] bg-gradient-to-r from-black/70 via-black/45 to-transparent" />
 
     {/* subtle texture */}
     <div
-      className="absolute inset-0 opacity-[0.10]"
+      className="absolute inset-0 opacity-[0.06]"
       aria-hidden="true"
       style={{
         backgroundImage:
@@ -319,7 +382,7 @@ export default function HomeClient({
   </div>
 
   <Container>
-    <div className="relative pt-10 pb-10 sm:pt-12 sm:pb-12">
+    <div className="relative flex min-h-[calc(100svh-132px)] flex-col items-start justify-center py-10 sm:py-12 lg:py-14">
       {/* âœ… badge (bg + animation) */}
       <p className="inline-flex items-center gap-2 rounded-full bg-black/45 px-4 py-2 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur-[2px]">
         <span className="relative inline-flex h-2 w-2">
@@ -329,30 +392,18 @@ export default function HomeClient({
         {t.badge}
       </p>
 
-      <div className="mt-5 max-w-3xl">
-        <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-4xl lg:text-5xl">
+      <div className="mt-6 w-full max-w-[60rem]">
+        <div className="flex max-w-3xl flex-col gap-5 sm:gap-6">
+        <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-4xl lg:text-[3.05rem]">
           {t.heroTitle}
         </h1>
 
-        <p className="mt-3 text-base leading-relaxed text-white/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-lg">
+        <p className="text-base leading-relaxed text-white/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-[1.06rem]">
           {t.heroDesc}
         </p>
 
-        {/* âœ… pills: bg + clearer text + subtle hover */}
-        <div className="mt-4 flex flex-wrap items-center gap-2 text-sm">
-          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px] transition hover:bg-black/55">
-            {t.pill1}
-          </span>
-          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px] transition hover:bg-black/55">
-            {t.pill2}
-          </span>
-          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px] transition hover:bg-black/55">
-            {t.pill3}
-          </span>
-        </div>
-
         {/* âœ… CTAs: stronger contrast */}
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100"
@@ -366,40 +417,140 @@ export default function HomeClient({
           >
             {t.ctaExplore}
           </Link>
-
-          {/* âœ… serving line: add bg so it doesn't disappear */}
-          <div className="inline-flex items-center whitespace-nowrap rounded-full bg-black/40 px-3 py-1 text-sm font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px] sm:ml-3 lg:text-base">
-            {t.serving}
-          </div>
         </div>
 
-        {/* âœ… trust blocks: keep same layout, just improve readability */}
-        <div className="mt-6 grid gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl bg-black/35 p-5 ring-1 ring-white/15 backdrop-blur-[2px] transition hover:bg-black/45">
-            <p className="text-sm font-semibold text-white lg:text-base">{t.trust1t}</p>
-            <p className="mt-1 text-sm leading-relaxed text-white/90 lg:text-base">
-              {t.trust1d}
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-black/35 p-5 ring-1 ring-white/15 backdrop-blur-[2px] transition hover:bg-black/45">
-            <p className="text-sm font-semibold text-white lg:text-base">{t.trust2t}</p>
-            <p className="mt-1 text-sm leading-relaxed text-white/90 lg:text-base">
-              {t.trust2d}
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-black/35 p-5 ring-1 ring-white/15 backdrop-blur-[2px] transition hover:bg-black/45">
-            <p className="text-sm font-semibold text-white lg:text-base">{t.trust3t}</p>
-            <p className="mt-1 text-sm leading-relaxed text-white/90 lg:text-base">
-              {t.trust3d}
-            </p>
-          </div>
+        <div className="flex flex-wrap items-center gap-2 text-sm">
+          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px]">
+            {t.pill1}
+          </span>
+          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px]">
+            {t.pill2}
+          </span>
+          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px]">
+            {t.pill3}
+          </span>
         </div>
+      </div>
+
       </div>
     </div>
   </Container>
+
+  <div className="absolute bottom-4 left-1/2 z-20 -translate-x-1/2">
+    <div className="flex items-center gap-2">
+      {HERO_SLIDES.map((slide, idx) => (
+        <button
+          key={slide.src}
+          type="button"
+          onClick={() => setActiveSlide(idx)}
+          aria-label={`Show slide ${idx + 1}`}
+          className={[
+            "h-2.5 rounded-full transition-all",
+            idx === activeSlide ? "w-7 bg-white" : "w-2.5 bg-white/45 hover:bg-white/70",
+          ].join(" ")}
+        />
+      ))}
+    </div>
+  </div>
+
+  <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-3 sm:px-4">
+    <button
+      type="button"
+      onClick={goToPrevSlide}
+      aria-label="Previous slide"
+      className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/45 text-white ring-1 ring-white/30 backdrop-blur-[2px] transition hover:bg-black/65"
+    >
+      <span aria-hidden="true">←</span>
+    </button>
+    <button
+      type="button"
+      onClick={goToNextSlide}
+      aria-label="Next slide"
+      className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/45 text-white ring-1 ring-white/30 backdrop-blur-[2px] transition hover:bg-black/65"
+    >
+      <span aria-hidden="true">→</span>
+    </button>
+  </div>
 </section>
+
+      <section
+        className="border-b border-slate-100 bg-gradient-to-b from-slate-50/80 to-white py-7"
+        aria-labelledby="home-trust-title"
+      >
+        <Container>
+          <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                {lang === "en" ? "Why Teams Choose Mugnee Cambodia" : "Why Teams Choose Mugnee Cambodia"}
+              </p>
+              <h2 id="home-trust-title" className="mt-1 text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
+                {lang === "en"
+                  ? "Why Choose Mugnee Cambodia for LED Display, Digital Signage & Smart Systems"
+                  : "Why Choose Mugnee Cambodia for LED Display, Digital Signage & Smart Systems"}
+              </h2>
+            </div>
+            <p className="rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-800">
+              {lang === "en" ? "Cambodia Project Support" : "Cambodia Project Support"}
+            </p>
+          </div>
+
+          <ul className="grid gap-3 sm:grid-cols-3" aria-label="Mugnee Cambodia trust highlights">
+            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
+              <div className="flex items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200"
+                >
+                  ✓
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">{t.trust1t}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust1d}</p>
+                  <p className="mt-2 text-xs font-medium text-slate-500">
+                    {lang === "en" ? "Site survey, installation, after-sales" : "Site survey, installation, after-sales"}
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
+              <div className="flex items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-200"
+                >
+                  ◎
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">{t.trust2t}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust2d}</p>
+                  <p className="mt-2 text-xs font-medium text-slate-500">
+                    {lang === "en" ? "Engineered for clear visuals and uptime" : "Engineered for clear visuals and uptime"}
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
+              <div className="flex items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700 ring-1 ring-amber-200"
+                >
+                  →
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">{t.trust3t}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust3d}</p>
+                  <p className="mt-2 text-xs font-medium text-slate-500">
+                    {lang === "en" ? "Planning to commissioning with clear milestones" : "Planning to commissioning with clear milestones"}
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </Container>
+      </section>
 
 
       {/* =========================
@@ -431,6 +582,14 @@ export default function HomeClient({
                 />
 
                 <div className="relative z-10 m-[1px] flex h-full flex-col rounded-[11px] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 p-4">
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-3 top-0 h-px rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 opacity-90"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-3 bottom-0 h-px rounded-full bg-gradient-to-r from-emerald-400 via-sky-500 to-violet-500 opacity-70"
+                  />
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-3">
                       <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-50 text-lg ring-1 ring-slate-200">

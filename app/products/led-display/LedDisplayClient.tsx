@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useMemo } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
 import ProductGrid from "../../components/sections/ProductGrid";
+import { SITE_URL } from "../../lib/site";
 
 type ProductGridConfig = {
   columns?: 2 | 3 | 4;
@@ -18,6 +19,76 @@ type ProductGridConfig = {
   detailBasePath?: string;
 };
 
+const LED_FAQS: Array<{ q: string; a: string }> = [
+  {
+    q: "What is the best LED display for indoor use in Cambodia?",
+    a: "Indoor LED screens work best with finer pixel pitch (P1.25-P2.5) for close viewing in boardrooms, showrooms, and control rooms. Viewing distance is the key factor for clarity.",
+  },
+  {
+    q: "What brightness (nits) is required for outdoor LED billboards?",
+    a: "Outdoor LED displays typically use high brightness (around 4,500-7,000+ nits) so content stays visible in Cambodia sunlight.",
+  },
+  {
+    q: "What IP rating is recommended for outdoor LED screens in Cambodia?",
+    a: "Outdoor LED installations usually require IP65+ (front) for rain and dust protection. This is a common standard for billboards.",
+  },
+  {
+    q: "How do I choose the right pixel pitch and viewing distance?",
+    a: "Pixel pitch should match viewing distance. Smaller pitch is for close viewing; larger pitch is for longer viewing and budget efficiency.",
+  },
+  {
+    q: "What refresh rate is recommended for LED displays?",
+    a: "Many LED systems use 1,920Hz or higher. For camera use or broadcast, 3,840Hz or higher is preferred to reduce flicker.",
+  },
+  {
+    q: "How long does an LED display last?",
+    a: "A quality LED display can last 50,000+ hours depending on brightness settings, usage hours, and maintenance conditions.",
+  },
+  {
+    q: "Does outdoor LED need special heat or climate protection?",
+    a: "Yes. Outdoor LED in Cambodia needs heat management, weatherproof cabinets, and proper grounding to handle heat, rain, and dust.",
+  },
+  {
+    q: "Why choose LED instead of LCD for large outdoor screens?",
+    a: "LED is seamless, brighter, and scalable for large formats. LCD is usually for smaller sizes and has visible bezels.",
+  },
+  {
+    q: "Can LED display price be fixed from a price list?",
+    a: "Prices depend on pixel pitch, size, brightness, structure, and site conditions. That is why we provide project-based quotations.",
+  },
+  {
+    q: "Do you provide installation and after-sales support in Cambodia?",
+    a: "Yes. We handle survey, installation, commissioning, training, and ongoing maintenance support.",
+  },
+];
+
+const INTERNAL_LINK_CLUSTER = [
+  { title: "Indoor LED Display in Cambodia", href: "/led-display/indoor-led-display" },
+  { title: "Outdoor LED Billboard in Cambodia", href: "/led-display/outdoor-led-display" },
+  { title: "LED Receiving Card Guide", href: "/led-display/receiving-card" },
+  { title: "LED Video Processor Selection", href: "/led-display/video-processor" },
+  { title: "LED Power Supply & Parts", href: "/led-display/power-supply" },
+  { title: "LED Installation & Service Support", href: "/service" },
+  { title: "Cambodia Solutions by Industry", href: "/solutions" },
+  { title: "Get LED Project Quotation", href: "/contact" },
+];
+
+const DEFAULT_TRUST_SIGNALS = [
+  "Cambodia-focused LED display entity setup with LocalBusiness, Service, Breadcrumb, and FAQ schema signals",
+  "Project-based BOQ, pixel-pitch planning, and engineering-first LED specification workflow",
+  "Local delivery and service coverage in Phnom Penh, Siem Reap, Sihanoukville, and key Cambodia cities",
+  "End-to-end execution workflow: site survey, structure planning, installation, commissioning, and after-sales support",
+];
+
+const DEFAULT_TRUST_PROOF_CHIPS = [
+  "Cambodia LED Display Supplier",
+  "Indoor & Outdoor LED Expertise",
+  "BOQ & Engineering Workflow",
+  "Local Installation Team",
+  "After-Sales Service Coverage",
+  "Entity + Schema Optimized Page",
+];
+
 export default function LedDisplayClient({
   productGridOverride,
   productQuickChips,
@@ -25,6 +96,20 @@ export default function LedDisplayClient({
   pixelPitchIntroOverride,
   pixelPitchRowsOverride,
   pixelPitchSectionOverride,
+  faqItemsOverride,
+  internalLinkClusterOverride,
+  trustSignalsOverride,
+  trustTitleOverride,
+  trustDescOverride,
+  internalLinkTitleOverride,
+  internalLinkDescOverride,
+  schemaPathOverride,
+  schemaNameOverride,
+  schemaServiceNameOverride,
+  schemaServiceDescOverride,
+  heroTitleOverride,
+  heroIntroOverride,
+  breadcrumbOverride,
 }: {
   productGridOverride?: ProductGridConfig;
   productQuickChips?: { label: string; href: string }[];
@@ -32,8 +117,31 @@ export default function LedDisplayClient({
   pixelPitchIntroOverride?: string;
   pixelPitchRowsOverride?: [string, string, string][];
   pixelPitchSectionOverride?: React.ReactNode;
+  faqItemsOverride?: Array<{ q: string; a: string }>;
+  internalLinkClusterOverride?: Array<{ title: string; href: string }>;
+  trustSignalsOverride?: string[];
+  trustTitleOverride?: string;
+  trustDescOverride?: string;
+  internalLinkTitleOverride?: string;
+  internalLinkDescOverride?: string;
+  schemaPathOverride?: string;
+  schemaNameOverride?: string;
+  schemaServiceNameOverride?: string;
+  schemaServiceDescOverride?: string;
+  heroTitleOverride?: string;
+  heroIntroOverride?: string;
+  breadcrumbOverride?: string;
 }) {
   const { lang } = useLang();
+  const faqItems = faqItemsOverride ?? LED_FAQS;
+  const internalLinks = internalLinkClusterOverride ?? INTERNAL_LINK_CLUSTER;
+  const trustSignals = trustSignalsOverride ?? DEFAULT_TRUST_SIGNALS;
+  const schemaPath = schemaPathOverride ?? "/led-display";
+  const schemaName = schemaNameOverride ?? "LED Display";
+  const schemaServiceName = schemaServiceNameOverride ?? "LED Display in Cambodia";
+  const schemaServiceDesc =
+    schemaServiceDescOverride ??
+    "Indoor LED video walls, outdoor LED billboards, rental LED screens, installation, commissioning and after-sales support in Cambodia.";
 
   const t = useMemo(() => {
     const en = {
@@ -137,6 +245,26 @@ export default function LedDisplayClient({
             background-position: 0 0, 260% 0;
           }
         }
+        @keyframes home-partner-marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .home-partner-marquee-track {
+          animation: home-partner-marquee 24s linear infinite;
+          will-change: transform;
+        }
+        .home-partner-marquee-track:hover {
+          animation-play-state: paused;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .home-partner-marquee-track {
+            animation: none;
+          }
+        }
       `}</style>
       {/* JSON-LD */}
       <script
@@ -147,9 +275,16 @@ export default function LedDisplayClient({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Mugnee Cambodia",
-              url: "https://mugnee.com.kh/led-display",
-              image: "https://mugnee.com.kh/images/hero/cambodia-led-hero.webp",
+              url: `${SITE_URL}${schemaPath}`,
+              image: `${SITE_URL}/images/hero/cambodia-led-hero.webp`,
               telephone: "+855XXXXXXXXX",
+              sameAs: [
+                "https://www.facebook.com/mugneemultiple/",
+                "https://www.youtube.com/@MugneeTech",
+                "https://www.linkedin.com/company/mugnee-multiple-limited/",
+                "https://x.com/mugneeml",
+                "https://www.instagram.com/sm.mugnee/",
+              ],
               address: {
                 "@type": "PostalAddress",
                 streetAddress:
@@ -162,9 +297,8 @@ export default function LedDisplayClient({
             {
               "@context": "https://schema.org",
               "@type": "Service",
-              name: "LED Display in Cambodia",
-              description:
-                "Indoor LED video walls, outdoor LED billboards, rental LED screens, installation, commissioning and after-sales support in Cambodia.",
+              name: schemaServiceName,
+              description: schemaServiceDesc,
               areaServed: ["Phnom Penh", "Siem Reap", "Sihanoukville"],
               serviceType: "LED Display Solutions",
               provider: {
@@ -179,10 +313,22 @@ export default function LedDisplayClient({
                 {
                   "@type": "ListItem",
                   position: 1,
-                  name: "LED Display",
-                  item: "https://mugnee.com.kh/led-display",
+                  name: schemaName,
+                  item: `${SITE_URL}${schemaPath}`,
                 },
               ],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqItems.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: item.a,
+                },
+              })),
             },
           ]),
         }}
@@ -191,15 +337,15 @@ export default function LedDisplayClient({
       <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
-            <span className="font-semibold text-slate-700">LED Display</span>
+            <span className="font-semibold text-slate-700">{breadcrumbOverride ?? "LED Display"}</span>
           </div>
 
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            {t.h1}
+            {heroTitleOverride ?? t.h1}
           </h1>
 
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-            {t.intro}
+            {heroIntroOverride ?? t.intro}
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2.5">
@@ -256,9 +402,9 @@ export default function LedDisplayClient({
             topLeftContent={
               productQuickChips && productQuickChips.length > 0 ? (
                 <div className="flex flex-wrap gap-2">
-                  {productQuickChips.map((chip) => (
+                  {productQuickChips.map((chip, index) => (
                     <Link
-                      key={chip.href}
+                      key={`${chip.href}-${chip.label}-${index}`}
                       href={chip.href}
                       className="quick-link rounded-full px-3 py-1 text-xs font-semibold text-slate-700 hover:text-slate-900"
                     >
@@ -292,9 +438,9 @@ export default function LedDisplayClient({
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2">
-              {quickLinks.map((item) => (
+              {quickLinks.map((item, index) => (
                 <Link
-                  key={item.href}
+                  key={`${item.href}-${item.label}-${index}`}
                   href={item.href}
                   className="quick-link rounded-full px-4 py-1.5 text-xs font-semibold text-slate-700 hover:text-slate-900"
                 >
@@ -813,32 +959,44 @@ export default function LedDisplayClient({
             service for long-term performance.
           </p>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-7">
-            {[
-              ["/images/partners/meanwell.png", "Mean Well"],
-              ["/images/partners/g-energy.png", "G-energy"],
-              ["/images/partners/lampro.png", "Lampro"],
-              ["/images/partners/novastar.png", "NovaStar"],
-              ["/images/partners/huidu.png", "Huidu"],
-              ["/images/partners/nationstar.png", "NationStar"],
-              ["/images/partners/colorlight.png", "Colorlight"],
-            ].map(([src, alt]) => (
-              <div
-                key={alt}
-                className="flex items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-4"
-              >
-                <Image
-                  src={src}
-                  alt={alt}
-                  width={160}
-                  height={32}
-                  className="h-8 w-auto object-contain"
-                />
-              </div>
-            ))}
+          <div className="mt-6 relative overflow-hidden rounded-2xl">
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
+
+            <div className="home-partner-marquee-track flex w-max gap-3 py-1">
+              {[
+                { label: "Mean Well", src: "/images/partners/meanwell.png" },
+                { label: "G-energy", src: "/images/partners/g-energy.png" },
+                { label: "Lampro", src: "/images/partners/lampro.svg" },
+                { label: "NovaStar", src: "/images/partners/novastar.png" },
+                { label: "Huidu", src: "/images/partners/huidu.png" },
+                { label: "NationStar", src: "/images/partners/nationstar.jpg" },
+                { label: "Colorlight", src: "/images/partners/colorlight.png" },
+                { label: "Mean Well", src: "/images/partners/meanwell.png" },
+                { label: "G-energy", src: "/images/partners/g-energy.png" },
+                { label: "Lampro", src: "/images/partners/lampro.svg" },
+                { label: "NovaStar", src: "/images/partners/novastar.png" },
+                { label: "Huidu", src: "/images/partners/huidu.png" },
+                { label: "NationStar", src: "/images/partners/nationstar.jpg" },
+                { label: "Colorlight", src: "/images/partners/colorlight.png" },
+              ].map((logo, idx) => (
+                <div
+                  key={`${logo.label}-${idx}`}
+                  className="flex h-16 w-40 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 px-4 sm:w-44 lg:w-48"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.label}
+                    width={180}
+                    height={32}
+                    className="h-8 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+          <div className="mt-6 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-700">
             {[
               "ISO Certified Organization",
               "ABC Certified Engineers",
@@ -848,7 +1006,7 @@ export default function LedDisplayClient({
             ].map((x) => (
               <span
                 key={x}
-                className="rounded-full border border-slate-200 bg-white px-3 py-1"
+                className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2"
               >
                 {x}
               </span>
@@ -893,6 +1051,90 @@ export default function LedDisplayClient({
         </div>
       </section>
 
+      {/* TRUST / ENTITY SIGNALS */}
+      <section className="border-t border-slate-200 bg-gradient-to-b from-white to-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
+            Trust Signals
+          </p>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
+            {trustTitleOverride ??
+              "Trusted LED Display Partner in Cambodia: Entity, Service & Delivery Signals"}
+          </h2>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            {trustDescOverride ??
+              "This section highlights why Mugnee Cambodia is trusted for indoor LED display, outdoor LED billboards, and LED video wall projects in Cambodia, with verified entity signals, local execution capability, and long-term service continuity."}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {DEFAULT_TRUST_PROOF_CHIPS.map((chip, index) => (
+              <span
+                key={`${chip}-${index}`}
+                className="rounded-full border border-sky-200 bg-white px-3 py-1 text-xs font-semibold text-slate-700"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {trustSignals.map((item, index) => (
+              <div
+                key={`${item}-${index}`}
+                className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm"
+              >
+                <div className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-[11px] font-bold text-sky-700">
+                  {index + 1}
+                </div>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Link
+              href="/about"
+              className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
+            >
+              About Mugnee Cambodia
+            </Link>
+            <Link
+              href="/projects"
+              className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
+            >
+              View Project References
+            </Link>
+            <Link
+              href="/service"
+              className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
+            >
+              Installation & Service Support
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* INTERNAL LINK CLUSTER */}
+      <section className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            {internalLinkTitleOverride ?? "Related LED Resources & Buying Paths in Cambodia"}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            {internalLinkDescOverride ??
+              "Use this internal cluster to navigate by buying intent: product type, technical component, installation support, or direct quotation."}
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {internalLinks.map((item, index) => (
+              <Link
+                key={`${item.href}-${item.title}-${index}`}
+                href={item.href}
+                className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-800 no-underline shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-900 hover:no-underline"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -900,50 +1142,9 @@ export default function LedDisplayClient({
             Frequently Asked Question (FAQ)
           </h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
-            {[
-              [
-                "What is the best LED display for indoor use in Cambodia?",
-                "Indoor LED screens work best with finer pixel pitch (P1.25-P2.5) for close viewing in boardrooms, showrooms, and control rooms. Viewing distance is the key factor for clarity.",
-              ],
-              [
-                "What brightness (nits) is required for outdoor LED billboards?",
-                "Outdoor LED displays typically use high brightness (around 4,500-7,000+ nits) so content stays visible in Cambodia sunlight.",
-              ],
-              [
-                "What IP rating is recommended for outdoor LED screens in Cambodia?",
-                "Outdoor LED installations usually require IP65+ (front) for rain and dust protection. This is a common standard for billboards.",
-              ],
-              [
-                "How do I choose the right pixel pitch and viewing distance?",
-                "Pixel pitch should match viewing distance. Smaller pitch is for close viewing; larger pitch is for longer viewing and budget efficiency.",
-              ],
-              [
-                "What refresh rate is recommended for LED displays?",
-                "Many LED systems use 1,920Hz or higher. For camera use or broadcast, 3,840Hz or higher is preferred to reduce flicker.",
-              ],
-              [
-                "How long does an LED display last?",
-                "A quality LED display can last 50,000+ hours depending on brightness settings, usage hours, and maintenance conditions.",
-              ],
-              [
-                "Does outdoor LED need special heat or climate protection?",
-                "Yes. Outdoor LED in Cambodia needs heat management, weatherproof cabinets, and proper grounding to handle heat, rain, and dust.",
-              ],
-              [
-                "Why choose LED instead of LCD for large outdoor screens?",
-                "LED is seamless, brighter, and scalable for large formats. LCD is usually for smaller sizes and has visible bezels.",
-              ],
-              [
-                "Can LED display price be fixed from a price list?",
-                "Prices depend on pixel pitch, size, brightness, structure, and site conditions. That is why we provide project-based quotations.",
-              ],
-              [
-                "Do you provide installation and after-sales support in Cambodia?",
-                "Yes. We handle survey, installation, commissioning, training, and ongoing maintenance support.",
-              ],
-            ].map(([q, a]) => (
+            {faqItems.map(({ q, a }, index) => (
               <details
-                key={q}
+                key={`${q}-${index}`}
                 className="rounded-2xl border border-slate-200 bg-slate-50 p-4"
               >
                 <summary className="cursor-pointer text-sm font-semibold text-slate-900">
