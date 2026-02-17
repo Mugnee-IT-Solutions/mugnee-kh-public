@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -64,44 +64,44 @@ const LED_FAQS_EN: Array<{ q: string; a: string }> = [
 
 const LED_FAQS_KM: Array<{ q: string; a: string }> = [
   {
-    q: "តើ LED Display ប្រភេទណាល្អសម្រាប់ប្រើប្រាស់ក្នុងអគារនៅកម្ពុជា?",
-    a: "អេក្រង់ LED ក្នុងអគារ គួរជ្រើស pixel pitch ល្អិតជាង (P1.25-P2.5) សម្រាប់ចម្ងាយមើលជិត ដូចជា boardroom, showroom និង control room។ ចម្ងាយមើលគឺជាកត្តាសំខាន់បំផុតសម្រាប់ភាពច្បាស់។",
+    q: "ážáž¾ LED Display áž”áŸ’ážšáž—áŸáž‘ážŽáž¶áž›áŸ’áž¢ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážšáž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶?",
+    a: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš áž‚áž½ážšáž‡áŸ’ážšáž¾ážŸ pixel pitch áž›áŸ’áž¢áž·ážáž‡áž¶áž„ (P1.25-P2.5) ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›áž‡áž·áž ážŠáž¼áž…áž‡áž¶ boardroom, showroom áž“áž·áž„ control roomáŸ” áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›áž‚ážºáž‡áž¶áž€ážáŸ’ážáž¶ážŸáŸ†ážáž¶áž“áŸ‹áž”áŸ†áž•áž»ážážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹áŸ”",
   },
   {
-    q: "សម្រាប់ Billboard ខាងក្រៅ ត្រូវការ brightness ប៉ុន្មាន nits?",
-    a: "Outdoor LED ជាទូទៅត្រូវការ brightness ខ្ពស់ (ប្រហែល 4,500-7,000+ nits) ដើម្បីឱ្យមាតិកាអាចមើលឃើញច្បាស់ក្រោមពន្លឺថ្ងៃនៅកម្ពុជា។",
+    q: "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ Billboard ážáž¶áž„áž€áŸ’ážšáŸ… ážáŸ’ážšáž¼ážœáž€áž¶ážš brightness áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“ nits?",
+    a: "Outdoor LED áž‡áž¶áž‘áž¼áž‘áŸ…ážáŸ’ážšáž¼ážœáž€áž¶ážš brightness ážáŸ’áž–ážŸáŸ‹ (áž”áŸ’ážšáž áŸ‚áž› 4,500-7,000+ nits) ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™áž˜áž¶ážáž·áž€áž¶áž¢áž¶áž…áž˜áž¾áž›ážƒáž¾áž‰áž…áŸ’áž”áž¶ážŸáŸ‹áž€áŸ’ážšáŸ„áž˜áž–áž“áŸ’áž›ážºážáŸ’áž„áŸƒáž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
   },
   {
-    q: "Outdoor LED នៅកម្ពុជា គួរតែមានកម្រិតការពារ IP ប៉ុន្មាន?",
-    a: "ការដំឡើងខាងក្រៅភាគច្រើនត្រូវការ IP65+ (ផ្នែកខាងមុខ) សម្រាប់ការពារទឹកភ្លៀង និងធូលី។ នេះជាស្តង់ដារដែលគេប្រើជាញឹកញាប់សម្រាប់ billboard។",
+    q: "Outdoor LED áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ áž‚áž½ážšážáŸ‚áž˜áž¶áž“áž€áž˜áŸ’ážšáž·ážáž€áž¶ážšáž–áž¶ážš IP áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
+    a: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ážáž¶áž„áž€áŸ’ážšáŸ…áž—áž¶áž‚áž…áŸ’ážšáž¾áž“ážáŸ’ážšáž¼ážœáž€áž¶ážš IP65+ (áž•áŸ’áž“áŸ‚áž€ážáž¶áž„áž˜áž»áž) ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž–áž¶ážšáž‘áž¹áž€áž—áŸ’áž›áŸ€áž„ áž“áž·áž„áž’áž¼áž›áž¸áŸ” áž“áŸáŸ‡áž‡áž¶ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážšážŠáŸ‚áž›áž‚áŸáž”áŸ’ážšáž¾áž‡áž¶áž‰áž¹áž€áž‰áž¶áž”áŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ billboardáŸ”",
   },
   {
-    q: "តើជ្រើស pixel pitch និងចម្ងាយមើលឱ្យត្រឹមត្រូវយ៉ាងដូចម្តេច?",
-    a: "Pixel pitch ត្រូវតែសមនឹងចម្ងាយមើល។ pitch តូចសម្រាប់មើលជិត ខណៈ pitch ធំសម្រាប់ចម្ងាយឆ្ងាយ និងសន្សំថវិកា។",
+    q: "ážáž¾áž‡áŸ’ážšáž¾ážŸ pixel pitch áž“áž·áž„áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›áž±áŸ’áž™ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáž™áŸ‰áž¶áž„ážŠáž¼áž…áž˜áŸ’ážáŸáž…?",
+    a: "Pixel pitch ážáŸ’ážšáž¼ážœážáŸ‚ážŸáž˜áž“áž¹áž„áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›áŸ” pitch ážáž¼áž…ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž˜áž¾áž›áž‡áž·áž ážážŽáŸˆ pitch áž’áŸ†ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áž˜áŸ’áž„áž¶áž™áž†áŸ’áž„áž¶áž™ áž“áž·áž„ážŸáž“áŸ’ážŸáŸ†ážážœáž·áž€áž¶áŸ”",
   },
   {
-    q: "Refresh rate ប៉ុន្មានសមស្របសម្រាប់ LED Display?",
-    a: "ប្រព័ន្ធ LED ជាច្រើនប្រើ 1,920Hz ឬខ្ពស់ជាងនេះ។ សម្រាប់ការថតកាមេរ៉ា ឬ broadcast គួរប្រើ 3,840Hz ឬខ្ពស់ជាងនេះ ដើម្បីកាត់បន្ថយ flicker។",
+    q: "Refresh rate áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ LED Display?",
+    a: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ LED áž‡áž¶áž…áŸ’ážšáž¾áž“áž”áŸ’ážšáž¾ 1,920Hz áž¬ážáŸ’áž–ážŸáŸ‹áž‡áž¶áž„áž“áŸáŸ‡áŸ” ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšážážáž€áž¶áž˜áŸážšáŸ‰áž¶ áž¬ broadcast áž‚áž½ážšáž”áŸ’ážšáž¾ 3,840Hz áž¬ážáŸ’áž–ážŸáŸ‹áž‡áž¶áž„áž“áŸáŸ‡ ážŠáž¾áž˜áŸ’áž”áž¸áž€áž¶ážáŸ‹áž”áž“áŸ’ážáž™ flickeráŸ”",
   },
   {
-    q: "LED Display មានអាយុកាលប៉ុន្មាន?",
-    a: "LED ដែលមានគុណភាពអាចប្រើបានលើស 50,000 ម៉ោង អាស្រ័យលើការកំណត់ brightness ម៉ោងប្រើប្រាស់ និងការថែទាំ។",
+    q: "LED Display áž˜áž¶áž“áž¢áž¶áž™áž»áž€áž¶áž›áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
+    a: "LED ážŠáŸ‚áž›áž˜áž¶áž“áž‚áž»ážŽáž—áž¶áž–áž¢áž¶áž…áž”áŸ’ážšáž¾áž”áž¶áž“áž›áž¾ážŸ 50,000 áž˜áŸ‰áŸ„áž„ áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž€áž¶ážšáž€áŸ†ážŽážáŸ‹ brightness áž˜áŸ‰áŸ„áž„áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ áž“áž·áž„áž€áž¶ážšážáŸ‚áž‘áž¶áŸ†áŸ”",
   },
   {
-    q: "Outdoor LED ត្រូវការការការពារកំដៅ ឬអាកាសធាតុពិសេសទេ?",
-    a: "ត្រូវការ។ Outdoor LED នៅកម្ពុជា ត្រូវមានការគ្រប់គ្រងកំដៅ cabinet ការពារអាកាសធាតុ និង grounding ត្រឹមត្រូវ ដើម្បីទប់ទល់នឹងកំដៅ ភ្លៀង និងធូលី។",
+    q: "Outdoor LED ážáŸ’ážšáž¼ážœáž€áž¶ážšáž€áž¶ážšáž€áž¶ážšáž–áž¶ážšáž€áŸ†ážŠáŸ… áž¬áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»áž–áž·ážŸáŸážŸáž‘áŸ?",
+    a: "ážáŸ’ážšáž¼ážœáž€áž¶ážšáŸ” Outdoor LED áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážáŸ’ážšáž¼ážœáž˜áž¶áž“áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áŸ†ážŠáŸ… cabinet áž€áž¶ážšáž–áž¶ážšáž¢áž¶áž€áž¶ážŸáž’áž¶ážáž» áž“áž·áž„ grounding ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ ážŠáž¾áž˜áŸ’áž”áž¸áž‘áž”áŸ‹áž‘áž›áŸ‹áž“áž¹áž„áž€áŸ†ážŠáŸ… áž—áŸ’áž›áŸ€áž„ áž“áž·áž„áž’áž¼áž›áž¸áŸ”",
   },
   {
-    q: "ហេតុអ្វីគួរជ្រើស LED ជំនួស LCD សម្រាប់អេក្រង់ធំខាងក្រៅ?",
-    a: "LED គ្មានស៊ុមភ្ជាប់ភ្លឹបភ្លែត ភ្លឺជាង និងពង្រីកទំហំបានងាយស្រួលសម្រាប់ទម្រង់ធំ។ LCD ជាទូទៅសមស្របសម្រាប់ទំហំតូច និងមាន bezel មើលឃើញ។",
+    q: "áž áŸážáž»áž¢áŸ’ážœáž¸áž‚áž½ážšáž‡áŸ’ážšáž¾ážŸ LED áž‡áŸ†áž“áž½ážŸ LCD ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áŸáž€áŸ’ážšáž„áŸ‹áž’áŸ†ážáž¶áž„áž€áŸ’ážšáŸ…?",
+    a: "LED áž‚áŸ’áž˜áž¶áž“ážŸáŸŠáž»áž˜áž—áŸ’áž‡áž¶áž”áŸ‹áž—áŸ’áž›áž¹áž”áž—áŸ’áž›áŸ‚áž áž—áŸ’áž›ážºáž‡áž¶áž„ áž“áž·áž„áž–áž„áŸ’ážšáž¸áž€áž‘áŸ†áž áŸ†áž”áž¶áž“áž„áž¶áž™ážŸáŸ’ážšáž½áž›ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‘áž˜áŸ’ážšáž„áŸ‹áž’áŸ†áŸ” LCD áž‡áž¶áž‘áž¼áž‘áŸ…ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‘áŸ†áž áŸ†ážáž¼áž… áž“áž·áž„áž˜áž¶áž“ bezel áž˜áž¾áž›ážƒáž¾áž‰áŸ”",
   },
   {
-    q: "តម្លៃ LED Display អាចកំណត់ថេរតាម price list បានទេ?",
-    a: "តម្លៃអាស្រ័យលើ pixel pitch ទំហំ brightness រចនាសម្ព័ន្ធ និងលក្ខខណ្ឌទីតាំង។ ដូច្នេះយើងផ្តល់ជូនតម្លៃតាមគម្រោង (project-based quotation)។",
+    q: "ážáž˜áŸ’áž›áŸƒ LED Display áž¢áž¶áž…áž€áŸ†ážŽážáŸ‹ážáŸážšážáž¶áž˜ price list áž”áž¶áž“áž‘áŸ?",
+    a: "ážáž˜áŸ’áž›áŸƒáž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾ pixel pitch áž‘áŸ†áž áŸ† brightness ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ áž“áž·áž„áž›áž€áŸ’ážážážŽáŸ’ážŒáž‘áž¸ážáž¶áŸ†áž„áŸ” ážŠáž¼áž…áŸ’áž“áŸáŸ‡áž™áž¾áž„áž•áŸ’ážáž›áŸ‹áž‡áž¼áž“ážáž˜áŸ’áž›áŸƒážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„ (project-based quotation)áŸ”",
   },
   {
-    q: "តើអ្នកមានសេវាដំឡើង និង after-sales support នៅកម្ពុជាទេ?",
-    a: "មាន។ យើងផ្តល់សេវា survey, installation, commissioning, training និងការគាំទ្រថែទាំបន្ត។",
+    q: "ážáž¾áž¢áŸ’áž“áž€áž˜áž¶áž“ážŸáŸážœáž¶ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ after-sales support áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áž‘áŸ?",
+    a: "áž˜áž¶áž“áŸ” áž™áž¾áž„áž•áŸ’ážáž›áŸ‹ážŸáŸážœáž¶ survey, installation, commissioning, training áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšážáŸ‚áž‘áž¶áŸ†áž”áž“áŸ’ážáŸ”",
   },
 ];
 
@@ -117,14 +117,14 @@ const INTERNAL_LINK_CLUSTER_EN = [
 ];
 
 const INTERNAL_LINK_CLUSTER_KM = [
-  { title: "អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា", href: "/led-display/indoor-led-display" },
-  { title: "ប៊ីលបត្រ LED ខាងក្រៅនៅកម្ពុជា", href: "/led-display/outdoor-led-display" },
-  { title: "មគ្គុទ្ទេសក៍ LED Receiving Card", href: "/led-display/receiving-card" },
-  { title: "ការជ្រើសរើស LED Video Processor", href: "/led-display/video-processor" },
-  { title: "LED Power Supply និងគ្រឿងបន្លាស់", href: "/led-display/power-supply" },
-  { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស LED", href: "/service" },
-  { title: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា", href: "/solutions" },
-  { title: "ស្នើសុំតម្លៃគម្រោង LED", href: "/contact" },
+  { title: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážšáž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶", href: "/led-display/indoor-led-display" },
+  { title: "áž”áŸŠáž¸áž›áž”ážáŸ’ážš LED ážáž¶áž„áž€áŸ’ážšáŸ…áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶", href: "/led-display/outdoor-led-display" },
+  { title: "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸ LED Receiving Card", href: "/led-display/receiving-card" },
+  { title: "áž€áž¶ážšáž‡áŸ’ážšáž¾ážŸážšáž¾ážŸ LED Video Processor", href: "/led-display/video-processor" },
+  { title: "LED Power Supply áž“áž·áž„áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹", href: "/led-display/power-supply" },
+  { title: "ážŸáŸážœáž¶ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„áž‚áž¶áŸ†áž‘áŸ’ážšáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ LED", href: "/service" },
+  { title: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ážáž¶áž˜ážœáž·ážŸáŸáž™áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶", href: "/solutions" },
+  { title: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒáž‚áž˜áŸ’ážšáŸ„áž„ LED", href: "/contact" },
 ];
 
 const DEFAULT_TRUST_SIGNALS_EN = [
@@ -135,10 +135,10 @@ const DEFAULT_TRUST_SIGNALS_EN = [
 ];
 
 const DEFAULT_TRUST_SIGNALS_KM = [
-  "បង្កើត entity សម្រាប់ LED Display នៅកម្ពុជា ដោយប្រើ LocalBusiness, Service, Breadcrumb និង FAQ schema",
-  "ដំណើរការ BOQ តាមគម្រោង ការគ្រោង pixel pitch និងការកំណត់ស្ប៉ិកតាមវិស្វកម្ម",
-  "គ្របដណ្តប់ការដឹកជញ្ជូន និងសេវាកម្មក្នុងស្រុក នៅភ្នំពេញ សៀមរាប ព្រះសីហនុ និងខេត្តសំខាន់ៗ",
-  "ដំណើរការពេញលេញពី site survey, planning, installation, commissioning ដល់ after-sales support",
+  "áž”áž„áŸ’áž€áž¾áž entity ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ LED Display áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážŠáŸ„áž™áž”áŸ’ážšáž¾ LocalBusiness, Service, Breadcrumb áž“áž·áž„ FAQ schema",
+  "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážš BOQ ážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„ áž€áž¶ážšáž‚áŸ’ážšáŸ„áž„ pixel pitch áž“áž·áž„áž€áž¶ážšáž€áŸ†ážŽážáŸ‹ážŸáŸ’áž”áŸ‰áž·áž€ážáž¶áž˜ážœáž·ážŸáŸ’ážœáž€áž˜áŸ’áž˜",
+  "áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹áž€áž¶ážšážŠáž¹áž€áž‡áž‰áŸ’áž‡áž¼áž“ áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ áž“áŸ…áž—áŸ’áž“áŸ†áž–áŸáž‰ ážŸáŸ€áž˜ážšáž¶áž” áž–áŸ’ážšáŸ‡ážŸáž¸áž áž“áž» áž“áž·áž„ážáŸážáŸ’ážážŸáŸ†ážáž¶áž“áŸ‹áŸ—",
+  "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž–áŸáž‰áž›áŸáž‰áž–áž¸ site survey, planning, installation, commissioning ážŠáž›áŸ‹ after-sales support",
 ];
 
 const DEFAULT_TRUST_PROOF_CHIPS_EN = [
@@ -151,12 +151,12 @@ const DEFAULT_TRUST_PROOF_CHIPS_EN = [
 ];
 
 const DEFAULT_TRUST_PROOF_CHIPS_KM = [
-  "អ្នកផ្គត់ផ្គង់ LED Display នៅកម្ពុជា",
-  "ជំនាញ LED ក្នុងអគារ និងខាងក្រៅ",
-  "ដំណើរការ BOQ និងវិស្វកម្ម",
-  "ក្រុមដំឡើងក្នុងស្រុក",
-  "គ្របដណ្តប់សេវាកម្មបន្ទាប់ពីលក់",
-  "ទំព័រដែល Optimize ដោយ Entity + Schema",
+  "áž¢áŸ’áž“áž€áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ LED Display áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+  "áž‡áŸ†áž“áž¶áž‰ LED áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš áž“áž·áž„ážáž¶áž„áž€áŸ’ážšáŸ…",
+  "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážš BOQ áž“áž·áž„ážœáž·ážŸáŸ’ážœáž€áž˜áŸ’áž˜",
+  "áž€áŸ’ážšáž»áž˜ážŠáŸ†áž¡áž¾áž„áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€",
+  "áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸áž›áž€áŸ‹",
+  "áž‘áŸ†áž–áŸážšážŠáŸ‚áž› Optimize ážŠáŸ„áž™ Entity + Schema",
 ];
 
 export default function LedDisplayClient({
@@ -263,16 +263,16 @@ export default function LedDisplayClient({
     };
 
     const km = {
-      breadcrumb: "ផលិតផល",
-      h1: "តម្លៃ LED Display នៅកម្ពុជា",
+      breadcrumb: "áž•áž›áž·ážáž•áž›",
+      h1: "ážáž˜áŸ’áž›áŸƒ LED Display áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       intro:
-        "MUGNEE Multiple ផ្តល់ដំណោះស្រាយ Indoor LED Display, Outdoor LED Display, LED Video Wall, LED Screen Panel, LED Billboard, Digital LED Display, Advertising LED Display និង LED Signage Display នៅកម្ពុជា។ យើងគាំទ្រគម្រោង retail, mall, hotel, corporate lobby, event និង outdoor advertising ជាមួយសេវា site survey, ការណែនាំ pixel pitch, រចនាសម្ព័ន្ធ, ការដំឡើង, commissioning និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក។ ស្នើសុំតម្លៃតាមគម្រោងពីក្រុមការងារយើងនៅភ្នំពេញ សៀមរាប និងព្រះសីហនុ។",
-      cta1: "WhatsApp ស្នើសុំតម្លៃ",
-      cta2: "ស្នើសុំសំណើ BOQ",
-      cta3: "ចូលទៅផលិតផល",
-      quickTitle: "រកមើលប្រភេទ LED Display និងសេវាកម្មពាក់ព័ន្ធ",
+        "MUGNEE Multiple áž•áŸ’ážáž›áŸ‹ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ Indoor LED Display, Outdoor LED Display, LED Video Wall, LED Screen Panel, LED Billboard, Digital LED Display, Advertising LED Display áž“áž·áž„ LED Signage Display áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ” áž™áž¾áž„áž‚áž¶áŸ†áž‘áŸ’ážšáž‚áž˜áŸ’ážšáŸ„áž„ retail, mall, hotel, corporate lobby, event áž“áž·áž„ outdoor advertising áž‡áž¶áž˜áž½áž™ážŸáŸážœáž¶ site survey, áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ† pixel pitch, ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’, áž€áž¶ážšážŠáŸ†áž¡áž¾áž„, commissioning áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸áž›áž€áŸ‹áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€áŸ” ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„áž–áž¸áž€áŸ’ážšáž»áž˜áž€áž¶ážšáž„áž¶ážšáž™áž¾áž„áž“áŸ…áž—áŸ’áž“áŸ†áž–áŸáž‰ ážŸáŸ€áž˜ážšáž¶áž” áž“áž·áž„áž–áŸ’ážšáŸ‡ážŸáž¸áž áž“áž»áŸ”",
+      cta1: "WhatsApp ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ",
+      cta2: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážŸáŸ†ážŽáž¾ BOQ",
+      cta3: "áž…áž¼áž›áž‘áŸ…áž•áž›áž·ážáž•áž›",
+      quickTitle: "ážšáž€áž˜áž¾áž›áž”áŸ’ážšáž—áŸáž‘ LED Display áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž–áž¶áž€áŸ‹áž–áŸáž“áŸ’áž’",
       quickSub:
-        "Quick links ជួយឱ្យអ្នកទៅដល់ប្រភេទ LED Display, controller និងគ្រឿងបន្លាស់ដែលត្រូវការបានលឿន។",
+        "Quick links áž‡áž½áž™áž±áŸ’áž™áž¢áŸ’áž“áž€áž‘áŸ…ážŠáž›áŸ‹áž”áŸ’ážšáž—áŸáž‘ LED Display, controller áž“áž·áž„áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ážŠáŸ‚áž›ážáŸ’ážšáž¼ážœáž€áž¶ážšáž”áž¶áž“áž›áž¿áž“áŸ”",
     };
 
     return lang === "en" ? en : km;
@@ -292,15 +292,15 @@ export default function LedDisplayClient({
           { label: "Contact", href: "/contact" },
         ]
       : [
-          { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
-          { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display" },
+          { label: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš", href: "/led-display/indoor-led-display" },
+          { label: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’ážšáŸ…", href: "/led-display/outdoor-led-display" },
           { label: "Receiving Card", href: "/led-display/receiving-card" },
           { label: "Video Processor", href: "/led-display/video-processor" },
           { label: "Power Supply", href: "/led-display/power-supply" },
           { label: "LED Controller", href: "/products/led-controller" },
           { label: "Interactive Flat Panel", href: "/interactive-flat-panel" },
-          { label: "ប្រព័ន្ធ PA", href: "/pa-system" },
-          { label: "ទំនាក់ទំនង", href: "/contact" },
+          { label: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA", href: "/pa-system" },
+          { label: "áž‘áŸ†áž“áž¶áž€áŸ‹áž‘áŸ†áž“áž„", href: "/contact" },
         ];
 
   return (
@@ -456,7 +456,7 @@ export default function LedDisplayClient({
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
             <span className="font-semibold text-slate-700">
-              {breadcrumbOverride ?? (lang === "en" ? "LED Display" : "អេក្រង់ LED")}
+              {breadcrumbOverride ?? (lang === "en" ? "LED Display" : "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED")}
             </span>
           </div>
 
@@ -557,7 +557,7 @@ export default function LedDisplayClient({
                 <div className="mt-1 text-xs text-slate-600">{t.quickSub}</div>
               </div>
               <div className="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 sm:block">
-                {lang === "en" ? "Quick Links" : "តំណរហ័ស"}
+                {lang === "en" ? "Quick Links" : "ážáŸ†ážŽážšáž áŸážŸ"}
               </div>
             </div>
 
@@ -582,22 +582,22 @@ export default function LedDisplayClient({
           <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {lang === "en" ? "LED Technology Basics" : "មូលដ្ឋានបច្ចេកវិទ្យា LED"}
+                {lang === "en" ? "LED Technology Basics" : "áž˜áž¼áž›ážŠáŸ’áž‹áž¶áž“áž”áž…áŸ’áž…áŸáž€ážœáž·áž‘áŸ’áž™áž¶ LED"}
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
                   ? "LED Technology Basics for Cambodia Buyers"
-                  : "មូលដ្ឋានបច្ចេកវិទ្យា LED សម្រាប់អ្នកទិញនៅកម្ពុជា"}
+                  : "áž˜áž¼áž›ážŠáŸ’áž‹áž¶áž“áž”áž…áŸ’áž…áŸáž€ážœáž·áž‘áŸ’áž™áž¶ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áŸ’áž“áž€áž‘áž·áž‰áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶"}
               </h2>
 
               <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <h3 className="text-sm font-semibold text-slate-900">
-                  {lang === "en" ? "What Is an LED Display?" : "តើ LED Display គឺជាអ្វី?"}
+                  {lang === "en" ? "What Is an LED Display?" : "ážáž¾ LED Display áž‚ážºáž‡áž¶áž¢áŸ’ážœáž¸?"}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {lang === "en"
                     ? "An LED display is a digital screen made from thousands of LED pixels arranged in modules and cabinets. These pixels light up to form images, videos, and live data. LED technology is preferred for large screens because it is seamless, bright, and scalable for both indoor and outdoor installations in Cambodia."
-                    : "LED Display គឺជាអេក្រង់ឌីជីថលដែលបង្កើតពី LED pixels ជាច្រើន ដោយរៀបចំនៅក្នុង modules និង cabinets។ Pixels ទាំងនេះបញ្ចេញពន្លឺបង្កើតជារូបភាព វីដេអូ និងទិន្នន័យបន្តផ្ទាល់។ បច្ចេកវិទ្យា LED សមស្របសម្រាប់អេក្រង់ធំ ព្រោះគ្មានស៊ុមចំណុចភ្ជាប់ ភ្លឺច្បាស់ និងពង្រីកទំហំបានសម្រាប់ទាំងក្នុងអគារ និងខាងក្រៅនៅកម្ពុជា។"}
+                    : "LED Display áž‚ážºáž‡áž¶áž¢áŸáž€áŸ’ážšáž„áŸ‹ážŒáž¸áž‡áž¸ážáž›ážŠáŸ‚áž›áž”áž„áŸ’áž€áž¾ážáž–áž¸ LED pixels áž‡áž¶áž…áŸ’ážšáž¾áž“ ážŠáŸ„áž™ážšáŸ€áž”áž…áŸ†áž“áŸ…áž€áŸ’áž“áž»áž„ modules áž“áž·áž„ cabinetsáŸ” Pixels áž‘áž¶áŸ†áž„áž“áŸáŸ‡áž”áž‰áŸ’áž…áŸáž‰áž–áž“áŸ’áž›ážºáž”áž„áŸ’áž€áž¾ážáž‡áž¶ážšáž¼áž”áž—áž¶áž– ážœáž¸ážŠáŸáž¢áž¼ áž“áž·áž„áž‘áž·áž“áŸ’áž“áž“áŸáž™áž”áž“áŸ’ážáž•áŸ’áž‘áž¶áž›áŸ‹áŸ” áž”áž…áŸ’áž…áŸáž€ážœáž·áž‘áŸ’áž™áž¶ LED ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áŸáž€áŸ’ážšáž„áŸ‹áž’áŸ† áž–áŸ’ážšáŸ„áŸ‡áž‚áŸ’áž˜áž¶áž“ážŸáŸŠáž»áž˜áž…áŸ†ážŽáž»áž…áž—áŸ’áž‡áž¶áž”áŸ‹ áž—áŸ’áž›ážºáž…áŸ’áž”áž¶ážŸáŸ‹ áž“áž·áž„áž–áž„áŸ’ážšáž¸áž€áž‘áŸ†áž áŸ†áž”áž¶áž“ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‘áž¶áŸ†áž„áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš áž“áž·áž„ážáž¶áž„áž€áŸ’ážšáŸ…áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”"}
                 </p>
               </div>
 
@@ -605,12 +605,12 @@ export default function LedDisplayClient({
                 <h3 className="text-sm font-semibold text-slate-900">
                   {lang === "en"
                     ? "How Does an LED Display Work?"
-                    : "តើ LED Display ដំណើរការយ៉ាងដូចម្តេច?"}
+                    : "ážáž¾ LED Display ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž™áŸ‰áž¶áž„ážŠáž¼áž…áž˜áŸ’ážáŸáž…?"}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {lang === "en"
                     ? "A controller sends video signals to each LED pixel, synchronizing color and brightness across the screen. Correct pixel pitch, brightness, IP protection, and refresh rate ensure clear visuals, smooth motion, and reliable performance under Cambodias heat, rain, and dust conditions."
-                    : "Controller ផ្ញើសញ្ញាវីដេអូទៅ LED pixel នីមួយៗ ដើម្បីសមកាលកម្មពណ៌ និងកម្រិតពន្លឺទូទាំងអេក្រង់។ ការជ្រើស pixel pitch, brightness, ការការពារ IP និង refresh rate ឱ្យត្រឹមត្រូវ នឹងធានាឱ្យរូបភាពច្បាស់ ចលនារលូន និងដំណើរការមានស្ថិរភាពក្រោមលក្ខខណ្ឌកំដៅ ភ្លៀង និងធូលីនៅកម្ពុជា។"}
+                    : "Controller áž•áŸ’áž‰áž¾ážŸáž‰áŸ’áž‰áž¶ážœáž¸ážŠáŸáž¢áž¼áž‘áŸ… LED pixel áž“áž¸áž˜áž½áž™áŸ— ážŠáž¾áž˜áŸ’áž”áž¸ážŸáž˜áž€áž¶áž›áž€áž˜áŸ’áž˜áž–ážŽáŸŒ áž“áž·áž„áž€áž˜áŸ’ážšáž·ážáž–áž“áŸ’áž›ážºáž‘áž¼áž‘áž¶áŸ†áž„áž¢áŸáž€áŸ’ážšáž„áŸ‹áŸ” áž€áž¶ážšáž‡áŸ’ážšáž¾ážŸ pixel pitch, brightness, áž€áž¶ážšáž€áž¶ážšáž–áž¶ážš IP áž“áž·áž„ refresh rate áž±áŸ’áž™ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž“áž¹áž„áž’áž¶áž“áž¶áž±áŸ’áž™ážšáž¼áž”áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹ áž…áž›áž“áž¶ážšáž›áž¼áž“ áž“áž·áž„ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž˜áž¶áž“ážŸáŸ’ážáž·ážšáž—áž¶áž–áž€áŸ’ážšáŸ„áž˜áž›áž€áŸ’ážážážŽáŸ’ážŒáž€áŸ†ážŠáŸ… áž—áŸ’áž›áŸ€áž„ áž“áž·áž„áž’áž¼áž›áž¸áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”"}
                 </p>
               </div>
 
@@ -625,10 +625,10 @@ export default function LedDisplayClient({
                     ]
                   : [
                       "Pixel Pitch",
-                      "កម្រិតពន្លឺ (nits)",
-                      "កម្រិតការពារ IP",
+                      "áž€áž˜áŸ’ážšáž·ážáž–áž“áŸ’áž›ážº (nits)",
+                      "áž€áž˜áŸ’ážšáž·ážáž€áž¶ážšáž–áž¶ážš IP",
                       "Refresh Rate",
-                      "ទំហំ Cabinet",
+                      "áž‘áŸ†áž áŸ† Cabinet",
                     ]
                 ).map((x) => (
                   <span
@@ -650,10 +650,10 @@ export default function LedDisplayClient({
                     ["Power & Signal", "Stable power, clean cabling, and grounding for safety."],
                   ]
                 : [
-                    ["LED Modules", "ផ្ទាំងតូចៗដែលរួមគ្នាបង្កើតទំហំ និង resolution អេក្រង់ទាំងមូល។"],
-                    ["Cabinets", "ស៊ុមរឹងសម្រាប់តម្រឹម modules និងការពារខ្សែភ្លើង។"],
-                    ["Controller", "ដំណើរការមាតិកា និងសមកាលកម្ម pixel ទាំងអស់ជាក់ស្តែង។"],
-                    ["Power & Signal", "ថាមពលស្ថេរភាព ការរៀបខ្សែស្អាត និង grounding ដើម្បីសុវត្ថិភាព។"],
+                    ["LED Modules", "áž•áŸ’áž‘áž¶áŸ†áž„ážáž¼áž…áŸ—ážŠáŸ‚áž›ážšáž½áž˜áž‚áŸ’áž“áž¶áž”áž„áŸ’áž€áž¾ážáž‘áŸ†áž áŸ† áž“áž·áž„ resolution áž¢áŸáž€áŸ’ážšáž„áŸ‹áž‘áž¶áŸ†áž„áž˜áž¼áž›áŸ”"],
+                    ["Cabinets", "ážŸáŸŠáž»áž˜ážšáž¹áž„ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáž˜áŸ’ážšáž¹áž˜ modules áž“áž·áž„áž€áž¶ážšáž–áž¶ážšážáŸ’ážŸáŸ‚áž—áŸ’áž›áž¾áž„áŸ”"],
+                    ["Controller", "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž˜áž¶ážáž·áž€áž¶ áž“áž·áž„ážŸáž˜áž€áž¶áž›áž€áž˜áŸ’áž˜ pixel áž‘áž¶áŸ†áž„áž¢ážŸáŸ‹áž‡áž¶áž€áŸ‹ážŸáŸ’ážáŸ‚áž„áŸ”"],
+                    ["Power & Signal", "ážáž¶áž˜áž–áž›ážŸáŸ’ážáŸážšáž—áž¶áž– áž€áž¶ážšážšáŸ€áž”ážáŸ’ážŸáŸ‚ážŸáŸ’áž¢áž¶áž áž“áž·áž„ grounding ážŠáž¾áž˜áŸ’áž”áž¸ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”"],
                   ]
               ).map(([t, d]) => (
                 <div
@@ -674,54 +674,54 @@ export default function LedDisplayClient({
           <div className="grid gap-6 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {lang === "en" ? "Types in Cambodia" : "ប្រភេទដែលពេញនិយមនៅកម្ពុជា"}
+                {lang === "en" ? "Types in Cambodia" : "áž”áŸ’ážšáž—áŸáž‘ážŠáŸ‚áž›áž–áŸáž‰áž“áž·áž™áž˜áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶"}
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
                   ? "Types of LED Displays in Cambodia"
-                  : "ប្រភេទអេក្រង់ LED នៅកម្ពុជា"}
+                  : "áž”áŸ’ážšáž—áŸáž‘áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶"}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 {lang === "en"
                   ? "The Cambodia market typically uses four LED display types. Each type is optimized for viewing distance, brightness, and installation style. Choosing the right type ensures better visuals, lower maintenance, and longer service life."
-                  : "ទីផ្សារកម្ពុជាជាទូទៅប្រើ LED Display 4 ប្រភេទសំខាន់ៗ។ ប្រភេទនីមួយៗត្រូវបានកំណត់សម្រាប់ចម្ងាយមើល កម្រិតពន្លឺ និងរចនាប័ទ្មដំឡើងផ្សេងៗ។ ការជ្រើសប្រភេទត្រឹមត្រូវជួយឱ្យរូបភាពល្អ កាត់បន្ថយថ្លៃថែទាំ និងបង្កើនអាយុកាលប្រើប្រាស់។"}
+                  : "áž‘áž¸áž•áŸ’ážŸáž¶ážšáž€áž˜áŸ’áž–áž»áž‡áž¶áž‡áž¶áž‘áž¼áž‘áŸ…áž”áŸ’ážšáž¾ LED Display 4 áž”áŸ’ážšáž—áŸáž‘ážŸáŸ†ážáž¶áž“áŸ‹áŸ—áŸ” áž”áŸ’ážšáž—áŸáž‘áž“áž¸áž˜áž½áž™áŸ—ážáŸ’ážšáž¼ážœáž”áž¶áž“áž€áŸ†ážŽážáŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› áž€áž˜áŸ’ážšáž·ážáž–áž“áŸ’áž›ážº áž“áž·áž„ážšáž…áž“áž¶áž”áŸáž‘áŸ’áž˜ážŠáŸ†áž¡áž¾áž„áž•áŸ’ážŸáŸáž„áŸ—áŸ” áž€áž¶ážšáž‡áŸ’ážšáž¾ážŸáž”áŸ’ážšáž—áŸáž‘ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáž‡áž½áž™áž±áŸ’áž™ážšáž¼áž”áž—áž¶áž–áž›áŸ’áž¢ áž€áž¶ážáŸ‹áž”áž“áŸ’ážáž™ážáŸ’áž›áŸƒážáŸ‚áž‘áž¶áŸ† áž“áž·áž„áž”áž„áŸ’áž€áž¾áž“áž¢áž¶áž™áž»áž€áž¶áž›áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áŸ”"}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 {lang === "en"
                   ? "We help you select the right LED screen by location, budget, and content needs so your investment performs reliably."
-                  : "យើងជួយអ្នកជ្រើស LED Screen ត្រឹមត្រូវតាមទីតាំង ថវិកា និងតម្រូវការមាតិកា ដើម្បីឱ្យការវិនិយោគរបស់អ្នកមានប្រសិទ្ធភាព និងស្ថិរភាព។"}
+                  : "áž™áž¾áž„áž‡áž½áž™áž¢áŸ’áž“áž€áž‡áŸ’ážšáž¾ážŸ LED Screen ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœážáž¶áž˜áž‘áž¸ážáž¶áŸ†áž„ ážážœáž·áž€áž¶ áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšáž˜áž¶ážáž·áž€áž¶ ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™áž€áž¶ážšážœáž·áž“áž·áž™áŸ„áž‚ážšáž”ážŸáŸ‹áž¢áŸ’áž“áž€áž˜áž¶áž“áž”áŸ’ážšážŸáž·áž‘áŸ’áž’áž—áž¶áž– áž“áž·áž„ážŸáŸ’ážáž·ážšáž—áž¶áž–áŸ”"}
               </p>
 
               <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">
                   {lang === "en"
                     ? "Quick Selection Checklist (Cambodia)"
-                    : "បញ្ជីពិនិត្យរហ័សសម្រាប់ការជ្រើសរើស (កម្ពុជា)"}
+                    : "áž”áž‰áŸ’áž‡áž¸áž–áž·áž“áž·ážáŸ’áž™ážšáž áŸážŸážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž‡áŸ’ážšáž¾ážŸážšáž¾ážŸ (áž€áž˜áŸ’áž–áž»áž‡áž¶)"}
                 </div>
                 <ul className="mt-3 space-y-2 text-sm text-slate-600">
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
                     {lang === "en"
                       ? "Decide indoor vs outdoor based on sunlight and exposure."
-                      : "សម្រេចថាជា indoor ឬ outdoor ដោយផ្អែកលើពន្លឺថ្ងៃ និងការប៉ះពាល់អាកាសធាតុ។"}
+                      : "ážŸáž˜áŸ’ážšáŸáž…ážáž¶áž‡áž¶ indoor áž¬ outdoor ážŠáŸ„áž™áž•áŸ’áž¢áŸ‚áž€áž›áž¾áž–áž“áŸ’áž›ážºážáŸ’áž„áŸƒ áž“áž·áž„áž€áž¶ážšáž”áŸ‰áŸ‡áž–áž¶áž›áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»áŸ”"}
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
                     {lang === "en"
                       ? "Match pixel pitch to viewing distance for clarity."
-                      : "ផ្គូផ្គង pixel pitch ជាមួយចម្ងាយមើល ដើម្បីទទួលបានភាពច្បាស់។"}
+                      : "áž•áŸ’áž‚áž¼áž•áŸ’áž‚áž„ pixel pitch áž‡áž¶áž˜áž½áž™áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› ážŠáž¾áž˜áŸ’áž”áž¸áž‘áž‘áž½áž›áž”áž¶áž“áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹áŸ”"}
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
                     {lang === "en"
                       ? "Confirm structure method and mounting location."
-                      : "បញ្ជាក់វិធីសាស្ត្ររចនាសម្ព័ន្ធ និងទីតាំងដំឡើង។"}
+                      : "áž”áž‰áŸ’áž‡áž¶áž€áŸ‹ážœáž·áž’áž¸ážŸáž¶ážŸáŸ’ážáŸ’ážšážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŠáŸ†áž¡áž¾áž„áŸ”"}
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
                     {lang === "en"
                       ? "Plan for power, grounding, and maintenance access."
-                      : "រៀបចំគម្រោងថាមពល grounding និងច្រកចូលសម្រាប់ថែទាំ។"}
+                      : "ážšáŸ€áž”áž…áŸ†áž‚áž˜áŸ’ážšáŸ„áž„ážáž¶áž˜áž–áž› grounding áž“áž·áž„áž…áŸ’ážšáž€áž…áž¼áž›ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ‚áž‘áž¶áŸ†áŸ”"}
                   </li>
                 </ul>
               </div>
@@ -729,7 +729,7 @@ export default function LedDisplayClient({
               <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
                 {lang === "en"
                   ? "Common Cambodia installs: mall video walls, hotel lobbies, roadside LED billboards, retail storefront screens, event stages, and public information displays."
-                  : "ការដំឡើងពេញនិយមនៅកម្ពុជា៖ video wall ក្នុង mall, lobby សណ្ឋាគារ, billboard LED តាមដងផ្លូវ, អេក្រង់ storefront សម្រាប់ retail, stage event និងអេក្រង់ព័ត៌មានសាធារណៈ។"}
+                  : "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž–áŸáž‰áž“áž·áž™áž˜áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ– video wall áž€áŸ’áž“áž»áž„ mall, lobby ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš, billboard LED ážáž¶áž˜ážŠáž„áž•áŸ’áž›áž¼ážœ, áž¢áŸáž€áŸ’ážšáž„áŸ‹ storefront ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ retail, stage event áž“áž·áž„áž¢áŸáž€áŸ’ážšáž„áŸ‹áž–áŸážáŸŒáž˜áž¶áž“ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”"}
               </div>
             </div>
 
@@ -759,24 +759,24 @@ export default function LedDisplayClient({
                   ]
                 : [
                     [
-                      "អេក្រង់ LED ក្នុងអគារ",
-                      "Fine-pitch LED សម្រាប់បន្ទប់ប្រជុំ showroom control room និងការបង្ហាញម៉ាកក្នុងហាងលក់រាយ។",
-                      ["Fine pitch", "ពន្លឺមិនចាំង", "មើលជិតច្បាស់"],
+                      "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš",
+                      "Fine-pitch LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† showroom control room áž“áž·áž„áž€áž¶ážšáž”áž„áŸ’áž áž¶áž‰áž˜áŸ‰áž¶áž€áž€áŸ’áž“áž»áž„áž áž¶áž„áž›áž€áŸ‹ážšáž¶áž™áŸ”",
+                      ["Fine pitch", "áž–áž“áŸ’áž›ážºáž˜áž·áž“áž…áž¶áŸ†áž„", "áž˜áž¾áž›áž‡áž·ážáž…áŸ’áž”áž¶ážŸáŸ‹"],
                     ],
                     [
-                      "ប៊ីលបត្រ LED ខាងក្រៅ",
-                      "អេក្រង់មានកម្រិតពន្លឺខ្ពស់ និង IP-rated សម្រាប់ roadside rooftop និងការផ្សព្វផ្សាយលើ facade។",
-                      ["ពន្លឺខ្ពស់", "IP65+", "មើលឃើញក្រោមថ្ងៃ"],
+                      "áž”áŸŠáž¸áž›áž”ážáŸ’ážš LED ážáž¶áž„áž€áŸ’ážšáŸ…",
+                      "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž˜áž¶áž“áž€áž˜áŸ’ážšáž·ážáž–áž“áŸ’áž›ážºážáŸ’áž–ážŸáŸ‹ áž“áž·áž„ IP-rated ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ roadside rooftop áž“áž·áž„áž€áž¶ážšáž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™áž›áž¾ facadeáŸ”",
+                      ["áž–áž“áŸ’áž›ážºážáŸ’áž–ážŸáŸ‹", "IP65+", "áž˜áž¾áž›ážƒáž¾áž‰áž€áŸ’ážšáŸ„áž˜ážáŸ’áž„áŸƒ"],
                     ],
                     [
-                      "ជញ្ជាំង LED សម្រាប់ជួល",
-                      "ផ្ទាំង modular រចនាសម្រាប់ដំឡើងលឿនក្នុង event, concert និងពិព័រណ៍។",
-                      ["ដំឡើងលឿន", "ទម្ងន់ស្រាល", "សមស្របសម្រាប់ឆាក"],
+                      "áž‡áž‰áŸ’áž‡áž¶áŸ†áž„ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‡áž½áž›",
+                      "áž•áŸ’áž‘áž¶áŸ†áž„ modular ážšáž…áž“áž¶ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŠáŸ†áž¡áž¾áž„áž›áž¿áž“áž€áŸ’áž“áž»áž„ event, concert áž“áž·áž„áž–áž·áž–áŸážšážŽáŸáŸ”",
+                      ["ážŠáŸ†áž¡áž¾áž„áž›áž¿áž“", "áž‘áž˜áŸ’áž„áž“áŸ‹ážŸáŸ’ážšáž¶áž›", "ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž†áž¶áž€"],
                     ],
                     [
-                      "គ្រឿងបន្លាស់ និងផ្នែក LED",
-                      "Controller, receiving card, power supply, cabinet និង spare parts ផ្សេងៗ។",
-                      ["Controller", "Power", "គ្រឿងបន្លាស់"],
+                      "áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ áž“áž·áž„áž•áŸ’áž“áŸ‚áž€ LED",
+                      "Controller, receiving card, power supply, cabinet áž“áž·áž„ spare parts áž•áŸ’ážŸáŸáž„áŸ—áŸ”",
+                      ["Controller", "Power", "áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹"],
                     ],
                   ]
               ).map((item, idx) => {
@@ -812,12 +812,12 @@ export default function LedDisplayClient({
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "LED Display Specifications for Cambodia (Indoor & Outdoor)"
-              : "លក្ខណៈបច្ចេកទេស LED Display សម្រាប់កម្ពុជា (ក្នុងអគារ និងខាងក្រៅ)"}
+              : "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ LED Display ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž˜áŸ’áž–áž»áž‡áž¶ (áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš áž“áž·áž„ážáž¶áž„áž€áŸ’ážšáŸ…)"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Use these realistic spec ranges to plan indoor and outdoor LED display projects in Cambodia. Final specs depend on viewing distance, ambient light, installation structure, and budget."
-              : "សូមប្រើជួរ spec ខាងក្រោមសម្រាប់រៀបចំគម្រោង LED Display ក្នុងអគារ និងខាងក្រៅនៅកម្ពុជា។ Spec ចុងក្រោយអាស្រ័យលើចម្ងាយមើល ពន្លឺបរិយាកាស រចនាសម្ព័ន្ធដំឡើង និងថវិកា។"}
+              : "ážŸáž¼áž˜áž”áŸ’ážšáž¾áž‡áž½ážš spec ážáž¶áž„áž€áŸ’ážšáŸ„áž˜ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážšáŸ€áž”áž…áŸ†áž‚áž˜áŸ’ážšáŸ„áž„ LED Display áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš áž“áž·áž„ážáž¶áž„áž€áŸ’ážšáŸ…áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ” Spec áž…áž»áž„áž€áŸ’ážšáŸ„áž™áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› áž–áž“áŸ’áž›ážºáž”ážšáž·áž™áž¶áž€áž¶ážŸ ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ážážœáž·áž€áž¶áŸ”"}
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -833,14 +833,14 @@ export default function LedDisplayClient({
                   ["Lifespan", "50,000-100,000 hours with proper maintenance"],
                 ]
               : [
-                  ["Pixel Pitch", "ក្នុងអគារ៖ P1.25-P3 | ខាងក្រៅ៖ P3-P10"],
-                  ["កម្រិតពន្លឺ (nits)", "ក្នុងអគារ៖ 600-1,200 | ខាងក្រៅ៖ 4,500-7,000+"],
-                  ["កម្រិតការពារ IP", "ក្នុងអគារ៖ IP30-IP40 | ខាងក្រៅ៖ IP65+ (ខាងមុខ)"],
-                  ["Refresh Rate", ">= 1,920Hz (4,000Hz+ សម្រាប់កាមេរ៉ា)"],
-                  ["មុំមើល", "H: 140-160 | V: 120-140"],
-                  ["ថាមពល និងសុវត្ថិភាព", "ការពារ surge + grounding ត្រឹមត្រូវ"],
-                  ["ទំហំ Cabinet", "ទំហំពេញនិយម៖ 500x500 / 500x1000 mm"],
-                  ["អាយុកាល", "50,000-100,000 ម៉ោង (ប្រសិនបើថែទាំត្រឹមត្រូវ)"],
+                  ["Pixel Pitch", "áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážšáŸ– P1.25-P3 | ážáž¶áž„áž€áŸ’ážšáŸ…áŸ– P3-P10"],
+                  ["áž€áž˜áŸ’ážšáž·ážáž–áž“áŸ’áž›ážº (nits)", "áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážšáŸ– 600-1,200 | ážáž¶áž„áž€áŸ’ážšáŸ…áŸ– 4,500-7,000+"],
+                  ["áž€áž˜áŸ’ážšáž·ážáž€áž¶ážšáž–áž¶ážš IP", "áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážšáŸ– IP30-IP40 | ážáž¶áž„áž€áŸ’ážšáŸ…áŸ– IP65+ (ážáž¶áž„áž˜áž»áž)"],
+                  ["Refresh Rate", ">= 1,920Hz (4,000Hz+ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶áž˜áŸážšáŸ‰áž¶)"],
+                  ["áž˜áž»áŸ†áž˜áž¾áž›", "H: 140-160 | V: 120-140"],
+                  ["ážáž¶áž˜áž–áž› áž“áž·áž„ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–", "áž€áž¶ážšáž–áž¶ážš surge + grounding ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ"],
+                  ["áž‘áŸ†áž áŸ† Cabinet", "áž‘áŸ†áž áŸ†áž–áŸáž‰áž“áž·áž™áž˜áŸ– 500x500 / 500x1000 mm"],
+                  ["áž¢áž¶áž™áž»áž€áž¶áž›", "50,000-100,000 áž˜áŸ‰áŸ„áž„ (áž”áŸ’ážšážŸáž·áž“áž”áž¾ážáŸ‚áž‘áž¶áŸ†ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ)"],
                 ]
             ).map(([t, d]) => (
               <div
@@ -865,21 +865,21 @@ export default function LedDisplayClient({
             <h2 className="text-2xl font-bold tracking-tight text-slate-900">
               {lang === "en"
                 ? "Pixel Pitch & Viewing Distance Guide"
-                : "មគ្គុទ្ទេសក៍ Pixel Pitch និងចម្ងាយមើល"}
+                : "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸ Pixel Pitch áž“áž·áž„áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›"}
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">
-              {pixelPitchIntroOverride ??
+              {(lang === "en" ? pixelPitchIntroOverride : (pixelPitchIntroOverrideKm ?? pixelPitchIntroOverride)) ??
                 (lang === "en"
                   ? "Choosing the right pixel pitch is the #1 factor for visual clarity and budget efficiency. Use this guide as a starting point for Cambodia installations."
-                  : "ការជ្រើស pixel pitch ត្រឹមត្រូវ គឺជាកត្តាសំខាន់បំផុតសម្រាប់ភាពច្បាស់នៃរូបភាព និងប្រសិទ្ធភាពថវិកា។ សូមប្រើមគ្គុទ្ទេសក៍នេះជាចំណុចចាប់ផ្តើមសម្រាប់ការដំឡើងនៅកម្ពុជា។")}
+                  : "áž€áž¶ážšáž‡áŸ’ážšáž¾ážŸ pixel pitch ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž‚ážºáž‡áž¶áž€ážáŸ’ážáž¶ážŸáŸ†ážáž¶áž“áŸ‹áž”áŸ†áž•áž»ážážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹áž“áŸƒážšáž¼áž”áž—áž¶áž– áž“áž·áž„áž”áŸ’ážšážŸáž·áž‘áŸ’áž’áž—áž¶áž–ážážœáž·áž€áž¶áŸ” ážŸáž¼áž˜áž”áŸ’ážšáž¾áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž“áŸáŸ‡áž‡áž¶áž…áŸ†ážŽáž»áž…áž…áž¶áž”áŸ‹áž•áŸ’ážáž¾áž˜ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”")}
             </p>
             <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
               <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
                 <div className="p-3">Pixel Pitch</div>
-                <div className="p-3">{lang === "en" ? "Best Viewing Distance" : "ចម្ងាយមើលល្អបំផុត"}</div>
-                <div className="p-3">{lang === "en" ? "Typical Use" : "ការប្រើប្រាស់ទូទៅ"}</div>
+                <div className="p-3">{lang === "en" ? "Best Viewing Distance" : "áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›áž›áŸ’áž¢áž”áŸ†áž•áž»áž"}</div>
+                <div className="p-3">{lang === "en" ? "Typical Use" : "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž‘áž¼áž‘áŸ…"}</div>
               </div>
-              {(pixelPitchRowsOverride ?? [
+              {((lang === "en" ? pixelPitchRowsOverride : (pixelPitchRowsOverrideKm ?? pixelPitchRowsOverride)) ?? [
                 ...(lang === "en"
                   ? [
                       ["P1.25-P1.86", "1.5-3m", "Control room, premium boardroom"],
@@ -888,10 +888,10 @@ export default function LedDisplayClient({
                       ["P5-P10", "6m+", "Outdoor billboards, roadside"],
                     ]
                   : [
-                      ["P1.25-P1.86", "1.5-3m", "Control room និង boardroom កម្រិតខ្ពស់"],
-                      ["P2-P2.5", "2-5m", "បន្ទប់ប្រជុំ ហាងលក់រាយ និង showroom"],
-                      ["P3-P4", "3-8m", "Mall, lobby និងឆាកក្នុងអគារ"],
-                      ["P5-P10", "6m+", "Billboard ខាងក្រៅ និងតាមដងផ្លូវ"],
+                      ["P1.25-P1.86", "1.5-3m", "Control room áž“áž·áž„ boardroom áž€áž˜áŸ’ážšáž·ážážáŸ’áž–ážŸáŸ‹"],
+                      ["P2-P2.5", "2-5m", "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž áž¶áž„áž›áž€áŸ‹ážšáž¶áž™ áž“áž·áž„ showroom"],
+                      ["P3-P4", "3-8m", "Mall, lobby áž“áž·áž„áž†áž¶áž€áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš"],
+                      ["P5-P10", "6m+", "Billboard ážáž¶áž„áž€áŸ’ážšáŸ… áž“áž·áž„ážáž¶áž˜ážŠáž„áž•áŸ’áž›áž¼ážœ"],
                     ]),
               ]).map((row) => (
                 <div
@@ -914,12 +914,12 @@ export default function LedDisplayClient({
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "Indoor vs Outdoor LED Display for Cambodia Climate"
-              : "ការប្រៀបធៀប LED Display ក្នុងអគារ និងខាងក្រៅ សម្រាប់អាកាសធាតុកម្ពុជា"}
+              : "áž€áž¶ážšáž”áŸ’ážšáŸ€áž”áž’áŸ€áž” LED Display áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš áž“áž·áž„ážáž¶áž„áž€áŸ’ážšáŸ… ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»áž€áž˜áŸ’áž–áž»áž‡áž¶"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Cambodias heat, rain, and dust require correct IP rating, heat management, and structure design-especially for outdoor LED displays."
-              : "កំដៅ ភ្លៀង និងធូលីនៅកម្ពុជា ទាមទារឱ្យជ្រើស IP rating ត្រឹមត្រូវ ការគ្រប់គ្រងកំដៅ និងការរចនាសម្ព័ន្ធល្អ ជាពិសេសសម្រាប់ Outdoor LED។"}
+              : "áž€áŸ†ážŠáŸ… áž—áŸ’áž›áŸ€áž„ áž“áž·áž„áž’áž¼áž›áž¸áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ áž‘áž¶áž˜áž‘áž¶ážšáž±áŸ’áž™áž‡áŸ’ážšáž¾ážŸ IP rating ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áŸ†ážŠáŸ… áž“áž·áž„áž€áž¶ážšážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’áž›áŸ’áž¢ áž‡áž¶áž–áž·ážŸáŸážŸážŸáž˜áŸ’ážšáž¶áž”áŸ‹ Outdoor LEDáŸ”"}
           </p>
           <div className="mt-6 grid gap-4 lg:grid-cols-2">
             {(lang === "en"
@@ -939,16 +939,16 @@ export default function LedDisplayClient({
                 ]
               : [
                   [
-                    "អេក្រង់ LED ក្នុងអគារ",
-                    "សមស្របសម្រាប់ការមើលជិត ដូចជា boardroom, showroom, control room, សណ្ឋាគារ និង event ក្នុងអគារ។ Indoor LED ប្រើ pixel pitch ល្អិត កម្រិតពន្លឺសមស្រប និងប្រព័ន្ធត្រជាក់ស្ងាត់ ដើម្បីរក្សារូបភាពឱ្យច្បាស់។ ការរៀបខ្សែ និងការបញ្ចប់រចនាសម្ព័ន្ធស្អាតជួយបង្កើនស្ថិរភាពរយៈពេលវែង។",
-                    "IP ទូទៅ៖ IP30-IP40",
-                    ["ភាពច្បាស់ Fine pitch", "ពន្លឺមិនចាំង", "ប្រព័ន្ធត្រជាក់ស្ងាត់", "សមស្របសម្រាប់មើលជិត"],
+                    "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš",
+                    "ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž˜áž¾áž›áž‡áž·áž ážŠáž¼áž…áž‡áž¶ boardroom, showroom, control room, ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš áž“áž·áž„ event áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážšáŸ” Indoor LED áž”áŸ’ážšáž¾ pixel pitch áž›áŸ’áž¢áž·áž áž€áž˜áŸ’ážšáž·ážáž–áž“áŸ’áž›ážºážŸáž˜ážŸáŸ’ážšáž” áž“áž·áž„áž”áŸ’ážšáž–áŸáž“áŸ’áž’ážáŸ’ážšáž‡áž¶áž€áŸ‹ážŸáŸ’áž„áž¶ážáŸ‹ ážŠáž¾áž˜áŸ’áž”áž¸ážšáž€áŸ’ážŸáž¶ážšáž¼áž”áž—áž¶áž–áž±áŸ’áž™áž…áŸ’áž”áž¶ážŸáŸ‹áŸ” áž€áž¶ážšážšáŸ€áž”ážáŸ’ážŸáŸ‚ áž“áž·áž„áž€áž¶ážšáž”áž‰áŸ’áž…áž”áŸ‹ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ážŸáŸ’áž¢áž¶ážáž‡áž½áž™áž”áž„áŸ’áž€áž¾áž“ážŸáŸ’ážáž·ážšáž—áž¶áž–ážšáž™áŸˆáž–áŸáž›ážœáŸ‚áž„áŸ”",
+                    "IP áž‘áž¼áž‘áŸ…áŸ– IP30-IP40",
+                    ["áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹ Fine pitch", "áž–áž“áŸ’áž›ážºáž˜áž·áž“áž…áž¶áŸ†áž„", "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ážáŸ’ážšáž‡áž¶áž€áŸ‹ážŸáŸ’áž„áž¶ážáŸ‹", "ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž˜áž¾áž›áž‡áž·áž"],
                   ],
                   [
-                    "អេក្រង់ LED ខាងក្រៅ",
-                    "រចនាឡើងសម្រាប់ពន្លឺថ្ងៃ ភ្លៀង និងធូលីនៅកម្ពុជា។ Outdoor LED billboard ត្រូវការ brightness ខ្ពស់ cabinet ការពារអាកាសធាតុ រចនាសម្ព័ន្ធរឹងមាំ និង grounding សុវត្ថិភាព។ ការការពារ IP និងការគ្រប់គ្រងកំដៅល្អ នឹងធានាអេក្រង់អាចមើលឃើញច្បាស់ និងដំណើរការស្ថិរភាព។",
-                    "IP ទូទៅ៖ IP65+ (ខាងមុខ)",
-                    ["ពន្លឺខ្ពស់", "ការពារអាកាសធាតុ", "សុវត្ថិភាពរចនាសម្ព័ន្ធ", "មើលឃើញក្រោមថ្ងៃ"],
+                    "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’ážšáŸ…",
+                    "ážšáž…áž“áž¶áž¡áž¾áž„ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž–áž“áŸ’áž›ážºážáŸ’áž„áŸƒ áž—áŸ’áž›áŸ€áž„ áž“áž·áž„áž’áž¼áž›áž¸áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ” Outdoor LED billboard ážáŸ’ážšáž¼ážœáž€áž¶ážš brightness ážáŸ’áž–ážŸáŸ‹ cabinet áž€áž¶ážšáž–áž¶ážšáž¢áž¶áž€áž¶ážŸáž’áž¶ážáž» ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ážšáž¹áž„áž˜áž¶áŸ† áž“áž·áž„ grounding ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ” áž€áž¶ážšáž€áž¶ážšáž–áž¶ážš IP áž“áž·áž„áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áŸ†ážŠáŸ…áž›áŸ’áž¢ áž“áž¹áž„áž’áž¶áž“áž¶áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž¶áž…áž˜áž¾áž›ážƒáž¾áž‰áž…áŸ’áž”áž¶ážŸáŸ‹ áž“áž·áž„ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážŸáŸ’ážáž·ážšáž—áž¶áž–áŸ”",
+                    "IP áž‘áž¼áž‘áŸ…áŸ– IP65+ (ážáž¶áž„áž˜áž»áž)",
+                    ["áž–áž“áŸ’áž›ážºážáŸ’áž–ážŸáŸ‹", "áž€áž¶ážšáž–áž¶ážšáž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’", "áž˜áž¾áž›ážƒáž¾áž‰áž€áŸ’ážšáŸ„áž˜ážáŸ’áž„áŸƒ"],
                   ],
                 ]
             ).map((item, idx) => {
@@ -984,12 +984,12 @@ export default function LedDisplayClient({
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "LED Display Use-Cases by Industry in Cambodia"
-              : "ករណីប្រើប្រាស់ LED Display តាមវិស័យនៅកម្ពុជា"}
+              : "áž€ážšážŽáž¸áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ LED Display ážáž¶áž˜ážœáž·ážŸáŸáž™áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Popular industries using LED display, digital signage, and LED billboards in Cambodia."
-              : "វិស័យពេញនិយមដែលកំពុងប្រើ LED display, digital signage និង LED billboard នៅកម្ពុជា។"}
+              : "ážœáž·ážŸáŸáž™áž–áŸáž‰áž“áž·áž™áž˜ážŠáŸ‚áž›áž€áŸ†áž–áž»áž„áž”áŸ’ážšáž¾ LED display, digital signage áž“áž·áž„ LED billboard áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(lang === "en"
@@ -1037,43 +1037,43 @@ export default function LedDisplayClient({
               ]
               : [
                   {
-                    t: "Retail និង Shopping Mall",
-                    d: "Indoor LED video wall សម្រាប់ផ្សព្វផ្សាយ បង្ហាញម៉ាក និងបើកដំណើរការផលិតផលក្នុង mall នៅភ្នំពេញ។",
+                    t: "Retail áž“áž·áž„ Shopping Mall",
+                    d: "Indoor LED video wall ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™ áž”áž„áŸ’áž áž¶áž‰áž˜áŸ‰áž¶áž€ áž“áž·áž„áž”áž¾áž€ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž•áž›áž·ážáž•áž›áž€áŸ’áž“áž»áž„ mall áž“áŸ…áž—áŸ’áž“áŸ†áž–áŸáž‰áŸ”",
                     chips: ["Indoor", "Fine pitch", "Branding"],
                   },
                   {
-                    t: "សណ្ឋាគារ រីសត និង Hospitality",
-                    d: "អេក្រង់ស្វាគមន៍ lobby កាលវិភាគ event និងអេក្រង់ banquet hall ជាមួយរូបភាពស្អាត និងប្រព័ន្ធត្រជាក់ស្ងាត់។",
+                    t: "ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš ážšáž¸ážŸáž áž“áž·áž„ Hospitality",
+                    d: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ážŸáŸ’ážœáž¶áž‚áž˜áž“áŸ lobby áž€áž¶áž›ážœáž·áž—áž¶áž‚ event áž“áž·áž„áž¢áŸáž€áŸ’ážšáž„áŸ‹ banquet hall áž‡áž¶áž˜áž½áž™ážšáž¼áž”áž—áž¶áž–ážŸáŸ’áž¢áž¶áž áž“áž·áž„áž”áŸ’ážšáž–áŸáž“áŸ’áž’ážáŸ’ážšáž‡áž¶áž€áŸ‹ážŸáŸ’áž„áž¶ážáŸ‹áŸ”",
                     chips: ["Lobby", "Event", "24/7"],
                   },
                   {
-                    t: "ការិយាល័យ និង Showroom",
-                    d: "LED display សម្រាប់ boardroom និង showroom ដើម្បីបង្ហាញ presentation dashboard និង brand storytelling។",
+                    t: "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„ Showroom",
+                    d: "LED display ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ boardroom áž“áž·áž„ showroom ážŠáž¾áž˜áŸ’áž”áž¸áž”áž„áŸ’áž áž¶áž‰ presentation dashboard áž“áž·áž„ brand storytellingáŸ”",
                     chips: ["Corporate", "Control", "Showroom"],
                   },
                   {
-                    t: "Event ឆាក និងជួល",
-                    d: "Rental LED wall សម្រាប់ concert ពិព័រណ៍ និងផ្ទៃខាងក្រោយឆាក ជាមួយការដំឡើងលឿន។",
+                    t: "Event áž†áž¶áž€ áž“áž·áž„áž‡áž½áž›",
+                    d: "Rental LED wall ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ concert áž–áž·áž–áŸážšážŽáŸ áž“áž·áž„áž•áŸ’áž‘áŸƒážáž¶áž„áž€áŸ’ážšáŸ„áž™áž†áž¶áž€ áž‡áž¶áž˜áž½áž™áž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž›áž¿áž“áŸ”",
                     chips: ["Rental", "Stage", "Fast setup"],
                   },
                   {
-                    t: "វិស័យអប់រំ និង Campus",
-                    d: "អេក្រង់ auditorium, notice board នៅ campus និង smart classroom display សម្រាប់ភាពមើលឃើញច្បាស់។",
+                    t: "ážœáž·ážŸáŸáž™áž¢áž”áŸ‹ážšáŸ† áž“áž·áž„ Campus",
+                    d: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ auditorium, notice board áž“áŸ… campus áž“áž·áž„ smart classroom display ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž—áž¶áž–áž˜áž¾áž›ážƒáž¾áž‰áž…áŸ’áž”áž¶ážŸáŸ‹áŸ”",
                     chips: ["Education", "Auditorium", "Notice"],
                   },
                   {
-                    t: "រដ្ឋាភិបាល និងសេវាសាធារណៈ",
-                    d: "អេក្រង់ព័ត៌មានសម្រាប់មជ្ឈមណ្ឌលសេវា សាលារាជធានី/ខេត្ត និងសេចក្ដីជូនដំណឹងសាធារណៈ។",
+                    t: "ážšážŠáŸ’áž‹áž¶áž—áž·áž”áž¶áž› áž“áž·áž„ážŸáŸážœáž¶ážŸáž¶áž’áž¶ážšážŽáŸˆ",
+                    d: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž–áŸážáŸŒáž˜áž¶áž“ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›ážŸáŸážœáž¶ ážŸáž¶áž›áž¶ážšáž¶áž‡áž’áž¶áž“áž¸/ážáŸážáŸ’áž áž“áž·áž„ážŸáŸáž…áž€áŸ’ážŠáž¸áž‡áž¼áž“ážŠáŸ†ážŽáž¹áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”",
                     chips: ["Public", "Info", "Queue"],
                   },
                   {
-                    t: "ដឹកជញ្ជូន និងស្ថានីយ៍",
-                    d: "អេក្រង់ timetable, wayfinding និងផ្សព្វផ្សាយសម្រាប់ terminal, station និង port។",
+                    t: "ážŠáž¹áž€áž‡áž‰áŸ’áž‡áž¼áž“ áž“áž·áž„ážŸáŸ’ážáž¶áž“áž¸áž™áŸ",
+                    d: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ timetable, wayfinding áž“áž·áž„áž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ terminal, station áž“áž·áž„ portáŸ”",
                     chips: ["Wayfinding", "Timetable", "Public"],
                   },
                   {
-                    t: "ផ្សព្វផ្សាយខាងក្រៅ និង Billboard",
-                    d: "ប៊ីលបត្រ LED ពន្លឺខ្ពស់ សម្រាប់ផ្សព្វផ្សាយតាមដងផ្លូវ និងលើដំបូលទូទាំងកម្ពុជា។",
+                    t: "áž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™ážáž¶áž„áž€áŸ’ážšáŸ… áž“áž·áž„ Billboard",
+                    d: "áž”áŸŠáž¸áž›áž”ážáŸ’ážš LED áž–áž“áŸ’áž›ážºážáŸ’áž–ážŸáŸ‹ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™ážáž¶áž˜ážŠáž„áž•áŸ’áž›áž¼ážœ áž“áž·áž„áž›áž¾ážŠáŸ†áž”áž¼áž›áž‘áž¼áž‘áž¶áŸ†áž„áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
                     chips: ["Outdoor", "High nits", "IP65+"],
                   },
                 ]
@@ -1106,12 +1106,12 @@ export default function LedDisplayClient({
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "LED Display Installation & After-Sales Workflow in Cambodia"
-              : "ដំណើរការដំឡើង LED Display និងសេវាកម្មបន្ទាប់ពីលក់នៅកម្ពុជា"}
+              : "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážŠáŸ†áž¡áž¾áž„ LED Display áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸áž›áž€áŸ‹áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Our end-to-end LED display delivery process covers survey, design, installation, commissioning, and ongoing after-sales support. This workflow ensures stable visuals, safe structure, and long service life for Cambodia projects."
-              : "ដំណើរការដឹកជញ្ជូន LED Display ពេញលេញរបស់យើង រួមមាន survey, design, installation, commissioning និងការគាំទ្របន្តបន្ទាប់ពីលក់។ ដំណើរការនេះជួយធានារូបភាពស្ថិរភាព រចនាសម្ព័ន្ធសុវត្ថិភាព និងអាយុកាលប្រើប្រាស់យូរ។"}
+              : "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážŠáž¹áž€áž‡áž‰áŸ’áž‡áž¼áž“ LED Display áž–áŸáž‰áž›áŸáž‰ážšáž”ážŸáŸ‹áž™áž¾áž„ ážšáž½áž˜áž˜áž¶áž“ survey, design, installation, commissioning áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšáž”áž“áŸ’ážáž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸áž›áž€áŸ‹áŸ” ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž“áŸáŸ‡áž‡áž½áž™áž’áž¶áž“áž¶ážšáž¼áž”áž—áž¶áž–ážŸáŸ’ážáž·ážšáž—áž¶áž– ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž¢áž¶áž™áž»áž€áž¶áž›áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž™áž¼ážšáŸ”"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(lang === "en"
@@ -1139,23 +1139,23 @@ export default function LedDisplayClient({
               ]
               : [
                   [
-                    "1. Site Survey និងវាយតម្លៃ",
-                    "វាស់វែងទីតាំងពិត ពិនិត្យចម្ងាយមើល កម្រិតពន្លឺថ្ងៃ ទីតាំងដំឡើង និងប្រភពថាមពល។",
-                    ["Survey", "ចម្ងាយមើល", "លក្ខខណ្ឌទីតាំង"],
+                    "1. Site Survey áž“áž·áž„ážœáž¶áž™ážáž˜áŸ’áž›áŸƒ",
+                    "ážœáž¶ážŸáŸ‹ážœáŸ‚áž„áž‘áž¸ážáž¶áŸ†áž„áž–áž·áž áž–áž·áž“áž·ážáŸ’áž™áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› áž€áž˜áŸ’ážšáž·ážáž–áž“áŸ’áž›ážºážáŸ’áž„áŸƒ áž‘áž¸ážáž¶áŸ†áž„ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„áž”áŸ’ážšáž—áž–ážáž¶áž˜áž–áž›áŸ”",
+                    ["Survey", "áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›", "áž›áž€áŸ’ážážážŽáŸ’ážŒáž‘áž¸ážáž¶áŸ†áž„"],
                   ],
                   [
-                    "2. Design, BOQ និងអនុម័ត",
-                    "ជ្រើស pixel pitch, រៀប layout cabinet, រចនាសម្ព័ន្ធ, ជ្រើស controller និងបំបែកថ្លៃ BOQ។",
-                    ["BOQ", "រចនាសម្ព័ន្ធ", "Pixel pitch"],
+                    "2. Design, BOQ áž“áž·áž„áž¢áž“áž»áž˜áŸáž",
+                    "áž‡áŸ’ážšáž¾ážŸ pixel pitch, ážšáŸ€áž” layout cabinet, ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’, áž‡áŸ’ážšáž¾ážŸ controller áž“áž·áž„áž”áŸ†áž”áŸ‚áž€ážáŸ’áž›áŸƒ BOQáŸ”",
+                    ["BOQ", "ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’", "Pixel pitch"],
                   ],
                   [
-                    "3. Installation និង Commissioning",
-                    "ដំឡើង frame, រៀបខ្សែ, grounding, setup controller, calibration និងកំណត់ brightness។",
-                    ["ដំឡើង", "Calibration", "សុវត្ថិភាព"],
+                    "3. Installation áž“áž·áž„ Commissioning",
+                    "ážŠáŸ†áž¡áž¾áž„ frame, ážšáŸ€áž”ážáŸ’ážŸáŸ‚, grounding, setup controller, calibration áž“áž·áž„áž€áŸ†ážŽážáŸ‹ brightnessáŸ”",
+                    ["ážŠáŸ†áž¡áž¾áž„", "Calibration", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"],
                   ],
                   [
-                    "4. Training និង After-Sales",
-                    "បណ្តុះបណ្តាល operator, គាំទ្រមាតិកា, គម្រោង spare parts, កាលវិភាគថែទាំ និងជម្រើស AMC។",
+                    "4. Training áž“áž·áž„ After-Sales",
+                    "áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› operator, áž‚áž¶áŸ†áž‘áŸ’ážšáž˜áž¶ážáž·áž€áž¶, áž‚áž˜áŸ’ážšáŸ„áž„ spare parts, áž€áž¶áž›ážœáž·áž—áž¶áž‚ážáŸ‚áž‘áž¶áŸ† áž“áž·áž„áž‡áž˜áŸ’ážšáž¾ážŸ AMCáŸ”",
                     ["Training", "Spare parts", "AMC"],
                   ],
                 ]
@@ -1191,12 +1191,12 @@ export default function LedDisplayClient({
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "Why Choose Mugnee for LED Display in Cambodia"
-              : "ហេតុអ្វីគួរជ្រើស Mugnee សម្រាប់ LED Display នៅកម្ពុជា"}
+              : "áž áŸážáž»áž¢áŸ’ážœáž¸áž‚áž½ážšáž‡áŸ’ážšáž¾ážŸ Mugnee ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ LED Display áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Clients choose Mugnee because we deliver engineering-accurate LED display projects with clear visuals, safe structures, and reliable after-sales support. From site survey to commissioning, we focus on performance, durability, and long-term value for Cambodia installations."
-              : "អតិថិជនជ្រើស Mugnee ព្រោះយើងអនុវត្តគម្រោង LED Display ត្រឹមត្រូវតាមវិស្វកម្ម ជាមួយរូបភាពច្បាស់ រចនាសម្ព័ន្ធសុវត្ថិភាព និងសេវាកម្មបន្ទាប់ពីលក់ដែលទុកចិត្តបាន។ ចាប់ពី site survey ដល់ commissioning យើងផ្តោតលើប្រសិទ្ធភាព ភាពធន់ និងតម្លៃប្រើប្រាស់រយៈពេលវែង។"}
+              : "áž¢ážáž·ážáž·áž‡áž“áž‡áŸ’ážšáž¾ážŸ Mugnee áž–áŸ’ážšáŸ„áŸ‡áž™áž¾áž„áž¢áž“áž»ážœážáŸ’ážáž‚áž˜áŸ’ážšáŸ„áž„ LED Display ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœážáž¶áž˜ážœáž·ážŸáŸ’ážœáž€áž˜áŸ’áž˜ áž‡áž¶áž˜áž½áž™ážšáž¼áž”áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹ ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸áž›áž€áŸ‹ážŠáŸ‚áž›áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“áŸ” áž…áž¶áž”áŸ‹áž–áž¸ site survey ážŠáž›áŸ‹ commissioning áž™áž¾áž„áž•áŸ’ážáŸ„ážáž›áž¾áž”áŸ’ážšážŸáž·áž‘áŸ’áž’áž—áž¶áž– áž—áž¶áž–áž’áž“áŸ‹ áž“áž·áž„ážáž˜áŸ’áž›áŸƒáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ážšáž™áŸˆáž–áŸáž›ážœáŸ‚áž„áŸ”"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(lang === "en"
@@ -1220,20 +1220,20 @@ export default function LedDisplayClient({
               ]
               : [
                   [
-                    "ក្រុមដឹកជញ្ជូន និងដំឡើងក្នុងស្រុក",
-                    "Site survey, installation, commissioning និងការគាំទ្រឆាប់រហ័ស សម្រាប់ភ្នំពេញ និងគម្រោងទូទាំងប្រទេស។",
+                    "áž€áŸ’ážšáž»áž˜ážŠáž¹áž€áž‡áž‰áŸ’áž‡áž¼áž“ áž“áž·áž„ážŠáŸ†áž¡áž¾áž„áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€",
+                    "Site survey, installation, commissioning áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšáž†áž¶áž”áŸ‹ážšáž áŸážŸ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž—áŸ’áž“áŸ†áž–áŸáž‰ áž“áž·áž„áž‚áž˜áŸ’ážšáŸ„áž„áž‘áž¼áž‘áž¶áŸ†áž„áž”áŸ’ážšáž‘áŸážŸáŸ”",
                   ],
                   [
-                    "ការរចនាដោយផ្អែកលើវិស្វកម្ម",
-                    "ជ្រើស pixel pitch, brightness, structure និង IP rating តាមចម្ងាយមើល និងបរិស្ថានពិត។",
+                    "áž€áž¶ážšážšáž…áž“áž¶ážŠáŸ„áž™áž•áŸ’áž¢áŸ‚áž€áž›áž¾ážœáž·ážŸáŸ’ážœáž€áž˜áŸ’áž˜",
+                    "áž‡áŸ’ážšáž¾ážŸ pixel pitch, brightness, structure áž“áž·áž„ IP rating ážáž¶áž˜áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› áž“áž·áž„áž”ážšáž·ážŸáŸ’ážáž¶áž“áž–áž·ážáŸ”",
                   ],
                   [
-                    "Hardware និង Calibration ដែលទុកចិត្តបាន",
-                    "Controller គុណភាព ការរៀប power ស្ថេរភាព ខ្សែស្អាត និង calibration ស្តង់ដារ។",
+                    "Hardware áž“áž·áž„ Calibration ážŠáŸ‚áž›áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“",
+                    "Controller áž‚áž»ážŽáž—áž¶áž– áž€áž¶ážšážšáŸ€áž” power ážŸáŸ’ážáŸážšáž—áž¶áž– ážáŸ’ážŸáŸ‚ážŸáŸ’áž¢áž¶áž áž“áž·áž„ calibration ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážšáŸ”",
                   ],
                   [
-                    "After-Sales និង AMC Support",
-                    "Training, គម្រោង spare parts, preventive maintenance និងជម្រើស AMC សម្រាប់ស្ថិរភាពយូរអង្វែង។",
+                    "After-Sales áž“áž·áž„ AMC Support",
+                    "Training, áž‚áž˜áŸ’ážšáŸ„áž„ spare parts, preventive maintenance áž“áž·áž„áž‡áž˜áŸ’ážšáž¾ážŸ AMC ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáŸ’ážáž·ážšáž—áž¶áž–áž™áž¼ážšáž¢áž„áŸ’ážœáŸ‚áž„áŸ”",
                   ],
                 ]
             ).map(([t, d]) => (
@@ -1251,7 +1251,7 @@ export default function LedDisplayClient({
               href="/contact"
               className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
             >
-              {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
+              {lang === "en" ? "Contact Mugnee Cambodia" : "áž‘áŸ†áž“áž¶áž€áŸ‹áž‘áŸ†áž“áž„ Mugnee Cambodia"}
             </a>
             <a
               href="https://wa.me/855XXXXXXXXX"
@@ -1259,7 +1259,7 @@ export default function LedDisplayClient({
               rel="noopener"
               className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
             >
-              {lang === "en" ? "WhatsApp for Quotation" : "WhatsApp ស្នើសុំតម្លៃ"}
+              {lang === "en" ? "WhatsApp for Quotation" : "WhatsApp ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ"}
             </a>
           </div>
         </div>
@@ -1269,17 +1269,17 @@ export default function LedDisplayClient({
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-            {lang === "en" ? "Partners" : "ដៃគូ"}
+            {lang === "en" ? "Partners" : "ážŠáŸƒáž‚áž¼"}
           </p>
           <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "Authorized Distributor & Certified Engineering Partner"
-              : "អ្នកចែកចាយផ្លូវការ និងដៃគូវិស្វកម្មដែលមានវិញ្ញាបនបត្រ"}
+              : "áž¢áŸ’áž“áž€áž…áŸ‚áž€áž…áž¶áž™áž•áŸ’áž›áž¼ážœáž€áž¶ážš áž“áž·áž„ážŠáŸƒáž‚áž¼ážœáž·ážŸáŸ’ážœáž€áž˜áŸ’áž˜ážŠáŸ‚áž›áž˜áž¶áž“ážœáž·áž‰áŸ’áž‰áž¶áž”áž“áž”ážáŸ’ážš"}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Mugnee Cambodia supplies world-leading LED components and control systems with certified engineering support, quality assurance, and Cambodia-based service for long-term performance."
-              : "Mugnee Cambodia ផ្គត់ផ្គង់គ្រឿងផ្សំ LED និងប្រព័ន្ធគ្រប់គ្រងដែលមានគុណភាពខ្ពស់ ជាមួយការគាំទ្រវិស្វកម្មដែលមានវិញ្ញាបនបត្រ ការធានាគុណភាព និងសេវាកម្មក្នុងស្រុកសម្រាប់ដំណើរការយូរអង្វែង។"}
+              : "Mugnee Cambodia áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹áž‚áŸ’ážšáž¿áž„áž•áŸ’ážŸáŸ† LED áž“áž·áž„áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„ážŠáŸ‚áž›áž˜áž¶áž“áž‚áž»ážŽáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ áž‡áž¶áž˜áž½áž™áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšážœáž·ážŸáŸ’ážœáž€áž˜áŸ’áž˜ážŠáŸ‚áž›áž˜áž¶áž“ážœáž·áž‰áŸ’áž‰áž¶áž”áž“áž”ážáŸ’ážš áž€áž¶ážšáž’áž¶áž“áž¶áž‚áž»ážŽáž—áž¶áž– áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž™áž¼ážšáž¢áž„áŸ’ážœáŸ‚áž„áŸ”"}
           </p>
 
           <div className="mt-6 relative overflow-hidden rounded-2xl">
@@ -1329,11 +1329,11 @@ export default function LedDisplayClient({
                   "On-site Service",
                 ]
               : [
-                  "អង្គភាពទទួលស្គាល់ ISO",
-                  "វិស្វករដែលមានវិញ្ញាបនបត្រ ABC",
-                  "ភាពជាអ្នកនាំមុខក្នុងឧស្សាហកម្ម",
-                  "ការគាំទ្រអតិថិជន 24/7",
-                  "សេវាកម្ម On-site",
+                  "áž¢áž„áŸ’áž‚áž—áž¶áž–áž‘áž‘áž½áž›ážŸáŸ’áž‚áž¶áž›áŸ‹ ISO",
+                  "ážœáž·ážŸáŸ’ážœáž€ážšážŠáŸ‚áž›áž˜áž¶áž“ážœáž·áž‰áŸ’áž‰áž¶áž”áž“áž”ážáŸ’ážš ABC",
+                  "áž—áž¶áž–áž‡áž¶áž¢áŸ’áž“áž€áž“áž¶áŸ†áž˜áž»ážáž€áŸ’áž“áž»áž„áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜",
+                  "áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšáž¢ážáž·ážáž·áž‡áž“ 24/7",
+                  "ážŸáŸážœáž¶áž€áž˜áŸ’áž˜ On-site",
                 ]
             ).map((x) => (
               <span
@@ -1351,15 +1351,15 @@ export default function LedDisplayClient({
       <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-            {lang === "en" ? "Service area" : "តំបន់សេវាកម្ម"}
+            {lang === "en" ? "Service area" : "ážáŸ†áž”áž“áŸ‹ážŸáŸážœáž¶áž€áž˜áŸ’áž˜"}
           </p>
           <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
-            {lang === "en" ? "Service Areas Across Cambodia" : "តំបន់សេវាកម្មទូទាំងកម្ពុជា"}
+            {lang === "en" ? "Service Areas Across Cambodia" : "ážáŸ†áž”áž“áŸ‹ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž‘áž¼áž‘áž¶áŸ†áž„áž€áž˜áŸ’áž–áž»áž‡áž¶"}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Local installation, commissioning and after-sales support across Phnom Penh, Siem Reap, Sihanoukville and nearby provinces."
-              : "សេវាដំឡើង commissioning និងការគាំទ្របន្ទាប់ពីលក់ ក្នុងភ្នំពេញ សៀមរាប ព្រះសីហនុ និងខេត្តជិតខាង។"}
+              : "ážŸáŸážœáž¶ážŠáŸ†áž¡áž¾áž„ commissioning áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšáž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸áž›áž€áŸ‹ áž€áŸ’áž“áž»áž„áž—áŸ’áž“áŸ†áž–áŸáž‰ ážŸáŸ€áž˜ážšáž¶áž” áž–áŸ’ážšáŸ‡ážŸáž¸áž áž“áž» áž“áž·áž„ážáŸážáŸ’ážáž‡áž·ážážáž¶áž„áŸ”"}
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
@@ -1388,19 +1388,19 @@ export default function LedDisplayClient({
       <section className="border-t border-slate-200 bg-gradient-to-b from-white to-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
-            {lang === "en" ? "Trust Signals" : "សញ្ញានៃភាពទុកចិត្ត"}
+            {lang === "en" ? "Trust Signals" : "ážŸáž‰áŸ’áž‰áž¶áž“áŸƒáž—áž¶áž–áž‘áž»áž€áž…áž·ážáŸ’áž"}
           </p>
           <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
             {(lang === "en" ? trustTitleOverride : (trustTitleOverrideKm ?? trustTitleOverride)) ??
               (lang === "en"
                 ? "Trusted LED Display Partner in Cambodia: Entity, Service & Delivery Signals"
-                : "ដៃគូ LED Display ដែលគួរឱ្យទុកចិត្តនៅកម្ពុជា៖ Entity, Service និង Delivery Signals")}
+                : "ážŠáŸƒáž‚áž¼ LED Display ážŠáŸ‚áž›áž‚áž½ážšáž±áŸ’áž™áž‘áž»áž€áž…áž·ážáŸ’ážáž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ– Entity, Service áž“áž·áž„ Delivery Signals")}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
             {(lang === "en" ? trustDescOverride : (trustDescOverrideKm ?? trustDescOverride)) ??
               (lang === "en"
                 ? "This section highlights why Mugnee Cambodia is trusted for indoor LED display, outdoor LED billboards, and LED video wall projects in Cambodia, with verified entity signals, local execution capability, and long-term service continuity."
-                : "ផ្នែកនេះបង្ហាញមូលហេតុដែល Mugnee Cambodia ត្រូវបានទុកចិត្តសម្រាប់គម្រោង indoor LED, outdoor billboard និង LED video wall នៅកម្ពុជា ដោយមាន entity signal ច្បាស់ ការអនុវត្តក្នុងស្រុក និងសេវាកម្មបន្តរយៈពេលវែង។")}
+                : "áž•áŸ’áž“áŸ‚áž€áž“áŸáŸ‡áž”áž„áŸ’áž áž¶áž‰áž˜áž¼áž›áž áŸážáž»ážŠáŸ‚áž› Mugnee Cambodia ážáŸ’ážšáž¼ážœáž”áž¶áž“áž‘áž»áž€áž…áž·ážáŸ’ážážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áž˜áŸ’ážšáŸ„áž„ indoor LED, outdoor billboard áž“áž·áž„ LED video wall áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážŠáŸ„áž™áž˜áž¶áž“ entity signal áž…áŸ’áž”áž¶ážŸáŸ‹ áž€áž¶ážšáž¢áž“áž»ážœážáŸ’ážáž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž”áž“áŸ’ážážšáž™áŸˆáž–áŸáž›ážœáŸ‚áž„áŸ”")}
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {trustProofChips.map((chip, index) => (
@@ -1430,19 +1430,19 @@ export default function LedDisplayClient({
               href="/about"
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
-              {lang === "en" ? "About Mugnee Cambodia" : "អំពី Mugnee Cambodia"}
+              {lang === "en" ? "About Mugnee Cambodia" : "áž¢áŸ†áž–áž¸ Mugnee Cambodia"}
             </Link>
             <Link
               href="/projects"
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
-              {lang === "en" ? "View Project References" : "មើលគម្រោងយោង"}
+              {lang === "en" ? "View Project References" : "áž˜áž¾áž›áž‚áž˜áŸ’ážšáŸ„áž„áž™áŸ„áž„"}
             </Link>
             <Link
               href="/service"
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
-              {lang === "en" ? "Installation & Service Support" : "សេវាដំឡើង និងគាំទ្របច្ចេកទេស"}
+              {lang === "en" ? "Installation & Service Support" : "ážŸáŸážœáž¶ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„áž‚áž¶áŸ†áž‘áŸ’ážšáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ"}
             </Link>
           </div>
         </div>
@@ -1455,13 +1455,13 @@ export default function LedDisplayClient({
             {(lang === "en" ? internalLinkTitleOverride : (internalLinkTitleOverrideKm ?? internalLinkTitleOverride)) ??
               (lang === "en"
                 ? "Related LED Resources & Buying Paths in Cambodia"
-                : "ធនធាន LED ពាក់ព័ន្ធ និងផ្លូវសម្រេចចិត្តទិញនៅកម្ពុជា")}
+                : "áž’áž“áž’áž¶áž“ LED áž–áž¶áž€áŸ‹áž–áŸáž“áŸ’áž’ áž“áž·áž„áž•áŸ’áž›áž¼ážœážŸáž˜áŸ’ážšáŸáž…áž…áž·ážáŸ’ážáž‘áž·áž‰áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶")}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {(lang === "en" ? internalLinkDescOverride : (internalLinkDescOverrideKm ?? internalLinkDescOverride)) ??
               (lang === "en"
                 ? "Use this internal cluster to navigate by buying intent: product type, technical component, installation support, or direct quotation."
-                : "ប្រើ internal cluster នេះ ដើម្បីរុករកតាមគោលបំណងទិញ៖ ប្រភេទផលិតផល ផ្នែកបច្ចេកទេស ការគាំទ្រការដំឡើង ឬស្នើសុំតម្លៃដោយផ្ទាល់។")}
+                : "áž”áŸ’ážšáž¾ internal cluster áž“áŸáŸ‡ ážŠáž¾áž˜áŸ’áž”áž¸ážšáž»áž€ážšáž€ážáž¶áž˜áž‚áŸ„áž›áž”áŸ†ážŽáž„áž‘áž·áž‰áŸ– áž”áŸ’ážšáž—áŸáž‘áž•áž›áž·ážáž•áž› áž•áŸ’áž“áŸ‚áž€áž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšáž€áž¶ážšážŠáŸ†áž¡áž¾áž„ áž¬ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒážŠáŸ„áž™áž•áŸ’áž‘áž¶áž›áŸ‹áŸ”")}
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {internalLinks.map((item, index) => (
@@ -1481,7 +1481,7 @@ export default function LedDisplayClient({
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {lang === "en" ? "Frequently Asked Question (FAQ)" : "សំណួរដែលសួរញឹកញាប់ (FAQ)"}
+            {lang === "en" ? "Frequently Asked Question (FAQ)" : "ážŸáŸ†ážŽáž½ážšážŠáŸ‚áž›ážŸáž½ážšáž‰áž¹áž€áž‰áž¶áž”áŸ‹ (FAQ)"}
           </h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             {faqItems.map(({ q, a }, index) => (
@@ -1502,5 +1502,6 @@ export default function LedDisplayClient({
     </main>
   );
 }
+
 
 
