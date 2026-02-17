@@ -63,6 +63,15 @@ export default function FloatingContactChat() {
     };
   }, []);
 
+  useEffect(() => {
+    document.documentElement.setAttribute("data-chat-open", open ? "true" : "false");
+    window.dispatchEvent(new Event("mugnee-chat-toggle"));
+    return () => {
+      document.documentElement.setAttribute("data-chat-open", "false");
+      window.dispatchEvent(new Event("mugnee-chat-toggle"));
+    };
+  }, [open]);
+
   return (
     <div className="pointer-events-none fixed bottom-6 right-4 z-[70] sm:bottom-7 sm:right-6">
       <div className="pointer-events-auto relative flex flex-col items-end gap-3">

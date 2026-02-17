@@ -14,15 +14,18 @@ function getScrollY() {
 
 export default function GlobalBackToTop() {
   const [show, setShow] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
 
   useEffect(() => {
     const update = () => {
       setShow(getScrollY() > 140);
+      setChatOpen(document.documentElement.getAttribute("data-chat-open") === "true");
     };
 
     window.addEventListener("scroll", update, { passive: true });
     document.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update, { passive: true });
+    window.addEventListener("mugnee-chat-toggle", update);
     const timer = window.setInterval(update, 250);
     update();
 
@@ -30,6 +33,7 @@ export default function GlobalBackToTop() {
       window.removeEventListener("scroll", update);
       document.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
+      window.removeEventListener("mugnee-chat-toggle", update);
       window.clearInterval(timer);
     };
   }, []);
@@ -60,10 +64,12 @@ export default function GlobalBackToTop() {
     <button
       type="button"
       onClick={scrollToTop}
-      className={`fixed right-5 z-[80] h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-lg transition-all hover:-translate-y-0.5 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 sm:right-7 ${
+      className={`fixed z-[80] h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-lg transition-all hover:-translate-y-0.5 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 ${
         show
-          ? "bottom-24 inline-flex opacity-100"
-          : "pointer-events-none bottom-20 inline-flex opacity-0"
+          ? chatOpen
+            ? "bottom-24 right-44 inline-flex opacity-100 sm:bottom-28 sm:right-48"
+            : "bottom-24 right-5 inline-flex opacity-100 sm:bottom-28 sm:right-7"
+          : "pointer-events-none bottom-20 right-5 inline-flex opacity-0 sm:right-7"
       }`}
       aria-label="Back to top"
       title="Back to top"

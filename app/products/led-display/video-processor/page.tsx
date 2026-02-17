@@ -8,7 +8,7 @@ const PAGE_PATH = "/led-display/video-processor";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "LED Video Processor in Cambodia | LED Display Scaling & Switching � Mugnee",
+  title: "LED Video Processor in Cambodia | LED Display Scaling & Switching | Mugnee",
   description:
     "Professional LED video processors in Cambodia for smooth scaling, multi-input switching, and stable LED wall output. Ideal for indoor & outdoor LED displays with expert setup support.",
   alternates: { canonical: PAGE_URL },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const features = [
-  "Multi-input switching (HDMI/DVI/DP/SDI � model dependent)",
+  "Multi-input switching (HDMI/DVI/DP/SDI - model dependent)",
   "Advanced scaling to match LED wall resolution",
   "Low-latency video processing for live content",
   "Dual-window / PIP support for presentations",
@@ -60,7 +60,7 @@ const checklist = [
 const faqs = [
   {
     q: "What does a video processor do for an LED display?",
-    a: "A video processor takes input sources (like HDMI or DP), scales and formats the video, and outputs a clean signal that matches the LED wall�s resolution for smooth playback.",
+    a: "A video processor takes input sources (like HDMI or DP), scales and formats the video, and outputs a clean signal that matches the LED wall's resolution for smooth playback.",
   },
   {
     q: "Do I need a video processor for every LED wall?",
@@ -72,7 +72,7 @@ const faqs = [
   },
   {
     q: "Which inputs are supported?",
-    a: "Support varies by model. Common inputs include HDMI, DVI, DP, and SDI. We�ll recommend a processor that fits your exact sources.",
+    a: "Support varies by model. Common inputs include HDMI, DVI, DP, and SDI. We'll recommend a processor that fits your exact sources.",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function Page() {
             LED Video Processor in Cambodia
           </h1>
           <p className="mt-3 text-slate-700">
-            A video processor is the brain of a professional LED wall�cleanly scaling input
+            A video processor is the brain of a professional LED wall, cleanly scaling input
             sources and delivering stable, synchronized output to your LED display. We
             supply reliable processors and complete configuration support for indoor and
             outdoor LED screens.
@@ -106,7 +106,7 @@ export default function Page() {
             </Link>
           </div>
           <div className="mt-4 text-xs text-slate-500">
-            Serving Phnom Penh � Siem Reap � Sihanoukville
+            Serving Phnom Penh - Siem Reap - Sihanoukville
           </div>
         </div>
 
@@ -126,7 +126,7 @@ export default function Page() {
         <p className="mt-2 text-slate-700">
           A video processor converts and scales input signals to match the exact resolution
           of your LED wall. It keeps the display stable, prevents distortion, and allows
-          smooth switching between multiple sources�essential for professional installations.
+          smooth switching between multiple sources, essential for professional installations.
         </p>
       </section>
 
@@ -175,7 +175,7 @@ export default function Page() {
         </p>
         <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
           We help you choose the correct model based on input type, required resolution, and
-          the LED wall�s pixel load.
+          the LED wall's pixel load.
         </div>
       </section>
 
@@ -230,7 +230,7 @@ export default function Page() {
       <section className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
         <h2 className="text-xl font-semibold text-slate-900">Need a Video Processor?</h2>
         <p className="mt-2 text-slate-700">
-          Share your LED wall size, required inputs, and usage scenario. We�ll recommend a
+          Share your LED wall size, required inputs, and usage scenario. We'll recommend a
           reliable processor and provide a clear quotation.
         </p>
         <div className="mt-4">

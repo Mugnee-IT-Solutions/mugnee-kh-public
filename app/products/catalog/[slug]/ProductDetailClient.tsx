@@ -8,6 +8,36 @@ import { useLang } from "../../../components/layout/LanguageProvider";
 import type { Product } from "../../../data/products";
 import { PRODUCTS, PRODUCT_CATEGORIES } from "../../../data/products";
 
+const MOJIBAKE_RE = /Ã|Â|â|ƒ|\uFFFD/;
+
+function decodeLatin1AsUtf8(str: string) {
+  const bytes = Uint8Array.from(Array.from(str).map((ch) => ch.charCodeAt(0) & 0xff));
+  return new TextDecoder("utf-8").decode(bytes);
+}
+
+function repairMojibake(input: string) {
+  let out = input;
+  for (let i = 0; i < 3; i += 1) {
+    if (!MOJIBAKE_RE.test(out)) break;
+    try {
+      const decoded = decodeLatin1AsUtf8(out);
+      if (!decoded || decoded === out) break;
+      out = decoded;
+    } catch {
+      break;
+    }
+  }
+  return out;
+}
+
+function sanitizeKhmer(value: string, fallback: string) {
+  if (!value?.trim()) return fallback;
+  if (!MOJIBAKE_RE.test(value)) return value;
+  const repaired = repairMojibake(value).trim();
+  if (!repaired || MOJIBAKE_RE.test(repaired)) return fallback;
+  return repaired;
+}
+
 export default function ProductDetailClient({ product }: { product: Product }) {
   const { lang } = useLang();
 
@@ -26,13 +56,21 @@ export default function ProductDetailClient({ product }: { product: Product }) {
     };
   }, [product.slug]);
 
-  const title = lang === "en" ? product.titleEn : product.titleKm;
-  const shortDesc = lang === "en" ? product.shortDescEn : product.shortDescKm;
-  const description = lang === "en" ? product.descriptionEn : product.descriptionKm;
-  const features = lang === "en" ? product.featuresEn : product.featuresKm;
+  const title = lang === "en" ? product.titleEn : sanitizeKhmer(product.titleKm, product.titleEn);
+  const shortDesc = lang === "en" ? product.shortDescEn : sanitizeKhmer(product.shortDescKm, product.shortDescEn);
+  const description = lang === "en" ? product.descriptionEn : sanitizeKhmer(product.descriptionKm, product.descriptionEn);
+  const features =
+    lang === "en"
+      ? product.featuresEn
+      : product.featuresKm.map((item, i) => sanitizeKhmer(item, product.featuresEn[i] || item));
   const applications =
-    lang === "en" ? product.applicationsEn : product.applicationsKm;
-  const tags = lang === "en" ? product.tagsEn : product.tagsKm;
+    lang === "en"
+      ? product.applicationsEn
+      : product.applicationsKm.map((item, i) => sanitizeKhmer(item, product.applicationsEn[i] || item));
+  const tags =
+    lang === "en"
+      ? product.tagsEn
+      : product.tagsKm.map((item, i) => sanitizeKhmer(item, product.tagsEn[i] || item));
   const galleryImages = useMemo(() => {
     const items = [product.heroImage, ...product.gallery];
     return Array.from(new Set(items.filter(Boolean)));
@@ -300,10 +338,10 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   className="flex items-start justify-between gap-4 border-b border-slate-100 pb-3"
                 >
                   <dt className="font-semibold text-slate-700">
-                    {lang === "en" ? spec.labelEn : spec.labelKm}
+                    {lang === "en" ? spec.labelEn : sanitizeKhmer(spec.labelKm, spec.labelEn)}
                   </dt>
                   <dd className="text-right text-slate-600">
-                    {lang === "en" ? spec.valueEn : spec.valueKm}
+                    {lang === "en" ? spec.valueEn : sanitizeKhmer(spec.valueKm, spec.valueEn)}
                   </dd>
                 </div>
               ))}
@@ -320,9 +358,9 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             </h3>
             <div className="mt-4 flex gap-4 overflow-x-auto pb-2">
               {relatedProducts.map((item) => {
-                const itemTitle = lang === "en" ? item.titleEn : item.titleKm;
+                const itemTitle = lang === "en" ? item.titleEn : sanitizeKhmer(item.titleKm, item.titleEn);
                 const itemDesc =
-                  lang === "en" ? item.shortDescEn : item.shortDescKm;
+                  lang === "en" ? item.shortDescEn : sanitizeKhmer(item.shortDescKm, item.shortDescEn);
                 return (
                   <Link
                     key={item.slug}

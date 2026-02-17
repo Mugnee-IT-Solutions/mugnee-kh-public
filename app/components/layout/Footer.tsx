@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import LangText from "./LangText";
 
 type FooterSocialPlatform = "facebook" | "youtube" | "linkedin" | "x" | "instagram";
@@ -61,10 +62,13 @@ export default function SiteFooter() {
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <div className="flex items-center gap-2 font-semibold text-slate-900">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-white">
-                  M
-                </span>
-                Mugnee Cambodia
+                <Image
+                  src="/images/logo.png"
+                  alt="Mugnee Cambodia"
+                  width={210}
+                  height={64}
+                  className="h-9 w-auto"
+                />
               </div>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 <LangText
@@ -94,7 +98,7 @@ export default function SiteFooter() {
               </div>
               <div className="mt-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-                  <LangText en="Follow Mugnee" km="Follow Mugnee" />
+                  <LangText en="Follow Mugnee" km="តាមដាន Mugnee" />
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {FOOTER_SOCIAL_LINKS.map((item) => {

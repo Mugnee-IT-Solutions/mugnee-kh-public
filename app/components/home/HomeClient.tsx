@@ -32,6 +32,44 @@ type Faq = {
   aKm: string;
 };
 
+const MOJIBAKE_RE = /Ã|Â|â|ƒ|\uFFFD|áž|áŸ|â€|\uFFFD/;
+
+function decodeLatin1AsUtf8(str: string) {
+  const bytes = Uint8Array.from(Array.from(str).map((ch) => ch.charCodeAt(0) & 0xff));
+  return new TextDecoder("utf-8").decode(bytes);
+}
+
+function repairMojibake(input: string) {
+  let out = input;
+  for (let i = 0; i < 3; i += 1) {
+    if (!MOJIBAKE_RE.test(out)) break;
+    try {
+      const decoded = decodeLatin1AsUtf8(out);
+      if (!decoded || decoded === out) break;
+      out = decoded;
+    } catch {
+      break;
+    }
+  }
+  return out;
+}
+
+function sanitizeKhmer(value: string, fallback: string) {
+  if (!value?.trim()) return fallback;
+  if (!MOJIBAKE_RE.test(value)) return value;
+  const repaired = repairMojibake(value).trim();
+  if (!repaired || MOJIBAKE_RE.test(repaired)) return fallback;
+  return repaired;
+}
+
+function sanitizeLocaleText<T extends Record<string, string>>(km: T, en: T): T {
+  const out = {} as T;
+  (Object.keys(en) as (keyof T)[]).forEach((key) => {
+    out[key] = sanitizeKhmer(km[key], en[key]) as T[keyof T];
+  });
+  return out;
+}
+
 const HERO_SLIDES = [
   {
     src: "/images/hero/cambodia-led-hero.webp",
@@ -164,8 +202,8 @@ export default function HomeClient({
       secCatalogTitle: "Cambodia LED Display, Digital Signage & Smart Systems Products",
       secCatalogDesc:
         "Browse Cambodia-focused LED display, digital signage, PA system, access control and smart classroom products-built for local projects, budgets and site conditions.",
-      secPartnersEyebrow: "Partnerships",
-      secPartnersTitle: "Empowered by International Development Partnerships",
+      secPartnersEyebrow: "ភាពជាដៃគូ",
+      secPartnersTitle: "គាំទ្រដោយភាពជាដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
       secPartnersDesc:
         "We have delivered LED display, digital signage, and smart technology solutions under projects supported by internationally recognized organizations such as The World Bank, JICA, Swisscontact, GIZ, and Mitsubishi Research Institute (MRI)—meeting institutional standards with reliable execution.",
 
@@ -175,16 +213,16 @@ export default function HomeClient({
         "SEO-friendly solutions for Cambodia projects—LED display, digital signage, smart classroom, access control, and PA systems with local installation and support.",
       exploreSolution: "Explore solution",
 
-      secAuthEyebrow: "Partners",
-      secAuthTitle: "Authorized Distributor & Certified Engineering Partner",
+      secAuthEyebrow: "ដៃគូ",
+      secAuthTitle: "អ្នកចែកចាយផ្លូវការ និងដៃគូវិស្វកម្មដែលមានវិញ្ញាបនបត្រ",
       secAuthDesc:
         "Mugnee Cambodia supplies world-leading LED components and control systems with certified engineering support, quality assurance, and Cambodia-based service.",
 
-      secIndustryEyebrow: "Use cases",
+      secIndustryEyebrow: "ការប្រើប្រាស់ពិត",
       secIndustryTitle: "Product Use-Cases by Industry in Cambodia",
       secIndustryDesc:
         "Industry-specific LED display, digital signage, and smart system use-cases designed for Cambodia's retail, education, government, and factory projects.",
-      secSpecsEyebrow: "Tech snapshot",
+      secSpecsEyebrow: "សង្ខេបបច្ចេកទេស",
       secSpecsTitle: "LED Display Technical Specifications Guide Cambodia",
       secSpecsDesc:
         "Quick technical highlights buyers compare most—pixel pitch, brightness, IP rating, refresh rate, and control system options.",
@@ -196,7 +234,7 @@ export default function HomeClient({
       secTestimonialsTitle: "Customer Testimonials & Client References",
       secTestimonialsDesc:
         "Local buyer feedback and project references that highlight reliability, image quality and service response.",
-      secContactEyebrow: "Local support",
+      secContactEyebrow: "គាំទ្រក្នុងស្រុក",
       secContactTitle: "Cambodia Office & Project Support",
       secContactDesc:
         "Talk to a local engineer for site survey, sizing, pixel-pitch guidance, and a project-based quotation.",
@@ -232,103 +270,103 @@ export default function HomeClient({
     };
 
     const km = {
-      badge: "áž€áž˜áŸ’áž–áž»áž‡áž¶ â€¢ áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED â€¢ áž•áŸ’áž‘áž¶áŸ†áž„áž”áž„áŸ’áž áž¶áž‰ážŒáž¸áž‡áž¸ážáž› â€¢ ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ Smart",
-      heroTitle: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž“áž·áž„ Smart Systems áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+      badge: "កម្ពុជា • LED Display • Digital Signage • Smart Solutions",
+      heroTitle: "ដំណោះស្រាយ LED Display និង Smart Systems នៅកម្ពុជា",
       heroDesc:
-        "áž™áž¾áž„áž•áŸ’ážáž›áŸ‹áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED, Digital Signage, áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜ (Smart Board), Turnstile Gate, áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA áž“áž·áž„ Access Control â€” ážšáž½áž˜áž‘áž¶áŸ†áž„ážŸáŸ’áž‘áž„áŸ‹áž‘áž¸ážáž¶áŸ†áž„ ážŠáŸ†áž¡áž¾áž„ Commissioning áž“áž·áž„ after-sales support áž€áŸ’áž“áž»áž„áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
-      pill1: "ážáž˜áŸ’áž›áŸƒážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„",
-      pill2: "ážŠáŸ†áž¡áž¾áž„ & Commissioning",
-      pill3: "áž’áž¶áž“áž¶ & áž‡áž˜áŸ’ážšáž¾ážŸážáŸ‚áž‘áž¶áŸ†",
-      ctaQuote: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ",
-      ctaExplore: "áž˜áž¾áž›ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™",
-      serving: `ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áŸ– ${cities.join(" â€¢ ")}`,
-      trust1t: "áž‚áž¶áŸ†áž‘áŸ’ážšáž€áŸ’áž“áž»áž„áž”áŸ’ážšáž‘áŸážŸ",
-      trust1d: "ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ after-sales support áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
-      trust2t: "áž—áž¶áž–áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“",
-      trust2d: "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž˜áž¶áž“ážŸáŸ’ážáŸážšáž—áž¶áž– ážšáž¼áž”áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹ áž“áž·áž„áž¢áž¶áž™áž»áž€áž¶áž›áž™áž¼ážšáŸ”",
-      trust3t: "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž›áž¿áž“",
-      trust3d: "Workflow áž˜áž¶áž“ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ delivery & commissioning áž›áž¿áž“áŸ”",
+        "Mugnee Multiple ផ្តល់សេវា LED Display, Digital Signage, Interactive Flat Panel (Smart Board), Turnstile Gate, ប្រព័ន្ធ PA និង Access Control នៅកម្ពុជា រួមទាំងការស្ទង់ទីតាំង ការដំឡើង ការ Commissioning និងសេវាកម្មបន្ទាប់ពីលក់ ដើម្បីធានាបាននូវគុណភាព និងស្ថិរភាពរយៈពេលវែង។",
+      pill1: "តម្លៃតាមគម្រោង",
+      pill2: "ដំឡើង & Commissioning",
+      pill3: "ធានា & ថែទាំប្រព័ន្ធ",
+      ctaQuote: "ស្នើសុំតម្លៃ",
+      ctaExplore: "មើលដំណោះស្រាយ",
+      serving: `តំបន់សេវាកម្ម: ${cities.join(" • ")}`,
+      trust1t: "គាំទ្រក្នុងស្រុក",
+      trust1d: "ក្រុមការងារនៅកម្ពុជា សម្រាប់ការដំឡើង និងសេវាកម្មបន្ទាប់ពីលក់។",
+      trust2t: "ប្រព័ន្ធមានស្ថិរភាព",
+      trust2d: "ដំណើរការរឹងមាំ រូបភាពច្បាស់ និងអាយុកាលប្រើប្រាស់យូរ។",
+      trust3t: "អនុវត្តគម្រោងលឿន",
+      trust3d: "Workflow ច្បាស់លាស់ សម្រាប់ដឹកជញ្ជូន ដំឡើង និង Commissioning បានលឿន។",
 
-      secProductsEyebrow: "áž¢áŸ’ážœáž¸ážŠáŸ‚áž›áž™áž¾áž„áž•áŸ’ážáž›áŸ‹",
-      secProductsTitle: "áž•áž›áž·ážáž•áž› áž“áž·áž„ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áž˜áŸ’ážšáŸ„áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+      secProductsEyebrow: "អ្វីដែលយើងផ្តល់ជូន",
+      secProductsTitle: "LED Display, Digital Signage និង Smart Systems នៅកម្ពុជា",
       secProductsDesc:
-        "áž‡áŸ’ážšáž¾ážŸážšáž¾ážŸáž”áŸ’ážšáž—áŸáž‘ážŠáž¾áž˜áŸ’áž”áž¸áž˜áž¾áž›áž–áŸážáŸŒáž˜áž¶áž“áž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ Use-case áž“áž·áž„áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áŸ’áž“áž€áž‘áž·áž‰áŸ” áž™áž¾áž„áž•áŸ’ážáŸ„ážáž›áž¾ážŸáŸ’ážáŸážšáž—áž¶áž– áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ážŸáŸ’áž¢áž¶áž áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšážšáž™áŸˆáž–áŸáž›ážœáŸ‚áž„áŸ”",
-      viewDetails: "áž˜áž¾áž›áž–áŸážáŸŒáž˜áž¶áž“",
-      priceGuideLine1: "áž…áž„áŸ‹áž”áž¶áž“áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†ážáž˜áŸ’áž›áŸƒ? áž…áž¶áž”áŸ‹áž•áŸ’ážáž¾áž˜áž–áž¸",
-      priceGuideLink: "Price Guide áž€áž˜áŸ’áž–áž»áž‡áž¶",
-      priceGuideLine2: "áž áž¾áž™ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„áŸ”",
+        "ជ្រើសប្រភេទផលិតផល ដើម្បីមើលព័ត៌មានបច្ចេកទេស ករណីប្រើប្រាស់ និងការណែនាំសម្រាប់អ្នកទិញ។ យើងផ្តោតលើគុណភាពស្ថិរភាព ការដំឡើងស្អាត និងសេវាគាំទ្ររយៈពេលវែង។",
+      viewDetails: "មើលព័ត៌មានលម្អិត",
+      priceGuideLine1: "ចង់បានការណែនាំតម្លៃ? ចាប់ផ្តើមពី",
+      priceGuideLink: "Price Guide កម្ពុជា",
+      priceGuideLine2: "ហើយស្នើសុំតម្លៃតាមគម្រោង។",
       secCatalogEyebrow: "ផលិតផលពេញនិយម",
       secCatalogTitle: "ផលិតផល LED Display, Digital Signage និង Smart Systems នៅកម្ពុជា",
       secCatalogDesc:
-        "សូមមើលផលិតផល LED Display, Digital Signage, PA System, Access Control និង Smart Classroom សម្រាប់គម្រោងនៅកម្ពុជា ដែលសមនឹងតម្រូវការ តម្លៃ និងលក្ខខណ្ឌតំបន់។",
-      secPartnersEyebrow: "Partnerships",
-      secPartnersTitle: "Empowered by International Development Partnerships",
+        "ស្វែងរកផលិតផល LED Display, Digital Signage, PA System, Access Control និង Smart Classroom ដែលសមស្របសម្រាប់គម្រោង ថវិកា និងលក្ខខណ្ឌទីតាំងនៅកម្ពុជា។",
+      secPartnersEyebrow: "ភាពជាដៃគូ",
+      secPartnersTitle: "គាំទ្រដោយភាពជាដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
       secPartnersDesc:
-        "áž™áž¾áž„áž”áž¶áž“áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ LED display, digital signage áž“áž·áž„ smart technology áž€áŸ’áž“áž»áž„áž‚áž˜áŸ’ážšáŸ„áž„ážŠáŸ‚áž›áž˜áž¶áž“áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšáž–áž¸áž¢áž„áŸ’áž‚áž€áž¶ážšáž¢áž“áŸ’ážážšáž‡áž¶ážáž·ážŸáŸ†ážáž¶áž“áŸ‹áŸ— ážŠáž¼áž…áž‡áž¶ The World Bank, JICA, Swisscontact, GIZ áž“áž·áž„ Mitsubishi Research Institute (MRI)áŸ”",
+        "យើងបានអនុវត្តគម្រោង LED Display, Digital Signage និង Smart Technology ក្រោមការគាំទ្រពីអង្គការអន្តរជាតិជាច្រើន ដូចជា The World Bank, JICA, Swisscontact, GIZ និង Mitsubishi Research Institute (MRI)។",
 
-      secSolutionsEyebrow: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ážáž¶áž˜áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜",
-      secSolutionsTitle: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ– LED, Signage áž“áž·áž„ Smart Systems",
+      secSolutionsEyebrow: "ដំណោះស្រាយតាមវិស័យ",
+      secSolutionsTitle: "ដំណោះស្រាយសម្រាប់វិស័យនានានៅកម្ពុជា: LED, Signage និង Smart Systems",
       secSolutionsDesc:
-        "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áž˜áŸ’ážšáŸ„áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶â€”LED display, digital signage, smart classroom, access control áž“áž·áž„ PA system áž‡áž¶áž˜áž½áž™áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšáŸ”",
-      exploreSolution: "áž˜áž¾áž›ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™",
+        "ដំណោះស្រាយសម្រាប់គម្រោងនៅកម្ពុជា រួមមាន LED Display, Digital Signage, Smart Classroom, Access Control និង PA System ជាមួយសេវាដំឡើង និងគាំទ្រក្នុងស្រុក។",
+      exploreSolution: "មើលដំណោះស្រាយ",
 
-      secAuthEyebrow: "Partners",
-      secAuthTitle: "Authorized Distributor & Certified Engineering Partner",
+      secAuthEyebrow: "ដៃគូ",
+      secAuthTitle: "អ្នកចែកចាយផ្លូវការ និងដៃគូវិស្វកម្មដែលមានវិញ្ញាបនបត្រ",
       secAuthDesc:
-        "Mugnee Cambodia áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ LED components áž“áž·áž„ control system áž€áž˜áŸ’ážšáž·ážáž¢áž“áŸ’ážážšáž‡áž¶ážáž· áž‡áž¶áž˜áž½áž™ážœáž·ážŸáŸ’ážœáž€ážšážŠáŸ‚áž›áž”áž¶áž“áž”áž‰áŸ’áž‡áž¶áž€áŸ‹ áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+        "Mugnee Cambodia ផ្គត់ផ្គង់គ្រឿងបន្លាស់ LED និងប្រព័ន្ធគ្រប់គ្រងស្តង់ដារអន្តរជាតិ ជាមួយក្រុមវិស្វករដែលមានវិញ្ញាបនបត្រ និងសេវាកម្មគាំទ្រនៅកម្ពុជា។",
 
-      secIndustryEyebrow: "Use cases",
-      secIndustryTitle: "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž•áž›áž·ážáž•áž›ážáž¶áž˜áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+      secIndustryEyebrow: "ការប្រើប្រាស់ពិត",
+      secIndustryTitle: "ករណីប្រើប្រាស់ផលិតផលតាមវិស័យ នៅកម្ពុជា",
       secIndustryDesc:
-        "Useâ€‘case ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ LED display, digital signage áž“áž·áž„ smart systems ážŸáž˜ážŸáŸ’ážšáž”ážáž¶áž˜ážœáž·ážŸáŸáž™áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
-      secSpecsEyebrow: "Tech snapshot",
-      secSpecsTitle: "ážŸáŸáž…áž€áŸ’ážáž¸ážŽáŸ‚áž“áž¶áŸ†áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸáž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+        "Use-case ជាក់ស្តែងសម្រាប់ LED Display, Digital Signage និង Smart Systems ដែលសមស្របតាមវិស័យផ្សេងៗនៅកម្ពុជា។",
+      secSpecsEyebrow: "សង្ខេបបច្ចេកទេស",
+      secSpecsTitle: "មគ្គុទ្ទេសក៍លក្ខណៈបច្ចេកទេស LED Display នៅកម្ពុជា",
       secSpecsDesc:
-        "áž–áž·áž“áž·ážáŸ’áž™áž›áž€áŸ’ážážŽáŸˆážŸáŸ†ážáž¶áž“áŸ‹áŸ—ážŠáŸ‚áž›áž¢áŸ’áž“áž€áž‘áž·áž‰áž”áŸ’ážšáŸ€áž”áž’áŸ€áž”áž‰áž¹áž€áž‰áž¶áž”áŸ‹â€”pixel pitch, brightness, IP rating áž“áž·áž„ control systemáŸ”",
-      secServiceEyebrow: "Service area",
-      secServiceTitle: "ážáŸ†áž”áž“áŸ‹ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž‘áž¼áž‘áž¶áŸ†áž„áž€áž˜áŸ’áž–áž»áž‡áž¶",
+        "លក្ខណៈសំខាន់ដែលអ្នកទិញតែងប្រៀបធៀប៖ Pixel Pitch, Brightness, IP Rating និង Control System។",
+      secServiceEyebrow: "តំបន់សេវាកម្ម",
+      secServiceTitle: "តំបន់សេវាកម្មទូទាំងកម្ពុជា",
       secServiceDesc:
-        "ážŸáŸážœáž¶ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ afterâ€‘sales support áž“áŸ… Phnom Penh, Siem Reap, Sihanoukville áž“áž·áž„ážáŸážáŸ’ážáž‡áž·ážážáž¶áž„áŸ”",
-      secTestimonialsEyebrow: "Trust",
-      secTestimonialsTitle: "áž˜ážáž·áž¢ážáž·ážáž·áž‡áž“ áž“áž·áž„áž‚áž˜áŸ’ážšáŸ„áž„áž™áŸ„áž„",
+        "សេវាដំឡើង Commissioning និងសេវាកម្មបន្ទាប់ពីលក់ នៅ Phnom Penh, Siem Reap, Sihanoukville និងតំបន់ជិតខាង។",
+      secTestimonialsEyebrow: "ភាពទុកចិត្ត",
+      secTestimonialsTitle: "មតិអតិថិជន និងគម្រោងយោង",
       secTestimonialsDesc:
-        "áž”áž‘áž–áž·ážŸáŸ„áž’áž“áŸáž¢ážáž·ážáž·áž‡áž“áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ážŠáŸ‚áž›áž”áž„áŸ’áž áž¶áž‰áž–áž¸áž‚áž»ážŽáž—áž¶áž– áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšáŸ”",
-      secContactEyebrow: "Local support",
-      secContactTitle: "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™áž€áž˜áŸ’áž–áž»áž‡áž¶ & ážŸáŸážœáž¶áž‚áž˜áŸ’ážšáŸ„áž„",
+        "មតិយោបល់ពីអតិថិជនក្នុងស្រុក និងឯកសារយោងគម្រោង ដែលបង្ហាញពីគុណភាព និងការគាំទ្ររបស់យើង។",
+      secContactEyebrow: "គាំទ្រក្នុងស្រុក",
+      secContactTitle: "ការិយាល័យកម្ពុជា & សេវាគាំទ្រគម្រោង",
       secContactDesc:
-        "ážŸáž¼áž˜áž‘áž¶áž€áŸ‹áž‘áž„ážœáž·ážŸáŸ’ážœáž€ážšáž“áŸ…áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ site survey, sizing, pixel pitch guidance áž“áž·áž„ quotationáŸ”",
+        "ទាក់ទងវិស្វករនៅកម្ពុជា សម្រាប់ការស្ទង់ទីតាំង ការកំណត់ទំហំ Pixel Pitch និងស្នើសុំតម្លៃតាមគម្រោង។",
 
-      secQuickEyebrow: "áž–áŸáž‰áž“áž·áž™áž˜áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
-      secQuickTitle: "áž…áž¼áž›ážšáž áŸážŸáž‘áŸ…áž€áž¶áž“áŸ‹áž”áŸ’ážšáž—áŸáž‘áž•áž›áž·ážáž•áž›ážŸáŸ†ážáž¶áž“áŸ‹áŸ—",
+      secQuickEyebrow: "ពេញនិយមនៅកម្ពុជា",
+      secQuickTitle: "ចូលរហ័សទៅកាន់ប្រភេទផលិតផលសំខាន់ៗ",
       secQuickDesc:
-        "áž‘áŸ†áž–áŸážšáž„áž¶áž™ážŸáŸ’ážšáž½áž›ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áŸ’áž“áž€áž‘áž·áž‰áŸ– specs, use-case áž“áž·áž„áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†áŸ” ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáž˜áŸ’áž›áŸƒáž–áž·áž ážŸáž¼áž˜ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„áŸ”",
-      box1t: "áž€áž¶ážšážšáŸ€áž”áž…áŸ† LED Display",
+        "ទំព័រងាយស្រួលសម្រាប់អ្នកទិញ ដែលមាន Specs, Use-case និងការណែនាំជាក់ស្តែង។ សម្រាប់តម្លៃពិត សូមស្នើសុំតម្លៃតាមគម្រោង។",
+      box1t: "រៀបចំគម្រោង LED Display",
       box1d:
-        "áž™áž¾áž„áž‡áž½áž™áž‡áŸ’ážšáž¾ážŸ pixel pitch (áž§. P2.5 / P3 / P4 / P5) ážáž¶áž˜áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› áž‘áŸ†áž áŸ† áž“áž·áž„áž”áŸ’ážšáž—áŸáž‘ contentáŸ”",
-      box2t: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ážŸáŸ’áž¢áž¶áž",
+        "យើងជួយជ្រើស Pixel Pitch (ឧ. P2.5 / P3 / P4 / P5) តាមចម្ងាយមើល ទំហំ និងប្រភេទមាតិកា។",
+      box2t: "ដំឡើងស្អាត និងមានស្តង់ដារ",
       box2d:
-        "Workflow ážšáž¹áž„áž˜áž¶áŸ†ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ mounting, cabling, control setup áž“áž·áž„ commissioningâ€”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáŸ’ážáŸážšáž—áž¶áž–ážšáž™áŸˆáž–áŸáž›ážœáŸ‚áž„áŸ”",
-      box3t: "After-sales support",
+        "Workflow ច្បាស់លាស់សម្រាប់ Mounting, Cabling, Control Setup និង Commissioning ដើម្បីធានាស្ថិរភាពរយៈពេលវែង។",
+      box3t: "សេវាកម្មបន្ទាប់ពីលក់",
       box3d:
-        "áž‡áž˜áŸ’ážšáž¾ážŸáž’áž¶áž“áž¶ áž“áž·áž„ážáŸ‚áž‘áž¶áŸ† ážŠáž¾áž˜áŸ’áž”áž¸áž€áž¶ážáŸ‹áž”áž“áŸ’ážáž™ downtime áž“áž·áž„áž€áž¶ážšáž–áž¶ážšážœáž·áž“áž·áž™áŸ„áž‚ážšáž”ážŸáŸ‹áž¢áŸ’áž“áž€áŸ”",
+        "ជម្រើសធានា និងថែទាំប្រព័ន្ធ ដើម្បីកាត់បន្ថយ Downtime និងការពារការវិនិយោគរបស់អ្នក។",
 
-      secProjectsEyebrow: "áž—áž¶áž–áž‘áž»áž€áž…áž·ážáŸ’áž",
-      secProjectsTitle: "áž‚áž˜áŸ’ážšáŸ„áž„ áž“áž·áž„áž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+      secProjectsEyebrow: "ភាពទុកចិត្ត",
+      secProjectsTitle: "គម្រោង និងការដំឡើងនៅកម្ពុជា",
       secProjectsDesc:
-        "Case study áž‡áž½áž™áž”áž„áŸ’áž€áž¾áž“áž—áž¶áž–áž‘áž»áž€áž…áž·ážáŸ’ážáŸ” áž”áž“áŸ’ážáŸ‚áž˜ážšáž¼áž”áž—áž¶áž–áž–áž·áž áž‘áž¸ážáž¶áŸ†áž„ áž“áž·áž„ scope ážŠáž¾áž˜áŸ’áž”áž¸ážˆáŸ’áž“áŸ‡áž¢áŸ’áž“áž€áž‘áž·áž‰ high-intentáŸ”",
-      viewProjects: "áž˜áž¾áž›áž‚áž˜áŸ’ážšáŸ„áž„",
-      bannerTitle: "áž…áž„áŸ‹áž”áž¶áž“ážáž˜áŸ’áž›áŸƒážšáž áŸážŸ?",
+        "Case Study និងគម្រោងពិត ជួយបង្កើនភាពជឿជាក់។ បន្ថែមរូបភាព ទីតាំង និង Scope ការងារ ដើម្បីទាក់ទាញអ្នកទិញដែលមានបំណងខ្ពស់។",
+      viewProjects: "មើលគម្រោង",
+      bannerTitle: "ចង់បានតម្លៃរហ័ស?",
       bannerDesc:
-        "áž…áŸ‚áž€ážšáŸ†áž›áŸ‚áž€áž‘áŸ†áž áŸ† áž‘áž¸ážáž¶áŸ†áž„ áž”áŸ’ážšáž—áŸáž‘áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ áž“áž·áž„ timelineáŸ” áž™áž¾áž„áž“áž¹áž„ážŽáŸ‚áž“áž¶áŸ† configuration áž“áž·áž„ budget range ážáž¶áž˜áž¢áž“áž»ážœážáŸ’ážáŸ”",
+        "សូមផ្ញើព័ត៌មានទំហំ ទីតាំង ប្រភេទការប្រើប្រាស់ និង Timeline។ ក្រុមការងារយើងនឹងណែនាំ Configuration និង Budget Range សមស្រប។",
 
-      secFaqEyebrow: "ážŸáŸ†ážŽáž½ážšáž‰áž¹áž€áž‰áž¶áž”áŸ‹",
-      secFaqTitle: "ážŸáŸ†ážŽáž½ážšážŠáŸ‚áž›áž¢ážáž·ážáž·áž‡áž“áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ážŸáž½ážšáž‰áž¹áž€áž‰áž¶áž”áŸ‹",
-      secFaqDesc: "áž…áž˜áŸ’áž›áž¾áž™ážáŸ’áž›áž¸ áž“áž·áž„áž…áŸ’áž”áž¶ážŸáŸ‹ ážŠáž¾áž˜áŸ’áž”áž¸áž‡áž½áž™ážŸáž˜áŸ’ážšáŸáž…áž…áž·ážáŸ’ážáž”áž¶áž“ážŠáŸ„áž™áž‘áŸ†áž“áž»áž€áž…áž·ážáŸ’ážáŸ”",
+      secFaqEyebrow: "សំណួរញឹកញាប់",
+      secFaqTitle: "សំណួរដែលអ្នកទិញនៅកម្ពុជាសួរញឹកញាប់",
+      secFaqDesc: "ចម្លើយខ្លី និងច្បាស់ ដើម្បីជួយអ្នកសម្រេចចិត្តបានមានទំនុកចិត្ត។",
       tip:
-        "ážŸáž˜áŸ’áž‚áž¶áž›áŸ‹áŸ– ážŸáž¼áž˜áž”áŸ’ážŠáž¼ážšáž‘áž¼ážšážŸáŸáž–áŸ’áž‘/áž¢áž¶ážŸáž™ážŠáŸ’áž‹áž¶áž“ placeholder áž‡áž¶áž‘áž·áž“áŸ’áž“áž“áŸáž™áž€áž¶ážšáž·áž™áž¶áž›áŸáž™áž€áž˜áŸ’áž–áž»áž‡áž¶ ážŠáž¾áž˜áŸ’áž”áž¸ Local SEO áž€áž¶áž“áŸ‹ážáŸ‚ážáŸ’áž›áž¶áŸ†áž„áŸ”",
+        "ណែនាំ: បំពេញលេខទូរស័ព្ទ និងអាសយដ្ឋានការិយាល័យកម្ពុជា ឱ្យពេញលេញ ដើម្បីពង្រឹង Local SEO។",
     };
 
-    return lang === "en" ? en : km;
+    return lang === "en" ? en : sanitizeLocaleText(km, en);
   }, [lang, cities]);
 
   return (
@@ -363,7 +401,7 @@ export default function HomeClient({
       </div>
     ))}
 
-    {/* âœ… Readability overlays (tuned) */}
+    {/* Readability overlays (tuned) */}
     <div className="absolute inset-0 bg-slate-950/54" />
     <div className="absolute inset-0 bg-gradient-to-r from-slate-950/76 via-slate-950/50 to-slate-950/24" />
     <div className="absolute inset-0 bg-gradient-to-b from-black/34 via-transparent to-black/48" />
@@ -383,7 +421,7 @@ export default function HomeClient({
 
   <Container>
     <div className="relative flex min-h-[calc(100svh-132px)] flex-col items-start justify-center py-10 sm:py-12 lg:py-14">
-      {/* âœ… badge (bg + animation) */}
+      {/* badge (bg + animation) */}
       <p className="inline-flex items-center gap-2 rounded-full bg-black/45 px-4 py-2 text-xs font-semibold text-white ring-1 ring-white/25 backdrop-blur-[2px]">
         <span className="relative inline-flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/70 opacity-60" />
@@ -402,7 +440,7 @@ export default function HomeClient({
           {t.heroDesc}
         </p>
 
-        {/* âœ… CTAs: stronger contrast */}
+        {/* CTAs: stronger contrast */}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
             href="/contact"
@@ -481,16 +519,16 @@ export default function HomeClient({
           <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                {lang === "en" ? "Why Teams Choose Mugnee Cambodia" : "Why Teams Choose Mugnee Cambodia"}
+                {lang === "en" ? "Why Teams Choose Mugnee Cambodia" : "ហេតុអ្វីក្រុមការងារជ្រើសរើស Mugnee Cambodia"}
               </p>
               <h2 id="home-trust-title" className="mt-1 text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
                 {lang === "en"
                   ? "Why Choose Mugnee Cambodia for LED Display, Digital Signage & Smart Systems"
-                  : "Why Choose Mugnee Cambodia for LED Display, Digital Signage & Smart Systems"}
+                  : "ហេតុអ្វីគួរជ្រើស Mugnee Cambodia សម្រាប់ LED Display, Digital Signage និង Smart Systems"}
               </h2>
             </div>
             <p className="rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-800">
-              {lang === "en" ? "Cambodia Project Support" : "Cambodia Project Support"}
+              {lang === "en" ? "Cambodia Project Support" : "គាំទ្រគម្រោងនៅកម្ពុជា"}
             </p>
           </div>
 
@@ -507,7 +545,7 @@ export default function HomeClient({
                   <p className="text-sm font-semibold text-slate-900">{t.trust1t}</p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust1d}</p>
                   <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Site survey, installation, after-sales" : "Site survey, installation, after-sales"}
+                    {lang === "en" ? "Site survey, installation, after-sales" : "ស្ទង់ទីតាំង, ដំឡើង, គាំទ្របន្ទាប់ពីលក់"}
                   </p>
                 </div>
               </div>
@@ -525,7 +563,7 @@ export default function HomeClient({
                   <p className="text-sm font-semibold text-slate-900">{t.trust2t}</p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust2d}</p>
                   <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Engineered for clear visuals and uptime" : "Engineered for clear visuals and uptime"}
+                    {lang === "en" ? "Engineered for clear visuals and uptime" : "រចនាវិស្វកម្មសម្រាប់រូបភាពច្បាស់ និងដំណើរការបន្ត"}
                   </p>
                 </div>
               </div>
@@ -543,7 +581,7 @@ export default function HomeClient({
                   <p className="text-sm font-semibold text-slate-900">{t.trust3t}</p>
                   <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust3d}</p>
                   <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Planning to commissioning with clear milestones" : "Planning to commissioning with clear milestones"}
+                    {lang === "en" ? "Planning to commissioning with clear milestones" : "ពីការធ្វើផែនការដល់ Commissioning មានជំហានច្បាស់លាស់"}
                   </p>
                 </div>
               </div>
@@ -596,12 +634,12 @@ export default function HomeClient({
                         {c.icon}
                       </div>
                       <h3 className="text-base font-semibold text-slate-900">
-                        {lang === "en" ? c.titleEn : c.titleKm}
+                    {lang === "en" ? c.titleEn : sanitizeKhmer(c.titleKm, c.titleEn)}
                       </h3>
                     </div>
                   </div>
                   <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    {lang === "en" ? c.descEn : c.descKm}
+                    {lang === "en" ? c.descEn : sanitizeKhmer(c.descKm, c.descEn)}
                   </p>
                   <p className="mt-auto pt-3 text-sm font-semibold text-slate-900">
                     {t.viewDetails} <span aria-hidden="true">→</span>
@@ -711,11 +749,13 @@ export default function HomeClient({
                 className="group rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 p-7 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md no-underline hover:no-underline"
               >
                 <h3 className="text-xl font-semibold text-slate-900">
-                  {lang === "en" ? s.titleEn : s.titleKm}
+                  {lang === "en" ? s.titleEn : sanitizeKhmer(s.titleKm, s.titleEn)}
                 </h3>
 
                 <ul className="mt-4 space-y-3 text-base text-slate-700">
-                  {(lang === "en" ? s.pointsEn : s.pointsKm).map((p) => (
+                  {(lang === "en"
+                    ? s.pointsEn
+                    : s.pointsKm.map((p, i) => sanitizeKhmer(p, s.pointsEn[i] || p))).map((p) => (
                     <li key={p} className="flex gap-3">
                       <span className="mt-[3px] inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-sm text-white">
                         ✓
@@ -784,13 +824,21 @@ export default function HomeClient({
           </div>
 
           <div className="mt-6 flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-700">
-            {[
-              "ISO Certified Organization",
-              "ABC Certified Engineers",
-              "Industry Track-Lead",
-              "24/7 Customer Support",
-              "On-site Service",
-            ].map((badge) => (
+            {(lang === "en"
+              ? [
+                  "ISO Certified Organization",
+                  "ABC Certified Engineers",
+                  "Industry Track-Lead",
+                  "24/7 Customer Support",
+                  "On-site Service",
+                ]
+              : [
+                  "អង្គភាពមានវិញ្ញាបនបត្រ ISO",
+                  "វិស្វករមានវិញ្ញាបនបត្រ ABC",
+                  "បទពិសោធន៍ដឹកនាំគម្រោង",
+                  "សេវាគាំទ្រ 24/7",
+                  "សេវាកម្មលើទីតាំង",
+                ]).map((badge) => (
               <span
                 key={badge}
                 className="rounded-full border border-slate-200 bg-slate-50 px-3 py-2"
@@ -818,45 +866,45 @@ export default function HomeClient({
             {[
               {
                 tEn: "Retail & Mall",
-                tKm: "áž áž¶áž„áž›áž€áŸ‹ážšáž¶áž™ áž“áž·áž„áž•áŸ’ážŸáž¶ážš",
+                tKm: "ហាងលក់រាយ និងផ្សារទំនើប",
                 dEn:
                   "LED video walls and digital signage to drive promotions and foot traffic.",
-                dKm: "LED video wall áž“áž·áž„ digital signage ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áŸ’ážšáž¼áž˜áŸ‰áž¼ážŸáž·áž“áŸ”",
+                dKm: "LED Video Wall និង Digital Signage សម្រាប់ផ្សព្វផ្សាយ និងទាក់ទាញភ្ញៀវចូលហាង។",
               },
               {
                 tEn: "Education",
-                tKm: "áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†",
+                tKm: "ការអប់រំ",
                 dEn:
                   "Interactive smart boards for classrooms, training rooms and auditoriums.",
-                dKm: "Smart board ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áŸ”",
+                dKm: "Interactive Smart Board សម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងសាលសន្និសីទ។",
               },
               {
                 tEn: "Corporate & Office",
-                tKm: "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž€áŸ’ážšáž»áž˜áž áŸŠáž»áž“",
+                tKm: "ការិយាល័យ និងក្រុមហ៊ុន",
                 dEn:
                   "Boardroom LED displays, lobby signage and meeting room AV.",
-                dKm: "LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áž·áž„áž•áŸ’áž‘áž¶áŸ†áž„áž”áž„áŸ’áž áž¶áž‰ lobbiesáŸ”",
+                dKm: "អេក្រង់ LED សម្រាប់បន្ទប់ប្រជុំ ផ្ទាំងបង្ហាញ Lobby និងប្រព័ន្ធ AV។",
               },
               {
                 tEn: "Factory & Industrial",
-                tKm: "ážšáŸ„áž„áž…áž€áŸ’ážš áž“áž·áž„áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜",
+                tKm: "រោងចក្រ និងឧស្សាហកម្ម",
                 dEn:
                   "PA systems, safety displays and production status boards.",
-                dKm: "PA system áž“áž·áž„áž•áŸ’áž‘áž¶áŸ†áž„áž”áž„áŸ’áž áž¶áž‰ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”",
+                dKm: "PA System ផ្ទាំងសុវត្ថិភាព និងផ្ទាំងបង្ហាញស្ថានភាពផលិតកម្ម។",
               },
               {
                 tEn: "Hospitality",
-                tKm: "ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜",
+                tKm: "សណ្ឋាគារ និងបដិសណ្ឋារកិច្ច",
                 dEn:
                   "Welcome screens, menu boards and event displays for hotels.",
-                dKm: "Welcome screen áž“áž·áž„ menu board ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážšáŸ”",
+                dKm: "Welcome Screen, Menu Board និងអេក្រង់ព្រឹត្តិការណ៍សម្រាប់សណ្ឋាគារ។",
               },
               {
                 tEn: "Government & Public",
-                tKm: "ážšážŠáŸ’áž‹áž¶áž—áž·áž”áž¶áž› áž“áž·áž„ážŸáŸážœáž¶ážŸáž¶áž’áž¶ážšážŽáŸˆ",
+                tKm: "រដ្ឋាភិបាល និងសាធារណៈ",
                 dEn:
                   "Public information displays and secure access control.",
-                dKm: "áž•áŸ’áž‘áž¶áŸ†áž„áž–áŸážáŸŒáž˜áž¶áž“ážŸáž¶áž’áž¶ážšážŽáŸˆ áž“áž·áž„ access controláŸ”",
+                dKm: "ផ្ទាំងព័ត៌មានសាធារណៈ និងប្រព័ន្ធគ្រប់គ្រងច្រកចេញចូលដែលមានសុវត្ថិភាព។",
               },
             ].map((item) => (
               <div
@@ -864,10 +912,10 @@ export default function HomeClient({
                 className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 p-5 shadow-sm"
               >
                 <h3 className="text-base font-semibold text-slate-900">
-                  {lang === "en" ? item.tEn : item.tKm}
+                  {lang === "en" ? item.tEn : sanitizeKhmer(item.tKm, item.tEn)}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {lang === "en" ? item.dEn : item.dKm}
+                  {lang === "en" ? item.dEn : sanitizeKhmer(item.dKm, item.dEn)}
                 </p>
               </div>
             ))}
@@ -891,25 +939,25 @@ export default function HomeClient({
             {[
               {
                 tEn: "Pixel Pitch Range",
-                tKm: "áž‡áž½ážš Pixel Pitch",
+                tKm: "ជួរ Pixel Pitch",
                 dEn: "P1.25 - P10 (project-based selection)",
-                dKm: "P1.25 â€“ P10 (áž‡áŸ’ážšáž¾ážŸážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„)",
+                dKm: "P1.25 - P10 (ជ្រើសតាមតម្រូវការគម្រោង)",
               },
               {
                 tEn: "Brightness",
-                tKm: "Brightness",
+                tKm: "កម្រិតពន្លឺ",
                 dEn: "Indoor 800-1200 nits / Outdoor 5500-8000 nits",
-                dKm: "Indoor 800â€“1200 nits / Outdoor 5500â€“8000 nits",
+                dKm: "Indoor 800-1200 nits / Outdoor 5500-8000 nits",
               },
               {
                 tEn: "Protection",
-                tKm: "áž€áž¶ážšáž€áž¶ážšáž–áž¶ážš",
+                tKm: "ការការពារ",
                 dEn: "Outdoor IP65 front protection",
-                dKm: "IP65 ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáž¶áž„áž€áŸ’ážšáŸ… (áž•áŸ’áž“áŸ‚áž€áž˜áž»áž)",
+                dKm: "ការការពារ IP65 សម្រាប់ផ្នែកខាងមុខ (Outdoor)",
               },
               {
                 tEn: "Control Systems",
-                tKm: "Control Systems",
+                tKm: "ប្រព័ន្ធគ្រប់គ្រង",
                 dEn: "NovaStar / Colorlight / Huidu",
                 dKm: "NovaStar / Colorlight / Huidu",
               },
@@ -919,10 +967,10 @@ export default function HomeClient({
                 className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                  {lang === "en" ? spec.tEn : spec.tKm}
+                  {lang === "en" ? spec.tEn : sanitizeKhmer(spec.tKm, spec.tEn)}
                 </p>
                 <p className="mt-2 text-sm font-semibold text-slate-900">
-                  {lang === "en" ? spec.dEn : spec.dKm}
+                  {lang === "en" ? spec.dEn : sanitizeKhmer(spec.dKm, spec.dEn)}
                 </p>
               </div>
             ))}
@@ -983,7 +1031,7 @@ export default function HomeClient({
                 <p className="text-sm text-slate-600">
                   {lang === "en"
                     ? "Share your location, screen size, and use-case. We'll recommend a practical configuration and quotation."
-                    : "ážŸáž¼áž˜áž…áŸ‚áž€ážšáŸ†áž›áŸ‚áž€áž‘áž¸ážáž¶áŸ†áž„ áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹ áž“áž·áž„áž”áŸ’ážšáž—áŸáž‘áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ ážŠáž¾áž˜áŸ’áž”áž¸áž™áž¾áž„ážŽáŸ‚áž“áž¶áŸ† configuration áž“áž·áž„ quotationáŸ”"}
+                    : "សូមចែករំលែកទីតាំង ទំហំអេក្រង់ និងប្រភេទការប្រើប្រាស់ ដើម្បីឲ្យក្រុមការងារយើងណែនាំដំណោះស្រាយសមស្រប និងសម្រង់តម្លៃគម្រោង។"}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a
@@ -993,7 +1041,7 @@ export default function HomeClient({
                     <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-sm">
                       →
                     </span>
-                    {lang === "en" ? "Request a Quotation" : "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ"}
+                    {lang === "en" ? "Request a Quotation" : "ស្នើសុំតម្លៃ"}
                   </a>
                   <a
                     href="/contact"
@@ -1002,27 +1050,27 @@ export default function HomeClient({
                     <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-700">
                       ☎
                     </span>
-                    {lang === "en" ? "Contact Cambodia Office" : "áž‘áž¶áž€áŸ‹áž‘áž„áž€áž¶ážšáž·áž™áž¶áž›áŸáž™áž€áž˜áŸ’áž–áž»áž‡áž¶"}
+                    {lang === "en" ? "Contact Cambodia Office" : "ទាក់ទងការិយាល័យកម្ពុជា"}
                   </a>
                 </div>
               </div>
 
               <div className="text-sm text-slate-600">
                 <p className="font-semibold text-slate-900">
-                  {lang === "en" ? "Office (Cambodia)" : "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ (áž€áž˜áŸ’áž–áž»áž‡áž¶)"}
+                  {lang === "en" ? "Office (Cambodia)" : "ការិយាល័យ (កម្ពុជា)"}
                 </p>
                 <p className="mt-2">
                   {lang === "en"
                     ? "1st Floor, 11E0, Street 108, Night Market Area, Doun Penh, Phnom Penh, Cambodia"
-                    : "áž‡áž¶áž“áŸ‹áž‘áž¸áŸ¡, 11E0, áž•áŸ’áž›áž¼ážœ 108, ážáŸ†áž”áž“áŸ‹ Night Market, Doun Penh, Phnom Penh, Cambodia"}
+                    : "ជាន់ទី១, 11E0, ផ្លូវ 108, តំបន់ Night Market, Doun Penh, Phnom Penh, Cambodia"}
                 </p>
                 <p className="mt-2">
-                  {lang === "en" ? "Phone: +855 XXX XXX XXX" : "áž‘áž¼ážšážŸáŸáž–áŸ’áž‘áŸ– +855 XXX XXX XXX"}
+                  {lang === "en" ? "Phone: +855 XXX XXX XXX" : "ទូរស័ព្ទ៖ +855 XXX XXX XXX"}
                 </p>
                 <p className="mt-2">
                   {lang === "en"
                     ? "Hours: Mon-Sat, 8:30am-6:00pm"
-                    : "áž˜áŸ‰áŸ„áž„áŸ– áž…áž“áŸ’áž‘â€“ážŸáŸ…ážšáŸ 8:30amâ€“6:00pm"}
+                    : "ម៉ោងធ្វើការ៖ ចន្ទ-សៅរ៍ 8:30am-6:00pm"}
                 </p>
               </div>
             </div>
@@ -1067,7 +1115,7 @@ export default function HomeClient({
                         Q
                       </span>
                       <span className="leading-relaxed">
-                        {lang === "en" ? f.qEn : f.qKm}
+                        {lang === "en" ? f.qEn : sanitizeKhmer(f.qKm, f.qEn)}
                       </span>
                     </div>
                     <span className="mt-0.5 text-slate-400 transition-transform duration-300 group-open:rotate-180">
@@ -1076,7 +1124,7 @@ export default function HomeClient({
                   </div>
                 </summary>
                 <p className="mt-4 text-sm leading-relaxed text-slate-700">
-                  {lang === "en" ? f.aEn : f.aKm}
+                  {lang === "en" ? f.aEn : sanitizeKhmer(f.aKm, f.aEn)}
                 </p>
               </details>
             ))}

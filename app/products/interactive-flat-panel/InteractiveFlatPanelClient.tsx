@@ -93,7 +93,7 @@ export default function InteractiveFlatPanelClient() {
       badge: "កម្ពុជា • Interactive Flat Panel • Smart Board",
       h1: "Interactive Flat Panel នៅកម្ពុជា",
       sub:
-        "4K touchscreen Interactive Flat Panel (IFP) សម្រាប់ classroom, meeting room និង training center។ Built-in whiteboard, wireless screen sharing এবং installation + support ក្នុងស្រុក।",
+        "Mugnee Multiple ផ្តល់ដំណោះស្រាយ Interactive Flat Panel (smart board) នៅកម្ពុជា សម្រាប់សាលារៀន សាកលវិទ្យាល័យ មជ្ឈមណ្ឌលបណ្តុះបណ្តាល បន្ទប់ប្រជុំក្រុមហ៊ុន និងស្ថាប័នរដ្ឋាភិបាល។ យើងផ្គត់ផ្គង់អេក្រង់ 4K touch ជាមួយ wireless screen sharing ជម្រើស Android/OPS ការដំឡើងដោយវិជ្ជាជីវៈ ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក នៅភ្នំពេញ សៀមរាប និងព្រះសីហនុ សម្រាប់ប្រសិទ្ធភាពប្រើប្រាស់រយៈពេលវែង។",
       cta1: "ស្នើសុំតម្លៃ (Free)",
       cta2: "មើល IFP Models",
       serving: "សេវាកម្ម៖ Phnom Penh • Siem Reap • Sihanoukville",
@@ -201,65 +201,65 @@ export default function InteractiveFlatPanelClient() {
       qEn: "What size interactive flat panel should I choose for a classroom?",
       aEn:
         "Choose based on viewing distance and room size. Common classroom sizes range from 65 to 86 inch, while larger halls often use 98 to 110 inch.",
-      qKm: "What size interactive flat panel should I choose for a classroom?",
+      qKm: "សម្រាប់ថ្នាក់រៀន តើគួរជ្រើសទំហំ Interactive Flat Panel ប៉ុន្មាន?",
       aKm:
-        "Choose based on viewing distance and room size. Common classroom sizes range from 65 to 86 inch, while larger halls often use 98 to 110 inch.",
+        "គួរជ្រើសតាម viewing distance និងទំហំបន្ទប់។ ទំហំដែលប្រើញឹកញាប់សម្រាប់ថ្នាក់រៀនគឺ 65-86 inch ខណៈបន្ទប់ធំអាចប្រើ 98-110 inch។",
     },
     {
       qEn: "How far should students sit from a smart board?",
       aEn:
         "Viewing distance depends on screen size. As a general guide, 65-inch panels suit around 2 to 3.5 meters, 75-inch suits around 2.5 to 4 meters, and 86-inch around 3 to 5 meters.",
-      qKm: "How far should students sit from a smart board?",
+      qKm: "សិស្សគួរអង្គុយឆ្ងាយពី Smart Board ប៉ុន្មាន?",
       aKm:
-        "Viewing distance depends on screen size. As a general guide, 65-inch panels suit around 2 to 3.5 meters, 75-inch suits around 2.5 to 4 meters, and 86-inch around 3 to 5 meters.",
+        "ចម្ងាយមើលអាស្រ័យលើទំហំអេក្រង់។ ជាទូទៅ 65-inch សមស្របប្រហែល 2-3.5m, 75-inch ប្រហែល 2.5-4m និង 86-inch ប្រហែល 3-5m។",
     },
     {
       qEn: "Do interactive flat panels support Android and Windows?",
       aEn:
         "Most models include Android, and many offer OPS/Windows compatibility. Check the exact model for OS version and OPS options.",
-      qKm: "Do interactive flat panels support Android and Windows?",
+      qKm: "Interactive Flat Panel គាំទ្រ Android និង Windows ដែរឬទេ?",
       aKm:
-        "Most models include Android, and many offer OPS/Windows compatibility. Check the exact model for OS version and OPS options.",
+        "ម៉ូឌែលភាគច្រើនមាន Android ហើយម៉ូឌែលជាច្រើនគាំទ្រ OPS/Windows ផងដែរ។ សូមពិនិត្យម៉ូឌែលជាក់លាក់សម្រាប់ OS version និង OPS option។",
     },
     {
       qEn: "How many touch points does an IFP support?",
       aEn:
         "Multi-touch is standard. For example, some models support 20-point touch, and higher-end models support 40-point touch.",
-      qKm: "How many touch points does an IFP support?",
+      qKm: "IFP មួយអាចគាំទ្រ touch points បានប៉ុន្មាន?",
       aKm:
-        "Multi-touch is standard. For example, some models support 20-point touch, and higher-end models support 40-point touch.",
+        "Multi-touch គឺជាស្តង់ដារ។ ឧទាហរណ៍ ម៉ូឌែលខ្លះគាំទ្រ 20-point touch ហើយម៉ូឌែលខ្ពស់គាំទ្រ 40-point touch។",
     },
     {
       qEn: "Can I connect laptops and phones wirelessly?",
       aEn:
         "Yes. Many models support wireless screen sharing, plus HDMI and USB-C for plug-and-play connectivity.",
-      qKm: "Can I connect laptops and phones wirelessly?",
+      qKm: "តើអាចភ្ជាប់ laptop និង phone ដោយ wireless បានទេ?",
       aKm:
-        "Yes. Many models support wireless screen sharing, plus HDMI and USB-C for plug-and-play connectivity.",
+        "បាន។ ម៉ូឌែលជាច្រើនគាំទ្រ wireless screen sharing និងមាន HDMI/USB-C សម្រាប់ plug-and-play connectivity។",
     },
     {
       qEn: "Do you provide installation and user training in Cambodia?",
       aEn:
         "Yes. We provide installation, configuration, and training for classrooms, meeting rooms, and training centers.",
-      qKm: "Do you provide installation and user training in Cambodia?",
+      qKm: "តើអ្នកផ្តល់សេវា installation និង user training នៅកម្ពុជាដែរឬទេ?",
       aKm:
-        "Yes. We provide installation, configuration, and training for classrooms, meeting rooms, and training centers.",
+        "បាទ/ចាស។ យើងផ្តល់សេវា installation, configuration និង training សម្រាប់ classroom, meeting room និង training center។",
     },
     {
       qEn: "What are the key ports I should check?",
       aEn:
         "Look for HDMI, USB, USB-C, and LAN connectivity. These cover most classroom and meeting room setups.",
-      qKm: "What are the key ports I should check?",
+      qKm: "ports សំខាន់ៗដែលគួរតែពិនិត្យមានអ្វីខ្លះ?",
       aKm:
-        "Look for HDMI, USB, USB-C, and LAN connectivity. These cover most classroom and meeting room setups.",
+        "គួរពិនិត្យ HDMI, USB, USB-C និង LAN connectivity ព្រោះវាគ្របដណ្តប់ setup ភាគច្រើនសម្រាប់ classroom និង meeting room។",
     },
     {
       qEn: "Do you offer warranty and after-sales support?",
       aEn:
         "Yes. Warranty terms depend on the model and project scope. We share the coverage details during quotation.",
-      qKm: "Do you offer warranty and after-sales support?",
+      qKm: "តើមាន warranty និង after-sales support ដែរឬទេ?",
       aKm:
-        "Yes. Warranty terms depend on the model and project scope. We share the coverage details during quotation.",
+        "មាន។ លក្ខខណ្ឌ warranty អាស្រ័យលើម៉ូឌែល និង scope គម្រោង ហើយយើងនឹងផ្តល់ព័ត៌មាន coverage ពេល quotation។",
     },
     ],
     []
@@ -514,43 +514,51 @@ export default function InteractiveFlatPanelClient() {
           <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                Interactive Flat Panel Basics
+                {lang === "en" ? "Interactive Flat Panel Basics" : "មូលដ្ឋានអំពី Interactive Flat Panel"}
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
-                What Is an Interactive Flat Panel (IFP)?
+                {lang === "en"
+                  ? "What Is an Interactive Flat Panel (IFP)?"
+                  : "តើ Interactive Flat Panel (IFP) ជាអ្វី?"}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                An interactive flat panel is a large 4K touchscreen display that combines
-                a digital whiteboard, presentation screen, and collaboration tools in one
-                device. It is commonly used in classrooms, meeting rooms, training centers,
-                and healthcare briefings because it supports real-time writing, annotation,
-                and wireless screen sharing.
+                {lang === "en"
+                  ? "An interactive flat panel is a large 4K touchscreen display that combines a digital whiteboard, presentation screen, and collaboration tools in one device. It is commonly used in classrooms, meeting rooms, training centers, and healthcare briefings because it supports real-time writing, annotation, and wireless screen sharing."
+                  : "Interactive Flat Panel គឺជាអេក្រង់ touchscreen 4K ទំហំធំ ដែលរួមបញ្ចូល whiteboard ឌីជីថល អេក្រង់បង្ហាញ និងឧបករណ៍សហការនៅក្នុងឧបករណ៍តែមួយ។ វាត្រូវបានប្រើយ៉ាងទូលំទូលាយនៅថ្នាក់រៀន បន្ទប់ប្រជុំ មជ្ឈមណ្ឌលបណ្តុះបណ្តាល និងការបង្ហាញផ្នែកសុខាភិបាល ពីព្រោះវាគាំទ្រការសរសេរតាមពេលវេលាជាក់ស្តែង annotation និង wireless screen sharing។"}
               </p>
 
               <h3 className="mt-6 text-2xl font-bold tracking-tight text-slate-900">
-                How Does an Interactive Flat Panel Work?
+                {lang === "en"
+                  ? "How Does an Interactive Flat Panel Work?"
+                  : "Interactive Flat Panel ដំណើរការយ៉ាងដូចម្តេច?"}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                The panel uses a high-resolution LCD with a multi-touch layer that detects
-                finger or stylus input. Built-in Android software runs whiteboard and
-                collaboration apps, while HDMI/USB-C/LAN ports and wireless casting allow
-                laptops and phones to share content instantly. Optional OPS/Windows modules
-                turn the screen into a full PC for advanced applications.
+                {lang === "en"
+                  ? "The panel uses a high-resolution LCD with a multi-touch layer that detects finger or stylus input. Built-in Android software runs whiteboard and collaboration apps, while HDMI/USB-C/LAN ports and wireless casting allow laptops and phones to share content instantly. Optional OPS/Windows modules turn the screen into a full PC for advanced applications."
+                  : "អេក្រង់នេះប្រើ LCD resolution ខ្ពស់ ជាមួយស្រទាប់ multi-touch ដែលអាចចាប់សញ្ញាពីម្រាមដៃ ឬ stylus។ Software Android ដែលភ្ជាប់មកក្នុងម៉ាស៊ីន អាចដំណើរការ whiteboard និងកម្មវិធីសហការ ខណៈ HDMI/USB-C/LAN និង wireless casting អនុញ្ញាតឱ្យ laptop និងទូរស័ព្ទចែករំលែកមាតិកាបានភ្លាមៗ។ ជម្រើស OPS/Windows module អាចបម្លែងអេក្រង់នេះឱ្យក្លាយជា PC ពេញលេញ សម្រាប់ការប្រើប្រាស់កម្រិតខ្ពស់។"}
               </p>
             </div>
 
             <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:mt-20">
               <div className="text-sm font-semibold text-slate-900">
-                Key Benefits for Cambodia Buyers
+                {lang === "en" ? "Key Benefits for Cambodia Buyers" : "អត្ថប្រយោជន៍សំខាន់ៗសម្រាប់អ្នកទិញនៅកម្ពុជា"}
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-600">
-                {[
-                  "4K UHD clarity for classrooms and meetings",
-                  "Multi-touch writing and annotation",
-                  "Wireless screen sharing and plug-and-play ports",
-                  "Android built-in with optional OPS/Windows",
-                  "Lower maintenance than projector systems",
-                ].map((item) => (
+                {(lang === "en"
+                  ? [
+                      "4K UHD clarity for classrooms and meetings",
+                      "Multi-touch writing and annotation",
+                      "Wireless screen sharing and plug-and-play ports",
+                      "Android built-in with optional OPS/Windows",
+                      "Lower maintenance than projector systems",
+                    ]
+                  : [
+                      "ភាពច្បាស់ 4K UHD សម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ",
+                      "ការសរសេរ multi-touch និង annotation",
+                      "Wireless screen sharing និង port ប្រើភ្លាមៗ (plug-and-play)",
+                      "Android ភ្ជាប់មកក្នុងម៉ាស៊ីន ជាមួយជម្រើស OPS/Windows",
+                      "ថែទាំទាបជាងប្រព័ន្ធ projector",
+                    ]).map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
                     <span>{item}</span>
@@ -566,25 +574,36 @@ export default function InteractiveFlatPanelClient() {
       <section id="decision-matrix" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Interactive Flat Panel Use-Case Selection Guide
+            {lang === "en"
+              ? "Interactive Flat Panel Use-Case Selection Guide"
+              : "មគ្គុទ្ទេសក៍ជ្រើសរើសការប្រើប្រាស់ Interactive Flat Panel"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Match your environment to the best screen size and features. This quick matrix
-            helps you shortlist the right interactive flat panel.
+            {lang === "en"
+              ? "Match your environment to the best screen size and features. This quick matrix helps you shortlist the right interactive flat panel."
+              : "ផ្គូផ្គងបរិយាកាសប្រើប្រាស់របស់អ្នកជាមួយទំហំអេក្រង់ និងមុខងារដែលសមស្របបំផុត។ តារាងខ្លីនេះជួយអ្នកជ្រើសរើស Interactive Flat Panel ដែលត្រឹមត្រូវ។"}
           </p>
           <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
-              <div className="p-3">Use Case</div>
-              <div className="p-3">Recommended Size</div>
-              <div className="p-3">Key Focus</div>
+              <div className="p-3">{lang === "en" ? "Use Case" : "ករណីប្រើប្រាស់"}</div>
+              <div className="p-3">{lang === "en" ? "Recommended Size" : "ទំហំដែលណែនាំ"}</div>
+              <div className="p-3">{lang === "en" ? "Key Focus" : "ចំណុចសំខាន់"}</div>
             </div>
-            {[
-              ["Classrooms", "65 - 86 inch", "4K clarity, multi-touch, whiteboard tools"],
-              ["Meeting Rooms", "65 - 75 inch", "Wireless sharing, HDMI/USB-C"],
-              ["Training Centers", "75 - 98 inch", "Large visibility, multi-user touch"],
-              ["Auditoriums", "98 - 110 inch", "Ultra-large screen, wide viewing angle"],
-              ["Hospitals", "65 - 86 inch", "Clean visuals, quick annotation"],
-            ].map((row) => (
+            {(lang === "en"
+              ? [
+                  ["Classrooms", "65 - 86 inch", "4K clarity, multi-touch, whiteboard tools"],
+                  ["Meeting Rooms", "65 - 75 inch", "Wireless sharing, HDMI/USB-C"],
+                  ["Training Centers", "75 - 98 inch", "Large visibility, multi-user touch"],
+                  ["Auditoriums", "98 - 110 inch", "Ultra-large screen, wide viewing angle"],
+                  ["Hospitals", "65 - 86 inch", "Clean visuals, quick annotation"],
+                ]
+              : [
+                  ["ថ្នាក់រៀន", "65 - 86 inch", "ភាពច្បាស់ 4K, multi-touch, ឧបករណ៍ whiteboard"],
+                  ["បន្ទប់ប្រជុំ", "65 - 75 inch", "Wireless sharing, HDMI/USB-C"],
+                  ["មជ្ឈមណ្ឌលបណ្តុះបណ្តាល", "75 - 98 inch", "ការមើលឃើញធំទូលាយ, multi-user touch"],
+                  ["សាលប្រជុំធំ", "98 - 110 inch", "អេក្រង់ធំខ្លាំង, មុំមើលទូលាយ"],
+                  ["មន្ទីរពេទ្យ", "65 - 86 inch", "រូបភាពស្អាត, annotation រហ័ស"],
+                ]).map((row) => (
               <div
                 key={row[0]}
                 className="grid grid-cols-1 border-t border-slate-200 text-sm text-slate-700 sm:grid-cols-3"
@@ -602,29 +621,31 @@ export default function InteractiveFlatPanelClient() {
       <section id="specs-comparison" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Interactive Flat Panel Specifications Comparison by Size
+            {lang === "en"
+              ? "Interactive Flat Panel Specifications Comparison by Size"
+              : "ការប្រៀបធៀបលក្ខណៈបច្ចេកទេស Interactive Flat Panel តាមទំហំ"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Compare size, 4K resolution, touch points, OS support, and connectivity to
-            select the best interactive flat panel for classrooms, meeting rooms, and
-            training centers in Cambodia.
+            {lang === "en"
+              ? "Compare size, 4K resolution, touch points, OS support, and connectivity to select the best interactive flat panel for classrooms, meeting rooms, and training centers in Cambodia."
+              : "ប្រៀបធៀបទំហំ កម្រិតបង្ហាញ 4K ចំនួន touch points ការគាំទ្រ OS និងការតភ្ជាប់ ដើម្បីជ្រើសរើស Interactive Flat Panel ដែលសមស្របបំផុត សម្រាប់ថ្នាក់រៀន បន្ទប់ប្រជុំ និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាលនៅកម្ពុជា។"}
           </p>
           <div className="mt-6 rounded-2xl border border-slate-200 bg-white">
             <div className="hidden sm:block">
               <div className="grid grid-cols-3 bg-slate-100 text-sm font-semibold text-slate-900">
-                <div className="p-3">Model</div>
-                <div className="p-3">Best Use</div>
-                <div className="p-3">Highlights</div>
+                <div className="p-3">{lang === "en" ? "Model" : "ម៉ូដែល"}</div>
+                <div className="p-3">{lang === "en" ? "Best Use" : "ការប្រើប្រាស់សមស្រប"}</div>
+                <div className="p-3">{lang === "en" ? "Highlights" : "ចំណុចពិសេស"}</div>
               </div>
               {ifpProducts.map((p) => {
-                const highlights = p.featuresEn.slice(0, 2).join(" • ");
+                const highlights = (lang === "en" ? p.featuresEn : p.featuresKm).slice(0, 2).join(" | ");
                 return (
                   <div
                     key={p.id}
                     className="grid grid-cols-3 border-t border-slate-200 text-sm text-slate-700"
                   >
-                    <div className="p-3 font-semibold text-slate-900">{p.titleEn}</div>
-                    <div className="p-3">{p.shortDescEn}</div>
+                    <div className="p-3 font-semibold text-slate-900">{lang === "en" ? p.titleEn : p.titleKm}</div>
+                    <div className="p-3">{lang === "en" ? p.shortDescEn : p.shortDescKm}</div>
                     <div className="p-3">{highlights}</div>
                   </div>
                 );
@@ -637,16 +658,16 @@ export default function InteractiveFlatPanelClient() {
                   key={p.id}
                   className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700"
                 >
-                  <div className="text-sm font-semibold text-slate-900">{p.titleEn}</div>
+                  <div className="text-sm font-semibold text-slate-900">{lang === "en" ? p.titleEn : p.titleKm}</div>
                   <div className="mt-2 grid gap-2">
                     <div className="flex items-start justify-between gap-3">
-                      <span className="font-semibold text-slate-700">Best Use</span>
-                      <span className="text-right">{p.shortDescEn}</span>
+                      <span className="font-semibold text-slate-700">{lang === "en" ? "Best Use" : "ការប្រើប្រាស់សមស្រប"}</span>
+                      <span className="text-right">{lang === "en" ? p.shortDescEn : p.shortDescKm}</span>
                     </div>
                     <div className="flex items-start justify-between gap-3">
-                      <span className="font-semibold text-slate-700">Highlights</span>
+                      <span className="font-semibold text-slate-700">{lang === "en" ? "Highlights" : "ចំណុចពិសេស"}</span>
                       <span className="text-right">
-                        {p.featuresEn.slice(0, 2).join(" • ")}
+                        {(lang === "en" ? p.featuresEn : p.featuresKm).slice(0, 2).join(" | ")}
                       </span>
                     </div>
                   </div>
@@ -663,30 +684,40 @@ export default function InteractiveFlatPanelClient() {
           <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                Buying Guide
+                {lang === "en" ? "Buying Guide" : "មគ្គុទ្ទេសក៍ទិញ"}
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
-                Screen Size & Viewing Distance Guide
+                {lang === "en"
+                  ? "Screen Size & Viewing Distance Guide"
+                  : "មគ្គុទ្ទេសក៍ទំហំអេក្រង់ និងចម្ងាយមើល"}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                Choose the screen size based on seating distance, room size, and content
-                type. Classroom environments often use 65-86 inch, while auditoriums and
-                large training halls prefer 98-110 inch panels.
+                {lang === "en"
+                  ? "Choose the screen size based on seating distance, room size, and content type. Classroom environments often use 65-86 inch, while auditoriums and large training halls prefer 98-110 inch panels."
+                  : "ជ្រើសទំហំអេក្រង់ដោយផ្អែកលើចម្ងាយអង្គុយ ទំហំបន្ទប់ និងប្រភេទមាតិកា។ បរិយាកាសថ្នាក់រៀនជាញឹកញាប់ប្រើ 65-86 inch ខណៈសាលប្រជុំធំ និងសាលបណ្តុះបណ្តាលធំៗ ចូលចិត្តបន្ទះ 98-110 inch។"}
               </p>
 
               <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
                 <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
-                  <div className="p-3">Viewing Distance</div>
-                  <div className="p-3">Recommended Size</div>
-                  <div className="p-3">Typical Room</div>
+                  <div className="p-3">{lang === "en" ? "Viewing Distance" : "ចម្ងាយមើល"}</div>
+                  <div className="p-3">{lang === "en" ? "Recommended Size" : "ទំហំដែលណែនាំ"}</div>
+                  <div className="p-3">{lang === "en" ? "Typical Room" : "ប្រភេទបន្ទប់ទូទៅ"}</div>
                 </div>
-                {[
-                  ["1.5 - 2 m", "55 - 65 inch", "Small classrooms"],
-                  ["2 - 3 m", "65 - 75 inch", "Standard classrooms"],
-                  ["3 - 4 m", "75 - 86 inch", "Training rooms"],
-                  ["4 - 5 m", "86 - 98 inch", "Large classrooms"],
-                  ["5 m+", "98 - 110 inch", "Auditoriums & halls"],
-                ].map((row) => (
+                {(lang === "en"
+                  ? [
+                      ["1.5 - 2 m", "55 - 65 inch", "Small classrooms"],
+                      ["2 - 3 m", "65 - 75 inch", "Standard classrooms"],
+                      ["3 - 4 m", "75 - 86 inch", "Training rooms"],
+                      ["4 - 5 m", "86 - 98 inch", "Large classrooms"],
+                      ["5 m+", "98 - 110 inch", "Auditoriums & halls"],
+                    ]
+                  : [
+                      ["1.5 - 2 m", "55 - 65 inch", "ថ្នាក់រៀនតូច"],
+                      ["2 - 3 m", "65 - 75 inch", "ថ្នាក់រៀនស្តង់ដារ"],
+                      ["3 - 4 m", "75 - 86 inch", "បន្ទប់បណ្តុះបណ្តាល"],
+                      ["4 - 5 m", "86 - 98 inch", "ថ្នាក់រៀនធំ"],
+                      ["5 m+", "98 - 110 inch", "សាលប្រជុំ និងសាលធំៗ"],
+                    ]).map((row) => (
                   <div
                     key={row[0]}
                     className="grid grid-cols-1 border-t border-slate-200 text-sm text-slate-700 sm:grid-cols-3"
@@ -701,32 +732,39 @@ export default function InteractiveFlatPanelClient() {
 
             <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
               <div className="text-sm font-semibold text-slate-900">
-                Quick Recommendation Calculator
+                {lang === "en" ? "Quick Recommendation Calculator" : "ឧបករណ៍គណនាណែនាំរហ័ស"}
               </div>
               <p className="mt-2 text-xs text-slate-600">
-                Enter the approximate viewing distance (meters). We will suggest a screen
-                size range.
+                {lang === "en"
+                  ? "Enter the approximate viewing distance (meters). We will suggest a screen size range."
+                  : "បញ្ចូលចម្ងាយមើលប្រហាក់ប្រហែល (ម៉ែត្រ)។ យើងនឹងណែនាំជួរទំហំអេក្រង់សមស្រប។"}
               </p>
               <label className="mt-4 block text-xs font-semibold text-slate-700">
-                Viewing distance (m)
+                {lang === "en" ? "Viewing distance (m)" : "ចម្ងាយមើល (m)"}
               </label>
               <input
                 value={viewDistance}
                 onChange={(e) => setViewDistance(e.target.value)}
                 inputMode="decimal"
-                placeholder="e.g. 3.5"
+                placeholder={lang === "en" ? "e.g. 3.5" : "ឧ. 3.5"}
                 className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-slate-400 focus:outline-none"
               />
               <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-700 shadow-sm">
                 <div className="h-1 w-full rounded-full bg-gradient-to-r from-slate-900 via-sky-500 to-cyan-500" />
                 <div className="mt-3">
                   {recommendedSize
-                    ? `Recommended size: ${recommendedSize}`
-                    : "Enter a viewing distance to get a recommendation."}
+                    ? (lang === "en"
+                        ? `Recommended size: ${recommendedSize}`
+                        : `ទំហំដែលណែនាំ៖ ${recommendedSize}`)
+                    : (lang === "en"
+                        ? "Enter a viewing distance to get a recommendation."
+                        : "សូមបញ្ចូលចម្ងាយមើល ដើម្បីទទួលបានការណែនាំ។")}
                 </div>
               </div>
               <p className="mt-3 text-xs text-slate-500">
-                Final size depends on content type, audience seating, and room lighting.
+                {lang === "en"
+                  ? "Final size depends on content type, audience seating, and room lighting."
+                  : "ទំហំចុងក្រោយអាស្រ័យលើប្រភេទមាតិកា ការរៀបចំកន្លែងអង្គុយអ្នកមើល និងពន្លឺក្នុងបន្ទប់។"}
               </p>
             </div>
           </div>
@@ -740,32 +778,39 @@ export default function InteractiveFlatPanelClient() {
             {t.setupTitle}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            End-to-end installation for interactive flat panels in Cambodia includes site
-            survey, mounting, cabling, network setup, and user training. We optimize the
-            screen height, viewing angle, and cable routing to ensure reliable daily use
-            for classrooms, meeting rooms, and training centers.
+            {lang === "en"
+              ? "End-to-end installation for interactive flat panels in Cambodia includes site survey, mounting, cabling, network setup, and user training. We optimize the screen height, viewing angle, and cable routing to ensure reliable daily use for classrooms, meeting rooms, and training centers."
+              : "ការដំឡើង Interactive Flat Panel ពេញលេញនៅកម្ពុជា រួមមានការស្ទង់ទីតាំង ការដំឡើងម៉ោន ការរៀបខ្សែ ការរៀបចំបណ្តាញ និងការបណ្តុះបណ្តាលអ្នកប្រើ។ យើងធ្វើឱ្យប្រសើរឡើងនូវកម្ពស់អេក្រង់ មុំមើល និងផ្លូវខ្សែ ដើម្បីធានាការប្រើប្រាស់ប្រចាំថ្ងៃដែលទុកចិត្តបាន សម្រាប់ថ្នាក់រៀន បន្ទប់ប្រជុំ និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាល។"}
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <StepCard
               n="01"
-              title="Site survey and room assessment"
-              desc="Measure room size, seating distance, wall strength, and lighting. Confirm the best screen size, mounting height, and cable path."
+              title={lang === "en" ? "Site survey and room assessment" : "ស្ទង់ទីតាំង និងវាយតម្លៃបន្ទប់"}
+              desc={lang === "en"
+                ? "Measure room size, seating distance, wall strength, and lighting. Confirm the best screen size, mounting height, and cable path."
+                : "វាស់ទំហំបន្ទប់ ចម្ងាយអង្គុយ កម្លាំងជញ្ជាំង និងពន្លឺ។ បញ្ជាក់ឱ្យច្បាស់ពីទំហំអេក្រង់សមស្រប កម្ពស់ដំឡើង និងផ្លូវខ្សែ។"}
             />
             <StepCard
               n="02"
-              title="Wall mount or floor stand setup"
-              desc="Install wall brackets or floor stand with safe load rating, correct tilt, and clean finishing for professional presentation spaces."
+              title={lang === "en" ? "Wall mount or floor stand setup" : "ដំឡើង wall mount ឬ floor stand"}
+              desc={lang === "en"
+                ? "Install wall brackets or floor stand with safe load rating, correct tilt, and clean finishing for professional presentation spaces."
+                : "ដំឡើងជើងជញ្ជាំង ឬជើងឈរជាន់ ដោយគោរពសុវត្ថិភាពទម្ងន់ កំណត់មុំឱ្យត្រឹមត្រូវ និងបញ្ចប់ការងារឱ្យស្អាត សម្រាប់កន្លែងបង្ហាញអាជីព។"}
             />
             <StepCard
               n="03"
-              title="Power, network, and OPS setup"
-              desc="Connect power, LAN/Wi-Fi, HDMI/USB-C, and configure Android or OPS/Windows for content sharing and classroom apps."
+              title={lang === "en" ? "Power, network, and OPS setup" : "រៀបចំថាមពល បណ្តាញ និង OPS"}
+              desc={lang === "en"
+                ? "Connect power, LAN/Wi-Fi, HDMI/USB-C, and configure Android or OPS/Windows for content sharing and classroom apps."
+                : "ភ្ជាប់ថាមពល LAN/Wi-Fi HDMI/USB-C និងកំណត់រចនាសម្ព័ន្ធ Android ឬ OPS/Windows សម្រាប់ចែករំលែកមាតិកា និងកម្មវិធីសិក្សា។"}
             />
             <StepCard
               n="04"
-              title="User training and handover"
-              desc="Hands-on training for whiteboard tools, wireless casting, file sharing, and daily maintenance checks for smooth operation."
+              title={lang === "en" ? "User training and handover" : "បណ្តុះបណ្តាលអ្នកប្រើ និងប្រគល់ការងារ"}
+              desc={lang === "en"
+                ? "Hands-on training for whiteboard tools, wireless casting, file sharing, and daily maintenance checks for smooth operation."
+                : "បណ្តុះបណ្តាលជាក់ស្តែងអំពីឧបករណ៍ whiteboard, wireless casting, file sharing និងការត្រួតពិនិត្យថែទាំប្រចាំថ្ងៃ ដើម្បីឱ្យដំណើរការរលូន។"}
             />
           </div>
         </div>
@@ -775,35 +820,61 @@ export default function InteractiveFlatPanelClient() {
       <section id="case-studies" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Interactive Flat Panel Use Cases in Cambodia (Education, Corporate, Healthcare)
+            {lang === "en"
+              ? "Interactive Flat Panel Use Cases in Cambodia (Education, Corporate, Healthcare)"
+              : "ករណីប្រើប្រាស់ Interactive Flat Panel នៅកម្ពុជា (អប់រំ សាជីវកម្ម និងសុខាភិបាល)"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Real-world scenarios where interactive flat panels improve teaching, training,
-            and presentation workflows across Cambodia schools, offices, and hospitals.
+            {lang === "en"
+              ? "Real-world scenarios where interactive flat panels improve teaching, training, and presentation workflows across Cambodia schools, offices, and hospitals."
+              : "ឧទាហរណ៍ការប្រើប្រាស់ជាក់ស្តែង ដែល Interactive Flat Panel ជួយបង្កើនប្រសិទ្ធភាពការបង្រៀន ការបណ្តុះបណ្តាល និងលំហូរការងារបង្ហាញ នៅសាលារៀន ការិយាល័យ និងមន្ទីរពេទ្យទូទាំងកម្ពុជា។"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              [
-                "School Classroom Upgrade",
-                "65-86 inch 4K smart boards with multi-touch writing, annotation, and wireless casting for daily lessons. Supports whiteboard apps, lesson playback, and interactive teaching.",
-                ["Education", "Whiteboard", "4K"],
-              ],
-              [
-                "Corporate Meeting Room",
-                "65-75 inch interactive panels with HDMI/USB-C, LAN/Wi-Fi, and screen sharing for presentations, brainstorming, and hybrid meetings.",
-                ["Meeting", "Wireless", "USB-C"],
-              ],
-              [
-                "Training Center",
-                "75-98 inch panels for clear visibility, multi-user collaboration, and hands-on demonstrations during workshops and onboarding.",
-                ["Training", "Multi-touch", "Large screen"],
-              ],
-              [
-                "Hospital Briefing Room",
-                "65-86 inch panels for clinical training, medical briefings, and patient education with quick annotation and reliable daily use.",
-                ["Healthcare", "Briefing", "Reliable"],
-              ],
-            ].map((item, idx) => {
+            {(lang === "en"
+              ? [
+                  [
+                    "School Classroom Upgrade",
+                    "65-86 inch 4K smart boards with multi-touch writing, annotation, and wireless casting for daily lessons. Supports whiteboard apps, lesson playback, and interactive teaching.",
+                    ["Education", "Whiteboard", "4K"],
+                  ],
+                  [
+                    "Corporate Meeting Room",
+                    "65-75 inch interactive panels with HDMI/USB-C, LAN/Wi-Fi, and screen sharing for presentations, brainstorming, and hybrid meetings.",
+                    ["Meeting", "Wireless", "USB-C"],
+                  ],
+                  [
+                    "Training Center",
+                    "75-98 inch panels for clear visibility, multi-user collaboration, and hands-on demonstrations during workshops and onboarding.",
+                    ["Training", "Multi-touch", "Large screen"],
+                  ],
+                  [
+                    "Hospital Briefing Room",
+                    "65-86 inch panels for clinical training, medical briefings, and patient education with quick annotation and reliable daily use.",
+                    ["Healthcare", "Briefing", "Reliable"],
+                  ],
+                ]
+              : [
+                  [
+                    "ការអាប់ដេតថ្នាក់រៀន",
+                    "Smart board 4K ទំហំ 65-86 inch ជាមួយការសរសេរ multi-touch, annotation និង wireless casting សម្រាប់មេរៀនប្រចាំថ្ងៃ។ គាំទ្រ whiteboard apps, lesson playback និងការបង្រៀនអន្តរកម្ម។",
+                    ["អប់រំ", "Whiteboard", "4K"],
+                  ],
+                  [
+                    "បន្ទប់ប្រជុំក្រុមហ៊ុន",
+                    "Interactive panel ទំហំ 65-75 inch ជាមួយ HDMI/USB-C, LAN/Wi-Fi និង screen sharing សម្រាប់ការបង្ហាញ គំនិតច្នៃប្រឌិត និងកិច្ចប្រជុំ hybrid។",
+                    ["ប្រជុំ", "ឥតខ្សែ", "USB-C"],
+                  ],
+                  [
+                    "មជ្ឈមណ្ឌលបណ្តុះបណ្តាល",
+                    "Panel ទំហំ 75-98 inch សម្រាប់ការមើលឃើញច្បាស់ ការសហការច្រើនអ្នកប្រើ និងការបង្ហាញជាក់ស្តែងពេល workshop និង onboarding។",
+                    ["បណ្តុះបណ្តាល", "Multi-touch", "អេក្រង់ធំ"],
+                  ],
+                  [
+                    "បន្ទប់បង្ហាញព័ត៌មានមន្ទីរពេទ្យ",
+                    "Panel ទំហំ 65-86 inch សម្រាប់បណ្តុះបណ្តាលវេជ្ជសាស្ត្រ ការបង្ហាញព័ត៌មានវេជ្ជសាស្ត្រ និងការអប់រំអ្នកជំងឺ ជាមួយ annotation រហ័ស និងការប្រើប្រាស់ប្រចាំថ្ងៃដែលទុកចិត្តបាន។",
+                    ["សុខាភិបាល", "បង្ហាញព័ត៌មាន", "ទុកចិត្តបាន"],
+                  ],
+                ]).map((item, idx) => {
               const [title, desc, chips] = item as [string, string, string[]];
               return (
               <div
@@ -833,29 +904,45 @@ export default function InteractiveFlatPanelClient() {
       <section id="warranty-support" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            Interactive Flat Panel Warranty, Support & After-Sales Service in Cambodia
+            {lang === "en"
+              ? "Interactive Flat Panel Warranty, Support & After-Sales Service in Cambodia"
+              : "ការធានា ការគាំទ្រ និងសេវាកម្មបន្ទាប់ពីលក់ Interactive Flat Panel នៅកម្ពុជា"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            Our interactive flat panel service in Cambodia covers quotation, delivery,
-            installation, training, and long-term support. We focus on reliable classroom
-            and meeting room operations with clear warranty terms, responsive on-site
-            service, and optional maintenance plans.
+            {lang === "en"
+              ? "Our interactive flat panel service in Cambodia covers quotation, delivery, installation, training, and long-term support. We focus on reliable classroom and meeting room operations with clear warranty terms, responsive on-site service, and optional maintenance plans."
+              : "សេវាកម្ម Interactive Flat Panel របស់យើងនៅកម្ពុជា គ្របដណ្តប់ចាប់ពីការផ្តល់សម្រង់តម្លៃ ការដឹកជញ្ជូន ការដំឡើង ការបណ្តុះបណ្តាល និងការគាំទ្ររយៈពេលវែង។ យើងផ្តោតលើការប្រើប្រាស់ដែលទុកចិត្តបានសម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ ជាមួយលក្ខខណ្ឌធានាច្បាស់លាស់ សេវាកម្ម on-site ឆាប់រហ័ស និងជម្រើសផែនការថែទាំបន្ថែម។"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              [
-                "Warranty Coverage & Documentation",
-                "Warranty depends on the chosen model, configuration, and usage. We provide clear coverage details, warranty duration, and scope during quotation and handover.",
-              ],
-              [
-                "On-site Support & Troubleshooting",
-                "Our team handles installation, calibration, firmware checks, and troubleshooting to keep smart boards stable for daily classroom and office use.",
-              ],
-              [
-                "Maintenance & AMC Plans",
-                "Preventive maintenance, cleaning guidance, and AMC plans are available for schools, universities, and corporate deployments.",
-              ],
-            ].map(([title, desc]) => (
+            {(lang === "en"
+              ? [
+                  [
+                    "Warranty Coverage & Documentation",
+                    "Warranty depends on the chosen model, configuration, and usage. We provide clear coverage details, warranty duration, and scope during quotation and handover.",
+                  ],
+                  [
+                    "On-site Support & Troubleshooting",
+                    "Our team handles installation, calibration, firmware checks, and troubleshooting to keep smart boards stable for daily classroom and office use.",
+                  ],
+                  [
+                    "Maintenance & AMC Plans",
+                    "Preventive maintenance, cleaning guidance, and AMC plans are available for schools, universities, and corporate deployments.",
+                  ],
+                ]
+              : [
+                  [
+                    "វិសាលភាពធានា និងឯកសារ",
+                    "ការធានាអាស្រ័យលើម៉ូដែល ការកំណត់រចនាសម្ព័ន្ធ និងការប្រើប្រាស់ដែលបានជ្រើស។ យើងផ្តល់ព័ត៌មានលម្អិតអំពីវិសាលភាពធានា រយៈពេលធានា និងលក្ខខណ្ឌពាក់ព័ន្ធយ៉ាងច្បាស់ នៅពេលផ្តល់តម្លៃ និងពេលប្រគល់ការងារ។",
+                  ],
+                  [
+                    "ការគាំទ្រ On-site និងដោះស្រាយបញ្ហា",
+                    "ក្រុមការងារយើងអនុវត្តការដំឡើង ការកែតម្រូវ calibration ការត្រួតពិនិត្យ firmware និងការដោះស្រាយបញ្ហា ដើម្បីរក្សាឱ្យ smart board មានស្ថិរភាពសម្រាប់ការប្រើប្រាស់ប្រចាំថ្ងៃនៅថ្នាក់រៀន និងការិយាល័យ។",
+                  ],
+                  [
+                    "ផែនការថែទាំ និង AMC",
+                    "សេវាថែទាំបង្ការ ការណែនាំសម្អាត និងផែនការ AMC មានសម្រាប់សាលារៀន សាកលវិទ្យាល័យ និងការដំឡើងក្នុងស្ថាប័នអាជីវកម្ម។",
+                  ],
+                ]).map(([title, desc]) => (
               <div
                 key={title}
                 className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
@@ -945,7 +1032,6 @@ function StepCard({
     </div>
   );
 }
-
 
 
 

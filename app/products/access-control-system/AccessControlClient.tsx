@@ -259,41 +259,41 @@ export default function AccessControlClient() {
       qEn: "Which access control method is best for offices?",
       aEn:
         "RFID cards or PIN access are cost-effective and easy to manage. For higher security, fingerprint or face recognition can be added.",
-      qKm: "Which access control method is best for offices?",
+      qKm: "សម្រាប់ office តើ access control method មួយណាល្អជាងគេ?",
       aKm:
-        "RFID cards or PIN access are cost-effective and easy to manage. For higher security, fingerprint or face recognition can be added.",
+        "RFID card ឬ PIN access គឺសន្សំសំចៃ និងងាយគ្រប់គ្រង។ បើត្រូវការសុវត្ថិភាពខ្ពស់ អាចបន្ថែម fingerprint ឬ face recognition បាន។",
     },
     {
       qEn: "Can access control integrate with attendance?",
       aEn:
         "Yes. Many controllers and terminals support attendance logs and reporting for HR systems.",
-      qKm: "Can access control integrate with attendance?",
+      qKm: "Access Control អាច integrate ជាមួយ attendance បានទេ?",
       aKm:
-        "Yes. Many controllers and terminals support attendance logs and reporting for HR systems.",
+        "បាន។ Controller និង terminal ជាច្រើនគាំទ្រ attendance log និង reporting សម្រាប់ HR system។",
     },
     {
       qEn: "Do you install access control systems in Cambodia?",
       aEn:
         "Yes. We provide site survey, wiring, device installation, configuration, and after-sales support nationwide.",
-      qKm: "Do you install access control systems in Cambodia?",
+      qKm: "តើអ្នកដំឡើង Access Control System នៅកម្ពុជាដែរឬទេ?",
       aKm:
-        "Yes. We provide site survey, wiring, device installation, configuration, and after-sales support nationwide.",
+        "បាទ/ចាស។ យើងផ្តល់សេវា site survey, wiring, device installation, configuration និង after-sales support ទូទាំងប្រទេស។",
     },
     {
       qEn: "What information is needed for a quotation?",
       aEn:
         "Door count, door type (glass/wood/metal), access method preference, and whether you need online reporting.",
-      qKm: "What information is needed for a quotation?",
+      qKm: "តើត្រូវផ្តល់ព័ត៌មានអ្វីខ្លះសម្រាប់ស្នើសុំ quotation?",
       aKm:
-        "Door count, door type (glass/wood/metal), access method preference, and whether you need online reporting.",
+        "ត្រូវផ្តល់ចំនួនទ្វារ, ប្រភេទទ្វារ (glass/wood/metal), access method preference និងតម្រូវការប្រើ online reporting។",
     },
     {
       qEn: "Can access control work with turnstiles or gates?",
       aEn:
         "Yes. Access control systems can be integrated with turnstile gates and speed gates for secure entry flow.",
-      qKm: "Can access control work with turnstiles or gates?",
+      qKm: "Access Control អាចដំណើរការជាមួយ Turnstile ឬ Gate បានទេ?",
       aKm:
-        "Yes. Access control systems can be integrated with turnstile gates and speed gates for secure entry flow.",
+        "បាន។ Access control system អាច integrate ជាមួយ turnstile gate និង speed gate ដើម្បីគ្រប់គ្រងលំហូរចូលឲ្យមានសុវត្ថិភាព។",
     },
   ];
 

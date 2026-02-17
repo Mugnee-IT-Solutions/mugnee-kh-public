@@ -105,6 +105,98 @@ export default function VideoProcessorPage() {
           </div>
         </section>
       }
+      pixelPitchSectionOverrideKm={
+        <section className="border-t border-slate-200 bg-white">
+          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              មូលដ្ឋានសំខាន់ៗអំពី LED Video Processor សម្រាប់គម្រោងនៅកម្ពុជា
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              Video processor គឺជា control hub សម្រាប់ប្ដូរ input, scaling មាតិកា
+              និង map output ទៅប្រព័ន្ធ LED sending/receiving។ វាគ្រប់គ្រងប្រភព
+              multi-input (HDMI/DVI/VGA/USB និង DP/SDI លើម៉ូដែលខ្លះ) ហើយបញ្ចេញតាម
+              Gigabit ports ទៅ LED cabinet ដើម្បីឱ្យការចាក់បង្ហាញមានស្ថិរភាព
+              និងសមកាលកម្ម។
+            </p>
+
+            <div className="mt-6 grid gap-4 lg:grid-cols-3">
+              {[
+                [
+                  "ការប្ដូរ Multi-Input",
+                  "Input ទូទៅរួមមាន HDMI, DVI, VGA និង USB playback ហើយម៉ូដែលខ្លះមាន DP ឬ SDI បន្ថែម។ វាជួយឱ្យការប្ដូររវាង laptop, media player និង live feed រលូន។",
+                ],
+                [
+                  "Scaling និងការគ្រប់គ្រងរូបភាព",
+                  "Scaling, cropping និង seamless switching ជួយរក្សាមាតិកាឱ្យច្បាស់ និងសមទ្រង់ទ្រាយសម្រាប់ LED cabinet។ Scene preset ជួយឱ្យ operator ហៅ layout បានលឿនពេលកម្មវិធីបន្តផ្ទាល់។",
+                ],
+                [
+                  "Output និងសមត្ថភាពផ្ទុក",
+                  "Gigabit network output អាចភ្ជាប់ផ្ទាល់ទៅ sending/receiving card។ Processor កម្រិតខ្ពស់អាចគាំទ្រ pixel load ធំ និង layout ច្រើនបង្អួច សម្រាប់ LED wall ទំហំធំ។",
+                ],
+              ].map(([t, d]) => (
+                <div
+                  key={t}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
+                >
+                  <div className="text-sm font-semibold text-slate-900">{t}</div>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{d}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                <h3 className="text-sm font-semibold text-slate-900">
+                  ចំណុចត្រូវពិនិត្យមុនពេលជ្រើស Video Processor
+                </h3>
+                <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                  {[
+                    "ប្រភេទ input ដែលអ្នកត្រូវការ (HDMI/DVI/VGA/USB; DP/SDI ពេលចាំបាច់)",
+                    "កម្រិត pixel load អតិបរមា និង output width/height សម្រាប់ LED wall",
+                    "ចំនួន Gigabit output សម្រាប់ layout របស់ cabinet",
+                    "Scene preset និងការគាំទ្រ multi-window សម្រាប់ live switching",
+                    "វិធីគ្រប់គ្រង: front panel, Wi-Fi app, RS232 ឬ remote",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm">
+                <h3 className="text-sm font-semibold text-slate-900">
+                  មុខងារទូទៅដែលអ្នកនឹងឃើញ
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  Huidu processor ជាច្រើនមាន USB playback, seamless switching,
+                  scaling/cropping និង scene memory។ ម៉ូដែលខ្ពស់អាចគាំទ្ររហូតដល់
+                  5.2M pixels ជាមួយ 8 Gigabit outputs និងការគ្រប់គ្រងតាម Wi-Fi/APP
+                  និង RS232។
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-700">
+                  {[
+                    "Multi-input",
+                    "Scaling",
+                    "Scene presets",
+                    "Wi-Fi control",
+                    "RS232",
+                    "Gigabit outputs",
+                  ].map((c) => (
+                    <span
+                      key={c}
+                      className="rounded-full border border-slate-200 bg-white px-2.5 py-1"
+                    >
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      }
       productGridOverride={{
         columns: 3,
         pageSize: 9,

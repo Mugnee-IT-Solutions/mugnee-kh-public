@@ -48,7 +48,14 @@ function getTags(product: Product, lang: "en" | "km") {
   return product.tagsKm.map((tag, i) => sanitizeKhmer(tag, product.tagsEn[i] || tag));
 }
 
-const MOJIBAKE_RE = /Ã|Â|â|ƒ|�/;
+const CATEGORY_LABEL_KM_FALLBACK: Record<string, string> = {
+  indoor_led_display: "អេក្រង់ LED ក្នុងអគារ",
+  outdoor_led_display: "ប៊ីលបត្រ LED ខាងក្រៅ",
+  rental_led_display: "ជញ្ជាំង LED សម្រាប់ជួល",
+  led_accessories: "គ្រឿងបន្លាស់ LED និងផ្នែក",
+};
+
+const MOJIBAKE_RE = /Ã|Â|â|ƒ|\uFFFD/;
 
 function decodeLatin1AsUtf8(str: string) {
   const bytes = Uint8Array.from(Array.from(str).map((ch) => ch.charCodeAt(0) & 0xff));
@@ -77,6 +84,16 @@ function sanitizeKhmer(value: string, fallback: string) {
   if (!repaired) return fallback;
   if (MOJIBAKE_RE.test(repaired)) return fallback;
   return repaired;
+}
+
+function getCategoryLabel(
+  category: { id: string; labelEn: string; labelKm: string },
+  lang: "en" | "km"
+) {
+  if (lang === "en") return category.labelEn;
+  const repaired = sanitizeKhmer(category.labelKm, category.labelEn);
+  if (repaired !== category.labelEn) return repaired;
+  return CATEGORY_LABEL_KM_FALLBACK[category.id] || category.labelEn;
 }
 
 export default function ProductGrid({
@@ -214,7 +231,7 @@ export default function ProductGrid({
                     : "border-slate-200 bg-white text-slate-700 hover:border-slate-300",
                 ].join(" ")}
               >
-                {lang === "en" ? cat.labelEn : sanitizeKhmer(cat.labelKm, cat.labelEn)}
+                {getCategoryLabel(cat, lang)}
               </button>
             ))}
           </div>

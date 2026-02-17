@@ -104,12 +104,28 @@ export default function OutdoorLedDisplayPage() {
     { title: "Project References", href: "/projects" },
     { title: "Request Outdoor LED Quotation", href: "/contact" },
   ];
+  const outdoorClusterKm = [
+    { title: "ទំព័រ LED Display មេ", href: "/led-display" },
+    { title: "អេក្រង់ LED ក្នុងអគារ នៅកម្ពុជា", href: "/led-display/indoor-led-display" },
+    { title: "កាតាឡុកផលិតផល LED ខាងក្រៅ", href: "/products/catalog/outdoor-led-display" },
+    { title: "មគ្គុទ្ទេសក៍ LED Video Processor", href: "/led-display/video-processor" },
+    { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស", href: "/service" },
+    { title: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា", href: "/solutions" },
+    { title: "គម្រោងយោង", href: "/projects" },
+    { title: "ស្នើសុំតម្លៃអេក្រង់ LED ខាងក្រៅ", href: "/contact" },
+  ];
 
   const outdoorTrustSignals = [
     "Outdoor-specific FAQ structured data and entity signals applied",
     "IP protection, brightness, and structure safety planning workflow",
     "Local commissioning and support coverage across key Cambodia cities",
     "Roadside billboard, facade, and public-display deployment focus",
+  ];
+  const outdoorTrustSignalsKm = [
+    "បានអនុវត្តទិន្នន័យ FAQ សម្រាប់ outdoor និងសញ្ញា entity",
+    "លំហូរការងាររៀបចំ IP protection, brightness និងសុវត្ថិភាពរចនាសម្ព័ន្ធ",
+    "គ្របដណ្តប់ commissioning និងការគាំទ្រក្នុងស្រុកតាមទីក្រុងសំខាន់ៗនៅកម្ពុជា",
+    "ផ្តោតលើការដំឡើងប៊ីលបត្រតាមដងផ្លូវ អេក្រង់ facade និងផ្ទាំងបង្ហាញសាធារណៈ",
   ];
 
   return (
@@ -122,18 +138,26 @@ export default function OutdoorLedDisplayPage() {
       productQuickChips={productQuickChips}
       faqItemsOverride={outdoorFaq}
       internalLinkClusterOverride={outdoorCluster}
+      internalLinkClusterOverrideKm={outdoorClusterKm}
       trustSignalsOverride={outdoorTrustSignals}
+      trustSignalsOverrideKm={outdoorTrustSignalsKm}
       trustTitleOverride="Trust & Delivery Signals for Outdoor LED Projects in Cambodia"
+      trustTitleOverrideKm="សញ្ញានៃភាពទុកចិត្ត និងការផ្តល់ជូនសម្រាប់គម្រោង Outdoor LED នៅកម្ពុជា"
       trustDescOverride="This outdoor LED page is optimized for billboard and facade deployment intent with structured FAQ, local support proof, and clear parent-child internal linking."
+      trustDescOverrideKm="ទំព័រ outdoor LED នេះត្រូវបានបង្កើនប្រសិទ្ធភាពសម្រាប់ប៊ីលបត្រ និងការដំឡើងលើ facade ដោយមាន FAQ រៀបចំរចនាសម្ព័ន្ធ ភស្តុតាងគាំទ្រក្នុងស្រុក និងតំណភ្ជាប់ parent-child ច្បាស់លាស់។"
       internalLinkTitleOverride="Outdoor LED Internal Linking Cluster"
+      internalLinkTitleOverrideKm="តំណភ្ជាប់ខាងក្នុងសម្រាប់ Outdoor LED"
       internalLinkDescOverride="Navigate outdoor buying paths by billboard type, technical components, related pages, and quotation routes."
+      internalLinkDescOverrideKm="សូមរុករកផ្លូវសម្រេចចិត្តទិញអេក្រង់ LED ខាងក្រៅ តាមប្រភេទប៊ីលបត្រ ផ្នែកបច្ចេកទេស ទំព័រពាក់ព័ន្ធ និងការស្នើសុំតម្លៃ។"
       schemaPathOverride="/led-display/outdoor-led-display"
       schemaNameOverride="Outdoor LED Display"
       schemaServiceNameOverride="Outdoor LED Display in Cambodia"
       schemaServiceDescOverride="Outdoor LED billboard and digital signage solutions in Cambodia with structure design, installation, commissioning, and after-sales support."
       breadcrumbOverride="Outdoor LED Display"
       heroTitleOverride="Outdoor LED Display in Cambodia"
+      heroTitleOverrideKm="អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា"
       heroIntroOverride="Mugnee delivers outdoor LED display solutions in Cambodia for roadside billboards, facade screens, and public digital signage. We handle site survey, brightness and pixel-pitch planning, structure safety, installation, commissioning, and local support."
+      heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ខាងក្រៅនៅកម្ពុជា សម្រាប់ប៊ីលបត្រ​តាមដងផ្លូវ អេក្រង់ facade និងផ្ទាំងផ្សព្វផ្សាយឌីជីថលសាធារណៈ។ យើងផ្តល់សេវា site survey ការរៀបចំ brightness និង pixel pitch សុវត្ថិភាពរចនាសម្ព័ន្ធ ការដំឡើង ការធ្វើ commissioning និងការគាំទ្រក្នុងស្រុក។"
       afterSpecsContent={
         <section className="border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -194,6 +218,64 @@ export default function OutdoorLedDisplayPage() {
           </div>
         </section>
       }
+      afterSpecsContentKm={
+        <section className="border-t border-slate-200 bg-white">
+          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              ប្រភេទអេក្រង់ LED ខាងក្រៅ
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              អេក្រង់ LED ខាងក្រៅត្រូវបានជ្រើសរើសតាមកម្រិតពន្លឺ ការការពារ IP ចម្ងាយមើល និងសុវត្ថិភាពរចនាសម្ព័ន្ធ។
+              ប្រភេទខាងក្រោមគឺជាប្រភេទបន្ទះ outdoor ដែលពេញនិយមបំផុត សម្រាប់ផ្លូវធំ ដំបូលអគារ និងកន្លែងព័ត៌មានសាធារណៈនៅកម្ពុជា។
+            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                [
+                  "Fixed Outdoor Billboard LED",
+                  "បន្ទះដែលមានកម្រិតពន្លឺខ្ពស់ និងការពារអាកាសធាតុ សម្រាប់ដំណើរការ 24/7 លើប៊ីលបត្រតាមដងផ្លូវ និងលើដំបូល។ Cabinet រឹងមាំ និងប្រព័ន្ធត្រជាក់ស្ថិរភាព ជួយបង្កើនអាយុកាលប្រើប្រាស់។",
+                  ["P6 ដល់ P10", "IP65+", "ពន្លឺខ្ពស់"],
+                ],
+                [
+                  "Fine-Pitch Outdoor LED",
+                  "បន្ទះ outdoor fine-pitch ផ្តល់រូបភាពច្បាស់សម្រាប់ការមើលជិតនៅទីលានមុខហាង និងមជ្ឈមណ្ឌលធ្វើដំណើរ។ វាត្រូវការកម្រិតពន្លឺខ្ពស់ និងការកែតម្រូវត្រឹមត្រូវ។",
+                  ["P2.5 ដល់ P5", "មើលជិត", "ភាពច្បាស់ខ្ពស់"],
+                ],
+                [
+                  "Front-Service Outdoor LED",
+                  "Cabinet ប្រភេទ front-service ងាយស្រួលថែទាំ សម្រាប់ការដំឡើងជាប់ជញ្ជាំង ឬទីតាំងពិបាកចូលដល់។ សមស្របសម្រាប់អេក្រង់ facade និងកន្លែងតូចចង្អៀត។",
+                  ["ថែទាំពីមុខ", "ដំឡើងលើ facade", "ពេលឈប់ដំណើរការតិច"],
+                ],
+                [
+                  "Rental Outdoor LED",
+                  "បន្ទះ rental ដែលត្រៀមរួចសម្រាប់អាកាសធាតុខាងក្រៅ សម្រាប់កម្មវិធី និងឆាកក្រៅអគារ ដោយផ្តោតលើការដំឡើងលឿន ការភ្ជាប់ម៉ូឌុល និងសុវត្ថិភាពខ្សែភ្លើង។",
+                  ["ដំឡើងលឿន", "រឹងមាំ", "សមស្របសម្រាប់កម្មវិធី"],
+                ],
+              ].map((item, idx) => {
+                const [t, d, chips] = item as [string, string, string[]];
+                return (
+                <div
+                  key={`${t}-${idx}`}
+                  className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
+                >
+                  <div className="text-sm font-semibold text-slate-900">{t}</div>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600">{d}</p>
+                  <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-700">
+                    {chips.map((c, chipIdx) => (
+                      <span
+                        key={`${t}-${c}-${chipIdx}`}
+                        className="rounded-full border border-slate-200 bg-white px-2.5 py-1"
+                      >
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      }
       pixelPitchIntroOverride="Outdoor LED screens must match viewing distance, sunlight level, and IP protection. Use this outdoor-focused guide for Cambodia installations."
       pixelPitchRowsOverride={[
         [
@@ -217,6 +299,58 @@ export default function OutdoorLedDisplayPage() {
           "Large-format roadside and open areas",
         ],
       ]}
+      pixelPitchSectionOverrideKm={
+        <section className="border-t border-slate-200 bg-white">
+          <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              មគ្គុទ្ទេសក៍ Pixel Pitch និងចម្ងាយមើល
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">
+              អេក្រង់ LED ខាងក្រៅត្រូវតែសមស្របនឹងចម្ងាយមើល កម្រិតពន្លឺថ្ងៃ
+              និងការការពារ IP។ សូមប្រើមគ្គុទ្ទេសក៍នេះ
+              ជាចំណុចចាប់ផ្តើមសម្រាប់ការដំឡើងនៅកម្ពុជា។
+            </p>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+              <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
+                <div className="p-3">Pixel Pitch</div>
+                <div className="p-3">ចម្ងាយមើលល្អបំផុត</div>
+                <div className="p-3">ការប្រើប្រាស់ទូទៅ</div>
+              </div>
+              {[
+                [
+                  "P2.5-P3.9 (Outdoor fine-pitch)",
+                  "3-8 m",
+                  "មុខហាង ទីលានសាធារណៈ និងមជ្ឈមណ្ឌលដឹកជញ្ជូន",
+                ],
+                [
+                  "P4-P6 (Mainstream outdoor)",
+                  "6-15 m",
+                  "ប៊ីលបត្រតាមដងផ្លូវ និងផ្ទាំងផ្សព្វផ្សាយក្នុងទីក្រុង",
+                ],
+                [
+                  "P8-P10 (Long-distance)",
+                  "12-30 m",
+                  "ប៊ីលបត្រផ្លូវល្បឿនលឿន និងដំបូលអគារធំ",
+                ],
+                [
+                  "P10+ (Ultra long-distance)",
+                  "20 m+",
+                  "ផ្ទាំងទ្រង់ទ្រាយធំតាមដងផ្លូវ និងតំបន់បើកចំហ",
+                ],
+              ].map((row) => (
+                <div
+                  key={row[0]}
+                  className="grid grid-cols-1 border-t border-slate-200 text-sm text-slate-700 sm:grid-cols-3"
+                >
+                  <div className="p-3 font-semibold text-slate-900">{row[0]}</div>
+                  <div className="p-3">{row[1]}</div>
+                  <div className="p-3">{row[2]}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      }
       productGridOverride={{
         columns: 3,
         pageSize: 9,

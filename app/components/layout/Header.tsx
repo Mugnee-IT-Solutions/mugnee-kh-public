@@ -1,14 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useLang } from "./LanguageProvider";
 
 type NavItem = { labelEn: string; labelKm: string; href: string };
 
 export default function SiteHeader() {
   const { lang, setLang } = useLang();
+  const router = useRouter();
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement | null>(null);
   const [openMobile, setOpenMobile] = useState(false);
@@ -46,14 +48,13 @@ export default function SiteHeader() {
       quote: "Get a Free Quotation",
       close: "Close",
       menu: "Menu",
-      searchPlaceholder: "Search products, solutions…",
+      searchPlaceholder: "Search products, solutions...",
       searchAria: "Search",
       go: "Search",
       ledDisplay: "LED Display",
       indoorLed: "Indoor LED Display",
       outdoorLed: "Outdoor LED Display",
       ifp: "Interactive Flat Panel",
-      ledController: "LED Controller",
       paSystem: "PA System",
       turnstile: "Turnstile Gate",
     };
@@ -63,41 +64,51 @@ export default function SiteHeader() {
       service: "សេវាកម្ម & គាំទ្រ",
       projects: "គម្រោង",
       about: "អំពីយើង",
-      contact: "ទំនាក់ទំនង",
+      contact: "ទាក់ទងយើង",
       quote: "ស្នើសុំតម្លៃ (Free)",
       close: "បិទ",
-      menu: "មឺនុយ",
-      searchPlaceholder: "ស្វែងរកផលិតផល/ដំណោះស្រាយ…",
+      menu: "ម៉ឺនុយ",
+      searchPlaceholder: "ស្វែងរកផលិតផល/ដំណោះស្រាយ...",
       searchAria: "ស្វែងរក",
-      go: "Search",
+      go: "ស្វែងរក",
       ledDisplay: "អេក្រង់ LED",
       indoorLed: "អេក្រង់ LED ក្នុងអគារ",
       outdoorLed: "អេក្រង់ LED ក្រៅអគារ",
       ifp: "អេក្រង់អន្តរកម្ម (IFP)",
-      ledController: "LED Controller",
       paSystem: "ប្រព័ន្ធ PA",
-      turnstile: "Turnstile Gate",
+      turnstile: "ច្រកទ្វារ Turnstile",
     };
     return lang === "en" ? en : km;
   }, [lang]);
-  const products: NavItem[] = [
-    { labelEn: "Indoor LED Display", labelKm: "Indoor LED Display", href: "/led-display/indoor-led-display" },
-    { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
-    { labelEn: "LED Controller / Processor", labelKm: "Controller / Processor", href: "/products/led-controller" },
-    { labelEn: "Interactive Flat Panel (IFP)", labelKm: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
-    { labelEn: "Turnstile Gate", labelKm: "Turnstile Gate", href: "/turnstile-gate" },
-    { labelEn: "PA System", labelKm: "ប្រព័ន្ធ PA", href: "/pa-system" },
-  ];
 
   const ledDisplayMenu: NavItem[] = [
-    { labelEn: "Indoor LED Display", labelKm: "Indoor LED Display", href: "/led-display/indoor-led-display" },
-    { labelEn: "Outdoor LED Display", labelKm: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
-    { labelEn: "Receiving Card", labelKm: "Receiving Card", href: "/led-display/receiving-card" },
-    { labelEn: "Video Processor", labelKm: "Video Processor", href: "/led-display/video-processor" },
-    { labelEn: "Power Supply", labelKm: "Power Supply", href: "/led-display/power-supply" },
+    {
+      labelEn: "Indoor LED Display",
+      labelKm: "អេក្រង់ LED ក្នុងអគារ",
+      href: "/led-display/indoor-led-display",
+    },
+    {
+      labelEn: "Outdoor LED Display",
+      labelKm: "អេក្រង់ LED ក្រៅអគារ",
+      href: "/led-display/outdoor-led-display",
+    },
+    {
+      labelEn: "Receiving Card",
+      labelKm: "កាតទទួលសញ្ញា",
+      href: "/led-display/receiving-card",
+    },
+    {
+      labelEn: "Video Processor",
+      labelKm: "ឧបករណ៍ដំណើរការវីដេអូ",
+      href: "/led-display/video-processor",
+    },
+    {
+      labelEn: "Power Supply",
+      labelKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
+      href: "/led-display/power-supply",
+    },
   ];
 
-  // ✅ Parent page mapping (IMPORTANT FIX)
   const parentHrefById: Record<string, string> = {
     ledDisplay: "/led-display",
     solutions: "/solutions",
@@ -140,7 +151,6 @@ export default function SiteHeader() {
         onMouseEnter={() => setOpenMenu(id)}
         onMouseLeave={() => setOpenMenu(null)}
       >
-        {/* Trigger */}
         <div
           className={[
             "inline-flex items-center overflow-hidden rounded-xl",
@@ -148,7 +158,6 @@ export default function SiteHeader() {
             isOpen || isActive ? "bg-white/10" : "hover:bg-white/10",
           ].join(" ")}
         >
-          {/* ✅ Click = go to parent page */}
           <Link
             href={parentHref}
             className={desktopNavLinkClass(isActive)}
@@ -160,7 +169,6 @@ export default function SiteHeader() {
             {title}
           </Link>
 
-          {/* ✅ caret only = open/close dropdown */}
           <button
             type="button"
             className={[
@@ -189,10 +197,8 @@ export default function SiteHeader() {
           </button>
         </div>
 
-        {/* Dropdown panel */}
         {isOpen ? (
           <div role="menu" className={["absolute z-50", "top-full mt-2", panelPos].join(" ")}>
-            {/* Hover bridge */}
             <div className="absolute -top-2 left-0 right-0 h-2" />
 
             <div
@@ -248,22 +254,38 @@ export default function SiteHeader() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   };
 
+  const applyLangToUrl = (nextLang: "en" | "km") => {
+    const params = new URLSearchParams(window.location.search);
+    if (nextLang === "km") params.set("lang", "km");
+    else params.delete("lang");
+    const qs = params.toString();
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  };
+
+  const handleLanguageChange = (nextLang: "en" | "km") => {
+    setLang(nextLang);
+    applyLangToUrl(nextLang);
+  };
+
   return (
     <header ref={headerRef} className="fixed top-0 z-50 w-full">
-      {/* TOP BAR */}
       <div className="border-b border-slate-200 bg-white/90 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8 py-3">
-          {/* Logo + Name */}
-          <Link href="/" onClick={forceScrollTop} className="flex shrink-0 items-center gap-2 font-semibold text-slate-900">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-white">
-              M
-            </span>
-            <span className="leading-tight">
-              Mugnee <span className="text-slate-500">Cambodia</span>
-            </span>
+        <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            onClick={forceScrollTop}
+            className="flex shrink-0 items-center gap-2 font-semibold text-slate-900"
+          >
+            <Image
+              src="/images/logo.png"
+              alt="Mugnee Cambodia"
+              width={210}
+              height={64}
+              priority
+              className="h-9 w-auto"
+            />
           </Link>
 
-          {/* Search (Desktop) */}
           <form onSubmit={onSearch} className="hidden flex-1 lg:block">
             <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
@@ -282,15 +304,13 @@ export default function SiteHeader() {
             </div>
           </form>
 
-          {/* Right actions */}
           <div className="ml-auto flex items-center gap-2">
-            {/* Language toggle */}
             <div className="hidden items-center rounded-xl border border-slate-200 bg-white p-1 sm:inline-flex">
               <button
                 className={`rounded-lg px-3 py-1 text-xs font-semibold ${
                   lang === "en" ? "bg-slate-900 text-white" : "text-slate-700 hover:bg-slate-100"
                 }`}
-                onClick={() => setLang("en")}
+                onClick={() => handleLanguageChange("en")}
                 type="button"
                 aria-label="Switch to English"
               >
@@ -301,7 +321,7 @@ export default function SiteHeader() {
                 className={`rounded-lg px-3 py-1 text-xs font-semibold ${
                   lang === "km" ? "bg-slate-900 text-white" : "text-slate-700 hover:bg-slate-100"
                 }`}
-                onClick={() => setLang("km")}
+                onClick={() => handleLanguageChange("km")}
                 type="button"
                 aria-label="Switch to Khmer"
               >
@@ -309,7 +329,6 @@ export default function SiteHeader() {
               </button>
             </div>
 
-            {/* CTA */}
             <Link
               href="/contact"
               onClick={forceScrollTop}
@@ -318,7 +337,6 @@ export default function SiteHeader() {
               {t.quote}
             </Link>
 
-            {/* Mobile menu btn */}
             <button
               type="button"
               className="inline-flex rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-50 lg:hidden"
@@ -330,8 +348,7 @@ export default function SiteHeader() {
           </div>
         </div>
 
-        {/* Search (Mobile/Tablet) */}
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-3 lg:hidden">
+        <div className="mx-auto w-full max-w-7xl px-4 pb-3 sm:px-6 lg:hidden lg:px-8">
           <form onSubmit={onSearch}>
             <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
@@ -349,14 +366,13 @@ export default function SiteHeader() {
               </button>
             </div>
 
-            {/* Mobile language toggle */}
             <div className="mt-2 flex items-center justify-between sm:hidden">
               <div className="inline-flex items-center rounded-xl border border-slate-200 bg-white p-1">
                 <button
                   className={`rounded-lg px-3 py-1 text-xs font-semibold ${
                     lang === "en" ? "bg-slate-900 text-white" : "text-slate-700 hover:bg-slate-100"
                   }`}
-                  onClick={() => setLang("en")}
+                  onClick={() => handleLanguageChange("en")}
                   type="button"
                 >
                   English
@@ -365,7 +381,7 @@ export default function SiteHeader() {
                   className={`rounded-lg px-3 py-1 text-xs font-semibold ${
                     lang === "km" ? "bg-slate-900 text-white" : "text-slate-700 hover:bg-slate-100"
                   }`}
-                  onClick={() => setLang("km")}
+                  onClick={() => handleLanguageChange("km")}
                   type="button"
                 >
                   ខ្មែរ
@@ -384,10 +400,12 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* MENU BAR */}
       <div className="border-b border-slate-900/10 bg-slate-900">
-        <div className="mx-auto flex w-full max-w-7xl items-center px-4 sm:px-6 lg:px-8 py-2">
-          <nav className="hidden w-full items-center justify-between lg:flex flex-nowrap whitespace-nowrap" aria-label="Primary">
+        <div className="mx-auto flex w-full max-w-7xl items-center px-4 py-2 sm:px-6 lg:px-8">
+          <nav
+            className="hidden w-full items-center justify-between whitespace-nowrap lg:flex"
+            aria-label="Primary"
+          >
             <Dropdown id="ledDisplay" title={t.ledDisplay} items={ledDisplayMenu} />
 
             <Link
@@ -404,7 +422,6 @@ export default function SiteHeader() {
             >
               {t.paSystem}
             </Link>
-
             <Link
               href="/turnstile-gate"
               onClick={forceScrollTop}
@@ -412,7 +429,6 @@ export default function SiteHeader() {
             >
               {t.turnstile}
             </Link>
-
             <Link
               href="/solutions"
               onClick={forceScrollTop}
@@ -420,13 +436,25 @@ export default function SiteHeader() {
             >
               {t.solutions}
             </Link>
-            <Link href="/service" onClick={forceScrollTop} className={desktopNavLinkClass(isPathActive("/service"))}>
+            <Link
+              href="/service"
+              onClick={forceScrollTop}
+              className={desktopNavLinkClass(isPathActive("/service"))}
+            >
               {t.service}
             </Link>
-            <Link href="/about" onClick={forceScrollTop} className={desktopNavLinkClass(isPathActive("/about"))}>
+            <Link
+              href="/about"
+              onClick={forceScrollTop}
+              className={desktopNavLinkClass(isPathActive("/about"))}
+            >
               {t.about}
             </Link>
-            <Link href="/contact" onClick={forceScrollTop} className={desktopNavLinkClass(isPathActive("/contact"))}>
+            <Link
+              href="/contact"
+              onClick={forceScrollTop}
+              className={desktopNavLinkClass(isPathActive("/contact"))}
+            >
               {t.contact}
             </Link>
           </nav>
@@ -438,57 +466,144 @@ export default function SiteHeader() {
           </div>
         </div>
 
-        {/* Mobile panel */}
         {openMobile ? (
           <div className="border-t border-white/10 bg-slate-900 lg:hidden">
-            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
+            <div className="mx-auto w-full max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
               <div className="grid gap-2">
                 <div className="mt-1">
                   <p className="px-3 pb-1 text-xs font-semibold text-white/70">{t.ledDisplay}</p>
                   <div className="grid gap-1">
-                    <Link href="/led-display/indoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                    <Link
+                      href="/led-display/indoor-led-display"
+                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      onClick={() => {
+                        forceScrollTop();
+                        setOpenMobile(false);
+                      }}
+                    >
                       {t.indoorLed}
                     </Link>
-                    <Link href="/led-display/outdoor-led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                    <Link
+                      href="/led-display/outdoor-led-display"
+                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      onClick={() => {
+                        forceScrollTop();
+                        setOpenMobile(false);
+                      }}
+                    >
                       {t.outdoorLed}
                     </Link>
-                    {/* ✅ LED Display parent page */}
-                    <Link href="/led-display" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
-                      {lang === "en" ? "All LED Display" : "LED ទាំងអស់"}
+                    <Link
+                      href="/led-display"
+                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      onClick={() => {
+                        forceScrollTop();
+                        setOpenMobile(false);
+                      }}
+                    >
+                      {lang === "en" ? "All LED Display" : "មើល LED Display ទាំងអស់"}
                     </Link>
-                    <Link href="/led-display/receiving-card" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
-                      {lang === "en" ? "Receiving Card" : "Receiving Card"}
+                    <Link
+                      href="/led-display/receiving-card"
+                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      onClick={() => {
+                        forceScrollTop();
+                        setOpenMobile(false);
+                      }}
+                    >
+                      {lang === "en" ? "Receiving Card" : "កាតទទួលសញ្ញា"}
                     </Link>
-                    <Link href="/led-display/video-processor" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
-                      {lang === "en" ? "Video Processor" : "Video Processor"}
+                    <Link
+                      href="/led-display/video-processor"
+                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      onClick={() => {
+                        forceScrollTop();
+                        setOpenMobile(false);
+                      }}
+                    >
+                      {lang === "en" ? "Video Processor" : "ឧបករណ៍ដំណើរការវីដេអូ"}
                     </Link>
-                    <Link href="/led-display/power-supply" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
-                      {lang === "en" ? "Power Supply" : "Power Supply"}
+                    <Link
+                      href="/led-display/power-supply"
+                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      onClick={() => {
+                        forceScrollTop();
+                        setOpenMobile(false);
+                      }}
+                    >
+                      {lang === "en" ? "Power Supply" : "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល"}
                     </Link>
                   </div>
                 </div>
 
-                <Link href="/interactive-flat-panel" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                <Link
+                  href="/interactive-flat-panel"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMobile(false);
+                  }}
+                >
                   {t.ifp}
                 </Link>
-                <Link href="/pa-system" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                <Link
+                  href="/pa-system"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMobile(false);
+                  }}
+                >
                   {t.paSystem}
                 </Link>
-
-                <Link href="/turnstile-gate" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                <Link
+                  href="/turnstile-gate"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMobile(false);
+                  }}
+                >
                   {t.turnstile}
                 </Link>
-
-                <Link href="/solutions" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                <Link
+                  href="/solutions"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMobile(false);
+                  }}
+                >
                   {t.solutions}
                 </Link>
-                <Link href="/service" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                <Link
+                  href="/service"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMobile(false);
+                  }}
+                >
                   {t.service}
                 </Link>
-                <Link href="/about" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                <Link
+                  href="/about"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMobile(false);
+                  }}
+                >
                   {t.about}
                 </Link>
-                <Link href="/contact" className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10" onClick={() => { forceScrollTop(); setOpenMobile(false); }}>
+                <Link
+                  href="/contact"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMobile(false);
+                  }}
+                >
                   {t.contact}
                 </Link>
               </div>
@@ -499,22 +614,3 @@ export default function SiteHeader() {
     </header>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

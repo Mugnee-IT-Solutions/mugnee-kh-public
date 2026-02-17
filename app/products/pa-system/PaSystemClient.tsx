@@ -277,65 +277,65 @@ export default function PaSystemClient() {
         qEn: "What is a PA system and where is it used in Cambodia?",
         aEn:
           "A PA (public address) system amplifies voice and music to multiple speakers across zones. In Cambodia, it is widely used in factories, schools, hospitals, malls, hotels, and public venues for paging, safety alerts, and daily announcements.",
-        qKm: "What is a PA system and where is it used in Cambodia?",
+        qKm: "PA System គឺអ្វី ហើយប្រើនៅកម្ពុជាក្នុងកន្លែងណាខ្លះ?",
         aKm:
-          "A PA (public address) system amplifies voice and music to multiple speakers across zones. In Cambodia, it is widely used in factories, schools, hospitals, malls, hotels, and public venues for paging, safety alerts, and daily announcements.",
+          "PA (public address) system ជាប្រព័ន្ធបំពងសំឡេងទៅ speaker ច្រើនតាមតំបន់ផ្សេងៗ។ នៅកម្ពុជា វាត្រូវបានប្រើយ៉ាងទូលំទូលាយនៅរោងចក្រ សាលារៀន មន្ទីរពេទ្យ ផ្សារ សណ្ឋាគារ និងទីតាំងសាធារណៈសម្រាប់ paging, safety alert និងសេចក្តីប្រកាសប្រចាំថ្ងៃ។",
       },
       {
         qEn: "How do I choose speakers for factories, schools, or retail?",
         aEn:
           "Speaker type depends on noise level and coverage. Horn speakers suit factories and outdoor yards, while ceiling or wall speakers are ideal for classrooms, offices, corridors, and retail areas for even indoor coverage.",
-        qKm: "How do I choose speakers for factories, schools, or retail?",
+        qKm: "តើខ្ញុំជ្រើស speaker សម្រាប់រោងចក្រ សាលារៀន ឬ retail យ៉ាងដូចម្តេច?",
         aKm:
-          "Speaker type depends on noise level and coverage. Horn speakers suit factories and outdoor yards, while ceiling or wall speakers are ideal for classrooms, offices, corridors, and retail areas for even indoor coverage.",
+          "ប្រភេទ speaker អាស្រ័យលើកម្រិតសំឡេងរំខាន និងតំបន់ coverage។ Horn speaker សមស្របសម្រាប់រោងចក្រ និងតំបន់ក្រៅអាគារ ខណៈ ceiling/wall speaker សមស្របសម្រាប់ classroom, office, corridor និង retail area ក្នុងអាគារ។",
       },
       {
         qEn: "How many zones should a PA system have?",
         aEn:
           "Zone count depends on your site layout. We typically separate offices, production floors, corridors, and outdoor areas so messages can be targeted without disturbing other zones.",
-        qKm: "How many zones should a PA system have?",
+        qKm: "PA System គួរមានប៉ុន្មាន zone?",
         aKm:
-          "Zone count depends on your site layout. We typically separate offices, production floors, corridors, and outdoor areas so messages can be targeted without disturbing other zones.",
+          "ចំនួន zone អាស្រ័យលើ layout ទីតាំងរបស់អ្នក។ ជាទូទៅយើងបែងចែក office, production floor, corridor និង outdoor area ដើម្បីផ្សាយសារត្រឹមត្រូវដោយមិនរំខានតំបន់ផ្សេង។",
       },
       {
         qEn: "What amplifier power do I need for clear paging?",
         aEn:
           "Amplifier power depends on speaker quantity, wattage, cable distance, and ambient noise. Our engineers calculate load and headroom so speech stays clear without distortion.",
-        qKm: "What amplifier power do I need for clear paging?",
+        qKm: "សម្រាប់ paging ឲ្យច្បាស់ តើត្រូវការកម្លាំង amplifier ប៉ុន្មាន?",
         aKm:
-          "Amplifier power depends on speaker quantity, wattage, cable distance, and ambient noise. Our engineers calculate load and headroom so speech stays clear without distortion.",
+          "កម្លាំង amplifier អាស្រ័យលើចំនួន speaker, wattage, ចម្ងាយខ្សែ និងសំឡេងរំខានជុំវិញ។ វិស្វករយើងគណនា load និង headroom ដើម្បីរក្សាសំឡេងឲ្យច្បាស់ដោយគ្មាន distortion។",
       },
       {
         qEn: "Can a PA system integrate with fire alarm or security?",
         aEn:
           "Yes. We can integrate priority paging and emergency override with fire alarm or security systems so evacuation messages play instantly in critical zones.",
-        qKm: "Can a PA system integrate with fire alarm or security?",
+        qKm: "PA System អាច integrate ជាមួយ fire alarm ឬ security បានទេ?",
         aKm:
-          "Yes. We can integrate priority paging and emergency override with fire alarm or security systems so evacuation messages play instantly in critical zones.",
+          "បាន។ យើងអាច integrate priority paging និង emergency override ជាមួយ fire alarm ឬ security system ដើម្បីអោយសារជម្លៀសចេញផ្សាយភ្លាមៗនៅ critical zone។",
       },
       {
         qEn: "Do you install both indoor and outdoor PA systems?",
         aEn:
           "Yes. We supply indoor ceiling and wall speakers as well as weather‑resistant outdoor horn or column speakers for yards, gates, and large open areas.",
-        qKm: "Do you install both indoor and outdoor PA systems?",
+        qKm: "តើអ្នកដំឡើងទាំង Indoor និង Outdoor PA System ដែរឬទេ?",
         aKm:
-          "Yes. We supply indoor ceiling and wall speakers as well as weather‑resistant outdoor horn or column speakers for yards, gates, and large open areas.",
+          "បាទ/ចាស។ យើងផ្គត់ផ្គង់ indoor ceiling/wall speaker និង outdoor horn/column speaker ដែលធន់អាកាសធាតុ សម្រាប់ yard, gate និងទីធ្លាធំ។",
       },
       {
         qEn: "How long does PA system installation take in Cambodia?",
         aEn:
           "Timeline depends on site size and zone count. Small offices can be completed quickly, while factories or campuses may take longer for cabling, tuning, and testing.",
-        qKm: "How long does PA system installation take in Cambodia?",
+        qKm: "ការដំឡើង PA System នៅកម្ពុជា ចំណាយពេលប៉ុន្មាន?",
         aKm:
-          "Timeline depends on site size and zone count. Small offices can be completed quickly, while factories or campuses may take longer for cabling, tuning, and testing.",
+          "Timeline អាស្រ័យលើទំហំ site និងចំនួន zone។ Office តូចអាចបញ្ចប់បានលឿន ខណៈ factory ឬ campus អាចចំណាយពេលបន្ថែមសម្រាប់ cabling, tuning និង testing។",
       },
       {
         qEn: "Do you provide warranty and after‑sales support?",
         aEn:
           "Yes. We provide commissioning, user training, and maintenance options. Warranty depends on equipment type and configuration, and local support is available in Cambodia.",
-        qKm: "Do you provide warranty and after‑sales support?",
+        qKm: "តើអ្នកផ្តល់ warranty និង after-sales support ដែរឬទេ?",
         aKm:
-          "Yes. We provide commissioning, user training, and maintenance options. Warranty depends on equipment type and configuration, and local support is available in Cambodia.",
+          "ផ្តល់ជូន។ យើងមាន commissioning, user training និង maintenance option។ លក្ខខណ្ឌ warranty អាស្រ័យលើប្រភេទឧបករណ៍ និង configuration ហើយមាន local support នៅកម្ពុជា។",
       },
     ],
     []

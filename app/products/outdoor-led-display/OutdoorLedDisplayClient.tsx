@@ -97,7 +97,7 @@ export default function OutdoorLedDisplayClient() {
       sub:
         "ដំណោះស្រាយអេក្រង់ LED ក្រៅអគារ សម្រាប់ billboard ផ្លូវធំ, rooftop និង outdoor digital signage។ យើងធ្វើ site survey, structure design, installation, commissioning និង after-sales support ក្នុងស្រុក។",
       cta1: "ស្នើសុំតម្លៃ (Free)",
-      cta2: "មើល Outdoor LED Panels",
+      cta2: "មើលផ្ទាំង Outdoor LED",
       serving: "សេវាកម្ម៖ Phnom Penh • Siem Reap • Sihanoukville",
 
       seoBlockTitle: "ដំណោះស្រាយ Outdoor LED Screen & Billboard",
@@ -156,9 +156,9 @@ export default function OutdoorLedDisplayClient() {
       maintSub:
         "Outdoor screens ដំណើរការយូរ—ការថែទាំទៀងទាត់ កាត់បន្ថយ downtime និងបន្ថែម lifespan។",
       m1: "Preventive maintenance schedule",
-      m2: "Spare parts planning (modules, power, controller)",
-      m3: "On-site troubleshooting & remote guidance",
-      m4: "Cleaning & IP sealing checks",
+      m2: "ផែនការ spare parts (modules, power, controller)",
+      m3: "ដោះស្រាយបញ្ហានៅទីតាំង និង remote guidance",
+      m4: "សម្អាត និងពិនិត្យ IP sealing",
 
       faqTitle: "FAQ — Outdoor LED Display",
       finalTitle: "ស្នើសុំ Quotation តាមគម្រោង",
@@ -386,10 +386,10 @@ export default function OutdoorLedDisplayClient() {
           <p className="mt-2 text-slate-600">{t.useSub}</p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <UseCaseCard title={t.u1} desc={t.u1d} chips={["Outdoor", "High visibility", "Long distance"]} />
-            <UseCaseCard title={t.u2} desc={t.u2d} chips={["Outdoor", "Structure", "Safety"]} />
-            <UseCaseCard title={t.u3} desc={t.u3d} chips={["Digital signage", "Retail", "Daylight"]} />
-            <UseCaseCard title={t.u4} desc={t.u4d} chips={["Public info", "Events", "Smart city"]} />
+            <UseCaseCard title={t.u1} desc={t.u1d} chips={lang === "en" ? ["Outdoor", "High visibility", "Long distance"] : ["ក្រៅអគារ", "មើលឃើញខ្ពស់", "ចម្ងាយឆ្ងាយ"]} />
+            <UseCaseCard title={t.u2} desc={t.u2d} chips={lang === "en" ? ["Outdoor", "Structure", "Safety"] : ["ក្រៅអគារ", "រចនាសម្ព័ន្ធ", "សុវត្ថិភាព"]} />
+            <UseCaseCard title={t.u3} desc={t.u3d} chips={lang === "en" ? ["Digital signage", "Retail", "Daylight"] : ["Digital signage", "Retail", "ពន្លឺថ្ងៃ"]} />
+            <UseCaseCard title={t.u4} desc={t.u4d} chips={lang === "en" ? ["Public info", "Events", "Smart city"] : ["ព័ត៌មានសាធារណៈ", "ព្រឹត្តិការណ៍", "Smart city"]} />
           </div>
         </div>
       </section>

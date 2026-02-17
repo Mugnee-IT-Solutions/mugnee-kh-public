@@ -12,6 +12,19 @@ export const metadata: Metadata = {
   title: "Mugnee Cambodia",
   description: "LED Display & Smart Solutions in Cambodia",
   metadataBase: new URL(SITE_URL),
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      km: "/?lang=km",
+      "x-default": "/",
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
