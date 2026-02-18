@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/service",
     "/projects",
     "/about",
+    "/about/message-from-ceo",
     "/contact",
   ];
 
@@ -36,4 +37,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "/led-display" ? 1 : route === "/" ? 0.9 : 0.8,
   }));
 }
-

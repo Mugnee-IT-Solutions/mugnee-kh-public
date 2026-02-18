@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useMemo } from "react";
@@ -14,13 +14,13 @@ export default function OutdoorLedDisplayClient() {
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
-      badge: "Cambodia • Outdoor LED • LED Billboard",
+      badge: "Cambodia â€¢ Outdoor LED â€¢ LED Billboard",
       h1: "Outdoor LED Display in Cambodia",
       sub:
         "Weatherproof outdoor LED display solutions for roadside billboards, building facade screens and outdoor digital signage. We handle site survey, structure design, installation, commissioning and local after-sales support.",
       cta1: "Get a Free Quotation",
       cta2: "View Outdoor LED Panels",
-      serving: "Serving: Phnom Penh • Siem Reap • Sihanoukville",
+      serving: "Serving: Phnom Penh â€¢ Siem Reap â€¢ Sihanoukville",
 
       seoBlockTitle: "Outdoor LED Screen & Billboard Solutions",
       seoBlock:
@@ -36,11 +36,11 @@ export default function OutdoorLedDisplayClient() {
       specSub:
         "These are common outdoor requirements for stable performance in heat, dust and humidity.",
       s1: "Brightness",
-      s1d: "Typically 5500–8000 nits depending on location and sunlight.",
+      s1d: "Typically 5500â€“8000 nits depending on location and sunlight.",
       s2: "Protection (IP Rating)",
       s2d: "IP65 front protection is common for outdoor billboard screens.",
       s3: "Pixel Pitch",
-      s3d: "Select pitch by viewing distance (e.g., P4 city roads, P6–P10 highways).",
+      s3d: "Select pitch by viewing distance (e.g., P4 city roads, P6â€“P10 highways).",
       s4: "Structure & Safety",
       s4d: "Steel structure, wind load, grounding and lightning protection are critical.",
 
@@ -62,7 +62,7 @@ export default function OutdoorLedDisplayClient() {
       u4: "Public Information & Smart City",
       u4d: "City messaging, events, notices and campaign communications.",
 
-      processTitle: "Project Delivery (Survey → Installation)",
+      processTitle: "Project Delivery (Survey â†’ Installation)",
       processSub:
         "A structured workflow for correct configuration, safe installation and stable performance.",
       p1: "Site Survey & Measurement",
@@ -76,96 +76,96 @@ export default function OutdoorLedDisplayClient() {
 
       maintTitle: "Maintenance & AMC Support",
       maintSub:
-        "Outdoor screens run long hours—regular inspection helps prevent downtime and increases lifespan.",
+        "Outdoor screens run long hoursâ€”regular inspection helps prevent downtime and increases lifespan.",
       m1: "Preventive maintenance schedule",
       m2: "Spare parts planning (modules, power, controller)",
       m3: "On-site troubleshooting & remote guidance",
       m4: "Cleaning & protection checks (IP sealing)",
 
-      faqTitle: "FAQ — Outdoor LED Display",
+      faqTitle: "FAQ â€” Outdoor LED Display",
       finalTitle: "Get a Project-Based Quotation",
       finalSub:
-        "Share your location, screen size and purpose. We’ll recommend suitable pixel pitch, brightness and structure with a project-based quotation.",
+        "Share your location, screen size and purpose. Weâ€™ll recommend suitable pixel pitch, brightness and structure with a project-based quotation.",
       finalCta: "Contact & Get Quote",
       seeProjects: "See Projects",
     };
 
     const km = {
-      breadcrumb: "ផលិតផល",
-      badge: "កម្ពុជា • Outdoor LED • Billboard",
-      h1: "អេក្រង់ LED ក្រៅអគារ នៅកម្ពុជា",
+      breadcrumb: "áž•áž›áž·ážáž•áž›",
+      badge: "áž€áž˜áŸ’áž–áž»áž‡áž¶ â€¢ Outdoor LED â€¢ Billboard",
+      h1: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       sub:
-        "ដំណោះស្រាយអេក្រង់ LED ក្រៅអគារ សម្រាប់ billboard ផ្លូវធំ, rooftop និង outdoor digital signage។ យើងធ្វើ site survey, structure design, installation, commissioning និង after-sales support ក្នុងស្រុក។",
-      cta1: "ស្នើសុំតម្លៃ (Free)",
-      cta2: "មើលផ្ទាំង Outdoor LED",
-      serving: "សេវាកម្ម៖ Phnom Penh • Siem Reap • Sihanoukville",
+        "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ billboard áž•áŸ’áž›áž¼ážœáž’áŸ†, rooftop áž“áž·áž„ outdoor digital signageáŸ” áž™áž¾áž„áž’áŸ’ážœáž¾ site survey, structure design, installation, commissioning áž“áž·áž„ after-sales support áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€áŸ”",
+      cta1: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ (Free)",
+      cta2: "áž˜áž¾áž›áž•áŸ’áž‘áž¶áŸ†áž„ Outdoor LED",
+      serving: "ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áŸ– Phnom Penh â€¢ Siem Reap â€¢ Sihanoukville",
 
-      seoBlockTitle: "ដំណោះស្រាយ Outdoor LED Screen & Billboard",
+      seoBlockTitle: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ Outdoor LED Screen & Billboard",
       seoBlock:
-        "Outdoor LED screens ពេញនិយមនៅកម្ពុជា សម្រាប់ពាណិជ្ជកម្ម និងសារសាធារណៈ។ ការជ្រើស outdoor LED display ត្រូវពិចារណា viewing distance, pixel pitch, brightness (nits), IP protection និងសុវត្ថិភាពរចនាសម្ព័ន្ធ។ យើងណែនាំ specs បន្ទាប់ពី site survey ដើម្បីបានទំហំ, layout និង power planning ត្រឹមត្រូវ។",
+        "Outdoor LED screens áž–áŸáž‰áž“áž·áž™áž˜áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž–áž¶ážŽáž·áž‡áŸ’áž‡áž€áž˜áŸ’áž˜ áž“áž·áž„ážŸáž¶ážšážŸáž¶áž’áž¶ážšážŽáŸˆáŸ” áž€áž¶ážšáž‡áŸ’ážšáž¾ážŸ outdoor LED display ážáŸ’ážšáž¼ážœáž–áž·áž…áž¶ážšážŽáž¶ viewing distance, pixel pitch, brightness (nits), IP protection áž“áž·áž„ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’áŸ” áž™áž¾áž„ážŽáŸ‚áž“áž¶áŸ† specs áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸ site survey ážŠáž¾áž˜áŸ’áž”áž¸áž”áž¶áž“áž‘áŸ†áž áŸ†, layout áž“áž·áž„ power planning ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáŸ”",
 
-      highlightsTitle: "អត្ថប្រយោជន៍ដែលអ្នកទទួលបាន",
-      hA: "ភ្លឺខ្ពស់ មើលច្បាស់ពេលថ្ងៃ",
-      hB: "IP-rated ការពារទឹក និងធូលី",
-      hC: "Structure design + ដំឡើងសុវត្ថិភាព",
-      hD: "Support ក្នុងស្រុក + spare parts planning",
+      highlightsTitle: "áž¢ážáŸ’ážáž”áŸ’ážšáž™áŸ„áž‡áž“áŸážŠáŸ‚áž›áž¢áŸ’áž“áž€áž‘áž‘áž½áž›áž”áž¶áž“",
+      hA: "áž—áŸ’áž›ážºážáŸ’áž–ážŸáŸ‹ áž˜áž¾áž›áž…áŸ’áž”áž¶ážŸáŸ‹áž–áŸáž›ážáŸ’áž„áŸƒ",
+      hB: "IP-rated áž€áž¶ážšáž–áž¶ážšáž‘áž¹áž€ áž“áž·áž„áž’áž¼áž›áž¸",
+      hC: "Structure design + ážŠáŸ†áž¡áž¾áž„ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–",
+      hD: "Support áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ + spare parts planning",
 
-      specTitle: "ស្ដង់ដារសំខាន់ៗ (Outdoor)",
+      specTitle: "ážŸáŸ’ážŠáž„áŸ‹ážŠáž¶ážšážŸáŸ†ážáž¶áž“áŸ‹áŸ— (Outdoor)",
       specSub:
-        "តម្រូវការសម្រាប់ដំណើរការស្ថេរភាព ក្នុងកំដៅ ធូលី និងសំណើម។",
+        "ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážŸáŸ’ážáŸážšáž—áž¶áž– áž€áŸ’áž“áž»áž„áž€áŸ†ážŠáŸ… áž’áž¼áž›áž¸ áž“áž·áž„ážŸáŸ†ážŽáž¾áž˜áŸ”",
       s1: "Brightness",
-      s1d: "ប្រហែល 5500–8000 nits តាមទីតាំង និងពន្លឺថ្ងៃ។",
+      s1d: "áž”áŸ’ážšáž áŸ‚áž› 5500â€“8000 nits ážáž¶áž˜áž‘áž¸ážáž¶áŸ†áž„ áž“áž·áž„áž–áž“áŸ’áž›ážºážáŸ’áž„áŸƒáŸ”",
       s2: "IP Rating",
-      s2d: "IP65 ជាទូទៅសម្រាប់ outdoor billboard screens។",
+      s2d: "IP65 áž‡áž¶áž‘áž¼áž‘áŸ…ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ outdoor billboard screensáŸ”",
       s3: "Pixel Pitch",
-      s3d: "ជ្រើសតាម viewing distance (P4 ក្នុងទីក្រុង, P6–P10 ផ្លូវធំ)។",
+      s3d: "áž‡áŸ’ážšáž¾ážŸážáž¶áž˜ viewing distance (P4 áž€áŸ’áž“áž»áž„áž‘áž¸áž€áŸ’ážšáž»áž„, P6â€“P10 áž•áŸ’áž›áž¼ážœáž’áŸ†)áŸ”",
       s4: "Structure & Safety",
-      s4d: "Steel structure, wind load, grounding និង lightning protection សំខាន់។",
+      s4d: "Steel structure, wind load, grounding áž“áž·áž„ lightning protection ážŸáŸ†ážáž¶áž“áŸ‹áŸ”",
 
       productTitle: "Outdoor LED Display Panels",
       productSub:
-        "ជ្រើស panel តាម viewing distance និងថវិកា។ សម្រាប់ត្រឹមត្រូវ សូមផ្ញើ location + screen size។",
+        "áž‡áŸ’ážšáž¾ážŸ panel ážáž¶áž˜ viewing distance áž“áž·áž„ážážœáž·áž€áž¶áŸ” ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ ážŸáž¼áž˜áž•áŸ’áž‰áž¾ location + screen sizeáŸ”",
       gridNote:
-        "ចំណាំ៖ specs អាចប្រែប្រួលតាម model និង project requirement។ Final config ក្រោយ survey។",
+        "áž…áŸ†ážŽáž¶áŸ†áŸ– specs áž¢áž¶áž…áž”áŸ’ážšáŸ‚áž”áŸ’ážšáž½áž›ážáž¶áž˜ model áž“áž·áž„ project requirementáŸ” Final config áž€áŸ’ážšáŸ„áž™ surveyáŸ”",
 
-      useTitle: "ការប្រើប្រាស់ល្អបំផុតនៅកម្ពុជា",
+      useTitle: "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž›áŸ’áž¢áž”áŸ†áž•áž»ážáž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       useSub:
-        "Use cases ដែលអាចផ្តល់ visibility ខ្ពស់ និង ROI ល្អ។",
+        "Use cases ážŠáŸ‚áž›áž¢áž¶áž…áž•áŸ’ážáž›áŸ‹ visibility ážáŸ’áž–ážŸáŸ‹ áž“áž·áž„ ROI áž›áŸ’áž¢áŸ”",
       u1: "Roadside & Highway LED Billboards",
-      u1d: "Billboard ទំហំធំ សម្រាប់មើលឆ្ងាយ និងចរាចរណ៍ខ្ពស់។",
+      u1d: "Billboard áž‘áŸ†áž áŸ†áž’áŸ† ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž˜áž¾áž›áž†áŸ’áž„áž¶áž™ áž“áž·áž„áž…ážšáž¶áž…ážšážŽáŸážáŸ’áž–ážŸáŸ‹áŸ”",
       u2: "Building Facade & Rooftop Screens",
-      u2d: "ភ្លឺខ្ពស់ និង mounting/structure engineering សុវត្ថិភាព។",
+      u2d: "áž—áŸ’áž›ážºážáŸ’áž–ážŸáŸ‹ áž“áž·áž„ mounting/structure engineering ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”",
       u3: "Outdoor Digital Signage for Retail",
-      u3d: "ផ្សព្វផ្សាយ និងសារផ្សេងៗ មើលច្បាស់ពេញថ្ងៃ។",
+      u3d: "áž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™ áž“áž·áž„ážŸáž¶ážšáž•áŸ’ážŸáŸáž„áŸ— áž˜áž¾áž›áž…áŸ’áž”áž¶ážŸáŸ‹áž–áŸáž‰ážáŸ’áž„áŸƒáŸ”",
       u4: "Public Information & Smart City",
-      u4d: "សារសាធារណៈ, event notices និង campaign messaging។",
+      u4d: "ážŸáž¶ážšážŸáž¶áž’áž¶ážšážŽáŸˆ, event notices áž“áž·áž„ campaign messagingáŸ”",
 
-      processTitle: "ដំណើរការគម្រោង (Survey → Installation)",
+      processTitle: "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž‚áž˜áŸ’ážšáŸ„áž„ (Survey â†’ Installation)",
       processSub:
-        "Workflow ត្រឹមត្រូវសម្រាប់ config ត្រឹមត្រូវ និងដំណើរការស្ថេរភាព។",
+        "Workflow ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœážŸáž˜áŸ’ážšáž¶áž”áŸ‹ config ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž“áž·áž„ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážŸáŸ’ážáŸážšáž—áž¶áž–áŸ”",
       p1: "Site Survey & Measurement",
-      p1d: "ពិនិត្យ viewing distance, sunlight, power route និង mounting area។",
+      p1d: "áž–áž·áž“áž·ážáŸ’áž™ viewing distance, sunlight, power route áž“áž·áž„ mounting areaáŸ”",
       p2: "Design & Proposal",
-      p2d: "ណែនាំ pixel pitch, screen size, cabinet layout និង structure concept។",
+      p2d: "ážŽáŸ‚áž“áž¶áŸ† pixel pitch, screen size, cabinet layout áž“áž·áž„ structure conceptáŸ”",
       p3: "Installation & Commissioning",
-      p3d: "Wiring/grounding, calibration និង content testing។",
+      p3d: "Wiring/grounding, calibration áž“áž·áž„ content testingáŸ”",
       p4: "Training & After-Sales Support",
-      p4d: "បង្រៀនប្រើ និង maintenance options (AMC) + support planning។",
+      p4d: "áž”áž„áŸ’ážšáŸ€áž“áž”áŸ’ážšáž¾ áž“áž·áž„ maintenance options (AMC) + support planningáŸ”",
 
       maintTitle: "Maintenance & AMC Support",
       maintSub:
-        "Outdoor screens ដំណើរការយូរ—ការថែទាំទៀងទាត់ កាត់បន្ថយ downtime និងបន្ថែម lifespan។",
+        "Outdoor screens ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž™áž¼ážšâ€”áž€áž¶ážšážáŸ‚áž‘áž¶áŸ†áž‘áŸ€áž„áž‘áž¶ážáŸ‹ áž€áž¶ážáŸ‹áž”áž“áŸ’ážáž™ downtime áž“áž·áž„áž”áž“áŸ’ážáŸ‚áž˜ lifespanáŸ”",
       m1: "Preventive maintenance schedule",
-      m2: "ផែនការ spare parts (modules, power, controller)",
-      m3: "ដោះស្រាយបញ្ហានៅទីតាំង និង remote guidance",
-      m4: "សម្អាត និងពិនិត្យ IP sealing",
+      m2: "áž•áŸ‚áž“áž€áž¶ážš spare parts (modules, power, controller)",
+      m3: "ážŠáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž”áž‰áŸ’áž áž¶áž“áŸ…áž‘áž¸ážáž¶áŸ†áž„ áž“áž·áž„ remote guidance",
+      m4: "ážŸáž˜áŸ’áž¢áž¶áž áž“áž·áž„áž–áž·áž“áž·ážáŸ’áž™ IP sealing",
 
-      faqTitle: "FAQ — Outdoor LED Display",
-      finalTitle: "ស្នើសុំ Quotation តាមគម្រោង",
+      faqTitle: "FAQ â€” Outdoor LED Display",
+      finalTitle: "ážŸáŸ’áž“áž¾ážŸáž»áŸ† Quotation ážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„",
       finalSub:
-        "ផ្ញើ location, screen size និង use-case។ យើងនឹងណែនាំ pixel pitch, brightness និង structure ជាមួយ quotation តាមគម្រោង។",
-      finalCta: "ទំនាក់ទំនង & ស្នើសុំតម្លៃ",
-      seeProjects: "មើលគម្រោង",
+        "áž•áŸ’áž‰áž¾ location, screen size áž“áž·áž„ use-caseáŸ” áž™áž¾áž„áž“áž¹áž„ážŽáŸ‚áž“áž¶áŸ† pixel pitch, brightness áž“áž·áž„ structure áž‡áž¶áž˜áž½áž™ quotation ážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„áŸ”",
+      finalCta: "áž‘áŸ†áž“áž¶áž€áŸ‹áž‘áŸ†áž“áž„ & ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ",
+      seeProjects: "áž˜áž¾áž›áž‚áž˜áŸ’ážšáŸ„áž„",
     };
 
     return lang === "en" ? en : km;
@@ -175,42 +175,42 @@ export default function OutdoorLedDisplayClient() {
     {
       qEn: "Which pixel pitch is best for outdoor LED billboards?",
       aEn:
-        "Pixel pitch depends on viewing distance. City roads often use P4–P6. Highways and very long viewing distances commonly use P8–P10.",
-      qKm: "Outdoor billboard សម្រាប់ pixel pitch មួយណាល្អ?",
+        "Pixel pitch depends on viewing distance. City roads often use P4â€“P6. Highways and very long viewing distances commonly use P8â€“P10.",
+      qKm: "Outdoor billboard ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ pixel pitch áž˜áž½áž™ážŽáž¶áž›áŸ’áž¢?",
       aKm:
-        "Pixel pitch ពឹងផ្អែកលើចម្ងាយមើល។ ក្នុងទីក្រុងភាគច្រើន P4–P6។ ផ្លូវធំ/មើលឆ្ងាយ P8–P10 ជាទូទៅ។",
+        "Pixel pitch áž–áž¹áž„áž•áŸ’áž¢áŸ‚áž€áž›áž¾áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›áŸ” áž€áŸ’áž“áž»áž„áž‘áž¸áž€áŸ’ážšáž»áž„áž—áž¶áž‚áž…áŸ’ážšáž¾áž“ P4â€“P6áŸ” áž•áŸ’áž›áž¼ážœáž’áŸ†/áž˜áž¾áž›áž†áŸ’áž„áž¶áž™ P8â€“P10 áž‡áž¶áž‘áž¼áž‘áŸ…áŸ”",
     },
     {
       qEn: "How much brightness do outdoor LED screens need?",
       aEn:
-        "Most outdoor screens are designed around 5500–8000 nits depending on sunlight, orientation and installation height.",
-      qKm: "Outdoor LED ត្រូវការភ្លឺ (brightness) ប៉ុន្មាន?",
+        "Most outdoor screens are designed around 5500â€“8000 nits depending on sunlight, orientation and installation height.",
+      qKm: "Outdoor LED ážáŸ’ážšáž¼ážœáž€áž¶ážšáž—áŸ’áž›ážº (brightness) áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
       aKm:
-        "ជាទូទៅ outdoor screens ប្រហែល 5500–8000 nits តាមពន្លឺថ្ងៃ និងទីតាំងដំឡើង។",
+        "áž‡áž¶áž‘áž¼áž‘áŸ… outdoor screens áž”áŸ’ážšáž áŸ‚áž› 5500â€“8000 nits ážáž¶áž˜áž–áž“áŸ’áž›ážºážáŸ’áž„áŸƒ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŠáŸ†áž¡áž¾áž„áŸ”",
     },
     {
       qEn: "Do you provide structure design and installation?",
       aEn:
         "Yes. We handle site survey, steel structure concept, safe mounting, wiring, grounding and commissioning.",
-      qKm: "មាន structure design និង installation ដែរឬទេ?",
+      qKm: "áž˜áž¶áž“ structure design áž“áž·áž„ installation ážŠáŸ‚ážšáž¬áž‘áŸ?",
       aKm:
-        "មាន។ យើងធ្វើ survey, structure concept, mounting, wiring/grounding និង commissioning។",
+        "áž˜áž¶áž“áŸ” áž™áž¾áž„áž’áŸ’ážœáž¾ survey, structure concept, mounting, wiring/grounding áž“áž·áž„ commissioningáŸ”",
     },
     {
       qEn: "Do you provide after-sales support in Cambodia?",
       aEn:
         "Yes. We provide local support and maintenance options (AMC) with spare parts planning to reduce downtime.",
-      qKm: "មាន after-sales support នៅកម្ពុជា ដែរឬទេ?",
+      qKm: "áž˜áž¶áž“ after-sales support áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážŠáŸ‚ážšáž¬áž‘áŸ?",
       aKm:
-        "មាន។ មាន support ក្នុងស្រុក និង maintenance options (AMC) + spare parts planning។",
+        "áž˜áž¶áž“áŸ” áž˜áž¶áž“ support áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ áž“áž·áž„ maintenance options (AMC) + spare parts planningáŸ”",
     },
   ];
 
-  // ✅ Breadcrumb JSON-LD + FAQ JSON-LD (safe)
+  // âœ… Breadcrumb JSON-LD + FAQ JSON-LD (safe)
   const jsonLd = useMemo(() => {
     const base =
       (process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-        "http://localhost:3000") + "/led-display/outdoor-led-display";
+        "https://mugneekh.com") + "/led-display/outdoor-led-display";
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -221,9 +221,9 @@ export default function OutdoorLedDisplayClient() {
           position: 1,
           name: "Home",
           item: (process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-            "http://localhost:3000"),
+            "https://mugneekh.com"),
         },
-        { "@type": "ListItem", position: 2, name: "Products", item: (process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000") + "/products" },
+        { "@type": "ListItem", position: 2, name: "Products", item: (process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com") + "/products" },
         { "@type": "ListItem", position: 3, name: "Outdoor LED Display", item: base },
       ],
     };
@@ -386,10 +386,10 @@ export default function OutdoorLedDisplayClient() {
           <p className="mt-2 text-slate-600">{t.useSub}</p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <UseCaseCard title={t.u1} desc={t.u1d} chips={lang === "en" ? ["Outdoor", "High visibility", "Long distance"] : ["ក្រៅអគារ", "មើលឃើញខ្ពស់", "ចម្ងាយឆ្ងាយ"]} />
-            <UseCaseCard title={t.u2} desc={t.u2d} chips={lang === "en" ? ["Outdoor", "Structure", "Safety"] : ["ក្រៅអគារ", "រចនាសម្ព័ន្ធ", "សុវត្ថិភាព"]} />
-            <UseCaseCard title={t.u3} desc={t.u3d} chips={lang === "en" ? ["Digital signage", "Retail", "Daylight"] : ["Digital signage", "Retail", "ពន្លឺថ្ងៃ"]} />
-            <UseCaseCard title={t.u4} desc={t.u4d} chips={lang === "en" ? ["Public info", "Events", "Smart city"] : ["ព័ត៌មានសាធារណៈ", "ព្រឹត្តិការណ៍", "Smart city"]} />
+            <UseCaseCard title={t.u1} desc={t.u1d} chips={lang === "en" ? ["Outdoor", "High visibility", "Long distance"] : ["áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš", "áž˜áž¾áž›ážƒáž¾áž‰ážáŸ’áž–ážŸáŸ‹", "áž…áž˜áŸ’áž„áž¶áž™áž†áŸ’áž„áž¶áž™"]} />
+            <UseCaseCard title={t.u2} desc={t.u2d} chips={lang === "en" ? ["Outdoor", "Structure", "Safety"] : ["áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš", "ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’", "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–"]} />
+            <UseCaseCard title={t.u3} desc={t.u3d} chips={lang === "en" ? ["Digital signage", "Retail", "Daylight"] : ["Digital signage", "Retail", "áž–áž“áŸ’áž›ážºážáŸ’áž„áŸƒ"]} />
+            <UseCaseCard title={t.u4} desc={t.u4d} chips={lang === "en" ? ["Public info", "Events", "Smart city"] : ["áž–áŸážáŸŒáž˜áž¶áž“ážŸáž¶áž’áž¶ážšážŽáŸˆ", "áž–áŸ’ážšáž¹ážáŸ’ážáž·áž€áž¶ážšážŽáŸ", "Smart city"]} />
           </div>
         </div>
       </section>
@@ -432,12 +432,12 @@ export default function OutdoorLedDisplayClient() {
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {lang === "en" ? "Outdoor LED Products" : "ផលិតផល LED ខាងក្រៅ"}
+            {lang === "en" ? "Outdoor LED Products" : "áž•áž›áž·ážáž•áž› LED ážáž¶áž„áž€áŸ’ážšáŸ…"}
           </h2>
           <p className="mt-2 text-slate-600">
             {lang === "en"
-              ? "Browse outdoor LED modules for billboards, rooftops and large-format screens. No public pricing—request a quotation."
-              : "មើលម៉ូឌុល LED ខាងក្រៅសម្រាប់ប៊ីលបត និងអេក្រង់ធំៗ។ មិនបង្ហាញតម្លៃសាធារណៈ—សូមស្នើសុំតម្លៃ។"}
+              ? "Browse outdoor LED modules for billboards, rooftops and large-format screens. No public pricingâ€”request a quotation."
+              : "áž˜áž¾áž›áž˜áŸ‰áž¼ážŒáž»áž› LED ážáž¶áž„áž€áŸ’ážšáŸ…ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áŸŠáž¸áž›áž”áž áž“áž·áž„áž¢áŸáž€áŸ’ážšáž„áŸ‹áž’áŸ†áŸ—áŸ” áž˜áž·áž“áž”áž„áŸ’áž áž¶áž‰ážáž˜áŸ’áž›áŸƒážŸáž¶áž’áž¶ážšážŽáŸˆâ€”ážŸáž¼áž˜ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒáŸ”"}
           </p>
 
           <div className="mt-6">
@@ -470,7 +470,7 @@ export default function OutdoorLedDisplayClient() {
                       {lang === "en" ? f.qEn : f.qKm}
                     </div>
                     <span className="mt-0.5 text-slate-400 transition group-open:rotate-180">
-                      ▾
+                      â–¾
                     </span>
                   </div>
                   <div className="mt-2 hidden h-px w-full bg-slate-100 group-open:block" />
@@ -621,4 +621,5 @@ function MiniCard({ text }: { text: string }) {
     </div>
   );
 }
+
 

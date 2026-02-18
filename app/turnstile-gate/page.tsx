@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import TurnstileGateClient from "../products/turnstile-gate/TurnstileGateClient";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
 
 const PAGE_PATH = "/turnstile-gate";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
@@ -25,5 +25,6 @@ export const metadata: Metadata = {
 export default function Page() {
   return <TurnstileGateClient />;
 }
+
 
 

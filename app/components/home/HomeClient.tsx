@@ -202,8 +202,8 @@ export default function HomeClient({
       secCatalogTitle: "Cambodia LED Display, Digital Signage & Smart Systems Products",
       secCatalogDesc:
         "Browse Cambodia-focused LED display, digital signage, PA system, access control and smart classroom products-built for local projects, budgets and site conditions.",
-      secPartnersEyebrow: "ភាពជាដៃគូ",
-      secPartnersTitle: "គាំទ្រដោយភាពជាដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
+      secPartnersEyebrow: "Partnership",
+      secPartnersTitle: "Supported by International Development Partnerships",
       secPartnersDesc:
         "We have delivered LED display, digital signage, and smart technology solutions under projects supported by internationally recognized organizations such as The World Bank, JICA, Swisscontact, GIZ, and Mitsubishi Research Institute (MRI)—meeting institutional standards with reliable execution.",
 
@@ -213,16 +213,16 @@ export default function HomeClient({
         "SEO-friendly solutions for Cambodia projects—LED display, digital signage, smart classroom, access control, and PA systems with local installation and support.",
       exploreSolution: "Explore solution",
 
-      secAuthEyebrow: "ដៃគូ",
-      secAuthTitle: "អ្នកចែកចាយផ្លូវការ និងដៃគូវិស្វកម្មដែលមានវិញ្ញាបនបត្រ",
+      secAuthEyebrow: "Partners",
+      secAuthTitle: "Authorized Distributor & Certified Engineering Partner",
       secAuthDesc:
         "Mugnee Cambodia supplies world-leading LED components and control systems with certified engineering support, quality assurance, and Cambodia-based service.",
 
-      secIndustryEyebrow: "ការប្រើប្រាស់ពិត",
+      secIndustryEyebrow: "Real-World Use",
       secIndustryTitle: "Product Use-Cases by Industry in Cambodia",
       secIndustryDesc:
         "Industry-specific LED display, digital signage, and smart system use-cases designed for Cambodia's retail, education, government, and factory projects.",
-      secSpecsEyebrow: "សង្ខេបបច្ចេកទេស",
+      secSpecsEyebrow: "Technical Snapshot",
       secSpecsTitle: "LED Display Technical Specifications Guide Cambodia",
       secSpecsDesc:
         "Quick technical highlights buyers compare most—pixel pitch, brightness, IP rating, refresh rate, and control system options.",
@@ -234,7 +234,7 @@ export default function HomeClient({
       secTestimonialsTitle: "Customer Testimonials & Client References",
       secTestimonialsDesc:
         "Local buyer feedback and project references that highlight reliability, image quality and service response.",
-      secContactEyebrow: "គាំទ្រក្នុងស្រុក",
+      secContactEyebrow: "Local Support",
       secContactTitle: "Cambodia Office & Project Support",
       secContactDesc:
         "Talk to a local engineer for site survey, sizing, pixel-pitch guidance, and a project-based quotation.",

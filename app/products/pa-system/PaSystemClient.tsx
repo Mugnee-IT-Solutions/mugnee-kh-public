@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 "use client";
 
@@ -143,129 +143,129 @@ export default function PaSystemClient() {
 
     const km = {
       breadcrumb: "" ,
-      badge: "Cambodia - PA System - Public Address",
-      h1: "Mugnee PA System Solutions in Cambodia",
+      badge: "áž€áž˜áŸ’áž–áž»áž‡áž¶ - áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA - ážŸáŸ†áž¡áŸáž„ážŸáž¶áž’áž¶ážšážŽáŸˆ",
+      h1: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA ážšáž”ážŸáŸ‹ Mugnee áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       sub:
-        "Mugnee Cambodia delivers professional public address (PA) systems tailored for local factories, schools, hospitals, malls, hotels, offices, and public venues. We design and supply mixers, power amplifiers, paging microphones, indoor/outdoor speakers, and accessories, with zone planning, cabling, installation, commissioning, and after-sales support across Phnom Penh, Siem Reap, and Sihanoukville.",
-      cta1: "Get a Free Quotation",
-      cta2: "View PA System Products",
-      serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
+        "Mugnee Cambodia áž•áŸ’ážáž›áŸ‹ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž•áŸ’ážŸáž¶áž™ážŸáŸ†áž¡áŸáž„ážŸáž¶áž’áž¶ážšážŽáŸˆ (PA) ážŠáŸ„áž™ážœáž·áž‡áŸ’áž‡áž¶áž‡áž¸ážœáŸˆ ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ áž•áŸ’ážŸáž¶ážš ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ” áž™áž¾áž„ážšáž…áž“áž¶ áž“áž·áž„áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ mixer, power amplifier, paging microphone, speaker áž€áŸ’áž“áž»áž„/áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš áž“áž·áž„áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ áž–áŸ’ážšáž˜áž‘áž¶áŸ†áž„áž€áž¶ážšáž’áŸ’ážœáž¾áž•áŸ‚áž“áž€áž¶ážš zone, ážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚, ážŠáŸ†áž¡áž¾áž„, commissioning áž“áž·áž„ after-sales support áž“áŸ…áž—áŸ’áž“áŸ†áž–áŸáž‰ ážŸáŸ€áž˜ážšáž¶áž” áž“áž·áž„áž–áŸ’ážšáŸ‡ážŸáž¸áž áž“áž»áŸ”",
+      cta1: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒáž¥ážáž‚áž·ážážáŸ’áž›áŸƒ",
+      cta2: "áž˜áž¾áž›áž•áž›áž·ážáž•áž›áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA",
+      serving: "ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áŸ– áž—áŸ’áž“áŸ†áž–áŸáž‰ - ážŸáŸ€áž˜ážšáž¶áž” - áž–áŸ’ážšáŸ‡ážŸáž¸áž áž“áž»",
 
-      quickTitle: "Browse PA system categories and related services",
+      quickTitle: "ážšáž€áž˜áž¾áž›áž”áŸ’ážšáž—áŸáž‘áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA áž“áž·áž„ážŸáŸážœáž¶ážŠáŸ‚áž›áž–áž¶áž€áŸ‹áž–áŸáž“áŸ’áž’",
       quickSub:
-        "Quick links help you reach speakers, amplifiers, microphones, and installation support.",
+        "ážáŸ†ážŽážšáž áŸážŸáž‡áž½áž™áž±áŸ’áž™áž¢áŸ’áž“áž€áž‘áŸ…ážŠáž›áŸ‹ speaker, amplifier, microphone áž“áž·áž„ážŸáŸážœáž¶ážŠáŸ†áž¡áž¾áž„áž”áž¶áž“áž›áž¿áž“áŸ”",
 
-      specsTitle: "PA System Specifications for Cambodia",
+      specsTitle: "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸáž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž˜áŸ’áž–áž»áž‡áž¶",
       specsSub:
-        "Use these practical ranges to plan clear paging, safety alerts, and daily announcements for indoor and outdoor sites.",
-      sCard1t: "System Type",
-      sCard1d: "Public address, paging, and background audio solutions.",
-      sCard2t: "Speaker Types",
-      sCard2d: "Ceiling, wall, pendant, and outdoor horn speakers.",
-      sCard3t: "Coverage Planning",
-      sCard3d: "Zone-based layout for clear audio in each area.",
-      sCard4t: "Priority & Emergency",
-      sCard4d: "Priority paging, override channels, and alerts.",
-      sCard5t: "Microphones",
-      sCard5d: "Paging mics, gooseneck, and wireless options.",
-      sCard6t: "Installation",
-      sCard6d: "Proper cabling, tuning, and commissioning support.",
+        "áž”áŸ’ážšáž¾áž‡áž½ážšážŽáŸ‚áž“áž¶áŸ†áž‘áž¶áŸ†áž„áž“áŸáŸ‡ ážŠáž¾áž˜áŸ’áž”áž¸ážšáŸ€áž”áž…áŸ† paging áž±áŸ’áž™áž…áŸ’áž”áž¶ážŸáŸ‹ ážŸáŸáž…áž€áŸ’ážáž¸áž‡áž¼áž“ážŠáŸ†ážŽáž¹áž„ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸáž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‘áž¸ážáž¶áŸ†áž„áž€áŸ’áž“áž»áž„ áž“áž·áž„áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážšáŸ”",
+      sCard1t: "áž”áŸ’ážšáž—áŸáž‘áž”áŸ’ážšáž–áŸáž“áŸ’áž’",
+      sCard1d: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž•áŸ’ážŸáž¶áž™ážŸáŸ†áž¡áŸáž„ážŸáž¶áž’áž¶ážšážŽáŸˆ paging áž“áž·áž„ážŸáŸ†áž¡áŸáž„áž•áŸ’áž‘áŸƒážáž¶áž„áž€áŸ’ážšáŸ„áž™áŸ”",
+      sCard2t: "áž”áŸ’ážšáž—áŸáž‘ Speaker",
+      sCard2d: "Speaker áž–áž·ážŠáž¶áž“ áž‡áž‰áŸ’áž‡áž¶áŸ†áž„ pendant áž“áž·áž„ horn speaker ážáž¶áž„áž€áŸ’ážšáŸ…áŸ”",
+      sCard3t: "áž•áŸ‚áž“áž€áž¶ážšáž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ážŸáŸ†áž¡áŸáž„",
+      sCard3d: "ážšáŸ€áž”áž…áŸ† layout ážáž¶áž˜ zone ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™ážŸáŸ†áž¡áŸáž„áž…áŸ’áž”áž¶ážŸáŸ‹áž€áŸ’áž“áž»áž„ážáŸ†áž”áž“áŸ‹áž“áž¸áž˜áž½áž™áŸ—áŸ”",
+      sCard4t: "áž¢áž¶áž‘áž·áž—áž¶áž– áž“áž·áž„áž‚áŸ’ážšáž¶áž¢áž¶ážŸáž“áŸ’áž“",
+      sCard4d: "Priority paging, override channel áž“áž·áž„ážŸáž¶ážšáž‡áž¼áž“ážŠáŸ†ážŽáž¹áž„áž”áž“áŸ’áž‘áž¶áž“áŸ‹áŸ”",
+      sCard5t: "áž˜áž¸áž€áŸ’ážšáž¼áž áŸ’ážœáž¼áž“",
+      sCard5d: "Paging mic, gooseneck áž“áž·áž„áž‡áž˜áŸ’ážšáž¾ážŸ wirelessáŸ”",
+      sCard6t: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„",
+      sCard6d: "ážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚ ážáž˜áŸ’ážšáž¼ážœážŸáŸ†áž¡áŸáž„ áž“áž·áž„ commissioning ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáŸ”",
 
-      basicsLabel: "PA SYSTEM BASICS",
-      basicsTitle: "What Is a PA System?",
+      basicsLabel: "áž˜áž¼áž›ážŠáŸ’áž‹áž¶áž“áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA",
+      basicsTitle: "PA System áž‚ážºáž‡áž¶áž¢áŸ’ážœáž¸?",
       basicsDesc:
-        "A PA (Public Address) system is a centralized audio solution that amplifies voice and music and distributes it to speakers across multiple zones. It is used for paging, announcements, safety alerts, and day-to-day communication in factories, schools, malls, offices, hospitals, and public venues.",
-      howTitle: "How Does a PA System Work?",
+        "PA (Public Address) System áž‚ážºáž‡áž¶ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ážŸáŸ†áž¡áŸáž„áž€ážŽáŸ’ážáž¶áž› ážŠáŸ‚áž›áž”áž„áŸ’áž€áž¾áž“ážŸáŸ†áž¡áŸáž„áž“áž·áž™áž¶áž™ áž“áž·áž„ážáž“áŸ’ážáŸ’ážšáž¸ áž áž¾áž™áž…áŸ‚áž€áž…áž¶áž™áž‘áŸ… speaker ážáž¶áž˜ zone áž‡áž¶áž…áŸ’ážšáž¾áž“áŸ” ážœáž¶ážáŸ’ážšáž¼ážœáž”áž¶áž“áž”áŸ’ážšáž¾ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ paging, áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸ, ážŸáž¶ážšáž‡áž¼áž“ážŠáŸ†ážŽáž¹áž„ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž‘áŸ†áž“áž¶áž€áŸ‹áž‘áŸ†áž“áž„áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒ áž€áŸ’áž“áž»áž„ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž•áŸ’ážŸáž¶ážš áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”",
+      howTitle: "PA System ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž™áŸ‰áž¶áž„ážŠáž¼áž…áž˜áŸ’ážáŸáž…?",
       howDesc:
-        "Audio sources such as microphones, media players, and alarm inputs feed a mixer or controller. The signal is processed, amplified, and sent to zone speakers (ceiling, wall, horn, or column). Priority paging and emergency overrides ensure critical messages reach the correct areas clearly and on time.",
-      benefitTitle: "Key Benefits for Cambodia Sites",
-      b1: "Clear announcements for safety and daily operations",
-      b2: "Multi-zone control for offices, factories, and campuses",
-      b3: "Flexible indoor and outdoor speaker options",
-      b4: "Scalable from small buildings to large facilities",
-      b5: "Improved coordination during emergencies",
+        "áž”áŸ’ážšáž—áž–ážŸáŸ†áž¡áŸáž„ážŠáž¼áž…áž‡áž¶ microphone, media player áž“áž·áž„ážŸáž‰áŸ’áž‰áž¶ alarm áž“áž¹áž„áž…áž¼áž›áž‘áŸ… mixer áž¬ controlleráŸ” áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž˜áž€ážŸáž‰áŸ’áž‰áž¶ážáŸ’ážšáž¼ážœáž”áž¶áž“ážŠáŸ†ážŽáž¾ážšáž€áž¶ážš áž–áž„áŸ’ážšáž¸áž€ áž“áž·áž„áž”áž‰áŸ’áž‡áž¼áž“áž‘áŸ… speaker ážáž¶áž˜ zone (ceiling, wall, horn áž¬ column)áŸ” Priority paging áž“áž·áž„ emergency override áž’áž¶áž“áž¶ážáž¶ ážŸáž¶ážšážŸáŸ†ážáž¶áž“áŸ‹áž¢áž¶áž…áž‘áŸ…ážŠáž›áŸ‹ážáŸ†áž”áž“áŸ‹ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž…áŸ’áž”áž¶ážŸáŸ‹áž›áž¶ážŸáŸ‹ áž“áž·áž„áž‘áž¶áž“áŸ‹áž–áŸáž›áŸ”",
+      benefitTitle: "áž¢ážáŸ’ážáž”áŸ’ážšáž™áŸ„áž‡áž“áŸážŸáŸ†ážáž¶áž“áŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áž˜áŸ’ážšáŸ„áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+      b1: "áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸáž…áŸ’áž”áž¶ážŸáŸ‹áž›áž¶ážŸáŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž”áŸ’ážšážáž·áž”ážáŸ’ážáž·áž€áž¶ážšáž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒ",
+      b2: "áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž”áž¶áž“áž…áŸ’ážšáž¾áž“ zone ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ ážšáŸ„áž„áž…áž€áŸ’ážš áž“áž·áž„ campus",
+      b3: "áž‡áž˜áŸ’ážšáž¾ážŸ speaker áž”ážáŸ‹áž”áŸ‚áž“áž”áž¶áž“ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áŸ’áž“áž»áž„ áž“áž·áž„áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš",
+      b4: "áž–áž„áŸ’ážšáž¸áž€áž”áž¶áž“áž–áž¸áž¢áž‚áž¶ážšážáž¼áž…áž‘áŸ…ážŠáž›áŸ‹áž‚áž˜áŸ’ážšáŸ„áž„áž’áŸ†",
+      b5: "áž‡áž½áž™ážŸáž˜áŸ’ážšáž”ážŸáž˜áŸ’ážšáž½áž›áž”áž¶áž“áž›áŸ’áž¢áž”áŸ’ážšážŸáž¾ážšáž“áŸ…áž–áŸáž›áž˜áž¶áž“áž áŸážáž»áž€áž¶ážšážŽáŸáž”áž“áŸ’áž‘áž¶áž“áŸ‹",
 
-      guideTitle: "PA Speaker Selection & Coverage Guide (Cambodia)",
+      guideTitle: "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‡áŸ’ážšáž¾ážŸážšáž¾ážŸ Speaker áž“áž·áž„áž•áŸ‚áž“áž€áž¶ážšáž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ PA (áž€áž˜áŸ’áž–áž»áž‡áž¶)",
       guideSub:
-        "Choose the right PA speaker type for Cambodia projects. Match coverage distance, ambient noise, and mounting options to keep paging clear in schools, factories, malls, hospitals, and public venues.",
+        "áž‡áŸ’ážšáž¾ážŸáž”áŸ’ážšáž—áŸáž‘ PA speaker ážŠáŸ‚áž›ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áž˜áŸ’ážšáŸ„áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ” áž•áŸ’áž‚áž¼áž•áŸ’áž‚áž„áž…áž˜áŸ’áž„áž¶áž™áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ áž€áž˜áŸ’ážšáž·ážážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“ áž“áž·áž„ážœáž·áž’áž¸ážŠáŸ†áž¡áž¾áž„ ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™ paging áž…áŸ’áž”áž¶ážŸáŸ‹áž›áž¶ážŸáŸ‹ áž€áŸ’áž“áž»áž„ážŸáž¶áž›áž¶ážšáŸ€áž“ ážšáŸ„áž„áž…áž€áŸ’ážš áž•áŸ’ážŸáž¶ážš áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”",
       guideRows: [
-        ["Classrooms & Meeting Rooms", "Ceiling / Wall Speakers", "Clear voice and even coverage"],
-        ["Corridors & Lobbies", "Wall Speakers", "Directional paging for walkways"],
-        ["Factories & Warehouses", "Horn Speakers", "High-output audio in noisy areas"],
-        ["Outdoor Yards & Gates", "Weatherproof Horn Speakers", "Long-throw coverage"],
-        ["Retail & Malls", "Ceiling / Pendant Speakers", "Balanced paging and background audio"],
+        ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ & áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†", "Ceiling / Wall Speakers", "ážŸáŸ†áž¡áŸáž„áž“áž·áž™áž¶áž™áž…áŸ’áž”áž¶ážŸáŸ‹ áž“áž·áž„áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ážŸáŸ’áž˜áž¾áŸ—áž‚áŸ’áž“áž¶"],
+        ["áž…áŸ’ážšáž€ážŠáž¾ážš & Lobby", "Wall Speakers", "Paging ážáž¶áž˜áž‘áž·ážŸážŠáŸ…ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž•áŸ’áž›áž¼ážœážŠáž¾ážš"],
+        ["ážšáŸ„áž„áž…áž€áŸ’ážš & ážƒáŸ’áž›áž¶áŸ†áž„", "Horn Speakers", "ážŸáŸ†áž¡áŸáž„ážáŸ’áž›áž¶áŸ†áž„ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ†áž”áž“áŸ‹áž˜áž¶áž“ážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“ážáŸ’áž–ážŸáŸ‹"],
+        ["áž‘áž¸áž’áŸ’áž›áž¶ & áž…áŸ’ážšáž€áž…áŸáž‰áž…áž¼áž›ážáž¶áž„áž€áŸ’ážšáŸ…", "Weatherproof Horn Speakers", "áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹áž…áž˜áŸ’áž„áž¶áž™áž†áŸ’áž„áž¶áž™"],
+        ["Retail & áž•áŸ’ážŸáž¶ážš", "Ceiling / Pendant Speakers", "Paging áž“áž·áž„ážŸáŸ†áž¡áŸáž„áž•áŸ’áž‘áŸƒážáž¶áž„áž€áŸ’ážšáŸ„áž™áž˜áž¶áž“ážáž»áž›áŸ’áž™áž—áž¶áž–"],
       ] as [string, string, string][],
 
-      compTitle: "PA System Components & Architecture (Cambodia)",
+      compTitle: "ážŸáž˜áž¶ážŸáž—áž¶áž‚ áž“áž·áž„ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA (áž€áž˜áŸ’áž–áž»áž‡áž¶)",
       compSub:
-        "A complete PA system includes audio sources, mixing/control, amplification, and the right speaker types for each zone. Use this checklist to plan scalable, reliable public address systems for factories, schools, malls, hospitals, offices, and public venues across Cambodia.",
-      c1: "Mixers & Amplifiers",
-      c1d: "High-headroom mixing and amplification that keeps speech intelligible and music balanced, even at peak volume across multiple PA zones.",
-      c2: "Paging Microphones",
-      c2d: "Paging microphones with priority override for security desks, receptions, and control rooms, ensuring emergency and routine announcements cut through background noise.",
-      c3: "Wall & Ceiling Speakers",
-      c3d: "Ceiling and wall speakers designed for uniform indoor coverage in classrooms, offices, corridors, and retail spaces with low visual impact.",
-      c4: "Horn Speakers",
-      c4d: "Weather-resistant horn speakers for long-throw coverage in factories, loading bays, gates, and outdoor yards with high ambient noise.",
-      c5: "Zone Controllers",
-      c5d: "Zone controllers and matrices that handle routing, scheduling, and priority paging so the right message reaches the right area at the right time.",
-      c6: "Cables & Accessories",
-      c6d: "Professional cabling, racks, mounts, and surge protection that improve reliability, simplify maintenance, and keep PA systems compliant with site safety standards.",
+        "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA áž–áŸáž‰áž›áŸáž‰ážšáž½áž˜áž˜áž¶áž“áž”áŸ’ážšáž—áž–ážŸáŸ†áž¡áŸáž„ áž€áž¶ážšáž›áž¶áž™/áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„ áž€áž¶ážšáž–áž„áŸ’ážšáž¸áž€ážŸáŸ†áž¡áŸáž„ áž“áž·áž„áž”áŸ’ážšáž—áŸáž‘ speaker ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœážŸáž˜áŸ’ážšáž¶áž”áŸ‹ zone áž“áž¸áž˜áž½áž™áŸ—áŸ” áž”áŸ’ážšáž¾ checklist áž“áŸáŸ‡ážŠáž¾áž˜áŸ’áž”áž¸ážšáŸ€áž”áž…áŸ†áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž•áŸ’ážŸáž¶áž™ážŸáŸ†áž¡áŸáž„ážŸáž¶áž’áž¶ážšážŽáŸˆážŠáŸ‚áž›áž¢áž¶áž…áž–áž„áŸ’ážšáž¸áž€áž”áž¶áž“ áž“áž·áž„áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž•áŸ’ážŸáž¶ážš áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáž‘áž¼áž‘áž¶áŸ†áž„áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
+      c1: "Mixer & Amplifier",
+      c1d: "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ mixing áž“áž·áž„ amplification áž˜áž¶áž“ headroom ážáŸ’áž–ážŸáŸ‹ ážŠáž¾áž˜áŸ’áž”áž¸ážšáž€áŸ’ážŸáž¶ážŸáŸ†áž¡áŸáž„áž“áž·áž™áž¶áž™áž±áŸ’áž™áž…áŸ’áž”áž¶ážŸáŸ‹ áž“áž·áž„ážáž»áž›áŸ’áž™áž—áž¶áž–ážáž“áŸ’ážáŸ’ážšáž¸ áž‘áŸ„áŸ‡áž“áŸ…áž€áž˜áŸ’ážšáž·ážážŸáŸ†áž¡áŸáž„ážáŸ’áž–ážŸáŸ‹áž€áŸážŠáŸ„áž™áŸ”",
+      c2: "Paging Microphone",
+      c2d: "Paging microphone áž˜áž¶áž“ priority override ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáž»ážŸáž“áŸ’ážáž·ážŸáž»áž áž€áž“áŸ’áž›áŸ‚áž„áž‘áž‘áž½áž›áž—áŸ’áž‰áŸ€ážœ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„ áž’áž¶áž“áž¶ážáž¶ážŸáž¶ážšáž”áž“áŸ’áž‘áž¶áž“áŸ‹ áž“áž·áž„ážŸáž¶ážšáž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒáž¢áž¶áž…áž†áŸ’áž›áž„áž€áž¶ážáŸ‹ážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“áž”áž¶áž“áŸ”",
+      c3: "Wall & Ceiling Speaker",
+      c3d: "Ceiling áž“áž·áž„ wall speaker ážšáž…áž“áž¶ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážšáž±áŸ’áž™ážŸáŸ’áž˜áž¾áŸ—áž‚áŸ’áž“áž¶ áž€áŸ’áž“áž»áž„ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž…áŸ’ážšáž€ážŠáž¾ážš áž“áž·áž„ážáŸ†áž”áž“áŸ‹áž›áž€áŸ‹ážšáž¶áž™áŸ”",
+      c4: "Horn Speaker",
+      c4d: "Horn speaker áž’áž“áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž» ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹áž…áž˜áŸ’áž„áž¶áž™áž†áŸ’áž„áž¶áž™ áž“áŸ…ážšáŸ„áž„áž…áž€áŸ’ážš loading bay áž…áŸ’ážšáž€áž…áŸáž‰áž…áž¼áž› áž“áž·áž„áž‘áž¸áž’áŸ’áž›áž¶ážáž¶áž„áž€áŸ’ážšáŸ…ážŠáŸ‚áž›áž˜áž¶áž“ážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“ážáŸ’áž–ážŸáŸ‹áŸ”",
+      c5: "Zone Controller",
+      c5d: "Zone controller áž“áž·áž„ matrix áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„ routing, scheduling áž“áž·áž„ priority paging ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™ážŸáž¶ážšážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáž‘áŸ…ážŠáž›áŸ‹ážáŸ†áž”áž“áŸ‹ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž“áŸ…áž–áŸáž›ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáŸ”",
+      c6: "ážáŸ’ážŸáŸ‚ áž“áž·áž„áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹",
+      c6d: "áž€áž¶ážšážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚ Rack, Mount áž“áž·áž„ surge protection ážáž¶áž˜ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážš áž‡áž½áž™áž”áž„áŸ’áž€áž¾áž“áž—áž¶áž–áž‘áž»áž€áž…áž·ážáŸ’áž ážŸáž˜áŸ’ážšáž½áž›ážáŸ‚áž‘áž¶áŸ† áž“áž·áž„ážšáž€áŸ’ážŸáž¶áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA áž±áŸ’áž™ážŸáž˜ážŸáŸ’ážšáž”ážáž¶áž˜ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áž‘áž¸ážáž¶áŸ†áž„áŸ”",
 
-      chooseTitle: "Mugnee PA System Selection Guide for Cambodia",
+      chooseTitle: "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‡áŸ’ážšáž¾ážŸážšáž¾ážŸáž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA ážšáž”ážŸáŸ‹ Mugnee ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž˜áŸ’áž–áž»áž‡áž¶",
       chooseSub:
-        "Mugnee Cambodia helps you choose the right PA system for your building by matching coverage area, ambient noise, and safety requirements. Use this selection guide to plan zone-by-zone paging, choose indoor or outdoor speaker types, calculate amplifier power, and set priority/emergency override so announcements are clear in factories, schools, malls, offices, hospitals, and public venues. We also consider room acoustics, mounting height, power budget, and future expansion so your PA system remains reliable as your site grows.",
-      s1: "Coverage area and number of zones",
-      s2: "Indoor vs outdoor speaker types",
-      s3: "Power and wattage requirements",
-      s4: "Emergency priority and backup needs",
-      s5: "Integration with security or fire systems",
+        "Mugnee Cambodia áž‡áž½áž™áž¢áŸ’áž“áž€áž‡áŸ’ážšáž¾ážŸáž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA ážŠáŸ‚áž›ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áž‚áž¶ážš ážŠáŸ„áž™áž•áŸ’áž¢áŸ‚áž€áž›áž¾ážáŸ†áž”áž“áŸ‹áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ ážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“ áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ” áž”áŸ’ážšáž¾áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž“áŸáŸ‡ážŠáž¾áž˜áŸ’áž”áž¸ážšáŸ€áž”áž…áŸ† paging ážáž¶áž˜ zone áž‡áŸ’ážšáž¾ážŸáž”áŸ’ážšáž—áŸáž‘ speaker áž€áŸ’áž“áž»áž„/áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš áž‚ážŽáž“áž¶áž€áž˜áŸ’áž›áž¶áŸ†áž„ amplifier áž“áž·áž„áž€áŸ†ážŽážáŸ‹ priority/emergency override ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸáž…áŸ’áž”áž¶ážŸáŸ‹áž›áž¶ážŸáŸ‹áž€áŸ’áž“áž»áž„ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž•áŸ’ážŸáž¶ážš áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ” áž™áž¾áž„áž€áŸáž‚áž·ážáž‚áž¼ážšáž¢áŸ†áž–áž¸áž¢áž¶áž‚áž¼ážŸáŸ’áž‘áž·áž…áž”áž“áŸ’áž‘áž”áŸ‹ áž€áž˜áŸ’áž–ážŸáŸ‹ážŠáŸ†áž¡áž¾áž„ ážážœáž·áž€áž¶ážáž¶áž˜áž–áž› áž“áž·áž„áž€áž¶ážšáž–áž„áŸ’ážšáž¸áž€áž“áž¶áž–áŸáž›áž¢áž“áž¶áž‚ážáž•áž„ážŠáŸ‚ážšáŸ”",
+      s1: "áž‘áŸ†áž áŸ†áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ áž“áž·áž„áž…áŸ†áž“áž½áž“ zone",
+      s2: "áž”áŸ’ážšáž—áŸáž‘ speaker áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš áž“áž·áž„áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš",
+      s3: "ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšážáž¶áž˜áž–áž› áž“áž·áž„ážœáŸ‰áž¶ážáŸ‹",
+      s4: "ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšáž¢áž¶áž‘áž·áž—áž¶áž–áž‚áŸ’ážšáž¶áž¢áž¶ážŸáž“áŸ’áž“ áž“áž·áž„áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž”áž˜áŸ’ážšáž»áž„",
+      s5: "áž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áž‡áž¶áž˜áž½áž™ security áž¬ fire system",
 
-      gridTitle: "PA System Products",
+      gridTitle: "áž•áž›áž·ážáž•áž›áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA",
       gridSub:
-        "Browse amplifiers, mixers, speakers, microphones, and accessories for Cambodia projects.",
+        "ážŸáŸ’ážœáŸ‚áž„ážšáž€ amplifier, mixer, speaker, microphone áž“áž·áž„áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áž˜áŸ’ážšáŸ„áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
 
-      useTitle: "PA System Applications in Cambodia",
+      useTitle: "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       useSub:
-        "Explore the most common PA system use cases in Cambodia, from factories and schools to hospitals, malls, hotels, and government facilities. Each environment needs the right speaker type, paging priority, and zone design to ensure clear announcements and safety messaging.",
-      u1t: "Factories & Warehouses",
-      u1d: "Shift calls, safety alerts, and production updates across noisy factory floors with long-throw coverage.",
-      u2t: "Schools & Campuses",
-      u2d: "Classroom paging, assembly alerts, and campus-wide announcements with multi-zone scheduling.",
-      u3t: "Hospitals & Clinics",
-      u3d: "Emergency alerts, staff coordination, and patient communications with priority override.",
-      u4t: "Retail & Shopping Malls",
-      u4d: "Customer announcements, promotional messaging, and consistent background audio across retail zones.",
-      u5t: "Hotels & Public Venues",
-      u5d: "Event announcements, guest guidance, and zoned paging for lobbies, halls, and outdoor areas.",
-      u6t: "Airports & Government",
-      u6d: "Public announcements, security messaging, and evacuation guidance in large facilities.",
+        "ážŸáŸ’ážœáŸ‚áž„áž™áž›áŸ‹áž–áž¸áž€ážšážŽáž¸áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA ážŠáŸ‚áž›áž–áŸáž‰áž“áž·áž™áž˜áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ áž…áž¶áž”áŸ‹áž–áž¸ážšáŸ„áž„áž…áž€áŸ’ážš áž“áž·áž„ážŸáž¶áž›áž¶ážšáŸ€áž“ ážšáž áž¼ážážŠáž›áŸ‹áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ áž•áŸ’ážŸáž¶ážš ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš áž“áž·áž„ážŸáŸ’ážáž¶áž”áŸáž“ážšážŠáŸ’áž‹áŸ” áž”ážšáž·áž™áž¶áž€áž¶ážŸáž“áž¸áž˜áž½áž™áŸ—ážáŸ’ážšáž¼ážœáž€áž¶ážšáž”áŸ’ážšáž—áŸáž‘ speaker áž¢áž¶áž‘áž·áž—áž¶áž– paging áž“áž·áž„ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ zone ážáž»ážŸáŸ—áž‚áŸ’áž“áž¶ ážŠáž¾áž˜áŸ’áž”áž¸áž’áž¶áž“áž¶áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸáž…áŸ’áž”áž¶ážŸáŸ‹ áž“áž·áž„ážŸáž¶ážšážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”",
+      u1t: "ážšáŸ„áž„áž…áž€áŸ’ážš & ážƒáŸ’áž›áž¶áŸ†áž„",
+      u1d: "áž áŸ…ážœáŸáž“áž€áž¶ážšáž„áž¶ážš ážŸáž¶ážšáž‡áž¼áž“ážŠáŸ†ážŽáž¹áž„ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž”áž…áŸ’áž…áž»áž”áŸ’áž”áž“áŸ’áž“áž—áž¶áž–áž•áž›áž·ážáž€áž˜áŸ’áž˜ áž€áŸ’áž“áž»áž„ážáŸ†áž”áž“áŸ‹áž˜áž¶áž“ážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“ážáŸ’áž–ážŸáŸ‹áŸ”",
+      u2t: "ážŸáž¶áž›áž¶ážšáŸ€áž“ & Campus",
+      u2d: "Paging áž€áŸ’áž“áž»áž„ážáŸ’áž“áž¶áž€áŸ‹ ážŸáž¶ážšáž‡áž¼áž“ážŠáŸ†ážŽáž¹áž„áž€áž¶ážšáž”áŸ’ážšáž‡áž»áŸ† áž“áž·áž„áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸáž‘áž¼áž‘áž¶áŸ†áž„ campus ážŠáŸ„áž™ multi-zone schedulingáŸ”",
+      u3t: "áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ & áž‚áŸ’áž›áž¸áž“áž·áž€",
+      u3d: "ážŸáž¶ážšáž”áž“áŸ’áž‘áž¶áž“áŸ‹ áž€áž¶ážšážŸáž˜áŸ’ážšáž”ážŸáž˜áŸ’ážšáž½áž›áž”áž»áž‚áŸ’áž‚áž›áž·áž€ áž“áž·áž„áž‘áŸ†áž“áž¶áž€áŸ‹áž‘áŸ†áž“áž„áž‡áž¶áž˜áž½áž™áž¢áŸ’áž“áž€áž‡áŸ†áž„ážº ážŠáŸ„áž™ priority overrideáŸ”",
+      u4t: "Retail & áž•áŸ’ážŸáž¶ážšáž‘áŸ†áž“áž¾áž”",
+      u4d: "áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸáž¢ážáž·ážáž·áž‡áž“ ážŸáž¶ážšáž•áŸ’ážŸáž–áŸ’ážœáž•áŸ’ážŸáž¶áž™ áž“áž·áž„ážŸáŸ†áž¡áŸáž„áž•áŸ’áž‘áŸƒážáž¶áž„áž€áŸ’ážšáŸ„áž™áž±áŸ’áž™ážŸáŸ’ážáž·ážšáž—áž¶áž–ážáž¶áž˜ážáŸ†áž”áž“áŸ‹áž›áž€áŸ‹ážšáž¶áž™áŸ”",
+      u5t: "ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš & áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆ",
+      u5d: "áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸáž–áŸ’ážšáž¹ážáŸ’ážáž·áž€áž¶ážšážŽáŸ áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†áž—áŸ’áž‰áŸ€ážœ áž“áž·áž„ paging ážáž¶áž˜ zone ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ lobby ážŸáž¶áž› áž“áž·áž„ážáŸ†áž”áž“áŸ‹áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážšáŸ”",
+      u6t: "áž¢áž¶áž€áž¶ážŸáž™áž¶áž“ážŠáŸ’áž‹áž¶áž“ & ážŸáŸ’ážáž¶áž”áŸáž“ážšážŠáŸ’áž‹",
+      u6d: "áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸážŸáž¶áž’áž¶ážšážŽáŸˆ ážŸáž¶ážšážŸáž“áŸ’ážáž·ážŸáž»áž áž“áž·áž„áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†áž‡áž˜áŸ’áž›áŸ€ážŸážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áž‚áž¶ážšáž’áŸ†áŸ—áŸ”",
 
-      processTitle: "PA System Installation, Setup & Training in Cambodia",
+      processTitle: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ Setup áž“áž·áž„áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       processSub:
-        "From site survey to final commissioning, our team delivers a complete PA system installation in Cambodia. We handle coverage planning, clean cabling, equipment configuration, and end-user training so announcements stay clear, safe, and reliable long after handover.",
-      p1: "Site survey, noise mapping, and coverage planning",
+        "áž…áž¶áž”áŸ‹áž–áž¸ site survey ážŠáž›áŸ‹ commissioning áž…áž»áž„áž€áŸ’ážšáŸ„áž™ áž€áŸ’ážšáž»áž˜áž€áž¶ážšáž„áž¶ážšáž™áž¾áž„áž•áŸ’ážáž›áŸ‹ážŸáŸážœáž¶ážŠáŸ†áž¡áž¾áž„áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA áž–áŸáž‰áž›áŸáž‰áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ” áž™áž¾áž„ážšáŸ€áž”áž…áŸ†áž•áŸ‚áž“áž€áž¶ážšáž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ ážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚áž±áŸ’áž™ážŸáŸ’áž¢áž¶áž áž€áŸ†ážŽážáŸ‹ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’áž§áž”áž€ážšážŽáŸ áž“áž·áž„áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™áž€áž¶ážšáž”áŸ’ážšáž€áž¶ážŸáž…áŸ’áž”áž¶ážŸáŸ‹ ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“áž™áž¼ážšáž¢áž„áŸ’ážœáŸ‚áž„áŸ”",
+      p1: "Site survey, ážœáž¶ážŸáŸ‹ážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“ áž“áž·áž„ážšáŸ€áž”áž…áŸ†áž•áŸ‚áž“áž€áž¶ážšáž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹",
       p1d:
-        "Assess room size, ambient noise, and mounting points to calculate speaker quantity, placement, and coverage zones.",
-      p2: "System design, equipment selection, and zone layout",
+        "ážœáž¶áž™ážáž˜áŸ’áž›áŸƒáž‘áŸ†áž áŸ†áž”áž“áŸ’áž‘áž”áŸ‹ áž€áž˜áŸ’ážšáž·ážážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“ áž“áž·áž„áž…áŸ†ážŽáž»áž…ážŠáŸ†áž¡áž¾áž„ ážŠáž¾áž˜áŸ’áž”áž¸áž‚ážŽáž“áž¶áž…áŸ†áž“áž½áž“ speaker áž‘áž¸ážáž¶áŸ†áž„ážŠáž¶áž€áŸ‹ áž“áž·áž„ážáŸ†áž”áž“áŸ‹áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹áŸ”",
+      p2: "ážšáž…áž“áž¶áž”áŸ’ážšáž–áŸáž“áŸ’áž’ áž‡áŸ’ážšáž¾ážŸáž§áž”áž€ážšážŽáŸ áž“áž·áž„ layout ážáž¶áž˜ zone",
       p2d:
-        "Select amplifiers, mixers, paging microphones, and speakers that match power, impedance, and usage requirements.",
-      p3: "Installation, cabling, labeling, and audio tuning",
+        "áž‡áŸ’ážšáž¾ážŸ amplifier, mixer, paging microphone áž“áž·áž„ speaker ážŠáŸ‚áž›ážŸáž˜áž“áž¹áž„ážáž¶áž˜áž–áž› impedance áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áŸ”",
+      p3: "ážŠáŸ†áž¡áž¾áž„ ážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚ ážŠáž¶áž€áŸ‹ážŸáŸ’áž›áž¶áž€ áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœážŸáŸ†áž¡áŸáž„",
       p3d:
-        "Run clean cabling, label all lines, configure controllers, and tune EQ/volume for clear speech intelligibility.",
-      p4: "User training, documentation, and handover support",
+        "ážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚áž±áŸ’áž™ážŸáŸ’áž¢áž¶áž ážŠáž¶áž€áŸ‹ážŸáŸ’áž›áž¶áž€áž‚áŸ’ážšáž”áŸ‹ážáŸ’ážŸáŸ‚ áž€áŸ†ážŽážáŸ‹ controller áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœ EQ/Volume ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™ážŸáŸ†áž¡áŸáž„áž“áž·áž™áž¶áž™áž…áŸ’áž”áž¶ážŸáŸ‹áŸ”",
+      p4: "áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ áž¯áž€ážŸáž¶ážš áž“áž·áž„áž‚áž¶áŸ†áž‘áŸ’ážšáž€áž¶ážšáž”áŸ’ážšáž‚áž›áŸ‹",
       p4d:
-        "Train staff on paging, scheduling, and emergency override with full documentation and maintenance guidelines.",
+        "áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž”áž»áž‚áŸ’áž‚áž›áž·áž€áž›áž¾ paging, scheduling áž“áž·áž„ emergency override áž‡áž¶áž˜áž½áž™áž¯áž€ážŸáž¶ážšáž–áŸáž‰áž›áŸáž‰ áž“áž·áž„ážŽáŸ‚áž“áž¶áŸ†ážáŸ‚áž‘áž¶áŸ†áŸ”",
 
-      faqTitle: "PA System FAQ for Cambodia Buyers",
-      finalTitle: "Get a Project-Based Quotation",
+      faqTitle: "ážŸáŸ†ážŽáž½ážšáž‰áž¹áž€áž‰áž¶áž”áŸ‹áž¢áŸ†áž–áž¸áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áŸ’áž“áž€áž‘áž·áž‰áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+      finalTitle: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„",
       finalSub:
-        "Share your building size, zones, and use-case (factory, school, office, or mall). We will recommend the right PA system and provide a clear quotation.",
-      finalCta: "Contact & Get Quotation",
-      viewProducts: "View Products",
+        "ážŸáž¼áž˜áž”áŸ’ážšáž¶áž”áŸ‹áž‘áŸ†áž áŸ†áž¢áž‚áž¶ážš áž…áŸ†áž“áž½áž“ zone áž“áž·áž„áž‚áŸ„áž›áž”áŸ†ážŽáž„áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ (ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž¬áž•áŸ’ážŸáž¶ážš)áŸ” áž™áž¾áž„áž“áž¹áž„ážŽáŸ‚áž“áž¶áŸ†áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA ážŠáŸ‚áž›ážŸáž˜ážŸáŸ’ážšáž” áž“áž·áž„áž•áŸ’ážáž›áŸ‹ážáž˜áŸ’áž›áŸƒáž…áŸ’áž”áž¶ážŸáŸ‹áž›áž¶ážŸáŸ‹áŸ”",
+      finalCta: "áž‘áž¶áž€áŸ‹áž‘áž„ áž“áž·áž„ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ",
+      viewProducts: "áž˜áž¾áž›áž•áž›áž·ážáž•áž›",
       note:
-        "Note: Final quotation depends on coverage area, zone count, speaker type, cabling distance, and installation requirements.",
-      getQuote: "Get Quotation",
+        "áž…áŸ†ážŽáž¶áŸ†áŸ– ážáž˜áŸ’áž›áŸƒáž…áž»áž„áž€áŸ’ážšáŸ„áž™áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾ážáŸ†áž”áž“áŸ‹áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ áž…áŸ†áž“áž½áž“ zone áž”áŸ’ážšáž—áŸáž‘ speaker áž…áž˜áŸ’áž„áž¶áž™ážáŸ’ážŸáŸ‚ áž“áž·áž„áž›áž€áŸ’ážážážŽáŸ’ážŒážŠáŸ†áž¡áž¾áž„áŸ”",
+      getQuote: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ",
     };
 
     return lang === "en" ? en : km;
@@ -277,65 +277,65 @@ export default function PaSystemClient() {
         qEn: "What is a PA system and where is it used in Cambodia?",
         aEn:
           "A PA (public address) system amplifies voice and music to multiple speakers across zones. In Cambodia, it is widely used in factories, schools, hospitals, malls, hotels, and public venues for paging, safety alerts, and daily announcements.",
-        qKm: "PA System គឺអ្វី ហើយប្រើនៅកម្ពុជាក្នុងកន្លែងណាខ្លះ?",
+        qKm: "PA System áž‚ážºáž¢áŸ’ážœáž¸ áž áž¾áž™áž”áŸ’ážšáž¾áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áž€áŸ’áž“áž»áž„áž€áž“áŸ’áž›áŸ‚áž„ážŽáž¶ážáŸ’áž›áŸ‡?",
         aKm:
-          "PA (public address) system ជាប្រព័ន្ធបំពងសំឡេងទៅ speaker ច្រើនតាមតំបន់ផ្សេងៗ។ នៅកម្ពុជា វាត្រូវបានប្រើយ៉ាងទូលំទូលាយនៅរោងចក្រ សាលារៀន មន្ទីរពេទ្យ ផ្សារ សណ្ឋាគារ និងទីតាំងសាធារណៈសម្រាប់ paging, safety alert និងសេចក្តីប្រកាសប្រចាំថ្ងៃ។",
+          "PA (public address) system áž‡áž¶áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž”áŸ†áž–áž„ážŸáŸ†áž¡áŸáž„áž‘áŸ… speaker áž…áŸ’ážšáž¾áž“ážáž¶áž˜ážáŸ†áž”áž“áŸ‹áž•áŸ’ážŸáŸáž„áŸ—áŸ” áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážœáž¶ážáŸ’ážšáž¼ážœáž”áž¶áž“áž”áŸ’ážšáž¾áž™áŸ‰áž¶áž„áž‘áž¼áž›áŸ†áž‘áž¼áž›áž¶áž™áž“áŸ…ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ áž•áŸ’ážŸáž¶ážš ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆážŸáž˜áŸ’ážšáž¶áž”áŸ‹ paging, safety alert áž“áž·áž„ážŸáŸáž…áž€áŸ’ážáž¸áž”áŸ’ážšáž€áž¶ážŸáž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒáŸ”",
       },
       {
         qEn: "How do I choose speakers for factories, schools, or retail?",
         aEn:
           "Speaker type depends on noise level and coverage. Horn speakers suit factories and outdoor yards, while ceiling or wall speakers are ideal for classrooms, offices, corridors, and retail areas for even indoor coverage.",
-        qKm: "តើខ្ញុំជ្រើស speaker សម្រាប់រោងចក្រ សាលារៀន ឬ retail យ៉ាងដូចម្តេច?",
+        qKm: "ážáž¾ážáŸ’áž‰áž»áŸ†áž‡áŸ’ážšáž¾ážŸ speaker ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž¬ retail áž™áŸ‰áž¶áž„ážŠáž¼áž…áž˜áŸ’ážáŸáž…?",
         aKm:
-          "ប្រភេទ speaker អាស្រ័យលើកម្រិតសំឡេងរំខាន និងតំបន់ coverage។ Horn speaker សមស្របសម្រាប់រោងចក្រ និងតំបន់ក្រៅអាគារ ខណៈ ceiling/wall speaker សមស្របសម្រាប់ classroom, office, corridor និង retail area ក្នុងអាគារ។",
+          "áž”áŸ’ážšáž—áŸáž‘ speaker áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž€áž˜áŸ’ážšáž·ážážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“ áž“áž·áž„ážáŸ†áž”áž“áŸ‹ coverageáŸ” Horn speaker ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážšáŸ„áž„áž…áž€áŸ’ážš áž“áž·áž„ážáŸ†áž”áž“áŸ‹áž€áŸ’ážšáŸ…áž¢áž¶áž‚áž¶ážš ážážŽáŸˆ ceiling/wall speaker ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ classroom, office, corridor áž“áž·áž„ retail area áž€áŸ’áž“áž»áž„áž¢áž¶áž‚áž¶ážšáŸ”",
       },
       {
         qEn: "How many zones should a PA system have?",
         aEn:
           "Zone count depends on your site layout. We typically separate offices, production floors, corridors, and outdoor areas so messages can be targeted without disturbing other zones.",
-        qKm: "PA System គួរមានប៉ុន្មាន zone?",
+        qKm: "PA System áž‚áž½ážšáž˜áž¶áž“áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“ zone?",
         aKm:
-          "ចំនួន zone អាស្រ័យលើ layout ទីតាំងរបស់អ្នក។ ជាទូទៅយើងបែងចែក office, production floor, corridor និង outdoor area ដើម្បីផ្សាយសារត្រឹមត្រូវដោយមិនរំខានតំបន់ផ្សេង។",
+          "áž…áŸ†áž“áž½áž“ zone áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾ layout áž‘áž¸ážáž¶áŸ†áž„ážšáž”ážŸáŸ‹áž¢áŸ’áž“áž€áŸ” áž‡áž¶áž‘áž¼áž‘áŸ…áž™áž¾áž„áž”áŸ‚áž„áž…áŸ‚áž€ office, production floor, corridor áž“áž·áž„ outdoor area ážŠáž¾áž˜áŸ’áž”áž¸áž•áŸ’ážŸáž¶áž™ážŸáž¶ážšážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœážŠáŸ„áž™áž˜áž·áž“ážšáŸ†ážáž¶áž“ážáŸ†áž”áž“áŸ‹áž•áŸ’ážŸáŸáž„áŸ”",
       },
       {
         qEn: "What amplifier power do I need for clear paging?",
         aEn:
           "Amplifier power depends on speaker quantity, wattage, cable distance, and ambient noise. Our engineers calculate load and headroom so speech stays clear without distortion.",
-        qKm: "សម្រាប់ paging ឲ្យច្បាស់ តើត្រូវការកម្លាំង amplifier ប៉ុន្មាន?",
+        qKm: "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ paging áž²áŸ’áž™áž…áŸ’áž”áž¶ážŸáŸ‹ ážáž¾ážáŸ’ážšáž¼ážœáž€áž¶ážšáž€áž˜áŸ’áž›áž¶áŸ†áž„ amplifier áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
         aKm:
-          "កម្លាំង amplifier អាស្រ័យលើចំនួន speaker, wattage, ចម្ងាយខ្សែ និងសំឡេងរំខានជុំវិញ។ វិស្វករយើងគណនា load និង headroom ដើម្បីរក្សាសំឡេងឲ្យច្បាស់ដោយគ្មាន distortion។",
+          "áž€áž˜áŸ’áž›áž¶áŸ†áž„ amplifier áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž…áŸ†áž“áž½áž“ speaker, wattage, áž…áž˜áŸ’áž„áž¶áž™ážáŸ’ážŸáŸ‚ áž“áž·áž„ážŸáŸ†áž¡áŸáž„ážšáŸ†ážáž¶áž“áž‡áž»áŸ†ážœáž·áž‰áŸ” ážœáž·ážŸáŸ’ážœáž€ážšáž™áž¾áž„áž‚ážŽáž“áž¶ load áž“áž·áž„ headroom ážŠáž¾áž˜áŸ’áž”áž¸ážšáž€áŸ’ážŸáž¶ážŸáŸ†áž¡áŸáž„áž²áŸ’áž™áž…áŸ’áž”áž¶ážŸáŸ‹ážŠáŸ„áž™áž‚áŸ’áž˜áž¶áž“ distortionáŸ”",
       },
       {
         qEn: "Can a PA system integrate with fire alarm or security?",
         aEn:
           "Yes. We can integrate priority paging and emergency override with fire alarm or security systems so evacuation messages play instantly in critical zones.",
-        qKm: "PA System អាច integrate ជាមួយ fire alarm ឬ security បានទេ?",
+        qKm: "PA System áž¢áž¶áž… integrate áž‡áž¶áž˜áž½áž™ fire alarm áž¬ security áž”áž¶áž“áž‘áŸ?",
         aKm:
-          "បាន។ យើងអាច integrate priority paging និង emergency override ជាមួយ fire alarm ឬ security system ដើម្បីអោយសារជម្លៀសចេញផ្សាយភ្លាមៗនៅ critical zone។",
+          "áž”áž¶áž“áŸ” áž™áž¾áž„áž¢áž¶áž… integrate priority paging áž“áž·áž„ emergency override áž‡áž¶áž˜áž½áž™ fire alarm áž¬ security system ážŠáž¾áž˜áŸ’áž”áž¸áž¢áŸ„áž™ážŸáž¶ážšáž‡áž˜áŸ’áž›áŸ€ážŸáž…áŸáž‰áž•áŸ’ážŸáž¶áž™áž—áŸ’áž›áž¶áž˜áŸ—áž“áŸ… critical zoneáŸ”",
       },
       {
         qEn: "Do you install both indoor and outdoor PA systems?",
         aEn:
-          "Yes. We supply indoor ceiling and wall speakers as well as weather‑resistant outdoor horn or column speakers for yards, gates, and large open areas.",
-        qKm: "តើអ្នកដំឡើងទាំង Indoor និង Outdoor PA System ដែរឬទេ?",
+          "Yes. We supply indoor ceiling and wall speakers as well as weatherâ€‘resistant outdoor horn or column speakers for yards, gates, and large open areas.",
+        qKm: "ážáž¾áž¢áŸ’áž“áž€ážŠáŸ†áž¡áž¾áž„áž‘áž¶áŸ†áž„ Indoor áž“áž·áž„ Outdoor PA System ážŠáŸ‚ážšáž¬áž‘áŸ?",
         aKm:
-          "បាទ/ចាស។ យើងផ្គត់ផ្គង់ indoor ceiling/wall speaker និង outdoor horn/column speaker ដែលធន់អាកាសធាតុ សម្រាប់ yard, gate និងទីធ្លាធំ។",
+          "áž”áž¶áž‘/áž…áž¶ážŸáŸ” áž™áž¾áž„áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ indoor ceiling/wall speaker áž“áž·áž„ outdoor horn/column speaker ážŠáŸ‚áž›áž’áž“áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž» ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ yard, gate áž“áž·áž„áž‘áž¸áž’áŸ’áž›áž¶áž’áŸ†áŸ”",
       },
       {
         qEn: "How long does PA system installation take in Cambodia?",
         aEn:
           "Timeline depends on site size and zone count. Small offices can be completed quickly, while factories or campuses may take longer for cabling, tuning, and testing.",
-        qKm: "ការដំឡើង PA System នៅកម្ពុជា ចំណាយពេលប៉ុន្មាន?",
+        qKm: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ PA System áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ áž…áŸ†ážŽáž¶áž™áž–áŸáž›áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
         aKm:
-          "Timeline អាស្រ័យលើទំហំ site និងចំនួន zone។ Office តូចអាចបញ្ចប់បានលឿន ខណៈ factory ឬ campus អាចចំណាយពេលបន្ថែមសម្រាប់ cabling, tuning និង testing។",
+          "Timeline áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž‘áŸ†áž áŸ† site áž“áž·áž„áž…áŸ†áž“áž½áž“ zoneáŸ” Office ážáž¼áž…áž¢áž¶áž…áž”áž‰áŸ’áž…áž”áŸ‹áž”áž¶áž“áž›áž¿áž“ ážážŽáŸˆ factory áž¬ campus áž¢áž¶áž…áž…áŸ†ážŽáž¶áž™áž–áŸáž›áž”áž“áŸ’ážáŸ‚áž˜ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ cabling, tuning áž“áž·áž„ testingáŸ”",
       },
       {
-        qEn: "Do you provide warranty and after‑sales support?",
+        qEn: "Do you provide warranty and afterâ€‘sales support?",
         aEn:
           "Yes. We provide commissioning, user training, and maintenance options. Warranty depends on equipment type and configuration, and local support is available in Cambodia.",
-        qKm: "តើអ្នកផ្តល់ warranty និង after-sales support ដែរឬទេ?",
+        qKm: "ážáž¾áž¢áŸ’áž“áž€áž•áŸ’ážáž›áŸ‹ warranty áž“áž·áž„ after-sales support ážŠáŸ‚ážšáž¬áž‘áŸ?",
         aKm:
-          "ផ្តល់ជូន។ យើងមាន commissioning, user training និង maintenance option។ លក្ខខណ្ឌ warranty អាស្រ័យលើប្រភេទឧបករណ៍ និង configuration ហើយមាន local support នៅកម្ពុជា។",
+          "áž•áŸ’ážáž›áŸ‹áž‡áž¼áž“áŸ” áž™áž¾áž„áž˜áž¶áž“ commissioning, user training áž“áž·áž„ maintenance optionáŸ” áž›áž€áŸ’ážážážŽáŸ’ážŒ warranty áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž”áŸ’ážšáž—áŸáž‘áž§áž”áž€ážšážŽáŸ áž“áž·áž„ configuration áž áž¾áž™áž˜áž¶áž“ local support áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”",
       },
     ],
     []
@@ -343,7 +343,7 @@ export default function PaSystemClient() {
 
   const jsonLd = useMemo(() => {
     const site =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
+      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
     const url = site + "/pa-system";
 
     const breadcrumb = {
@@ -470,7 +470,9 @@ export default function PaSystemClient() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
             
-            <span className="font-semibold text-slate-700">PA System</span>
+            <span className="font-semibold text-slate-700">
+              {lang === "en" ? "PA System" : "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA"}
+            </span>
           </div>
 
           <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] text-slate-700 backdrop-blur">
@@ -537,23 +539,38 @@ export default function PaSystemClient() {
                 <div className="mt-1 text-xs text-slate-600">{t.quickSub}</div>
               </div>
               <div className="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 sm:block">
-                Quick Links
+                {lang === "en" ? "Quick Links" : "ážáŸ†ážŽážšáž áŸážŸ"}
               </div>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2">
-              {[
-                { label: "Specifications", href: "#specs" },
-                { label: "Basics", href: "#basics" },
-                { label: "Coverage Guide", href: "#coverage-guide" },
-                { label: "Components", href: "#components" },
-                { label: "Selection Guide", href: "#selection-guide" },
-                { label: "Use Cases", href: "#use-cases" },
-                { label: "Products", href: "#products" },
-                { label: "Process", href: "#process" },
-                { label: "FAQ", href: "#faq" },
-                { label: "Get Quotation", href: "#contact" },
-              ].map((item) => (
+              {(
+                lang === "en"
+                  ? [
+                      { label: "Specifications", href: "#specs" },
+                      { label: "Basics", href: "#basics" },
+                      { label: "Coverage Guide", href: "#coverage-guide" },
+                      { label: "Components", href: "#components" },
+                      { label: "Selection Guide", href: "#selection-guide" },
+                      { label: "Use Cases", href: "#use-cases" },
+                      { label: "Products", href: "#products" },
+                      { label: "Process", href: "#process" },
+                      { label: "FAQ", href: "#faq" },
+                      { label: "Get Quotation", href: "#contact" },
+                    ]
+                  : [
+                      { label: "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ", href: "#specs" },
+                      { label: "áž˜áž¼áž›ážŠáŸ’áž‹áž¶áž“", href: "#basics" },
+                      { label: "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹", href: "#coverage-guide" },
+                      { label: "ážŸáž˜áž¶ážŸáž—áž¶áž‚", href: "#components" },
+                      { label: "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‡áŸ’ážšáž¾ážŸážšáž¾ážŸ", href: "#selection-guide" },
+                      { label: "áž€ážšážŽáž¸áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹", href: "#use-cases" },
+                      { label: "áž•áž›áž·ážáž•áž›", href: "#products" },
+                      { label: "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážš", href: "#process" },
+                      { label: "ážŸáŸ†ážŽáž½ážšáž‰áž¹áž€áž‰áž¶áž”áŸ‹", href: "#faq" },
+                      { label: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ", href: "#contact" },
+                    ]
+              ).map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -615,9 +632,9 @@ export default function PaSystemClient() {
 
           <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="grid grid-cols-3 gap-0 border-b border-slate-200 bg-slate-50 px-4 py-3 text-xs font-semibold text-slate-600">
-              <div>Area Type</div>
-              <div>Recommended Speaker</div>
-              <div>Typical Use</div>
+              <div>{lang === "en" ? "Area Type" : "áž”áŸ’ážšáž—áŸáž‘ážáŸ†áž”áž“áŸ‹"}</div>
+              <div>{lang === "en" ? "Recommended Speaker" : "Speaker ážŠáŸ‚áž›ážŽáŸ‚áž“áž¶áŸ†"}</div>
+              <div>{lang === "en" ? "Typical Use" : "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž‘áž¼áž‘áŸ…"}</div>
             </div>
             <div className="divide-y divide-slate-200 text-sm text-slate-700">
               {t.guideRows.map((row) => (
@@ -828,6 +845,7 @@ function StepCard({ n, title, desc }: { n: string; title: string; desc: string }
     </div>
   );
 }
+
 
 
 

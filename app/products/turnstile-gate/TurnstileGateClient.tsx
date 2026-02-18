@@ -1,4 +1,4 @@
-
+﻿
 "use client";
 
 import Link from "next/link";
@@ -158,145 +158,145 @@ export default function TurnstileGateClient() {
 
     const km = {
       breadcrumb: "" ,
-      badge: "Cambodia - Turnstile Gate - Access Control",
-      h1: "Mugnee Turnstile Gate Solutions in Cambodia",
+      badge: "áž€áž˜áŸ’áž–áž»áž‡áž¶ - áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile - áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›áž…áŸáž‰",
+      h1: "ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile ážšáž”ážŸáŸ‹ Mugnee áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       sub:
-        "Mugnee Cambodia delivers professional turnstile gate systems for secure entry control in offices, factories, schools, transport hubs, and public venues. We supply flap barriers, tripod turnstiles, speed gates, and full-height turnstiles with RFID, QR, and biometric integration, plus on-site installation, commissioning, and local after-sales support.",
-      cta1: "Get a Free Quotation",
-      cta2: "View Turnstile Products",
+        "Mugnee Cambodia áž•áŸ’ážáž›áŸ‹áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš turnstile ážŠáŸ„áž™ážœáž·áž‡áŸ’áž‡áž¶áž‡áž¸ážœáŸˆ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›áž…áŸáž‰áž±áŸ’áž™áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áŸ…áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›ážŠáž¹áž€áž‡áž‰áŸ’áž‡áž¼áž“ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ” áž™áž¾áž„áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ flap barrier, tripod turnstile, speed gate áž“áž·áž„ full-height turnstile ážŠáŸ‚áž›áž¢áž¶áž…ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› RFID, QR áž“áž·áž„ biometric áž–áŸ’ážšáž˜áž‘áž¶áŸ†áž„ážŸáŸážœáž¶ážŠáŸ†áž¡áž¾áž„ commissioning áž“áž·áž„ after-sales support áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€áŸ”",
+      cta1: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒáž¥ážáž‚áž·ážážáŸ’áž›áŸƒ",
+      cta2: "áž˜áž¾áž›áž•áž›áž·ážáž•áž› Turnstile",
 
-      quickTitle: "Browse turnstile categories and access control services",
+      quickTitle: "ážšáž€áž˜áž¾áž›áž”áŸ’ážšáž—áŸáž‘ Turnstile áž“áž·áž„ážŸáŸážœáž¶áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›áž…áŸáž‰",
       quickSub:
-        "Quick links help you reach gate types, integrations, products, and support.",
+        "ážáŸ†ážŽážšáž áŸážŸáž‡áž½áž™áž±áŸ’áž™áž¢áŸ’áž“áž€áž…áž¼áž›áž‘áŸ…áž€áž¶áž“áŸ‹áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€ áž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› áž”áŸ’ážšáž—áŸáž‘áž•áž›áž·ážáž•áž› áž“áž·áž„ážŸáŸážœáž¶áž‚áž¶áŸ†áž‘áŸ’ážšáŸ”",
 
-      specsTitle: "Turnstile Gate Specifications & Features in Cambodia",
+      specsTitle: "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ áž“áž·áž„áž˜áž»ážáž„áž¶ážš Turnstile áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       specsSub:
-        "Plan entry control with the right gate type, throughput, and security level for indoor and outdoor sites.",
-      sCard1t: "Gate Types",
+        "ážšáŸ€áž”áž…áŸ†áž”áŸ’ážšáž–áŸáž“áŸ’áž’áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›áž…áŸáž‰ážŠáŸ„áž™áž‡áŸ’ážšáž¾ážŸáž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€ ážáž˜áŸ’áž›áž¶áž—áž¶áž–áž†áŸ’áž›áž„áž€áž¶ážáŸ‹ áž“áž·áž„áž€áž˜áŸ’ážšáž·ážážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áž±áŸ’áž™ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áŸ’áž“áž»áž„ áž“áž·áž„áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážšáŸ”",
+      sCard1t: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€",
       sCard1d:
-        "Tripod, flap barrier, speed gate, full-height, and swing gate options to match security levels and traffic volume.",
-      sCard2t: "Access Methods",
+        "áž‡áž˜áŸ’ážšáž¾ážŸ tripod, flap barrier, speed gate, full-height áž“áž·áž„ swing gate ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™ážŸáž˜áž“áž¹áž„áž€áž˜áŸ’ážšáž·ážážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž”ážšáž·áž˜áž¶ážŽáž¢áŸ’áž“áž€áž†áŸ’áž›áž„áž€áž¶ážáŸ‹áŸ”",
+      sCard2t: "ážœáž·áž’áž¸ážŸáž¶ážŸáŸ’ážáŸ’ážšáž…áž¼áž›áž”áŸ’ážšáž¾",
       sCard2d:
-        "Supports RFID cards, QR tickets, PIN, fingerprint, and face recognition with access control or attendance systems.",
-      sCard3t: "Safety & Emergency",
+        "áž‚áž¶áŸ†áž‘áŸ’ážš RFID card, QR ticket, PIN, fingerprint áž“áž·áž„ face recognition áž‡áž¶áž˜áž½áž™áž”áŸ’ážšáž–áŸáž“áŸ’áž’ access control áž¬ attendanceáŸ”",
+      sCard3t: "ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž‚áŸ’ážšáž¶áž¢áž¶ážŸáž“áŸ’áž“",
       sCard3d:
-        "Fire alarm linkage, emergency release, anti-tailgating logic, and fail-safe or fail-secure modes.",
-      sCard4t: "Usage Environment",
+        "áž—áŸ’áž‡áž¶áž”áŸ‹ fire alarm, emergency release, logic áž€áž¶ážšáž–áž¶ážš tailgating áž“áž·áž„ážšáž”áŸ€áž” fail-safe/fail-secureáŸ”",
+      sCard4t: "áž”ážšáž·áž™áž¶áž€áž¶ážŸáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹",
       sCard4d:
-        "Designed for indoor lobbies and outdoor sites with stainless-steel builds and weather-ready protection.",
-      sCard5t: "Throughput",
+        "ážšáž…áž“áž¶ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ lobby áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážš áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš ážŠáŸ„áž™áž”áŸ’ážšáž¾ážŸáž˜áŸ’áž—áž¶ážšáŸˆážŠáŸ‚áž€áž¢áŸŠáž¸ážŽáž»áž€ áž“áž·áž„áž€áž¶ážšáž–áž¶ážšáž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»áŸ”",
+      sCard5t: "ážŸáž˜ážáŸ’ážáž—áž¶áž–áž†áŸ’áž›áž„áž€áž¶ážáŸ‹",
       sCard5d:
-        "Efficient lanes for controlled pedestrian flow with adjustable speed and clear status indicators.",
-      sCard6t: "Installation",
+        "lane áž˜áž¶áž“áž”áŸ’ážšážŸáž·áž‘áŸ’áž’áž—áž¶áž–ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž›áŸ†áž áž¼ážšáž¢áŸ’áž“áž€ážŠáŸ†ážŽáž¾ážš ážŠáŸ„áž™áž¢áž¶áž…áž€áŸ†ážŽážáŸ‹áž›áŸ’áž”áž¿áž“ áž“áž·áž„ážŸáž‰áŸ’áž‰áž¶ážŸáŸ’ážáž¶áž“áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹áž›áž¶ážŸáŸ‹áŸ”",
+      sCard6t: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„",
       sCard6d:
-        "Professional installation with proper foundations, wiring, controller setup, testing, and on-site training.",
+        "ážŠáŸ†áž¡áž¾áž„ážŠáŸ„áž™ážœáž·áž‡áŸ’áž‡áž¶áž‡áž¸ážœáŸˆ áž‡áž¶áž˜áž½áž™áž‚áŸ’ážšáž¹áŸ‡ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž€áž¶ážšážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚ áž€áŸ†ážŽážáŸ‹ controller ážŸáž¶áž€áž›áŸ’áž”áž„áž”áŸ’ážšáž–áŸáž“áŸ’áž’ áž“áž·áž„áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž“áŸ…áž‘áž¸ážáž¶áŸ†áž„áŸ”",
 
-      basicsLabel: "TURNSTILE BASICS",
-      basicsTitle: "What Is a Turnstile Gate?",
+      basicsLabel: "áž˜áž¼áž›ážŠáŸ’áž‹áž¶áž“ TURNSTILE",
+      basicsTitle: "Turnstile Gate áž‚ážºáž‡áž¶áž¢áŸ’ážœáž¸?",
       basicsDesc:
-        "A turnstile gate controls the flow of people into secure areas. It prevents unauthorized entry, improves safety, and can integrate with access control, attendance, and visitor management systems.",
-      howTitle: "How Does a Turnstile Gate Work?",
+        "Turnstile gate áž‚ážºáž‡áž¶áž§áž”áž€ážšážŽáŸáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›áž…áŸáž‰ ážŠáŸ‚áž›áž¢áž“áž»áž‰áŸ’áž‰áž¶ážáž±áŸ’áž™áž˜áž“áž»ážŸáŸ’ážŸáž†áŸ’áž›áž„áž€áž¶ážáŸ‹áž˜áŸ’áž“áž¶áž€áŸ‹áž˜áŸ’ážáž„áž‘áŸ…ážáŸ†áž”áž“áŸ‹ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ” ážœáž¶áž‡áž½áž™áž‘áž”áŸ‹ážŸáŸ’áž€áž¶ážáŸ‹áž€áž¶ážšáž…áž¼áž›ážŠáŸ„áž™áž‚áŸ’áž˜áž¶áž“ážŸáž·áž‘áŸ’áž’áž· áž€áž¶ážáŸ‹áž”áž“áŸ’ážáž™ tailgating áž”áž„áŸ’áž€áž¾áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž’áŸ’ážœáž¾áž±áŸ’áž™áž›áŸ†áž áž¼ážšáž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážšáž”áŸ€áž”áŸ”",
+      howTitle: "Turnstile Gate ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž™áŸ‰áž¶áž„ážŠáž¼áž…áž˜áŸ’ážáŸáž…?",
       howDesc:
-        "The gate receives a signal from an access device (RFID, QR, biometric). If authorized, the barrier unlocks and allows entry while logging the event. System controllers handle access rules, time schedules, and reports.",
-      benefitTitle: "Key Benefits for Cambodia Sites",
-      b1: "Controlled entry and reduced tailgating",
-      b2: "Faster flow in busy locations",
-      b3: "Integration with attendance and visitor systems",
-      b4: "Durable stainless-steel construction options",
-      b5: "Emergency release and safety compliance",
+        "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážšáž‘áž‘áž½áž›ážŸáž‰áŸ’áž‰áž¶áž–áž¸áž§áž”áž€ážšážŽáŸáž…áž¼áž›áž”áŸ’ážšáž¾ (RFID, QR, biometric)áŸ” áž”áŸ’ážšážŸáž·áž“áž”áž¾áž˜áž¶áž“ážŸáž·áž‘áŸ’áž’áž· barrier áž“áž¹áž„áž”áž¾áž€ áž áž¾áž™áž€ážáŸ‹ážáŸ’ážšáž¶áž–áŸ’ážšáž¹ážáŸ’ážáž·áž€áž¶ážšážŽáŸáž…áž¼áž›áž…áŸáž‰áŸ” controller áž“áž¹áž„áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áŸ’áž”áž¶áž”áŸ‹áž…áž¼áž›áž”áŸ’ážšáž¾ áž€áž¶áž›ážœáž·áž—áž¶áž‚áž–áŸáž›ážœáŸáž›áž¶ áž“áž·áž„ážšáž”áž¶áž™áž€áž¶ážšážŽáŸáŸ”",
+      benefitTitle: "áž¢ážáŸ’ážáž”áŸ’ážšáž™áŸ„áž‡áž“áŸážŸáŸ†ážáž¶áž“áŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‘áž¸ážáž¶áŸ†áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+      b1: "áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›áž…áŸáž‰ áž“áž·áž„áž€áž¶ážáŸ‹áž”áž“áŸ’ážáž™ tailgating",
+      b2: "áž›áŸ†áž áž¼ážšáž…áž¼áž›áž…áŸáž‰áž›áž¿áž“áž“áŸ…áž‘áž¸ážáž¶áŸ†áž„áž˜áž“áž»ážŸáŸ’ážŸáž…áŸ’ážšáž¾áž“",
+      b3: "ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áž‡áž¶áž˜áž½áž™ attendance áž“áž·áž„ visitor system",
+      b4: "ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ážŠáŸ‚áž€áž¢áŸŠáž¸ážŽáž»áž€ážšáž¹áž„áž˜áž¶áŸ† áž’áž“áŸ‹áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹",
+      b5: "Emergency release áž“áž·áž„ážŸáž˜ážŸáŸ’ážšáž”ážáž¶áž˜ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážšážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–",
 
-      typesTitle: "Types of Turnstile Gates",
+      typesTitle: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile",
       typesSub:
-        "Choose the right turnstile gate type by security level, traffic volume, lane width, and the look of your site in Cambodia.",
+        "áž‡áŸ’ážšáž¾ážŸáž”áŸ’ážšáž—áŸáž‘ turnstile áž±áŸ’áž™ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ ážŠáŸ„áž™áž•áŸ’áž¢áŸ‚áž€áž›áž¾áž€áž˜áŸ’ážšáž·ážážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž”ážšáž·áž˜áž¶ážŽáž¢áŸ’áž“áž€áž†áŸ’áž›áž„áž€áž¶ážáŸ‹ áž‘áž‘áž¹áž„ lane áž“áž·áž„ážšáž…áž“áž¶áž”áŸáž‘áŸ’áž˜áž‘áž¸ážáž¶áŸ†áž„áŸ”",
       t1: "Tripod Turnstile",
       t1d:
-        "Budget-friendly tripod turnstiles for staff entrances, schools, and factories. Reliable one-at-a-time control with RFID or QR access and low maintenance.",
+        "áž‡áž˜áŸ’ážšáž¾ážŸážŸáž“áŸ’ážŸáŸ†ážážœáž·áž€áž¶ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áŸ’ážšáž€áž”áž»áž‚áŸ’áž‚áž›áž·áž€ ážŸáž¶áž›áž¶ážšáŸ€áž“ áž“áž·áž„ážšáŸ„áž„áž…áž€áŸ’ážšáŸ” áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž˜áŸ’áž“áž¶áž€áŸ‹áž˜áŸ’ážáž„áž”áž¶áž“áž‘áž»áž€áž…áž·ážáŸ’áž áž‡áž¶áž˜áž½áž™ RFID áž¬ QR áž“áž·áž„ážáŸ‚áž‘áž¶áŸ†áž„áž¶áž™ážŸáŸ’ážšáž½áž›áŸ”",
       t2: "Flap Barrier",
       t2d:
-        "Elegant flap barrier gates for office lobbies, hotels, and public buildings. Faster passage, sensor safety, and premium aesthetics for modern spaces.",
+        "áž…áŸ’ážšáž€ flap barrier ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ lobby áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ ážŸážŽáŸ’áž‹áž¶áž‚áž¶ážš áž“áž·áž„áž¢áž‚áž¶ážšážŸáž¶áž’áž¶ážšážŽáŸˆáŸ” áž†áŸ’áž›áž„áž€áž¶ážáŸ‹áž›áž¿áž“ áž˜áž¶áž“ sensor ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„ážšáž…áž“áž¶ážŸáŸ’áž¢áž¶ážáž‘áŸ†áž“áž¾áž”áŸ”",
       t3: "Speed Gate",
       t3d:
-        "High-throughput speed gates for metro stations, airports, and corporate HQs. Smooth glass panels, anti-tailgating logic, and fast flow control.",
+        "speed gate ážŸáž˜ážáŸ’ážáž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáŸ’ážáž¶áž“áž¸áž™áŸ áž¢áž¶áž€áž¶ážŸáž™áž¶áž“ážŠáŸ’áž‹áž¶áž“ áž“áž·áž„áž¢áž‚áž¶ážšážŸáž¶áž‡áž¸ážœáž€áž˜áŸ’áž˜áŸ” áž€áž‰áŸ’áž…áž€áŸ‹ážšáž›áž¼áž“ anti-tailgating áž“áž·áž„áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž›áŸ†áž áž¼ážšáž›áž¿áž“áŸ”",
       t4: "Full-Height Turnstile",
       t4d:
-        "Full-height turnstiles for maximum security at factories, stadiums, and restricted areas. Rugged construction for outdoor and 24/7 use.",
+        "full-height turnstile ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–ážáŸ’áž–ážŸáŸ‹áž”áŸ†áž•áž»áž áž“áŸ…ážšáŸ„áž„áž…áž€áŸ’ážš áž€áž¸áž¡ážŠáŸ’áž‹áž¶áž“ áž“áž·áž„ážáŸ†áž”áž“áŸ‹áž€áŸ†ážŽážáŸ‹ážŸáž·áž‘áŸ’áž’áž·áŸ” ážšáž¹áž„áž˜áž¶áŸ† ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš áž“áž·áž„áž”áŸ’ážšáž¾ 24/7áŸ”",
       t5: "Swing Gate / Optical",
       t5d:
-        "Swing/optical gates for accessible wide lanes and stroller or wheelchair access. Ideal for mixed-traffic entrances and visitor-friendly sites.",
+        "swing/optical gate ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ lane áž‘áž¼áž›áž¶áž™ áž“áž·áž„áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ stroller áž¬ wheelchairáŸ” ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áŸ’ážšáž€áž…áŸáž‰áž…áž¼áž›áž…áž˜áŸ’ážšáž»áŸ‡ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŠáŸ‚áž›áž„áž¶áž™ážŸáŸ’ážšáž½áž›ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž—áŸ’áž‰áŸ€ážœáŸ”",
 
-      useTitle: "Where Turnstile Gates Are Used in Cambodia",
+      useTitle: "áž‘áž¸ážáž¶áŸ†áž„ážŠáŸ‚áž›áž”áŸ’ážšáž¾ Turnstile Gate áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       useSub:
-        "Common deployment scenarios for turnstile gates in Cambodia based on security, traffic flow, and compliance needs.",
-      u1t: "Factories & Industrial Zones",
+        "áž§áž‘áž¶áž ážšážŽáŸáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ turnstile áž‘áž¼áž‘áŸ…áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážŠáŸ„áž™áž•áŸ’áž¢áŸ‚áž€áž›áž¾ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž›áŸ†áž áž¼ážšáž¢áŸ’áž“áž€áž†áŸ’áž›áž„áž€áž¶ážáŸ‹ áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšáž¢áž“áž»ážœážáŸ’ážážáž¶áž˜ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážšáŸ”",
+      u1t: "ážšáŸ„áž„áž…áž€áŸ’ážš & ážáŸ†áž”áž“áŸ‹áž§ážŸáŸ’ážŸáž¶áž áž€áž˜áŸ’áž˜",
       u1d:
-        "Shift entry control, attendance integration, PPE compliance, and secure perimeter access for industrial facilities.",
-      u2t: "Schools & Campuses",
+        "áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›ážœáŸáž“áž€áž¶ážšáž„áž¶ážš ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› attendance áž¢áž“áž»ážœážáŸ’áž PPE áž“áž·áž„áž€áž¶ážšáž–áž¶ážšáž…áŸ’ážšáž€áž‡áž»áŸ†ážœáž·áž‰ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážšáŸ„áž„áž…áž€áŸ’ážšáŸ”",
+      u2t: "ážŸáž¶áž›áž¶ážšáŸ€áž“ & Campus",
       u2d:
-        "Student access control, visitor screening, and event entry management for safer campuses.",
-      u3t: "Offices & Corporate Buildings",
+        "áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›ážšáž”ážŸáŸ‹ážŸáž·ážŸáŸ’ážŸ ážŸáŸ’áž€áŸáž“áž—áŸ’áž‰áŸ€ážœ áž“áž·áž„áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž…áž¼áž›áž–áŸ’ážšáž¹ážáŸ’ážáž·áž€áž¶ážšážŽáŸ ážŠáž¾áž˜áŸ’áž”áž¸áž”áž„áŸ’áž€áž¾áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áž€áŸ’áž“áž»áž„ campusáŸ”",
+      u3t: "áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ & áž¢áž‚áž¶ážšážŸáž¶áž‡áž¸ážœáž€áž˜áŸ’áž˜",
       u3d:
-        "Secure lobby access, staff-only zones, and smart office integration with RFID or biometric systems.",
-      u4t: "Public Venues & Stadiums",
+        "áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž› lobby áž±áŸ’áž™áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– ážáŸ†áž”áž“áŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áž»áž‚áŸ’áž‚áž›áž·áž€ áž“áž·áž„áž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› smart office áž‡áž¶áž˜áž½áž™ RFID áž¬ biometricáŸ”",
+      u4t: "áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆ & áž€áž¸áž¡ážŠáŸ’áž‹áž¶áž“",
       u4d:
-        "Ticketed entry, crowd flow management, and anti-tailgating control for public venues.",
-      u5t: "Hospitals & Public Institutions",
+        "áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›ážŠáŸ„áž™ážŸáŸ†áž”áž»ážáŸ’ážš áž›áŸ†áž áž¼ážšáž˜áž“áž»ážŸáŸ’ážŸ áž“áž·áž„áž€áž¶ážšáž–áž¶ážš tailgating ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”",
+      u5t: "áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™ & ážŸáŸ’ážáž¶áž”áŸáž“ážŸáž¶áž’áž¶ážšážŽáŸˆ",
       u5d:
-        "Restricted area access, patient-area security, and staff tracking for compliance and safety.",
-      u6t: "Transport Hubs",
+        "áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›ážáŸ†áž”áž“áŸ‹áž€áŸ†ážŽážáŸ‹ážŸáž·áž‘áŸ’áž’áž· ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–ážáŸ†áž”áž“áŸ‹áž¢áŸ’áž“áž€áž‡áŸ†áž„ážº áž“áž·áž„ážáž¶áž˜ážŠáž¶áž“áž”áž»áž‚áŸ’áž‚áž›áž·áž€ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž¢áž“áž»ážœážáŸ’ážážáž¶áž˜ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážšáŸ”",
+      u6t: "áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›ážŠáž¹áž€áž‡áž‰áŸ’áž‡áž¼áž“",
       u6d:
-        "Fast, controlled access at stations and terminals with lane control and passenger counting.",
+        "áž€áž¶ážšáž…áž¼áž›áž…áŸáž‰áž›áž¿áž“ áž“áž·áž„áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž”áž¶áž“ áž“áŸ…ážŸáŸ’ážáž¶áž“áž¸áž™áŸ áž“áž·áž„ terminal áž‡áž¶áž˜áž½áž™ lane control áž“áž·áž„ážšáž¶áž”áŸ‹áž…áŸ†áž“áž½áž“áž¢áŸ’áž“áž€ážŠáŸ†ážŽáž¾ážšáŸ”",
 
-      integrationsTitle: "Turnstile Gate Integration Options in Cambodia",
+      integrationsTitle: "áž‡áž˜áŸ’ážšáž¾ážŸážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› Turnstile áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       integrationsSub:
-        "Integrate turnstile gates with access control, attendance, and safety systems for secure, automated entry.",
-      i1: "RFID cards, keyfobs, and smart ID badges",
-      i2: "QR code tickets, mobile passes, and e-tickets",
-      i3: "Fingerprint, face recognition, or PIN access",
-      i4: "Visitor management and reception systems",
-      i5: "Attendance, HR, and payroll software sync",
-      i6: "Fire alarm linkage and emergency release",
+        "ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› turnstile áž‡áž¶áž˜áž½áž™ access control, attendance áž“áž·áž„ safety system ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™áž€áž¶ážšáž…áž¼áž›áž…áŸáž‰áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„ážŸáŸ’ážœáŸáž™áž”áŸ’ážšážœážáŸ’ážáž·áŸ”",
+      i1: "RFID card, keyfob áž“áž·áž„áž”áŸážŽáŸ’ážŽážŸáž˜áŸ’áž‚áž¶áž›áŸ‹ smart ID",
+      i2: "QR code ticket, mobile pass áž“áž·áž„ e-ticket",
+      i3: "Fingerprint, face recognition áž¬ PIN access",
+      i4: "Visitor management áž“áž·áž„ reception system",
+      i5: "Sync áž‡áž¶áž˜áž½áž™ attendance, HR áž“áž·áž„ payroll software",
+      i6: "áž—áŸ’áž‡áž¶áž”áŸ‹ fire alarm áž“áž·áž„ emergency release",
 
-      chooseTitle: "How to Choose the Right Turnstile Gate in Cambodia",
+      chooseTitle: "ážšáž”áŸ€áž”áž‡áŸ’ážšáž¾ážŸ Turnstile Gate áž±áŸ’áž™ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       chooseSub:
-        "A practical checklist to select the right turnstile gate based on traffic, security, and integration needs.",
+        "Checklist áž‡áž¶áž€áŸ‹ážŸáŸ’ážáŸ‚áž„ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‡áŸ’ážšáž¾ážŸ turnstile ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ ážáž¶áž˜áž›áŸ†áž áž¼ážšáž˜áž“áž»ážŸáŸ’ážŸ áž€áž˜áŸ’ážšáž·ážážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áŸ”",
       chooseDesc:
-        "Start by estimating peak-hour flow and the level of access control you need, then match the lane type (tripod, flap barrier, speed gate, or full height) to your space, aesthetics, and security policy. Consider indoor vs outdoor placement, weather exposure, power and network availability, and the access method your users will carry (RFID, QR, PIN, or biometric). Finally, confirm integration with attendance, visitor management, or HR systems so the solution supports daily operations and future expansion.",
-      c1: "Traffic volume and required throughput per minute",
-      c2: "Security level (low, medium, high) and anti-tailgating needs",
-      c3: "Indoor vs outdoor installation and weather exposure",
-      c4: "Access method (RFID, QR, PIN, biometric) and user type",
-      c5: "Integration with attendance, visitor, or HR systems",
-      c6: "Power, network availability, and emergency release requirements",
+        "áž…áž¶áž”áŸ‹áž•áŸ’ážáž¾áž˜áž–áž¸áž€áž¶ážšáž”áŸ‰áž¶áž“áŸ‹ážŸáŸ’áž˜áž¶áž“áž›áŸ†áž áž¼ážšáž˜áž“áž»ážŸáŸ’ážŸáž–áŸáž›áž˜áž˜áž¶áž‰áž¹áž€ áž“áž·áž„áž€áž˜áŸ’ážšáž·ážáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€áž¶ážšáž…áž¼áž›ážŠáŸ‚áž›áž¢áŸ’áž“áž€ážáŸ’ážšáž¼ážœáž€áž¶ážš áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž˜áž€áž•áŸ’áž‚áž¼áž•áŸ’áž‚áž„áž”áŸ’ážšáž—áŸáž‘ lane (tripod, flap barrier, speed gate áž¬ full-height) áž±áŸ’áž™ážŸáž˜áž“áž¹áž„áž‘áŸ†áž áŸ†áž‘áž¸ážáž¶áŸ†áž„ ážšáž…áž“áž¶áž”áŸáž‘áŸ’áž˜ áž“áž·áž„áž‚áŸ„áž›áž“áž™áŸ„áž”áž¶áž™ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ” áž‚áž½ážšáž–áž·áž…áž¶ážšážŽáž¶áž•áž„ážŠáŸ‚ážš áž¢áŸ†áž–áž¸áž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž€áŸ’áž“áž»áž„/áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš áž€áž¶ážšáž”áŸ‰áŸ‡áž–áž¶áž›áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž» áž—áž¶áž–ážšáž½áž…ážšáž¶áž›áŸ‹áž“áŸƒáž—áŸ’áž›áž¾áž„ áž“áž·áž„áž”ážŽáŸ’ážáž¶áž‰ áž“áž·áž„ážœáž·áž’áž¸ážŸáž¶ážŸáŸ’ážáŸ’ážšáž…áž¼áž›áž”áŸ’ážšáž¾ážšáž”ážŸáŸ‹áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ (RFID, QR, PIN áž¬ biometric)áŸ” áž…áž»áž„áž€áŸ’ážšáŸ„áž™ ážáŸ’ážšáž¼ážœáž”áž‰áŸ’áž‡áž¶áž€áŸ‹áž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áž‡áž¶áž˜áž½áž™ attendance, visitor management áž¬ HR system ážŠáž¾áž˜áŸ’áž”áž¸áž‚áž¶áŸ†áž‘áŸ’ážšáž€áž¶ážšáž”áŸ’ážšážáž·áž”ážáŸ’ážáž·áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒ áž“áž·áž„áž€áž¶ážšáž–áž„áŸ’ážšáž¸áž€áž“áž¶áž–áŸáž›áž¢áž“áž¶áž‚ážáŸ”",
+      c1: "áž”ážšáž·áž˜áž¶ážŽáž¢áŸ’áž“áž€áž†áŸ’áž›áž„áž€áž¶ážáŸ‹ áž“áž·áž„ throughput ážáŸ’ážšáž¼ážœáž€áž¶ážšáž€áŸ’áž“áž»áž„áž˜áž½áž™áž“áž¶áž‘áž¸",
+      c2: "áž€áž˜áŸ’ážšáž·ážážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– (áž‘áž¶áž” áž˜áž’áŸ’áž™áž˜ ážáŸ’áž–ážŸáŸ‹) áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšáž€áž¶ážšáž–áž¶ážš tailgating",
+      c3: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž€áŸ’áž“áž»áž„/áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážš áž“áž·áž„áž€áž¶ážšáž”áŸ‰áŸ‡áž–áž¶áž›áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž»",
+      c4: "ážœáž·áž’áž¸áž…áž¼áž›áž”áŸ’ážšáž¾ (RFID, QR, PIN, biometric) áž“áž·áž„áž”áŸ’ážšáž—áŸáž‘áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾",
+      c5: "áž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áž‡áž¶áž˜áž½áž™ attendance, visitor áž¬ HR system",
+      c6: "ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšáž—áŸ’áž›áž¾áž„ áž”ážŽáŸ’ážáž¶áž‰ áž“áž·áž„ emergency release",
 
-      gridTitle: "Turnstile Gate Products",
+      gridTitle: "áž•áž›áž·ážáž•áž› Turnstile Gate",
       gridSub:
-        "Browse turnstile gate models for offices, factories, schools, and public venues.",
+        "ážŸáŸ’ážœáŸ‚áž„ážšáž€áž˜áŸ‰áž¼ážŠáŸ‚áž› turnstile gate ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ ážšáŸ„áž„áž…áž€áŸ’ážš ážŸáž¶áž›áž¶ážšáŸ€áž“ áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŸáž¶áž’áž¶ážšážŽáŸˆáŸ”",
 
-      processTitle: "Turnstile Gate Installation, Setup & Training in Cambodia",
+      processTitle: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ Setup áž“áž·áž„áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› Turnstile áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
       processSub:
-        "A structured delivery workflow for stable operation, clean wiring, and smooth pedestrian flow from day one.",
-      p1: "Site survey, traffic study, and access workflow mapping",
+        "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž¢áž“áž»ážœážáŸ’ážáž‡áž¶áž”áŸ’ážšáž–áŸáž“áŸ’áž’ ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™áž”áŸ’ážšážáž·áž”ážáŸ’ážáž·áž€áž¶ážšážŸáŸ’ážáž·ážšáž—áž¶áž– áž€áž¶ážšážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚ážŸáŸ’áž¢áž¶áž áž“áž·áž„áž›áŸ†áž áž¼ážšáž¢áŸ’áž“áž€ážŠáŸ†ážŽáž¾ážšážšáž›áž¼áž“áž…áž¶áž”áŸ‹áž–áž¸ážáŸ’áž„áŸƒážŠáŸ†áž”áž¼áž„áŸ”",
+      p1: "Site survey ážŸáž·áž€áŸ’ážŸáž¶áž›áŸ†áž áž¼ážšáž˜áž“áž»ážŸáŸ’ážŸ áž“áž·áž„ map ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž…áž¼áž›áž…áŸáž‰",
       p1d:
-        "We inspect entry points, measure peak flow, and review security policies to define the right lane count, placement, and access method.",
-      p2: "Gate selection, lane layout design, and system planning",
+        "áž™áž¾áž„áž–áž·áž“áž·ážáŸ’áž™áž…áŸ’ážšáž€áž…áž¼áž›ážœáž¶ážŸáŸ‹áž›áŸ†áž áž¼ážšáž–áŸáž›áž˜áž˜áž¶áž‰áž¹áž€ áž“áž·áž„áž–áž·áž“áž·ážáŸ’áž™áž‚áŸ„áž›áž“áž™áŸ„áž”áž¶áž™ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– ážŠáž¾áž˜áŸ’áž”áž¸áž€áŸ†ážŽážáŸ‹áž…áŸ†áž“áž½áž“ lane áž‘áž¸ážáž¶áŸ†áž„ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ážœáž·áž’áž¸áž…áž¼áž›áž”áŸ’ážšáž¾ážŠáŸ‚áž›ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáŸ”",
+      p2: "áž‡áŸ’ážšáž¾ážŸáž…áŸ’ážšáž€ ážšáž…áž“áž¶ lane layout áž“áž·áž„áž•áŸ‚áž“áž€áž¶ážšáž”áŸ’ážšáž–áŸáž“áŸ’áž’",
       p2d:
-        "We match tripod, flap, speed gate, or full-height units to your space, then finalize layout, power, and network plans.",
-      p3: "Installation, wiring, integration testing, and safety checks",
+        "áž™áž¾áž„áž•áŸ’áž‚áž¼áž•áŸ’áž‚áž„ tripod, flap, speed gate áž¬ full-height áž±áŸ’áž™ážŸáž˜áž“áž¹áž„áž‘áž¸ážáž¶áŸ†áž„ ážšáž½áž…áž”áž‰áŸ’áž…áž”áŸ‹áž•áŸ‚áž“áž€áž¶ážš layout áž—áŸ’áž›áž¾áž„ áž“áž·áž„áž”ážŽáŸ’ážáž¶áž‰áŸ”",
+      p3: "ážŠáŸ†áž¡áž¾áž„ ážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚ ážŸáž¶áž€áž›áŸ’áž”áž„áž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› áž“áž·áž„áž–áž·áž“áž·ážáŸ’áž™ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–",
       p3d:
-        "Our team installs the gates, runs cabling cleanly, integrates controllers, and verifies emergency release and compliance.",
-      p4: "User training, handover documentation, and ongoing support",
+        "áž€áŸ’ážšáž»áž˜áž€áž¶ážšáž„áž¶ážšáž™áž¾áž„ážŠáŸ†áž¡áž¾áž„áž…áŸ’ážšáž€ ážŠáž¶áž€áŸ‹ážáŸ’ážŸáŸ‚áž±áŸ’áž™ážŸáŸ’áž¢áž¶áž ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› controller áž“áž·áž„áž–áž·áž“áž·ážáŸ’áž™ emergency release áž–áŸ’ážšáž˜áž‘áž¶áŸ†áž„áž—áž¶áž–ážŸáž˜ážŸáŸ’ážšáž”ážáž¶áž˜ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážšáŸ”",
+      p4: "áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ áž¯áž€ážŸáž¶ážšáž”áŸ’ážšáž‚áž›áŸ‹ áž“áž·áž„áž‚áž¶áŸ†áž‘áŸ’ážšáž”áž“áŸ’áž",
       p4d:
-        "We train operators, deliver documentation, and provide after-sales support to keep the system running smoothly.",
+        "áž™áž¾áž„áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž¢áŸ’áž“áž€áž”áŸ’ážšážáž·áž”ážáŸ’ážáž·áž€áž¶ážš áž•áŸ’ážáž›áŸ‹áž¯áž€ážŸáž¶ážšáž”áŸ’ážšáž‚áž›áŸ‹ áž“áž·áž„ after-sales support ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™áž”áŸ’ážšáž–áŸáž“áŸ’áž’ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážšáž›áž¼áž“áž‡áž¶áž”áŸ‹áž›áž¶áž”áŸ‹áŸ”",
 
-      faqTitle: "Turnstile Gate FAQs in Cambodia: Installation, Safety & Integration",
-      finalTitle: "Get a Project-Based Quotation",
+      faqTitle: "ážŸáŸ†ážŽáž½ážšáž‰áž¹áž€áž‰áž¶áž”áŸ‹áž¢áŸ†áž–áž¸ Turnstile áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ– áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›",
+      finalTitle: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„",
       finalSub:
-        "Share your site type, traffic volume, access method, and integration needs. We will recommend the right turnstile gate and provide a clear quotation.",
-      finalCta: "Contact & Get Quotation",
-      viewProducts: "View Products",
+        "ážŸáž¼áž˜áž•áŸ’ážáž›áŸ‹áž–áŸážáŸŒáž˜áž¶áž“áž”áŸ’ážšáž—áŸáž‘áž‘áž¸ážáž¶áŸ†áž„ áž”ážšáž·áž˜áž¶ážŽáž¢áŸ’áž“áž€áž†áŸ’áž›áž„áž€áž¶ážáŸ‹ ážœáž·áž’áž¸áž…áž¼áž›áž”áŸ’ážšáž¾ áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áŸ” áž™áž¾áž„áž“áž¹áž„ážŽáŸ‚áž“áž¶áŸ† turnstile ážŠáŸ‚áž›ážŸáž˜ážŸáŸ’ážšáž” áž“áž·áž„áž•áŸ’ážáž›áŸ‹ážáž˜áŸ’áž›áŸƒáž…áŸ’áž”áž¶ážŸáŸ‹áž›áž¶ážŸáŸ‹áŸ”",
+      finalCta: "áž‘áž¶áž€áŸ‹áž‘áž„ áž“áž·áž„ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ",
+      viewProducts: "áž˜áž¾áž›áž•áž›áž·ážáž•áž›",
       note:
-        "Note: Final quotation depends on gate type, quantity, access method, installation conditions, and integration requirements.",
-      getQuote: "Get Quotation",
+        "áž…áŸ†ážŽáž¶áŸ†áŸ– ážáž˜áŸ’áž›áŸƒáž…áž»áž„áž€áŸ’ážšáŸ„áž™áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€ áž”ážšáž·áž˜áž¶ážŽ ážœáž·áž’áž¸áž…áž¼áž›áž”áŸ’ážšáž¾ áž›áž€áŸ’ážážážŽáŸ’ážŒážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áŸ”",
+      getQuote: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ",
     };
 
     return lang === "en" ? en : km;
@@ -307,82 +307,82 @@ export default function TurnstileGateClient() {
       {
         qEn: "Which turnstile type is best for my site in Cambodia?",
         aEn:
-          "Choose based on security level, traffic volume, and environment. Full-height turnstiles suit perimeter or high-security sites and are built for outdoor use, with designs that deter climbing and tailgating. Speed or optical gates use multi‑beam sensors to prevent piggybacking and are ideal for high‑traffic lobbies. Tripod units are a cost‑effective fit for staff entrances and controlled indoor zones.",
-        qKm: "សម្រាប់ទីតាំងនៅកម្ពុជា តើគួរជ្រើស Turnstile ប្រភេទណា?",
+          "Choose based on security level, traffic volume, and environment. Full-height turnstiles suit perimeter or high-security sites and are built for outdoor use, with designs that deter climbing and tailgating. Speed or optical gates use multiâ€‘beam sensors to prevent piggybacking and are ideal for highâ€‘traffic lobbies. Tripod units are a costâ€‘effective fit for staff entrances and controlled indoor zones.",
+        qKm: "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‘áž¸ážáž¶áŸ†áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážáž¾áž‚áž½ážšáž‡áŸ’ážšáž¾ážŸ Turnstile áž”áŸ’ážšáž—áŸáž‘ážŽáž¶?",
         aKm:
-          "ត្រូវជ្រើសតាមកម្រិតសុវត្ថិភាព បរិមាណអ្នកឆ្លងកាត់ និងបរិស្ថានប្រើប្រាស់។ Full-height turnstile សមស្របសម្រាប់តំបន់ perimeter ឬកន្លែងសុវត្ថិភាពខ្ពស់ និងសាកសមការប្រើក្រៅអាគារ។ Speed/optical gate មាន multi-beam sensor កាត់បន្ថយ piggybacking សមស្របសម្រាប់ lobby ដែលមានចរាចរណ៍ខ្ពស់។ Tripod unit គឺជាជម្រើសសន្សំសំចៃសម្រាប់ច្រកបុគ្គលិក និង indoor zone ដែលគ្រប់គ្រង។",
+          "ážáŸ’ážšáž¼ážœáž‡áŸ’ážšáž¾ážŸážáž¶áž˜áž€áž˜áŸ’ážšáž·ážážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž”ážšáž·áž˜áž¶ážŽáž¢áŸ’áž“áž€áž†áŸ’áž›áž„áž€áž¶ážáŸ‹ áž“áž·áž„áž”ážšáž·áž™áž¶áž€áž¶ážŸáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áŸ” Full-height turnstile ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ†áž”áž“áŸ‹ perimeter áž¬áž€áž“áŸ’áž›áŸ‚áž„ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ áž“áž·áž„ážŸáž¶áž€ážŸáž˜áž€áž¶ážšáž”áŸ’ážšáž¾áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážšáŸ” Speed/optical gate áž˜áž¶áž“ multi-beam sensor áž€áž¶ážáŸ‹áž”áž“áŸ’ážáž™ piggybacking ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ lobby ážŠáŸ‚áž›áž˜áž¶áž“áž…ážšáž¶áž…ážšážŽáŸážáŸ’áž–ážŸáŸ‹áŸ” Tripod unit áž‚ážºáž‡áž¶áž‡áž˜áŸ’ážšáž¾ážŸážŸáž“áŸ’ážŸáŸ†ážážœáž·áž€áž¶ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áŸ’ážšáž€áž”áž»áž‚áŸ’áž‚áž›áž·áž€ áž“áž·áž„ážáŸ†áž”áž“áŸ‹áž€áŸ’áž“áž»áž„áž¢áž‚áž¶ážšážŠáŸ‚áž›ážáŸ’ážšáž¼ážœáž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áŸ”",
       },
       {
         qEn: "Which access methods can a turnstile gate integrate with?",
         aEn:
           "Most modern turnstiles integrate with RFID cards, QR or mobile tickets, PIN keypads, and biometric systems such as fingerprint or face recognition. We match the access method to your security policy and user type, then connect it to your access control or attendance platform.",
-        qKm: "Turnstile Gate អាច integrate ជាមួយ access method អ្វីខ្លះ?",
+        qKm: "Turnstile Gate áž¢áž¶áž…ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áž‡áž¶áž˜áž½áž™ access method áž¢áŸ’ážœáž¸ážáŸ’áž›áŸ‡?",
         aKm:
-          "Turnstile សម័យថ្មីភាគច្រើនអាច integrate ជាមួយ RFID card, QR/mobile ticket, PIN keypad និង biometric ដូចជា fingerprint ឬ face recognition។ យើងជ្រើស access method ឲ្យសមនឹងគោលនយោបាយសុវត្ថិភាព និងប្រភេទអ្នកប្រើ រួចភ្ជាប់ទៅ access control/attendance platform របស់អ្នក។",
+          "Turnstile áž‘áŸ†áž“áž¾áž”áž—áž¶áž‚áž…áŸ’ážšáž¾áž“áž¢áž¶áž…ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áž‡áž¶áž˜áž½áž™ RFID card, QR/mobile ticket, PIN keypad áž“áž·áž„ biometric ážŠáž¼áž…áž‡áž¶ fingerprint áž¬ face recognitionáŸ” áž™áž¾áž„áž‡áŸ’ážšáž¾ážŸ access method áž±áŸ’áž™ážŸáž˜áž“áž¹áž„áž‚áŸ„áž›áž“áž™áŸ„áž”áž¶áž™ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž– áž“áž·áž„áž”áŸ’ážšáž—áŸáž‘áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ ážšáž½áž…áž—áŸ’áž‡áž¶áž”áŸ‹áž‘áŸ… access control/attendance platform ážšáž”ážŸáŸ‹áž¢áŸ’áž“áž€áŸ”",
       },
       {
         qEn: "Do we need an accessible gate next to a turnstile?",
         aEn:
           "Yes. Accessibility standards state that turnstiles cannot be part of an accessible route, and an accessible gate or door must be provided alongside them. We plan a compliant adjacent lane so all users can pass through comfortably.",
-        qKm: "តើត្រូវការច្រក accessible នៅជិត turnstile ដែរឬទេ?",
+        qKm: "ážáž¾ážáŸ’ážšáž¼ážœáž€áž¶ážšáž…áŸ’ážšáž€ accessible áž“áŸ…áž‡áž·áž turnstile ážŠáŸ‚ážšáž¬áž‘áŸ?",
         aKm:
-          "ត្រូវការ។ តាម accessibility standard, turnstile មិនអាចជាច្រកសម្រាប់អ្នកគ្រប់ប្រភេទបានទេ ដូច្នេះត្រូវមាន accessible gate/door នៅជាប់គ្នា។ យើងរៀបចំ lane បន្ថែមឲ្យស្របតាមស្តង់ដារ ដើម្បីអោយអ្នកប្រើទាំងអស់ឆ្លងកាត់បានងាយស្រួល។",
+          "ážáŸ’ážšáž¼ážœáž€áž¶ážšáŸ” ážáž¶áž˜ accessibility standard, turnstile áž˜áž·áž“áž¢áž¶áž…áž‡áž¶áž…áŸ’ážšáž€ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾áž‚áŸ’ážšáž”áŸ‹áž”áŸ’ážšáž—áŸáž‘áž”áž¶áž“áž‘áŸ ážŠáž¼áž…áŸ’áž“áŸáŸ‡ážáŸ’ážšáž¼ážœáž˜áž¶áž“ accessible gate/door áž“áŸ…áž‡áž¶áž”áŸ‹áž‚áŸ’áž“áž¶áŸ” áž™áž¾áž„ážšáŸ€áž”áž…áŸ† lane áž”áž“áŸ’ážáŸ‚áž˜áž±áŸ’áž™ážŸáŸ’ážšáž”ážáž¶áž˜ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážš ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾áž‘áž¶áŸ†áž„áž¢ážŸáŸ‹áž†áŸ’áž›áž„áž€áž¶ážáŸ‹áž”áž¶áž“áž„áž¶áž™ážŸáŸ’ážšáž½áž›áŸ”",
       },
       {
         qEn: "How do turnstiles handle emergency evacuation or power loss?",
         aEn:
-          "Turnstiles can be configured for fail‑safe or fail‑secure operation and connected to fire‑alarm inputs so lanes release during emergencies. Many speed gates also support auto‑open behavior during power failure or alarm events.",
-        qKm: "Turnstile ដំណើរការយ៉ាងដូចម្តេចពេល emergency evacuation ឬដាច់ភ្លើង?",
+          "Turnstiles can be configured for failâ€‘safe or failâ€‘secure operation and connected to fireâ€‘alarm inputs so lanes release during emergencies. Many speed gates also support autoâ€‘open behavior during power failure or alarm events.",
+        qKm: "Turnstile ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž™áŸ‰áž¶áž„ážŠáž¼áž…áž˜áŸ’ážáŸáž…áž–áŸáž› emergency evacuation áž¬ážŠáž¶áž…áŸ‹áž—áŸ’áž›áž¾áž„?",
         aKm:
-          "Turnstile អាចកំណត់ជា fail-safe ឬ fail-secure ហើយភ្ជាប់ fire-alarm input ដើម្បីបើក lane ពេលមានអាសន្ន។ Speed gate ជាច្រើនក៏គាំទ្រ auto-open នៅពេល power failure ឬ alarm event ផងដែរ។",
+          "Turnstile áž¢áž¶áž…áž€áŸ†ážŽážáŸ‹áž‡áž¶ fail-safe áž¬ fail-secure áž áž¾áž™áž—áŸ’áž‡áž¶áž”áŸ‹ fire-alarm input ážŠáž¾áž˜áŸ’áž”áž¸áž”áž¾áž€ lane áž–áŸáž›áž˜áž¶áž“áž¢áž¶ážŸáž“áŸ’áž“áŸ” Speed gate áž‡áž¶áž…áŸ’ážšáž¾áž“áž€áŸáž‚áž¶áŸ†áž‘áŸ’ážš auto-open áž“áŸ…áž–áŸáž› power failure áž¬ alarm event áž•áž„ážŠáŸ‚ážšáŸ”",
       },
       {
         qEn: "Are turnstile gates suitable for outdoor use in Cambodia?",
         aEn:
-          "Yes. Full‑height turnstiles are designed for outdoor and indoor installation with weather‑resistant materials, making them a good choice for perimeter security, factories, and transport sites.",
-        qKm: "Turnstile Gate សមស្របសម្រាប់ប្រើក្រៅអាគារនៅកម្ពុជាដែរឬទេ?",
+          "Yes. Fullâ€‘height turnstiles are designed for outdoor and indoor installation with weatherâ€‘resistant materials, making them a good choice for perimeter security, factories, and transport sites.",
+        qKm: "Turnstile Gate ážŸáž˜ážŸáŸ’ážšáž”ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áŸ’ážšáž¾áž€áŸ’ážšáŸ…áž¢áž‚áž¶ážšáž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ážŠáŸ‚ážšáž¬áž‘áŸ?",
         aKm:
-          "សមស្រប។ Full-height turnstile ត្រូវបានរចនាសម្រាប់ទាំង outdoor និង indoor ដោយប្រើវត្ថុធាតុធន់អាកាសធាតុ សាកសមសម្រាប់ perimeter security, factory និងទីតាំងដឹកជញ្ជូន។",
+          "ážŸáž˜ážŸáŸ’ážšáž”áŸ” Full-height turnstile ážáŸ’ážšáž¼ážœáž”áž¶áž“ážšáž…áž“áž¶ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‘áž¶áŸ†áž„ outdoor áž“áž·áž„ indoor ážŠáŸ„áž™áž”áŸ’ážšáž¾ážœážáŸ’ážáž»áž’áž¶ážáž»áž’áž“áŸ‹áž¢áž¶áž€áž¶ážŸáž’áž¶ážáž» ážŸáž¶áž€ážŸáž˜ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ perimeter security, factory áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ážŠáž¹áž€áž‡áž‰áŸ’áž‡áž¼áž“áŸ”",
       },
       {
         qEn: "How do we estimate lane count and throughput?",
         aEn:
-          "We start with your peak‑hour flow and target people‑per‑minute throughput. Speed/optical gates are designed for higher throughput and use sensor systems to keep flow smooth, while tripod or full‑height lanes prioritize stricter control. The final lane count balances flow, space, and security.",
-        qKm: "តើគណនាចំនួន lane និង throughput យ៉ាងដូចម្តេច?",
+          "We start with your peakâ€‘hour flow and target peopleâ€‘perâ€‘minute throughput. Speed/optical gates are designed for higher throughput and use sensor systems to keep flow smooth, while tripod or fullâ€‘height lanes prioritize stricter control. The final lane count balances flow, space, and security.",
+        qKm: "ážáž¾áž‚ážŽáž“áž¶áž…áŸ†áž“áž½áž“ lane áž“áž·áž„ throughput áž™áŸ‰áž¶áž„ážŠáž¼áž…áž˜áŸ’ážáŸáž…?",
         aKm:
-          "យើងចាប់ផ្តើមពី peak-hour flow និងគោលដៅ people-per-minute throughput។ Speed/optical gate សម្រាប់ throughput ខ្ពស់ និងលំហូររលូន ខណៈ tripod/full-height lane ផ្តោតលើការគ្រប់គ្រងតឹងរ៉ឹងជាង។ ចំនួន lane ចុងក្រោយត្រូវបានប៉ាន់ស្មានតាម flow, space និង security។",
+          "áž™áž¾áž„áž…áž¶áž”áŸ‹áž•áŸ’ážáž¾áž˜áž–áž¸ peak-hour flow áž“áž·áž„áž‚áŸ„áž›ážŠáŸ… people-per-minute throughputáŸ” Speed/optical gate ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ throughput ážáŸ’áž–ážŸáŸ‹ áž“áž·áž„áž›áŸ†áž áž¼ážšážšáž›áž¼áž“ ážážŽáŸˆ tripod/full-height lane áž•áŸ’ážáŸ„ážáž›áž¾áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„ážáž¹áž„ážšáŸ‰áž¹áž„áž‡áž¶áž„áŸ” áž…áŸ†áž“áž½áž“ lane áž…áž»áž„áž€áŸ’ážšáŸ„áž™ážáŸ’ážšáž¼ážœáž”áž¶áž“áž”áŸ‰áž¶áž“áŸ‹ážŸáŸ’áž˜áž¶áž“ážáž¶áž˜ flow, space áž“áž·áž„ securityáŸ”",
       },
       {
         qEn: "Can turnstiles prevent tailgating or unauthorized entry?",
         aEn:
-          "Yes. Full‑height designs physically deter climbing and tailgating, while speed gates use infrared sensor arrays to detect piggybacking and trigger alarms or closures. We configure the detection level based on your risk profile.",
-        qKm: "Turnstile អាចការពារ tailgating ឬ unauthorized entry បានទេ?",
+          "Yes. Fullâ€‘height designs physically deter climbing and tailgating, while speed gates use infrared sensor arrays to detect piggybacking and trigger alarms or closures. We configure the detection level based on your risk profile.",
+        qKm: "Turnstile áž¢áž¶áž…áž€áž¶ážšáž–áž¶ážš tailgating áž¬ unauthorized entry áž”áž¶áž“áž‘áŸ?",
         aKm:
-          "បាន។ Full-height design អាចរារាំងការឡើងរំលោភ និង tailgating ខណៈ speed gate ប្រើ infrared sensor array ដើម្បីរកឃើញ piggybacking ហើយបង្កើត alarm ឬបិទច្រក។ យើងកំណត់ detection level តាម risk profile របស់អ្នក។",
+          "áž”áž¶áž“áŸ” Full-height design áž¢áž¶áž…ážšáž¶ážšáž¶áŸ†áž„áž€áž¶ážšáž¡áž¾áž„ážšáŸ†áž›áŸ„áž— áž“áž·áž„ tailgating ážážŽáŸˆ speed gate áž”áŸ’ážšáž¾ infrared sensor array ážŠáž¾áž˜áŸ’áž”áž¸ážšáž€ážƒáž¾áž‰ piggybacking áž áž¾áž™áž”áž„áŸ’áž€áž¾áž alarm áž¬áž”áž·áž‘áž…áŸ’ážšáž€áŸ” áž™áž¾áž„áž€áŸ†ážŽážáŸ‹ detection level ážáž¶áž˜ risk profile ážšáž”ážŸáŸ‹áž¢áŸ’áž“áž€áŸ”",
       },
       {
         qEn: "Can turnstiles connect to attendance or HR systems?",
         aEn:
           "Yes. We can sync turnstile events with attendance, visitor, or HR platforms through access controllers or API integrations, so entry logs and staff records update automatically.",
-        qKm: "Turnstile អាចភ្ជាប់ទៅ attendance ឬ HR system បានទេ?",
+        qKm: "Turnstile áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹áž‘áŸ… attendance áž¬ HR system áž”áž¶áž“áž‘áŸ?",
         aKm:
-          "បាន។ យើងអាច sync turnstile event ជាមួយ attendance, visitor ឬ HR platform តាម access controller ឬ API integration ដើម្បីអោយ entry log និង staff record update ស្វ័យប្រវត្តិ។",
+          "áž”áž¶áž“áŸ” áž™áž¾áž„áž¢áž¶áž… sync turnstile event áž‡áž¶áž˜áž½áž™ attendance, visitor áž¬ HR platform ážáž¶áž˜ access controller áž¬ API integration ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™ entry log áž“áž·áž„ staff record update ážŸáŸ’ážœáŸáž™áž”áŸ’ážšážœážáŸ’ážáž·áŸ”",
       },
       {
         qEn: "What power and network requirements do turnstiles need?",
         aEn:
           "Turnstiles typically require stable power, a controller panel, and network connectivity for central management. We plan wiring routes, UPS options, and controller placement to ensure reliable operation.",
-        qKm: "Turnstile ត្រូវការ power និង network requirement អ្វីខ្លះ?",
+        qKm: "Turnstile ážáŸ’ážšáž¼ážœáž€áž¶ážš power áž“áž·áž„ network requirement áž¢áŸ’ážœáž¸ážáŸ’áž›áŸ‡?",
         aKm:
-          "ជាទូទៅ turnstile ត្រូវការ power ស្ថិរភាព, controller panel និង network connectivity សម្រាប់ការគ្រប់គ្រងកណ្ដាល។ យើងរៀបចំ wiring route, UPS option និងទីតាំង controller ដើម្បីធានាការដំណើរការទុកចិត្តបាន។",
+          "áž‡áž¶áž‘áž¼áž‘áŸ… turnstile ážáŸ’ážšáž¼ážœáž€áž¶ážš power ážŸáŸ’ážáž·ážšáž—áž¶áž–, controller panel áž“áž·áž„ network connectivity ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž€ážŽáŸ’ážáž¶áž›áŸ” áž™áž¾áž„ážšáŸ€áž”áž…áŸ† wiring route, UPS option áž“áž·áž„áž‘áž¸ážáž¶áŸ†áž„ controller ážŠáž¾áž˜áŸ’áž”áž¸áž’áž¶áž“áž¶áž€áž¶ážšážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“áŸ”",
       },
       {
         qEn: "How long does turnstile installation and setup take?",
         aEn:
           "Timelines depend on lane count, civil work, and integrations. Most projects include a site survey, installation and wiring, integration testing, and training before handover.",
-        qKm: "ការដំឡើង និង setup Turnstile ចំណាយពេលប៉ុន្មាន?",
+        qKm: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ setup Turnstile áž…áŸ†ážŽáž¶áž™áž–áŸáž›áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
         aKm:
-          "Timeline អាស្រ័យលើចំនួន lane, civil work និង integration។ គម្រោងភាគច្រើនរួមមាន site survey, installation និង wiring, integration testing និង training មុនពេល handover។",
+          "Timeline áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž…áŸ†áž“áž½áž“ lane, civil work áž“áž·áž„ integrationáŸ” áž‚áž˜áŸ’ážšáŸ„áž„áž—áž¶áž‚áž…áŸ’ážšáž¾áž“ážšáž½áž˜áž˜áž¶áž“ site survey, installation áž“áž·áž„ wiring, integration testing áž“áž·áž„ training áž˜áž»áž“áž–áŸáž› handoveráŸ”",
       },
     ],
     []
@@ -390,7 +390,7 @@ export default function TurnstileGateClient() {
 
   const jsonLd = useMemo(() => {
     const site =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
+      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
     const url = site + "/turnstile-gate";
 
     const breadcrumb = {
@@ -517,7 +517,9 @@ export default function TurnstileGateClient() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
             
-            <span className="font-semibold text-slate-700">Turnstile Gate</span>
+            <span className="font-semibold text-slate-700">
+              {lang === "en" ? "Turnstile Gate" : "áž…áŸ’ážšáž€áž‘áŸ’ážœáž¶ážš Turnstile"}
+            </span>
           </div>
 
           <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] text-slate-700 backdrop-blur">
@@ -591,22 +593,36 @@ export default function TurnstileGateClient() {
                 <div className="mt-1 text-xs text-slate-600">{t.quickSub}</div>
               </div>
               <div className="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 sm:block">
-                Quick Links
+                {lang === "en" ? "Quick Links" : "ážáŸ†ážŽážšáž áŸážŸ"}
               </div>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2">
-              {[
-                { label: "Specifications", href: "#specs" },
-                { label: "Basics", href: "#basics" },
-                { label: "Gate Types", href: "#types" },
-                { label: "Use Cases", href: "#use-cases" },
-                { label: "Integrations", href: "#integrations" },
-                { label: "Products", href: "#products" },
-                { label: "Process", href: "#process" },
-                { label: "FAQ", href: "#faq" },
-                { label: "Get Quotation", href: "#contact" },
-              ].map((item) => (
+              {(
+                lang === "en"
+                  ? [
+                      { label: "Specifications", href: "#specs" },
+                      { label: "Basics", href: "#basics" },
+                      { label: "Gate Types", href: "#types" },
+                      { label: "Use Cases", href: "#use-cases" },
+                      { label: "Integrations", href: "#integrations" },
+                      { label: "Products", href: "#products" },
+                      { label: "Process", href: "#process" },
+                      { label: "FAQ", href: "#faq" },
+                      { label: "Get Quotation", href: "#contact" },
+                    ]
+                  : [
+                      { label: "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ", href: "#specs" },
+                      { label: "áž˜áž¼áž›ážŠáŸ’áž‹áž¶áž“", href: "#basics" },
+                      { label: "áž”áŸ’ážšáž—áŸáž‘áž…áŸ’ážšáž€", href: "#types" },
+                      { label: "áž€ážšážŽáž¸áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹", href: "#use-cases" },
+                      { label: "áž€áž¶ážšážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›", href: "#integrations" },
+                      { label: "áž•áž›áž·ážáž•áž›", href: "#products" },
+                      { label: "ážŠáŸ†ážŽáž¾ážšáž€áž¶ážš", href: "#process" },
+                      { label: "ážŸáŸ†ážŽáž½ážšáž‰áž¹áž€áž‰áž¶áž”áŸ‹", href: "#faq" },
+                      { label: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ", href: "#contact" },
+                    ]
+              ).map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -869,4 +885,5 @@ function StepCard({ n, title, desc }: { n: string; title: string; desc: string }
     </div>
   );
 }
+
 

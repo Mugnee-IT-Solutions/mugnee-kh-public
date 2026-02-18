@@ -1,8 +1,8 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import type { Metadata } from "next";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
 
 const PAGE_PATH = "/led-display/power-supply";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
@@ -238,4 +238,5 @@ export default function Page() {
     </main>
   );
 }
+
 

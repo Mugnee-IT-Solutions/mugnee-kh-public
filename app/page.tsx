@@ -157,10 +157,10 @@ function IconMic({ className }: IconProps) {
 
 
 /** Set this in production:
- * NEXT_PUBLIC_SITE_URL=https://mugnee.com.kh
+ * NEXT_PUBLIC_SITE_URL=https://mugneekh.com
  */
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugnee.com.kh";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
 
 const PAGE_PATH = "/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
@@ -442,7 +442,7 @@ export default function HomePage() {
     "@type": "Organization",
     name: "Mugnee Cambodia",
     url: SITE_URL,
-    logo: `${SITE_URL}/icons/logo.png`,
+    logo: `${SITE_URL}/images/logo.png`,
     areaServed: { "@type": "Country", name: "Cambodia" },
     sameAs: [
       // Add official pages later
@@ -472,6 +472,15 @@ export default function HomePage() {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: ["en", "km"],
+    about: {
+      "@type": "Country",
+      name: "Cambodia",
+    },
+    spatialCoverage: {
+      "@type": "Country",
+      name: "Cambodia",
+    },
     mainEntity: FAQ.flatMap((f) => {
       const entities = [
         {
@@ -518,6 +527,7 @@ export default function HomePage() {
     </main>
   );
 }
+
 
 
 

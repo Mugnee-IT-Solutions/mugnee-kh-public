@@ -7,6 +7,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "eslint",
+        "lint:encoding": "node scripts/check-encoding-mojibake.cjs",
         "gen:products": "powershell -ExecutionPolicy Bypass -File scripts/generate-product-pages.ps1"
     },
     "dependencies": {

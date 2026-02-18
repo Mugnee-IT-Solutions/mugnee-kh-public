@@ -109,11 +109,25 @@ export default function SiteHeader() {
     },
   ];
 
+  const aboutMenu: NavItem[] = [
+    {
+      labelEn: "About Mugnee Cambodia",
+      labelKm: "អំពី Mugnee Cambodia",
+      href: "/about",
+    },
+    {
+      labelEn: "Message from CEO",
+      labelKm: "សារពី CEO",
+      href: "/about/message-from-ceo",
+    },
+  ];
+
   const parentHrefById: Record<string, string> = {
     ledDisplay: "/led-display",
     solutions: "/solutions",
     service: "/service",
     products: "/products",
+    about: "/about",
   };
 
   const isPathActive = (href: string) =>
@@ -243,7 +257,10 @@ export default function SiteHeader() {
     e.preventDefault();
     const query = q.trim();
     if (!query) return;
-    window.location.href = `/products?search=${encodeURIComponent(query)}`;
+    const params = new URLSearchParams();
+    params.set("search", query);
+    if (lang === "km") params.set("lang", "km");
+    window.location.href = `/products?${params.toString()}`;
   };
 
   const forceScrollTop = () => {
@@ -443,13 +460,7 @@ export default function SiteHeader() {
             >
               {t.service}
             </Link>
-            <Link
-              href="/about"
-              onClick={forceScrollTop}
-              className={desktopNavLinkClass(isPathActive("/about"))}
-            >
-              {t.about}
-            </Link>
+            <Dropdown id="about" title={t.about} items={aboutMenu} align="center" />
             <Link
               href="/contact"
               onClick={forceScrollTop}
@@ -595,6 +606,16 @@ export default function SiteHeader() {
                   }}
                 >
                   {t.about}
+                </Link>
+                <Link
+                  href="/about/message-from-ceo"
+                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMobile(false);
+                  }}
+                >
+                  {lang === "en" ? "Message from CEO" : "សារពី CEO"}
                 </Link>
                 <Link
                   href="/contact"

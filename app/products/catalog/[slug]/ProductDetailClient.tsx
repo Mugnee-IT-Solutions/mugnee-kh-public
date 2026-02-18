@@ -8,7 +8,8 @@ import { useLang } from "../../../components/layout/LanguageProvider";
 import type { Product } from "../../../data/products";
 import { PRODUCTS, PRODUCT_CATEGORIES } from "../../../data/products";
 
-const MOJIBAKE_RE = /Ã|Â|â|ƒ|\uFFFD/;
+const KHMER_RE = /[\u1780-\u17FF]/;
+const MOJIBAKE_RE = /\u00C3|\u00C2|\u00E2|\u0192|\uFFFD|\u00E1\u017E/;
 
 function decodeLatin1AsUtf8(str: string) {
   const bytes = Uint8Array.from(Array.from(str).map((ch) => ch.charCodeAt(0) & 0xff));
@@ -38,6 +39,68 @@ function sanitizeKhmer(value: string, fallback: string) {
   return repaired;
 }
 
+function hasKhmer(value: string) {
+  return KHMER_RE.test(value);
+}
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function autoTranslateToKhmer(input: string) {
+  const text = input?.trim();
+  if (!text || hasKhmer(text)) return text;
+
+  const map: Array<[string, string]> = [
+    ["Interactive Flat Panel", "អេក្រង់អន្តរកម្ម"],
+    ["Indoor LED Display", "អេក្រង់ LED ខាងក្នុង"],
+    ["Outdoor LED Display", "អេក្រង់ LED ខាងក្រៅ"],
+    ["Rental LED Display", "អេក្រង់ LED សម្រាប់ជួល"],
+    ["LED Display Module", "ម៉ូឌុលអេក្រង់ LED"],
+    ["LED Screen Panel", "បន្ទះអេក្រង់ LED"],
+    ["LED Display", "អេក្រង់ LED"],
+    ["Video Processor", "វីដេអូប្រូសេស័រ"],
+    ["Power Supply", "ផ្គត់ផ្គង់ថាមពល"],
+    ["PA Speakers", "ឧបករណ៍បំពងសំឡេង PA"],
+    ["PA Microphones", "មីក្រូហ្វូន PA"],
+    ["PA Amplifiers", "អំព្លីហ្វាយអ័រ PA"],
+    ["PA Controllers", "ឧបករណ៍បញ្ជា PA"],
+    ["Network Audio", "អូឌីយ៉ូបណ្តាញ"],
+    ["PA Software", "កម្មវិធី PA"],
+    ["PA Accessories", "គ្រឿងបន្លាស់ PA"],
+    ["Turnstile Gate", "ច្រក Turnstile"],
+    ["Tripod Turnstile", "ច្រក Tripod Turnstile"],
+    ["Flap Barrier", "ច្រក Flap Barrier"],
+    ["Speed Gate", "ច្រក Speed Gate"],
+    ["Full Height", "ច្រកកម្ពស់ពេញ"],
+    ["Key Features", "លក្ខណៈពិសេស"],
+    ["Overview", "ទិដ្ឋភាពទូទៅ"],
+    ["Specifications", "លក្ខណៈបច្ចេកទេស"],
+    ["Applications", "ការប្រើប្រាស់"],
+    ["Product", "ផលិតផល"],
+    ["for", "សម្រាប់"],
+    ["with", "ជាមួយ"],
+    ["and", "និង"],
+    ["in", "ក្នុង"],
+    ["to", "ទៅ"],
+    ["from", "ពី"],
+  ];
+
+  let out = text;
+  for (const [en, km] of map) {
+    out = out.replace(new RegExp(escapeRegExp(en), "gi"), km);
+  }
+
+  if (hasKhmer(out)) return out;
+  return `ផលិតផល ${text}`;
+}
+
+function localizedKhmer(valueKm: string, fallbackEn: string) {
+  const cleaned = sanitizeKhmer(valueKm, fallbackEn);
+  if (hasKhmer(cleaned)) return cleaned;
+  return autoTranslateToKhmer(cleaned);
+}
+
 export default function ProductDetailClient({ product }: { product: Product }) {
   const { lang } = useLang();
 
@@ -56,33 +119,35 @@ export default function ProductDetailClient({ product }: { product: Product }) {
     };
   }, [product.slug]);
 
-  const title = lang === "en" ? product.titleEn : sanitizeKhmer(product.titleKm, product.titleEn);
-  const shortDesc = lang === "en" ? product.shortDescEn : sanitizeKhmer(product.shortDescKm, product.shortDescEn);
-  const description = lang === "en" ? product.descriptionEn : sanitizeKhmer(product.descriptionKm, product.descriptionEn);
+  const title = lang === "en" ? product.titleEn : localizedKhmer(product.titleKm, product.titleEn);
+  const shortDesc =
+    lang === "en" ? product.shortDescEn : localizedKhmer(product.shortDescKm, product.shortDescEn);
+  const description =
+    lang === "en"
+      ? product.descriptionEn
+      : localizedKhmer(product.descriptionKm, product.descriptionEn);
   const features =
     lang === "en"
       ? product.featuresEn
-      : product.featuresKm.map((item, i) => sanitizeKhmer(item, product.featuresEn[i] || item));
+      : product.featuresKm.map((item, i) => localizedKhmer(item, product.featuresEn[i] || item));
   const applications =
     lang === "en"
       ? product.applicationsEn
-      : product.applicationsKm.map((item, i) => sanitizeKhmer(item, product.applicationsEn[i] || item));
+      : product.applicationsKm.map((item, i) =>
+          localizedKhmer(item, product.applicationsEn[i] || item)
+        );
   const tags =
     lang === "en"
       ? product.tagsEn
-      : product.tagsKm.map((item, i) => sanitizeKhmer(item, product.tagsEn[i] || item));
+      : product.tagsKm.map((item, i) => localizedKhmer(item, product.tagsEn[i] || item));
   const galleryImages = useMemo(() => {
     const items = [product.heroImage, ...product.gallery];
     return Array.from(new Set(items.filter(Boolean)));
   }, [product.heroImage, product.gallery]);
-  const [activeImage, setActiveImage] = useState(
-    galleryImages[0] ?? product.heroImage
-  );
+  const [activeImage, setActiveImage] = useState(galleryImages[0] ?? product.heroImage);
   const [zoom, setZoom] = useState({ x: 50, y: 50, show: false, px: 0, py: 0 });
   const relatedProducts = useMemo(() => {
-    const categoryMap = new Map(
-      PRODUCT_CATEGORIES.map((category) => [category.id, category])
-    );
+    const categoryMap = new Map(PRODUCT_CATEGORIES.map((category) => [category.id, category]));
     const primaryCategory = categoryMap.get(product.primaryCategoryId);
     const parentCategoryId = primaryCategory?.parentId ?? null;
 
@@ -244,9 +309,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
                 {title}
               </h1>
-              <p className="mt-3 text-base leading-relaxed text-slate-600">
-                {shortDesc}
-              </p>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">{shortDesc}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
                 {tags.map((tag) => (
@@ -296,11 +359,9 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h2 className="text-xl font-semibold text-slate-900">
-              {lang === "en" ? "Overview" : "សេចក្តីសង្ខេប"}
+              {lang === "en" ? "Overview" : "ទិដ្ឋភាពទូទៅ"}
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-slate-600">
-              {description}
-            </p>
+            <p className="mt-3 text-base leading-relaxed text-slate-600">{description}</p>
 
             <h3 className="mt-8 text-lg font-semibold text-slate-900">
               {lang === "en" ? "Key Features" : "លក្ខណៈពិសេស"}
@@ -338,10 +399,14 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   className="flex items-start justify-between gap-4 border-b border-slate-100 pb-3"
                 >
                   <dt className="font-semibold text-slate-700">
-                    {lang === "en" ? spec.labelEn : sanitizeKhmer(spec.labelKm, spec.labelEn)}
+                    {lang === "en"
+                      ? spec.labelEn
+                      : localizedKhmer(spec.labelKm, spec.labelEn)}
                   </dt>
                   <dd className="text-right text-slate-600">
-                    {lang === "en" ? spec.valueEn : sanitizeKhmer(spec.valueKm, spec.valueEn)}
+                    {lang === "en"
+                      ? spec.valueEn
+                      : localizedKhmer(spec.valueKm, spec.valueEn)}
                   </dd>
                 </div>
               ))}
@@ -354,13 +419,16 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <section className="border-t border-slate-100 bg-slate-50/60">
           <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
             <h3 className="text-lg font-semibold text-slate-900">
-              {lang === "en" ? "Related Products" : "ផលិតផលដែលពាក់ព័ន្ធ"}
+              {lang === "en" ? "Related Products" : "ផលិតផលពាក់ព័ន្ធ"}
             </h3>
             <div className="mt-4 flex gap-4 overflow-x-auto pb-2">
               {relatedProducts.map((item) => {
-                const itemTitle = lang === "en" ? item.titleEn : sanitizeKhmer(item.titleKm, item.titleEn);
+                const itemTitle =
+                  lang === "en" ? item.titleEn : localizedKhmer(item.titleKm, item.titleEn);
                 const itemDesc =
-                  lang === "en" ? item.shortDescEn : sanitizeKhmer(item.shortDescKm, item.shortDescEn);
+                  lang === "en"
+                    ? item.shortDescEn
+                    : localizedKhmer(item.shortDescKm, item.shortDescEn);
                 return (
                   <Link
                     key={item.slug}
@@ -376,12 +444,8 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                         sizes="(max-width: 1024px) 70vw, 240px"
                       />
                     </div>
-                    <h4 className="mt-3 text-sm font-semibold text-slate-900">
-                      {itemTitle}
-                    </h4>
-                    <p className="mt-1 text-xs text-slate-600">
-                      {itemDesc}
-                    </p>
+                    <h4 className="mt-3 text-sm font-semibold text-slate-900">{itemTitle}</h4>
+                    <p className="mt-1 text-xs text-slate-600">{itemDesc}</p>
                   </Link>
                 );
               })}
@@ -407,8 +471,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             rgba(14, 165, 233, 1) 55%,
             rgba(15, 23, 42, 0) 100%
           );
-          -webkit-mask: linear-gradient(#000 0 0) content-box,
-            linear-gradient(#000 0 0);
+          -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
           -webkit-mask-composite: xor;
           mask-composite: exclude;
           opacity: 0;

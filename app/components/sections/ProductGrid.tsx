@@ -25,6 +25,7 @@ type ProductGridProps = {
   categoryOrderIds?: string[];
   excludeSlugs?: string[];
   topLeftContent?: React.ReactNode;
+  searchTerm?: string;
 };
 
 function getGridCols(columns: number) {
@@ -33,29 +34,53 @@ function getGridCols(columns: number) {
   return "sm:grid-cols-2 lg:grid-cols-3";
 }
 
-function getProductTitle(product: Product, lang: "en" | "km") {
-  if (lang === "en") return product.titleEn;
-  return sanitizeKhmer(product.titleKm, product.titleEn);
-}
-
-function getProductDesc(product: Product, lang: "en" | "km") {
-  if (lang === "en") return product.shortDescEn;
-  return sanitizeKhmer(product.shortDescKm, product.shortDescEn);
-}
-
-function getTags(product: Product, lang: "en" | "km") {
-  if (lang === "en") return product.tagsEn;
-  return product.tagsKm.map((tag, i) => sanitizeKhmer(tag, product.tagsEn[i] || tag));
-}
+const KHMER_RE = /[\u1780-\u17FF]/;
+const MOJIBAKE_RE = /\u00C3|\u00C2|\u00E2|\u0192|\uFFFD|\u00E1\u017E/;
 
 const CATEGORY_LABEL_KM_FALLBACK: Record<string, string> = {
-  indoor_led_display: "អេក្រង់ LED ក្នុងអគារ",
-  outdoor_led_display: "ប៊ីលបត្រ LED ខាងក្រៅ",
-  rental_led_display: "ជញ្ជាំង LED សម្រាប់ជួល",
-  led_accessories: "គ្រឿងបន្លាស់ LED និងផ្នែក",
+  indoor_led_display: "អេក្រង់ LED ខាងក្នុង",
+  outdoor_led_display: "អេក្រង់ LED ខាងក្រៅ",
+  rental_led_display: "អេក្រង់ LED សម្រាប់ជួល",
+  led_accessories: "គ្រឿងបន្លាស់ LED",
+  power_supply: "ផ្គត់ផ្គង់ថាមពល",
+  video_processor: "វីដេអូប្រូសេស័រ",
+  interactive_panel: "អេក្រង់អន្តរកម្ម",
+  pa_speakers: "ឧបករណ៍បំពងសំឡេង PA",
+  pa_microphones: "មីក្រូហ្វូន PA",
+  pa_amplifiers: "អំព្លីហ្វាយអ័រ PA",
+  pa_controllers: "ឧបករណ៍បញ្ជា PA",
+  pa_network: "អូឌីយ៉ូបណ្តាញ",
+  pa_software: "កម្មវិធី PA",
+  pa_accessories: "គ្រឿងបន្លាស់ PA",
+  turnstile_tripod: "ច្រក Tripod Turnstile",
+  turnstile_flap_barrier: "ច្រក Flap Barrier",
+  turnstile_speed_gate: "ច្រក Speed Gate",
+  turnstile_full_height: "ច្រកកម្ពស់ពេញ",
 };
 
-const MOJIBAKE_RE = /Ã|Â|â|ƒ|\uFFFD/;
+const DEFAULT_ALL_PRODUCTS_ORDER = [
+  "indoor_led_display",
+  "outdoor_led_display",
+  "rental_led_display",
+  "led_accessories",
+  "power_supply",
+  "video_processor",
+  "smart_board",
+  "interactive_panel",
+  "pa_system",
+  "pa_speakers",
+  "pa_microphones",
+  "pa_amplifiers",
+  "pa_controllers",
+  "pa_network",
+  "pa_software",
+  "pa_accessories",
+  "turnstile_gate",
+  "turnstile_tripod",
+  "turnstile_flap_barrier",
+  "turnstile_speed_gate",
+  "turnstile_full_height",
+];
 
 function decodeLatin1AsUtf8(str: string) {
   const bytes = Uint8Array.from(Array.from(str).map((ch) => ch.charCodeAt(0) & 0xff));
@@ -86,14 +111,95 @@ function sanitizeKhmer(value: string, fallback: string) {
   return repaired;
 }
 
+function hasKhmer(value: string) {
+  return KHMER_RE.test(value);
+}
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function autoTranslateToKhmer(input: string) {
+  const text = input?.trim();
+  if (!text || hasKhmer(text)) return text;
+
+  const map: Array<[string, string]> = [
+    ["Interactive Flat Panel", "អេក្រង់អន្តរកម្ម"],
+    ["Indoor LED Display", "អេក្រង់ LED ខាងក្នុង"],
+    ["Outdoor LED Display", "អេក្រង់ LED ខាងក្រៅ"],
+    ["Rental LED Display", "អេក្រង់ LED សម្រាប់ជួល"],
+    ["LED Display Module", "ម៉ូឌុលអេក្រង់ LED"],
+    ["LED Screen Panel", "បន្ទះអេក្រង់ LED"],
+    ["LED Display", "អេក្រង់ LED"],
+    ["Video Processor", "វីដេអូប្រូសេស័រ"],
+    ["Power Supply", "ផ្គត់ផ្គង់ថាមពល"],
+    ["PA System", "ប្រព័ន្ធ PA"],
+    ["PA Speakers", "ឧបករណ៍បំពងសំឡេង PA"],
+    ["PA Microphones", "មីក្រូហ្វូន PA"],
+    ["PA Amplifiers", "អំព្លីហ្វាយអ័រ PA"],
+    ["PA Controllers", "ឧបករណ៍បញ្ជា PA"],
+    ["Network Audio", "អូឌីយ៉ូបណ្តាញ"],
+    ["PA Software", "កម្មវិធី PA"],
+    ["PA Accessories", "គ្រឿងបន្លាស់ PA"],
+    ["Interactive Panel", "អេក្រង់អន្តរកម្ម"],
+    ["Smart Board", "ស្មាតបូដ"],
+    ["Turnstile Gate", "ច្រក Turnstile"],
+    ["Tripod Turnstile", "ច្រក Tripod Turnstile"],
+    ["Flap Barrier", "ច្រក Flap Barrier"],
+    ["Speed Gate", "ច្រក Speed Gate"],
+    ["Full Height", "កម្ពស់ពេញ"],
+    ["Ceiling Speakers", "ឧបករណ៍បំពងសំឡេងពិដាន"],
+    ["All-in-one", "រួមបញ្ចូលគ្នា"],
+    ["high resolution", "គុណភាពបង្ហាញខ្ពស់"],
+    ["high clarity", "ភាពច្បាស់ខ្ពស់"],
+    ["close-view", "មើលជិត"],
+    ["close viewing", "ការមើលជិត"],
+    ["for", "សម្រាប់"],
+    ["with", "ជាមួយ"],
+    ["and", "និង"],
+    ["in", "នៅក្នុង"],
+    ["to", "ទៅ"],
+    ["from", "ពី"],
+  ];
+
+  let out = text;
+  for (const [en, km] of map) {
+    out = out.replace(new RegExp(escapeRegExp(en), "gi"), km);
+  }
+
+  if (hasKhmer(out)) return out;
+  return `ផលិតផល ${text}`;
+}
+
+function localizedKhmer(valueKm: string, fallbackEn: string) {
+  const cleaned = sanitizeKhmer(valueKm, fallbackEn);
+  if (hasKhmer(cleaned)) return cleaned;
+  return autoTranslateToKhmer(cleaned);
+}
+
+function getProductTitle(product: Product, lang: "en" | "km") {
+  if (lang === "en") return product.titleEn;
+  return localizedKhmer(product.titleKm, product.titleEn);
+}
+
+function getProductDesc(product: Product, lang: "en" | "km") {
+  if (lang === "en") return product.shortDescEn;
+  return localizedKhmer(product.shortDescKm, product.shortDescEn);
+}
+
+function getTags(product: Product, lang: "en" | "km") {
+  if (lang === "en") return product.tagsEn;
+  return product.tagsKm.map((tag, i) => localizedKhmer(tag, product.tagsEn[i] || tag));
+}
+
 function getCategoryLabel(
   category: { id: string; labelEn: string; labelKm: string },
   lang: "en" | "km"
 ) {
   if (lang === "en") return category.labelEn;
-  const repaired = sanitizeKhmer(category.labelKm, category.labelEn);
-  if (repaired !== category.labelEn) return repaired;
-  return CATEGORY_LABEL_KM_FALLBACK[category.id] || category.labelEn;
+  const repaired = localizedKhmer(category.labelKm, category.labelEn);
+  if (hasKhmer(repaired)) return repaired;
+  return CATEGORY_LABEL_KM_FALLBACK[category.id] || repaired;
 }
 
 export default function ProductGrid({
@@ -110,6 +216,7 @@ export default function ProductGrid({
   categoryOrderIds,
   excludeSlugs,
   topLeftContent,
+  searchTerm,
 }: ProductGridProps) {
   const { lang } = useLang();
   const [activeCategory, setActiveCategory] = useState(categoryId || "all");
@@ -146,6 +253,7 @@ export default function ProductGrid({
 
   const filtered = useMemo(() => {
     let list = PRODUCTS;
+    const normalizedQuery = (searchTerm || "").trim().toLowerCase();
 
     if (excludeSlugs?.length) {
       const excludeSet = new Set(excludeSlugs);
@@ -160,7 +268,61 @@ export default function ProductGrid({
     if (effectiveCategory !== "all") {
       list = list.filter((p) => p.categoryIds.includes(effectiveCategory));
     }
+
+    if (normalizedQuery) {
+      const scoreProduct = (p: Product) => {
+        const titleEn = p.titleEn.toLowerCase();
+        const titleKm = localizedKhmer(p.titleKm, p.titleEn).toLowerCase();
+        const descEn = p.shortDescEn.toLowerCase();
+        const descKm = localizedKhmer(p.shortDescKm, p.shortDescEn).toLowerCase();
+        const tagsEn = p.tagsEn.join(" ").toLowerCase();
+        const tagsKm = p.tagsKm
+          .map((tag, i) => localizedKhmer(tag, p.tagsEn[i] || tag))
+          .join(" ")
+          .toLowerCase();
+        const categories = p.categoryIds
+          .map((id) => {
+            const cat = PRODUCT_CATEGORIES.find((c) => c.id === id);
+            if (!cat) return "";
+            return `${cat.labelEn} ${localizedKhmer(cat.labelKm, cat.labelEn)}`;
+          })
+          .join(" ")
+          .toLowerCase();
+
+        let score = 0;
+        if (titleEn.includes(normalizedQuery) || titleKm.includes(normalizedQuery)) score += 10;
+        if (descEn.includes(normalizedQuery) || descKm.includes(normalizedQuery)) score += 6;
+        if (tagsEn.includes(normalizedQuery) || tagsKm.includes(normalizedQuery)) score += 5;
+        if (categories.includes(normalizedQuery)) score += 4;
+
+        const words = normalizedQuery.split(/\s+/).filter(Boolean);
+        for (const w of words) {
+          if (titleEn.includes(w) || titleKm.includes(w)) score += 3;
+          if (descEn.includes(w) || descKm.includes(w)) score += 2;
+          if (tagsEn.includes(w) || tagsKm.includes(w)) score += 2;
+          if (categories.includes(w)) score += 1;
+        }
+        return score;
+      };
+
+      list = list
+        .map((p) => ({ p, score: scoreProduct(p) }))
+        .filter((x) => x.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .map((x) => x.p);
+    }
+
     const sorted = [...list].sort((a, b) => {
+      if (normalizedQuery) return 0;
+
+      if (!categoryOrderIds?.length && effectiveCategory === "all") {
+        const aRank = DEFAULT_ALL_PRODUCTS_ORDER.indexOf(a.primaryCategoryId);
+        const bRank = DEFAULT_ALL_PRODUCTS_ORDER.indexOf(b.primaryCategoryId);
+        const aPriority = aRank === -1 ? Number.MAX_SAFE_INTEGER : aRank;
+        const bPriority = bRank === -1 ? Number.MAX_SAFE_INTEGER : bRank;
+        if (aPriority !== bPriority) return aPriority - bPriority;
+      }
+
       if (categoryOrderIds?.length) {
         const order = categoryOrderIds;
         const aIndex = order.indexOf(a.primaryCategoryId);
@@ -176,7 +338,15 @@ export default function ProductGrid({
         : bTitle.localeCompare(aTitle);
     });
     return limit ? sorted.slice(0, limit) : sorted;
-  }, [effectiveCategory, sortOrder, limit, allowedCategoryIds, categoryOrderIds, excludeSlugs]);
+  }, [
+    effectiveCategory,
+    sortOrder,
+    limit,
+    allowedCategoryIds,
+    categoryOrderIds,
+    excludeSlugs,
+    searchTerm,
+  ]);
 
   const totalPages = useMemo(() => {
     if (limit || !showPagination) return 1;
@@ -278,13 +448,20 @@ export default function ProductGrid({
       </div>
 
       <div className={`mt-6 grid gap-4 ${getGridCols(columns)}`}>
+        {paginated.length === 0 ? (
+          <div className="col-span-full rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600">
+            {lang === "en"
+              ? `No results found${searchTerm?.trim() ? ` for "${searchTerm.trim()}"` : ""}.`
+              : `រកមិនឃើញលទ្ធផល${searchTerm?.trim() ? ` សម្រាប់ "${searchTerm.trim()}"` : ""}។`}
+          </div>
+        ) : null}
         {paginated.map((product) => {
           const detailHref = `${detailBasePath}/${product.slug}`;
           const primaryCategory = getCategoryById(product.primaryCategoryId);
           const primaryLabel = primaryCategory
             ? lang === "en"
               ? primaryCategory.labelEn
-              : sanitizeKhmer(primaryCategory.labelKm, primaryCategory.labelEn)
+              : getCategoryLabel(primaryCategory, "km")
             : lang === "en"
               ? "Product"
               : "ផលិតផល";
@@ -316,9 +493,7 @@ export default function ProductGrid({
                     {getProductTitle(product, lang)}
                   </h3>
                 </Link>
-                <p className="mt-1 text-xs text-slate-600">
-                  {getProductDesc(product, lang)}
-                </p>
+                <p className="mt-1 text-xs text-slate-600">{getProductDesc(product, lang)}</p>
 
                 <div className="mt-3 flex flex-wrap gap-2">
                   {getTags(product, lang).map((tag) => (
@@ -342,7 +517,7 @@ export default function ProductGrid({
                     href={detailHref}
                     className="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-300"
                   >
-                    {lang === "en" ? "View details" : "មើលព័ត៌មាន"}
+                    {lang === "en" ? "View details" : "មើលលម្អិត"}
                   </Link>
                 </div>
               </div>
