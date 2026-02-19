@@ -2,6 +2,6 @@
 import { redirect } from "next/navigation";
 
 export default function Page() {
-  redirect("/");
+  redirect("/solutions/office-access-control-cambodia");
 }
 

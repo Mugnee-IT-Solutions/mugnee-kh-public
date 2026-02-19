@@ -16,15 +16,6 @@ type Tile = {
   icon: React.ReactNode;
 };
 
-type Solution = {
-  key: string;
-  titleEn: string;
-  titleKm: string;
-  pointsEn: string[];
-  pointsKm: string[];
-  href: string;
-};
-
 type Faq = {
   qEn: string;
   aEn: string;
@@ -73,15 +64,15 @@ function sanitizeLocaleText<T extends Record<string, string>>(km: T, en: T): T {
 const HERO_SLIDES = [
   {
     src: "/images/hero/cambodia-led-hero.webp",
-    alt: "Cambodia LED display and smart systems solution",
+    alt: "Mugnee Cambodia company project delivery",
   },
   {
     src: "/images/hero/cambodia-led-billboard-advertising.webp",
-    alt: "Outdoor LED billboard advertising solution in Cambodia",
+    alt: "Commercial project execution in Cambodia",
   },
   {
     src: "/images/hero/cambodia-indoor-led-video-wall-retail.webp",
-    alt: "Indoor LED video wall display solution for Cambodia retail spaces",
+    alt: "Retail and enterprise deployment support",
   },
   {
     src: "/images/hero/cambodia-smart-classroom-interactive-flat-panel.webp",
@@ -89,7 +80,7 @@ const HERO_SLIDES = [
   },
   {
     src: "/images/hero/cambodia-access-control-turnstile-pa-system.webp",
-    alt: "Turnstile access control and PA system solution in Cambodia",
+    alt: "Integrated systems delivery and support in Cambodia",
   },
 ];
 
@@ -140,12 +131,10 @@ function SectionTitle({
 export default function HomeClient({
   cities,
   categoryTiles,
-  solutions,
   faq,
 }: {
   cities: string[];
   categoryTiles: Tile[];
-  solutions: Solution[];
   faq: Faq[];
 }) {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -173,59 +162,55 @@ export default function HomeClient({
 
   const t = useMemo(() => {
     const en = {
-      badge: "Cambodia • LED Display • Digital Signage • Smart Solutions",
-      heroTitle: "Smart Technology Solutions in Cambodia",
+      badge: "Cambodia • Mugnee Cambodia • Project Delivery",
+      heroTitle: "Digital Display & Smart Technology Solutions in Cambodia",
       heroDesc:
-        "Mugnee Multiple delivers LED display, digital signage, interactive flat panels (smart boards), turnstile gates, PA systems, and access control in Cambodia—plus site survey, installation, commissioning, and local after-sales support for reliable, long-term performance.",
-      pill1: "Project-based quotation",
-      pill2: "Installation & commissioning",
-      pill3: "Warranty & maintenance options",
+        "Mugnee is a multinational technology company, and Mugnee Cambodia serves as its local multinational operation for Cambodia with project planning, delivery, installation, commissioning, and long-term support for commercial and institutional clients.",
       ctaQuote: "Get Quotation",
+      ctaLed: "Explore LED Display",
       ctaExplore: "Explore Solutions",
       serving: `Serving: ${cities.join(" • ")}`,
       trust1t: "Local Support",
-      trust1d: "Cambodia-based installation & after-sales assistance.",
+      trust1d: "Cambodia-based project execution and after-sales assistance.",
       trust2t: "Built for Reliability",
-      trust2d: "Stable performance, clear visuals and long service life.",
+      trust2d: "Structured quality control and consistent service standards.",
       trust3t: "Fast Deployment",
-      trust3d: "Structured workflow for quick delivery & commissioning.",
+      trust3d: "Clear milestones from project kickoff to handover.",
 
       secProductsEyebrow: "What we deliver",
-      secProductsTitle: "LED Display, Digital Signage & Smart Systems in Cambodia",
-      secProductsDesc:
-        "Choose a category to explore technical details, use-cases and buyer-ready guidance. We focus on stable performance, clean installation and long-term support.",
+      secProductsTitle: "Core Business Units in Cambodia",
       viewDetails: "View details",
       priceGuideLine1: "Need pricing guidance? Start with our",
       priceGuideLink: "Cambodia Price Guides",
       priceGuideLine2: "and request a project-based quotation.",
-      secCatalogEyebrow: "Popular Products",
-      secCatalogTitle: "Cambodia LED Display, Digital Signage & Smart Systems Products",
+      secCatalogEyebrow: "Our Products",
+      secCatalogTitle: "Catalog Overview",
       secCatalogDesc:
-        "Browse Cambodia-focused LED display, digital signage, PA system, access control and smart classroom products-built for local projects, budgets and site conditions.",
+        "Explore our catalog pages to review available product lines and request a project quotation.",
       secPartnersEyebrow: "Partnership",
       secPartnersTitle: "Supported by International Development Partnerships",
       secPartnersDesc:
-        "We have delivered LED display, digital signage, and smart technology solutions under projects supported by internationally recognized organizations such as The World Bank, JICA, Swisscontact, GIZ, and Mitsubishi Research Institute (MRI)—meeting institutional standards with reliable execution.",
+        "Our team has delivered projects supported by organizations such as The World Bank, JICA, Swisscontact, GIZ, and Mitsubishi Research Institute (MRI), with structured execution and documentation.",
 
       secSolutionsEyebrow: "Industry solutions",
-      secSolutionsTitle: "Industry Solutions for Cambodia: LED, Signage & Smart Systems",
+      secSolutionsTitle: "Industry Solutions in Cambodia",
       secSolutionsDesc:
-        "SEO-friendly solutions for Cambodia projects—LED display, digital signage, smart classroom, access control, and PA systems with local installation and support.",
+        "Review business-oriented solution pages by industry use-case, with local delivery and support coverage.",
       exploreSolution: "Explore solution",
 
       secAuthEyebrow: "Partners",
       secAuthTitle: "Authorized Distributor & Certified Engineering Partner",
       secAuthDesc:
-        "Mugnee Cambodia supplies world-leading LED components and control systems with certified engineering support, quality assurance, and Cambodia-based service.",
+        "Mugnee Cambodia works with recognized manufacturing partners and certified engineers for accountable project delivery.",
 
       secIndustryEyebrow: "Real-World Use",
       secIndustryTitle: "Product Use-Cases by Industry in Cambodia",
       secIndustryDesc:
-        "Industry-specific LED display, digital signage, and smart system use-cases designed for Cambodia's retail, education, government, and factory projects.",
-      secSpecsEyebrow: "Technical Snapshot",
-      secSpecsTitle: "LED Display Technical Specifications Guide Cambodia",
+        "Industry-specific deployment scenarios for retail, education, corporate, government, hospitality, and factory projects.",
+      secSpecsEyebrow: "Delivery Snapshot",
+      secSpecsTitle: "Project Delivery Standards",
       secSpecsDesc:
-        "Quick technical highlights buyers compare most—pixel pitch, brightness, IP rating, refresh rate, and control system options.",
+        "A quick overview of how we manage delivery quality, response time, documentation, and support continuity.",
       secServiceEyebrow: "Service area",
       secServiceTitle: "Service Areas Across Cambodia",
       secServiceDesc:
@@ -237,21 +222,21 @@ export default function HomeClient({
       secContactEyebrow: "Local Support",
       secContactTitle: "Cambodia Office & Project Support",
       secContactDesc:
-        "Talk to a local engineer for site survey, sizing, pixel-pitch guidance, and a project-based quotation.",
+        "Talk to our local team for project scoping, timeline planning, and quotation support.",
 
       secQuickEyebrow: "Popular in Cambodia",
       secQuickTitle: "Quick Access to Key Product Categories",
       secQuickDesc:
-        "Buyer-friendly pages with specs, use-cases and practical guidance. For exact pricing, request a project-based quotation.",
-      box1t: "LED Display Planning",
+        "Quick access pages for each business category. For commercial terms and final pricing, request a project quotation.",
+      box1t: "Project Discovery",
       box1d:
-        "We help choose pixel pitch (e.g., P2.5 / P3 / P4 / P5) based on viewing distance, space and content.",
+        "We define project scope, site constraints, and delivery goals before final configuration.",
       box2t: "Clean Installation",
       box2d:
-        "Structured workflow for mounting, cabling, control setup, and commissioning—built for long-term stability.",
+        "Structured workflow for preparation, installation, testing, and acceptance.",
       box3t: "After-Sales Support",
       box3d:
-        "Warranty support and maintenance options to reduce downtime and protect your investment.",
+        "Post-handover support plans to keep systems stable and reduce downtime.",
 
       secProjectsEyebrow: "Trust & proof",
       secProjectsTitle: "Projects & Installations in Cambodia",
@@ -270,14 +255,12 @@ export default function HomeClient({
     };
 
     const km = {
-      badge: "កម្ពុជា • LED Display • Digital Signage • Smart Solutions",
-      heroTitle: "ដំណោះស្រាយ LED Display និង Smart Systems នៅកម្ពុជា",
+      badge: "កម្ពុជា • Mugnee Cambodia • ការអនុវត្តគម្រោង",
+      heroTitle: "Digital Display & Smart Technology Solutions in Cambodia",
       heroDesc:
-        "Mugnee Multiple ផ្តល់សេវា LED Display, Digital Signage, Interactive Flat Panel (Smart Board), Turnstile Gate, ប្រព័ន្ធ PA និង Access Control នៅកម្ពុជា រួមទាំងការស្ទង់ទីតាំង ការដំឡើង ការ Commissioning និងសេវាកម្មបន្ទាប់ពីលក់ ដើម្បីធានាបាននូវគុណភាព និងស្ថិរភាពរយៈពេលវែង។",
-      pill1: "តម្លៃតាមគម្រោង",
-      pill2: "ដំឡើង & Commissioning",
-      pill3: "ធានា & ថែទាំប្រព័ន្ធ",
+        "Mugnee គឺជាក្រុមហ៊ុនបច្ចេកវិទ្យាពហុជាតិ ហើយ Mugnee Cambodia គឺជាប្រតិបត្តិការពហុជាតិនៅកម្ពុជា ដែលផ្តល់សេវារៀបចំគម្រោង ដឹកជញ្ជូន ដំឡើង Commissioning និងការគាំទ្ររយៈពេលវែង សម្រាប់អាជីវកម្ម និងស្ថាប័ន។",
       ctaQuote: "ស្នើសុំតម្លៃ",
+      ctaLed: "មើល LED Display",
       ctaExplore: "មើលដំណោះស្រាយ",
       serving: `តំបន់សេវាកម្ម: ${cities.join(" • ")}`,
       trust1t: "គាំទ្រក្នុងស្រុក",
@@ -288,26 +271,24 @@ export default function HomeClient({
       trust3d: "Workflow ច្បាស់លាស់ សម្រាប់ដឹកជញ្ជូន ដំឡើង និង Commissioning បានលឿន។",
 
       secProductsEyebrow: "អ្វីដែលយើងផ្តល់ជូន",
-      secProductsTitle: "LED Display, Digital Signage និង Smart Systems នៅកម្ពុជា",
-      secProductsDesc:
-        "ជ្រើសប្រភេទផលិតផល ដើម្បីមើលព័ត៌មានបច្ចេកទេស ករណីប្រើប្រាស់ និងការណែនាំសម្រាប់អ្នកទិញ។ យើងផ្តោតលើគុណភាពស្ថិរភាព ការដំឡើងស្អាត និងសេវាគាំទ្ររយៈពេលវែង។",
+      secProductsTitle: "វិស័យសេវាកម្មសំខាន់ៗនៅកម្ពុជា",
       viewDetails: "មើលព័ត៌មានលម្អិត",
       priceGuideLine1: "ចង់បានការណែនាំតម្លៃ? ចាប់ផ្តើមពី",
       priceGuideLink: "Price Guide កម្ពុជា",
       priceGuideLine2: "ហើយស្នើសុំតម្លៃតាមគម្រោង។",
-      secCatalogEyebrow: "ផលិតផលពេញនិយម",
-      secCatalogTitle: "ផលិតផល LED Display, Digital Signage និង Smart Systems នៅកម្ពុជា",
+      secCatalogEyebrow: "ផលិតផលរបស់យើង",
+      secCatalogTitle: "ទិដ្ឋភាពទូទៅកាតាឡុក",
       secCatalogDesc:
-        "ស្វែងរកផលិតផល LED Display, Digital Signage, PA System, Access Control និង Smart Classroom ដែលសមស្របសម្រាប់គម្រោង ថវិកា និងលក្ខខណ្ឌទីតាំងនៅកម្ពុជា។",
+        "ស្វែងរកក្រុមផលិតផលសម្រាប់គម្រោង ថវិកា និងលក្ខខណ្ឌទីតាំងផ្សេងៗនៅកម្ពុជា។",
       secPartnersEyebrow: "ភាពជាដៃគូ",
       secPartnersTitle: "គាំទ្រដោយភាពជាដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
       secPartnersDesc:
-        "យើងបានអនុវត្តគម្រោង LED Display, Digital Signage និង Smart Technology ក្រោមការគាំទ្រពីអង្គការអន្តរជាតិជាច្រើន ដូចជា The World Bank, JICA, Swisscontact, GIZ និង Mitsubishi Research Institute (MRI)។",
+        "យើងបានអនុវត្តគម្រោងក្រោមការគាំទ្រពីអង្គការអន្តរជាតិជាច្រើន ដូចជា The World Bank, JICA, Swisscontact, GIZ និង Mitsubishi Research Institute (MRI)។",
 
       secSolutionsEyebrow: "ដំណោះស្រាយតាមវិស័យ",
-      secSolutionsTitle: "ដំណោះស្រាយសម្រាប់វិស័យនានានៅកម្ពុជា: LED, Signage និង Smart Systems",
+      secSolutionsTitle: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា",
       secSolutionsDesc:
-        "ដំណោះស្រាយសម្រាប់គម្រោងនៅកម្ពុជា រួមមាន LED Display, Digital Signage, Smart Classroom, Access Control និង PA System ជាមួយសេវាដំឡើង និងគាំទ្រក្នុងស្រុក។",
+        "ដំណោះស្រាយសម្រាប់គម្រោងនៅកម្ពុជា ជាមួយសេវាអនុវត្ត និងគាំទ្រក្នុងស្រុក។",
       exploreSolution: "មើលដំណោះស្រាយ",
 
       secAuthEyebrow: "ដៃគូ",
@@ -318,11 +299,11 @@ export default function HomeClient({
       secIndustryEyebrow: "ការប្រើប្រាស់ពិត",
       secIndustryTitle: "ករណីប្រើប្រាស់ផលិតផលតាមវិស័យ នៅកម្ពុជា",
       secIndustryDesc:
-        "Use-case ជាក់ស្តែងសម្រាប់ LED Display, Digital Signage និង Smart Systems ដែលសមស្របតាមវិស័យផ្សេងៗនៅកម្ពុជា។",
+        "Use-case ជាក់ស្តែងសម្រាប់គម្រោងអាជីវកម្ម និងស្ថាប័ននៅកម្ពុជា។",
       secSpecsEyebrow: "សង្ខេបបច្ចេកទេស",
-      secSpecsTitle: "មគ្គុទ្ទេសក៍លក្ខណៈបច្ចេកទេស LED Display នៅកម្ពុជា",
+      secSpecsTitle: "ស្តង់ដារអនុវត្តគម្រោង",
       secSpecsDesc:
-        "លក្ខណៈសំខាន់ដែលអ្នកទិញតែងប្រៀបធៀប៖ Pixel Pitch, Brightness, IP Rating និង Control System។",
+        "សង្ខេបអំពីស្តង់ដារអនុវត្ត ការគ្រប់គ្រងគុណភាព និងសេវាកម្មបន្ទាប់ពីប្រគល់ការងារ។",
       secServiceEyebrow: "តំបន់សេវាកម្ម",
       secServiceTitle: "តំបន់សេវាកម្មទូទាំងកម្ពុជា",
       secServiceDesc:
@@ -334,15 +315,15 @@ export default function HomeClient({
       secContactEyebrow: "គាំទ្រក្នុងស្រុក",
       secContactTitle: "ការិយាល័យកម្ពុជា & សេវាគាំទ្រគម្រោង",
       secContactDesc:
-        "ទាក់ទងវិស្វករនៅកម្ពុជា សម្រាប់ការស្ទង់ទីតាំង ការកំណត់ទំហំ Pixel Pitch និងស្នើសុំតម្លៃតាមគម្រោង។",
+        "ទាក់ទងក្រុមការងារនៅកម្ពុជា សម្រាប់ការកំណត់ Scope, ពេលវេលា និងស្នើសុំតម្លៃតាមគម្រោង។",
 
       secQuickEyebrow: "ពេញនិយមនៅកម្ពុជា",
       secQuickTitle: "ចូលរហ័សទៅកាន់ប្រភេទផលិតផលសំខាន់ៗ",
       secQuickDesc:
         "ទំព័រងាយស្រួលសម្រាប់អ្នកទិញ ដែលមាន Specs, Use-case និងការណែនាំជាក់ស្តែង។ សម្រាប់តម្លៃពិត សូមស្នើសុំតម្លៃតាមគម្រោង។",
-      box1t: "រៀបចំគម្រោង LED Display",
+      box1t: "រៀបចំគម្រោងដំបូង",
       box1d:
-        "យើងជួយជ្រើស Pixel Pitch (ឧ. P2.5 / P3 / P4 / P5) តាមចម្ងាយមើល ទំហំ និងប្រភេទមាតិកា។",
+        "យើងកំណត់ Scope, ទំហំការងារ និងគោលដៅអនុវត្ត មុនពេលសម្រេចដំណោះស្រាយចុងក្រោយ។",
       box2t: "ដំឡើងស្អាត និងមានស្តង់ដារ",
       box2d:
         "Workflow ច្បាស់លាស់សម្រាប់ Mounting, Cabling, Control Setup និង Commissioning ដើម្បីធានាស្ថិរភាពរយៈពេលវែង។",
@@ -432,7 +413,7 @@ export default function HomeClient({
 
       <div className="mt-6 w-full max-w-[60rem]">
         <div className="flex max-w-3xl flex-col gap-5 sm:gap-6">
-        <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-4xl lg:text-[3.05rem]">
+        <h1 className="text-3xl font-semibold leading-[1.14] tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-4xl sm:leading-[1.16] lg:text-[3.05rem] lg:leading-[1.12]">
           {t.heroTitle}
         </h1>
 
@@ -450,24 +431,13 @@ export default function HomeClient({
           </Link>
 
           <Link
-            href="/solutions"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-black/45 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/25 backdrop-blur-[2px] transition hover:bg-black/60"
+            href="/led-display"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-5 py-3 text-sm font-semibold text-white ring-1 ring-white/20 shadow-[0_8px_24px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:from-slate-800 hover:via-slate-700 hover:to-slate-800"
           >
-            {t.ctaExplore}
+            {t.ctaLed}
           </Link>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 text-sm">
-          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px]">
-            {t.pill1}
-          </span>
-          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px]">
-            {t.pill2}
-          </span>
-          <span className="rounded-full bg-black/40 px-3 py-1 font-medium text-white ring-1 ring-white/20 backdrop-blur-[2px]">
-            {t.pill3}
-          </span>
-        </div>
       </div>
 
       </div>
@@ -511,86 +481,6 @@ export default function HomeClient({
   </div>
 </section>
 
-      <section
-        className="border-b border-slate-100 bg-gradient-to-b from-slate-50/80 to-white py-7"
-        aria-labelledby="home-trust-title"
-      >
-        <Container>
-          <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                {lang === "en" ? "Why Teams Choose Mugnee Cambodia" : "ហេតុអ្វីក្រុមការងារជ្រើសរើស Mugnee Cambodia"}
-              </p>
-              <h2 id="home-trust-title" className="mt-1 text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
-                {lang === "en"
-                  ? "Why Choose Mugnee Cambodia for LED Display, Digital Signage & Smart Systems"
-                  : "ហេតុអ្វីគួរជ្រើស Mugnee Cambodia សម្រាប់ LED Display, Digital Signage និង Smart Systems"}
-              </h2>
-            </div>
-            <p className="rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-800">
-              {lang === "en" ? "Cambodia Project Support" : "គាំទ្រគម្រោងនៅកម្ពុជា"}
-            </p>
-          </div>
-
-          <ul className="grid gap-3 sm:grid-cols-3" aria-label="Mugnee Cambodia trust highlights">
-            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
-              <div className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200"
-                >
-                  ✓
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">{t.trust1t}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust1d}</p>
-                  <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Site survey, installation, after-sales" : "ស្ទង់ទីតាំង, ដំឡើង, គាំទ្របន្ទាប់ពីលក់"}
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
-              <div className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-200"
-                >
-                  ◎
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">{t.trust2t}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust2d}</p>
-                  <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Engineered for clear visuals and uptime" : "រចនាវិស្វកម្មសម្រាប់រូបភាពច្បាស់ និងដំណើរការបន្ត"}
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
-              <div className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700 ring-1 ring-amber-200"
-                >
-                  →
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">{t.trust3t}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust3d}</p>
-                  <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Planning to commissioning with clear milestones" : "ពីការធ្វើផែនការដល់ Commissioning មានជំហានច្បាស់លាស់"}
-                  </p>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </Container>
-      </section>
-
-
       {/* =========================
           CATEGORY TILES
          ========================= */}
@@ -599,51 +489,22 @@ export default function HomeClient({
           <SectionTitle
             eyebrow={t.secProductsEyebrow}
             title={t.secProductsTitle}
-            desc={t.secProductsDesc}
-            descClassName="max-w-none"
           />
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             {categoryTiles.map((c) => (
               <Link
                 key={c.key}
                 href={c.href}
-                className="group relative h-full overflow-hidden rounded-xl shadow-sm transition hover:-translate-y-0.5 hover:shadow-md no-underline hover:no-underline"
+                className="group flex min-h-[124px] items-center justify-center rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md no-underline hover:no-underline"
               >
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -inset-20 z-0 animate-spin opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  style={{
-                    background:
-                      "conic-gradient(from 0deg, #22d3ee, #3b82f6, #8b5cf6, #ef4444, #22d3ee)",
-                  }}
-                />
-
-                <div className="relative z-10 m-[1px] flex h-full flex-col rounded-[11px] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 p-4">
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-x-3 top-0 h-px rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 opacity-90"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-x-3 bottom-0 h-px rounded-full bg-gradient-to-r from-emerald-400 via-sky-500 to-violet-500 opacity-70"
-                  />
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-50 text-lg ring-1 ring-slate-200">
-                        {c.icon}
-                      </div>
-                      <h3 className="text-base font-semibold text-slate-900">
-                    {lang === "en" ? c.titleEn : sanitizeKhmer(c.titleKm, c.titleEn)}
-                      </h3>
-                    </div>
+                <div className="flex flex-col items-center justify-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center text-slate-700 transition-colors duration-200 group-hover:text-slate-900">
+                    {c.icon}
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                    {lang === "en" ? c.descEn : sanitizeKhmer(c.descKm, c.descEn)}
-                  </p>
-                  <p className="mt-auto pt-3 text-sm font-semibold text-slate-900">
-                    {t.viewDetails} <span aria-hidden="true">→</span>
-                  </p>
+                  <h3 className="text-[1.05rem] font-medium leading-tight text-slate-900">
+                    {lang === "en" ? c.titleEn : sanitizeKhmer(c.titleKm, c.titleEn)}
+                  </h3>
                 </div>
               </Link>
             ))}
@@ -658,13 +519,16 @@ export default function HomeClient({
       <section className="border-t border-slate-100 bg-slate-50/70 py-12 sm:py-14">
         <Container>
           <SectionTitle
-            eyebrow={t.secCatalogEyebrow}
-            title={t.secCatalogTitle}
-            desc={t.secCatalogDesc}
-            descClassName="max-w-none"
+            title={t.secCatalogEyebrow}
           />
 
-          <ProductGrid columns={3} pageSize={12} showPagination />
+          <ProductGrid
+            columns={3}
+            pageSize={12}
+            showPagination
+            showCategoryFilters={false}
+            showSort={false}
+          />
         </Container>
       </section>
 
@@ -729,48 +593,82 @@ export default function HomeClient({
         </Container>
       </section>
 
-      {/* =========================
-          SOLUTIONS
-         ========================= */}
-      <section className="border-t border-slate-100 bg-white py-14 sm:py-16">
+      <section
+        className="border-t border-slate-100 bg-gradient-to-b from-slate-50/80 to-white py-7"
+        aria-labelledby="home-trust-title"
+      >
         <Container>
-          <SectionTitle
-            eyebrow={t.secSolutionsEyebrow}
-            title={t.secSolutionsTitle}
-            desc={t.secSolutionsDesc}
-            descClassName="max-w-none"
-          />
-
-          <div className="grid gap-5 lg:grid-cols-2">
-            {solutions.map((s) => (
-              <Link
-                key={s.key}
-                href={s.href}
-                className="group rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 p-7 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md no-underline hover:no-underline"
-              >
-                <h3 className="text-xl font-semibold text-slate-900">
-                  {lang === "en" ? s.titleEn : sanitizeKhmer(s.titleKm, s.titleEn)}
-                </h3>
-
-                <ul className="mt-4 space-y-3 text-base text-slate-700">
-                  {(lang === "en"
-                    ? s.pointsEn
-                    : s.pointsKm.map((p, i) => sanitizeKhmer(p, s.pointsEn[i] || p))).map((p) => (
-                    <li key={p} className="flex gap-3">
-                      <span className="mt-[3px] inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-900 text-sm text-white">
-                        ✓
-                      </span>
-                      <span className="leading-relaxed">{p}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="mt-5 text-base font-semibold text-slate-900">
-                  {t.exploreSolution} <span aria-hidden="true">→</span>
-                </p>
-              </Link>
-            ))}
+          <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
+                {lang === "en" ? "Why Teams Choose Mugnee Cambodia" : "ហេតុអ្វីក្រុមការងារជ្រើសរើស Mugnee Cambodia"}
+              </p>
+              <h2 id="home-trust-title" className="mt-1 text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
+                {lang === "en"
+                  ? "Why Choose Mugnee Cambodia for Project Delivery"
+                  : "ហេតុអ្វីគួរជ្រើស Mugnee Cambodia សម្រាប់ការអនុវត្តគម្រោង"}
+              </h2>
+            </div>
+            <p className="rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-800">
+              {lang === "en" ? "Cambodia Project Support" : "គាំទ្រគម្រោងនៅកម្ពុជា"}
+            </p>
           </div>
+
+          <ul className="grid gap-3 sm:grid-cols-3" aria-label="Mugnee Cambodia trust highlights">
+            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
+              <div className="flex items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200"
+                >
+                  ✓
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">{t.trust1t}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust1d}</p>
+                  <p className="mt-2 text-xs font-medium text-slate-500">
+                    {lang === "en" ? "Planning, implementation, after-sales" : "រៀបចំ, អនុវត្ត, គាំទ្របន្ទាប់ពីលក់"}
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
+              <div className="flex items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-200"
+                >
+                  ◎
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">{t.trust2t}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust2d}</p>
+                  <p className="mt-2 text-xs font-medium text-slate-500">
+                    {lang === "en" ? "Quality workflow and operational reliability" : "ដំណើរការស្តង់ដារ និងភាពទុកចិត្តបានក្នុងការប្រើប្រាស់"}
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
+              <div className="flex items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700 ring-1 ring-amber-200"
+                >
+                  →
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-900">{t.trust3t}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust3d}</p>
+                  <p className="mt-2 text-xs font-medium text-slate-500">
+                    {lang === "en" ? "Planning to commissioning with clear milestones" : "ពីការធ្វើផែនការដល់ Commissioning មានជំហានច្បាស់លាស់"}
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
         </Container>
       </section>
 
@@ -851,134 +749,6 @@ export default function HomeClient({
       </section>
 
       {/* =========================
-          USE-CASES BY INDUSTRY
-         ========================= */}
-      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
-        <Container>
-          <SectionTitle
-            eyebrow={t.secIndustryEyebrow}
-            title={t.secIndustryTitle}
-            desc={t.secIndustryDesc}
-            descClassName="max-w-none"
-          />
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                tEn: "Retail & Mall",
-                tKm: "ហាងលក់រាយ និងផ្សារទំនើប",
-                dEn:
-                  "LED video walls and digital signage to drive promotions and foot traffic.",
-                dKm: "LED Video Wall និង Digital Signage សម្រាប់ផ្សព្វផ្សាយ និងទាក់ទាញភ្ញៀវចូលហាង។",
-              },
-              {
-                tEn: "Education",
-                tKm: "ការអប់រំ",
-                dEn:
-                  "Interactive smart boards for classrooms, training rooms and auditoriums.",
-                dKm: "Interactive Smart Board សម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងសាលសន្និសីទ។",
-              },
-              {
-                tEn: "Corporate & Office",
-                tKm: "ការិយាល័យ និងក្រុមហ៊ុន",
-                dEn:
-                  "Boardroom LED displays, lobby signage and meeting room AV.",
-                dKm: "អេក្រង់ LED សម្រាប់បន្ទប់ប្រជុំ ផ្ទាំងបង្ហាញ Lobby និងប្រព័ន្ធ AV។",
-              },
-              {
-                tEn: "Factory & Industrial",
-                tKm: "រោងចក្រ និងឧស្សាហកម្ម",
-                dEn:
-                  "PA systems, safety displays and production status boards.",
-                dKm: "PA System ផ្ទាំងសុវត្ថិភាព និងផ្ទាំងបង្ហាញស្ថានភាពផលិតកម្ម។",
-              },
-              {
-                tEn: "Hospitality",
-                tKm: "សណ្ឋាគារ និងបដិសណ្ឋារកិច្ច",
-                dEn:
-                  "Welcome screens, menu boards and event displays for hotels.",
-                dKm: "Welcome Screen, Menu Board និងអេក្រង់ព្រឹត្តិការណ៍សម្រាប់សណ្ឋាគារ។",
-              },
-              {
-                tEn: "Government & Public",
-                tKm: "រដ្ឋាភិបាល និងសាធារណៈ",
-                dEn:
-                  "Public information displays and secure access control.",
-                dKm: "ផ្ទាំងព័ត៌មានសាធារណៈ និងប្រព័ន្ធគ្រប់គ្រងច្រកចេញចូលដែលមានសុវត្ថិភាព។",
-              },
-            ].map((item) => (
-              <div
-                key={item.tEn}
-                className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 p-5 shadow-sm"
-              >
-                <h3 className="text-base font-semibold text-slate-900">
-                  {lang === "en" ? item.tEn : sanitizeKhmer(item.tKm, item.tEn)}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  {lang === "en" ? item.dEn : sanitizeKhmer(item.dKm, item.dEn)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* =========================
-          TECH SPECS SNAPSHOT
-         ========================= */}
-      <section className="border-t border-slate-100 bg-slate-50 py-12 sm:py-14">
-        <Container>
-          <SectionTitle
-            eyebrow={t.secSpecsEyebrow}
-            title={t.secSpecsTitle}
-            desc={t.secSpecsDesc}
-            descClassName="max-w-none"
-          />
-
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                tEn: "Pixel Pitch Range",
-                tKm: "ជួរ Pixel Pitch",
-                dEn: "P1.25 - P10 (project-based selection)",
-                dKm: "P1.25 - P10 (ជ្រើសតាមតម្រូវការគម្រោង)",
-              },
-              {
-                tEn: "Brightness",
-                tKm: "កម្រិតពន្លឺ",
-                dEn: "Indoor 800-1200 nits / Outdoor 5500-8000 nits",
-                dKm: "Indoor 800-1200 nits / Outdoor 5500-8000 nits",
-              },
-              {
-                tEn: "Protection",
-                tKm: "ការការពារ",
-                dEn: "Outdoor IP65 front protection",
-                dKm: "ការការពារ IP65 សម្រាប់ផ្នែកខាងមុខ (Outdoor)",
-              },
-              {
-                tEn: "Control Systems",
-                tKm: "ប្រព័ន្ធគ្រប់គ្រង",
-                dEn: "NovaStar / Colorlight / Huidu",
-                dKm: "NovaStar / Colorlight / Huidu",
-              },
-            ].map((spec) => (
-              <div
-                key={spec.tEn}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-              >
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                  {lang === "en" ? spec.tEn : sanitizeKhmer(spec.tKm, spec.tEn)}
-                </p>
-                <p className="mt-2 text-sm font-semibold text-slate-900">
-                  {lang === "en" ? spec.dEn : sanitizeKhmer(spec.dKm, spec.dEn)}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* =========================
           SERVICE AREAS
          ========================= */}
       <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
@@ -1030,8 +800,8 @@ export default function HomeClient({
               <div>
                 <p className="text-sm text-slate-600">
                   {lang === "en"
-                    ? "Share your location, screen size, and use-case. We'll recommend a practical configuration and quotation."
-                    : "សូមចែករំលែកទីតាំង ទំហំអេក្រង់ និងប្រភេទការប្រើប្រាស់ ដើម្បីឲ្យក្រុមការងារយើងណែនាំដំណោះស្រាយសមស្រប និងសម្រង់តម្លៃគម្រោង។"}
+                    ? "Share your location, project type, and timeline. Our team will propose a practical scope and quotation."
+                    : "សូមចែករំលែកទីតាំង ប្រភេទគម្រោង និងពេលវេលា ដើម្បីឲ្យក្រុមការងារយើងរៀបចំ Scope និងសម្រង់តម្លៃសមស្រប។"}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a
@@ -1065,7 +835,7 @@ export default function HomeClient({
                     : "ជាន់ទី១, 11E0, ផ្លូវ 108, តំបន់ Night Market, Doun Penh, Phnom Penh, Cambodia"}
                 </p>
                 <p className="mt-2">
-                  {lang === "en" ? "Phone: +855 XXX XXX XXX" : "ទូរស័ព្ទ៖ +855 XXX XXX XXX"}
+                  {lang === "en" ? "Phone: +855 17 192 7446" : "ទូរស័ព្ទ៖ +855 17 192 7446"}
                 </p>
                 <p className="mt-2">
                   {lang === "en"
@@ -1161,6 +931,3 @@ export default function HomeClient({
     </div>
   );
 }
-
-
-

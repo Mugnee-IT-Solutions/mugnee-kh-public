@@ -3,9 +3,9 @@ import LedDisplayClient from "../products/led-display/LedDisplayClient";
 import { SITE_URL } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "LED Display Price & Installation in Cambodia | Indoor, Outdoor & Video Wall",
+  title: "LED Display in Cambodia: Price, Installation & Video Wall",
   description:
-    "Explore indoor and outdoor LED display solutions in Cambodia with project-based quotation, BOQ planning, installation, commissioning, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
+    "LED display solutions in Cambodia for indoor video wall, outdoor billboard, and commercial signage with BOQ planning, installation, commissioning, and local after-sales support.",
   keywords: [
     "LED display Cambodia",
     "LED screen Cambodia",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "LED Display Price & Installation in Cambodia | Indoor, Outdoor & Video Wall",
+    title: "LED Display in Cambodia: Price, Installation & Video Wall",
     description:
       "Cambodia-focused LED display solutions for retail, corporate, hotels, events, and outdoor advertising with local engineering and after-sales support.",
     url: `${SITE_URL}/led-display`,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LED Display Price & Installation in Cambodia | Mugnee Cambodia",
+    title: "LED Display in Cambodia: Price, Installation & Video Wall",
     description:
       "Indoor and outdoor LED display solutions in Cambodia with project-based quotation and local support.",
     images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
@@ -48,4 +48,3 @@ export const metadata: Metadata = {
 export default function Page() {
   return <LedDisplayClient />;
 }
-

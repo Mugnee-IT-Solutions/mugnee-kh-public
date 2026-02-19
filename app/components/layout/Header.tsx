@@ -122,6 +122,49 @@ export default function SiteHeader() {
     },
   ];
 
+  const solutionsMenu: NavItem[] = [
+    {
+      labelEn: "All Solutions",
+      labelKm: "All Solutions",
+      href: "/solutions",
+    },
+    {
+      labelEn: "Indoor Communication Solutions",
+      labelKm: "Indoor Communication Solutions",
+      href: "/solutions/indoor-communication-solutions-cambodia",
+    },
+    {
+      labelEn: "Outdoor Campaign Solutions",
+      labelKm: "Outdoor Campaign Solutions",
+      href: "/solutions/outdoor-campaign-solutions-cambodia",
+    },
+    {
+      labelEn: "Retail Digital Signage Solutions",
+      labelKm: "Retail Digital Signage Solutions",
+      href: "/solutions/retail-digital-signage-cambodia",
+    },
+    {
+      labelEn: "Hotel Display Solutions",
+      labelKm: "Hotel Display Solutions",
+      href: "/solutions/hotel-display-solutions-cambodia",
+    },
+    {
+      labelEn: "Factory PA Announcement Solutions",
+      labelKm: "Factory PA Announcement Solutions",
+      href: "/solutions/factory-pa-announcement-cambodia",
+    },
+    {
+      labelEn: "Office Access Control Solutions",
+      labelKm: "Office Access Control Solutions",
+      href: "/solutions/office-access-control-cambodia",
+    },
+    {
+      labelEn: "Education Smart Classroom Solutions",
+      labelKm: "Education Smart Classroom Solutions",
+      href: "/solutions/education-smart-classroom-cambodia",
+    },
+  ];
+
   const parentHrefById: Record<string, string> = {
     ledDisplay: "/led-display",
     solutions: "/solutions",
@@ -446,13 +489,7 @@ export default function SiteHeader() {
             >
               {t.turnstile}
             </Link>
-            <Link
-              href="/solutions"
-              onClick={forceScrollTop}
-              className={desktopNavLinkClass(isPathActive("/solutions"))}
-            >
-              {t.solutions}
-            </Link>
+            <Dropdown id="solutions" title={t.solutions} items={solutionsMenu} align="center" />
             <Link
               href="/service"
               onClick={forceScrollTop}
@@ -577,16 +614,24 @@ export default function SiteHeader() {
                 >
                   {t.turnstile}
                 </Link>
-                <Link
-                  href="/solutions"
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
-                  onClick={() => {
-                    forceScrollTop();
-                    setOpenMobile(false);
-                  }}
-                >
-                  {t.solutions}
-                </Link>
+                <div className="mt-1">
+                  <p className="px-3 pb-1 text-xs font-semibold text-white/70">{t.solutions}</p>
+                  <div className="grid gap-1">
+                    {solutionsMenu.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                        onClick={() => {
+                          forceScrollTop();
+                          setOpenMobile(false);
+                        }}
+                      >
+                        {lang === "en" ? item.labelEn : item.labelKm}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
                 <Link
                   href="/service"
                   className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"

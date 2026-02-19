@@ -10,6 +10,7 @@ const PAGE_PATH = "/solutions";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const EN = {
+  breadcrumbHome: "Home",
   breadcrumb: "Solutions",
   heroEyebrow: "Solutions",
   heroTitle: "Cambodia Business Solutions | LED, Signage & Access Control",
@@ -26,6 +27,9 @@ const EN = {
   cityDesc: "We design by city profile, traffic, and operating conditions.",
   categoriesTitle: "Cambodia Business Solution Categories: LED, Signage, PA & Access Control",
   categoriesDesc: "Explore solution categories for Cambodia projects.",
+  intentClusterTitle: "Intent Cluster Navigation",
+  intentClusterDesc:
+    "Route each query intent to the exact solution or product hub for stronger page-topic alignment.",
   useCasesTitle: "Industry Use Cases in Cambodia for LED Display & Access Control",
   useCasesDesc: "Reliable AV, security, and communication for real business scenarios.",
   budgetTitle: "Cambodia Solution Budget, BOQ & Rollout Planning",
@@ -46,6 +50,7 @@ const EN = {
 };
 
 const KM = {
+  breadcrumbHome: "ទំព័រដើម",
   breadcrumb: "ដំណោះស្រាយ",
   heroEyebrow: "ដំណោះស្រាយ",
   heroTitle: "ដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា | LED, Signage និង Access Control",
@@ -62,6 +67,9 @@ const KM = {
   cityDesc: "ការរចនាដំណោះស្រាយផ្អែកលើប្រភេទទីក្រុង ចរាចរណ៍ និងលក្ខខណ្ឌប្រតិបត្តិការ។",
   categoriesTitle: "ប្រភេទដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា៖ LED, Signage, PA និង Access Control",
   categoriesDesc: "ស្វែងរកប្រភេទដំណោះស្រាយសម្រាប់គម្រោងនៅកម្ពុជា។",
+  intentClusterTitle: "ការណែនាំតាម Intent Cluster",
+  intentClusterDesc:
+    "បែងចែក query intent ទៅទំព័រដំណោះស្រាយ ឬ product hub ដែលត្រឹមត្រូវ ដើម្បីធ្វើឱ្យ topical signal ច្បាស់។",
   useCasesTitle: "ករណីប្រើប្រាស់តាមវិស័យនៅកម្ពុជា សម្រាប់ LED Display និង Access Control",
   useCasesDesc: "ប្រព័ន្ធ AV សុវត្ថិភាព និងទំនាក់ទំនងដែលជឿជាក់ សម្រាប់ការប្រើប្រាស់ជាក់ស្តែង។",
   budgetTitle: "ថវិកា BOQ និងផែនការដាក់ប្រើប្រាស់ដំណោះស្រាយនៅកម្ពុជា",
@@ -82,21 +90,155 @@ const KM = {
 };
 
 const solutionLinksEn = [
-  { title: "Indoor LED Display Solutions", desc: "High-resolution indoor LED walls.", href: "/led-display/indoor-led-display" },
-  { title: "Outdoor LED Billboard Solutions", desc: "Weather-ready outdoor LED screens.", href: "/led-display/outdoor-led-display" },
-  { title: "Smart Classroom Solutions", desc: "Interactive flat panel and classroom AV.", href: "/interactive-flat-panel" },
-  { title: "Access Control Solutions", desc: "RFID, QR, and biometric entry.", href: "/turnstile-gate" },
-  { title: "PA System Solutions", desc: "Public address systems for campuses and factories.", href: "/pa-system" },
-  { title: "Turnstile Gate Solutions", desc: "Controlled entry lanes for security.", href: "/turnstile-gate" },
+  {
+    title: "Indoor Communication Solutions",
+    desc: "Industry page for indoor visitor and guest communication workflows.",
+    href: "/solutions/indoor-communication-solutions-cambodia",
+  },
+  {
+    title: "Outdoor Campaign Solutions",
+    desc: "Industry page for storefront and high-traffic campaign visibility planning.",
+    href: "/solutions/outdoor-campaign-solutions-cambodia",
+  },
+  {
+    title: "Retail Digital Signage Solutions",
+    desc: "Industry page for retail and mall communication deployments.",
+    href: "/solutions/retail-digital-signage-cambodia",
+  },
+  {
+    title: "Hotel Display Solutions",
+    desc: "Industry page for hospitality guest communication workflows.",
+    href: "/solutions/hotel-display-solutions-cambodia",
+  },
+  {
+    title: "Factory PA Announcement Solutions",
+    desc: "Industry page for factory-wide announcement planning.",
+    href: "/solutions/factory-pa-announcement-cambodia",
+  },
+  {
+    title: "Office Access Control Solutions",
+    desc: "Industry page for office and building entry governance.",
+    href: "/solutions/office-access-control-cambodia",
+  },
+  {
+    title: "Education Smart Classroom Solutions",
+    desc: "Industry page for school and training environments.",
+    href: "/solutions/education-smart-classroom-cambodia",
+  },
+  { title: "Interactive Flat Panel", desc: "Dedicated product hub for classroom systems.", href: "/interactive-flat-panel" },
 ];
 
 const solutionLinksKm = [
-  { title: "ដំណោះស្រាយអេក្រង់ LED ខាងក្នុងអគារ", desc: "អេក្រង់ LED ខាងក្នុងគុណភាពខ្ពស់។", href: "/led-display/indoor-led-display" },
-  { title: "ដំណោះស្រាយប៉ាណូ LED ខាងក្រៅ", desc: "អេក្រង់ LED ខាងក្រៅសមស្របអាកាសធាតុ។", href: "/led-display/outdoor-led-display" },
-  { title: "ដំណោះស្រាយថ្នាក់រៀនឆ្លាតវៃ", desc: "Interactive Flat Panel និង AV ថ្នាក់រៀន។", href: "/interactive-flat-panel" },
-  { title: "ដំណោះស្រាយគ្រប់គ្រងច្រកចេញចូល", desc: "RFID, QR និង Biometric សម្រាប់ច្រកចូល។", href: "/turnstile-gate" },
-  { title: "ដំណោះស្រាយប្រព័ន្ធ PA", desc: "ប្រព័ន្ធផ្សាយសំឡេងសម្រាប់សាលា និងរោងចក្រ។", href: "/pa-system" },
-  { title: "ដំណោះស្រាយទ្វារបង្វិល Turnstile", desc: "ផ្លូវចូលចេញដែលគ្រប់គ្រងបានសម្រាប់សុវត្ថិភាព។", href: "/turnstile-gate" },
+  {
+    title: "ដំណោះស្រាយទំនាក់ទំនងខាងក្នុង",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់ការទំនាក់ទំនងភ្ញៀវ និងអ្នកចូលមកក្នុងអគារ។",
+    href: "/solutions/indoor-communication-solutions-cambodia",
+  },
+  {
+    title: "ដំណោះស្រាយយុទ្ធនាការក្រៅអគារ",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់ campaign visibility តាម storefront និងទីតាំងចរាចរណ៍ខ្ពស់។",
+    href: "/solutions/outdoor-campaign-solutions-cambodia",
+  },
+  {
+    title: "ដំណោះស្រាយ Digital Signage សម្រាប់ហាង និងផ្សារទំនើប",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់គម្រោង Retail និង Mall។",
+    href: "/solutions/retail-digital-signage-cambodia",
+  },
+  {
+    title: "ដំណោះស្រាយប្រព័ន្ធបង្ហាញសម្រាប់សណ្ឋាគារ",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់ Hospitality និងការទំនាក់ទំនងភ្ញៀវ។",
+    href: "/solutions/hotel-display-solutions-cambodia",
+  },
+  {
+    title: "ដំណោះស្រាយ PA សម្រាប់រោងចក្រ",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់ការផ្សាយសារក្នុងតំបន់ឧស្សាហកម្ម។",
+    href: "/solutions/factory-pa-announcement-cambodia",
+  },
+  {
+    title: "ដំណោះស្រាយគ្រប់គ្រងច្រកចូលសម្រាប់ការិយាល័យ",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់ office access control។",
+    href: "/solutions/office-access-control-cambodia",
+  },
+  {
+    title: "ដំណោះស្រាយថ្នាក់រៀនឆ្លាតវៃសម្រាប់វិស័យអប់រំ",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់សាលារៀន និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាល។",
+    href: "/solutions/education-smart-classroom-cambodia",
+  },
+  { title: "Interactive Flat Panel", desc: "ទំព័រផលិតផលសម្រាប់ប្រព័ន្ធថ្នាក់រៀន។", href: "/interactive-flat-panel" },
+];
+
+const intentClustersEn = [
+  {
+    title: "Display & Signage Intent",
+    links: [
+      { label: "Indoor Communication Solutions", href: "/solutions/indoor-communication-solutions-cambodia" },
+      { label: "Outdoor Campaign Solutions", href: "/solutions/outdoor-campaign-solutions-cambodia" },
+      { label: "Retail Digital Signage Solutions", href: "/solutions/retail-digital-signage-cambodia" },
+      { label: "Hotel Display Solutions", href: "/solutions/hotel-display-solutions-cambodia" },
+      { label: "LED Display Hub", href: "/led-display" },
+    ],
+  },
+  {
+    title: "Security & Access Intent",
+    links: [
+      { label: "Office Access Control Solutions", href: "/solutions/office-access-control-cambodia" },
+      { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
+      { label: "Access Control Catalog", href: "/products/catalog/access-control" },
+    ],
+  },
+  {
+    title: "Education & Collaboration Intent",
+    links: [
+      { label: "Education Smart Classroom Solutions", href: "/solutions/education-smart-classroom-cambodia" },
+      { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
+      { label: "Smart Board Catalog", href: "/products/catalog/smart-board" },
+    ],
+  },
+  {
+    title: "Factory Audio & Announcement Intent",
+    links: [
+      { label: "Factory PA Announcement Solutions", href: "/solutions/factory-pa-announcement-cambodia" },
+      { label: "PA System Hub", href: "/pa-system" },
+      { label: "IP Paging Microphones", href: "/products/catalog/ip-paging-microphones" },
+    ],
+  },
+];
+
+const intentClustersKm = [
+  {
+    title: "Intent: Display & Signage",
+    links: [
+      { label: "ដំណោះស្រាយទំនាក់ទំនងខាងក្នុង", href: "/solutions/indoor-communication-solutions-cambodia" },
+      { label: "ដំណោះស្រាយយុទ្ធនាការក្រៅអគារ", href: "/solutions/outdoor-campaign-solutions-cambodia" },
+      { label: "ដំណោះស្រាយ Retail Digital Signage", href: "/solutions/retail-digital-signage-cambodia" },
+      { label: "ដំណោះស្រាយ Hotel Display", href: "/solutions/hotel-display-solutions-cambodia" },
+      { label: "LED Display Hub", href: "/led-display" },
+    ],
+  },
+  {
+    title: "Intent: Security & Access",
+    links: [
+      { label: "ដំណោះស្រាយ Office Access Control", href: "/solutions/office-access-control-cambodia" },
+      { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
+      { label: "Access Control Catalog", href: "/products/catalog/access-control" },
+    ],
+  },
+  {
+    title: "Intent: Education & Collaboration",
+    links: [
+      { label: "ដំណោះស្រាយ Education Smart Classroom", href: "/solutions/education-smart-classroom-cambodia" },
+      { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
+      { label: "Smart Board Catalog", href: "/products/catalog/smart-board" },
+    ],
+  },
+  {
+    title: "Intent: Factory Audio & Announcement",
+    links: [
+      { label: "ដំណោះស្រាយ Factory PA", href: "/solutions/factory-pa-announcement-cambodia" },
+      { label: "PA System Hub", href: "/pa-system" },
+      { label: "IP Paging Microphones", href: "/products/catalog/ip-paging-microphones" },
+    ],
+  },
 ];
 
 const summaryBulletsEn = [
@@ -263,6 +405,7 @@ export default function SolutionsClient() {
   const integrationCards = isKhmer ? integrationCardsKm : integrationCardsEn;
   const reasons = isKhmer ? reasonsKm : reasonsEn;
   const faqs = isKhmer ? faqsKm : faqsEn;
+  const intentClusters = isKhmer ? intentClustersKm : intentClustersEn;
 
   return (
     <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
@@ -280,8 +423,18 @@ export default function SolutionsClient() {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: t.breadcrumb, item: PAGE_URL },
+                { "@type": "ListItem", position: 1, name: t.breadcrumbHome, item: SITE_URL },
+                { "@type": "ListItem", position: 2, name: t.breadcrumb, item: PAGE_URL },
               ],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((item) => ({
+                "@type": "Question",
+                name: item.q,
+                acceptedAnswer: { "@type": "Answer", text: item.a },
+              })),
             },
           ]),
         }}
@@ -293,6 +446,17 @@ export default function SolutionsClient() {
           <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <nav aria-label="Breadcrumb" className="mb-4">
+            <ol className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+              <li>
+                <Link href="/" className="hover:text-slate-700">
+                  {t.breadcrumbHome}
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li className="font-semibold text-slate-700">{t.breadcrumb}</li>
+            </ol>
+          </nav>
           <div className="text-xs text-slate-500">
             <span className="font-semibold text-slate-700">{t.heroEyebrow}</span>
           </div>
@@ -345,6 +509,39 @@ export default function SolutionsClient() {
         </div>
       </section>
 
+      <section className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.intentClusterTitle}</h2>
+          <p className="mt-2 text-slate-600">{t.intentClusterDesc}</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {intentClusters.map((cluster, clusterIndex) => (
+              <article
+                key={cluster.title}
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+              >
+                <h3 className="text-sm font-semibold text-slate-900">{cluster.title}</h3>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {cluster.links.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={[
+                        "rounded-full border px-3 py-2 text-sm font-semibold transition hover:-translate-y-0.5",
+                        clusterIndex % 2 === 0
+                          ? "border-cyan-200 bg-cyan-50 text-cyan-900 hover:border-cyan-300 hover:bg-cyan-100"
+                          : "border-indigo-200 bg-indigo-50 text-indigo-900 hover:border-indigo-300 hover:bg-indigo-100",
+                      ].join(" ")}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.useCasesTitle}</h2>
@@ -393,7 +590,7 @@ export default function SolutionsClient() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-white">
+      <section id="faq" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.faqTitle}</h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">{faqs.map((item) => <details key={item.q} className="group rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 open:border-sky-300 open:shadow-md"><summary className="cursor-pointer list-none text-sm font-semibold text-slate-900"><div className="flex items-center justify-between gap-3"><span>{item.q}</span><span className="text-slate-400 transition-transform duration-300 group-open:rotate-180">v</span></div></summary><p className="mt-3 text-sm text-slate-700">{item.a}</p></details>)}</div>

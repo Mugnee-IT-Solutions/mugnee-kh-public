@@ -1,24 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLang } from "../../components/layout/LanguageProvider";
 
 const EN = {
   eyebrow: "Leadership Message",
   title: "Message from CEO",
   subtitle:
-    "A note from our founder on vision, innovation, and long-term partnership with clients in Cambodia.",
-  greeting: "Dear Valued Clients and Partners,",
+    "A message from our founder on Mugnee Cambodia's long-term commitment and international growth journey.",
+  greeting: "Dear Valued Clients & Partners,",
   p1:
-    "I am Saiful Islam Shajib, Founder and CEO of Mugnee Group. What started in 2014 with a small engineering-driven team has grown into a trusted technology solutions organization focused on LED display, digital signage, smart classroom systems, PA systems, and access control.",
+    "I am Saiful Islam Shajib, Founder & CEO of Mugnee Cambodia, officially operating under Mugnee Multiple Co. Ltd. (Cambodia). Mugnee began its journey in 2016 with a clear vision - to deliver reliable, high-quality digital display and smart technology solutions for institutions, businesses, and communities. Over the years, through Mugnee Multiple Ltd. (Bangladesh), we have successfully completed hundreds of projects serving government organizations, corporate clients, educational institutions, and industrial sectors.",
   p2:
-    "At Mugnee Cambodia, our commitment is simple: deliver practical, high-performance, and reliable solutions that create measurable value for every project. We focus on real site conditions, transparent execution, and professional standards from survey and design to installation, commissioning, training, and long-term after-sales support.",
+    "My connection with Cambodia is also personal. Cambodia was the first country I visited outside Bangladesh. From that very first visit, I developed a deep appreciation for the Cambodian people - their kindness, culture, simplicity, and hospitality. That experience created a lasting connection with this country and inspired me to establish Mugnee Cambodia, not just as a business venture, but as a long-term commitment to contribute positively to Cambodia's growing digital infrastructure.",
   p3:
-    "We believe technology should be clear, scalable, and useful in daily operations. That is why we continuously improve our systems, engineering process, and service workflow to help businesses and institutions communicate better, operate more efficiently, and grow with confidence.",
+    "Our expansion into Cambodia marks an important milestone in our international journey. At Mugnee Cambodia, our commitment is simple: to provide professional LED display solutions, interactive flat panels, PA systems, access control, and integrated technology services - backed by engineering expertise, transparent pricing, and dependable after-sales support. We believe long-term success comes from trust, quality workmanship, and strong partnerships. Every project we undertake is handled with careful planning, certified components, skilled installation teams, and ongoing technical support.",
   p4:
-    "Thank you for your trust in Mugnee Cambodia. We look forward to building long-term partnerships and supporting your next project with integrity, innovation, and accountability.",
+    "Cambodia is a growing market with tremendous potential, and we are proud to support its digital transformation by delivering modern, efficient, and sustainable solutions. Thank you for your trust in Mugnee Cambodia. We look forward to building lasting partnerships together.",
   signatureName: "Saiful Islam Shajib",
-  signatureRole: "Founder & CEO, Mugnee Group",
+  signatureRole: "Founder & CEO, Mugnee Multiple Co. Ltd., Cambodia",
   cta1: "Contact Us",
   cta2: "View Solutions",
 };
@@ -49,50 +50,68 @@ export default function MessageFromCeoClient() {
 
   return (
     <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
-      <section className="border-b border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="border-b border-slate-200 bg-slate-50/70">
+        <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
             {t.eyebrow}
           </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{t.title}</h1>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base">
+          <h1 className="mt-1.5 text-3xl font-bold tracking-tight sm:text-[2.05rem]">{t.title}</h1>
+          <p className="mt-1.5 text-sm leading-relaxed text-slate-600 sm:text-base">
             {t.subtitle}
           </p>
         </div>
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-          <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <p className="text-base font-semibold text-slate-900">{t.greeting}</p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p1}</p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p2}</p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p3}</p>
-            <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p4}</p>
+        <div className="mx-auto max-w-5xl px-4 py-7 sm:px-6 sm:py-8 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
+            <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm">
+              <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+                <Image
+                  src="/images/about/ceo-saiful-islam-shajib.webp"
+                  alt="Saiful Islam Shajib, Founder and CEO"
+                  width={800}
+                  height={800}
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <p className="text-sm font-semibold text-slate-900">Saiful Islam Shajib</p>
+                <p className="text-xs text-slate-600">Founder & CEO</p>
+              </div>
+            </aside>
 
-            <div className="mt-8 border-t border-slate-200 pt-5">
-              <p className="text-sm font-semibold text-slate-900">{t.signatureName}</p>
-              <p className="text-sm text-slate-600">{t.signatureRole}</p>
-            </div>
-          </article>
+            <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+              <p className="text-base font-semibold text-slate-900">{t.greeting}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p1}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p2}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p3}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p4}</p>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
-            >
-              {t.cta1}
-            </Link>
-            <Link
-              href="/solutions"
-              className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50"
-            >
-              {t.cta2}
-            </Link>
+              <div className="mt-8 border-t border-slate-200 pt-5">
+                <p className="text-sm font-semibold text-slate-900">{t.signatureName}</p>
+                <p className="text-sm text-slate-600">{t.signatureRole}</p>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
+                >
+                  {t.cta1}
+                </Link>
+                <Link
+                  href="/solutions"
+                  className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+                >
+                  {t.cta2}
+                </Link>
+              </div>
+            </article>
           </div>
         </div>
       </section>
     </main>
   );
 }
-

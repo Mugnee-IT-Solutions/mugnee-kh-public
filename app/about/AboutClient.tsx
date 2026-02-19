@@ -408,7 +408,7 @@ export default function AboutClient() {
               <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
                 {isKm
                   ? uiKm.heroDesc
-                  : "Mugnee Cambodia is a business technology solutions company focused on LED display, digital signage, smart classroom systems, PA audio systems, and access control integration in Cambodia. We provide complete project delivery from technical site survey and solution design to product supply, installation, commissioning, user training, and long-term after-sales support. Our engineering team helps retail, corporate, industrial, education, hospitality, and public-sector organizations improve communication quality, brand visibility, operational efficiency, and site security with reliable, scalable, and maintenance-ready systems built for real Cambodia market conditions."}
+                  : "Mugnee Cambodia is an affiliate company of Mugnee Multiple, focused on LED display, digital signage, smart classroom systems, PA audio systems, and access control integration in Cambodia. We provide complete project delivery from technical site survey and solution design to product supply, installation, commissioning, user training, and long-term after-sales support. Our engineering team helps retail, corporate, industrial, education, hospitality, and public-sector organizations improve communication quality, brand visibility, operational efficiency, and site security with reliable, scalable, and maintenance-ready systems built for real Cambodia market conditions."}
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {tags.map((tag) => (

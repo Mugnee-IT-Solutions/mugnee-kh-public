@@ -2,24 +2,14 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import ProductDetailClient from "../[slug]/ProductDetailClient";
 import { getProductBySlug } from "../../../data/products";
+import { buildCatalogProductMetadata } from "../_sharedMetadata";
 
 export const dynamic = "force-static";
 
 const SLUG = "pa-software";
 
 export function generateMetadata(): Metadata {
-  const product = getProductBySlug(SLUG);
-  if (!product) return {};
-
-  return {
-    title: product.seoTitleEn,
-    description: product.seoDescEn,
-    openGraph: {
-      title: product.seoTitleEn,
-      description: product.seoDescEn,
-      images: [product.heroImage],
-    },
-  };
+  return buildCatalogProductMetadata(SLUG);
 }
 
 export default function ProductDetailPage() {

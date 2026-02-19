@@ -21,6 +21,10 @@ type ProductGridConfig = {
 
 const LED_FAQS_EN: Array<{ q: string; a: string }> = [
   {
+    q: "Where can I buy LED display in Cambodia with installation support?",
+    a: "You can source LED display in Cambodia through project-based suppliers who provide survey, BOQ, installation, commissioning, and local after-sales support.",
+  },
+  {
     q: "What is the best LED display for indoor use in Cambodia?",
     a: "Indoor LED screens work best with finer pixel pitch (P1.25-P2.5) for close viewing in boardrooms, showrooms, and control rooms. Viewing distance is the key factor for clarity.",
   },
@@ -63,6 +67,10 @@ const LED_FAQS_EN: Array<{ q: string; a: string }> = [
 ];
 
 const LED_FAQS_KM: Array<{ q: string; a: string }> = [
+  {
+    q: "តើខ្ញុំអាចទិញ LED Display នៅកម្ពុជា ជាមួយសេវាដំឡើងបាននៅណា?",
+    a: "អ្នកអាចទិញ LED Display នៅកម្ពុជា តាមអ្នកផ្គត់ផ្គង់បែបគម្រោង ដែលផ្តល់សេវា survey, BOQ, installation, commissioning និង after-sales support ក្នុងស្រុក។",
+  },
   {
     q: "តើ LED Display ប្រភេទណាល្អសម្រាប់ប្រើប្រាស់ក្នុងអគារនៅកម្ពុជា?",
     a: "អេក្រង់ LED ក្នុងអគារ គួរជ្រើស pixel pitch ល្អិតជាង (P1.25-P2.5) សម្រាប់ចម្ងាយមើលជិត ដូចជា boardroom, showroom និង control room។ ចម្ងាយមើលគឺជាកត្តាសំខាន់បំផុតសម្រាប់ភាពច្បាស់។",
@@ -159,6 +167,53 @@ const DEFAULT_TRUST_PROOF_CHIPS_KM = [
   "ទំព័រដែល Optimize ដោយ Entity + Schema",
 ];
 
+const SEO_STRONG_TERMS_EN = [
+  "indoor LED display",
+  "outdoor LED billboard",
+  "LED video wall",
+  "pixel-pitch planning",
+  "brightness and refresh-rate optimization",
+  "cabinet structure design",
+  "controller integration",
+  "installation",
+  "commissioning",
+  "after-sales maintenance",
+];
+
+const SEO_STRONG_TERMS_KM = [
+  "LED Display",
+  "video wall",
+  "billboard",
+  "site survey",
+  "pixel pitch",
+  "commissioning",
+  "after-sales support",
+  "installation",
+];
+
+function escapeRegex(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function renderStrongKeywords(text: string, terms: string[]) {
+  if (!text || terms.length === 0) return text;
+
+  const orderedTerms = [...terms].sort((a, b) => b.length - a.length);
+  const termSet = new Set(orderedTerms.map((term) => term.toLowerCase()));
+  const regex = new RegExp(`(${orderedTerms.map(escapeRegex).join("|")})`, "gi");
+  const parts = text.split(regex);
+
+  return parts.map((part, index) =>
+    termSet.has(part.toLowerCase()) ? (
+      <strong key={`${part}-${index}`} className="font-semibold text-slate-800">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export default function LedDisplayClient({
   productGridOverride,
   productQuickChips,
@@ -251,9 +306,9 @@ export default function LedDisplayClient({
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
-      h1: "LED Display Price in Cambodia",    
+      h1: "LED Display in Cambodia: Price, Installation & Video Wall",
       intro:
-        "Mugnee Cambodia delivers Indoor LED Display, Outdoor LED Display, LED Video Wall, LED Screen Panel, LED Billboard, Digital LED Display, Advertising LED Display, and LED Signage Display solutions in Cambodia. We support retail, malls, hotels, corporate lobbies, events, and outdoor advertising with site survey, pixel-pitch guidance, structure design, installation, commissioning, and local after-sales support. Get a project-based quotation from our Cambodia team in Phnom Penh, Siem Reap, and Sihanoukville.",
+        "Mugnee Cambodia delivers indoor LED display, outdoor LED billboard, and LED video wall solutions in Cambodia with pixel-pitch planning, brightness and refresh-rate optimization, cabinet structure design, controller integration, installation, commissioning, and local after-sales maintenance for retail, corporate, hospitality, and public projects.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
@@ -266,7 +321,7 @@ export default function LedDisplayClient({
       breadcrumb: "ផលិតផល",
       h1: "តម្លៃ LED Display នៅកម្ពុជា",
       intro:
-        "MUGNEE Multiple ផ្តល់ដំណោះស្រាយ Indoor LED Display, Outdoor LED Display, LED Video Wall, LED Screen Panel, LED Billboard, Digital LED Display, Advertising LED Display និង LED Signage Display នៅកម្ពុជា។ យើងគាំទ្រគម្រោង retail, mall, hotel, corporate lobby, event និង outdoor advertising ជាមួយសេវា site survey, ការណែនាំ pixel pitch, រចនាសម្ព័ន្ធ, ការដំឡើង, commissioning និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក។ ស្នើសុំតម្លៃតាមគម្រោងពីក្រុមការងារយើងនៅភ្នំពេញ សៀមរាប និងព្រះសីហនុ។",
+        "Mugnee Cambodia ផ្តល់ដំណោះស្រាយ LED Display សម្រាប់គម្រោងក្នុងអគារ និងខាងក្រៅនៅកម្ពុជា ដូចជា video wall, billboard និងផ្ទាំងផ្សព្វផ្សាយពាណិជ្ជកម្ម។ យើងគាំទ្រគម្រោង retail, hotel, corporate, event និងការផ្សព្វផ្សាយសាធារណៈ ជាមួយសេវា site survey, ការរៀបចំ pixel pitch, រចនាសម្ព័ន្ធ, ការដំឡើង, commissioning និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក។",
       cta1: "WhatsApp ស្នើសុំតម្លៃ",
       cta2: "ស្នើសុំសំណើ BOQ",
       cta3: "ចូលទៅផលិតផល",
@@ -395,7 +450,7 @@ export default function LedDisplayClient({
               name: "Mugnee Cambodia",
               url: `${SITE_URL}${schemaPath}`,
               image: `${SITE_URL}/images/hero/cambodia-led-hero.webp`,
-              telephone: "+855XXXXXXXXX",
+              telephone: "+855171927446",
               sameAs: [
                 "https://www.facebook.com/mugneemultiple/",
                 "https://www.youtube.com/@MugneeTech",
@@ -431,6 +486,12 @@ export default function LedDisplayClient({
                 {
                   "@type": "ListItem",
                   position: 1,
+                  name: "Home",
+                  item: `${SITE_URL}/`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
                   name: schemaName,
                   item: `${SITE_URL}${schemaPath}`,
                 },
@@ -477,13 +538,16 @@ export default function LedDisplayClient({
 
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
             {lang === "en"
-              ? (heroIntroOverride ?? t.intro)
-              : (heroIntroOverrideKm ?? heroIntroOverride ?? t.intro)}
+              ? renderStrongKeywords(heroIntroOverride ?? t.intro, SEO_STRONG_TERMS_EN)
+              : renderStrongKeywords(
+                  heroIntroOverrideKm ?? heroIntroOverride ?? t.intro,
+                  SEO_STRONG_TERMS_KM,
+                )}
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2.5">
             <a
-              href="https://wa.me/855XXXXXXXXX"
+              href="https://wa.me/855171927446"
               target="_blank"
               rel="noopener"
               className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
@@ -1263,7 +1327,7 @@ export default function LedDisplayClient({
               {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
             </a>
             <a
-              href="https://wa.me/855XXXXXXXXX"
+              href="https://wa.me/855171927446"
               target="_blank"
               rel="noopener"
               className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"

@@ -8,6 +8,26 @@
   # Remove duplicate slashes
   RewriteCond %{THE_REQUEST} \s/+(.+?)//+ [NC]
   RewriteRule .* /%1 [R=301,L]
+
+  # Canonical product route redirects
+  RewriteRule ^products/led-display/?$ /led-display/ [R=301,L,NC]
+  RewriteRule ^products/led-display/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/led-display/outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/led-display/receiving-card/?$ /led-display/receiving-card/ [R=301,L,NC]
+  RewriteRule ^products/led-display/video-processor/?$ /led-display/video-processor/ [R=301,L,NC]
+  RewriteRule ^products/led-display/power-supply/?$ /led-display/power-supply/ [R=301,L,NC]
+  RewriteRule ^products/interactive-flat-panel/?$ /interactive-flat-panel/ [R=301,L,NC]
+  RewriteRule ^products/pa-system/?$ /pa-system/ [R=301,L,NC]
+  RewriteRule ^products/turnstile-gate/?$ /turnstile-gate/ [R=301,L,NC]
+  RewriteRule ^products/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]
+
+  # Legacy solutions URL redirects (404 cleanup)
+  RewriteRule ^solutions/led-billboard-cambodia/?$ /solutions/retail-digital-signage-cambodia/ [R=301,L,NC]
+  RewriteRule ^solutions/digital-signage-cambodia/?$ /solutions/retail-digital-signage-cambodia/ [R=301,L,NC]
+  RewriteRule ^solutions/pa-system-cambodia/?$ /solutions/factory-pa-announcement-cambodia/ [R=301,L,NC]
+  RewriteRule ^solutions/smart-classroom-cambodia/?$ /solutions/education-smart-classroom-cambodia/ [R=301,L,NC]
+  RewriteRule ^solutions/access-control-cambodia/?$ /solutions/office-access-control-cambodia/ [R=301,L,NC]
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -24,4 +44,3 @@
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/jpeg "access plus 30 days"
 </IfModule>
-

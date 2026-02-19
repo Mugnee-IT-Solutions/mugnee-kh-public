@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     apple: "/images/logo.png",
   },
   alternates: {
-    canonical: "/",
     languages: {
       en: "/",
       km: "/?lang=km",

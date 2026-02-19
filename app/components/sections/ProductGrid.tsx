@@ -366,9 +366,12 @@ export default function ProductGrid({
     return Array.from({ length: totalPages }, (_, i) => i + 1);
   }, [totalPages]);
 
+  const showControlsRow = showCategoryFilters || showSort || Boolean(topLeftContent);
+
   return (
     <div>
-      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+      {showControlsRow ? (
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         {showCategoryFilters ? (
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -405,8 +408,10 @@ export default function ProductGrid({
               </button>
             ))}
           </div>
+        ) : topLeftContent ? (
+          <div>{topLeftContent}</div>
         ) : (
-          <div>{topLeftContent || <div />}</div>
+          <div />
         )}
 
         {showSort ? (
@@ -445,7 +450,8 @@ export default function ProductGrid({
             </button>
           </div>
         ) : null}
-      </div>
+        </div>
+      ) : null}
 
       <div className={`mt-6 grid gap-4 ${getGridCols(columns)}`}>
         {paginated.length === 0 ? (
