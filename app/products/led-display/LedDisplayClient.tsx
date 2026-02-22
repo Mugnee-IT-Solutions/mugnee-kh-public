@@ -2,10 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useMemo } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
-import ProductGrid from "../../components/sections/ProductGrid";
 import { SITE_URL } from "../../lib/site";
+
+const ProductGrid = dynamic(() => import("../../components/sections/ProductGrid"), {
+  ssr: false,
+  loading: () => <div className="h-32 w-full animate-pulse rounded-2xl bg-slate-100" />,
+});
 
 type ProductGridConfig = {
   columns?: 2 | 3 | 4;
@@ -68,48 +73,48 @@ const LED_FAQS_EN: Array<{ q: string; a: string }> = [
 
 const LED_FAQS_KM: Array<{ q: string; a: string }> = [
   {
-    q: "តើខ្ញុំអាចទិញ LED Display នៅកម្ពុជា ជាមួយសេវាដំឡើងបាននៅណា?",
-    a: "អ្នកអាចទិញ LED Display នៅកម្ពុជា តាមអ្នកផ្គត់ផ្គង់បែបគម្រោង ដែលផ្តល់សេវា survey, BOQ, installation, commissioning និង after-sales support ក្នុងស្រុក។",
+    q: "តើខ្ញុំអាចទិញ អេក្រង់ LED នៅកម្ពុជា ជាមួយសេវាដំឡើងបាននៅណា?",
+    a: "អ្នកអាចទិញ អេក្រង់ LED តាមអ្នកផ្គត់ផ្គង់បែបគម្រោង ដែលផ្តល់សេវាស្ទង់ទីតាំង បញ្ជីបរិមាណការងារ ដំឡើង ត្រួតពិនិត្យដំណើរការ និងសេវាគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុក។",
   },
   {
-    q: "តើ LED Display ប្រភេទណាល្អសម្រាប់ប្រើប្រាស់ក្នុងអគារនៅកម្ពុជា?",
-    a: "អេក្រង់ LED ក្នុងអគារ គួរជ្រើស pixel pitch ល្អិតជាង (P1.25-P2.5) សម្រាប់ចម្ងាយមើលជិត ដូចជា boardroom, showroom និង control room។ ចម្ងាយមើលគឺជាកត្តាសំខាន់បំផុតសម្រាប់ភាពច្បាស់។",
+    q: "តើ អេក្រង់ LED ប្រភេទណាល្អសម្រាប់ប្រើប្រាស់ក្នុងអគារនៅកម្ពុជា?",
+    a: "អេក្រង់ LED ក្នុងអគារ គួរជ្រើស Pixel Pitch ល្អិត (P1.25-P2.5) សម្រាប់ចម្ងាយមើលជិត ដូចជា បន្ទប់ប្រជុំ បន្ទប់តាំងបង្ហាញ និងបន្ទប់បញ្ជា។ ចម្ងាយមើលគឺជាកត្តាសំខាន់សម្រាប់ភាពច្បាស់។",
   },
   {
-    q: "សម្រាប់ Billboard ខាងក្រៅ ត្រូវការ brightness ប៉ុន្មាន nits?",
-    a: "Outdoor LED ជាទូទៅត្រូវការ brightness ខ្ពស់ (ប្រហែល 4,500-7,000+ nits) ដើម្បីឱ្យមាតិកាអាចមើលឃើញច្បាស់ក្រោមពន្លឺថ្ងៃនៅកម្ពុជា។",
+    q: "សម្រាប់ផ្ទាំងផ្សព្វផ្សាយ LED ខាងក្រៅ ត្រូវការកម្រិតពន្លឺប៉ុន្មាន nits?",
+    a: "អេក្រង់ LED ខាងក្រៅជាទូទៅត្រូវការកម្រិតពន្លឺខ្ពស់ (ប្រហែល 4,500-7,000+ nits) ដើម្បីឱ្យមើលឃើញច្បាស់ក្រោមពន្លឺថ្ងៃ។",
   },
   {
     q: "Outdoor LED នៅកម្ពុជា គួរតែមានកម្រិតការពារ IP ប៉ុន្មាន?",
-    a: "ការដំឡើងខាងក្រៅភាគច្រើនត្រូវការ IP65+ (ផ្នែកខាងមុខ) សម្រាប់ការពារទឹកភ្លៀង និងធូលី។ នេះជាស្តង់ដារដែលគេប្រើជាញឹកញាប់សម្រាប់ billboard។",
+    a: "ការដំឡើងខាងក្រៅភាគច្រើនត្រូវការ IP65+ (ផ្នែកខាងមុខ) ដើម្បីការពារទឹកភ្លៀង និងធូលី។ នេះជាស្តង់ដារដែលគេប្រើញឹកញាប់សម្រាប់ផ្ទាំងផ្សព្វផ្សាយធំ។",
   },
   {
-    q: "តើជ្រើស pixel pitch និងចម្ងាយមើលឱ្យត្រឹមត្រូវយ៉ាងដូចម្តេច?",
-    a: "Pixel pitch ត្រូវតែសមនឹងចម្ងាយមើល។ pitch តូចសម្រាប់មើលជិត ខណៈ pitch ធំសម្រាប់ចម្ងាយឆ្ងាយ និងសន្សំថវិកា។",
+    q: "តើជ្រើស Pixel Pitch និងចម្ងាយមើលឱ្យត្រឹមត្រូវយ៉ាងដូចម្តេច?",
+    a: "Pixel Pitch ត្រូវតែសមនឹងចម្ងាយមើល។ Pitch តូចសម្រាប់មើលជិត ខណៈ Pitch ធំសម្រាប់មើលឆ្ងាយ និងសន្សំថវិកា។",
   },
   {
-    q: "Refresh rate ប៉ុន្មានសមស្របសម្រាប់ LED Display?",
-    a: "ប្រព័ន្ធ LED ជាច្រើនប្រើ 1,920Hz ឬខ្ពស់ជាងនេះ។ សម្រាប់ការថតកាមេរ៉ា ឬ broadcast គួរប្រើ 3,840Hz ឬខ្ពស់ជាងនេះ ដើម្បីកាត់បន្ថយ flicker។",
+    q: "អត្រាផ្ទុកឡើងវិញ ប៉ុន្មានសមស្របសម្រាប់ អេក្រង់ LED?",
+    a: "ប្រព័ន្ធ LED ជាច្រើនប្រើ 1,920Hz ឬខ្ពស់ជាងនេះ។ សម្រាប់ការថតកាមេរ៉ា ឬការផ្សាយផ្ទាល់ គួរប្រើ 3,840Hz ឬខ្ពស់ជាងនេះ ដើម្បីកាត់បន្ថយរូបភាពញ័រ។",
   },
   {
-    q: "LED Display មានអាយុកាលប៉ុន្មាន?",
-    a: "LED ដែលមានគុណភាពអាចប្រើបានលើស 50,000 ម៉ោង អាស្រ័យលើការកំណត់ brightness ម៉ោងប្រើប្រាស់ និងការថែទាំ។",
+    q: "អេក្រង់ LED មានអាយុកាលប៉ុន្មាន?",
+    a: "LED ដែលមានគុណភាពអាចប្រើបានលើស 50,000 ម៉ោង អាស្រ័យលើកម្រិតពន្លឺ ម៉ោងប្រើប្រាស់ និងការថែទាំ។",
   },
   {
     q: "Outdoor LED ត្រូវការការការពារកំដៅ ឬអាកាសធាតុពិសេសទេ?",
-    a: "ត្រូវការ។ Outdoor LED នៅកម្ពុជា ត្រូវមានការគ្រប់គ្រងកំដៅ cabinet ការពារអាកាសធាតុ និង grounding ត្រឹមត្រូវ ដើម្បីទប់ទល់នឹងកំដៅ ភ្លៀង និងធូលី។",
+    a: "ត្រូវការ។ អេក្រង់ LED ខាងក្រៅត្រូវមានការគ្រប់គ្រងកំដៅ គ្រោងការពារអាកាសធាតុ និងប្រព័ន្ធដីសុវត្ថិភាពត្រឹមត្រូវ ដើម្បីទប់ទល់នឹងកំដៅ ភ្លៀង និងធូលី។",
   },
   {
     q: "ហេតុអ្វីគួរជ្រើស LED ជំនួស LCD សម្រាប់អេក្រង់ធំខាងក្រៅ?",
     a: "LED គ្មានស៊ុមភ្ជាប់ភ្លឹបភ្លែត ភ្លឺជាង និងពង្រីកទំហំបានងាយស្រួលសម្រាប់ទម្រង់ធំ។ LCD ជាទូទៅសមស្របសម្រាប់ទំហំតូច និងមាន bezel មើលឃើញ។",
   },
   {
-    q: "តម្លៃ LED Display អាចកំណត់ថេរតាម price list បានទេ?",
-    a: "តម្លៃអាស្រ័យលើ pixel pitch ទំហំ brightness រចនាសម្ព័ន្ធ និងលក្ខខណ្ឌទីតាំង។ ដូច្នេះយើងផ្តល់ជូនតម្លៃតាមគម្រោង (project-based quotation)។",
+    q: "តម្លៃ អេក្រង់ LED អាចកំណត់ថេរតាមតារាងតម្លៃបានទេ?",
+    a: "តម្លៃអាស្រ័យលើ Pixel Pitch ទំហំ កម្រិតពន្លឺ រចនាសម្ព័ន្ធ និងលក្ខខណ្ឌទីតាំង។ ដូច្នេះយើងផ្តល់ជូនតម្លៃតាមគម្រោង។",
   },
   {
-    q: "តើអ្នកមានសេវាដំឡើង និង after-sales support នៅកម្ពុជាទេ?",
-    a: "មាន។ យើងផ្តល់សេវា survey, installation, commissioning, training និងការគាំទ្រថែទាំបន្ត។",
+    q: "តើអ្នកមានសេវាដំឡើង និងការគាំទ្របន្ទាប់ពីលក់នៅកម្ពុជាទេ?",
+    a: "មាន។ យើងផ្តល់សេវាស្ទង់ទីតាំង ដំឡើង ត្រួតពិនិត្យដំណើរការ បណ្តុះបណ្តាល និងការគាំទ្រថែទាំបន្ត។",
   },
 ];
 
@@ -127,68 +132,115 @@ const INTERNAL_LINK_CLUSTER_EN = [
 const INTERNAL_LINK_CLUSTER_KM = [
   { title: "អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា", href: "/led-display/indoor-led-display" },
   { title: "ប៊ីលបត្រ LED ខាងក្រៅនៅកម្ពុជា", href: "/led-display/outdoor-led-display" },
-  { title: "មគ្គុទ្ទេសក៍ LED Receiving Card", href: "/led-display/receiving-card" },
-  { title: "ការជ្រើសរើស LED Video Processor", href: "/led-display/video-processor" },
-  { title: "LED Power Supply និងគ្រឿងបន្លាស់", href: "/led-display/power-supply" },
+  { title: "មគ្គុទ្ទេសក៍កាតទទួលសញ្ញា LED", href: "/led-display/receiving-card" },
+  { title: "មគ្គុទ្ទេសក៍ជ្រើសរើសឧបករណ៍ដំណើរការវីដេអូ LED", href: "/led-display/video-processor" },
+  { title: "ប្រព័ន្ធផ្គត់ផ្គង់ថាមពល LED និងគ្រឿងបន្លាស់", href: "/led-display/power-supply" },
   { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស LED", href: "/service" },
   { title: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា", href: "/solutions" },
   { title: "ស្នើសុំតម្លៃគម្រោង LED", href: "/contact" },
 ];
 
+const INTERNAL_LINK_HINTS_EN = [
+  { tag: "Product Type", desc: "Compare indoor pixel pitch options for close-view viewing.", cta: "View Indoor Models" },
+  { tag: "Product Type", desc: "Explore high-brightness outdoor screens for roadside visibility.", cta: "View Outdoor Models" },
+  { tag: "Core Component", desc: "Learn how receiving cards affect stability and signal quality.", cta: "Read Guide" },
+  { tag: "Core Component", desc: "Choose the right video processor for scaling and smooth playback.", cta: "Read Guide" },
+  { tag: "Core Component", desc: "Select reliable power supply and spare parts for safe operation.", cta: "Explore Parts" },
+  { tag: "Service", desc: "See installation scope, commissioning, and support workflow details.", cta: "View Service Scope" },
+  { tag: "Use Cases", desc: "Find solution paths by retail, corporate, public, and event projects.", cta: "View Solutions" },
+  { tag: "Get Quote", desc: "Request a project-based LED quotation with BOQ and timeline.", cta: "Request Quotation" },
+];
+
+const INTERNAL_LINK_HINTS_KM = [
+  { tag: "ប្រភេទផលិតផល", desc: "ប្រៀបធៀបជម្រើស Pixel Pitch ក្នុងអគារសម្រាប់ការមើលជិត។", cta: "មើលម៉ូដែលក្នុងអគារ" },
+  { tag: "ប្រភេទផលិតផល", desc: "ស្វែងរកអេក្រង់ពន្លឺខ្ពស់សម្រាប់ការមើលឃើញខាងក្រៅ។", cta: "មើលម៉ូដែលខាងក្រៅ" },
+  { tag: "ផ្នែកស្នូល", desc: "យល់ពីតួនាទីកាតទទួលសញ្ញា លើស្ថិរភាព និងគុណភាពសញ្ញា។", cta: "អានមគ្គុទ្ទេសក៍" },
+  { tag: "ផ្នែកស្នូល", desc: "ជ្រើសឧបករណ៍ដំណើរការវីដេអូដែលសមរម្យសម្រាប់បង្ហាញរូបភាពរលូន។", cta: "អានមគ្គុទ្ទេសក៍" },
+  { tag: "ផ្នែកស្នូល", desc: "ជ្រើសប្រព័ន្ធផ្គត់ផ្គង់ថាមពល និងគ្រឿងបន្លាស់ដែលទុកចិត្តបានសម្រាប់សុវត្ថិភាព។", cta: "មើលគ្រឿងបន្លាស់" },
+  { tag: "សេវាកម្ម", desc: "មើលលម្អិតពីដំណើរការដំឡើង ការត្រួតពិនិត្យដំណើរការ និងការគាំទ្រ។", cta: "មើលសេវាកម្ម" },
+  { tag: "ករណីប្រើប្រាស់", desc: "ស្វែងរកដំណោះស្រាយតាមវិស័យពាណិជ្ជកម្ម អាជីវកម្ម សាធារណៈ និងព្រឹត្តិការណ៍។", cta: "មើលដំណោះស្រាយ" },
+  { tag: "ស្នើសុំតម្លៃ", desc: "ស្នើសុំតម្លៃគម្រោង LED ជាមួយ BOQ និងពេលវេលាអនុវត្ត។", cta: "ស្នើសុំតម្លៃ" },
+];
+
 const DEFAULT_TRUST_SIGNALS_EN = [
-  "Cambodia-focused LED display entity setup with LocalBusiness, Service, Breadcrumb, and FAQ schema signals",
-  "Project-based BOQ, pixel-pitch planning, and engineering-first LED specification workflow",
-  "Local delivery and service coverage in Phnom Penh, Siem Reap, Sihanoukville, and key Cambodia cities",
-  "End-to-end execution workflow: site survey, structure planning, installation, commissioning, and after-sales support",
+  "Project-fit recommendation based on site survey, viewing distance, brightness target, and real budget range",
+  "Engineering BOQ with transparent component scope: LED module, power supply, controller, cabinet, and structure plan",
+  "Professional installation, grounding, calibration, and commissioning for stable image quality and safe operation",
+  "Post-handover maintenance support with spare-parts readiness and responsive troubleshooting for low downtime",
 ];
 
 const DEFAULT_TRUST_SIGNALS_KM = [
-  "បង្កើត entity សម្រាប់ LED Display នៅកម្ពុជា ដោយប្រើ LocalBusiness, Service, Breadcrumb និង FAQ schema",
-  "ដំណើរការ BOQ តាមគម្រោង ការគ្រោង pixel pitch និងការកំណត់ស្ប៉ិកតាមវិស្វកម្ម",
+  "វាយតម្លៃតម្រូវការគម្រោង LED តាមទីតាំង ចម្ងាយមើល កម្រិតពន្លឺ និងថវិកាពិតប្រាកដ",
+  "រៀបចំ BOQ តាមវិស្វកម្មដោយច្បាស់លាស់ រួមមានម៉ូឌុល LED ថាមពល ឧបករណ៍បញ្ជា កាប៊ីណេត និងរចនាសម្ព័ន្ធ",
   "គ្របដណ្តប់ការដឹកជញ្ជូន និងសេវាកម្មក្នុងស្រុក នៅភ្នំពេញ សៀមរាប ព្រះសីហនុ និងខេត្តសំខាន់ៗ",
-  "ដំណើរការពេញលេញពី site survey, planning, installation, commissioning ដល់ after-sales support",
+  "ដំណើរការពេញលេញពីការស្ទង់ទីតាំង រៀបចំផែនការ ដំឡើង ត្រួតពិនិត្យដំណើរការ ដល់សេវាគាំទ្របន្ទាប់ពីលក់",
+];
+
+const TRUST_SIGNAL_TITLES_EN = [
+  "Site-Based LED Planning",
+  "Transparent LED BOQ Scope",
+  "Certified Install & Commissioning",
+  "Low-Downtime After-Sales",
+];
+
+const TRUST_SIGNAL_TITLES_KM = [
+  "ផែនការ LED តាមទីតាំង",
+  "BOQ ច្បាស់លាស់សម្រាប់ LED",
+  "ការដំឡើង និងត្រួតពិនិត្យដំណើរការតាមស្តង់ដារ",
+  "សេវាបន្ទាប់ពីលក់ដើម្បីកាត់បន្ថយពេលឈប់ដំណើរការ",
 ];
 
 const DEFAULT_TRUST_PROOF_CHIPS_EN = [
-  "Cambodia LED Display Supplier",
-  "Indoor & Outdoor LED Expertise",
-  "BOQ & Engineering Workflow",
-  "Local Installation Team",
-  "After-Sales Service Coverage",
-  "Entity + Schema Optimized Page",
+  "Indoor LED Display Solutions",
+  "Outdoor LED Billboard Projects",
+  "Pixel Pitch & BOQ Planning",
+  "Certified Installation Workflow",
+  "Calibration & Commissioning",
+  "After-Sales Maintenance Support",
 ];
 
 const DEFAULT_TRUST_PROOF_CHIPS_KM = [
-  "អ្នកផ្គត់ផ្គង់ LED Display នៅកម្ពុជា",
+  "អ្នកផ្គត់ផ្គង់ អេក្រង់ LED នៅកម្ពុជា",
   "ជំនាញ LED ក្នុងអគារ និងខាងក្រៅ",
   "ដំណើរការ BOQ និងវិស្វកម្ម",
   "ក្រុមដំឡើងក្នុងស្រុក",
   "គ្របដណ្តប់សេវាកម្មបន្ទាប់ពីលក់",
-  "ទំព័រដែល Optimize ដោយ Entity + Schema",
+  "ទំព័រដែលបានបង្កើនគុណភាព SEO តាមរចនាសម្ព័ន្ធទិន្នន័យ",
 ];
 
 const SEO_STRONG_TERMS_EN = [
+  "LED display price in Cambodia",
+  "LED screen solutions in Cambodia",
+  "outdoor LED display price",
+  "indoor LED display price",
   "indoor LED display",
   "outdoor LED billboard",
   "LED video wall",
+  "digital signage screens",
+  "LED advertising screen",
+  "commercial advertising",
+  "fine-pitch indoor LED screens",
+  "high-brightness outdoor LED panels",
+  "IP65-ready outdoor options",
+  "video processor setup",
+  "site survey",
   "pixel-pitch planning",
-  "brightness and refresh-rate optimization",
-  "cabinet structure design",
-  "controller integration",
+  "refresh-rate optimization",
+  "steel structure and cabinet planning",
   "installation",
   "commissioning",
-  "after-sales maintenance",
+  "after-sales support",
 ];
 
 const SEO_STRONG_TERMS_KM = [
-  "LED Display",
-  "video wall",
-  "billboard",
-  "site survey",
-  "pixel pitch",
-  "commissioning",
-  "after-sales support",
-  "installation",
+  "អេក្រង់ LED",
+  "ជញ្ជាំងវីដេអូ LED",
+  "ផ្ទាំងផ្សព្វផ្សាយ LED",
+  "ការស្ទង់ទីតាំង",
+  "ភីកសែលភីច",
+  "ការត្រួតពិនិត្យដំណើរការ",
+  "សេវាគាំទ្របន្ទាប់ពីលក់",
+  "ការដំឡើង",
 ];
 
 function escapeRegex(value: string) {
@@ -211,6 +263,58 @@ function renderStrongKeywords(text: string, terms: string[]) {
     ) : (
       part
     ),
+  );
+}
+
+function DeferredSection({
+  id,
+  className,
+  children,
+  minHeight = 140,
+}: {
+  id?: string;
+  className?: string;
+  children: React.ReactNode;
+  minHeight?: number;
+}) {
+  const [isVisible, setIsVisible] = useState(() => {
+    if (typeof window === "undefined" || !id) return false;
+    return window.location.hash === `#${id}`;
+  });
+  const hostRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (isVisible) {
+      return;
+    }
+
+    const node = hostRef.current;
+    if (!node) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setIsVisible(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" }
+    );
+
+    io.observe(node);
+    return () => io.disconnect();
+  }, [id, isVisible]);
+
+  return (
+    <section id={id} ref={hostRef} className={className}>
+      {isVisible ? (
+        children
+      ) : (
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="h-8 w-48 animate-pulse rounded bg-slate-200/80" style={{ minHeight }} />
+        </div>
+      )}
+    </section>
   );
 }
 
@@ -289,6 +393,8 @@ export default function LedDisplayClient({
       ? internalLinkClusterOverride
       : (internalLinkClusterOverrideKm ?? internalLinkClusterOverride)) ??
     (lang === "en" ? INTERNAL_LINK_CLUSTER_EN : INTERNAL_LINK_CLUSTER_KM);
+  const internalLinkHints =
+    lang === "en" ? INTERNAL_LINK_HINTS_EN : INTERNAL_LINK_HINTS_KM;
   const trustSignals =
     (lang === "en"
       ? trustSignalsOverride
@@ -296,66 +402,76 @@ export default function LedDisplayClient({
     (lang === "en" ? DEFAULT_TRUST_SIGNALS_EN : DEFAULT_TRUST_SIGNALS_KM);
   const trustProofChips =
     lang === "en" ? DEFAULT_TRUST_PROOF_CHIPS_EN : DEFAULT_TRUST_PROOF_CHIPS_KM;
+  const trustSignalTitles =
+    lang === "en" ? TRUST_SIGNAL_TITLES_EN : TRUST_SIGNAL_TITLES_KM;
   const schemaPath = schemaPathOverride ?? "/led-display";
   const schemaName = schemaNameOverride ?? "LED Display";
   const schemaServiceName = schemaServiceNameOverride ?? "LED Display in Cambodia";
   const schemaServiceDesc =
     schemaServiceDescOverride ??
-    "Indoor LED video walls, outdoor LED billboards, rental LED screens, installation, commissioning and after-sales support in Cambodia.";
+    "Indoor LED video walls, outdoor LED billboards, installation, commissioning and after-sales support in Cambodia.";
 
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
-      h1: "LED Display in Cambodia: Price, Installation & Video Wall",
+      h1: "LED Display Price in Cambodia 2026",
       intro:
-        "Mugnee Cambodia delivers indoor LED display, outdoor LED billboard, and LED video wall solutions in Cambodia with pixel-pitch planning, brightness and refresh-rate optimization, cabinet structure design, controller integration, installation, commissioning, and local after-sales maintenance for retail, corporate, hospitality, and public projects.",
+        "Need the right LED display price in Cambodia for your business goal and budget? Mugnee Cambodia provides complete LED screen solutions in Cambodia, from indoor LED display price planning to outdoor LED display price proposals for billboards, shops, showrooms, hotels, corporate offices, and public projects. We supply indoor LED display, outdoor LED billboard, LED video wall, digital signage screens, and LED advertising screen options with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready outdoor options and get Cambodia-based after-sales support for long-term stable performance.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
       quickTitle: "Browse LED display categories and related services",
       quickSub:
-        "Quick links help you reach the exact LED display type, controller, and accessories you need.",
+        "Use quick links to jump directly to each section of this LED display page.",
     };
 
-        const km = {
+    const km = {
       breadcrumb: "ផលិតផល",
-      h1: "តម្លៃ LED Display នៅកម្ពុជា",
+      h1: "តម្លៃអេក្រង់ LED នៅកម្ពុជា",
       intro:
-        "Mugnee Cambodia ផ្តល់ដំណោះស្រាយ LED Display សម្រាប់គម្រោងក្នុងអគារ និងខាងក្រៅនៅកម្ពុជា ដូចជា video wall, billboard និងផ្ទាំងផ្សព្វផ្សាយពាណិជ្ជកម្ម។ យើងគាំទ្រគម្រោង retail, hotel, corporate, event និងការផ្សព្វផ្សាយសាធារណៈ ជាមួយសេវា site survey, ការរៀបចំ pixel pitch, រចនាសម្ព័ន្ធ, ការដំឡើង, commissioning និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក។",
+        "តើអ្នកកំពុងស្វែងរកតម្លៃអេក្រង់ LED ដែលសមស្របនៅកម្ពុជា សម្រាប់គោលដៅអាជីវកម្ម និងថវិការបស់អ្នកមែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយអេក្រង់ LED ពេញលេញនៅកម្ពុជា ចាប់ពីការរៀបចំតម្លៃអេក្រង់ LED ក្នុងអគារ រហូតដល់សំណើតម្លៃអេក្រង់ LED ខាងក្រៅ សម្រាប់ប៊ីលបត្រ ហាង Showroom សណ្ឋាគារ ការិយាល័យក្រុមហ៊ុន និងគម្រោងសាធារណៈ។ យើងផ្គត់ផ្គង់ Indoor LED Display, Outdoor LED Billboard, LED Video Wall, Digital Signage និង LED Advertising Screen ជាមួយសេវាស្ទង់ទីតាំង ការគណនា Pixel Pitch ការកំណត់ឧបករណ៍ Video Processor ការរៀបចំរចនាសម្ព័ន្ធដែក និង Cabinet ការដំឡើង ការធ្វើតេស្ត និងការធ្វើ Commissioning។ អ្នកអាចជ្រើស Fine-pitch Indoor LED ឬ Outdoor LED Panel កម្រិតពន្លឺខ្ពស់ ជាមួយជម្រើស IP65 សម្រាប់ខាងក្រៅ ហើយទទួលបានសេវាបន្ទាប់ពីលក់ក្នុងប្រទេសកម្ពុជា ដើម្បីធានាដំណើរការមានស្ថិរភាពរយៈពេលវែង។",
       cta1: "WhatsApp ស្នើសុំតម្លៃ",
-      cta2: "ស្នើសុំសំណើ BOQ",
+      cta2: "ស្នើសុំសំណើបញ្ជីបរិមាណការងារ",
       cta3: "ចូលទៅផលិតផល",
       quickTitle: "រកមើលប្រភេទអេក្រង់ LED និងសេវាកម្មពាក់ព័ន្ធ",
       quickSub:
-        "តំណរហ័សជួយឱ្យអ្នកទៅដល់ប្រភេទអេក្រង់ LED ឧបករណ៍បញ្ជា និងគ្រឿងបន្លាស់ដែលត្រូវការបានលឿន។",
+        "ប្រើតំណរហ័ស ដើម្បីទៅកាន់ផ្នែកនីមួយៗនៅក្នុងទំព័រអេក្រង់ LED នេះដោយផ្ទាល់។",
     };
 
     return lang === "en" ? en : km;
   }, [lang]);
 
-    const quickLinks =
+  const quickLinks =
     lang === "en"
       ? [
-          { label: "Indoor LED Display", href: "/led-display/indoor-led-display" },
-          { label: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
-          { label: "Receiving Card", href: "/led-display/receiving-card" },
-          { label: "Video Processor", href: "/led-display/video-processor" },
-          { label: "Power Supply", href: "/led-display/power-supply" },
-          { label: "LED Controller", href: "/products/led-controller" },
-          { label: "Interactive Flat Panel", href: "/interactive-flat-panel" },
-          { label: "PA System", href: "/pa-system" },
-          { label: "Contact", href: "/contact" },
+          { label: "Products", href: "#products" },
+          { label: "LED Basics", href: "#led-basics" },
+          { label: "Types", href: "#types-cambodia" },
+          { label: "Benefits", href: "#benefits-led-display" },
+          { label: "Specs", href: "#specs-snapshot" },
+          { label: "Pixel Pitch", href: "#pixel-pitch-guide" },
+          { label: "Indoor vs Outdoor", href: "#indoor-vs-outdoor" },
+          { label: "Use Cases", href: "#industry-use-cases" },
+          { label: "Installation", href: "#installation-workflow" },
+          { label: "Why Mugnee", href: "#why-mugnee" },
+          { label: "Partners", href: "#partners" },
+          { label: "Service Areas", href: "#service-areas" },
+          { label: "FAQ", href: "#faq" },
         ]
       : [
-          { label: "អេក្រង់ LED ខាងក្នុង", href: "/led-display/indoor-led-display" },
-          { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display" },
-          { label: "កាតទទួលសញ្ញា", href: "/led-display/receiving-card" },
-          { label: "ឧបករណ៍ដំណើរការវីដេអូ", href: "/led-display/video-processor" },
-          { label: "ផ្គត់ផ្គង់ថាមពល", href: "/led-display/power-supply" },
-          { label: "ឧបករណ៍បញ្ជា LED", href: "/products/led-controller" },
-          { label: "អេក្រង់អន្តរកម្ម", href: "/interactive-flat-panel" },
-          { label: "ប្រព័ន្ធ PA", href: "/pa-system" },
-          { label: "ទំនាក់ទំនង", href: "/contact" },
+          { label: "ផលិតផល", href: "#products" },
+          { label: "មូលដ្ឋាន LED", href: "#led-basics" },
+          { label: "ប្រភេទ", href: "#types-cambodia" },
+          { label: "អត្ថប្រយោជន៍", href: "#benefits-led-display" },
+          { label: "លក្ខណៈបច្ចេកទេស", href: "#specs-snapshot" },
+          { label: "ភីកសែលភីច", href: "#pixel-pitch-guide" },
+          { label: "ក្នុងអគារ ទល់នឹង ខាងក្រៅ", href: "#indoor-vs-outdoor" },
+          { label: "ករណីប្រើប្រាស់", href: "#industry-use-cases" },
+          { label: "ដំណើរការដំឡើង", href: "#installation-workflow" },
+          { label: "ហេតុអ្វីជ្រើស Mugnee", href: "#why-mugnee" },
+          { label: "ដៃគូ", href: "#partners" },
+          { label: "តំបន់សេវាកម្ម", href: "#service-areas" },
+          { label: "សំណួរញឹកញាប់", href: "#faq" },
         ];
 
   return (
@@ -363,7 +479,12 @@ export default function LedDisplayClient({
       <style jsx global>{`
         .quick-link {
           position: relative;
-          border: 1px solid transparent;
+          border: 1px solid rgb(203 213 225);
+          background: #fff;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .quick-link:hover {
+          border-color: transparent;
           background:
             linear-gradient(#fff, #fff) padding-box,
             linear-gradient(
@@ -375,9 +496,6 @@ export default function LedDisplayClient({
             )
               border-box;
           background-size: 100% 100%, 240% 240%;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .quick-link:hover {
           animation: quickLinkBorder 1.2s linear infinite;
           box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
         }
@@ -536,7 +654,7 @@ export default function LedDisplayClient({
               : (heroTitleOverrideKm ?? heroTitleOverride ?? t.h1)}
           </h1>
 
-          <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p className="mt-3 text-justify text-sm leading-relaxed text-slate-600 sm:text-base">
             {lang === "en"
               ? renderStrongKeywords(heroIntroOverride ?? t.intro, SEO_STRONG_TERMS_EN)
               : renderStrongKeywords(
@@ -566,6 +684,33 @@ export default function LedDisplayClient({
             >
               {t.cta3}
             </a>
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {(lang === "en"
+              ? [
+                  ["Indoor LED Display", "/led-display/indoor-led-display"],
+                  ["Outdoor LED Display", "/led-display/outdoor-led-display"],
+                  ["Receiving Card Guide", "/led-display/receiving-card"],
+                  ["Video Processor Guide", "/led-display/video-processor"],
+                  ["Power Supply Guide", "/led-display/power-supply"],
+                ]
+              : [
+                  ["អេក្រង់ LED ក្នុងអគារ", "/led-display/indoor-led-display"],
+                  ["អេក្រង់ LED ខាងក្រៅ", "/led-display/outdoor-led-display"],
+                  ["មគ្គុទ្ទេសក៍ Receiving Card", "/led-display/receiving-card"],
+                  ["មគ្គុទ្ទេសក៍ Video Processor", "/led-display/video-processor"],
+                  ["មគ្គុទ្ទេសក៍ Power Supply", "/led-display/power-supply"],
+                ]
+            ).map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
+              >
+                {label}
+              </Link>
+            ))}
           </div>
 
         </div>
@@ -629,9 +774,6 @@ export default function LedDisplayClient({
                 </div>
                 <div className="mt-1 text-xs text-slate-600">{t.quickSub}</div>
               </div>
-              <div className="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 sm:block">
-                {lang === "en" ? "Quick Links" : "តំណរហ័ស"}
-              </div>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2">
@@ -650,27 +792,27 @@ export default function LedDisplayClient({
       </section>
 
                   {/* LED TECHNOLOGY BASICS */}
-      <section className="border-t border-slate-200 bg-slate-50">
+      <section id="led-basics" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-2 py-12 sm:px-4 lg:px-6">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {lang === "en" ? "LED Technology Basics" : "មូលដ្ឋានបច្ចេកវិទ្យា LED"}
+                {lang === "en" ? "LED Technology Basics" : "មូលដ្ឋានបច្ចេកវិទ្យាអេក្រង់ LED"}
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
-                  ? "LED Technology Basics for Cambodia Buyers"
-                  : "មូលដ្ឋានបច្ចេកវិទ្យា LED សម្រាប់អ្នកទិញនៅកម្ពុជា"}
+                  ? "LED Display Technology Basics & Buying Guide"
+                  : "មូលដ្ឋានបច្ចេកវិទ្យាអេក្រង់ LED និងមគ្គុទ្ទេសក៍ទិញ"}
               </h2>
 
               <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
                 <h3 className="text-sm font-semibold text-slate-900">
-                  {lang === "en" ? "What Is an LED Display?" : "តើ LED Display គឺជាអ្វី?"}
+                  {lang === "en" ? "What Is an LED Display?" : "តើអេក្រង់ LED គឺជាអ្វី?"}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {lang === "en"
                     ? "An LED display is a digital screen made from thousands of LED pixels arranged in modules and cabinets. These pixels light up to form images, videos, and live data. LED technology is preferred for large screens because it is seamless, bright, and scalable for both indoor and outdoor installations in Cambodia."
-                    : "LED Display គឺជាអេក្រង់ឌីជីថលដែលបង្កើតពី LED pixels ជាច្រើន ដោយរៀបចំនៅក្នុង modules និង cabinets។ Pixels ទាំងនេះបញ្ចេញពន្លឺបង្កើតជារូបភាព វីដេអូ និងទិន្នន័យបន្តផ្ទាល់។ បច្ចេកវិទ្យា LED សមស្របសម្រាប់អេក្រង់ធំ ព្រោះគ្មានស៊ុមចំណុចភ្ជាប់ ភ្លឺច្បាស់ និងពង្រីកទំហំបានសម្រាប់ទាំងក្នុងអគារ និងខាងក្រៅនៅកម្ពុជា។"}
+                    : "អេក្រង់ LED គឺជាអេក្រង់ឌីជីថលដែលបង្កើតពីភីកសែល LED ជាច្រើន រៀបចំនៅក្នុងម៉ូឌុល និងកាប៊ីណេត។ ភីកសែលទាំងនេះបញ្ចេញពន្លឺបង្កើតជារូបភាព វីដេអូ និងទិន្នន័យបន្តផ្ទាល់។ បច្ចេកវិទ្យា LED សមស្របសម្រាប់អេក្រង់ធំ ព្រោះគ្មានស៊ុមចំណុចភ្ជាប់ ភ្លឺច្បាស់ និងអាចពង្រីកទំហំបានសម្រាប់ទាំងក្នុងអគារ និងខាងក្រៅ។"}
                 </p>
               </div>
 
@@ -678,12 +820,12 @@ export default function LedDisplayClient({
                 <h3 className="text-sm font-semibold text-slate-900">
                   {lang === "en"
                     ? "How Does an LED Display Work?"
-                    : "តើ LED Display ដំណើរការយ៉ាងដូចម្តេច?"}
+                    : "តើអេក្រង់ LED ដំណើរការយ៉ាងដូចម្តេច?"}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {lang === "en"
                     ? "A controller sends video signals to each LED pixel, synchronizing color and brightness across the screen. Correct pixel pitch, brightness, IP protection, and refresh rate ensure clear visuals, smooth motion, and reliable performance under Cambodias heat, rain, and dust conditions."
-                    : "Controller ផ្ញើសញ្ញាវីដេអូទៅ LED pixel នីមួយៗ ដើម្បីសមកាលកម្មពណ៌ និងកម្រិតពន្លឺទូទាំងអេក្រង់។ ការជ្រើស pixel pitch, brightness, ការការពារ IP និង refresh rate ឱ្យត្រឹមត្រូវ នឹងធានាឱ្យរូបភាពច្បាស់ ចលនារលូន និងដំណើរការមានស្ថិរភាពក្រោមលក្ខខណ្ឌកំដៅ ភ្លៀង និងធូលីនៅកម្ពុជា។"}
+                    : "ឧបករណ៍បញ្ជា ផ្ញើសញ្ញាវីដេអូទៅភីកសែល LED នីមួយៗ ដើម្បីសមកាលកម្មពណ៌ និងកម្រិតពន្លឺទូទាំងអេក្រង់។ ការជ្រើស Pixel Pitch កម្រិតពន្លឺ ការការពារ IP និង អត្រាផ្ទុកឡើងវិញ ឱ្យត្រឹមត្រូវ នឹងធានាឱ្យរូបភាពច្បាស់ ចលនារលូន និងដំណើរការមានស្ថិរភាពក្រោមលក្ខខណ្ឌក្តៅ ភ្លៀង និងធូលី។"}
                 </p>
               </div>
 
@@ -697,11 +839,11 @@ export default function LedDisplayClient({
                       "Cabinet Size",
                     ]
                   : [
-                      "Pixel Pitch",
+                      "ភីកសែលភីច",
                       "កម្រិតពន្លឺ (nits)",
                       "កម្រិតការពារ IP",
-                      "Refresh Rate",
-                      "ទំហំ Cabinet",
+                      "អត្រាផ្ទុកឡើងវិញ",
+                      "ទំហំកាប៊ីណេត",
                     ]
                 ).map((x) => (
                   <span
@@ -723,10 +865,10 @@ export default function LedDisplayClient({
                     ["Power & Signal", "Stable power, clean cabling, and grounding for safety."],
                   ]
                 : [
-                    ["LED Modules", "ផ្ទាំងតូចៗដែលរួមគ្នាបង្កើតទំហំ និង resolution អេក្រង់ទាំងមូល។"],
-                    ["Cabinets", "ស៊ុមរឹងសម្រាប់តម្រឹម modules និងការពារខ្សែភ្លើង។"],
-                    ["Controller", "ដំណើរការមាតិកា និងសមកាលកម្ម pixel ទាំងអស់ជាក់ស្តែង។"],
-                    ["Power & Signal", "ថាមពលស្ថេរភាព ការរៀបខ្សែស្អាត និង grounding ដើម្បីសុវត្ថិភាព។"],
+                    ["ម៉ូឌុល LED", "ផ្ទាំងតូចៗដែលរួមគ្នាបង្កើតទំហំ និងកម្រិតភាពច្បាស់របស់អេក្រង់ទាំងមូល។"],
+                    ["កាប៊ីណេត", "ស៊ុមរឹងសម្រាប់តម្រឹមម៉ូឌុល និងការពារខ្សែភ្លើង។"],
+                    ["ឧបករណ៍បញ្ជា", "ដំណើរការមាតិកា និងសមកាលកម្មភីកសែលទាំងអស់ជាក់ស្តែង។"],
+                    ["ថាមពល និងសញ្ញា", "ថាមពលស្ថេរភាព ការរៀបខ្សែស្អាត និងប្រព័ន្ធដីសុវត្ថិភាព។"],
                   ]
               ).map(([t, d]) => (
                 <div
@@ -742,47 +884,47 @@ export default function LedDisplayClient({
         </div>
       </section>
       {/* TYPES IN CAMBODIA */}
-      <section className="border-t border-slate-200 bg-slate-50">
+      <section id="types-cambodia" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {lang === "en" ? "Types in Cambodia" : "ប្រភេទដែលពេញនិយមនៅកម្ពុជា"}
+                {lang === "en" ? "LED Display Types" : "ប្រភេទអេក្រង់ LED ពេញនិយម"}
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
-                  ? "Types of LED Displays in Cambodia"
-                  : "ប្រភេទអេក្រង់ LED នៅកម្ពុជា"}
+                  ? "Types of LED Displays for Different Use Cases"
+                  : "ប្រភេទអេក្រង់ LED សម្រាប់ការប្រើប្រាស់ផ្សេងៗ"}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 {lang === "en"
                   ? "The Cambodia market typically uses four LED display types. Each type is optimized for viewing distance, brightness, and installation style. Choosing the right type ensures better visuals, lower maintenance, and longer service life."
-                  : "ទីផ្សារកម្ពុជាជាទូទៅប្រើ LED Display 4 ប្រភេទសំខាន់ៗ។ ប្រភេទនីមួយៗត្រូវបានកំណត់សម្រាប់ចម្ងាយមើល កម្រិតពន្លឺ និងរចនាប័ទ្មដំឡើងផ្សេងៗ។ ការជ្រើសប្រភេទត្រឹមត្រូវជួយឱ្យរូបភាពល្អ កាត់បន្ថយថ្លៃថែទាំ និងបង្កើនអាយុកាលប្រើប្រាស់។"}
+                  : "ទីផ្សារកម្ពុជាជាទូទៅប្រើអេក្រង់ LED ៤ ប្រភេទសំខាន់ៗ។ ប្រភេទនីមួយៗត្រូវបានកំណត់សម្រាប់ចម្ងាយមើល កម្រិតពន្លឺ និងរចនាប័ទ្មដំឡើងផ្សេងៗ។ ការជ្រើសប្រភេទត្រឹមត្រូវជួយឱ្យរូបភាពល្អ កាត់បន្ថយថ្លៃថែទាំ និងបង្កើនអាយុកាលប្រើប្រាស់។"}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 {lang === "en"
                   ? "We help you select the right LED screen by location, budget, and content needs so your investment performs reliably."
-                  : "យើងជួយអ្នកជ្រើស LED Screen ត្រឹមត្រូវតាមទីតាំង ថវិកា និងតម្រូវការមាតិកា ដើម្បីឱ្យការវិនិយោគរបស់អ្នកមានប្រសិទ្ធភាព និងស្ថិរភាព។"}
+                  : "យើងជួយអ្នកជ្រើសអេក្រង់ LED ត្រឹមត្រូវតាមទីតាំង ថវិកា និងតម្រូវការមាតិកា ដើម្បីឱ្យការវិនិយោគមានប្រសិទ្ធភាព និងស្ថិរភាព។"}
               </p>
 
               <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                 <div className="text-sm font-semibold text-slate-900">
                   {lang === "en"
                     ? "Quick Selection Checklist (Cambodia)"
-                    : "បញ្ជីពិនិត្យរហ័សសម្រាប់ការជ្រើសរើស (កម្ពុជា)"}
+                    : "បញ្ជីពិនិត្យរហ័សសម្រាប់ការជ្រើសរើស"}
                 </div>
                 <ul className="mt-3 space-y-2 text-sm text-slate-600">
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
                     {lang === "en"
                       ? "Decide indoor vs outdoor based on sunlight and exposure."
-                      : "សម្រេចថាជា indoor ឬ outdoor ដោយផ្អែកលើពន្លឺថ្ងៃ និងការប៉ះពាល់អាកាសធាតុ។"}
+                      : "សម្រេចថាជាប្រភេទក្នុងអគារ ឬខាងក្រៅ ដោយផ្អែកលើពន្លឺថ្ងៃ និងការប៉ះពាល់អាកាសធាតុ។"}
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
                     {lang === "en"
                       ? "Match pixel pitch to viewing distance for clarity."
-                      : "ផ្គូផ្គង pixel pitch ជាមួយចម្ងាយមើល ដើម្បីទទួលបានភាពច្បាស់។"}
+                      : "ផ្គូផ្គង Pixel Pitch ជាមួយចម្ងាយមើល ដើម្បីទទួលបានភាពច្បាស់។"}
                   </li>
                   <li className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
@@ -802,7 +944,7 @@ export default function LedDisplayClient({
               <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
                 {lang === "en"
                   ? "Common Cambodia installs: mall video walls, hotel lobbies, roadside LED billboards, retail storefront screens, event stages, and public information displays."
-                  : "ការដំឡើងពេញនិយមនៅកម្ពុជា៖ video wall ក្នុង mall, lobby សណ្ឋាគារ, billboard LED តាមដងផ្លូវ, អេក្រង់ storefront សម្រាប់ retail, stage event និងអេក្រង់ព័ត៌មានសាធារណៈ។"}
+                  : "ការដំឡើងពេញនិយមនៅកម្ពុជា៖ ជញ្ជាំងវីដេអូក្នុងផ្សារទំនើប បន្ទប់ទទួលភ្ញៀវសណ្ឋាគារ ផ្ទាំងផ្សព្វផ្សាយ LED តាមដងផ្លូវ អេក្រង់មុខហាងលក់រាយ ឆាកព្រឹត្តិការណ៍ និងអេក្រង់ព័ត៌មានសាធារណៈ។"}
               </div>
             </div>
 
@@ -833,23 +975,23 @@ export default function LedDisplayClient({
                 : [
                     [
                       "អេក្រង់ LED ក្នុងអគារ",
-                      "Fine-pitch LED សម្រាប់បន្ទប់ប្រជុំ showroom control room និងការបង្ហាញម៉ាកក្នុងហាងលក់រាយ។",
-                      ["Fine pitch", "ពន្លឺមិនចាំង", "មើលជិតច្បាស់"],
+                      "អេក្រង់ LED ភីកសែលល្អិត សម្រាប់បន្ទប់ប្រជុំ បន្ទប់តាំងបង្ហាញ និងបន្ទប់បញ្ជា ព្រមទាំងការបង្ហាញម៉ាកក្នុងហាងលក់រាយ។",
+                      ["ភីកសែលល្អិត", "ពន្លឺមិនចាំង", "មើលជិតច្បាស់"],
                     ],
                     [
                       "ប៊ីលបត្រ LED ខាងក្រៅ",
-                      "អេក្រង់មានកម្រិតពន្លឺខ្ពស់ និង IP-rated សម្រាប់ roadside rooftop និងការផ្សព្វផ្សាយលើ facade។",
+                      "អេក្រង់មានកម្រិតពន្លឺខ្ពស់ និងការពារ IP សម្រាប់តាមដងផ្លូវ លើដំបូល និងការផ្សព្វផ្សាយលើផ្នែកខាងមុខអគារ។",
                       ["ពន្លឺខ្ពស់", "IP65+", "មើលឃើញក្រោមថ្ងៃ"],
                     ],
                     [
                       "ជញ្ជាំង LED សម្រាប់ជួល",
-                      "ផ្ទាំង modular រចនាសម្រាប់ដំឡើងលឿនក្នុង event, concert និងពិព័រណ៍។",
+                      "ផ្ទាំងម៉ូឌុល រចនាសម្រាប់ដំឡើងលឿនក្នុងព្រឹត្តិការណ៍ ការប្រគុំតន្ត្រី និងពិព័រណ៍។",
                       ["ដំឡើងលឿន", "ទម្ងន់ស្រាល", "សមស្របសម្រាប់ឆាក"],
                     ],
                     [
                       "គ្រឿងបន្លាស់ និងផ្នែក LED",
-                      "Controller, receiving card, power supply, cabinet និង spare parts ផ្សេងៗ។",
-                      ["Controller", "Power", "គ្រឿងបន្លាស់"],
+                      "ឧបករណ៍បញ្ជា កាតទទួលសញ្ញា ប្រព័ន្ធផ្គត់ផ្គង់ថាមពល កាប៊ីណេត និងគ្រឿងបន្លាស់ផ្សេងៗ។",
+                      ["ឧបករណ៍បញ្ជា", "ថាមពល", "គ្រឿងបន្លាស់"],
                     ],
                   ]
               ).map((item, idx) => {
@@ -879,18 +1021,104 @@ export default function LedDisplayClient({
         </div>
       </section>
 
+      {/* BENEFITS OF LED DISPLAY */}
+      <section id="benefits-led-display" className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+              {lang === "en" ? "Benefits of LED Display" : "អត្ថប្រយោជន៍របស់អេក្រង់ LED"}
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
+              {lang === "en"
+                ? "Top Benefits of LED Display for Advertising, Branding & Business Communication"
+                : "អត្ថប្រយោជន៍សំខាន់ៗនៃអេក្រង់ LED សម្រាប់ការផ្សព្វផ្សាយ ម៉ាក និងការទំនាក់ទំនងអាជីវកម្ម"}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              {lang === "en"
+                ? "LED display solutions are widely used for digital signage, indoor branding, outdoor advertising, and public information because they offer high brightness, energy-efficient operation, strong visibility, and flexible screen sizes. For businesses, LED screens improve audience attention, message clarity, and long-term marketing value with low maintenance and long lifespan."
+                : "ដំណោះស្រាយអេក្រង់ LED ត្រូវបានប្រើយ៉ាងទូលំទូលាយសម្រាប់អេក្រង់ផ្សព្វផ្សាយឌីជីថល ការបង្ហាញម៉ាកក្នុងអគារ ការផ្សព្វផ្សាយខាងក្រៅ និងការបង្ហាញព័ត៌មានសាធារណៈ ព្រោះវាមានពន្លឺខ្ពស់ ប្រើថាមពលមានប្រសិទ្ធភាព មើលឃើញច្បាស់ និងអាចបត់បែនទំហំអេក្រង់បាន។ សម្រាប់អាជីវកម្ម អេក្រង់ LED ជួយបង្កើនការចាប់អារម្មណ៍ ការបញ្ជូនសារច្បាស់លាស់ និងតម្លៃទីផ្សាររយៈពេលវែង ជាមួយការថែទាំងាយស្រួល និងអាយុកាលយូរ។"}
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {(lang === "en"
+              ? [
+                  [
+                    "High Brightness & Better Visibility",
+                    "Clear content under indoor lighting and direct sunlight, ideal for storefront LED screens and outdoor LED billboards.",
+                  ],
+                  [
+                    "Energy-Efficient Digital Signage",
+                    "Modern LED panels reduce power consumption while maintaining strong brightness and stable image quality.",
+                  ],
+                  [
+                    "Flexible Sizes for Any Project",
+                    "Modular cabinets support custom screen size, aspect ratio, and layout for retail, stage, corporate, and public spaces.",
+                  ],
+                  [
+                    "Long Lifespan & Low Maintenance",
+                    "Durable LED modules with proper installation deliver long-term performance and lower maintenance cost.",
+                  ],
+                  [
+                    "Stronger Brand Impact",
+                    "Dynamic video, motion graphics, and real-time announcements improve audience engagement and message recall.",
+                  ],
+                  [
+                    "Scalable for Future Expansion",
+                    "LED display systems can be expanded or upgraded as your business grows, protecting your initial investment.",
+                  ],
+                ]
+              : [
+                  [
+                    "ពន្លឺខ្ពស់ និងមើលឃើញច្បាស់",
+                    "បង្ហាញមាតិកាច្បាស់ទាំងក្នុងអគារ និងក្រោមពន្លឺថ្ងៃ សមស្របសម្រាប់អេក្រង់មុខហាង និងផ្ទាំងផ្សព្វផ្សាយខាងក្រៅ។",
+                  ],
+                  [
+                    "អេក្រង់ផ្សព្វផ្សាយឌីជីថលសន្សំថាមពល",
+                    "ផ្ទាំង LED ទំនើបប្រើថាមពលមានប្រសិទ្ធភាព ខណៈរក្សាពន្លឺ និងគុណភាពរូបភាពឱ្យស្ថិរភាព។",
+                  ],
+                  [
+                    "ទំហំអេក្រង់បត់បែនតាមគម្រោង",
+                    "កាប៊ីណេតប្រភេទម៉ូឌុល អាចរៀបចំទំហំ និងប្លង់អេក្រង់បានតាមតម្រូវការ។",
+                  ],
+                  [
+                    "អាយុកាលយូរ ថែទាំងាយស្រួល",
+                    "ម៉ូឌុលគុណភាពល្អជាមួយការដំឡើងត្រឹមត្រូវ ជួយកាត់បន្ថយថ្លៃថែទាំរយៈពេលវែង។",
+                  ],
+                  [
+                    "បង្កើនឥទ្ធិពលម៉ាក",
+                    "វីដេអូ និងមាតិកាចលនា ជួយទាក់ទាញអ្នកមើល និងចងចាំសារបានល្អជាងមុន។",
+                  ],
+                  [
+                    "ពង្រីកប្រព័ន្ធបានក្នុងអនាគត",
+                    "ប្រព័ន្ធ LED អាចបន្ថែម ឬអាប់ដេតបានតាមការលូតលាស់អាជីវកម្ម។",
+                  ],
+                ]
+            ).map(([t, d]) => (
+              <div
+                key={String(t)}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm"
+              >
+                <h3 className="text-sm font-semibold text-slate-900">{t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SPECS SNAPSHOT */}
-      <section className="border-t border-slate-200 bg-slate-50">
+      <section id="specs-snapshot" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
-              ? "LED Display Specifications for Cambodia (Indoor & Outdoor)"
-              : "លក្ខណៈបច្ចេកទេស LED Display សម្រាប់កម្ពុជា (ក្នុងអគារ និងខាងក្រៅ)"}
+              ? "LED Display Specifications Guide (Indoor & Outdoor)"
+              : "មគ្គុទ្ទេសក៍លក្ខណៈបច្ចេកទេសអេក្រង់ LED (ក្នុងអគារ និងខាងក្រៅ)"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Use these realistic spec ranges to plan indoor and outdoor LED display projects in Cambodia. Final specs depend on viewing distance, ambient light, installation structure, and budget."
-              : "សូមប្រើជួរ spec ខាងក្រោមសម្រាប់រៀបចំគម្រោង LED Display ក្នុងអគារ និងខាងក្រៅនៅកម្ពុជា។ Spec ចុងក្រោយអាស្រ័យលើចម្ងាយមើល ពន្លឺបរិយាកាស រចនាសម្ព័ន្ធដំឡើង និងថវិកា។"}
+              : "សូមប្រើជួរលក្ខណៈបច្ចេកទេសខាងក្រោម សម្រាប់រៀបចំគម្រោងអេក្រង់ LED ក្នុងអគារ និងខាងក្រៅ។ លក្ខណៈបច្ចេកទេសចុងក្រោយ អាស្រ័យលើចម្ងាយមើល ពន្លឺបរិយាកាស រចនាសម្ព័ន្ធដំឡើង និងថវិកា។"}
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -906,13 +1134,13 @@ export default function LedDisplayClient({
                   ["Lifespan", "50,000-100,000 hours with proper maintenance"],
                 ]
               : [
-                  ["Pixel Pitch", "ក្នុងអគារ៖ P1.25-P3 | ខាងក្រៅ៖ P3-P10"],
+                  ["ភីកសែលភីច", "ក្នុងអគារ៖ P1.25-P3 | ខាងក្រៅ៖ P3-P10"],
                   ["កម្រិតពន្លឺ (nits)", "ក្នុងអគារ៖ 600-1,200 | ខាងក្រៅ៖ 4,500-7,000+"],
                   ["កម្រិតការពារ IP", "ក្នុងអគារ៖ IP30-IP40 | ខាងក្រៅ៖ IP65+ (ខាងមុខ)"],
-                  ["Refresh Rate", ">= 1,920Hz (4,000Hz+ សម្រាប់កាមេរ៉ា)"],
+                  ["អត្រាផ្ទុកឡើងវិញ", ">= 1,920Hz (4,000Hz+ សម្រាប់កាមេរ៉ា)"],
                   ["មុំមើល", "H: 140-160 | V: 120-140"],
-                  ["ថាមពល និងសុវត្ថិភាព", "ការពារ surge + grounding ត្រឹមត្រូវ"],
-                  ["ទំហំ Cabinet", "ទំហំពេញនិយម៖ 500x500 / 500x1000 mm"],
+                  ["ថាមពល និងសុវត្ថិភាព", "ការពារការលោតតង់ស្យុង និងប្រព័ន្ធដីសុវត្ថិភាពត្រឹមត្រូវ"],
+                  ["ទំហំកាប៊ីណេត", "ទំហំពេញនិយម៖ 500x500 / 500x1000 mm"],
                   ["អាយុកាល", "50,000-100,000 ម៉ោង (ប្រសិនបើថែទាំត្រឹមត្រូវ)"],
                 ]
             ).map(([t, d]) => (
@@ -930,6 +1158,7 @@ export default function LedDisplayClient({
 
       {lang === "en" ? afterSpecsContent : (afterSpecsContentKm ?? afterSpecsContent)}
 
+      <div id="pixel-pitch-guide" />
       {(lang === "en"
         ? pixelPitchSectionOverride
         : (pixelPitchSectionOverrideKm ?? pixelPitchSectionOverride)) ?? (
@@ -937,14 +1166,14 @@ export default function LedDisplayClient({
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold tracking-tight text-slate-900">
               {lang === "en"
-                ? "Pixel Pitch & Viewing Distance Guide"
-                : "មគ្គុទ្ទេសក៍ Pixel Pitch និងចម្ងាយមើល"}
+                ? "LED Pixel Pitch & Viewing Distance Selection Guide"
+                : "មគ្គុទ្ទេសក៍ភីកសែលភីច និងចម្ងាយមើល"}
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-slate-600">
               {(lang === "en" ? pixelPitchIntroOverride : (pixelPitchIntroOverrideKm ?? pixelPitchIntroOverride)) ??
                 (lang === "en"
                   ? "Choosing the right pixel pitch is the #1 factor for visual clarity and budget efficiency. Use this guide as a starting point for Cambodia installations."
-                  : "ការជ្រើស pixel pitch ត្រឹមត្រូវ គឺជាកត្តាសំខាន់បំផុតសម្រាប់ភាពច្បាស់នៃរូបភាព និងប្រសិទ្ធភាពថវិកា។ សូមប្រើមគ្គុទ្ទេសក៍នេះជាចំណុចចាប់ផ្តើមសម្រាប់ការដំឡើងនៅកម្ពុជា។")}
+                  : "ការជ្រើស Pixel Pitch ត្រឹមត្រូវ គឺជាកត្តាសំខាន់បំផុតសម្រាប់ភាពច្បាស់នៃរូបភាព និងប្រសិទ្ធភាពថវិកា។ សូមប្រើមគ្គុទ្ទេសក៍នេះជាចំណុចចាប់ផ្តើមសម្រាប់ការដំឡើង។")}
             </p>
             <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
               <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
@@ -961,10 +1190,10 @@ export default function LedDisplayClient({
                       ["P5-P10", "6m+", "Outdoor billboards, roadside"],
                     ]
                   : [
-                      ["P1.25-P1.86", "1.5-3m", "Control room និង boardroom កម្រិតខ្ពស់"],
-                      ["P2-P2.5", "2-5m", "បន្ទប់ប្រជុំ ហាងលក់រាយ និង showroom"],
-                      ["P3-P4", "3-8m", "Mall, lobby និងឆាកក្នុងអគារ"],
-                      ["P5-P10", "6m+", "Billboard ខាងក្រៅ និងតាមដងផ្លូវ"],
+                      ["P1.25-P1.86", "1.5-3m", "បន្ទប់បញ្ជា និងបន្ទប់ប្រជុំកម្រិតខ្ពស់"],
+                      ["P2-P2.5", "2-5m", "បន្ទប់ប្រជុំ ហាងលក់រាយ និងបន្ទប់តាំងបង្ហាញ"],
+                      ["P3-P4", "3-8m", "ផ្សារទំនើប បន្ទប់ទទួលភ្ញៀវ និងឆាកក្នុងអគារ"],
+                      ["P5-P10", "6m+", "ផ្ទាំងផ្សព្វផ្សាយខាងក្រៅ និងតាមដងផ្លូវ"],
                     ]),
               ]).map((row) => (
                 <div
@@ -982,17 +1211,17 @@ export default function LedDisplayClient({
       )}
 
       {/* INDOOR VS OUTDOOR */}
-      <section className="border-t border-slate-200 bg-slate-50">
+      <section id="indoor-vs-outdoor" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "Indoor vs Outdoor LED Display for Cambodia Climate"
-              : "ការប្រៀបធៀប LED Display ក្នុងអគារ និងខាងក្រៅ សម្រាប់អាកាសធាតុកម្ពុជា"}
+              : "ការប្រៀបធៀបអេក្រង់ LED ក្នុងអគារ និងខាងក្រៅ សម្រាប់អាកាសធាតុកម្ពុជា"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Cambodias heat, rain, and dust require correct IP rating, heat management, and structure design-especially for outdoor LED displays."
-              : "កំដៅ ភ្លៀង និងធូលីនៅកម្ពុជា ទាមទារឱ្យជ្រើស IP rating ត្រឹមត្រូវ ការគ្រប់គ្រងកំដៅ និងការរចនាសម្ព័ន្ធល្អ ជាពិសេសសម្រាប់ Outdoor LED។"}
+              : "កំដៅ ភ្លៀង និងធូលីនៅកម្ពុជា ទាមទារឱ្យជ្រើសកម្រិតការពារ IP ត្រឹមត្រូវ ការគ្រប់គ្រងកំដៅ និងការរចនាសម្ព័ន្ធល្អ ជាពិសេសសម្រាប់អេក្រង់ LED ខាងក្រៅ។"}
           </p>
           <div className="mt-6 grid gap-4 lg:grid-cols-2">
             {(lang === "en"
@@ -1013,13 +1242,13 @@ export default function LedDisplayClient({
               : [
                   [
                     "អេក្រង់ LED ក្នុងអគារ",
-                    "សមស្របសម្រាប់ការមើលជិត ដូចជា boardroom, showroom, control room, សណ្ឋាគារ និង event ក្នុងអគារ។ Indoor LED ប្រើ pixel pitch ល្អិត កម្រិតពន្លឺសមស្រប និងប្រព័ន្ធត្រជាក់ស្ងាត់ ដើម្បីរក្សារូបភាពឱ្យច្បាស់។ ការរៀបខ្សែ និងការបញ្ចប់រចនាសម្ព័ន្ធស្អាតជួយបង្កើនស្ថិរភាពរយៈពេលវែង។",
+                    "សមស្របសម្រាប់ការមើលជិត ដូចជា បន្ទប់ប្រជុំ បន្ទប់តាំងបង្ហាញ បន្ទប់បញ្ជា សណ្ឋាគារ និងព្រឹត្តិការណ៍ក្នុងអគារ។ អេក្រង់ LED ក្នុងអគារ ប្រើ Pixel Pitch ល្អិត កម្រិតពន្លឺសមស្រប និងប្រព័ន្ធត្រជាក់ស្ងាត់ ដើម្បីរក្សារូបភាពឱ្យច្បាស់។ ការរៀបខ្សែ និងការបញ្ចប់រចនាសម្ព័ន្ធស្អាតជួយបង្កើនស្ថិរភាពរយៈពេលវែង។",
                     "IP ទូទៅ៖ IP30-IP40",
-                    ["ភាពច្បាស់ Fine pitch", "ពន្លឺមិនចាំង", "ប្រព័ន្ធត្រជាក់ស្ងាត់", "សមស្របសម្រាប់មើលជិត"],
+                    ["ភាពច្បាស់ភីកសែលល្អិត", "ពន្លឺមិនចាំង", "ប្រព័ន្ធត្រជាក់ស្ងាត់", "សមស្របសម្រាប់មើលជិត"],
                   ],
                   [
                     "អេក្រង់ LED ខាងក្រៅ",
-                    "រចនាឡើងសម្រាប់ពន្លឺថ្ងៃ ភ្លៀង និងធូលីនៅកម្ពុជា។ Outdoor LED billboard ត្រូវការ brightness ខ្ពស់ cabinet ការពារអាកាសធាតុ រចនាសម្ព័ន្ធរឹងមាំ និង grounding សុវត្ថិភាព។ ការការពារ IP និងការគ្រប់គ្រងកំដៅល្អ នឹងធានាអេក្រង់អាចមើលឃើញច្បាស់ និងដំណើរការស្ថិរភាព។",
+                    "រចនាឡើងសម្រាប់ពន្លឺថ្ងៃ ភ្លៀង និងធូលីនៅកម្ពុជា។ ផ្ទាំងផ្សព្វផ្សាយ LED ខាងក្រៅ ត្រូវការកម្រិតពន្លឺខ្ពស់ កាប៊ីណេតការពារអាកាសធាតុ រចនាសម្ព័ន្ធរឹងមាំ និងប្រព័ន្ធដីសុវត្ថិភាព។ ការការពារ IP និងការគ្រប់គ្រងកំដៅល្អ នឹងធានាអេក្រង់អាចមើលឃើញច្បាស់ និងដំណើរការស្ថិរភាព។",
                     "IP ទូទៅ៖ IP65+ (ខាងមុខ)",
                     ["ពន្លឺខ្ពស់", "ការពារអាកាសធាតុ", "សុវត្ថិភាពរចនាសម្ព័ន្ធ", "មើលឃើញក្រោមថ្ងៃ"],
                   ],
@@ -1052,17 +1281,17 @@ export default function LedDisplayClient({
       </section>
 
       {/* USE-CASE BY INDUSTRY */}
-      <section className="border-t border-slate-200 bg-white">
+      <DeferredSection id="industry-use-cases" className="border-t border-slate-200 bg-white" minHeight={180}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "LED Display Use-Cases by Industry in Cambodia"
-              : "ករណីប្រើប្រាស់ LED Display តាមវិស័យនៅកម្ពុជា"}
+              : "ករណីប្រើប្រាស់អេក្រង់ LED តាមវិស័យនៅកម្ពុជា"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Popular industries using LED display, digital signage, and LED billboards in Cambodia."
-              : "វិស័យពេញនិយមដែលកំពុងប្រើ LED display, digital signage និង LED billboard នៅកម្ពុជា។"}
+              : "វិស័យពេញនិយមដែលកំពុងប្រើអេក្រង់ LED អេក្រង់ផ្សព្វផ្សាយឌីជីថល និងផ្ទាំងផ្សព្វផ្សាយ LED នៅកម្ពុជា។"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(lang === "en"
@@ -1110,28 +1339,28 @@ export default function LedDisplayClient({
               ]
               : [
                   {
-                    t: "Retail និង Shopping Mall",
-                    d: "Indoor LED video wall សម្រាប់ផ្សព្វផ្សាយ បង្ហាញម៉ាក និងបើកដំណើរការផលិតផលក្នុង mall នៅភ្នំពេញ។",
+                    t: "លក់រាយ និងផ្សារទំនើប",
+                    d: "ជញ្ជាំងវីដេអូ LED ក្នុងអគារ សម្រាប់ផ្សព្វផ្សាយ បង្ហាញម៉ាក និងបើកដំណើរការផលិតផលក្នុងផ្សារទំនើប។",
                     chips: ["Indoor", "Fine pitch", "Branding"],
                   },
                   {
-                    t: "សណ្ឋាគារ រីសត និង Hospitality",
-                    d: "អេក្រង់ស្វាគមន៍ lobby កាលវិភាគ event និងអេក្រង់ banquet hall ជាមួយរូបភាពស្អាត និងប្រព័ន្ធត្រជាក់ស្ងាត់។",
+                    t: "សណ្ឋាគារ រីសត និងបដិសណ្ឋារកិច្ច",
+                    d: "អេក្រង់ស្វាគមន៍បន្ទប់ទទួលភ្ញៀវ កាលវិភាគព្រឹត្តិការណ៍ និងអេក្រង់សាលជប់លៀង ជាមួយរូបភាពស្អាត និងប្រព័ន្ធត្រជាក់ស្ងាត់។",
                     chips: ["Lobby", "Event", "24/7"],
                   },
                   {
-                    t: "ការិយាល័យ និង Showroom",
-                    d: "LED display សម្រាប់ boardroom និង showroom ដើម្បីបង្ហាញ presentation dashboard និង brand storytelling។",
+                    t: "ការិយាល័យ និងបន្ទប់តាំងបង្ហាញ",
+                    d: "អេក្រង់ LED សម្រាប់បន្ទប់ប្រជុំ និងបន្ទប់តាំងបង្ហាញ ដើម្បីបង្ហាញបទបង្ហាញ ផ្ទាំងទិន្នន័យ និងរឿងរ៉ាវម៉ាក។",
                     chips: ["Corporate", "Control", "Showroom"],
                   },
                   {
-                    t: "Event ឆាក និងជួល",
-                    d: "Rental LED wall សម្រាប់ concert ពិព័រណ៍ និងផ្ទៃខាងក្រោយឆាក ជាមួយការដំឡើងលឿន។",
+                    t: "ព្រឹត្តិការណ៍ ឆាក និងសេវាជួល",
+                    d: "ជញ្ជាំង LED សម្រាប់ជួល ក្នុងការប្រគុំតន្ត្រី ពិព័រណ៍ និងផ្ទៃខាងក្រោយឆាក ជាមួយការដំឡើងលឿន។",
                     chips: ["Rental", "Stage", "Fast setup"],
                   },
                   {
-                    t: "វិស័យអប់រំ និង Campus",
-                    d: "អេក្រង់ auditorium, notice board នៅ campus និង smart classroom display សម្រាប់ភាពមើលឃើញច្បាស់។",
+                    t: "វិស័យអប់រំ និងបរិវេណសាលា",
+                    d: "អេក្រង់សាលប្រជុំ អេក្រង់ជូនដំណឹងក្នុងបរិវេណសាលា និងអេក្រង់ថ្នាក់រៀនឆ្លាតវៃ សម្រាប់ភាពមើលឃើញច្បាស់។",
                     chips: ["Education", "Auditorium", "Notice"],
                   },
                   {
@@ -1141,11 +1370,11 @@ export default function LedDisplayClient({
                   },
                   {
                     t: "ដឹកជញ្ជូន និងស្ថានីយ៍",
-                    d: "អេក្រង់ timetable, wayfinding និងផ្សព្វផ្សាយសម្រាប់ terminal, station និង port។",
+                    d: "អេក្រង់តារាងពេលវេលា អេក្រង់ណែនាំទិស និងផ្សព្វផ្សាយ សម្រាប់ស្ថានីយរថយន្ត ស្ថានីយ និងកំពង់ផែ។",
                     chips: ["Wayfinding", "Timetable", "Public"],
                   },
                   {
-                    t: "ផ្សព្វផ្សាយខាងក្រៅ និង Billboard",
+                    t: "ផ្សព្វផ្សាយខាងក្រៅ និងផ្ទាំងផ្សព្វផ្សាយ",
                     d: "ប៊ីលបត្រ LED ពន្លឺខ្ពស់ សម្រាប់ផ្សព្វផ្សាយតាមដងផ្លូវ និងលើដំបូលទូទាំងកម្ពុជា។",
                     chips: ["Outdoor", "High nits", "IP65+"],
                   },
@@ -1171,64 +1400,64 @@ export default function LedDisplayClient({
             ))}
           </div>
         </div>
-      </section>
+      </DeferredSection>
 
       {/* INSTALLATION PROCESS */}
-      <section className="border-t border-slate-200 bg-white">
+      <DeferredSection id="installation-workflow" className="border-t border-slate-200 bg-white" minHeight={180}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
-              ? "LED Display Installation & After-Sales Workflow in Cambodia"
-              : "ដំណើរការដំឡើង LED Display និងសេវាកម្មបន្ទាប់ពីលក់នៅកម្ពុជា"}
+              ? "LED Display Solutions: Installation & After-Sales Support"
+              : "ដំណើរការដំឡើងអេក្រង់ LED និងសេវាកម្មបន្ទាប់ពីលក់"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
-              ? "Our end-to-end LED display delivery process covers survey, design, installation, commissioning, and ongoing after-sales support. This workflow ensures stable visuals, safe structure, and long service life for Cambodia projects."
-              : "ដំណើរការដឹកជញ្ជូន LED Display ពេញលេញរបស់យើង រួមមាន survey, design, installation, commissioning និងការគាំទ្របន្តបន្ទាប់ពីលក់។ ដំណើរការនេះជួយធានារូបភាពស្ថិរភាព រចនាសម្ព័ន្ធសុវត្ថិភាព និងអាយុកាលប្រើប្រាស់យូរ។"}
+              ? "Our solution-focused workflow is built for businesses that need reliable LED display performance with low risk and clear execution. From site survey and engineering BOQ to safe installation, calibration, commissioning, operator training, and preventive after-sales support, each stage is planned to deliver stable visuals, structural safety, and long-term return on investment."
+              : "ដំណើរការដឹកជញ្ជូនអេក្រង់ LED ពេញលេញរបស់យើង រួមមានការស្ទង់ទីតាំង ការរចនា ការដំឡើង ការត្រួតពិនិត្យដំណើរការ និងការគាំទ្របន្ទាប់ពីលក់។ ដំណើរការនេះជួយធានារូបភាពស្ថិរភាព រចនាសម្ព័ន្ធសុវត្ថិភាព និងអាយុកាលប្រើប្រាស់យូរ។"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(lang === "en"
               ? [
               [
-                "1. Site Survey & Assessment",
-                "On-site measurement, viewing distance check, sunlight level, mounting position, and power availability.",
-                ["Survey", "Viewing distance", "Site conditions"],
+                "1. Site Survey, Risk Check & Requirement Mapping",
+                "We validate viewing distance, sunlight exposure, mounting points, power readiness, and safety risks before finalizing your LED display scope.",
+                ["Site survey", "Risk check", "Project scope"],
               ],
               [
-                "2. Design, BOQ & Approval",
-                "Pixel pitch selection, cabinet layout, structure design, controller choice, and BOQ cost breakdown.",
-                ["BOQ", "Structure plan", "Pixel pitch"],
+                "2. Engineering Design, BOQ & Technical Proposal",
+                "Our team prepares pixel pitch selection, cabinet layout, structure design, controller specification, and transparent BOQ for faster approval.",
+                ["Engineering BOQ", "Technical design", "Pixel pitch"],
               ],
               [
-                "3. Installation & Commissioning",
-                "Frame mounting, cable routing, grounding, controller setup, calibration, and brightness tuning.",
-                ["Mounting", "Calibration", "Safety"],
+                "3. Professional Installation, Calibration & Commissioning",
+                "Certified technicians complete frame installation, cabling, grounding, controller setup, color calibration, and brightness tuning for go-live readiness.",
+                ["Installation", "Calibration", "Commissioning"],
               ],
               [
-                "4. Training & After-Sales",
-                "Operator training, content support, spare parts planning, maintenance schedule, and AMC options.",
-                ["Training", "Spare parts", "AMC"],
+                "4. Operator Handover, Preventive Maintenance & After-Sales",
+                "We provide operator handover, maintenance planning, spare-parts readiness, and responsive support to keep your LED screen running reliably.",
+                ["Operator training", "Maintenance", "After-sales"],
               ],
               ]
               : [
                   [
-                    "1. Site Survey និងវាយតម្លៃ",
+                    "1. ស្ទង់ទីតាំង និងវាយតម្លៃ",
                     "វាស់វែងទីតាំងពិត ពិនិត្យចម្ងាយមើល កម្រិតពន្លឺថ្ងៃ ទីតាំងដំឡើង និងប្រភពថាមពល។",
-                    ["Survey", "ចម្ងាយមើល", "លក្ខខណ្ឌទីតាំង"],
+                    ["ស្ទង់ទីតាំង", "ចម្ងាយមើល", "លក្ខខណ្ឌទីតាំង"],
                   ],
                   [
-                    "2. Design, BOQ និងអនុម័ត",
-                    "ជ្រើស pixel pitch, រៀប layout cabinet, រចនាសម្ព័ន្ធ, ជ្រើស controller និងបំបែកថ្លៃ BOQ។",
-                    ["BOQ", "រចនាសម្ព័ន្ធ", "Pixel pitch"],
+                    "2. រចនា BOQ និងអនុម័ត",
+                    "ជ្រើស Pixel Pitch រៀបប្លង់កាប៊ីណេត រចនាសម្ព័ន្ធ ជ្រើសឧបករណ៍បញ្ជា និងបំបែកថ្លៃ BOQ។",
+                    ["BOQ", "រចនាសម្ព័ន្ធ", "Pixel Pitch"],
                   ],
                   [
-                    "3. Installation និង Commissioning",
-                    "ដំឡើង frame, រៀបខ្សែ, grounding, setup controller, calibration និងកំណត់ brightness។",
-                    ["ដំឡើង", "Calibration", "សុវត្ថិភាព"],
+                    "3. ដំឡើង និងត្រួតពិនិត្យដំណើរការ",
+                    "ដំឡើងស៊ុម រៀបខ្សែ ប្រព័ន្ធដីសុវត្ថិភាព កំណត់ឧបករណ៍បញ្ជា កែតម្រូវពណ៌ និងកំណត់កម្រិតពន្លឺ។",
+                    ["ដំឡើង", "កែតម្រូវ", "សុវត្ថិភាព"],
                   ],
                   [
-                    "4. Training និង After-Sales",
-                    "បណ្តុះបណ្តាល operator, គាំទ្រមាតិកា, គម្រោង spare parts, កាលវិភាគថែទាំ និងជម្រើស AMC។",
+                    "4. បណ្តុះបណ្តាល និងសេវាបន្ទាប់ពីលក់",
+                    "បណ្តុះបណ្តាលអ្នកប្រើប្រាស់ គាំទ្រមាតិកា គម្រោងគ្រឿងបន្លាស់ កាលវិភាគថែទាំ និងជម្រើសកិច្ចសន្យាថែទាំ។",
                     ["Training", "Spare parts", "AMC"],
                   ],
                 ]
@@ -1256,57 +1485,57 @@ export default function LedDisplayClient({
             })}
           </div>
         </div>
-      </section>
+      </DeferredSection>
 
       {/* WHY CHOOSE MUGNEE */}
-      <section className="border-t border-slate-200 bg-white">
+      <DeferredSection id="why-mugnee" className="border-t border-slate-200 bg-white" minHeight={180}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
-              ? "Why Choose Mugnee for LED Display in Cambodia"
-              : "ហេតុអ្វីគួរជ្រើស Mugnee សម្រាប់ LED Display នៅកម្ពុជា"}
+              ? "Why Businesses Choose Mugnee for LED Display Solutions"
+              : "ហេតុអ្វីគួរជ្រើស Mugnee សម្រាប់អេក្រង់ LED"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
-              ? "Clients choose Mugnee because we deliver engineering-accurate LED display projects with clear visuals, safe structures, and reliable after-sales support. From site survey to commissioning, we focus on performance, durability, and long-term value for Cambodia installations."
-              : "អតិថិជនជ្រើស Mugnee ព្រោះយើងអនុវត្តគម្រោង LED Display ត្រឹមត្រូវតាមវិស្វកម្ម ជាមួយរូបភាពច្បាស់ រចនាសម្ព័ន្ធសុវត្ថិភាព និងសេវាកម្មបន្ទាប់ពីលក់ដែលទុកចិត្តបាន។ ចាប់ពី site survey ដល់ commissioning យើងផ្តោតលើប្រសិទ្ធភាព ភាពធន់ និងតម្លៃប្រើប្រាស់រយៈពេលវែង។"}
+              ? "Businesses choose Mugnee for LED display solutions because we combine technical planning, transparent BOQ, certified installation, and dependable after-sales service in one execution flow. Whether you need an indoor LED display, outdoor LED billboard, or LED video wall, we focus on visual quality, safe structure design, low downtime, and long-term ROI."
+              : "អតិថិជនជ្រើស Mugnee ព្រោះយើងអនុវត្តគម្រោងអេក្រង់ LED ត្រឹមត្រូវតាមវិស្វកម្ម ជាមួយរូបភាពច្បាស់ រចនាសម្ព័ន្ធសុវត្ថិភាព និងសេវាកម្មបន្ទាប់ពីលក់ដែលទុកចិត្តបាន។ ចាប់ពីការស្ទង់ទីតាំងដល់ការត្រួតពិនិត្យដំណើរការ យើងផ្តោតលើប្រសិទ្ធភាព ភាពធន់ និងតម្លៃប្រើប្រាស់រយៈពេលវែង។"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(lang === "en"
               ? [
               [
-                "Cambodia Local Delivery Team",
-                "On-site survey, installation, commissioning, and rapid support for Phnom Penh and nationwide projects.",
+                "Local Project Team & Faster Response",
+                "Dedicated on-site engineers handle survey, installation, commissioning, and priority support to keep projects on schedule.",
               ],
               [
-                "Engineering-First Design",
-                "Pixel pitch, brightness, structure, and IP rating selected by real viewing distance and environment.",
+                "Engineering-Led Specification",
+                "Pixel pitch, brightness, IP rating, and structure method are selected from real viewing distance, environment, and use-case needs.",
               ],
               [
-                "Reliable Hardware & Calibration",
-                "Quality controllers, stable power design, clean cabling, and factory-grade calibration for clear visuals.",
+                "Reliable Components & Precision Calibration",
+                "Quality control systems, stable power planning, clean cabling, and detailed calibration deliver sharp and consistent screen performance.",
               ],
               [
-                "After-Sales & AMC Support",
-                "Training, spare-parts plan, preventive maintenance, and AMC options for long-term stability.",
+                "After-Sales Service That Protects Uptime",
+                "Operator guidance, preventive maintenance, spare-parts planning, and responsive support reduce downtime and protect your investment.",
               ],
               ]
               : [
                   [
                     "ក្រុមដឹកជញ្ជូន និងដំឡើងក្នុងស្រុក",
-                    "Site survey, installation, commissioning និងការគាំទ្រឆាប់រហ័ស សម្រាប់ភ្នំពេញ និងគម្រោងទូទាំងប្រទេស។",
+                    "ការស្ទង់ទីតាំង ការដំឡើង ការត្រួតពិនិត្យដំណើរការ និងការគាំទ្រឆាប់រហ័ស សម្រាប់ភ្នំពេញ និងគម្រោងទូទាំងប្រទេស។",
                   ],
                   [
                     "ការរចនាដោយផ្អែកលើវិស្វកម្ម",
-                    "ជ្រើស pixel pitch, brightness, structure និង IP rating តាមចម្ងាយមើល និងបរិស្ថានពិត។",
+                    "ជ្រើស Pixel Pitch កម្រិតពន្លឺ រចនាសម្ព័ន្ធ និងកម្រិតការពារ IP តាមចម្ងាយមើល និងបរិស្ថានពិត។",
                   ],
                   [
-                    "Hardware និង Calibration ដែលទុកចិត្តបាន",
-                    "Controller គុណភាព ការរៀប power ស្ថេរភាព ខ្សែស្អាត និង calibration ស្តង់ដារ។",
+                    "ផ្នែករឹង និងការកែតម្រូវដែលទុកចិត្តបាន",
+                    "ឧបករណ៍បញ្ជាគុណភាព ការរៀបថាមពលស្ថេរភាព ខ្សែស្អាត និងការកែតម្រូវតាមស្តង់ដារ។",
                   ],
                   [
-                    "After-Sales និង AMC Support",
-                    "Training, គម្រោង spare parts, preventive maintenance និងជម្រើស AMC សម្រាប់ស្ថិរភាពយូរអង្វែង។",
+                    "សេវាបន្ទាប់ពីលក់ និងកិច្ចសន្យាថែទាំ",
+                    "បណ្តុះបណ្តាល គម្រោងគ្រឿងបន្លាស់ ការថែទាំការពារ និងជម្រើសកិច្ចសន្យាថែទាំ សម្រាប់ស្ថិរភាពយូរអង្វែង។",
                   ],
                 ]
             ).map(([t, d]) => (
@@ -1336,10 +1565,10 @@ export default function LedDisplayClient({
             </a>
           </div>
         </div>
-      </section>
+      </DeferredSection>
 
       {/* AUTHORIZED DISTRIBUTOR */}
-      <section className="border-t border-slate-200 bg-white">
+      <DeferredSection id="partners" className="border-t border-slate-200 bg-white" minHeight={180}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
             {lang === "en" ? "Partners" : "ដៃគូ"}
@@ -1418,10 +1647,10 @@ export default function LedDisplayClient({
             ))}
           </div>
         </div>
-      </section>
+      </DeferredSection>
 
       {/* SERVICE AREA */}
-      <section className="border-t border-slate-200 bg-slate-50">
+      <DeferredSection id="service-areas" className="border-t border-slate-200 bg-slate-50" minHeight={160}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
             {lang === "en" ? "Service area" : "តំបន់សេវាកម្ម"}
@@ -1432,7 +1661,7 @@ export default function LedDisplayClient({
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Local installation, commissioning and after-sales support across Phnom Penh, Siem Reap, Sihanoukville and nearby provinces."
-              : "សេវាដំឡើង commissioning និងការគាំទ្របន្ទាប់ពីលក់ ក្នុងភ្នំពេញ សៀមរាប ព្រះសីហនុ និងខេត្តជិតខាង។"}
+              : "សេវាដំឡើង ការត្រួតពិនិត្យដំណើរការ និងការគាំទ្របន្ទាប់ពីលក់ ក្នុងភ្នំពេញ សៀមរាប ព្រះសីហនុ និងខេត្តជិតខាង។"}
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
@@ -1455,10 +1684,10 @@ export default function LedDisplayClient({
             ))}
           </div>
         </div>
-      </section>
+      </DeferredSection>
 
       {/* TRUST / ENTITY SIGNALS */}
-      <section className="border-t border-slate-200 bg-gradient-to-b from-white to-slate-50">
+      <DeferredSection className="border-t border-slate-200 bg-gradient-to-b from-white to-slate-50" minHeight={180}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
             {lang === "en" ? "Trust Signals" : "សញ្ញានៃភាពទុកចិត្ត"}
@@ -1466,14 +1695,14 @@ export default function LedDisplayClient({
           <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
             {(lang === "en" ? trustTitleOverride : (trustTitleOverrideKm ?? trustTitleOverride)) ??
               (lang === "en"
-                ? "Trusted LED Display Partner in Cambodia: Entity, Service & Delivery Signals"
-                : "ដៃគូ LED Display ដែលគួរឱ្យទុកចិត្តនៅកម្ពុជា៖ Entity, Service និង Delivery Signals")}
+                ? "Why Businesses Trust Mugnee for LED Display Projects"
+                : "ហេតុអ្វីអាជីវកម្មទុកចិត្ត Mugnee សម្រាប់គម្រោងអេក្រង់ LED")}
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-600">
             {(lang === "en" ? trustDescOverride : (trustDescOverrideKm ?? trustDescOverride)) ??
               (lang === "en"
-                ? "This section highlights why Mugnee Cambodia is trusted for indoor LED display, outdoor LED billboards, and LED video wall projects in Cambodia, with verified entity signals, local execution capability, and long-term service continuity."
-                : "ផ្នែកនេះបង្ហាញមូលហេតុដែល Mugnee Cambodia ត្រូវបានទុកចិត្តសម្រាប់គម្រោង indoor LED, outdoor billboard និង LED video wall នៅកម្ពុជា ដោយមាន entity signal ច្បាស់ ការអនុវត្តក្នុងស្រុក និងសេវាកម្មបន្តរយៈពេលវែង។")}
+                ? "Use this checklist to evaluate any LED display supplier with confidence. Mugnee combines technical planning, transparent BOQ, certified installation, and structured after-sales service for indoor LED display, outdoor LED billboard, and LED video wall projects."
+                : "ផ្នែកនេះបង្ហាញមូលហេតុដែល Mugnee ត្រូវបានទុកចិត្តសម្រាប់គម្រោងអេក្រង់ LED ក្នុងអគារ ផ្ទាំងផ្សព្វផ្សាយ LED ខាងក្រៅ និងជញ្ជាំងវីដេអូ LED ដោយមានការរៀបចំបច្ចេកទេសច្បាស់ ការអនុវត្តក្នុងស្រុក និងសេវាកម្មបន្តរយៈពេលវែង។")}
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {trustProofChips.map((chip, index) => (
@@ -1491,70 +1720,97 @@ export default function LedDisplayClient({
                 key={`${item}-${index}`}
                 className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm"
               >
-                <div className="mb-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-[11px] font-bold text-sky-700">
-                  {index + 1}
+                <div className="mb-2 flex items-center gap-2.5">
+                  <div className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-[11px] font-bold text-sky-700">
+                    {index + 1}
+                  </div>
+                  <p className="text-sm font-semibold text-slate-900">{trustSignalTitles[index] ?? `Signal ${index + 1}`}</p>
                 </div>
-                <p>{item}</p>
+                <p className="mt-1">{item}</p>
               </div>
             ))}
           </div>
           <div className="mt-5 flex flex-wrap gap-2">
             <Link
-              href="/about"
+              href="/led-display/indoor-led-display"
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
-              {lang === "en" ? "About Mugnee Cambodia" : "អំពី Mugnee Cambodia"}
+              {lang === "en" ? "Explore Indoor LED Displays" : "មើលអេក្រង់ LED ក្នុងអគារ"}
             </Link>
             <Link
-              href="/projects"
+              href="/led-display/outdoor-led-display"
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
-              {lang === "en" ? "View Project References" : "មើលគម្រោងយោង"}
+              {lang === "en" ? "Explore Outdoor LED Displays" : "មើលអេក្រង់ LED ខាងក្រៅ"}
             </Link>
             <Link
-              href="/service"
+              href="/contact"
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
-              {lang === "en" ? "Installation & Service Support" : "សេវាដំឡើង និងគាំទ្របច្ចេកទេស"}
+              {lang === "en" ? "Request LED Quotation" : "ស្នើសុំតម្លៃអេក្រង់ LED"}
             </Link>
           </div>
         </div>
-      </section>
+      </DeferredSection>
 
       {/* INTERNAL LINK CLUSTER */}
-      <section className="border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {(lang === "en" ? internalLinkTitleOverride : (internalLinkTitleOverrideKm ?? internalLinkTitleOverride)) ??
-              (lang === "en"
-                ? "Related LED Resources & Buying Paths in Cambodia"
-                : "ធនធាន LED ពាក់ព័ន្ធ និងផ្លូវសម្រេចចិត្តទិញនៅកម្ពុជា")}
-          </h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-600">
-            {(lang === "en" ? internalLinkDescOverride : (internalLinkDescOverrideKm ?? internalLinkDescOverride)) ??
-              (lang === "en"
-                ? "Use this internal cluster to navigate by buying intent: product type, technical component, installation support, or direct quotation."
-                : "ប្រើ internal cluster នេះ ដើម្បីរុករកតាមគោលបំណងទិញ៖ ប្រភេទផលិតផល ផ្នែកបច្ចេកទេស ការគាំទ្រការដំឡើង ឬស្នើសុំតម្លៃដោយផ្ទាល់។")}
-          </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {internalLinks.map((item, index) => (
-              <Link
-                key={`${item.href}-${item.title}-${index}`}
-                href={item.href}
-                className="rounded-2xl border border-slate-200 bg-white p-4 text-sm font-semibold text-slate-800 no-underline shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-900 hover:no-underline"
-              >
-                {item.title}
-              </Link>
-            ))}
+      <DeferredSection className="border-t border-slate-200 bg-slate-50" minHeight={180}>
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/80 to-sky-50/40 p-5 shadow-sm sm:p-6">
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+                  {(lang === "en" ? internalLinkTitleOverride : (internalLinkTitleOverrideKm ?? internalLinkTitleOverride)) ??
+                    (lang === "en"
+                      ? "Related LED Resources & Buying Paths in Cambodia"
+                      : "ធនធាន LED ពាក់ព័ន្ធ និងផ្លូវសម្រេចចិត្តទិញ")}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  {(lang === "en" ? internalLinkDescOverride : (internalLinkDescOverrideKm ?? internalLinkDescOverride)) ??
+                    (lang === "en"
+                      ? "Use this navigation hub to move by buying intent: product type, technical component, installation support, or direct quotation."
+                      : "ប្រើមជ្ឈមណ្ឌលរុករកនេះ ដើម្បីរុករកតាមគោលបំណងទិញ៖ ប្រភេទផលិតផល ផ្នែកបច្ចេកទេស ការគាំទ្រការដំឡើង ឬស្នើសុំតម្លៃដោយផ្ទាល់។")}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              {internalLinks.map((item, index) => {
+                const hint = internalLinkHints[index];
+                return (
+                  <Link
+                    key={`${item.href}-${item.title}-${index}`}
+                    href={item.href}
+                    className="group rounded-2xl border border-slate-200 bg-white p-4 text-slate-800 no-underline shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-900 hover:bg-slate-900 hover:text-white hover:shadow-md hover:no-underline"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span
+                        className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-600 group-hover:border-white/20 group-hover:bg-white/10 group-hover:text-slate-100"
+                      >
+                        {hint?.tag ?? (lang === "en" ? "LED Resource" : "ធនធានអេក្រង់ LED")}
+                      </span>
+                      <span className="text-sm text-slate-400 group-hover:text-slate-100">→</span>
+                    </div>
+                    <h3 className="mt-3 text-sm font-semibold leading-snug text-slate-900 group-hover:text-white">{item.title}</h3>
+                    <p className="mt-2 text-xs leading-relaxed text-slate-600 group-hover:text-slate-200">
+                      {hint?.desc ?? (lang === "en" ? "Explore this LED resource to support your next project decision." : "ស្វែងយល់ធនធានអេក្រង់ LED នេះ ដើម្បីជួយសម្រេចចិត្តគម្រោងបន្ទាប់របស់អ្នក។")}
+                    </p>
+                    <div className="mt-3 text-xs font-semibold text-sky-800 group-hover:text-white">
+                      {hint?.cta ?? (lang === "en" ? "Open Resource" : "បើកធនធាន")}
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </section>
+      </DeferredSection>
 
       {/* FAQ */}
-      <section className="border-t border-slate-200 bg-white">
+      <DeferredSection id="faq" className="border-t border-slate-200 bg-white" minHeight={180}>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {lang === "en" ? "Frequently Asked Question (FAQ)" : "សំណួរដែលសួរញឹកញាប់ (FAQ)"}
+            {lang === "en" ? "Frequently Asked Question (FAQ)" : "សំណួរដែលសួរញឹកញាប់"}
           </h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             {faqItems.map(({ q, a }, index) => (
@@ -1570,7 +1826,7 @@ export default function LedDisplayClient({
             ))}
           </div>
         </div>
-      </section>
+      </DeferredSection>
 
     </main>
   );

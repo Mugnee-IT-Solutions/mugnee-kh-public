@@ -3,7 +3,7 @@ import LedDisplayClient from "../products/led-display/LedDisplayClient";
 import { SITE_URL } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "LED Display in Cambodia: Price, Installation & Video Wall",
+  title: "LED Display Price in Cambodia 2026",
   description:
     "LED display solutions in Cambodia for indoor video wall, outdoor billboard, and commercial signage with BOQ planning, installation, commissioning, and local after-sales support.",
   keywords: [
@@ -18,10 +18,14 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: `${SITE_URL}/led-display`,
+    languages: {
+      en: `${SITE_URL}/led-display`,
+      km: `${SITE_URL}/led-display?lang=km`,
+    },
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "LED Display in Cambodia: Price, Installation & Video Wall",
+    title: "LED Display Price in Cambodia 2026",
     description:
       "Cambodia-focused LED display solutions for retail, corporate, hotels, events, and outdoor advertising with local engineering and after-sales support.",
     url: `${SITE_URL}/led-display`,
@@ -38,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LED Display in Cambodia: Price, Installation & Video Wall",
+    title: "LED Display Price in Cambodia 2026",
     description:
       "Indoor and outdoor LED display solutions in Cambodia with project-based quotation and local support.",
     images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],

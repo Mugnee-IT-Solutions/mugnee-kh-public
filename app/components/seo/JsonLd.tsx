@@ -1,5 +1,3 @@
-"use client";
-
 type JsonLdProps = {
   data: unknown;
   id?: string;
@@ -14,4 +12,3 @@ export default function JsonLd({ data, id }: JsonLdProps) {
     />
   );
 }
-

@@ -90,57 +90,57 @@ export default function InteractiveFlatPanelClient() {
 
     const km = {
       breadcrumb: "Interactive Flat Panel",
-      badge: "áž€áž˜áŸ’áž–áž»áž‡áž¶ â€¢ Interactive Flat Panel â€¢ Smart Board",
-      h1: "Interactive Flat Panel áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶",
+      badge: "កម្ពុជា • Interactive Flat Panel • Smart Board",
+      h1: "Interactive Flat Panel នៅកម្ពុជា",
       sub:
-        "Mugnee Multiple áž•áŸ’ážáž›áŸ‹ážŠáŸ†ážŽáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™ Interactive Flat Panel (smart board) áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáž¶áž›áž¶ážšáŸ€áž“ ážŸáž¶áž€áž›ážœáž·áž‘áŸ’áž™áž¶áž›áŸáž™ áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áž€áŸ’ážšáž»áž˜áž áŸŠáž»áž“ áž“áž·áž„ážŸáŸ’ážáž¶áž”áŸáž“ážšážŠáŸ’áž‹áž¶áž—áž·áž”áž¶áž›áŸ” áž™áž¾áž„áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹áž¢áŸáž€áŸ’ážšáž„áŸ‹ 4K touch áž‡áž¶áž˜áž½áž™ wireless screen sharing áž‡áž˜áŸ’ážšáž¾ážŸ Android/OPS áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ážŠáŸ„áž™ážœáž·áž‡áŸ’áž‡áž¶áž‡áž¸ážœáŸˆ áž€áž¶ážšáž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸áž›áž€áŸ‹áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ áž“áŸ…áž—áŸ’áž“áŸ†áž–áŸáž‰ ážŸáŸ€áž˜ážšáž¶áž” áž“áž·áž„áž–áŸ’ážšáŸ‡ážŸáž¸áž áž“áž» ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áŸ’ážšážŸáž·áž‘áŸ’áž’áž—áž¶áž–áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ážšáž™áŸˆáž–áŸáž›ážœáŸ‚áž„áŸ”",
-      cta1: "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ (Free)",
-      cta2: "áž˜áž¾áž› IFP Models",
-      serving: "ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áŸ– Phnom Penh â€¢ Siem Reap â€¢ Sihanoukville",
+        "Mugnee Multiple ផ្តល់ដំណោះស្រាយ Interactive Flat Panel (smart board) នៅកម្ពុជា សម្រាប់សាលារៀន សាកលវិទ្យាល័យ មជ្ឈមណ្ឌលបណ្តុះបណ្តាល បន្ទប់ប្រជុំក្រុមហ៊ុន និងស្ថាប័នរដ្ឋាភិបាល។ យើងផ្គត់ផ្គង់អេក្រង់ 4K touch ជាមួយ wireless screen sharing ជម្រើស Android/OPS ការដំឡើងដោយវិជ្ជាជីវៈ ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក នៅភ្នំពេញ សៀមរាប និងព្រះសីហនុ សម្រាប់ប្រសិទ្ធភាពប្រើប្រាស់រយៈពេលវែង។",
+      cta1: "ស្នើសុំតម្លៃ (Free)",
+      cta2: "មើល IFP Models",
+      serving: "សេវាកម្ម៖ Phnom Penh • Siem Reap • Sihanoukville",
 
       seoTitle: "Smart Board & Interactive Display Solutions",
       seoText:
-        "Interactive Flat Panel (smart board) áž‚ážºážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž”áž„áŸ’ážšáŸ€áž“ áž“áž·áž„áž€áž¶ážšážŸáž áž€áž¶ážš modernáŸ” áž‡áŸ’ážšáž¾ážŸ model ážáŸ’ážšáž¼ážœáž‚áž·ážáž–áž¸ screen size, touch performance, connectivity ports áž“áž·áž„ mounting methodáŸ” áž™áž¾áž„áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„ support ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ schools, universities, offices áž“áž·áž„ training centers áž‡áž¶áž˜áž½áž™ quotation ážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„áŸ”",
+        "Interactive Flat Panel (smart board) គឺសម្រាប់ការបង្រៀន និងការសហការ modern។ ជ្រើស model ត្រូវគិតពី screen size, touch performance, connectivity ports និង mounting method។ យើងផ្គត់ផ្គង់ ដំឡើង និង support សម្រាប់ schools, universities, offices និង training centers ជាមួយ quotation តាមគម្រោង។",
 
       keyTitle: "Interactive Flat Panel Specifications for Cambodia",
       keySub:
-        "ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšážŸáž˜áŸ’ážšáž¶áž”áŸ‹ writing ážŸáŸ’áž˜à©‚áž áž“áž·áž„ážšáž¼áž”áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”áŸ’ážšáž¾ážšáŸ€áž„ážšáž¶áž›áŸ‹ážáŸ’áž„áŸƒáŸ”",
+        "តម្រូវការសម្រាប់ writing ស្មੂត និងរូបភាពច្បាស់សម្រាប់ប្រើរៀងរាល់ថ្ងៃ។",
       k1: "Display & Resolution",
-      k1d: "4K UHD + anti-glare glass ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž˜áž¾áž›áž…áŸ’áž”áž¶ážŸáŸ‹áž“áŸ…áž”áž“áŸ’áž‘áž”áŸ‹áž—áŸ’áž›ážºáŸ”",
+      k1d: "4K UHD + anti-glare glass សម្រាប់មើលច្បាស់នៅបន្ទប់ភ្លឺ។",
       k2: "Touch Performance",
-      k2d: "Multi-touch ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸážšážŸáŸážš/annotation áž“áž·áž„ collaborationáŸ”",
+      k2d: "Multi-touch សម្រាប់សរសេរ/annotation និង collaboration។",
       k3: "Operating System",
-      k3d: "Android built-in; OPS/PC optional ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ Windows appsáŸ”",
+      k3d: "Android built-in; OPS/PC optional សម្រាប់ Windows apps។",
       k4: "Connectivity",
-      k4d: "HDMI/USB/USB-C, Wi-Fi/LAN, screen sharing áž“áž·áž„ audio outputáŸ”",
+      k4d: "HDMI/USB/USB-C, Wi-Fi/LAN, screen sharing និង audio output។",
 
       productTitle: "Interactive Flat Panel Models",
       productSub:
-        "áž‡áŸ’ážšáž¾ážŸáž‘áŸ†áž áŸ†ážáž¶áž˜ room size áž“áž·áž„ viewing distanceáŸ” ážŸáž¼áž˜áž•áŸ’áž‰áž¾ room size + use-case ážŠáž¾áž˜áŸ’áž”áž¸ážŽáŸ‚áž“áž¶áŸ†áž”áž¶áž“ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáŸ”",
+        "ជ្រើសទំហំតាម room size និង viewing distance។ សូមផ្ញើ room size + use-case ដើម្បីណែនាំបានត្រឹមត្រូវ។",
 
       useTitle: "Best Use Cases in Cambodia",
       useSub:
-        "áž€áž“áŸ’áž›áŸ‚áž„ážŠáŸ‚áž› IFP áž•áŸ’ážáž›áŸ‹ value ážáŸ’áž–ážŸáŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ learning áž“áž·áž„ presentationáŸ”",
+        "កន្លែងដែល IFP ផ្តល់ value ខ្ពស់សម្រាប់ learning និង presentation។",
       u1: "Schools & Smart Classrooms",
-      u1d: "Whiteboard, annotation, multimedia áž“áž·áž„ interactive lessonsáŸ”",
+      u1d: "Whiteboard, annotation, multimedia និង interactive lessons។",
       u2: "Meeting Rooms & Boardrooms",
-      u2d: "Presentation + collaboration + wireless sharingáŸ”",
+      u2d: "Presentation + collaboration + wireless sharing។",
       u3: "Training Centers",
-      u3d: "Training sessions áž‡áž¶áž˜áž½áž™ visuals áž…áŸ’áž”áž¶ážŸáŸ‹ áž“áž·áž„ demonstrationáŸ”",
+      u3d: "Training sessions ជាមួយ visuals ច្បាស់ និង demonstration។",
       u4: "Government & Institutions",
-      u4d: "áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ážšáŸ€áž„ážšáž¶áž›áŸ‹ážáŸ’áž„áŸƒážŸáž˜áŸ’ážšáž¶áž”áŸ‹ briefings áž“áž·áž„ reportingáŸ”",
+      u4d: "ប្រើប្រាស់រៀងរាល់ថ្ងៃសម្រាប់ briefings និង reporting។",
 
       compareTitle: "Interactive Flat Panel vs Projector",
       compareSub:
-        "áž áŸážáž»áž¢áŸ’ážœáž¸ schools/offices áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ upgrade áž‘áŸ… smart paneláŸ”",
-      cA: "áž˜áž¾áž›áž…áŸ’áž”áž¶ážŸáŸ‹áž“áŸ…áž”áž“áŸ’áž‘áž”áŸ‹áž—áŸ’áž›ážº",
-      cB: "maintenance ážáž·áž… (no lamp)",
+        "ហេតុអ្វី schools/offices នៅកម្ពុជា upgrade ទៅ smart panel។",
+      cA: "មើលច្បាស់នៅបន្ទប់ភ្លឺ",
+      cB: "maintenance តិច (no lamp)",
       cC: "Touch writing + annotation built-in",
       cD: "Wireless sharing + multi-device",
 
       setupTitle: "Installation, Setup & Training",
       setupSub:
-        "ážŠáŸ†áž¡áž¾áž„ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–, wiring ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž“áž·áž„áž”áž„áŸ’ážšáŸ€áž“áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áŸ”",
+        "ដំឡើងសុវត្ថិភាព, wiring ត្រឹមត្រូវ និងបង្រៀនប្រើប្រាស់។",
       s1: "Site check & mounting plan",
       s2: "Wall mount / floor stand setup",
       s3: "Wi-Fi/LAN + screen sharing configuration",
@@ -148,20 +148,20 @@ export default function InteractiveFlatPanelClient() {
 
       softwareTitle: "Software & Compatibility",
       softwareSub:
-        "Support laptops/phones áž“áž·áž„ meeting/learning workflow áž–áŸáž‰áž“áž·áž™áž˜áŸ”",
+        "Support laptops/phones និង meeting/learning workflow ពេញនិយម។",
       sw1: "Whiteboard + annotation apps",
       sw2: "Wireless casting (Windows/macOS/Android/iOS)",
       sw3: "OPS/PC option for Windows applications",
       sw4: "HDMI/USB-C plug & play",
 
       faqTitle: "FAQ - Interactive Flat Panel",
-      finalTitle: "ážŸáŸ’áž“áž¾ážŸáž»áŸ† Quotation ážáž¶áž˜áž‚áž˜áŸ’ážšáŸ„áž„",
+      finalTitle: "ស្នើសុំ Quotation តាមគម្រោង",
       finalSub:
-        "áž•áŸ’áž‰áž¾ room size, screen size áž“áž·áž„ use-case (classroom/meeting)à¥¤ áž™áž¾áž„áž“áž¹áž„ážŽáŸ‚áž“áž¶áŸ† model + installation + support optionsáŸ”",
-      finalCta: "áž‘áŸ†áž“áž¶áž€áŸ‹áž‘áŸ†áž“áž„ & ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ",
-      seeProjects: "áž˜áž¾áž›áž‚áž˜áŸ’ážšáŸ„áž„",
+        "ផ្ញើ room size, screen size និង use-case (classroom/meeting)। យើងនឹងណែនាំ model + installation + support options។",
+      finalCta: "ទំនាក់ទំនង & ស្នើសុំតម្លៃ",
+      seeProjects: "មើលគម្រោង",
       note:
-        "áž…áŸ†ážŽáž¶áŸ†áŸ– Final configuration (ports, OPS, mount type) ážáž¶áž˜ project requirementáŸ”",
+        "ចំណាំ៖ Final configuration (ports, OPS, mount type) តាម project requirement។",
     };
 
     return lang === "en" ? en : km;
@@ -201,65 +201,65 @@ export default function InteractiveFlatPanelClient() {
       qEn: "What size interactive flat panel should I choose for a classroom?",
       aEn:
         "Choose based on viewing distance and room size. Common classroom sizes range from 65 to 86 inch, while larger halls often use 98 to 110 inch.",
-      qKm: "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ ážáž¾áž‚áž½ážšáž‡áŸ’ážšáž¾ážŸáž‘áŸ†áž áŸ† Interactive Flat Panel áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
+      qKm: "សម្រាប់ថ្នាក់រៀន តើគួរជ្រើសទំហំ Interactive Flat Panel ប៉ុន្មាន?",
       aKm:
-        "áž‚áž½ážšáž‡áŸ’ážšáž¾ážŸážáž¶áž˜ viewing distance áž“áž·áž„áž‘áŸ†áž áŸ†áž”áž“áŸ’áž‘áž”áŸ‹áŸ” áž‘áŸ†áž áŸ†ážŠáŸ‚áž›áž”áŸ’ážšáž¾áž‰áž¹áž€áž‰áž¶áž”áŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž‚ážº 65-86 inch ážážŽáŸˆáž”áž“áŸ’áž‘áž”áŸ‹áž’áŸ†áž¢áž¶áž…áž”áŸ’ážšáž¾ 98-110 incháŸ”",
+        "គួរជ្រើសតាម viewing distance និងទំហំបន្ទប់។ ទំហំដែលប្រើញឹកញាប់សម្រាប់ថ្នាក់រៀនគឺ 65-86 inch ខណៈបន្ទប់ធំអាចប្រើ 98-110 inch។",
     },
     {
       qEn: "How far should students sit from a smart board?",
       aEn:
         "Viewing distance depends on screen size. As a general guide, 65-inch panels suit around 2 to 3.5 meters, 75-inch suits around 2.5 to 4 meters, and 86-inch around 3 to 5 meters.",
-      qKm: "ážŸáž·ážŸáŸ’ážŸáž‚áž½ážšáž¢áž„áŸ’áž‚áž»áž™áž†áŸ’áž„áž¶áž™áž–áž¸ Smart Board áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
+      qKm: "សិស្សគួរអង្គុយឆ្ងាយពី Smart Board ប៉ុន្មាន?",
       aKm:
-        "áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹áŸ” áž‡áž¶áž‘áž¼áž‘áŸ… 65-inch ážŸáž˜ážŸáŸ’ážšáž”áž”áŸ’ážšáž áŸ‚áž› 2-3.5m, 75-inch áž”áŸ’ážšáž áŸ‚áž› 2.5-4m áž“áž·áž„ 86-inch áž”áŸ’ážšáž áŸ‚áž› 3-5máŸ”",
+        "ចម្ងាយមើលអាស្រ័យលើទំហំអេក្រង់។ ជាទូទៅ 65-inch សមស្របប្រហែល 2-3.5m, 75-inch ប្រហែល 2.5-4m និង 86-inch ប្រហែល 3-5m។",
     },
     {
       qEn: "Do interactive flat panels support Android and Windows?",
       aEn:
         "Most models include Android, and many offer OPS/Windows compatibility. Check the exact model for OS version and OPS options.",
-      qKm: "Interactive Flat Panel áž‚áž¶áŸ†áž‘áŸ’ážš Android áž“áž·áž„ Windows ážŠáŸ‚ážšáž¬áž‘áŸ?",
+      qKm: "Interactive Flat Panel គាំទ្រ Android និង Windows ដែរឬទេ?",
       aKm:
-        "áž˜áŸ‰áž¼ážŒáŸ‚áž›áž—áž¶áž‚áž…áŸ’ážšáž¾áž“áž˜áž¶áž“ Android áž áž¾áž™áž˜áŸ‰áž¼ážŒáŸ‚áž›áž‡áž¶áž…áŸ’ážšáž¾áž“áž‚áž¶áŸ†áž‘áŸ’ážš OPS/Windows áž•áž„ážŠáŸ‚ážšáŸ” ážŸáž¼áž˜áž–áž·áž“áž·ážáŸ’áž™áž˜áŸ‰áž¼ážŒáŸ‚áž›áž‡áž¶áž€áŸ‹áž›áž¶áž€áŸ‹ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ OS version áž“áž·áž„ OPS optionáŸ”",
+        "ម៉ូឌែលភាគច្រើនមាន Android ហើយម៉ូឌែលជាច្រើនគាំទ្រ OPS/Windows ផងដែរ។ សូមពិនិត្យម៉ូឌែលជាក់លាក់សម្រាប់ OS version និង OPS option។",
     },
     {
       qEn: "How many touch points does an IFP support?",
       aEn:
         "Multi-touch is standard. For example, some models support 20-point touch, and higher-end models support 40-point touch.",
-      qKm: "IFP áž˜áž½áž™áž¢áž¶áž…áž‚áž¶áŸ†áž‘áŸ’ážš touch points áž”áž¶áž“áž”áŸ‰áž»áž“áŸ’áž˜áž¶áž“?",
+      qKm: "IFP មួយអាចគាំទ្រ touch points បានប៉ុន្មាន?",
       aKm:
-        "Multi-touch áž‚ážºáž‡áž¶ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážšáŸ” áž§áž‘áž¶áž ážšážŽáŸ áž˜áŸ‰áž¼ážŒáŸ‚áž›ážáŸ’áž›áŸ‡áž‚áž¶áŸ†áž‘áŸ’ážš 20-point touch áž áž¾áž™áž˜áŸ‰áž¼ážŒáŸ‚áž›ážáŸ’áž–ážŸáŸ‹áž‚áž¶áŸ†áž‘áŸ’ážš 40-point toucháŸ”",
+        "Multi-touch គឺជាស្តង់ដារ។ ឧទាហរណ៍ ម៉ូឌែលខ្លះគាំទ្រ 20-point touch ហើយម៉ូឌែលខ្ពស់គាំទ្រ 40-point touch។",
     },
     {
       qEn: "Can I connect laptops and phones wirelessly?",
       aEn:
         "Yes. Many models support wireless screen sharing, plus HDMI and USB-C for plug-and-play connectivity.",
-      qKm: "ážáž¾áž¢áž¶áž…áž—áŸ’áž‡áž¶áž”áŸ‹ laptop áž“áž·áž„ phone ážŠáŸ„áž™ wireless áž”áž¶áž“áž‘áŸ?",
+      qKm: "តើអាចភ្ជាប់ laptop និង phone ដោយ wireless បានទេ?",
       aKm:
-        "áž”áž¶áž“áŸ” áž˜áŸ‰áž¼ážŒáŸ‚áž›áž‡áž¶áž…áŸ’ážšáž¾áž“áž‚áž¶áŸ†áž‘áŸ’ážš wireless screen sharing áž“áž·áž„áž˜áž¶áž“ HDMI/USB-C ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ plug-and-play connectivityáŸ”",
+        "បាន។ ម៉ូឌែលជាច្រើនគាំទ្រ wireless screen sharing និងមាន HDMI/USB-C សម្រាប់ plug-and-play connectivity។",
     },
     {
       qEn: "Do you provide installation and user training in Cambodia?",
       aEn:
         "Yes. We provide installation, configuration, and training for classrooms, meeting rooms, and training centers.",
-      qKm: "ážáž¾áž¢áŸ’áž“áž€áž•áŸ’ážáž›áŸ‹ážŸáŸážœáž¶ installation áž“áž·áž„ user training áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ážŠáŸ‚ážšáž¬áž‘áŸ?",
+      qKm: "តើអ្នកផ្តល់សេវា installation និង user training នៅកម្ពុជាដែរឬទេ?",
       aKm:
-        "áž”áž¶áž‘/áž…áž¶ážŸáŸ” áž™áž¾áž„áž•áŸ’ážáž›áŸ‹ážŸáŸážœáž¶ installation, configuration áž“áž·áž„ training ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ classroom, meeting room áž“áž·áž„ training centeráŸ”",
+        "បាទ/ចាស។ យើងផ្តល់សេវា installation, configuration និង training សម្រាប់ classroom, meeting room និង training center។",
     },
     {
       qEn: "What are the key ports I should check?",
       aEn:
         "Look for HDMI, USB, USB-C, and LAN connectivity. These cover most classroom and meeting room setups.",
-      qKm: "ports ážŸáŸ†ážáž¶áž“áŸ‹áŸ—ážŠáŸ‚áž›áž‚áž½ážšážáŸ‚áž–áž·áž“áž·ážáŸ’áž™áž˜áž¶áž“áž¢áŸ’ážœáž¸ážáŸ’áž›áŸ‡?",
+      qKm: "ports សំខាន់ៗដែលគួរតែពិនិត្យមានអ្វីខ្លះ?",
       aKm:
-        "áž‚áž½ážšáž–áž·áž“áž·ážáŸ’áž™ HDMI, USB, USB-C áž“áž·áž„ LAN connectivity áž–áŸ’ážšáŸ„áŸ‡ážœáž¶áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹ setup áž—áž¶áž‚áž…áŸ’ážšáž¾áž“ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ classroom áž“áž·áž„ meeting roomáŸ”",
+        "គួរពិនិត្យ HDMI, USB, USB-C និង LAN connectivity ព្រោះវាគ្របដណ្តប់ setup ភាគច្រើនសម្រាប់ classroom និង meeting room។",
     },
     {
       qEn: "Do you offer warranty and after-sales support?",
       aEn:
         "Yes. Warranty terms depend on the model and project scope. We share the coverage details during quotation.",
-      qKm: "ážáž¾áž˜áž¶áž“ warranty áž“áž·áž„ after-sales support ážŠáŸ‚ážšáž¬áž‘áŸ?",
+      qKm: "តើមាន warranty និង after-sales support ដែរឬទេ?",
       aKm:
-        "áž˜áž¶áž“áŸ” áž›áž€áŸ’ážážážŽáŸ’ážŒ warranty áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž˜áŸ‰áž¼ážŒáŸ‚áž› áž“áž·áž„ scope áž‚áž˜áŸ’ážšáŸ„áž„ áž áž¾áž™áž™áž¾áž„áž“áž¹áž„áž•áŸ’ážáž›áŸ‹áž–áŸážáŸŒáž˜áž¶áž“ coverage áž–áŸáž› quotationáŸ”",
+        "មាន។ លក្ខខណ្ឌ warranty អាស្រ័យលើម៉ូឌែល និង scope គម្រោង ហើយយើងនឹងផ្តល់ព័ត៌មាន coverage ពេល quotation។",
     },
     ],
     []
@@ -476,16 +476,16 @@ export default function InteractiveFlatPanelClient() {
                 <div className="text-sm font-semibold text-slate-900">
                   {lang === "en"
                     ? "Quick Links for Interactive Flat Panel"
-                    : "ážáŸ†ážŽážšáž áŸážŸážŸáž˜áŸ’ážšáž¶áž”áŸ‹ Interactive Flat Panel"}
+                    : "តំណរហ័សសម្រាប់ Interactive Flat Panel"}
                 </div>
                 <div className="mt-1 text-xs text-slate-600">
                   {lang === "en"
                     ? "Jump to the buying guide, decision matrix, specs, and support details."
-                    : "áž…áž¼áž›áž‘áŸ…áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‘áž·áž‰ ážáž¶ážšáž¶áž„ážŸáž˜áŸ’ážšáŸáž…áž…áž·ážáŸ’áž áž€áž¶ážšáž”áŸ’ážšáŸ€áž”áž’áŸ€áž”áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ áž“áž·áž„áž–áŸážáŸŒáž˜áž¶áž“áž‚áž¶áŸ†áž‘áŸ’ážšáŸ”"}
+                    : "ចូលទៅមគ្គុទ្ទេសក៍ទិញ តារាងសម្រេចចិត្ត ការប្រៀបធៀបលក្ខណៈបច្ចេកទេស និងព័ត៌មានគាំទ្រ។"}
                 </div>
               </div>
               <div className="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 sm:block">
-                {lang === "en" ? "Quick Links" : "ážáŸ†ážŽážšáž áŸážŸ"}
+                {lang === "en" ? "Quick Links" : "តំណរហ័ស"}
               </div>
             </div>
 
@@ -502,13 +502,13 @@ export default function InteractiveFlatPanelClient() {
                       { label: "FAQ", href: "#faq" },
                     ]
                   : [
-                      { label: "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‘áž·áž‰", href: "#buying-guide" },
-                      { label: "ážáž¶ážšáž¶áž„ážŸáž˜áŸ’ážšáŸáž…áž…áž·ážáŸ’áž", href: "#decision-matrix" },
-                      { label: "áž”áŸ’ážšáŸ€áž”áž’áŸ€áž”áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ", href: "#specs-comparison" },
-                      { label: "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„", href: "#installation" },
-                      { label: "áž€ážšážŽáž¸áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹", href: "#case-studies" },
-                      { label: "áž€áž¶ážšáž’áž¶áž“áž¶ áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážš", href: "#warranty-support" },
-                      { label: "ážŸáŸ†ážŽáž½ážšáž‰áž¹áž€áž‰áž¶áž”áŸ‹", href: "#faq" },
+                      { label: "មគ្គុទ្ទេសក៍ទិញ", href: "#buying-guide" },
+                      { label: "តារាងសម្រេចចិត្ត", href: "#decision-matrix" },
+                      { label: "ប្រៀបធៀបលក្ខណៈបច្ចេកទេស", href: "#specs-comparison" },
+                      { label: "ការដំឡើង", href: "#installation" },
+                      { label: "ករណីប្រើប្រាស់", href: "#case-studies" },
+                      { label: "ការធានា និងការគាំទ្រ", href: "#warranty-support" },
+                      { label: "សំណួរញឹកញាប់", href: "#faq" },
                     ]
               ).map((item) => (
                 <a
@@ -530,34 +530,34 @@ export default function InteractiveFlatPanelClient() {
           <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {lang === "en" ? "Interactive Flat Panel Basics" : "áž˜áž¼áž›ážŠáŸ’áž‹áž¶áž“áž¢áŸ†áž–áž¸ Interactive Flat Panel"}
+                {lang === "en" ? "Interactive Flat Panel Basics" : "មូលដ្ឋានអំពី Interactive Flat Panel"}
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
                   ? "What Is an Interactive Flat Panel (IFP)?"
-                  : "ážáž¾ Interactive Flat Panel (IFP) áž‡áž¶áž¢áŸ’ážœáž¸?"}
+                  : "តើ Interactive Flat Panel (IFP) ជាអ្វី?"}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 {lang === "en"
                   ? "An interactive flat panel is a large 4K touchscreen display that combines a digital whiteboard, presentation screen, and collaboration tools in one device. It is commonly used in classrooms, meeting rooms, training centers, and healthcare briefings because it supports real-time writing, annotation, and wireless screen sharing."
-                  : "Interactive Flat Panel áž‚ážºáž‡áž¶áž¢áŸáž€áŸ’ážšáž„áŸ‹ touchscreen 4K áž‘áŸ†áž áŸ†áž’áŸ† ážŠáŸ‚áž›ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž› whiteboard ážŒáž¸áž‡áž¸ážáž› áž¢áŸáž€áŸ’ážšáž„áŸ‹áž”áž„áŸ’áž áž¶áž‰ áž“áž·áž„áž§áž”áž€ážšážŽáŸážŸáž áž€áž¶ážšáž“áŸ…áž€áŸ’áž“áž»áž„áž§áž”áž€ážšážŽáŸážáŸ‚áž˜áž½áž™áŸ” ážœáž¶ážáŸ’ážšáž¼ážœáž”áž¶áž“áž”áŸ’ážšáž¾áž™áŸ‰áž¶áž„áž‘áž¼áž›áŸ†áž‘áž¼áž›áž¶áž™áž“áŸ…ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› áž“áž·áž„áž€áž¶ážšáž”áž„áŸ’áž áž¶áž‰áž•áŸ’áž“áŸ‚áž€ážŸáž»ážáž¶áž—áž·áž”áž¶áž› áž–áž¸áž–áŸ’ážšáŸ„áŸ‡ážœáž¶áž‚áž¶áŸ†áž‘áŸ’ážšáž€áž¶ážšážŸážšážŸáŸážšážáž¶áž˜áž–áŸáž›ážœáŸáž›áž¶áž‡áž¶áž€áŸ‹ážŸáŸ’ážáŸ‚áž„ annotation áž“áž·áž„ wireless screen sharingáŸ”"}
+                  : "Interactive Flat Panel គឺជាអេក្រង់ touchscreen 4K ទំហំធំ ដែលរួមបញ្ចូល whiteboard ឌីជីថល អេក្រង់បង្ហាញ និងឧបករណ៍សហការនៅក្នុងឧបករណ៍តែមួយ។ វាត្រូវបានប្រើយ៉ាងទូលំទូលាយនៅថ្នាក់រៀន បន្ទប់ប្រជុំ មជ្ឈមណ្ឌលបណ្តុះបណ្តាល និងការបង្ហាញផ្នែកសុខាភិបាល ពីព្រោះវាគាំទ្រការសរសេរតាមពេលវេលាជាក់ស្តែង annotation និង wireless screen sharing។"}
               </p>
 
               <h3 className="mt-6 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
                   ? "How Does an Interactive Flat Panel Work?"
-                  : "Interactive Flat Panel ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž™áŸ‰áž¶áž„ážŠáž¼áž…áž˜áŸ’ážáŸáž…?"}
+                  : "Interactive Flat Panel ដំណើរការយ៉ាងដូចម្តេច?"}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
                 {lang === "en"
                   ? "The panel uses a high-resolution LCD with a multi-touch layer that detects finger or stylus input. Built-in Android software runs whiteboard and collaboration apps, while HDMI/USB-C/LAN ports and wireless casting allow laptops and phones to share content instantly. Optional OPS/Windows modules turn the screen into a full PC for advanced applications."
-                  : "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž“áŸáŸ‡áž”áŸ’ážšáž¾ LCD resolution ážáŸ’áž–ážŸáŸ‹ áž‡áž¶áž˜áž½áž™ážŸáŸ’ážšáž‘áž¶áž”áŸ‹ multi-touch ážŠáŸ‚áž›áž¢áž¶áž…áž…áž¶áž”áŸ‹ážŸáž‰áŸ’áž‰áž¶áž–áž¸áž˜áŸ’ážšáž¶áž˜ážŠáŸƒ áž¬ stylusáŸ” Software Android ážŠáŸ‚áž›áž—áŸ’áž‡áž¶áž”áŸ‹áž˜áž€áž€áŸ’áž“áž»áž„áž˜áŸ‰áž¶ážŸáŸŠáž¸áž“ áž¢áž¶áž…ážŠáŸ†ážŽáž¾ážšáž€áž¶ážš whiteboard áž“áž·áž„áž€áž˜áŸ’áž˜ážœáž·áž’áž¸ážŸáž áž€áž¶ážš ážážŽáŸˆ HDMI/USB-C/LAN áž“áž·áž„ wireless casting áž¢áž“áž»áž‰áŸ’áž‰áž¶ážáž±áŸ’áž™ laptop áž“áž·áž„áž‘áž¼ážšážŸáŸáž–áŸ’áž‘áž…áŸ‚áž€ážšáŸ†áž›áŸ‚áž€áž˜áž¶ážáž·áž€áž¶áž”áž¶áž“áž—áŸ’áž›áž¶áž˜áŸ—áŸ” áž‡áž˜áŸ’ážšáž¾ážŸ OPS/Windows module áž¢áž¶áž…áž”áž˜áŸ’áž›áŸ‚áž„áž¢áŸáž€áŸ’ážšáž„áŸ‹áž“áŸáŸ‡áž±áŸ’áž™áž€áŸ’áž›áž¶áž™áž‡áž¶ PC áž–áŸáž‰áž›áŸáž‰ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž€áž˜áŸ’ážšáž·ážážáŸ’áž–ážŸáŸ‹áŸ”"}
+                  : "អេក្រង់នេះប្រើ LCD resolution ខ្ពស់ ជាមួយស្រទាប់ multi-touch ដែលអាចចាប់សញ្ញាពីម្រាមដៃ ឬ stylus។ Software Android ដែលភ្ជាប់មកក្នុងម៉ាស៊ីន អាចដំណើរការ whiteboard និងកម្មវិធីសហការ ខណៈ HDMI/USB-C/LAN និង wireless casting អនុញ្ញាតឱ្យ laptop និងទូរស័ព្ទចែករំលែកមាតិកាបានភ្លាមៗ។ ជម្រើស OPS/Windows module អាចបម្លែងអេក្រង់នេះឱ្យក្លាយជា PC ពេញលេញ សម្រាប់ការប្រើប្រាស់កម្រិតខ្ពស់។"}
               </p>
             </div>
 
             <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm lg:mt-20">
               <div className="text-sm font-semibold text-slate-900">
-                {lang === "en" ? "Key Benefits for Cambodia Buyers" : "áž¢ážáŸ’ážáž”áŸ’ážšáž™áŸ„áž‡áž“áŸážŸáŸ†ážáž¶áž“áŸ‹áŸ—ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž¢áŸ’áž“áž€áž‘áž·áž‰áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶"}
+                {lang === "en" ? "Key Benefits for Cambodia Buyers" : "អត្ថប្រយោជន៍សំខាន់ៗសម្រាប់អ្នកទិញនៅកម្ពុជា"}
               </div>
               <ul className="mt-3 space-y-2 text-sm text-slate-600">
                 {(lang === "en"
@@ -569,11 +569,11 @@ export default function InteractiveFlatPanelClient() {
                       "Lower maintenance than projector systems",
                     ]
                   : [
-                      "áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹ 4K UHD ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†",
-                      "áž€áž¶ážšážŸážšážŸáŸážš multi-touch áž“áž·áž„ annotation",
-                      "Wireless screen sharing áž“áž·áž„ port áž”áŸ’ážšáž¾áž—áŸ’áž›áž¶áž˜áŸ— (plug-and-play)",
-                      "Android áž—áŸ’áž‡áž¶áž”áŸ‹áž˜áž€áž€áŸ’áž“áž»áž„áž˜áŸ‰áž¶ážŸáŸŠáž¸áž“ áž‡áž¶áž˜áž½áž™áž‡áž˜áŸ’ážšáž¾ážŸ OPS/Windows",
-                      "ážáŸ‚áž‘áž¶áŸ†áž‘áž¶áž”áž‡áž¶áž„áž”áŸ’ážšáž–áŸáž“áŸ’áž’ projector",
+                      "ភាពច្បាស់ 4K UHD សម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ",
+                      "ការសរសេរ multi-touch និង annotation",
+                      "Wireless screen sharing និង port ប្រើភ្លាមៗ (plug-and-play)",
+                      "Android ភ្ជាប់មកក្នុងម៉ាស៊ីន ជាមួយជម្រើស OPS/Windows",
+                      "ថែទាំទាបជាងប្រព័ន្ធ projector",
                     ]).map((item) => (
                   <li key={item} className="flex gap-2">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
@@ -592,18 +592,18 @@ export default function InteractiveFlatPanelClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "Interactive Flat Panel Use-Case Selection Guide"
-              : "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‡áŸ’ážšáž¾ážŸážšáž¾ážŸáž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ Interactive Flat Panel"}
+              : "មគ្គុទ្ទេសក៍ជ្រើសរើសការប្រើប្រាស់ Interactive Flat Panel"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Match your environment to the best screen size and features. This quick matrix helps you shortlist the right interactive flat panel."
-              : "áž•áŸ’áž‚áž¼áž•áŸ’áž‚áž„áž”ážšáž·áž™áž¶áž€áž¶ážŸáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ážšáž”ážŸáŸ‹áž¢áŸ’áž“áž€áž‡áž¶áž˜áž½áž™áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹ áž“áž·áž„áž˜áž»ážáž„áž¶ážšážŠáŸ‚áž›ážŸáž˜ážŸáŸ’ážšáž”áž”áŸ†áž•áž»ážáŸ” ážáž¶ážšáž¶áž„ážáŸ’áž›áž¸áž“áŸáŸ‡áž‡áž½áž™áž¢áŸ’áž“áž€áž‡áŸ’ážšáž¾ážŸážšáž¾ážŸ Interactive Flat Panel ážŠáŸ‚áž›ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœáŸ”"}
+              : "ផ្គូផ្គងបរិយាកាសប្រើប្រាស់របស់អ្នកជាមួយទំហំអេក្រង់ និងមុខងារដែលសមស្របបំផុត។ តារាងខ្លីនេះជួយអ្នកជ្រើសរើស Interactive Flat Panel ដែលត្រឹមត្រូវ។"}
           </p>
           <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
-              <div className="p-3">{lang === "en" ? "Use Case" : "áž€ážšážŽáž¸áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹"}</div>
-              <div className="p-3">{lang === "en" ? "Recommended Size" : "áž‘áŸ†áž áŸ†ážŠáŸ‚áž›ážŽáŸ‚áž“áž¶áŸ†"}</div>
-              <div className="p-3">{lang === "en" ? "Key Focus" : "áž…áŸ†ážŽáž»áž…ážŸáŸ†ážáž¶áž“áŸ‹"}</div>
+              <div className="p-3">{lang === "en" ? "Use Case" : "ករណីប្រើប្រាស់"}</div>
+              <div className="p-3">{lang === "en" ? "Recommended Size" : "ទំហំដែលណែនាំ"}</div>
+              <div className="p-3">{lang === "en" ? "Key Focus" : "ចំណុចសំខាន់"}</div>
             </div>
             {(lang === "en"
               ? [
@@ -614,11 +614,11 @@ export default function InteractiveFlatPanelClient() {
                   ["Hospitals", "65 - 86 inch", "Clean visuals, quick annotation"],
                 ]
               : [
-                  ["ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“", "65 - 86 inch", "áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹ 4K, multi-touch, áž§áž”áž€ážšážŽáŸ whiteboard"],
-                  ["áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†", "65 - 75 inch", "Wireless sharing, HDMI/USB-C"],
-                  ["áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›", "75 - 98 inch", "áž€áž¶ážšáž˜áž¾áž›ážƒáž¾áž‰áž’áŸ†áž‘áž¼áž›áž¶áž™, multi-user touch"],
-                  ["ážŸáž¶áž›áž”áŸ’ážšáž‡áž»áŸ†áž’áŸ†", "98 - 110 inch", "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž’áŸ†ážáŸ’áž›áž¶áŸ†áž„, áž˜áž»áŸ†áž˜áž¾áž›áž‘áž¼áž›áž¶áž™"],
-                  ["áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™", "65 - 86 inch", "ážšáž¼áž”áž—áž¶áž–ážŸáŸ’áž¢áž¶áž, annotation ážšáž áŸážŸ"],
+                  ["ថ្នាក់រៀន", "65 - 86 inch", "ភាពច្បាស់ 4K, multi-touch, ឧបករណ៍ whiteboard"],
+                  ["បន្ទប់ប្រជុំ", "65 - 75 inch", "Wireless sharing, HDMI/USB-C"],
+                  ["មជ្ឈមណ្ឌលបណ្តុះបណ្តាល", "75 - 98 inch", "ការមើលឃើញធំទូលាយ, multi-user touch"],
+                  ["សាលប្រជុំធំ", "98 - 110 inch", "អេក្រង់ធំខ្លាំង, មុំមើលទូលាយ"],
+                  ["មន្ទីរពេទ្យ", "65 - 86 inch", "រូបភាពស្អាត, annotation រហ័ស"],
                 ]).map((row) => (
               <div
                 key={row[0]}
@@ -639,19 +639,19 @@ export default function InteractiveFlatPanelClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "Interactive Flat Panel Specifications Comparison by Size"
-              : "áž€áž¶ážšáž”áŸ’ážšáŸ€áž”áž’áŸ€áž”áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ Interactive Flat Panel ážáž¶áž˜áž‘áŸ†áž áŸ†"}
+              : "ការប្រៀបធៀបលក្ខណៈបច្ចេកទេស Interactive Flat Panel តាមទំហំ"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Compare size, 4K resolution, touch points, OS support, and connectivity to select the best interactive flat panel for classrooms, meeting rooms, and training centers in Cambodia."
-              : "áž”áŸ’ážšáŸ€áž”áž’áŸ€áž”áž‘áŸ†áž áŸ† áž€áž˜áŸ’ážšáž·ážáž”áž„áŸ’áž áž¶áž‰ 4K áž…áŸ†áž“áž½áž“ touch points áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážš OS áž“áž·áž„áž€áž¶ážšážáž—áŸ’áž‡áž¶áž”áŸ‹ ážŠáž¾áž˜áŸ’áž”áž¸áž‡áŸ’ážšáž¾ážŸážšáž¾ážŸ Interactive Flat Panel ážŠáŸ‚áž›ážŸáž˜ážŸáŸ’ážšáž”áž”áŸ†áž•áž»áž ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áž·áž„áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”"}
+              : "ប្រៀបធៀបទំហំ កម្រិតបង្ហាញ 4K ចំនួន touch points ការគាំទ្រ OS និងការតភ្ជាប់ ដើម្បីជ្រើសរើស Interactive Flat Panel ដែលសមស្របបំផុត សម្រាប់ថ្នាក់រៀន បន្ទប់ប្រជុំ និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាលនៅកម្ពុជា។"}
           </p>
           <div className="mt-6 rounded-2xl border border-slate-200 bg-white">
             <div className="hidden sm:block">
               <div className="grid grid-cols-3 bg-slate-100 text-sm font-semibold text-slate-900">
-                <div className="p-3">{lang === "en" ? "Model" : "áž˜áŸ‰áž¼ážŠáŸ‚áž›"}</div>
-                <div className="p-3">{lang === "en" ? "Best Use" : "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ážŸáž˜ážŸáŸ’ážšáž”"}</div>
-                <div className="p-3">{lang === "en" ? "Highlights" : "áž…áŸ†ážŽáž»áž…áž–áž·ážŸáŸážŸ"}</div>
+                <div className="p-3">{lang === "en" ? "Model" : "ម៉ូដែល"}</div>
+                <div className="p-3">{lang === "en" ? "Best Use" : "ការប្រើប្រាស់សមស្រប"}</div>
+                <div className="p-3">{lang === "en" ? "Highlights" : "ចំណុចពិសេស"}</div>
               </div>
               {ifpProducts.map((p) => {
                 const highlights = (lang === "en" ? p.featuresEn : p.featuresKm).slice(0, 2).join(" | ");
@@ -677,11 +677,11 @@ export default function InteractiveFlatPanelClient() {
                   <div className="text-sm font-semibold text-slate-900">{lang === "en" ? p.titleEn : p.titleKm}</div>
                   <div className="mt-2 grid gap-2">
                     <div className="flex items-start justify-between gap-3">
-                      <span className="font-semibold text-slate-700">{lang === "en" ? "Best Use" : "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ážŸáž˜ážŸáŸ’ážšáž”"}</span>
+                      <span className="font-semibold text-slate-700">{lang === "en" ? "Best Use" : "ការប្រើប្រាស់សមស្រប"}</span>
                       <span className="text-right">{lang === "en" ? p.shortDescEn : p.shortDescKm}</span>
                     </div>
                     <div className="flex items-start justify-between gap-3">
-                      <span className="font-semibold text-slate-700">{lang === "en" ? "Highlights" : "áž…áŸ†ážŽáž»áž…áž–áž·ážŸáŸážŸ"}</span>
+                      <span className="font-semibold text-slate-700">{lang === "en" ? "Highlights" : "ចំណុចពិសេស"}</span>
                       <span className="text-right">
                         {(lang === "en" ? p.featuresEn : p.featuresKm).slice(0, 2).join(" | ")}
                       </span>
@@ -700,24 +700,24 @@ export default function InteractiveFlatPanelClient() {
           <div className="grid gap-6 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {lang === "en" ? "Buying Guide" : "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‘áž·áž‰"}
+                {lang === "en" ? "Buying Guide" : "មគ្គុទ្ទេសក៍ទិញ"}
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
                   ? "Screen Size & Viewing Distance Guide"
-                  : "áž˜áž‚áŸ’áž‚áž»áž‘áŸ’áž‘áŸážŸáž€áŸáž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹ áž“áž·áž„áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›"}
+                  : "មគ្គុទ្ទេសក៍ទំហំអេក្រង់ និងចម្ងាយមើល"}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
                 {lang === "en"
                   ? "Choose the screen size based on seating distance, room size, and content type. Classroom environments often use 65-86 inch, while auditoriums and large training halls prefer 98-110 inch panels."
-                  : "áž‡áŸ’ážšáž¾ážŸáž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹ážŠáŸ„áž™áž•áŸ’áž¢áŸ‚áž€áž›áž¾áž…áž˜áŸ’áž„áž¶áž™áž¢áž„áŸ’áž‚áž»áž™ áž‘áŸ†áž áŸ†áž”áž“áŸ’áž‘áž”áŸ‹ áž“áž·áž„áž”áŸ’ážšáž—áŸáž‘áž˜áž¶ážáž·áž€áž¶áŸ” áž”ážšáž·áž™áž¶áž€áž¶ážŸážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž‡áž¶áž‰áž¹áž€áž‰áž¶áž”áŸ‹áž”áŸ’ážšáž¾ 65-86 inch ážážŽáŸˆážŸáž¶áž›áž”áŸ’ážšáž‡áž»áŸ†áž’áŸ† áž“áž·áž„ážŸáž¶áž›áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž’áŸ†áŸ— áž…áž¼áž›áž…áž·ážáŸ’ážáž”áž“áŸ’áž‘áŸ‡ 98-110 incháŸ”"}
+                  : "ជ្រើសទំហំអេក្រង់ដោយផ្អែកលើចម្ងាយអង្គុយ ទំហំបន្ទប់ និងប្រភេទមាតិកា។ បរិយាកាសថ្នាក់រៀនជាញឹកញាប់ប្រើ 65-86 inch ខណៈសាលប្រជុំធំ និងសាលបណ្តុះបណ្តាលធំៗ ចូលចិត្តបន្ទះ 98-110 inch។"}
               </p>
 
               <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
                 <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
-                  <div className="p-3">{lang === "en" ? "Viewing Distance" : "áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›"}</div>
-                  <div className="p-3">{lang === "en" ? "Recommended Size" : "áž‘áŸ†áž áŸ†ážŠáŸ‚áž›ážŽáŸ‚áž“áž¶áŸ†"}</div>
-                  <div className="p-3">{lang === "en" ? "Typical Room" : "áž”áŸ’ážšáž—áŸáž‘áž”áž“áŸ’áž‘áž”áŸ‹áž‘áž¼áž‘áŸ…"}</div>
+                  <div className="p-3">{lang === "en" ? "Viewing Distance" : "ចម្ងាយមើល"}</div>
+                  <div className="p-3">{lang === "en" ? "Recommended Size" : "ទំហំដែលណែនាំ"}</div>
+                  <div className="p-3">{lang === "en" ? "Typical Room" : "ប្រភេទបន្ទប់ទូទៅ"}</div>
                 </div>
                 {(lang === "en"
                   ? [
@@ -728,11 +728,11 @@ export default function InteractiveFlatPanelClient() {
                       ["5 m+", "98 - 110 inch", "Auditoriums & halls"],
                     ]
                   : [
-                      ["1.5 - 2 m", "55 - 65 inch", "ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ážáž¼áž…"],
-                      ["2 - 3 m", "65 - 75 inch", "ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ážŸáŸ’ážáž„áŸ‹ážŠáž¶ážš"],
-                      ["3 - 4 m", "75 - 86 inch", "áž”áž“áŸ’áž‘áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›"],
-                      ["4 - 5 m", "86 - 98 inch", "ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“áž’áŸ†"],
-                      ["5 m+", "98 - 110 inch", "ážŸáž¶áž›áž”áŸ’ážšáž‡áž»áŸ† áž“áž·áž„ážŸáž¶áž›áž’áŸ†áŸ—"],
+                      ["1.5 - 2 m", "55 - 65 inch", "ថ្នាក់រៀនតូច"],
+                      ["2 - 3 m", "65 - 75 inch", "ថ្នាក់រៀនស្តង់ដារ"],
+                      ["3 - 4 m", "75 - 86 inch", "បន្ទប់បណ្តុះបណ្តាល"],
+                      ["4 - 5 m", "86 - 98 inch", "ថ្នាក់រៀនធំ"],
+                      ["5 m+", "98 - 110 inch", "សាលប្រជុំ និងសាលធំៗ"],
                     ]).map((row) => (
                   <div
                     key={row[0]}
@@ -748,21 +748,21 @@ export default function InteractiveFlatPanelClient() {
 
             <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
               <div className="text-sm font-semibold text-slate-900">
-                {lang === "en" ? "Quick Recommendation Calculator" : "áž§áž”áž€ážšážŽáŸáž‚ážŽáž“áž¶ážŽáŸ‚áž“áž¶áŸ†ážšáž áŸážŸ"}
+                {lang === "en" ? "Quick Recommendation Calculator" : "ឧបករណ៍គណនាណែនាំរហ័ស"}
               </div>
               <p className="mt-2 text-xs text-slate-600">
                 {lang === "en"
                   ? "Enter the approximate viewing distance (meters). We will suggest a screen size range."
-                  : "áž”áž‰áŸ’áž…áž¼áž›áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž›áž”áŸ’ážšáž áž¶áž€áŸ‹áž”áŸ’ážšáž áŸ‚áž› (áž˜áŸ‰áŸ‚ážáŸ’ážš)áŸ” áž™áž¾áž„áž“áž¹áž„ážŽáŸ‚áž“áž¶áŸ†áž‡áž½ážšáž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹ážŸáž˜ážŸáŸ’ážšáž”áŸ”"}
+                  : "បញ្ចូលចម្ងាយមើលប្រហាក់ប្រហែល (ម៉ែត្រ)។ យើងនឹងណែនាំជួរទំហំអេក្រង់សមស្រប។"}
               </p>
               <label className="mt-4 block text-xs font-semibold text-slate-700">
-                {lang === "en" ? "Viewing distance (m)" : "áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› (m)"}
+                {lang === "en" ? "Viewing distance (m)" : "ចម្ងាយមើល (m)"}
               </label>
               <input
                 value={viewDistance}
                 onChange={(e) => setViewDistance(e.target.value)}
                 inputMode="decimal"
-                placeholder={lang === "en" ? "e.g. 3.5" : "áž§. 3.5"}
+                placeholder={lang === "en" ? "e.g. 3.5" : "ឧ. 3.5"}
                 className="mt-2 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-900 focus:border-slate-400 focus:outline-none"
               />
               <div className="mt-4 rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 text-sm text-slate-700 shadow-sm">
@@ -774,13 +774,13 @@ export default function InteractiveFlatPanelClient() {
                         : `áž‘áŸ†áž áŸ†ážŠáŸ‚áž›ážŽáŸ‚áž“áž¶áŸ†áŸ– ${recommendedSize}`)
                     : (lang === "en"
                         ? "Enter a viewing distance to get a recommendation."
-                        : "ážŸáž¼áž˜áž”áž‰áŸ’áž…áž¼áž›áž…áž˜áŸ’áž„áž¶áž™áž˜áž¾áž› ážŠáž¾áž˜áŸ’áž”áž¸áž‘áž‘áž½áž›áž”áž¶áž“áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†áŸ”")}
+                        : "សូមបញ្ចូលចម្ងាយមើល ដើម្បីទទួលបានការណែនាំ។")}
                 </div>
               </div>
               <p className="mt-3 text-xs text-slate-500">
                 {lang === "en"
                   ? "Final size depends on content type, audience seating, and room lighting."
-                  : "áž‘áŸ†áž áŸ†áž…áž»áž„áž€áŸ’ážšáŸ„áž™áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž”áŸ’ážšáž—áŸáž‘áž˜áž¶ážáž·áž€áž¶ áž€áž¶ážšážšáŸ€áž”áž…áŸ†áž€áž“áŸ’áž›áŸ‚áž„áž¢áž„áŸ’áž‚áž»áž™áž¢áŸ’áž“áž€áž˜áž¾áž› áž“áž·áž„áž–áž“áŸ’áž›ážºáž€áŸ’áž“áž»áž„áž”áž“áŸ’áž‘áž”áŸ‹áŸ”"}
+                  : "ទំហំចុងក្រោយអាស្រ័យលើប្រភេទមាតិកា ការរៀបចំកន្លែងអង្គុយអ្នកមើល និងពន្លឺក្នុងបន្ទប់។"}
               </p>
             </div>
           </div>
@@ -796,37 +796,37 @@ export default function InteractiveFlatPanelClient() {
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "End-to-end installation for interactive flat panels in Cambodia includes site survey, mounting, cabling, network setup, and user training. We optimize the screen height, viewing angle, and cable routing to ensure reliable daily use for classrooms, meeting rooms, and training centers."
-              : "áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ Interactive Flat Panel áž–áŸáž‰áž›áŸáž‰áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ ážšáž½áž˜áž˜áž¶áž“áž€áž¶ážšážŸáŸ’áž‘áž„áŸ‹áž‘áž¸ážáž¶áŸ†áž„ áž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž˜áŸ‰áŸ„áž“ áž€áž¶ážšážšáŸ€áž”ážáŸ’ážŸáŸ‚ áž€áž¶ážšážšáŸ€áž”áž…áŸ†áž”ážŽáŸ’ážáž¶áž‰ áž“áž·áž„áž€áž¶ážšáž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾áŸ” áž™áž¾áž„áž’áŸ’ážœáž¾áž±áŸ’áž™áž”áŸ’ážšážŸáž¾ážšáž¡áž¾áž„áž“áž¼ážœáž€áž˜áŸ’áž–ážŸáŸ‹áž¢áŸáž€áŸ’ážšáž„áŸ‹ áž˜áž»áŸ†áž˜áž¾áž› áž“áž·áž„áž•áŸ’áž›áž¼ážœážáŸ’ážŸáŸ‚ ážŠáž¾áž˜áŸ’áž”áž¸áž’áž¶áž“áž¶áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒážŠáŸ‚áž›áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“ ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž“áž·áž„áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áŸ”"}
+              : "ការដំឡើង Interactive Flat Panel ពេញលេញនៅកម្ពុជា រួមមានការស្ទង់ទីតាំង ការដំឡើងម៉ោន ការរៀបខ្សែ ការរៀបចំបណ្តាញ និងការបណ្តុះបណ្តាលអ្នកប្រើ។ យើងធ្វើឱ្យប្រសើរឡើងនូវកម្ពស់អេក្រង់ មុំមើល និងផ្លូវខ្សែ ដើម្បីធានាការប្រើប្រាស់ប្រចាំថ្ងៃដែលទុកចិត្តបាន សម្រាប់ថ្នាក់រៀន បន្ទប់ប្រជុំ និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាល។"}
           </p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <StepCard
               n="01"
-              title={lang === "en" ? "Site survey and room assessment" : "ážŸáŸ’áž‘áž„áŸ‹áž‘áž¸ážáž¶áŸ†áž„ áž“áž·áž„ážœáž¶áž™ážáž˜áŸ’áž›áŸƒáž”áž“áŸ’áž‘áž”áŸ‹"}
+              title={lang === "en" ? "Site survey and room assessment" : "ស្ទង់ទីតាំង និងវាយតម្លៃបន្ទប់"}
               desc={lang === "en"
                 ? "Measure room size, seating distance, wall strength, and lighting. Confirm the best screen size, mounting height, and cable path."
-                : "ážœáž¶ážŸáŸ‹áž‘áŸ†áž áŸ†áž”áž“áŸ’áž‘áž”áŸ‹ áž…áž˜áŸ’áž„áž¶áž™áž¢áž„áŸ’áž‚áž»áž™ áž€áž˜áŸ’áž›áž¶áŸ†áž„áž‡áž‰áŸ’áž‡áž¶áŸ†áž„ áž“áž·áž„áž–áž“áŸ’áž›ážºáŸ” áž”áž‰áŸ’áž‡áž¶áž€áŸ‹áž±áŸ’áž™áž…áŸ’áž”áž¶ážŸáŸ‹áž–áž¸áž‘áŸ†áž áŸ†áž¢áŸáž€áŸ’ážšáž„áŸ‹ážŸáž˜ážŸáŸ’ážšáž” áž€áž˜áŸ’áž–ážŸáŸ‹ážŠáŸ†áž¡áž¾áž„ áž“áž·áž„áž•áŸ’áž›áž¼ážœážáŸ’ážŸáŸ‚áŸ”"}
+                : "វាស់ទំហំបន្ទប់ ចម្ងាយអង្គុយ កម្លាំងជញ្ជាំង និងពន្លឺ។ បញ្ជាក់ឱ្យច្បាស់ពីទំហំអេក្រង់សមស្រប កម្ពស់ដំឡើង និងផ្លូវខ្សែ។"}
             />
             <StepCard
               n="02"
-              title={lang === "en" ? "Wall mount or floor stand setup" : "ážŠáŸ†áž¡áž¾áž„ wall mount áž¬ floor stand"}
+              title={lang === "en" ? "Wall mount or floor stand setup" : "ដំឡើង wall mount ឬ floor stand"}
               desc={lang === "en"
                 ? "Install wall brackets or floor stand with safe load rating, correct tilt, and clean finishing for professional presentation spaces."
-                : "ážŠáŸ†áž¡áž¾áž„áž‡áž¾áž„áž‡áž‰áŸ’áž‡áž¶áŸ†áž„ áž¬áž‡áž¾áž„ážˆážšáž‡áž¶áž“áŸ‹ ážŠáŸ„áž™áž‚áŸ„ážšáž–ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áž‘áž˜áŸ’áž„áž“áŸ‹ áž€áŸ†ážŽážáŸ‹áž˜áž»áŸ†áž±áŸ’áž™ážáŸ’ážšáž¹áž˜ážáŸ’ážšáž¼ážœ áž“áž·áž„áž”áž‰áŸ’áž…áž”áŸ‹áž€áž¶ážšáž„áž¶ážšáž±áŸ’áž™ážŸáŸ’áž¢áž¶áž ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž“áŸ’áž›áŸ‚áž„áž”áž„áŸ’áž áž¶áž‰áž¢áž¶áž‡áž¸áž–áŸ”"}
+                : "ដំឡើងជើងជញ្ជាំង ឬជើងឈរជាន់ ដោយគោរពសុវត្ថិភាពទម្ងន់ កំណត់មុំឱ្យត្រឹមត្រូវ និងបញ្ចប់ការងារឱ្យស្អាត សម្រាប់កន្លែងបង្ហាញអាជីព។"}
             />
             <StepCard
               n="03"
-              title={lang === "en" ? "Power, network, and OPS setup" : "ážšáŸ€áž”áž…áŸ†ážáž¶áž˜áž–áž› áž”ážŽáŸ’ážáž¶áž‰ áž“áž·áž„ OPS"}
+              title={lang === "en" ? "Power, network, and OPS setup" : "រៀបចំថាមពល បណ្តាញ និង OPS"}
               desc={lang === "en"
                 ? "Connect power, LAN/Wi-Fi, HDMI/USB-C, and configure Android or OPS/Windows for content sharing and classroom apps."
-                : "áž—áŸ’áž‡áž¶áž”áŸ‹ážáž¶áž˜áž–áž› LAN/Wi-Fi HDMI/USB-C áž“áž·áž„áž€áŸ†ážŽážáŸ‹ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ Android áž¬ OPS/Windows ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž…áŸ‚áž€ážšáŸ†áž›áŸ‚áž€áž˜áž¶ážáž·áž€áž¶ áž“áž·áž„áž€áž˜áŸ’áž˜ážœáž·áž’áž¸ážŸáž·áž€áŸ’ážŸáž¶áŸ”"}
+                : "ភ្ជាប់ថាមពល LAN/Wi-Fi HDMI/USB-C និងកំណត់រចនាសម្ព័ន្ធ Android ឬ OPS/Windows សម្រាប់ចែករំលែកមាតិកា និងកម្មវិធីសិក្សា។"}
             />
             <StepCard
               n="04"
-              title={lang === "en" ? "User training and handover" : "áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ áž“áž·áž„áž”áŸ’ážšáž‚áž›áŸ‹áž€áž¶ážšáž„áž¶ážš"}
+              title={lang === "en" ? "User training and handover" : "បណ្តុះបណ្តាលអ្នកប្រើ និងប្រគល់ការងារ"}
               desc={lang === "en"
                 ? "Hands-on training for whiteboard tools, wireless casting, file sharing, and daily maintenance checks for smooth operation."
-                : "áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›áž‡áž¶áž€áŸ‹ážŸáŸ’ážáŸ‚áž„áž¢áŸ†áž–áž¸áž§áž”áž€ážšážŽáŸ whiteboard, wireless casting, file sharing áž“áž·áž„áž€áž¶ážšážáŸ’ážšáž½ážáž–áž·áž“áž·ážáŸ’áž™ážáŸ‚áž‘áž¶áŸ†áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒ ážŠáž¾áž˜áŸ’áž”áž¸áž±áŸ’áž™ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážšáž›áž¼áž“áŸ”"}
+                : "បណ្តុះបណ្តាលជាក់ស្តែងអំពីឧបករណ៍ whiteboard, wireless casting, file sharing និងការត្រួតពិនិត្យថែទាំប្រចាំថ្ងៃ ដើម្បីឱ្យដំណើរការរលូន។"}
             />
           </div>
         </div>
@@ -838,12 +838,12 @@ export default function InteractiveFlatPanelClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "Interactive Flat Panel Use Cases in Cambodia (Education, Corporate, Healthcare)"
-              : "áž€ážšážŽáž¸áž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ Interactive Flat Panel áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ (áž¢áž”áŸ‹ážšáŸ† ážŸáž¶áž‡áž¸ážœáž€áž˜áŸ’áž˜ áž“áž·áž„ážŸáž»ážáž¶áž—áž·áž”áž¶áž›)"}
+              : "ករណីប្រើប្រាស់ Interactive Flat Panel នៅកម្ពុជា (អប់រំ សាជីវកម្ម និងសុខាភិបាល)"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Real-world scenarios where interactive flat panels improve teaching, training, and presentation workflows across Cambodia schools, offices, and hospitals."
-              : "áž§áž‘áž¶áž ážšážŽáŸáž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž‡áž¶áž€áŸ‹ážŸáŸ’ážáŸ‚áž„ ážŠáŸ‚áž› Interactive Flat Panel áž‡áž½áž™áž”áž„áŸ’áž€áž¾áž“áž”áŸ’ážšážŸáž·áž‘áŸ’áž’áž—áž¶áž–áž€áž¶ážšáž”áž„áŸ’ážšáŸ€áž“ áž€áž¶ážšáž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› áž“áž·áž„áž›áŸ†áž áž¼ážšáž€áž¶ážšáž„áž¶ážšáž”áž„áŸ’áž áž¶áž‰ áž“áŸ…ážŸáž¶áž›áž¶ážšáŸ€áž“ áž€áž¶ážšáž·áž™áž¶áž›áŸáž™ áž“áž·áž„áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™áž‘áž¼áž‘áž¶áŸ†áž„áž€áž˜áŸ’áž–áž»áž‡áž¶áŸ”"}
+              : "ឧទាហរណ៍ការប្រើប្រាស់ជាក់ស្តែង ដែល Interactive Flat Panel ជួយបង្កើនប្រសិទ្ធភាពការបង្រៀន ការបណ្តុះបណ្តាល និងលំហូរការងារបង្ហាញ នៅសាលារៀន ការិយាល័យ និងមន្ទីរពេទ្យទូទាំងកម្ពុជា។"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {(lang === "en"
@@ -871,24 +871,24 @@ export default function InteractiveFlatPanelClient() {
                 ]
               : [
                   [
-                    "áž€áž¶ážšáž¢áž¶áž”áŸ‹ážŠáŸážážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“",
-                    "Smart board 4K áž‘áŸ†áž áŸ† 65-86 inch áž‡áž¶áž˜áž½áž™áž€áž¶ážšážŸážšážŸáŸážš multi-touch, annotation áž“áž·áž„ wireless casting ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž˜áŸážšáŸ€áž“áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒáŸ” áž‚áž¶áŸ†áž‘áŸ’ážš whiteboard apps, lesson playback áž“áž·áž„áž€áž¶ážšáž”áž„áŸ’ážšáŸ€áž“áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜áŸ”",
-                    ["áž¢áž”áŸ‹ážšáŸ†", "Whiteboard", "4K"],
+                    "ការអាប់ដេតថ្នាក់រៀន",
+                    "Smart board 4K ទំហំ 65-86 inch ជាមួយការសរសេរ multi-touch, annotation និង wireless casting សម្រាប់មេរៀនប្រចាំថ្ងៃ។ គាំទ្រ whiteboard apps, lesson playback និងការបង្រៀនអន្តរកម្ម។",
+                    ["អប់រំ", "Whiteboard", "4K"],
                   ],
                   [
-                    "áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ†áž€áŸ’ážšáž»áž˜áž áŸŠáž»áž“",
-                    "Interactive panel áž‘áŸ†áž áŸ† 65-75 inch áž‡áž¶áž˜áž½áž™ HDMI/USB-C, LAN/Wi-Fi áž“áž·áž„ screen sharing ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž”áž„áŸ’áž áž¶áž‰ áž‚áŸ†áž“áž·ážáž…áŸ’áž“áŸƒáž”áŸ’ážšážŒáž·áž áž“áž·áž„áž€áž·áž…áŸ’áž…áž”áŸ’ážšáž‡áž»áŸ† hybridáŸ”",
-                    ["áž”áŸ’ážšáž‡áž»áŸ†", "áž¥ážážáŸ’ážŸáŸ‚", "USB-C"],
+                    "បន្ទប់ប្រជុំក្រុមហ៊ុន",
+                    "Interactive panel ទំហំ 65-75 inch ជាមួយ HDMI/USB-C, LAN/Wi-Fi និង screen sharing សម្រាប់ការបង្ហាញ គំនិតច្នៃប្រឌិត និងកិច្ចប្រជុំ hybrid។",
+                    ["ប្រជុំ", "ឥតខ្សែ", "USB-C"],
                   ],
                   [
-                    "áž˜áž‡áŸ’ážˆáž˜ážŽáŸ’ážŒáž›áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›",
-                    "Panel áž‘áŸ†áž áŸ† 75-98 inch ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž˜áž¾áž›ážƒáž¾áž‰áž…áŸ’áž”áž¶ážŸáŸ‹ áž€áž¶ážšážŸáž áž€áž¶ážšáž…áŸ’ážšáž¾áž“áž¢áŸ’áž“áž€áž”áŸ’ážšáž¾ áž“áž·áž„áž€áž¶ážšáž”áž„áŸ’áž áž¶áž‰áž‡áž¶áž€áŸ‹ážŸáŸ’ážáŸ‚áž„áž–áŸáž› workshop áž“áž·áž„ onboardingáŸ”",
-                    ["áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›", "Multi-touch", "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž’áŸ†"],
+                    "មជ្ឈមណ្ឌលបណ្តុះបណ្តាល",
+                    "Panel ទំហំ 75-98 inch សម្រាប់ការមើលឃើញច្បាស់ ការសហការច្រើនអ្នកប្រើ និងការបង្ហាញជាក់ស្តែងពេល workshop និង onboarding។",
+                    ["បណ្តុះបណ្តាល", "Multi-touch", "អេក្រង់ធំ"],
                   ],
                   [
-                    "áž”áž“áŸ’áž‘áž”áŸ‹áž”áž„áŸ’áž áž¶áž‰áž–áŸážáŸŒáž˜áž¶áž“áž˜áž“áŸ’áž‘áž¸ážšáž–áŸáž‘áŸ’áž™",
-                    "Panel áž‘áŸ†áž áŸ† 65-86 inch ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž›ážœáŸáž‡áŸ’áž‡ážŸáž¶ážŸáŸ’ážáŸ’ážš áž€áž¶ážšáž”áž„áŸ’áž áž¶áž‰áž–áŸážáŸŒáž˜áž¶áž“ážœáŸáž‡áŸ’áž‡ážŸáž¶ážŸáŸ’ážáŸ’ážš áž“áž·áž„áž€áž¶ážšáž¢áž”áŸ‹ážšáŸ†áž¢áŸ’áž“áž€áž‡áŸ†áž„ážº áž‡áž¶áž˜áž½áž™ annotation ážšáž áŸážŸ áž“áž·áž„áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒážŠáŸ‚áž›áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“áŸ”",
-                    ["ážŸáž»ážáž¶áž—áž·áž”áž¶áž›", "áž”áž„áŸ’áž áž¶áž‰áž–áŸážáŸŒáž˜áž¶áž“", "áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“"],
+                    "បន្ទប់បង្ហាញព័ត៌មានមន្ទីរពេទ្យ",
+                    "Panel ទំហំ 65-86 inch សម្រាប់បណ្តុះបណ្តាលវេជ្ជសាស្ត្រ ការបង្ហាញព័ត៌មានវេជ្ជសាស្ត្រ និងការអប់រំអ្នកជំងឺ ជាមួយ annotation រហ័ស និងការប្រើប្រាស់ប្រចាំថ្ងៃដែលទុកចិត្តបាន។",
+                    ["សុខាភិបាល", "បង្ហាញព័ត៌មាន", "ទុកចិត្តបាន"],
                   ],
                 ]).map((item, idx) => {
               const [title, desc, chips] = item as [string, string, string[]];
@@ -922,12 +922,12 @@ export default function InteractiveFlatPanelClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
               ? "Interactive Flat Panel Warranty, Support & After-Sales Service in Cambodia"
-              : "áž€áž¶ážšáž’áž¶áž“áž¶ áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážš áž“áž·áž„ážŸáŸážœáž¶áž€áž˜áŸ’áž˜áž”áž“áŸ’áž‘áž¶áž”áŸ‹áž–áž¸áž›áž€áŸ‹ Interactive Flat Panel áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶"}
+              : "ការធានា ការគាំទ្រ និងសេវាកម្មបន្ទាប់ពីលក់ Interactive Flat Panel នៅកម្ពុជា"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
             {lang === "en"
               ? "Our interactive flat panel service in Cambodia covers quotation, delivery, installation, training, and long-term support. We focus on reliable classroom and meeting room operations with clear warranty terms, responsive on-site service, and optional maintenance plans."
-              : "ážŸáŸážœáž¶áž€áž˜áŸ’áž˜ Interactive Flat Panel ážšáž”ážŸáŸ‹áž™áž¾áž„áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ áž‚áŸ’ážšáž”ážŠážŽáŸ’ážáž”áŸ‹áž…áž¶áž”áŸ‹áž–áž¸áž€áž¶ážšáž•áŸ’ážáž›áŸ‹ážŸáž˜áŸ’ážšáž„áŸ‹ážáž˜áŸ’áž›áŸƒ áž€áž¶ážšážŠáž¹áž€áž‡áž‰áŸ’áž‡áž¼áž“ áž€áž¶ážšážŠáŸ†áž¡áž¾áž„ áž€áž¶ážšáž”ážŽáŸ’ážáž»áŸ‡áž”ážŽáŸ’ážáž¶áž› áž“áž·áž„áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážšážšáž™áŸˆáž–áŸáž›ážœáŸ‚áž„áŸ” áž™áž¾áž„áž•áŸ’ážáŸ„ážáž›áž¾áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ážŠáŸ‚áž›áž‘áž»áž€áž…áž·ážáŸ’ážáž”áž¶áž“ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž”áž“áŸ’áž‘áž”áŸ‹áž”áŸ’ážšáž‡áž»áŸ† áž‡áž¶áž˜áž½áž™áž›áž€áŸ’ážážážŽáŸ’ážŒáž’áž¶áž“áž¶áž…áŸ’áž”áž¶ážŸáŸ‹áž›áž¶ážŸáŸ‹ ážŸáŸážœáž¶áž€áž˜áŸ’áž˜ on-site áž†áž¶áž”áŸ‹ážšáž áŸážŸ áž“áž·áž„áž‡áž˜áŸ’ážšáž¾ážŸáž•áŸ‚áž“áž€áž¶ážšážáŸ‚áž‘áž¶áŸ†áž”áž“áŸ’ážáŸ‚áž˜áŸ”"}
+              : "សេវាកម្ម Interactive Flat Panel របស់យើងនៅកម្ពុជា គ្របដណ្តប់ចាប់ពីការផ្តល់សម្រង់តម្លៃ ការដឹកជញ្ជូន ការដំឡើង ការបណ្តុះបណ្តាល និងការគាំទ្ររយៈពេលវែង។ យើងផ្តោតលើការប្រើប្រាស់ដែលទុកចិត្តបានសម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ ជាមួយលក្ខខណ្ឌធានាច្បាស់លាស់ សេវាកម្ម on-site ឆាប់រហ័ស និងជម្រើសផែនការថែទាំបន្ថែម។"}
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {(lang === "en"
@@ -947,16 +947,16 @@ export default function InteractiveFlatPanelClient() {
                 ]
               : [
                   [
-                    "ážœáž·ážŸáž¶áž›áž—áž¶áž–áž’áž¶áž“áž¶ áž“áž·áž„áž¯áž€ážŸáž¶ážš",
-                    "áž€áž¶ážšáž’áž¶áž“áž¶áž¢áž¶ážŸáŸ’ážšáŸáž™áž›áž¾áž˜áŸ‰áž¼ážŠáŸ‚áž› áž€áž¶ážšáž€áŸ†ážŽážáŸ‹ážšáž…áž“áž¶ážŸáž˜áŸ’áž–áŸáž“áŸ’áž’ áž“áž·áž„áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹ážŠáŸ‚áž›áž”áž¶áž“áž‡áŸ’ážšáž¾ážŸáŸ” áž™áž¾áž„áž•áŸ’ážáž›áŸ‹áž–áŸážáŸŒáž˜áž¶áž“áž›áž˜áŸ’áž¢áž·ážáž¢áŸ†áž–áž¸ážœáž·ážŸáž¶áž›áž—áž¶áž–áž’áž¶áž“áž¶ ážšáž™áŸˆáž–áŸáž›áž’áž¶áž“áž¶ áž“áž·áž„áž›áž€áŸ’ážážážŽáŸ’ážŒáž–áž¶áž€áŸ‹áž–áŸáž“áŸ’áž’áž™áŸ‰áž¶áž„áž…áŸ’áž”áž¶ážŸáŸ‹ áž“áŸ…áž–áŸáž›áž•áŸ’ážáž›áŸ‹ážáž˜áŸ’áž›áŸƒ áž“áž·áž„áž–áŸáž›áž”áŸ’ážšáž‚áž›áŸ‹áž€áž¶ážšáž„áž¶ážšáŸ”",
+                    "វិសាលភាពធានា និងឯកសារ",
+                    "ការធានាអាស្រ័យលើម៉ូដែល ការកំណត់រចនាសម្ព័ន្ធ និងការប្រើប្រាស់ដែលបានជ្រើស។ យើងផ្តល់ព័ត៌មានលម្អិតអំពីវិសាលភាពធានា រយៈពេលធានា និងលក្ខខណ្ឌពាក់ព័ន្ធយ៉ាងច្បាស់ នៅពេលផ្តល់តម្លៃ និងពេលប្រគល់ការងារ។",
                   ],
                   [
-                    "áž€áž¶ážšáž‚áž¶áŸ†áž‘áŸ’ážš On-site áž“áž·áž„ážŠáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž”áž‰áŸ’áž áž¶",
-                    "áž€áŸ’ážšáž»áž˜áž€áž¶ážšáž„áž¶ážšáž™áž¾áž„áž¢áž“áž»ážœážáŸ’ážáž€áž¶ážšážŠáŸ†áž¡áž¾áž„ áž€áž¶ážšáž€áŸ‚ážáž˜áŸ’ážšáž¼ážœ calibration áž€áž¶ážšážáŸ’ážšáž½ážáž–áž·áž“áž·ážáŸ’áž™ firmware áž“áž·áž„áž€áž¶ážšážŠáŸ„áŸ‡ážŸáŸ’ážšáž¶áž™áž”áž‰áŸ’áž áž¶ ážŠáž¾áž˜áŸ’áž”áž¸ážšáž€áŸ’ážŸáž¶áž±áŸ’áž™ smart board áž˜áž¶áž“ážŸáŸ’ážáž·ážšáž—áž¶áž–ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹áž”áŸ’ážšáž…áž¶áŸ†ážáŸ’áž„áŸƒáž“áŸ…ážáŸ’áž“áž¶áž€áŸ‹ážšáŸ€áž“ áž“áž·áž„áž€áž¶ážšáž·áž™áž¶áž›áŸáž™áŸ”",
+                    "ការគាំទ្រ On-site និងដោះស្រាយបញ្ហា",
+                    "ក្រុមការងារយើងអនុវត្តការដំឡើង ការកែតម្រូវ calibration ការត្រួតពិនិត្យ firmware និងការដោះស្រាយបញ្ហា ដើម្បីរក្សាឱ្យ smart board មានស្ថិរភាពសម្រាប់ការប្រើប្រាស់ប្រចាំថ្ងៃនៅថ្នាក់រៀន និងការិយាល័យ។",
                   ],
                   [
-                    "áž•áŸ‚áž“áž€áž¶ážšážáŸ‚áž‘áž¶áŸ† áž“áž·áž„ AMC",
-                    "ážŸáŸážœáž¶ážáŸ‚áž‘áž¶áŸ†áž”áž„áŸ’áž€áž¶ážš áž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†ážŸáž˜áŸ’áž¢áž¶áž áž“áž·áž„áž•áŸ‚áž“áž€áž¶ážš AMC áž˜áž¶áž“ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáž¶áž›áž¶ážšáŸ€áž“ ážŸáž¶áž€áž›ážœáž·áž‘áŸ’áž™áž¶áž›áŸáž™ áž“áž·áž„áž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž€áŸ’áž“áž»áž„ážŸáŸ’ážáž¶áž”áŸáž“áž¢áž¶áž‡áž¸ážœáž€áž˜áŸ’áž˜áŸ”",
+                    "ផែនការថែទាំ និង AMC",
+                    "សេវាថែទាំបង្ការ ការណែនាំសម្អាត និងផែនការ AMC មានសម្រាប់សាលារៀន សាកលវិទ្យាល័យ និងការដំឡើងក្នុងស្ថាប័នអាជីវកម្ម។",
                   ],
                 ]).map(([title, desc]) => (
               <div

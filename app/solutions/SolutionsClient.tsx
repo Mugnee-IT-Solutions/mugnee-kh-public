@@ -53,37 +53,37 @@ const KM = {
   breadcrumbHome: "ទំព័រដើម",
   breadcrumb: "ដំណោះស្រាយ",
   heroEyebrow: "ដំណោះស្រាយ",
-  heroTitle: "ដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា | LED, Signage និង Access Control",
+  heroTitle: "ដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា | អេក្រង់ LED និងអេក្រង់ផ្សព្វផ្សាយ និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
   heroDesc:
-    "Mugnee Cambodia ផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាអាជីវកម្មបែប end-to-end នៅកម្ពុជា សម្រាប់ហាងលក់រាយ ការិយាល័យក្រុមហ៊ុន រោងចក្រ ស្ថាប័នអប់រំ មណ្ឌលសុខាភិបាល វិស័យបដិសណ្ឋារកិច្ច និងគម្រោងសាធារណៈ។ ក្រុមការងារយើងអនុវត្តគម្រោងពេញលេញចាប់ពីការស្ទង់ទីតាំង ការរចនាប្រព័ន្ធ ការរៀបចំ BOQ ការផ្គត់ផ្គង់ឧបករណ៍ ការដំឡើងដោយវិជ្ជាជីវៈ ការបញ្ចូលប្រព័ន្ធ ការបើកដំណើរការ ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាកម្មបន្ទាប់ពីលក់រយៈពេលវែង សម្រាប់ LED display, digital signage, PA system, turnstile gate និង access control។ យើងកែតម្រូវការដំឡើងនីមួយៗឱ្យសមស្របនឹងលក្ខខណ្ឌប្រតិបត្តិការក្នុងតំបន់ ភាពមើលឃើញរបស់ទស្សនិកជន ស្តង់ដារសុវត្ថិភាព និងផែនការពង្រីកនាពេលអនាគត ដើម្បីជួយអាជីវកម្មបង្កើនប្រសិទ្ធភាពទំនាក់ទំនង កម្លាំងម៉ាក និងការគ្រប់គ្រងប្រតិបត្តិការប្រចាំថ្ងៃ។",
+    "Mugnee Cambodia ផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាអាជីវកម្មបែប ចាប់ពីដើមដល់ចប់ នៅកម្ពុជា សម្រាប់ហាងលក់រាយ ការិយាល័យក្រុមហ៊ុន រោងចក្រ ស្ថាប័នអប់រំ មណ្ឌលសុខាភិបាល វិស័យបដិសណ្ឋារកិច្ច និងគម្រោងសាធារណៈ។ ក្រុមការងារយើងអនុវត្តគម្រោងពេញលេញចាប់ពីការស្ទង់ទីតាំង ការរចនាប្រព័ន្ធ ការរៀបចំ បញ្ជីបរិមាណការងារ ការផ្គត់ផ្គង់ឧបករណ៍ ការដំឡើងដោយវិជ្ជាជីវៈ ការបញ្ចូលប្រព័ន្ធ ការបើកដំណើរការ ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាកម្មបន្ទាប់ពីលក់រយៈពេលវែង សម្រាប់ អេក្រង់ LED, អេក្រង់ផ្សព្វផ្សាយឌីជីថល, ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ, ទ្វារបង្វិលគ្រប់គ្រងច្រកចេញចូល និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ។ យើងកែតម្រូវការដំឡើងនីមួយៗឱ្យសមស្របនឹងលក្ខខណ្ឌប្រតិបត្តិការក្នុងតំបន់ ភាពមើលឃើញរបស់ទស្សនិកជន ស្តង់ដារសុវត្ថិភាព និងផែនការពង្រីកនាពេលអនាគត ដើម្បីជួយអាជីវកម្មបង្កើនប្រសិទ្ធភាពទំនាក់ទំនង កម្លាំងម៉ាក និងការគ្រប់គ្រងប្រតិបត្តិការប្រចាំថ្ងៃ។",
   ctaQuote: "ស្នើសុំតម្លៃដោយឥតគិតថ្លៃ",
   ctaProducts: "មើលផលិតផល",
   heroFoot: "បម្រើសេវា៖ ភ្នំពេញ - សៀមរាប - ព្រះសីហនុ និងទូទាំងប្រទេស",
-  marketTitle: "ដំណោះស្រាយ LED, Signage និង Access Control សមស្របទីផ្សារកម្ពុជា",
+  marketTitle: "ដំណោះស្រាយ អេក្រង់ LED និងអេក្រង់ផ្សព្វផ្សាយ និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ សមស្របទីផ្សារកម្ពុជា",
   marketDesc:
     "យើងរៀបចំដំណោះស្រាយនីមួយៗឱ្យសមនឹងតម្រូវការទីផ្សារ លក្ខខណ្ឌទីតាំង និងគោលដៅប្រតិបត្តិការ។",
   quickSummary: "សេចក្តីសង្ខេបរហ័ស",
-  cityTitle: "តំបន់សេវាកម្មតាមទីក្រុងនៅកម្ពុជា សម្រាប់ LED Display, Signage និង Access Control",
+  cityTitle: "តំបន់សេវាកម្មតាមទីក្រុងនៅកម្ពុជា សម្រាប់ អេក្រង់ អេក្រង់ LED និងអេក្រង់ផ្សព្វផ្សាយ និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
   cityDesc: "ការរចនាដំណោះស្រាយផ្អែកលើប្រភេទទីក្រុង ចរាចរណ៍ និងលក្ខខណ្ឌប្រតិបត្តិការ។",
-  categoriesTitle: "ប្រភេទដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា៖ LED, Signage, PA និង Access Control",
+  categoriesTitle: "ប្រភេទដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា៖ អេក្រង់ LED និងអេក្រង់ផ្សព្វផ្សាយ, ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
   categoriesDesc: "ស្វែងរកប្រភេទដំណោះស្រាយសម្រាប់គម្រោងនៅកម្ពុជា។",
-  intentClusterTitle: "ការណែនាំតាម Intent Cluster",
+  intentClusterTitle: "ការណែនាំតាម ចង្កោមបំណងស្វែងរក",
   intentClusterDesc:
     "បែងចែក query intent ទៅទំព័រដំណោះស្រាយ ឬ product hub ដែលត្រឹមត្រូវ ដើម្បីធ្វើឱ្យ topical signal ច្បាស់។",
-  useCasesTitle: "ករណីប្រើប្រាស់តាមវិស័យនៅកម្ពុជា សម្រាប់ LED Display និង Access Control",
-  useCasesDesc: "ប្រព័ន្ធ AV សុវត្ថិភាព និងទំនាក់ទំនងដែលជឿជាក់ សម្រាប់ការប្រើប្រាស់ជាក់ស្តែង។",
-  budgetTitle: "ថវិកា BOQ និងផែនការដាក់ប្រើប្រាស់ដំណោះស្រាយនៅកម្ពុជា",
+  useCasesTitle: "ករណីប្រើប្រាស់តាមវិស័យនៅកម្ពុជា សម្រាប់ អេក្រង់ LED និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+  useCasesDesc: "ប្រព័ន្ធ សំឡេង និងរូបភាព សុវត្ថិភាព និងទំនាក់ទំនងដែលជឿជាក់ សម្រាប់ការប្រើប្រាស់ជាក់ស្តែង។",
+  budgetTitle: "ថវិកា បញ្ជីបរិមាណការងារ និងផែនការដាក់ប្រើប្រាស់ដំណោះស្រាយនៅកម្ពុជា",
   budgetDesc: "យើងកំណត់វិសាលភាពគម្រោងតាមស្មុគស្មាញទីតាំង និងគោលដៅពង្រីក។",
   workflowTitle: "លំហូរការងារដំឡើង បញ្ចូលប្រព័ន្ធ និងបើកប្រើប្រាស់នៅកម្ពុជា",
   workflowDesc: "ដំណើរការរៀបចំច្បាស់លាស់ សម្រាប់ស្ថិរភាពប្រើប្រាស់រយៈពេលវែង។",
-  integrationTitle: "ជម្រើសបញ្ចូលប្រព័ន្ធនៅកម្ពុជា៖ RFID, Biometric, CMS និង PA Systems",
-  integrationDesc: "ភ្ជាប់ AV សុវត្ថិភាព និងប្រតិបត្តិការ ឱ្យធ្វើការជាមួយគ្នា។",
+  integrationTitle: "ជម្រើសបញ្ចូលប្រព័ន្ធនៅកម្ពុជា៖ RFID, ជីវមាត្រ និងប្រព័ន្ធគ្រប់គ្រងមាតិកា និង ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈs",
+  integrationDesc: "ភ្ជាប់ សំឡេង និងរូបភាព សុវត្ថិភាព និងប្រតិបត្តិការ ឱ្យធ្វើការជាមួយគ្នា។",
   checklistTitle: "បញ្ជីត្រួតពិនិត្យស្តង់ដារបច្ចេកទេស និងការត្រៀមទីតាំងនៅកម្ពុជា",
   checklistDesc: "ផ្ទៀងផ្ទាត់ភាពរួចរាល់ និងកាត់បន្ថយហានិភ័យដាក់ប្រើប្រាស់។",
-  whyTitle: "ហេតុអ្វីគួរជ្រើសរើស Mugnee Cambodia សម្រាប់ដំណោះស្រាយ LED, Signage និង Access Control",
+  whyTitle: "ហេតុអ្វីគួរជ្រើសរើស Mugnee Cambodia សម្រាប់ដំណោះស្រាយ អេក្រង់ LED និងអេក្រង់ផ្សព្វផ្សាយ និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
   whyDesc: "ជំនាញក្នុងតំបន់ ជម្រៅបញ្ចូលប្រព័ន្ធ គុណភាពដំឡើង និងសេវាបន្ទាប់ពីលក់ជាក់ស្តែង។",
   faqTitle: "សំណួរញឹកញាប់អំពីដំណោះស្រាយអាជីវកម្ម Mugnee",
-  finalTitle: "ទទួលផែនការដំណោះស្រាយ LED, Signage និង Access Control សម្រាប់កម្ពុជា",
+  finalTitle: "ទទួលផែនការដំណោះស្រាយ អេក្រង់ LED និងអេក្រង់ផ្សព្វផ្សាយ និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ សម្រាប់កម្ពុជា",
   finalDesc: "ប្រាប់យើងអំពីទីតាំង និងគោលដៅរបស់អ្នក។ យើងនឹងណែនាំដំណោះស្រាយ និងតម្លៃសមស្រប។",
   finalCta1: "ទាក់ទង Mugnee Cambodia",
   finalCta2: "មើលផលិតផល",
@@ -136,27 +136,27 @@ const solutionLinksKm = [
   },
   {
     title: "ដំណោះស្រាយយុទ្ធនាការក្រៅអគារ",
-    desc: "ទំព័រតាមវិស័យ សម្រាប់ campaign visibility តាម storefront និងទីតាំងចរាចរណ៍ខ្ពស់។",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់ ភាពមើលឃើញយុទ្ធនាការ តាម storefront និងទីតាំងចរាចរណ៍ខ្ពស់។",
     href: "/solutions/outdoor-campaign-solutions-cambodia",
   },
   {
-    title: "ដំណោះស្រាយ Digital Signage សម្រាប់ហាង និងផ្សារទំនើប",
-    desc: "ទំព័រតាមវិស័យ សម្រាប់គម្រោង Retail និង Mall។",
+    title: "ដំណោះស្រាយ អេក្រង់ផ្សព្វផ្សាយឌីជីថល សម្រាប់ហាង និងផ្សារទំនើប",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់គម្រោង លក់រាយ និង ផ្សារទំនើប។",
     href: "/solutions/retail-digital-signage-cambodia",
   },
   {
     title: "ដំណោះស្រាយប្រព័ន្ធបង្ហាញសម្រាប់សណ្ឋាគារ",
-    desc: "ទំព័រតាមវិស័យ សម្រាប់ Hospitality និងការទំនាក់ទំនងភ្ញៀវ។",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់ បដិសណ្ឋារកិច្ច និងការទំនាក់ទំនងភ្ញៀវ។",
     href: "/solutions/hotel-display-solutions-cambodia",
   },
   {
-    title: "ដំណោះស្រាយ PA សម្រាប់រោងចក្រ",
+    title: "ដំណោះស្រាយ ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ សម្រាប់រោងចក្រ",
     desc: "ទំព័រតាមវិស័យ សម្រាប់ការផ្សាយសារក្នុងតំបន់ឧស្សាហកម្ម។",
     href: "/solutions/factory-pa-announcement-cambodia",
   },
   {
     title: "ដំណោះស្រាយគ្រប់គ្រងច្រកចូលសម្រាប់ការិយាល័យ",
-    desc: "ទំព័រតាមវិស័យ សម្រាប់ office access control។",
+    desc: "ទំព័រតាមវិស័យ សម្រាប់ ការិយាល័យ ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ។",
     href: "/solutions/office-access-control-cambodia",
   },
   {
@@ -164,7 +164,11 @@ const solutionLinksKm = [
     desc: "ទំព័រតាមវិស័យ សម្រាប់សាលារៀន និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាល។",
     href: "/solutions/education-smart-classroom-cambodia",
   },
-  { title: "Interactive Flat Panel", desc: "ទំព័រផលិតផលសម្រាប់ប្រព័ន្ធថ្នាក់រៀន។", href: "/interactive-flat-panel" },
+  {
+    title: "Interactive Flat Panel",
+    desc: "ទំព័រផលិតផលសម្រាប់ប្រព័ន្ធថ្នាក់រៀន។",
+    href: "/interactive-flat-panel",
+  },
 ];
 
 const intentClustersEn = [
@@ -210,15 +214,15 @@ const intentClustersKm = [
     links: [
       { label: "ដំណោះស្រាយទំនាក់ទំនងខាងក្នុង", href: "/solutions/indoor-communication-solutions-cambodia" },
       { label: "ដំណោះស្រាយយុទ្ធនាការក្រៅអគារ", href: "/solutions/outdoor-campaign-solutions-cambodia" },
-      { label: "ដំណោះស្រាយ Retail Digital Signage", href: "/solutions/retail-digital-signage-cambodia" },
-      { label: "ដំណោះស្រាយ Hotel Display", href: "/solutions/hotel-display-solutions-cambodia" },
+      { label: "ដំណោះស្រាយ លក់រាយ អេក្រង់ផ្សព្វផ្សាយឌីជីថល", href: "/solutions/retail-digital-signage-cambodia" },
+      { label: "ដំណោះស្រាយ បង្ហាញសម្រាប់សណ្ឋាគារ", href: "/solutions/hotel-display-solutions-cambodia" },
       { label: "LED Display Hub", href: "/led-display" },
     ],
   },
   {
     title: "Intent: Security & Access",
     links: [
-      { label: "ដំណោះស្រាយ Office Access Control", href: "/solutions/office-access-control-cambodia" },
+      { label: "ដំណោះស្រាយ ការិយាល័យ ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", href: "/solutions/office-access-control-cambodia" },
       { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
       { label: "Access Control Catalog", href: "/products/catalog/access-control" },
     ],
@@ -226,7 +230,7 @@ const intentClustersKm = [
   {
     title: "Intent: Education & Collaboration",
     links: [
-      { label: "ដំណោះស្រាយ Education Smart Classroom", href: "/solutions/education-smart-classroom-cambodia" },
+      { label: "ដំណោះស្រាយ អប់រំ ថ្នាក់រៀនឆ្លាតវៃ", href: "/solutions/education-smart-classroom-cambodia" },
       { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
       { label: "Smart Board Catalog", href: "/products/catalog/smart-board" },
     ],
@@ -234,7 +238,7 @@ const intentClustersKm = [
   {
     title: "Intent: Factory Audio & Announcement",
     links: [
-      { label: "ដំណោះស្រាយ Factory PA", href: "/solutions/factory-pa-announcement-cambodia" },
+      { label: "ដំណោះស្រាយ ប្រព័ន្ធផ្សាយសំឡេងរោងចក្រ", href: "/solutions/factory-pa-announcement-cambodia" },
       { label: "PA System Hub", href: "/pa-system" },
       { label: "IP Paging Microphones", href: "/products/catalog/ip-paging-microphones" },
     ],
@@ -248,7 +252,7 @@ const summaryBulletsEn = [
   "Scalable for single site or multi-branch",
 ];
 const summaryBulletsKm = [
-  "សេវា end-to-end៖ ស្ទង់ទីតាំង រចនា BOQ ដំឡើង បើកប្រើប្រាស់",
+  "សេវា ចាប់ពីដើមដល់ចប់៖ ស្ទង់ទីតាំង រចនា បញ្ជីបរិមាណការងារ ដំឡើង បើកប្រើប្រាស់",
   "គាំទ្រក្នុងតំបន់កម្ពុជា សម្រាប់ជួសជុល និងថែទាំ",
   "ជម្រើសខាងក្នុង/ខាងក្រៅ សម្រាប់អាកាសធាតុក្តៅសើម",
   "អាចពង្រីកបាន សម្រាប់ទីតាំងតែមួយ ឬច្រើនសាខា",
@@ -261,10 +265,10 @@ const marketSignalsEn = [
   { title: "Smart city initiatives", detail: "Integrated public information and access systems are rising." },
 ];
 const marketSignalsKm = [
-  { title: "កំណើនទេសចរណ៍ និងលក់រាយ", detail: "តម្រូវការប្រព័ន្ធ signage និងព័ត៌មានសម្រាប់ភ្ញៀវកំពុងកើនឡើង។" },
-  { title: "ការពង្រីកឧស្សាហកម្ម", detail: "រោងចក្រត្រូវការប្រព័ន្ធ PA ការជូនដំណឹងសុវត្ថិភាព និង Access Workflow។" },
+  { title: "កំណើនទេសចរណ៍ និងលក់រាយ", detail: "តម្រូវការប្រព័ន្ធ អេក្រង់ផ្សព្វផ្សាយ និងព័ត៌មានសម្រាប់ភ្ញៀវកំពុងកើនឡើង។" },
+  { title: "ការពង្រីកឧស្សាហកម្ម", detail: "រោងចក្រត្រូវការប្រព័ន្ធ ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ ការជូនដំណឹងសុវត្ថិភាព និង ការចូលចេញ Workflow។" },
   { title: "ការបំលែងឌីជីថល", detail: "ប្រព័ន្ធឆ្លាតវៃ និងប្រតិបត្តិការភ្ជាប់គ្នាកំពុងកើនល្បឿន។" },
-  { title: "គម្រោងទីក្រុងឆ្លាតវៃ", detail: "តម្រូវការប្រព័ន្ធព័ត៌មានសាធារណៈ និង Access Control បញ្ចូលគ្នាកំពុងកើន។" },
+  { title: "គម្រោងទីក្រុងឆ្លាតវៃ", detail: "តម្រូវការប្រព័ន្ធព័ត៌មានសាធារណៈ និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ បញ្ចូលគ្នាកំពុងកើន។" },
 ];
 
 const sectorSolutionsEn = [
@@ -277,10 +281,10 @@ const sectorSolutionsEn = [
 ];
 const sectorSolutionsKm = [
   { title: "ហាងលក់រាយ ផ្សារទំនើប និងបន្ទប់បង្ហាញ", desc: "បង្កើនការផ្សព្វផ្សាយក្នុងហាង ការណែនាំផ្លូវ និងលំហូរអតិថិជន។" },
-  { title: "រោងចក្រ និងតំបន់ឧស្សាហកម្ម", desc: "PA ការផ្សាយបន្ទាន់ និងការភ្ជាប់ Access ជាមួយវត្តមាន។" },
-  { title: "ការិយាល័យ និងអគារក្រុមហ៊ុន", desc: "អេក្រង់ទទួលភ្ញៀវ AV បន្ទប់ប្រជុំ និងការចូលតាម Turnstile។" },
-  { title: "សាលារៀន និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាល", desc: "ការសិក្សាអន្តរកម្ម AV ថ្នាក់រៀន និងទំនាក់ទំនងទូទាំងបរិវេណ។" },
-  { title: "មន្ទីរពេទ្យ និងស្ថាប័នសាធារណៈ", desc: "Signage ណែនាំផ្លូវ ការចូលគ្រប់គ្រង និងសារបន្ទាន់។" },
+  { title: "រោងចក្រ និងតំបន់ឧស្សាហកម្ម", desc: "ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ ការផ្សាយបន្ទាន់ និងការភ្ជាប់ ការចូលចេញ ជាមួយវត្តមាន។" },
+  { title: "ការិយាល័យ និងអគារក្រុមហ៊ុន", desc: "អេក្រង់ទទួលភ្ញៀវ សំឡេង និងរូបភាព បន្ទប់ប្រជុំ និងការចូលតាម ទ្វារបង្វិលគ្រប់គ្រងច្រកចេញចូល។" },
+  { title: "សាលារៀន និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាល", desc: "ការសិក្សាអន្តរកម្ម សំឡេង និងរូបភាព ថ្នាក់រៀន និងទំនាក់ទំនងទូទាំងបរិវេណ។" },
+  { title: "មន្ទីរពេទ្យ និងស្ថាប័នសាធារណៈ", desc: "អេក្រង់ផ្សព្វផ្សាយ ណែនាំផ្លូវ ការចូលគ្រប់គ្រង និងសារបន្ទាន់។" },
   { title: "សណ្ឋាគារ ព្រឹត្តិការណ៍ និងទីតាំងកម្មវិធី", desc: "ប្រព័ន្ធបង្ហាញសម្រាប់ភ្ញៀវ និងការគ្រប់គ្រងចូលតាមសំបុត្រ។" },
 ];
 
@@ -294,7 +298,7 @@ const cityCoverageKm = [
   { city: "ភ្នំពេញ", focus: "ក្រុមហ៊ុន លក់រាយ គម្រោងរដ្ឋ និងគម្រោងច្រើនសាខា។" },
   { city: "សៀមរាប", focus: "វិស័យទេសចរណ៍ បដិសណ្ឋារកិច្ច និងទីតាំងព្រឹត្តិការណ៍។" },
   { city: "ព្រះសីហនុ", focus: "គម្រោងឧស្សាហកម្ម និងគម្រោងខាងក្រៅដែលត្រូវការភាពធន់ខ្ពស់។" },
-  { city: "តំបន់សេដ្ឋកិច្ចពិសេស", focus: "PA រោងចក្រ អេក្រង់តាមដានផលិតកម្ម និង Access កម្លាំងការងារ។" },
+  { city: "តំបន់សេដ្ឋកិច្ចពិសេស", focus: "ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ រោងចក្រ អេក្រង់តាមដានផលិតកម្ម និង ការចូលចេញ កម្លាំងការងារ។" },
 ];
 
 const budgetTimelineCardsEn = [
@@ -304,7 +308,7 @@ const budgetTimelineCardsEn = [
 ];
 const budgetTimelineCardsKm = [
   { title: "ការដាក់ប្រើប្រាស់ទីតាំងតូច", detail: "ដំឡើងលឿន សម្រាប់សាខាតែមួយ ឬគម្រោងសាកល្បង។" },
-  { title: "ការរៀបចំទីតាំងច្រើនតំបន់", detail: "បញ្ចូល signage, PA និង access សម្រាប់ទីតាំងធំ។" },
+  { title: "ការរៀបចំទីតាំងច្រើនតំបន់", detail: "បញ្ចូល អេក្រង់ផ្សព្វផ្សាយ, ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ និង ការចូលចេញ សម្រាប់ទីតាំងធំ។" },
   { title: "កម្មវិធីសហគ្រាសច្រើនសាខា", detail: "ការដាក់ប្រើប្រាស់ជាដំណាក់កាល សម្រាប់ពង្រីកទូទាំងប្រទេស។" },
 ];
 
@@ -320,9 +324,9 @@ const complianceChecklistKm = [
   "ផែនការបន្ទុកអគ្គិសនី និងការភ្ជាប់ដី",
   "ការផ្ទៀងផ្ទាត់ឧបករណ៍ខាងក្នុង/ខាងក្រៅ និងស្តង់ដារ IP",
   "ការផ្ទៀងផ្ទាត់ការភ្ជាប់ព្រមានអគ្គិភ័យ និងបើកបន្ទាន់",
-  "គោលនយោបាយ Access កំណត់ហេតុ និងភាពរួចរាល់ audit trail",
+  "គោលនយោបាយ ការចូលចេញ កំណត់ហេតុ និងភាពរួចរាល់ ប្រវត្តិកំណត់ហេតុតាមដាន",
   "ប្លង់បណ្តាញ និងភាពរួចរាល់សម្រាប់តាមដានពីចម្ងាយ",
-  "SOP បណ្តុះបណ្តាល ថែទាំ និងម៉ាទ្រីសការធានា",
+  "នីតិវិធីស្តង់ដារ បណ្តុះបណ្តាល ថែទាំ និងម៉ាទ្រីសការធានា",
 ];
 
 const deliveryStepsEn = [
@@ -335,10 +339,10 @@ const deliveryStepsEn = [
 ];
 const deliveryStepsKm = [
   { title: "ស្ទង់ទីតាំង និងប្រមូលតម្រូវការ", detail: "វាយតម្លៃចរាចរណ៍ ចម្ងាយមើល បណ្តាញ និងសុវត្ថិភាព។" },
-  { title: "រចនា និងរៀបចំ BOQ", detail: "រៀបចំប្លង់ ប្រព័ន្ធ និងបញ្ជីបរិមាណសម្ភារៈ។" },
+  { title: "រចនា និងរៀបចំ បញ្ជីបរិមាណការងារ", detail: "រៀបចំប្លង់ ប្រព័ន្ធ និងបញ្ជីបរិមាណសម្ភារៈ។" },
   { title: "ដំឡើង និងរៀបខ្សែ", detail: "តម្លើងដោយវិជ្ជាជីវៈ និងរៀបខ្សែស្អាត។" },
   { title: "បញ្ចូលប្រព័ន្ធ និងបើកប្រើប្រាស់", detail: "សាកល្បង រៀបចំ និងលៃតម្រូវសមត្ថភាពប្រព័ន្ធ។" },
-  { title: "បណ្តុះបណ្តាល និងប្រគល់ប្រព័ន្ធ", detail: "បណ្តុះបណ្តាលអ្នកប្រើ និងប្រគល់ឯកសារ SOP។" },
+  { title: "បណ្តុះបណ្តាល និងប្រគល់ប្រព័ន្ធ", detail: "បណ្តុះបណ្តាលអ្នកប្រើ និងប្រគល់ឯកសារ នីតិវិធីស្តង់ដារ។" },
   { title: "សេវាបន្ទាប់ពីលក់", detail: "ថែទាំបង្ការ និងគាំទ្របច្ចេកទេសក្នុងតំបន់។" },
 ];
 
@@ -351,8 +355,8 @@ const integrationCardsEn = [
   "Remote monitoring and reporting",
 ];
 const integrationCardsKm = [
-  "CMS កណ្ដាលសម្រាប់កាលវិភាគមាតិកា",
-  "Access តាម RFID / QR / Biometric",
+  "ប្រព័ន្ធគ្រប់គ្រងមាតិកា កណ្ដាលសម្រាប់កាលវិភាគមាតិកា",
+  "ការចូលចេញ តាម RFID / QR / Biometric",
   "សមកាលកម្មវត្តមាន និងភ្ញៀវ",
   "ការភ្ជាប់ព្រមានអគ្គិភ័យ និងបើកបន្ទាន់",
   "ការគ្រប់គ្រងតំបន់សំឡេង និងការផ្សាយសារ",
@@ -367,9 +371,9 @@ const reasonsEn = [
 ];
 const reasonsKm = [
   { title: "ក្រុមវិស្វកម្មក្នុងតំបន់", detail: "ឆ្លើយតបលឿនតាមទីក្រុងសំខាន់ៗនៅកម្ពុជា។" },
-  { title: "សេវា single-vendor", detail: "ក្រុមតែមួយទទួលខុសត្រូវពីស្ទង់ដល់ប្រគល់ប្រព័ន្ធ។" },
+  { title: "សេវា អ្នកផ្គត់ផ្គង់តែមួយ", detail: "ក្រុមតែមួយទទួលខុសត្រូវពីស្ទង់ដល់ប្រគល់ប្រព័ន្ធ។" },
   { title: "លំហូរការងារផ្តោតលើសុវត្ថិភាព", detail: "ការរៀបខ្សែមានស្តង់ដារ និងការផ្ទៀងផ្ទាត់មុនបើកប្រើប្រាស់។" },
-  { title: "បណ្តុះបណ្តាល និងគាំទ្រច្បាស់លាស់", detail: "SOP បណ្តុះបណ្តាល ថែទាំ និងការធានា។" },
+  { title: "បណ្តុះបណ្តាល និងគាំទ្រច្បាស់លាស់", detail: "នីតិវិធីស្តង់ដារ បណ្តុះបណ្តាល ថែទាំ និងការធានា។" },
 ];
 
 const faqsEn = [
@@ -381,10 +385,10 @@ const faqsEn = [
   { q: "Are outdoor solutions weather-ready?", a: "Yes. We specify suitable IP-rated and protected outdoor components." },
 ];
 const faqsKm = [
-  { q: "Mugnee Cambodia ផ្តល់ដំណោះស្រាយអ្វីខ្លះ?", a: "LED display, digital signage, smart classroom, PA, turnstile និង access control ជាមួយសេវាគម្រោងពេញលេញ។" },
-  { q: "តម្លៃគម្រោងគណនាយ៉ាងដូចម្តេច?", a: "គណនាតាមទំហំអេក្រង់ pixel pitch ប្រភេទដំឡើង វិសាលភាពបញ្ចូលប្រព័ន្ធ និង BOQ។" },
-  { q: "តើមានសេវា end-to-end ទេ?", a: "មាន។ ស្ទង់ទីតាំង រចនា ដំឡើង បញ្ចូលប្រព័ន្ធ បើកប្រើប្រាស់ បណ្តុះបណ្តាល និងគាំទ្របន្ទាប់ពីលក់។" },
-  { q: "អាចភ្ជាប់ជាមួយវត្តមាន និង HR បានទេ?", a: "បាន។ យើងគាំទ្រលំហូរភ្ជាប់ RFID, QR, Biometric, Visitor និង Attendance។" },
+  { q: "Mugnee Cambodia ផ្តល់ដំណោះស្រាយអ្វីខ្លះ?", a: "អេក្រង់ LED, អេក្រង់ផ្សព្វផ្សាយឌីជីថល, ថ្នាក់រៀនឆ្លាតវៃ, ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ, ទ្វារបង្វិលគ្រប់គ្រងច្រកចេញចូល និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ ជាមួយសេវាគម្រោងពេញលេញ។" },
+  { q: "តម្លៃគម្រោងគណនាយ៉ាងដូចម្តេច?", a: "គណនាតាមទំហំអេក្រង់ ភីកសែលភីច ប្រភេទដំឡើង វិសាលភាពបញ្ចូលប្រព័ន្ធ និង បញ្ជីបរិមាណការងារ។" },
+  { q: "តើមានសេវា ចាប់ពីដើមដល់ចប់ ទេ?", a: "មាន។ ស្ទង់ទីតាំង រចនា ដំឡើង បញ្ចូលប្រព័ន្ធ បើកប្រើប្រាស់ បណ្តុះបណ្តាល និងគាំទ្របន្ទាប់ពីលក់។" },
+  { q: "អាចភ្ជាប់ជាមួយវត្តមាន និង ធនធានមនុស្ស បានទេ?", a: "បាន។ យើងគាំទ្រលំហូរភ្ជាប់ RFID, QR, Biometric, ភ្ញៀវ និង វត្តមាន។" },
   { q: "គាំទ្រគម្រោងក្រៅភ្នំពេញទេ?", a: "គាំទ្រ។ យើងបម្រើភ្នំពេញ សៀមរាប ព្រះសីហនុ និងខេត្តផ្សេងៗ។" },
   { q: "ដំណោះស្រាយខាងក្រៅសមស្របអាកាសធាតុទេ?", a: "សមស្រប។ យើងជ្រើសឧបករណ៍ខាងក្រៅដែលមានស្តង់ដារ IP និងការការពារត្រឹមត្រូវ។" },
 ];
@@ -505,7 +509,7 @@ export default function SolutionsClient() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.categoriesTitle}</h2>
           <p className="mt-2 text-slate-600">{t.categoriesDesc}</p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{solutionLinks.map((item) => <Link key={item.title} href={item.href} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 no-underline shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_16px_40px_-20px_rgba(14,165,233,0.55)] hover:no-underline focus:no-underline"><div className="relative text-sm font-semibold text-slate-900 transition-colors duration-300 group-hover:text-sky-700">{item.title}</div><p className="relative mt-2 text-sm leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-700">{item.desc}</p></Link>)}</div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{solutionLinks.filter((item) => typeof item.href === "string" && item.href.length > 0).map((item) => <Link key={item.title} href={item.href} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 no-underline shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_16px_40px_-20px_rgba(14,165,233,0.55)] hover:no-underline focus:no-underline"><div className="relative text-sm font-semibold text-slate-900 transition-colors duration-300 group-hover:text-sky-700">{item.title}</div><p className="relative mt-2 text-sm leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-700">{item.desc}</p></Link>)}</div>
         </div>
       </section>
 
@@ -521,7 +525,7 @@ export default function SolutionsClient() {
               >
                 <h3 className="text-sm font-semibold text-slate-900">{cluster.title}</h3>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {cluster.links.map((item) => (
+                  {cluster.links.filter((item) => typeof item.href === "string" && item.href.length > 0).map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}

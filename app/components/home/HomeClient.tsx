@@ -2,9 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import { useLang } from "../layout/LanguageProvider";
-import ProductGrid from "../sections/ProductGrid";
+
+const ProductGrid = dynamic(() => import("../sections/ProductGrid"), {
+  ssr: false,
+  loading: () => <div className="h-32 w-full animate-pulse rounded-2xl bg-slate-100" />,
+});
 
 type Tile = {
   key: string;
@@ -256,11 +261,11 @@ export default function HomeClient({
 
     const km = {
       badge: "កម្ពុជា • Mugnee Cambodia • ការអនុវត្តគម្រោង",
-      heroTitle: "Digital Display & Smart Technology Solutions in Cambodia",
+      heroTitle: "ដំណោះស្រាយ Digital Display & Smart Technology នៅកម្ពុជា",
       heroDesc:
-        "Mugnee គឺជាក្រុមហ៊ុនបច្ចេកវិទ្យាពហុជាតិ ហើយ Mugnee Cambodia គឺជាប្រតិបត្តិការពហុជាតិនៅកម្ពុជា ដែលផ្តល់សេវារៀបចំគម្រោង ដឹកជញ្ជូន ដំឡើង Commissioning និងការគាំទ្ររយៈពេលវែង សម្រាប់អាជីវកម្ម និងស្ថាប័ន។",
+        "Mugnee គឺជាក្រុមហ៊ុនបច្ចេកវិទ្យាពហុជាតិ ហើយ Mugnee Cambodia គឺជាប្រតិបត្តិការពហុជាតិនៅកម្ពុជា ដែលផ្តល់សេវារៀបចំគម្រោង ដឹកជញ្ជូន ដំឡើង ការត្រួតពិនិត្យដំណើរការ និងការគាំទ្ររយៈពេលវែង សម្រាប់អាជីវកម្ម និងស្ថាប័ន។",
       ctaQuote: "ស្នើសុំតម្លៃ",
-      ctaLed: "មើល LED Display",
+      ctaLed: "មើល អេក្រង់ LED",
       ctaExplore: "មើលដំណោះស្រាយ",
       serving: `តំបន់សេវាកម្ម: ${cities.join(" • ")}`,
       trust1t: "គាំទ្រក្នុងស្រុក",
@@ -268,7 +273,7 @@ export default function HomeClient({
       trust2t: "ប្រព័ន្ធមានស្ថិរភាព",
       trust2d: "ដំណើរការរឹងមាំ រូបភាពច្បាស់ និងអាយុកាលប្រើប្រាស់យូរ។",
       trust3t: "អនុវត្តគម្រោងលឿន",
-      trust3d: "Workflow ច្បាស់លាស់ សម្រាប់ដឹកជញ្ជូន ដំឡើង និង Commissioning បានលឿន។",
+      trust3d: "Workflow ច្បាស់លាស់ សម្រាប់ដឹកជញ្ជូន ដំឡើង និង ការត្រួតពិនិត្យដំណើរការ បានលឿន។",
 
       secProductsEyebrow: "អ្វីដែលយើងផ្តល់ជូន",
       secProductsTitle: "វិស័យសេវាកម្មសំខាន់ៗនៅកម្ពុជា",
@@ -307,7 +312,7 @@ export default function HomeClient({
       secServiceEyebrow: "តំបន់សេវាកម្ម",
       secServiceTitle: "តំបន់សេវាកម្មទូទាំងកម្ពុជា",
       secServiceDesc:
-        "សេវាដំឡើង Commissioning និងសេវាកម្មបន្ទាប់ពីលក់ នៅ Phnom Penh, Siem Reap, Sihanoukville និងតំបន់ជិតខាង។",
+        "សេវាដំឡើង ការត្រួតពិនិត្យដំណើរការ និងសេវាកម្មបន្ទាប់ពីលក់ នៅ Phnom Penh, Siem Reap, Sihanoukville និងតំបន់ជិតខាង។",
       secTestimonialsEyebrow: "ភាពទុកចិត្ត",
       secTestimonialsTitle: "មតិអតិថិជន និងគម្រោងយោង",
       secTestimonialsDesc:
@@ -326,7 +331,7 @@ export default function HomeClient({
         "យើងកំណត់ Scope, ទំហំការងារ និងគោលដៅអនុវត្ត មុនពេលសម្រេចដំណោះស្រាយចុងក្រោយ។",
       box2t: "ដំឡើងស្អាត និងមានស្តង់ដារ",
       box2d:
-        "Workflow ច្បាស់លាស់សម្រាប់ Mounting, Cabling, Control Setup និង Commissioning ដើម្បីធានាស្ថិរភាពរយៈពេលវែង។",
+        "Workflow ច្បាស់លាស់សម្រាប់ Mounting, Cabling, Control Setup និង ការត្រួតពិនិត្យដំណើរការ ដើម្បីធានាស្ថិរភាពរយៈពេលវែង។",
       box3t: "សេវាកម្មបន្ទាប់ពីលក់",
       box3d:
         "ជម្រើសធានា និងថែទាំប្រព័ន្ធ ដើម្បីកាត់បន្ថយ Downtime និងការពារការវិនិយោគរបស់អ្នក។",
@@ -413,7 +418,7 @@ export default function HomeClient({
 
       <div className="mt-6 w-full max-w-[60rem]">
         <div className="flex max-w-3xl flex-col gap-5 sm:gap-6">
-        <h1 className="text-3xl font-semibold leading-[1.14] tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-4xl sm:leading-[1.16] lg:text-[3.05rem] lg:leading-[1.12]">
+        <h1 className="text-3xl font-semibold leading-[1.22] tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-4xl sm:leading-[1.24] lg:text-[3.05rem] lg:leading-[1.2]">
           {t.heroTitle}
         </h1>
 
@@ -496,7 +501,7 @@ export default function HomeClient({
               <Link
                 key={c.key}
                 href={c.href}
-                className="group flex min-h-[124px] items-center justify-center rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md no-underline hover:no-underline"
+                className="home-unit-card group flex min-h-[124px] items-center justify-center rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md no-underline hover:no-underline"
               >
                 <div className="flex flex-col items-center justify-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center text-slate-700 transition-colors duration-200 group-hover:text-slate-900">
@@ -590,85 +595,6 @@ export default function HomeClient({
               </a>
             ))}
           </div>
-        </Container>
-      </section>
-
-      <section
-        className="border-t border-slate-100 bg-gradient-to-b from-slate-50/80 to-white py-7"
-        aria-labelledby="home-trust-title"
-      >
-        <Container>
-          <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">
-                {lang === "en" ? "Why Teams Choose Mugnee Cambodia" : "ហេតុអ្វីក្រុមការងារជ្រើសរើស Mugnee Cambodia"}
-              </p>
-              <h2 id="home-trust-title" className="mt-1 text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
-                {lang === "en"
-                  ? "Why Choose Mugnee Cambodia for Project Delivery"
-                  : "ហេតុអ្វីគួរជ្រើស Mugnee Cambodia សម្រាប់ការអនុវត្តគម្រោង"}
-              </h2>
-            </div>
-            <p className="rounded-full border border-sky-100 bg-sky-50 px-3 py-1 text-xs font-medium text-sky-800">
-              {lang === "en" ? "Cambodia Project Support" : "គាំទ្រគម្រោងនៅកម្ពុជា"}
-            </p>
-          </div>
-
-          <ul className="grid gap-3 sm:grid-cols-3" aria-label="Mugnee Cambodia trust highlights">
-            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
-              <div className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200"
-                >
-                  ✓
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">{t.trust1t}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust1d}</p>
-                  <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Planning, implementation, after-sales" : "រៀបចំ, អនុវត្ត, គាំទ្របន្ទាប់ពីលក់"}
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
-              <div className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700 ring-1 ring-blue-200"
-                >
-                  ◎
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">{t.trust2t}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust2d}</p>
-                  <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Quality workflow and operational reliability" : "ដំណើរការស្តង់ដារ និងភាពទុកចិត្តបានក្នុងការប្រើប្រាស់"}
-                  </p>
-                </div>
-              </div>
-            </li>
-
-            <li className="group rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md">
-              <div className="flex items-start gap-3">
-                <span
-                  aria-hidden="true"
-                  className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700 ring-1 ring-amber-200"
-                >
-                  →
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-slate-900">{t.trust3t}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.trust3d}</p>
-                  <p className="mt-2 text-xs font-medium text-slate-500">
-                    {lang === "en" ? "Planning to commissioning with clear milestones" : "ពីការធ្វើផែនការដល់ Commissioning មានជំហានច្បាស់លាស់"}
-                  </p>
-                </div>
-              </div>
-            </li>
-          </ul>
         </Container>
       </section>
 
@@ -907,6 +833,36 @@ export default function HomeClient({
       <div className="h-10" />
 
       <style jsx global>{`
+        .home-unit-card {
+          position: relative;
+          border: 1px solid transparent;
+          background:
+            linear-gradient(#fff, #fff) padding-box,
+            linear-gradient(
+                120deg,
+                rgba(14, 165, 233, 0.35),
+                rgba(59, 130, 246, 0.6),
+                rgba(16, 185, 129, 0.45),
+                rgba(245, 158, 11, 0.45),
+                rgba(236, 72, 153, 0.4)
+              )
+              border-box;
+          background-size: 100% 100%, 220% 220%;
+          box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+        }
+        .home-unit-card:hover {
+          animation: home-unit-rgb-border 2.2s linear infinite;
+          box-shadow: 0 14px 26px rgba(15, 23, 42, 0.12);
+          transform: translateY(-2px);
+        }
+        @keyframes home-unit-rgb-border {
+          0% {
+            background-position: 0 0, 0 50%;
+          }
+          100% {
+            background-position: 0 0, 220% 50%;
+          }
+        }
         @keyframes home-partner-marquee {
           0% {
             transform: translateX(0);

@@ -17,24 +17,29 @@ export default function GlobalBackToTop() {
   const [chatOpen, setChatOpen] = useState(false);
 
   useEffect(() => {
+    let rafId = 0;
     const update = () => {
       setShow(getScrollY() > 140);
       setChatOpen(document.documentElement.getAttribute("data-chat-open") === "true");
     };
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(() => {
+        rafId = 0;
+        update();
+      });
+    };
 
-    window.addEventListener("scroll", update, { passive: true });
-    document.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", update, { passive: true });
     window.addEventListener("mugnee-chat-toggle", update);
-    const timer = window.setInterval(update, 250);
     update();
 
     return () => {
-      window.removeEventListener("scroll", update);
-      document.removeEventListener("scroll", update);
+      if (rafId) window.cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", update);
       window.removeEventListener("mugnee-chat-toggle", update);
-      window.clearInterval(timer);
     };
   }, []);
 

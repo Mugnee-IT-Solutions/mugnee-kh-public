@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FormEvent, useState } from "react";
 import { useLang } from "../components/layout/LanguageProvider";
 
 const socialLinks = [
@@ -155,6 +156,63 @@ export default function ContactClient() {
   const isKm = lang === "km";
   const officesData = isKm ? officesKm : offices;
   const contactsData = isKm ? contactsKm : contacts;
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<{ type: "idle" | "success" | "error"; text: string }>({
+    type: "idle",
+    text: "",
+  });
+
+  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (sending) return;
+    setStatus({ type: "idle", text: "" });
+    setSending(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await res.json()) as { ok?: boolean; message?: string };
+
+      if (!res.ok || !data.ok) {
+        setStatus({
+          type: "error",
+          text:
+            data.message ||
+            (isKm
+              ? "មិនអាចផ្ញើសារបានទេ។ សូមព្យាយាមម្តងទៀត។"
+              : "Unable to send your message. Please try again."),
+        });
+        return;
+      }
+
+      setStatus({
+        type: "success",
+        text: isKm
+          ? "សាររបស់អ្នកត្រូវបានផ្ញើជោគជ័យ។ ក្រុមការងារយើងនឹងទាក់ទងត្រឡប់វិញឆាប់ៗនេះ។"
+          : "Your message was sent successfully. Our team will contact you soon.",
+      });
+      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+    } catch {
+      setStatus({
+        type: "error",
+        text: isKm
+          ? "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេបានទេ។ សូមព្យាយាមម្តងទៀត។"
+          : "Could not connect to server. Please try again.",
+      });
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
@@ -205,41 +263,70 @@ export default function ContactClient() {
               <p className="mt-2 text-sm text-slate-600">
                 {isKm ? uiKm.formDesc : "Fill out the form and our team will contact you as soon as possible with the next steps."}
               </p>
-              <form className="mt-5 grid gap-3">
+              <form className="mt-5 grid gap-3 sm:grid-cols-2" onSubmit={onSubmit}>
                 <input
                   type="text"
+                  value={form.name}
+                  onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
                   placeholder={isKm ? uiKm.name : "Your Name"}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
+                  required
+                  minLength={2}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
                 />
                 <input
                   type="email"
+                  value={form.email}
+                  onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
                   placeholder={isKm ? uiKm.email : "Your Email"}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
+                  required
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
                 />
                 <input
                   type="tel"
+                  value={form.phone}
+                  onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
                   placeholder={isKm ? uiKm.phone : "Phone Number"}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
+                  required
+                  minLength={6}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
                 />
                 <input
                   type="text"
+                  value={form.subject}
+                  onChange={(e) => setForm((prev) => ({ ...prev, subject: e.target.value }))}
                   placeholder={isKm ? uiKm.subject : "Subject"}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
+                  required
+                  minLength={2}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
                 />
                 <textarea
                   rows={5}
+                  value={form.message}
+                  onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
                   placeholder={isKm ? uiKm.message : "Your Message"}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
+                  required
+                  minLength={10}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-2"
                 />
                 <button
-                  type="button"
-                  className="mt-1 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md"
+                  type="submit"
+                  disabled={sending}
+                  className="mt-1 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-70 sm:col-span-2"
                 >
-                  {isKm ? uiKm.submit : "Submit"}
+                  {sending ? (isKm ? "កំពុងផ្ញើ..." : "Sending...") : isKm ? uiKm.submit : "Submit"}
                 </button>
+                {status.type !== "idle" ? (
+                  <p
+                    className={`text-sm sm:col-span-2 ${
+                      status.type === "success" ? "text-emerald-700" : "text-red-600"
+                    }`}
+                  >
+                    {status.text}
+                  </p>
+                ) : null}
               </form>
               <p className="mt-2 text-xs text-slate-500">
-                {isKm ? uiKm.formNote : "Form submission can be connected to your email or CRM when ready."}
+                {isKm ? "Form ពេញលេញនឹងត្រូវបានផ្ញើទៅអ៊ីមែលក្រុមការងាររបស់អ្នកដោយផ្ទាល់។" : "Form submissions are sent directly to your team email."}
               </p>
             </div>
 

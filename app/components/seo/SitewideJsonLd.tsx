@@ -1,5 +1,3 @@
-﻿"use client";
-
 import JsonLd from "./JsonLd";
 
 const SITE_URL =
@@ -56,5 +54,6 @@ export default function SitewideJsonLd() {
     </>
   );
 }
+
 
 

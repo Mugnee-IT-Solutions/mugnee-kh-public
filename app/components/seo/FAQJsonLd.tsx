@@ -1,5 +1,3 @@
-"use client";
-
 import JsonLd from "./JsonLd";
 
 type FAQItem = {
@@ -39,4 +37,5 @@ export default function FAQJsonLd({ items, id = "faq-jsonld" }: FAQJsonLdProps) 
 
   return <JsonLd id={id} data={faqData} />;
 }
+
 
