@@ -1,5 +1,2 @@
-import { redirect } from "next/navigation";
-
-export default function Page() {
-  redirect("/turnstile-gate");
-}
+export { metadata } from "../../turnstile-gate/page";
+export { default } from "../../turnstile-gate/page";

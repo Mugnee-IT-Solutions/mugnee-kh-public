@@ -1,5 +1,2 @@
-import { redirect } from "next/navigation";
-
-export default function Page() {
-  redirect("/pa-system");
-}
+export { metadata } from "../../pa-system/page";
+export { default } from "../../pa-system/page";

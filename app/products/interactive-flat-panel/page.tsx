@@ -1,5 +1,2 @@
-import { redirect } from "next/navigation";
-
-export default function Page() {
-  redirect("/interactive-flat-panel");
-}
+export { metadata } from "../../interactive-flat-panel/page";
+export { default } from "../../interactive-flat-panel/page";

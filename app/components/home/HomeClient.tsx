@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLang } from "../layout/LanguageProvider";
 
 const ProductGrid = dynamic(() => import("../sections/ProductGrid"), {
@@ -88,6 +88,8 @@ const HERO_SLIDES = [
     alt: "Integrated systems delivery and support in Cambodia",
   },
 ];
+const MAP_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.3322027815047!2d104.92304627050727!3d11.573972618867787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951e6231c345b%3A0xebf28967942f76b6!2sMugnee%20Multiple%20Co.%2C%20Ltd!5e1!3m2!1sen!2sbd!4v1770445691312!5m2!1sen!2sbd";
 
 function Container({ children }: { children: React.ReactNode }) {
   return (
@@ -134,34 +136,107 @@ function SectionTitle({
 }
 
 export default function HomeClient({
-  cities,
   categoryTiles,
   faq,
 }: {
-  cities: string[];
   categoryTiles: Tile[];
   faq: Faq[];
 }) {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isCarouselPaused, setIsCarouselPaused] = useState(false);
+  const [isHeroPaused, setIsHeroPaused] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const [showCatalog, setShowCatalog] = useState(false);
+  const [showMap, setShowMap] = useState(false);
+  const [showLowerSections, setShowLowerSections] = useState(false);
+  const catalogSectionRef = useRef<HTMLElement | null>(null);
+  const mapSectionRef = useRef<HTMLDivElement | null>(null);
+  const lowerSectionsRef = useRef<HTMLElement | null>(null);
+  const totalSlides = HERO_SLIDES.length;
+  const prevSlide = (activeSlide - 1 + totalSlides) % totalSlides;
+  const nextSlide = (activeSlide + 1) % totalSlides;
 
   const goToPrevSlide = () => {
-    setActiveSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+    setActiveSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   };
 
   const goToNextSlide = () => {
-    setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    setActiveSlide((prev) => (prev + 1) % totalSlides);
   };
 
   useEffect(() => {
-    if (isCarouselPaused) return;
+    if (typeof window === "undefined") return undefined;
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReduceMotion(media.matches);
+    sync();
+    if (media.addEventListener) {
+      media.addEventListener("change", sync);
+      return () => media.removeEventListener("change", sync);
+    }
+    media.addListener(sync);
+    return () => media.removeListener(sync);
+  }, []);
 
-    const timer = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5000);
+  useEffect(() => {
+    if (reduceMotion || isHeroPaused) return undefined;
+    const id = window.setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % totalSlides);
+    }, 4000);
+    return () => window.clearInterval(id);
+  }, [reduceMotion, isHeroPaused, totalSlides]);
 
-    return () => clearInterval(timer);
-  }, [isCarouselPaused]);
+  useEffect(() => {
+    const section = catalogSectionRef.current;
+    if (!section || showCatalog) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShowCatalog(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "320px 0px" },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [showCatalog]);
+
+  useEffect(() => {
+    const section = mapSectionRef.current;
+    if (!section || showMap) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShowMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [showMap]);
+
+  useEffect(() => {
+    const section = lowerSectionsRef.current;
+    if (!section || showLowerSections) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShowLowerSections(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "700px 0px" },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [showLowerSections]);
 
   const { lang } = useLang();
 
@@ -173,90 +248,28 @@ export default function HomeClient({
         "Mugnee is a multinational technology company, and Mugnee Cambodia serves as its local multinational operation for Cambodia with project planning, delivery, installation, commissioning, and long-term support for commercial and institutional clients.",
       ctaQuote: "Get Quotation",
       ctaLed: "Explore LED Display",
-      ctaExplore: "Explore Solutions",
-      serving: `Serving: ${cities.join(" • ")}`,
-      trust1t: "Local Support",
-      trust1d: "Cambodia-based project execution and after-sales assistance.",
-      trust2t: "Built for Reliability",
-      trust2d: "Structured quality control and consistent service standards.",
-      trust3t: "Fast Deployment",
-      trust3d: "Clear milestones from project kickoff to handover.",
-
       secProductsEyebrow: "What we deliver",
       secProductsTitle: "Core Business Units in Cambodia",
-      viewDetails: "View details",
-      priceGuideLine1: "Need pricing guidance? Start with our",
-      priceGuideLink: "Cambodia Price Guides",
-      priceGuideLine2: "and request a project-based quotation.",
       secCatalogEyebrow: "Our Products",
-      secCatalogTitle: "Catalog Overview",
-      secCatalogDesc:
-        "Explore our catalog pages to review available product lines and request a project quotation.",
       secPartnersEyebrow: "Partnership",
       secPartnersTitle: "Supported by International Development Partnerships",
       secPartnersDesc:
         "Our team has delivered projects supported by organizations such as The World Bank, JICA, Swisscontact, GIZ, and Mitsubishi Research Institute (MRI), with structured execution and documentation.",
-
-      secSolutionsEyebrow: "Industry solutions",
-      secSolutionsTitle: "Industry Solutions in Cambodia",
-      secSolutionsDesc:
-        "Review business-oriented solution pages by industry use-case, with local delivery and support coverage.",
-      exploreSolution: "Explore solution",
-
       secAuthEyebrow: "Partners",
       secAuthTitle: "Authorized Distributor & Certified Engineering Partner",
       secAuthDesc:
         "Mugnee Cambodia works with recognized manufacturing partners and certified engineers for accountable project delivery.",
-
-      secIndustryEyebrow: "Real-World Use",
-      secIndustryTitle: "Product Use-Cases by Industry in Cambodia",
-      secIndustryDesc:
-        "Industry-specific deployment scenarios for retail, education, corporate, government, hospitality, and factory projects.",
-      secSpecsEyebrow: "Delivery Snapshot",
-      secSpecsTitle: "Project Delivery Standards",
-      secSpecsDesc:
-        "A quick overview of how we manage delivery quality, response time, documentation, and support continuity.",
       secServiceEyebrow: "Service area",
       secServiceTitle: "Service Areas Across Cambodia",
       secServiceDesc:
         "Local installation, commissioning, and after-sales support across Phnom Penh, Siem Reap, Sihanoukville, and nearby provinces.",
-      secTestimonialsEyebrow: "Trust",
-      secTestimonialsTitle: "Customer Testimonials & Client References",
-      secTestimonialsDesc:
-        "Local buyer feedback and project references that highlight reliability, image quality and service response.",
       secContactEyebrow: "Local Support",
       secContactTitle: "Cambodia Office & Project Support",
       secContactDesc:
         "Talk to our local team for project scoping, timeline planning, and quotation support.",
-
-      secQuickEyebrow: "Popular in Cambodia",
-      secQuickTitle: "Quick Access to Key Product Categories",
-      secQuickDesc:
-        "Quick access pages for each business category. For commercial terms and final pricing, request a project quotation.",
-      box1t: "Project Discovery",
-      box1d:
-        "We define project scope, site constraints, and delivery goals before final configuration.",
-      box2t: "Clean Installation",
-      box2d:
-        "Structured workflow for preparation, installation, testing, and acceptance.",
-      box3t: "After-Sales Support",
-      box3d:
-        "Post-handover support plans to keep systems stable and reduce downtime.",
-
-      secProjectsEyebrow: "Trust & proof",
-      secProjectsTitle: "Projects & Installations in Cambodia",
-      secProjectsDesc:
-        "Case studies build credibility. Add real photos, locations and scope to win high-intent buyers.",
-      viewProjects: "View projects",
-      bannerTitle: "Want a fast quotation?",
-      bannerDesc:
-        "Share your size, location, usage type and timeline. We will suggest a practical configuration and budget range.",
-
       secFaqEyebrow: "FAQs",
       secFaqTitle: "Common Questions from Cambodia Buyers",
       secFaqDesc: "Short, clear answers to help customers make confident decisions.",
-      tip:
-        "Tip: Replace placeholder phone/address with your Cambodia office details for stronger local SEO.",
     };
 
     const km = {
@@ -266,94 +279,32 @@ export default function HomeClient({
         "Mugnee គឺជាក្រុមហ៊ុនបច្ចេកវិទ្យាពហុជាតិ ហើយ Mugnee Cambodia គឺជាប្រតិបត្តិការពហុជាតិនៅកម្ពុជា ដែលផ្តល់សេវារៀបចំគម្រោង ដឹកជញ្ជូន ដំឡើង ការត្រួតពិនិត្យដំណើរការ និងការគាំទ្ររយៈពេលវែង សម្រាប់អាជីវកម្ម និងស្ថាប័ន។",
       ctaQuote: "ស្នើសុំតម្លៃ",
       ctaLed: "មើល អេក្រង់ LED",
-      ctaExplore: "មើលដំណោះស្រាយ",
-      serving: `តំបន់សេវាកម្ម: ${cities.join(" • ")}`,
-      trust1t: "គាំទ្រក្នុងស្រុក",
-      trust1d: "ក្រុមការងារនៅកម្ពុជា សម្រាប់ការដំឡើង និងសេវាកម្មបន្ទាប់ពីលក់។",
-      trust2t: "ប្រព័ន្ធមានស្ថិរភាព",
-      trust2d: "ដំណើរការរឹងមាំ រូបភាពច្បាស់ និងអាយុកាលប្រើប្រាស់យូរ។",
-      trust3t: "អនុវត្តគម្រោងលឿន",
-      trust3d: "Workflow ច្បាស់លាស់ សម្រាប់ដឹកជញ្ជូន ដំឡើង និង ការត្រួតពិនិត្យដំណើរការ បានលឿន។",
-
       secProductsEyebrow: "អ្វីដែលយើងផ្តល់ជូន",
       secProductsTitle: "វិស័យសេវាកម្មសំខាន់ៗនៅកម្ពុជា",
-      viewDetails: "មើលព័ត៌មានលម្អិត",
-      priceGuideLine1: "ចង់បានការណែនាំតម្លៃ? ចាប់ផ្តើមពី",
-      priceGuideLink: "Price Guide កម្ពុជា",
-      priceGuideLine2: "ហើយស្នើសុំតម្លៃតាមគម្រោង។",
       secCatalogEyebrow: "ផលិតផលរបស់យើង",
-      secCatalogTitle: "ទិដ្ឋភាពទូទៅកាតាឡុក",
-      secCatalogDesc:
-        "ស្វែងរកក្រុមផលិតផលសម្រាប់គម្រោង ថវិកា និងលក្ខខណ្ឌទីតាំងផ្សេងៗនៅកម្ពុជា។",
       secPartnersEyebrow: "ភាពជាដៃគូ",
       secPartnersTitle: "គាំទ្រដោយភាពជាដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
       secPartnersDesc:
         "យើងបានអនុវត្តគម្រោងក្រោមការគាំទ្រពីអង្គការអន្តរជាតិជាច្រើន ដូចជា The World Bank, JICA, Swisscontact, GIZ និង Mitsubishi Research Institute (MRI)។",
-
-      secSolutionsEyebrow: "ដំណោះស្រាយតាមវិស័យ",
-      secSolutionsTitle: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា",
-      secSolutionsDesc:
-        "ដំណោះស្រាយសម្រាប់គម្រោងនៅកម្ពុជា ជាមួយសេវាអនុវត្ត និងគាំទ្រក្នុងស្រុក។",
-      exploreSolution: "មើលដំណោះស្រាយ",
-
       secAuthEyebrow: "ដៃគូ",
       secAuthTitle: "អ្នកចែកចាយផ្លូវការ និងដៃគូវិស្វកម្មដែលមានវិញ្ញាបនបត្រ",
       secAuthDesc:
         "Mugnee Cambodia ផ្គត់ផ្គង់គ្រឿងបន្លាស់ LED និងប្រព័ន្ធគ្រប់គ្រងស្តង់ដារអន្តរជាតិ ជាមួយក្រុមវិស្វករដែលមានវិញ្ញាបនបត្រ និងសេវាកម្មគាំទ្រនៅកម្ពុជា។",
-
-      secIndustryEyebrow: "ការប្រើប្រាស់ពិត",
-      secIndustryTitle: "ករណីប្រើប្រាស់ផលិតផលតាមវិស័យ នៅកម្ពុជា",
-      secIndustryDesc:
-        "Use-case ជាក់ស្តែងសម្រាប់គម្រោងអាជីវកម្ម និងស្ថាប័ននៅកម្ពុជា។",
-      secSpecsEyebrow: "សង្ខេបបច្ចេកទេស",
-      secSpecsTitle: "ស្តង់ដារអនុវត្តគម្រោង",
-      secSpecsDesc:
-        "សង្ខេបអំពីស្តង់ដារអនុវត្ត ការគ្រប់គ្រងគុណភាព និងសេវាកម្មបន្ទាប់ពីប្រគល់ការងារ។",
       secServiceEyebrow: "តំបន់សេវាកម្ម",
       secServiceTitle: "តំបន់សេវាកម្មទូទាំងកម្ពុជា",
       secServiceDesc:
         "សេវាដំឡើង ការត្រួតពិនិត្យដំណើរការ និងសេវាកម្មបន្ទាប់ពីលក់ នៅ Phnom Penh, Siem Reap, Sihanoukville និងតំបន់ជិតខាង។",
-      secTestimonialsEyebrow: "ភាពទុកចិត្ត",
-      secTestimonialsTitle: "មតិអតិថិជន និងគម្រោងយោង",
-      secTestimonialsDesc:
-        "មតិយោបល់ពីអតិថិជនក្នុងស្រុក និងឯកសារយោងគម្រោង ដែលបង្ហាញពីគុណភាព និងការគាំទ្ររបស់យើង។",
       secContactEyebrow: "គាំទ្រក្នុងស្រុក",
       secContactTitle: "ការិយាល័យកម្ពុជា & សេវាគាំទ្រគម្រោង",
       secContactDesc:
         "ទាក់ទងក្រុមការងារនៅកម្ពុជា សម្រាប់ការកំណត់ Scope, ពេលវេលា និងស្នើសុំតម្លៃតាមគម្រោង។",
-
-      secQuickEyebrow: "ពេញនិយមនៅកម្ពុជា",
-      secQuickTitle: "ចូលរហ័សទៅកាន់ប្រភេទផលិតផលសំខាន់ៗ",
-      secQuickDesc:
-        "ទំព័រងាយស្រួលសម្រាប់អ្នកទិញ ដែលមាន Specs, Use-case និងការណែនាំជាក់ស្តែង។ សម្រាប់តម្លៃពិត សូមស្នើសុំតម្លៃតាមគម្រោង។",
-      box1t: "រៀបចំគម្រោងដំបូង",
-      box1d:
-        "យើងកំណត់ Scope, ទំហំការងារ និងគោលដៅអនុវត្ត មុនពេលសម្រេចដំណោះស្រាយចុងក្រោយ។",
-      box2t: "ដំឡើងស្អាត និងមានស្តង់ដារ",
-      box2d:
-        "Workflow ច្បាស់លាស់សម្រាប់ Mounting, Cabling, Control Setup និង ការត្រួតពិនិត្យដំណើរការ ដើម្បីធានាស្ថិរភាពរយៈពេលវែង។",
-      box3t: "សេវាកម្មបន្ទាប់ពីលក់",
-      box3d:
-        "ជម្រើសធានា និងថែទាំប្រព័ន្ធ ដើម្បីកាត់បន្ថយ Downtime និងការពារការវិនិយោគរបស់អ្នក។",
-
-      secProjectsEyebrow: "ភាពទុកចិត្ត",
-      secProjectsTitle: "គម្រោង និងការដំឡើងនៅកម្ពុជា",
-      secProjectsDesc:
-        "Case Study និងគម្រោងពិត ជួយបង្កើនភាពជឿជាក់។ បន្ថែមរូបភាព ទីតាំង និង Scope ការងារ ដើម្បីទាក់ទាញអ្នកទិញដែលមានបំណងខ្ពស់។",
-      viewProjects: "មើលគម្រោង",
-      bannerTitle: "ចង់បានតម្លៃរហ័ស?",
-      bannerDesc:
-        "សូមផ្ញើព័ត៌មានទំហំ ទីតាំង ប្រភេទការប្រើប្រាស់ និង Timeline។ ក្រុមការងារយើងនឹងណែនាំ Configuration និង Budget Range សមស្រប។",
-
       secFaqEyebrow: "សំណួរញឹកញាប់",
       secFaqTitle: "សំណួរដែលអ្នកទិញនៅកម្ពុជាសួរញឹកញាប់",
       secFaqDesc: "ចម្លើយខ្លី និងច្បាស់ ដើម្បីជួយអ្នកសម្រេចចិត្តបានមានទំនុកចិត្ត។",
-      tip:
-        "ណែនាំ: បំពេញលេខទូរស័ព្ទ និងអាសយដ្ឋានការិយាល័យកម្ពុជា ឱ្យពេញលេញ ដើម្បីពង្រឹង Local SEO។",
     };
 
     return lang === "en" ? en : sanitizeLocaleText(km, en);
-  }, [lang, cities]);
+  }, [lang]);
 
   return (
     <div className="bg-white text-slate-900">
@@ -362,11 +313,13 @@ export default function HomeClient({
    ========================= */}
 <section
   className="relative overflow-hidden border-b border-slate-100"
-  onMouseEnter={() => setIsCarouselPaused(true)}
-  onMouseLeave={() => setIsCarouselPaused(false)}
+  onMouseEnter={() => setIsHeroPaused(true)}
+  onMouseLeave={() => setIsHeroPaused(false)}
+  onFocusCapture={() => setIsHeroPaused(true)}
+  onBlurCapture={() => setIsHeroPaused(false)}
 >
   {/* Background */}
-  <div className="absolute inset-0">
+  <div className="pointer-events-none absolute inset-0">
     {HERO_SLIDES.map((slide, idx) => (
       <div
         key={slide.src}
@@ -376,14 +329,17 @@ export default function HomeClient({
         ].join(" ")}
         aria-hidden={idx !== activeSlide}
       >
-        <Image
-          src={slide.src}
-          alt={slide.alt}
-          fill
-          priority={idx === 0}
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        {idx === activeSlide || idx === prevSlide || idx === nextSlide ? (
+          <Image
+            src={slide.src}
+            alt={slide.alt}
+            fill
+            priority={idx === 0}
+            loading={idx === 0 ? "eager" : "lazy"}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        ) : null}
       </div>
     ))}
 
@@ -466,7 +422,7 @@ export default function HomeClient({
     </div>
   </div>
 
-  <div className="pointer-events-none absolute inset-y-0 left-0 right-0 z-20 flex items-center justify-between px-3 sm:px-4">
+  <div className="absolute inset-y-0 left-0 z-30 flex items-center pl-3 sm:pl-4">
     <button
       type="button"
       onClick={goToPrevSlide}
@@ -475,6 +431,8 @@ export default function HomeClient({
     >
       <span aria-hidden="true">←</span>
     </button>
+  </div>
+  <div className="absolute inset-y-0 right-0 z-30 flex items-center pr-3 sm:pr-4">
     <button
       type="button"
       onClick={goToNextSlide}
@@ -521,87 +479,102 @@ export default function HomeClient({
       {/* =========================
           PRODUCT RANGE
          ========================= */}
-      <section className="border-t border-slate-100 bg-slate-50/70 py-12 sm:py-14">
+      <section
+        ref={catalogSectionRef}
+        className="border-t border-slate-100 bg-slate-50/70 py-12 sm:py-14"
+      >
         <Container>
           <SectionTitle
             title={t.secCatalogEyebrow}
           />
 
-          <ProductGrid
-            columns={3}
-            pageSize={12}
-            showPagination
-            showCategoryFilters={false}
-            showSort={false}
-          />
+          {showCatalog ? (
+            <ProductGrid
+              columns={3}
+              pageSize={12}
+              showPagination
+              showCategoryFilters={false}
+              showSort={false}
+            />
+          ) : (
+            <div className="mt-6 h-40 w-full animate-pulse rounded-2xl bg-slate-100" />
+          )}
         </Container>
       </section>
 
       {/* =========================
           PARTNERSHIPS
          ========================= */}
-      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+      <section ref={lowerSectionsRef} className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
-          <SectionTitle
-            eyebrow={t.secPartnersEyebrow}
-            title={t.secPartnersTitle}
-            desc={t.secPartnersDesc}
-            descClassName="max-w-none"
-          />
+          {showLowerSections ? (
+            <>
+              <SectionTitle
+                eyebrow={t.secPartnersEyebrow}
+                title={t.secPartnersTitle}
+                desc={t.secPartnersDesc}
+                descClassName="max-w-none"
+              />
 
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
-            {[
-              {
-                label: "The World Bank",
-                src: "/images/partners/world-bank.svg",
-                href: "https://www.worldbank.org/",
-              },
-              {
-                label: "JICA",
-                src: "/images/partners/jica.svg",
-                href: "https://www.jica.go.jp/english/",
-              },
-              {
-                label: "Swisscontact",
-                src: "/images/partners/swisscontact.svg",
-                href: "https://www.swisscontact.org/en",
-              },
-              {
-                label: "GIZ",
-                src: "/images/partners/giz.svg",
-                href: "https://www.giz.de/en/",
-              },
-              {
-                label: "Mitsubishi Research Institute (MRI)",
-                src: "https://www.mri.co.jp/common/images/logo_jp.png",
-                href: "https://www.mri.co.jp/en/index.html",
-              },
-            ].map((logo) => (
-              <a
-                key={logo.label}
-                href={logo.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${logo.label} official website`}
-                className="group flex h-20 items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 px-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md md:h-24"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.label}
-                  width={220}
-                  height={64}
-                  className="max-h-10 w-auto object-contain md:max-h-12"
-                />
-              </a>
-            ))}
-          </div>
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
+                {[
+                  {
+                    label: "The World Bank",
+                    src: "/images/partners/world-bank.svg",
+                    href: "https://www.worldbank.org/",
+                  },
+                  {
+                    label: "JICA",
+                    src: "/images/partners/jica.svg",
+                    href: "https://www.jica.go.jp/english/",
+                  },
+                  {
+                    label: "Swisscontact",
+                    src: "/images/partners/swisscontact.svg",
+                    href: "https://www.swisscontact.org/en",
+                  },
+                  {
+                    label: "GIZ",
+                    src: "/images/partners/giz.svg",
+                    href: "https://www.giz.de/en/",
+                  },
+                  {
+                    label: "Mitsubishi Research Institute (MRI)",
+                    src: "/images/partners/mitsubishi.svg",
+                    href: "https://www.mri.co.jp/en/index.html",
+                  },
+                ].map((logo) => (
+                  <a
+                    key={logo.label}
+                    href={logo.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${logo.label} official website`}
+                    className="group flex h-20 items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 px-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md md:h-24"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.label}
+                      width={220}
+                      height={64}
+                      className="max-h-10 w-auto object-contain md:max-h-12"
+                      style={{ width: "auto", height: "auto" }}
+                    />
+                  </a>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="h-48 w-full animate-pulse rounded-2xl bg-slate-100" />
+          )}
         </Container>
       </section>
 
       {/* =========================
           AUTHORIZED PARTNER
          ========================= */}
-      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+      {showLowerSections ? (
+        <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
           <SectionTitle
             eyebrow={t.secAuthEyebrow}
@@ -641,6 +614,7 @@ export default function HomeClient({
                     width={180}
                     height={32}
                     className={logo.label === "Lampro" ? "h-10 w-auto object-contain" : "h-8 w-auto object-contain"}
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
               ))}
@@ -672,12 +646,14 @@ export default function HomeClient({
             ))}
           </div>
         </Container>
-      </section>
+        </section>
+      ) : null}
 
       {/* =========================
           SERVICE AREAS
          ========================= */}
-      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+      {showLowerSections ? (
+        <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
           <SectionTitle
             eyebrow={t.secServiceEyebrow}
@@ -707,12 +683,14 @@ export default function HomeClient({
             ))}
           </div>
         </Container>
-      </section>
+        </section>
+      ) : null}
 
       {/* =========================
           LOCAL CONTACT
          ========================= */}
-      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+      {showLowerSections ? (
+        <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
           <SectionTitle
             eyebrow={t.secContactEyebrow}
@@ -771,10 +749,10 @@ export default function HomeClient({
               </div>
             </div>
 
-            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+            <div ref={mapSectionRef} className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
               <iframe
                 title="Mugnee Cambodia Office Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.3322027815047!2d104.92304627050727!3d11.573972618867787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951e6231c345b%3A0xebf28967942f76b6!2sMugnee%20Multiple%20Co.%2C%20Ltd!5e1!3m2!1sen!2sbd!4v1770445691312!5m2!1sen!2sbd"
+                src={showMap ? MAP_EMBED_SRC : undefined}
                 width="100%"
                 height="360"
                 style={{ border: 0 }}
@@ -785,12 +763,14 @@ export default function HomeClient({
             </div>
           </div>
         </Container>
-      </section>
+        </section>
+      ) : null}
 
       {/* =========================
           FAQ
          ========================= */}
-      <section className="border-t border-slate-100 bg-white py-14 sm:py-16">
+      {showLowerSections ? (
+        <section className="border-t border-slate-100 bg-white py-14 sm:py-16">
         <Container>
           <SectionTitle
             eyebrow={t.secFaqEyebrow}
@@ -827,7 +807,8 @@ export default function HomeClient({
           </div>
 
         </Container>
-      </section>
+        </section>
+      ) : null}
 
       {/* footer spacer */}
       <div className="h-10" />

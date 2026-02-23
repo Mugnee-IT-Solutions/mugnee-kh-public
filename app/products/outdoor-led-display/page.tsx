@@ -1,6 +1,2 @@
-import { redirect } from "next/navigation";
-
-export default function Page() {
-  redirect("/led-display/outdoor-led-display");
-}
-
+export { metadata } from "../../led-display/outdoor-led-display/page";
+export { default } from "../../led-display/outdoor-led-display/page";

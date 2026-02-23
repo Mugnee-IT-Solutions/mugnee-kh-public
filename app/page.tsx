@@ -117,8 +117,6 @@ export const metadata: Metadata = {
   },
 };
 
-const CITIES = ["Phnom Penh", "Siem Reap", "Sihanoukville"];
-
 const CATEGORY_TILES = [
   {
     key: "led_display",
@@ -361,14 +359,12 @@ export default function HomePage() {
       />
 
       <HomeClient
-        cities={CITIES}
         categoryTiles={CATEGORY_TILES}
         faq={FAQ}
       />
     </main>
   );
 }
-
 
 
 
