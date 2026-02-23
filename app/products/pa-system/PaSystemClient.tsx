@@ -19,7 +19,7 @@ export default function PaSystemClient() {
       badge: "Cambodia - PA System - Public Address",
       h1: "Mugnee PA System Solutions in Cambodia",
       sub:
-        "Mugnee Cambodia delivers professional public address (PA) systems tailored for local factories, schools, hospitals, malls, hotels, offices, and public venues. We design and supply mixers, power amplifiers, paging microphones, indoor/outdoor speakers, and accessories, with zone planning, cabling, installation, commissioning, and after-sales support across Phnom Penh, Siem Reap, and Sihanoukville.",
+        "Mugnee Cambodia provides professional PA system and public address system solutions in Cambodia for factories, schools, hospitals, malls, hotels, offices, and public venues. We supply PA speakers, amplifiers, paging microphones, mixers, and accessories with zone planning, cabling, installation, commissioning, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
       cta1: "Get a Free Quotation",
       cta2: "View PA System Products",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
@@ -484,7 +484,33 @@ export default function PaSystemClient() {
             <div>
               <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{t.h1}</h1>
               <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base max-w-none">
-                {t.sub}
+                {lang === "en" ? (
+                  <>
+                    Mugnee Cambodia provides professional <strong>PA system</strong> and{" "}
+                    <strong>public address system</strong> solutions in Cambodia for
+                    factories, schools, hospitals, malls, hotels, offices, and public
+                    venues. We supply <strong>PA speakers</strong>,{" "}
+                    <strong>amplifiers</strong>, <strong>paging microphones</strong>,{" "}
+                    mixers, and accessories with zone planning, cabling,{" "}
+                    <strong>installation</strong>, <strong>commissioning</strong>, and{" "}
+                    local <strong>after-sales support</strong> in{" "}
+                    <strong>Phnom Penh</strong>, <strong>Siem Reap</strong>, and{" "}
+                    <strong>Sihanoukville</strong>.
+                  </>
+                ) : (
+                  <>
+                    Mugnee Cambodia ផ្តល់ដំណោះស្រាយ <strong>PA System</strong> និង{" "}
+                    <strong>Public Address System</strong> នៅកម្ពុជា សម្រាប់រោងចក្រ
+                    សាលារៀន មន្ទីរពេទ្យ ផ្សារ សណ្ឋាគារ ការិយាល័យ និងទីតាំងសាធារណៈ។
+                    យើងផ្គត់ផ្គង់ <strong>PA Speakers</strong>,{" "}
+                    <strong>Amplifiers</strong>, <strong>Paging Microphones</strong>,
+                    Mixer និងឧបករណ៍បន្ថែម ជាមួយការរៀបចំ Zone ការតភ្ជាប់ខ្សែ{" "}
+                    <strong>Installation</strong>, <strong>Commissioning</strong> និង
+                    សេវា <strong>After-Sales Support</strong> ក្នុងស្រុកនៅ{" "}
+                    <strong>Phnom Penh</strong>, <strong>Siem Reap</strong>, និង{" "}
+                    <strong>Sihanoukville</strong>។
+                  </>
+                )}
               </p>
 
               <div className="mt-4 flex flex-wrap items-center gap-2.5">

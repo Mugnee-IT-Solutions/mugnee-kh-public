@@ -93,6 +93,28 @@ export default function IndoorLedDisplayPage() {
       a: "Quotation is project-based and depends on pixel pitch, total screen size, cabinet type, controller, installation method, and support scope.",
     },
   ];
+  const indoorFaqKm = [
+    {
+      q: "Pixel Pitch មួយណាល្អសម្រាប់អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា?",
+      a: "សម្រាប់ការមើលជិត P1.25-P1.86 គឺពេញនិយម។ សម្រាប់បន្ទប់ប្រជុំ និងបន្ទប់តាំងបង្ហាញ P2-P2.5 ជាជម្រើសអនុវត្តបានល្អ។ ការជ្រើសចុងក្រោយអាស្រ័យលើចម្ងាយមើល ប្រភេទមាតិកា និងថវិកា។",
+    },
+    {
+      q: "តើអេក្រង់ LED ក្នុងអគារត្រូវការពន្លឺខ្ពស់ដូចប៊ីលបត្រខាងក្រៅទេ?",
+      a: "មិនចាំបាច់ទេ។ អេក្រង់ LED ក្នុងអគារជាទូទៅប្រើកម្រិតពន្លឺទាបជាងខាងក្រៅ ដើម្បីកាត់បន្ថយការចាំងភ្នែក និងធ្វើឱ្យមើលស្រួលក្នុងបរិយាកាសបិទ។",
+    },
+    {
+      q: "តើការប្រើប្រាស់អេក្រង់ LED ក្នុងអគារនៅកម្ពុជាមានអ្វីខ្លះ?",
+      a: "ប្រើញឹកញាប់នៅបន្ទប់ប្រជុំ បន្ទប់បញ្ជា បន្ទប់តាំងបង្ហាញ ផ្សារទំនើប Lobby សណ្ឋាគារ សាលបណ្តុះបណ្តាល និងផ្ទាំងបង្ហាញក្នុងឆាកកម្មវិធីក្នុងអគារ។",
+    },
+    {
+      q: "តើអ្នកអាចដំឡើង និងកែតម្រូវពណ៌អេក្រង់ LED ក្នុងអគារនៅកម្ពុជាបានទេ?",
+      a: "បាទ/ចាស។ យើងផ្តល់សេវាស្ទង់ទីតាំង ដំឡើង តភ្ជាប់ខ្សែ កំណត់ឧបករណ៍បញ្ជា កែតម្រូវពណ៌ និងសេវាគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុក។",
+    },
+    {
+      q: "តើការដកស្រង់តម្លៃអេក្រង់ LED ក្នុងអគាររៀបចំយ៉ាងដូចម្តេច?",
+      a: "តម្លៃគឺតាមគម្រោង ដោយគិតលើ Pixel Pitch ទំហំអេក្រង់ ប្រភេទ Cabinet ឧបករណ៍បញ្ជា វិធីដំឡើង និងវិសាលភាពសេវាគាំទ្រ។",
+    },
+  ];
 
   const indoorCluster = [
     { title: "Parent LED Display Page", href: "/led-display" },
@@ -131,6 +153,7 @@ export default function IndoorLedDisplayPage() {
       <LedDisplayClient
         productQuickChips={productQuickChips}
         faqItemsOverride={indoorFaq}
+        faqItemsOverrideKm={indoorFaqKm}
         internalLinkClusterOverride={indoorCluster}
         internalLinkClusterOverrideKm={indoorClusterKm}
         trustSignalsOverride={indoorTrustSignals}
@@ -146,8 +169,8 @@ export default function IndoorLedDisplayPage() {
         schemaServiceDescOverride="Fine-pitch indoor LED display solutions in Cambodia with survey, design, installation, calibration, and local after-sales support."
         breadcrumbOverride="Indoor LED Display"
         heroTitleOverride="Indoor LED Display in Cambodia"
-        heroIntroOverride="Mugnee provides indoor LED display solutions in Cambodia for boardrooms, retail, showrooms, control rooms, and hospitality spaces. We support fine-pitch planning, installation, calibration, and local after-sales service with project-based quotation."
-        heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារនៅកម្ពុជា សម្រាប់បន្ទប់ប្រជុំ ហាងលក់រាយ បន្ទប់តាំងបង្ហាញ បន្ទប់បញ្ជា និងវិស័យបដិសណ្ឋារកិច្ច។ យើងគាំទ្រការរៀបចំ fine-pitch ការដំឡើង ការកែតម្រូវពណ៌ និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក ជាមួយការដកស្រង់តម្លៃតាមគម្រោង។"
+        heroIntroOverride="Mugnee provides indoor LED display solutions in Cambodia for boardrooms, retail shops, showrooms, control rooms, corporate offices, and hospitality venues. We deliver fine-pitch indoor LED video wall systems with high brightness, seamless visuals, custom screen size planning, controller and power integration, professional installation, calibration, and local after-sales support. From P1.25 to P4 indoor LED display options, our team supports project-based design, BOQ preparation, and quotation for reliable long-term performance."
+        heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារនៅកម្ពុជា សម្រាប់បន្ទប់ប្រជុំ ហាងលក់រាយ បន្ទប់តាំងបង្ហាញ បន្ទប់បញ្ជា ការិយាល័យក្រុមហ៊ុន និងទីតាំងបដិសណ្ឋារកិច្ច។ យើងផ្គត់ផ្គង់ប្រព័ន្ធជញ្ជាំងវីដេអូ LED ក្នុងអគារ ប្រភេទ fine-pitch ដែលមានពន្លឺខ្ពស់ រូបភាពតភ្ជាប់រលូន ការរៀបចំទំហំអេក្រង់តាមតម្រូវការ ការរួមបញ្ចូលឧបករណ៍បញ្ជា និងប្រព័ន្ធថាមពល ព្រមទាំងការដំឡើង ការកែតម្រូវពណ៌ និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក។ ចាប់ពីជម្រើស P1.25 ដល់ P4 ក្រុមការងារយើងគាំទ្រការរៀបចំគម្រោង ការរៀបចំ BOQ និងការដកស្រង់តម្លៃ ដើម្បីធានាប្រសិទ្ធភាពប្រើប្រាស់រយៈពេលវែង។"
         afterSpecsContent={
           <section className="border-t border-slate-200 bg-white">
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

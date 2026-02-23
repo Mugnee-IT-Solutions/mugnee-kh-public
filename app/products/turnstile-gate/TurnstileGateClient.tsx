@@ -18,7 +18,7 @@ export default function TurnstileGateClient() {
       badge: "Cambodia - Turnstile Gate - Access Control",
       h1: "Mugnee Turnstile Gate Solutions in Cambodia",
       sub:
-        "Mugnee Cambodia delivers professional turnstile gate systems for secure entry control in offices, factories, schools, transport hubs, and public venues. We supply flap barriers, tripod turnstiles, speed gates, and full-height turnstiles with RFID, QR, and biometric integration, plus on-site installation, commissioning, and local after-sales support.",
+        "Mugnee Cambodia provides professional turnstile gate and access control solutions in Cambodia for offices, factories, schools, transport hubs, and public venues. We supply tripod turnstile gates, flap barriers, speed gates, and full-height turnstiles with RFID card, QR code, and biometric integration, including on-site installation, commissioning, and local after-sales support.",
       cta1: "Get a Free Quotation",
       cta2: "View Turnstile Products",
 
@@ -531,7 +531,33 @@ export default function TurnstileGateClient() {
             <div className="max-w-none">
               <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{t.h1}</h1>
               <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base">
-                {t.sub}
+                {lang === "en" ? (
+                  <>
+                    Mugnee Cambodia provides professional <strong>turnstile gate</strong>{" "}
+                    and <strong>access control solutions</strong> in Cambodia for
+                    offices, factories, schools, transport hubs, and public venues. We
+                    supply <strong>tripod turnstile gates</strong>,{" "}
+                    <strong>flap barriers</strong>, <strong>speed gates</strong>, and{" "}
+                    <strong>full-height turnstiles</strong> with{" "}
+                    <strong>RFID card</strong>, <strong>QR code</strong>, and{" "}
+                    <strong>biometric integration</strong>, including on-site{" "}
+                    <strong>installation</strong>, <strong>commissioning</strong>, and
+                    local <strong>after-sales support</strong>.
+                  </>
+                ) : (
+                  <>
+                    Mugnee Cambodia ផ្តល់ដំណោះស្រាយ <strong>Turnstile Gate</strong>{" "}
+                    និង <strong>Access Control</strong> នៅកម្ពុជា សម្រាប់ការិយាល័យ
+                    រោងចក្រ សាលារៀន មជ្ឈមណ្ឌលដឹកជញ្ជូន និងទីតាំងសាធារណៈ។ យើងផ្គត់ផ្គង់{" "}
+                    <strong>Tripod Turnstile Gate</strong>,{" "}
+                    <strong>Flap Barrier</strong>, <strong>Speed Gate</strong>, និង{" "}
+                    <strong>Full-Height Turnstile</strong> ជាមួយ{" "}
+                    <strong>RFID Card</strong>, <strong>QR Code</strong>, និង{" "}
+                    <strong>Biometric Integration</strong> រួមទាំង{" "}
+                    <strong>Installation</strong>, <strong>Commissioning</strong> និង
+                    សេវា <strong>After-Sales Support</strong> ក្នុងស្រុក។
+                  </>
+                )}
               </p>
 
               <div className="mt-4 flex flex-wrap items-center gap-2.5">

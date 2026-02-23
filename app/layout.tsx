@@ -32,13 +32,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen w-full overflow-x-hidden">
+      <body className="h-screen w-full overflow-hidden">
         <LanguageProvider>
           <SitewideJsonLd />
           <ScrollToTopOnRoute />
           <SiteHeader />
-          <main className="pt-[var(--header-height)]">{children}</main>
-          <SiteFooter />
+          <main
+            id="app-scroll-root"
+            className="mt-[var(--header-height)] h-[calc(100vh-var(--header-height))] overflow-y-auto overflow-x-hidden"
+          >
+            {children}
+            <SiteFooter />
+          </main>
           <FloatingContactChat />
           <GlobalBackToTop />
         </LanguageProvider>
@@ -46,5 +51,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
-

@@ -307,7 +307,11 @@ export default function SiteHeader() {
   };
 
   const forceScrollTop = () => {
-    const scrollingEl = document.scrollingElement || document.documentElement;
+    const root = document.getElementById("app-scroll-root");
+    const scrollingEl =
+      root instanceof HTMLElement
+        ? root
+        : document.scrollingElement || document.documentElement;
     scrollingEl.scrollTop = 0;
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
@@ -460,8 +464,8 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <div className="border-b border-slate-900/10 bg-slate-900">
-        <div className="mx-auto flex w-full max-w-7xl items-center px-4 py-2 sm:px-6 lg:px-8">
+      <div className={`${openMobile ? "block" : "hidden"} border-b border-slate-900/10 bg-slate-900 lg:block`}>
+        <div className="mx-auto hidden w-full max-w-7xl items-center px-4 py-2 sm:px-6 lg:flex lg:px-8">
           <nav
             className="hidden w-full items-center justify-between whitespace-nowrap lg:flex"
             aria-label="Primary"
@@ -507,20 +511,34 @@ export default function SiteHeader() {
             </Link>
           </nav>
 
-          <div className="lg:hidden">
-            <span className="text-xs font-semibold text-white/80">
-              {lang === "en" ? "Navigation" : "មុខម៉ឺនុយ"}
-            </span>
-          </div>
         </div>
 
         {openMobile ? (
-          <div className="border-t border-white/10 bg-slate-900 lg:hidden">
+          <div className="max-h-[70vh] overflow-y-auto overscroll-contain border-t border-white/10 bg-slate-900 lg:hidden">
             <div className="mx-auto w-full max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
               <div className="grid gap-2">
                 <div className="mt-1">
-                  <p className="px-3 pb-1 text-xs font-semibold text-white/70">{t.ledDisplay}</p>
+                  <Link
+                    href="/led-display"
+                    className="inline-flex rounded-lg px-3 pb-1 pt-1 text-xs font-semibold text-white/80 hover:bg-white/10 hover:text-white"
+                    onClick={() => {
+                      forceScrollTop();
+                      setOpenMobile(false);
+                    }}
+                  >
+                    {t.ledDisplay}
+                  </Link>
                   <div className="grid gap-1">
+                    <Link
+                      href="/led-display"
+                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      onClick={() => {
+                        forceScrollTop();
+                        setOpenMobile(false);
+                      }}
+                    >
+                      {lang === "en" ? "All LED Display" : t.ledDisplay}
+                    </Link>
                     <Link
                       href="/led-display/indoor-led-display"
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
@@ -543,7 +561,7 @@ export default function SiteHeader() {
                     </Link>
                     <Link
                       href="/led-display"
-                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      className="hidden rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
                         setOpenMobile(false);

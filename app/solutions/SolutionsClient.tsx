@@ -13,7 +13,7 @@ const EN = {
   breadcrumbHome: "Home",
   breadcrumb: "Solutions",
   heroEyebrow: "Solutions",
-  heroTitle: "Cambodia Business Solutions | LED, Signage & Access Control",
+  heroTitle: "Cambodia LED, Signage & Access Control Solutions",
   heroDesc:
     "Mugnee Cambodia provides end-to-end business technology solutions in Cambodia for retail, corporate offices, factories, education campuses, healthcare facilities, hospitality venues, and public-sector sites. Our team delivers complete project execution including site survey, system design, BOQ planning, product supply, professional installation, system integration, commissioning, operator training, and long-term after-sales support for LED display, digital signage, PA systems, turnstile gates, and access control. We optimize each deployment for local operating conditions, target audience visibility, safety compliance, and scalable expansion so businesses can improve communication performance, brand impact, and day-to-day operational control.",
   ctaQuote: "Get a Free Quotation",
@@ -53,7 +53,7 @@ const KM = {
   breadcrumbHome: "ទំព័រដើម",
   breadcrumb: "ដំណោះស្រាយ",
   heroEyebrow: "ដំណោះស្រាយ",
-  heroTitle: "ដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា | អេក្រង់ LED និងអេក្រង់ផ្សព្វផ្សាយ និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+  heroTitle: "ដំណោះស្រាយ LED, ស្លាកឌីជីថល និង Access Control នៅកម្ពុជា",
   heroDesc:
     "Mugnee Cambodia ផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាអាជីវកម្មបែប ចាប់ពីដើមដល់ចប់ នៅកម្ពុជា សម្រាប់ហាងលក់រាយ ការិយាល័យក្រុមហ៊ុន រោងចក្រ ស្ថាប័នអប់រំ មណ្ឌលសុខាភិបាល វិស័យបដិសណ្ឋារកិច្ច និងគម្រោងសាធារណៈ។ ក្រុមការងារយើងអនុវត្តគម្រោងពេញលេញចាប់ពីការស្ទង់ទីតាំង ការរចនាប្រព័ន្ធ ការរៀបចំ បញ្ជីបរិមាណការងារ ការផ្គត់ផ្គង់ឧបករណ៍ ការដំឡើងដោយវិជ្ជាជីវៈ ការបញ្ចូលប្រព័ន្ធ ការបើកដំណើរការ ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាកម្មបន្ទាប់ពីលក់រយៈពេលវែង សម្រាប់ អេក្រង់ LED, អេក្រង់ផ្សព្វផ្សាយឌីជីថល, ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ, ទ្វារបង្វិលគ្រប់គ្រងច្រកចេញចូល និង ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ។ យើងកែតម្រូវការដំឡើងនីមួយៗឱ្យសមស្របនឹងលក្ខខណ្ឌប្រតិបត្តិការក្នុងតំបន់ ភាពមើលឃើញរបស់ទស្សនិកជន ស្តង់ដារសុវត្ថិភាព និងផែនការពង្រីកនាពេលអនាគត ដើម្បីជួយអាជីវកម្មបង្កើនប្រសិទ្ធភាពទំនាក់ទំនង កម្លាំងម៉ាក និងការគ្រប់គ្រងប្រតិបត្តិការប្រចាំថ្ងៃ។",
   ctaQuote: "ស្នើសុំតម្លៃដោយឥតគិតថ្លៃ",

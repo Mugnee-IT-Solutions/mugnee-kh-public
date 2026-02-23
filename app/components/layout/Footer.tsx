@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LangText from "./LangText";
 
-type FooterSocialPlatform = "facebook" | "youtube" | "linkedin" | "x" | "instagram";
+type FooterSocialPlatform = "facebook" | "youtube" | "linkedin" | "x" | "instagram" | "telegram";
 
 const FOOTER_SOCIAL_LINKS: Array<{
   label: string;
@@ -14,6 +14,7 @@ const FOOTER_SOCIAL_LINKS: Array<{
   { label: "LinkedIn", platform: "linkedin", href: "https://www.linkedin.com/company/mugnee-multiple-limited/" },
   { label: "X (Twitter)", platform: "x", href: "https://x.com/mugneeml" },
   { label: "Instagram", platform: "instagram", href: "https://www.instagram.com/sm.mugnee/" },
+  { label: "Telegram", platform: "telegram", href: "https://t.me/mugneemultiple" },
 ];
 
 function FooterSocialIcon({ platform }: { platform: FooterSocialPlatform }) {
@@ -46,6 +47,12 @@ function FooterSocialIcon({ platform }: { platform: FooterSocialPlatform }) {
       return (
         <svg viewBox="0 0 24 24" className="h-[17px] w-[17px] fill-current" aria-hidden="true">
           <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm0 1.9A3.9 3.9 0 0 0 3.9 7.8v8.4a3.9 3.9 0 0 0 3.9 3.9h8.4a3.9 3.9 0 0 0 3.9-3.9V7.8a3.9 3.9 0 0 0-3.9-3.9H7.8zm8.7 1.4a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.9A3.1 3.1 0 1 0 12 15a3.1 3.1 0 0 0 0-6.2z" />
+        </svg>
+      );
+    case "telegram":
+      return (
+        <svg viewBox="0 0 24 24" className="h-[17px] w-[17px] fill-current" aria-hidden="true">
+          <path d="M9.6 15.5 9.2 20c.6 0 .9-.3 1.3-.6l3.1-3 6.5 4.8c1.2.6 2 .3 2.3-1.1L24 3.2v-.1c.4-1.7-.6-2.3-1.8-1.9L1.2 9.3c-1.7.6-1.7 1.5-.3 2l5.4 1.7L19 5.1c.6-.4 1.1-.2.6.2" />
         </svg>
       );
     default:
@@ -111,6 +118,8 @@ export default function SiteFooter() {
                             ? "bg-[#0A66C2] text-white"
                             : item.platform === "x"
                               ? "bg-black text-white"
+                              : item.platform === "telegram"
+                                ? "bg-[#229ED9] text-white"
                               : "bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white";
 
                     return (

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const CONTACT_LINKS = {
   whatsapp: "https://wa.me/855171927446",
   messenger: "https://m.me/mugneemultiple",
+  telegram: "https://t.me/mugneemultiple",
   call: "tel:+855171927446",
 };
 
@@ -48,8 +49,58 @@ function PhoneIcon() {
   );
 }
 
+function TelegramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
+      <path d="M9.6 15.5 9.2 20c.6 0 .9-.3 1.3-.6l3.1-3 6.5 4.8c1.2.6 2 .3 2.3-1.1L24 3.2v-.1c.4-1.7-.6-2.3-1.8-1.9L1.2 9.3c-1.7.6-1.7 1.5-.3 2l5.4 1.7L19 5.1c.6-.4 1.1-.2.6.2" />
+    </svg>
+  );
+}
+
 export default function FloatingContactChat() {
   const [open, setOpen] = useState(false);
+  const contactItems = [
+    {
+      label: "WhatsApp",
+      href: CONTACT_LINKS.whatsapp,
+      aria: "Chat on WhatsApp",
+      icon: <WhatsAppIcon />,
+      iconBg: "bg-[#25D366]",
+      border: "border-emerald-200",
+      hover: "hover:border-emerald-300 hover:bg-emerald-50/70",
+      external: true,
+    },
+    {
+      label: "Messenger",
+      href: CONTACT_LINKS.messenger,
+      aria: "Chat on Messenger",
+      icon: <MessengerIcon />,
+      iconBg: "bg-gradient-to-br from-[#00B2FF] to-[#006AFF]",
+      border: "border-blue-200",
+      hover: "hover:border-blue-300 hover:bg-blue-50/70",
+      external: true,
+    },
+    {
+      label: "Telegram",
+      href: CONTACT_LINKS.telegram,
+      aria: "Chat on Telegram",
+      icon: <TelegramIcon />,
+      iconBg: "bg-[#229ED9]",
+      border: "border-sky-200",
+      hover: "hover:border-sky-300 hover:bg-sky-50/70",
+      external: true,
+    },
+    {
+      label: "Call Now",
+      href: CONTACT_LINKS.call,
+      aria: "Call now",
+      icon: <PhoneIcon />,
+      iconBg: "bg-slate-900",
+      border: "border-slate-200",
+      hover: "hover:border-slate-300 hover:bg-slate-100/70",
+      external: false,
+    },
+  ] as const;
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => {
@@ -76,54 +127,69 @@ export default function FloatingContactChat() {
     <div className="pointer-events-none fixed bottom-6 right-4 z-[70] sm:bottom-7 sm:right-6">
       <div className="pointer-events-auto relative flex flex-col items-end gap-3">
         <div
-          className={`flex flex-col items-end gap-2 transition-all duration-200 ${
+          className={`origin-bottom-right transition-all duration-200 ${
             open
-              ? "translate-y-0 opacity-100"
-              : "pointer-events-none translate-y-2 opacity-0"
+              ? "translate-y-0 scale-100 opacity-100"
+              : "pointer-events-none translate-y-2 scale-95 opacity-0"
           }`}
         >
-          <a
-            href={CONTACT_LINKS.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full border border-emerald-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 no-underline shadow-lg transition hover:-translate-y-0.5 hover:no-underline"
-            aria-label="Chat on WhatsApp"
-          >
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#25D366] text-white">
-              <WhatsAppIcon />
-            </span>
-            WhatsApp
-          </a>
-
-          <a
-            href={CONTACT_LINKS.messenger}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full border border-blue-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 no-underline shadow-lg transition hover:-translate-y-0.5 hover:no-underline"
-            aria-label="Chat on Messenger"
-          >
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-[#00B2FF] to-[#006AFF] text-white">
-              <MessengerIcon />
-            </span>
-            Messenger
-          </a>
-
-          <a
-            href={CONTACT_LINKS.call}
-            className="group inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-800 no-underline shadow-lg transition hover:-translate-y-0.5 hover:no-underline"
-            aria-label="Call now"
-          >
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-white">
-              <PhoneIcon />
-            </span>
-            Call Now
-          </a>
+          <div className="relative w-[min(82vw,15rem)]">
+            <div className="absolute -inset-1 rounded-[28px_14px_28px_14px] bg-gradient-to-br from-sky-400/40 via-blue-500/25 to-indigo-600/35 blur-md" />
+            <div className="relative overflow-hidden rounded-[26px_12px_26px_12px] border border-white/70 bg-white/90 p-2 shadow-[0_18px_48px_rgba(2,6,23,0.34)] backdrop-blur-xl">
+              <div className="pointer-events-none absolute -left-3 -top-3 h-8 w-8 rounded-full bg-sky-300/65 blur-[1px]" />
+              <div className="pointer-events-none absolute -bottom-4 -right-4 h-10 w-10 rounded-full bg-indigo-300/55 blur-[2px]" />
+              <div className="mb-1.5 flex items-center justify-between px-1.5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Quick Contact
+                </p>
+                <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-emerald-700">
+                  Live
+                </span>
+              </div>
+              <div className="grid gap-1.5">
+              {contactItems.map((item, idx) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  aria-label={item.aria}
+                  className={[
+                    "group flex h-12 items-center justify-between rounded-[18px_8px_18px_8px] border px-2.5",
+                    "text-sm font-semibold text-slate-800 no-underline",
+                    "bg-gradient-to-r from-white via-white to-slate-50/90",
+                    "transition-all duration-200 hover:-translate-y-0.5 hover:translate-x-0.5 hover:no-underline",
+                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/70",
+                    item.border,
+                    item.hover,
+                  ].join(" ")}
+                  style={{ transitionDelay: `${idx * 24}ms` }}
+                >
+                  <span className="inline-flex items-center gap-2.5">
+                    <span
+                      className={[
+                        "inline-flex h-7 w-7 items-center justify-center rounded-[999px_999px_999px_6px] text-white shadow-sm",
+                        item.iconBg,
+                      ].join(" ")}
+                    >
+                      {item.icon}
+                    </span>
+                    <span>{item.label}</span>
+                  </span>
+                  <span className="rounded-full border border-slate-200 bg-white px-1.5 py-0.5 text-slate-400 transition group-hover:translate-x-0.5 group-hover:border-slate-300 group-hover:text-slate-600">
+                    →
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+          </div>
         </div>
 
         <button
           type="button"
           onClick={() => setOpen((prev) => !prev)}
-          className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-blue-700 text-white shadow-xl transition hover:scale-[1.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+          className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 text-white shadow-[0_14px_28px_rgba(2,6,23,0.35)] transition hover:scale-[1.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
           aria-label={open ? "Close quick contact menu" : "Open quick contact menu"}
           aria-expanded={open}
         >

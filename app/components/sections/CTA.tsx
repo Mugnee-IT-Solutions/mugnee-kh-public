@@ -14,7 +14,11 @@ export default function ScrollToTopOnRoute() {
 
   useLayoutEffect(() => {
     const scrollTop = () => {
-      const scrollingEl = document.scrollingElement || document.documentElement;
+      const root = document.getElementById("app-scroll-root");
+      const scrollingEl =
+        root instanceof HTMLElement
+          ? root
+          : document.scrollingElement || document.documentElement;
       scrollingEl.scrollTop = 0;
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;

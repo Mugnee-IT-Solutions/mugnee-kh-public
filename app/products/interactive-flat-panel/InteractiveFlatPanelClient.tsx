@@ -17,7 +17,7 @@ export default function InteractiveFlatPanelClient() {
       badge: "Cambodia - Interactive Flat Panel - Smart Board",
       h1: "Interactive Flat Panel Price in Cambodia",
       sub:
-        "Mugnee Cambodia provides Interactive Flat Panel (smart board) solutions in Cambodia for schools, universities, training centers, corporate meeting rooms, and government institutions. We deliver 4K touch displays with wireless screen sharing, Android/OPS options, professional installation, user training, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville for long-term performance.",
+        "Mugnee Cambodia provides interactive flat panel (smart board) solutions and project-based interactive flat panel price support in Cambodia for schools, universities, training centers, meeting rooms, and government offices. Our 4K interactive touch displays include wireless screen sharing, Android/OPS options, professional installation, user training, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
       cta1: "Get a Free Quotation",
       cta2: "View IFP Models",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
@@ -424,7 +424,32 @@ export default function InteractiveFlatPanelClient() {
             {t.h1}
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-            {t.sub}
+            {lang === "en" ? (
+              <>
+                Mugnee Cambodia provides <strong>interactive flat panel</strong> (
+                <strong>smart board</strong>) solutions and project-based{" "}
+                <strong>interactive flat panel price in Cambodia</strong> support for
+                schools, universities, training centers, meeting rooms, and government
+                offices. Our <strong>4K interactive touch displays</strong> include{" "}
+                <strong>wireless screen sharing</strong>, <strong>Android/OPS</strong>{" "}
+                options, professional installation, user training, and local after-sales
+                support in <strong>Phnom Penh</strong>, <strong>Siem Reap</strong>, and{" "}
+                <strong>Sihanoukville</strong>.
+              </>
+            ) : (
+              <>
+                Mugnee Cambodia ផ្តល់ដំណោះស្រាយ <strong>Interactive Flat Panel</strong>{" "}
+                (<strong>Smart Board</strong>) និងការណែនាំតម្លៃ{" "}
+                <strong>Interactive Flat Panel នៅកម្ពុជា</strong> សម្រាប់សាលារៀន
+                សាកលវិទ្យាល័យ មជ្ឈមណ្ឌលបណ្តុះបណ្តាល បន្ទប់ប្រជុំ និងស្ថាប័នរដ្ឋ។
+                អេក្រង់ <strong>4K Touch Display</strong> របស់យើងមាន{" "}
+                <strong>Wireless Screen Sharing</strong>, ជម្រើស{" "}
+                <strong>Android/OPS</strong>, ការដំឡើងដោយវិជ្ជាជីវៈ
+                ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាបន្ទាប់ពីលក់ក្នុងស្រុកនៅ{" "}
+                <strong>Phnom Penh</strong>, <strong>Siem Reap</strong>, និង{" "}
+                <strong>Sihanoukville</strong>។
+              </>
+            )}
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2.5">

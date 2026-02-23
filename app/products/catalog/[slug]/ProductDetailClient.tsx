@@ -105,12 +105,21 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   const { lang } = useLang();
 
   useEffect(() => {
-    const frame = window.requestAnimationFrame(() => {
+    const scrollTop = () => {
+      const root = document.getElementById("app-scroll-root");
+      if (root instanceof HTMLElement) {
+        root.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        return;
+      }
       window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    };
+
+    const frame = window.requestAnimationFrame(() => {
+      scrollTop();
     });
 
     const timer = window.setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      scrollTop();
     }, 0);
 
     return () => {

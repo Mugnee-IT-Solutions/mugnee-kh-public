@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useLang } from "../components/layout/LanguageProvider";
@@ -244,116 +244,119 @@ const faqs = [
   },
 ];
 
-const heroTagsKm = [
+const heroTagsKmClean = [
   "អេក្រង់ LED",
-  "ផ្លាកឌីជីថល",
-  "Smart Board",
+  "ស្លាកឌីជីថល",
+  "ថ្នាក់រៀនឆ្លាតវៃ",
   "ប្រព័ន្ធ PA",
-  "ទ្វារ Turnstile",
+  "ច្រកទ្វារ Turnstile",
   "គ្រប់គ្រងច្រកចូល",
 ];
 
-const highlightsKm = [
+const highlightsKmClean = [
   {
     title: "ចក្ខុវិស័យរបស់យើង",
-    desc:
-      "ក្លាយជាក្រុមហ៊ុនបច្ចេកវិទ្យាដែលអាចទុកចិត្តបាន សម្រាប់ LED display, digital signage, PA, smart classroom និង access control នៅកម្ពុជា។",
+    desc: "ក្លាយជាក្រុមហ៊ុនបច្ចេកវិទ្យាដែលអាចទុកចិត្តបាន សម្រាប់ LED Display, Digital Signage, PA, Smart Classroom និង Access Control នៅកម្ពុជា។",
   },
   {
     title: "បេសកកម្មរបស់យើង",
-    desc:
-      "ផ្តល់សេវា end-to-end ដែលមានស្ថិរភាព និងអាចពង្រីកបាន ចាប់ពីស្ទង់ទីតាំង រចនា ដំឡើង បើកប្រើប្រាស់ បណ្តុះបណ្តាល AMC និងសេវាបន្ទាប់ពីលក់។",
+    desc: "ផ្តល់សេវាអនុវត្តគម្រោងពេញលេញ ចាប់ពីស្ទង់ទីតាំង រចនា ដំឡើង បើកប្រើ បណ្តុះបណ្តាល AMC និងសេវាបន្ទាប់ពីលក់។",
   },
   {
     title: "កម្លាំងរបស់យើង",
-    desc:
-      "ក្រុមវិស្វករមានបទពិសោធន៍ ការគ្រប់គ្រងគម្រោងមានរចនាសម្ព័ន្ធ សម្ភារៈស្តង់ដារ និងសមត្ថភាពថែទាំរយៈពេលវែង។",
+    desc: "ក្រុមវិស្វករមានបទពិសោធន៍ ការគ្រប់គ្រងគម្រោងមានរចនាសម្ព័ន្ធ និងសមត្ថភាពថែទាំរយៈពេលវែង។",
   },
 ];
 
-const valuesKm = [
-  { title: "សុចរិតភាព", desc: "យើងទំនាក់ទំនងច្បាស់លាស់ អនុវត្តតាមវិជ្ជាជីវៈ និងប្រើផលិតផលពិតប្រាកដ ដើម្បីបង្កើតទំនុកចិត្តរយៈពេលវែង។" },
-  { title: "នវានុវត្តន៍", desc: "យើងអនុវត្តបច្ចេកវិទ្យាទំនើប និង integration best practice ដើម្បីបង្កើនសមត្ថភាពប្រព័ន្ធ។" },
-  { title: "គុណភាពខ្ពស់", desc: "យើងអនុវត្តស្តង់ដារ QA សុវត្ថិភាព និងដំណើរការគម្រោងយ៉ាងម៉ត់ចត់ចាប់ពីរចនាដល់បើកប្រើប្រាស់។" },
-  { title: "ការប្តេជ្ញាចំពោះអតិថិជន", desc: "យើងផ្តល់គាំទ្រឆ្លើយតបលឿន បណ្តុះបណ្តាលអ្នកប្រើ ថែទាំបង្ការ និង AMC សម្រាប់ការប្រើប្រាស់មានស្ថិរភាព។" },
+const valuesKmClean = [
+  { title: "សុចរិតភាព", desc: "យើងធ្វើការដោយតម្លាភាព គោរពស្តង់ដារ និងប្រើផលិតផលស្តង់ដារ ដើម្បីបង្កើតទំនុកចិត្តរយៈពេលវែង។" },
+  { title: "នវានុវត្តន៍", desc: "យើងអនុវត្តបច្ចេកវិទ្យាថ្មី និងវិធីសាស្ត្រល្អ ដើម្បីបង្កើនប្រសិទ្ធភាពប្រព័ន្ធ និងភាពងាយស្រួលប្រតិបត្តិការ។" },
+  { title: "គុណភាពខ្ពស់", desc: "យើងអនុវត្ត QA និងស្តង់ដារសុវត្ថិភាពយ៉ាងតឹងរឹង ចាប់ពីរចនាដល់ដាក់ឲ្យប្រើប្រាស់។" },
+  { title: "ការប្តេជ្ញាចំពោះអតិថិជន", desc: "យើងផ្តល់សេវាគាំទ្រឆ្លើយតបលឿន បណ្តុះបណ្តាលអ្នកប្រើ និងផែនការថែទាំបង្ការ/AMC។" },
 ];
 
-const storyPointsKm = [
-  "បង្កើតឡើងក្នុងឆ្នាំ 2014 ដើម្បីផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាដែលមានស្តង់ដារវិស្វកម្ម។",
-  "អនុវត្តគម្រោង end-to-end: រចនា ផ្គត់ផ្គង់ ដំឡើង បញ្ចូលប្រព័ន្ធ បើកប្រើប្រាស់ និងគាំទ្រ។",
-  "ដំណើរការផ្ទាល់នៅកម្ពុជា តាមរយៈ Mugnee Multiple Co., Ltd ជាមួយស្តង់ដារសេវាដែលមានស្ថិរភាព។",
+const storyPointsKmClean = [
+  "បង្កើតឡើងក្នុងឆ្នាំ 2014 ដើម្បីផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាស្តង់ដារវិស្វកម្ម។",
+  "អនុវត្តគម្រោងពេញលេញ៖ រចនា ផ្គត់ផ្គង់ ដំឡើង បញ្ចូលប្រព័ន្ធ បើកប្រើ និងគាំទ្រ។",
+  "មានប្រតិបត្តិការផ្ទាល់នៅកម្ពុជា តាមរយៈ Mugnee Multiple Co., Ltd ដោយស្តង់ដារសេវាដែលជាប់លាប់។",
 ];
 
-const storyMilestonesKm = [
-  { phase: "ការចាប់ផ្តើម", detail: "ចាប់ផ្តើមដោយគំរូ engineering-first ផ្តោតលើគុណភាពអនុវត្ត LED និង digital signage។" },
-  { phase: "ការពង្រីកការអនុវត្ត", detail: "ពង្រីកទៅជាវដ្តសេវាពេញលេញ រួមមានស្ទង់ទីតាំង រចនា ដំឡើង បញ្ចូលប្រព័ន្ធ និងបើកប្រើប្រាស់។" },
-  { phase: "ពង្រីកនៅកម្ពុជា", detail: "បង្កើតប្រតិបត្តិការផ្ទាល់នៅកម្ពុជា ដើម្បីគាំទ្របច្ចេកទេសលឿន និងបន្តសេវាបន្ទាប់ពីលក់។" },
+const storyMilestonesKmClean = [
+  { phase: "ការចាប់ផ្តើម", detail: "ចាប់ផ្តើមដោយគំរូ engineering-first ផ្តោតលើគុណភាពការងារ LED និង Digital Signage។" },
+  { phase: "ការពង្រីកការអនុវត្ត", detail: "ពង្រីកទៅសេវាពេញលេញ រួមមានស្ទង់ទីតាំង រចនា ដំឡើង បញ្ចូលប្រព័ន្ធ និងបើកប្រើប្រាស់។" },
+  { phase: "ពង្រីកនៅកម្ពុជា", detail: "បង្កើតប្រតិបត្តិការផ្ទាល់នៅកម្ពុជា ដើម្បីគាំទ្របច្ចេកទេសលឿន និងសេវាបន្ទាប់ពីលក់ជាប់លាប់។" },
 ];
 
-const presenceKm = [
-  { title: "បង់ក្លាដែស", desc: "ប្រតិបត្តិការនៅបង់ក្លាដែស គាំទ្រការអនុវត្តគម្រោងទូទាំងប្រទេស ជាមួយការរៀបចំ ដំឡើង និងថែទាំរយៈពេលវែង។" },
-  { title: "កម្ពុជា", desc: "នៅកម្ពុជា Mugnee Multiple Co., Ltd ដំណើរការជាមួយក្រុមវិស្វករក្នុងតំបន់ សម្រាប់ស្ទង់ទីតាំង បញ្ចូលប្រព័ន្ធ បើកប្រើប្រាស់ និងគាំទ្របន្ទាប់ពីលក់។" },
+const presenceKmClean = [
+  {
+    title: "បង់ក្លាដែស",
+    desc: "ប្រតិបត្តិការនៅបង់ក្លាដែសគាំទ្រការអនុវត្តគម្រោងទូទាំងប្រទេស ជាមួយការរៀបចំ ដំឡើង និងថែទាំយ៉ាងមានស្តង់ដារ។",
+  },
+  {
+    title: "កម្ពុជា",
+    desc: "នៅកម្ពុជា Mugnee Multiple Co., Ltd ដំណើរការជាមួយក្រុមវិស្វករក្នុងតំបន់ សម្រាប់ស្ទង់ទីតាំង បញ្ចូលប្រព័ន្ធ បើកប្រើ និងគាំទ្របន្ទាប់ពីលក់។",
+  },
 ];
 
-const authorizedDistributorKm = [
-  "អនុញ្ញាតចែកចាយ និងគាំទ្រគម្រោងនៅកម្ពុជា តាមរយៈ Mugnee Multiple Co., Ltd។",
-  "ធានាផលិតផលពិតប្រាកដ ឯកសារបច្ចេកទេសត្រឹមត្រូវ និងស្តង់ដារដំឡើងផ្តោតលើសុវត្ថិភាព។",
-  "ផ្តល់ពិគ្រោះមុនលក់ សម្របសម្រួលវិស្វកម្ម និងបន្តសេវាបន្ទាប់ពីលក់សម្រាប់អតិថិជនកម្ពុជា។",
+const authorizedDistributorKmClean = [
+  "ទទួលសិទ្ធិចែកចាយ និងគាំទ្រគម្រោងនៅកម្ពុជា តាមរយៈ Mugnee Multiple Co., Ltd។",
+  "ធានាផលិតផលស្តង់ដារ ឯកសារបច្ចេកទេសត្រឹមត្រូវ និងការដំឡើងតាមស្តង់ដារសុវត្ថិភាព។",
+  "ផ្តល់ការប្រឹក្សាមុនលក់ សម្របសម្រួលវិស្វកម្ម និងសេវាបន្ទាប់ពីលក់សម្រាប់អតិថិជនកម្ពុជា។",
 ];
 
-const whatWeDoKm = [
-  { title: "វិភាគតម្រូវការ និងស្ទង់ទីតាំង", detail: "វាយតម្លៃថាមពល បណ្តាញ រចនាសម្ព័ន្ធ ចរាចរណ៍ និងចម្ងាយមើល ដើម្បីកំណត់វិសាលភាពគម្រោងត្រឹមត្រូវ។" },
-  { title: "វិស្វកម្មដំណោះស្រាយ និងរចនាប្រព័ន្ធ", detail: "រចនាស្ថាបត្យកម្ម LED, signage, PA និង access control រួមទាំងការជ្រើស module និង controller planning។" },
-  { title: "ផ្គត់ផ្គង់ ដំឡើង និងអនុវត្តប្រកបដោយសុវត្ថិភាព", detail: "ផ្គត់ផ្គង់ផលិតផលស្តង់ដារ ជាមួយការតម្លើងវិជ្ជាជីវៈ ការរៀបខ្សែស្អាត និងការត្រួតពិនិត្យគុណភាពជាក់លាក់។" },
-  { title: "បញ្ចូលប្រព័ន្ធ កំណត់រចនា និងបើកប្រើប្រាស់", detail: "អនុវត្ត integration កំណត់រចនា calibration និងសាកល្បងមុខងារ ដើម្បីធានាប្រព័ន្ធរួចរាល់ប្រើប្រាស់។" },
+const whatWeDoKmClean = [
+  { title: "វិភាគតម្រូវការ និងស្ទង់ទីតាំង", detail: "វាយតម្លៃថាមពល បណ្ដាញ រចនាសម្ព័ន្ធ ចរាចរណ៍ និងចម្ងាយមើល ដើម្បីកំណត់វិសាលភាពគម្រោងឲ្យត្រឹមត្រូវ។" },
+  { title: "វិស្វកម្មដំណោះស្រាយ និងរចនាប្រព័ន្ធ", detail: "រចនាស្ថាបត្យកម្ម LED, Signage, PA និង Access Control រួមទាំងការជ្រើស Module និងផែនការគ្រប់គ្រង។" },
+  { title: "ផ្គត់ផ្គង់ ដំឡើង និងអនុវត្តដោយសុវត្ថិភាព", detail: "ផ្គត់ផ្គង់ផលិតផលស្តង់ដារ ជាមួយការតម្លើងវិជ្ជាជីវៈ ការរៀបខ្សែស្អាត និងការត្រួតពិនិត្យគុណភាពជាក់លាក់។" },
+  { title: "បញ្ចូលប្រព័ន្ធ កំណត់រចនា និងបើកប្រើ", detail: "អនុវត្ត Integration កំណត់រចនា Calibration និងសាកល្បងមុខងារ ដើម្បីធានាប្រព័ន្ធរួចរាល់ប្រើប្រាស់។" },
   { title: "បណ្តុះបណ្តាល AMC និងគាំទ្រវដ្តជីវិត", detail: "បន្ទាប់ពីប្រគល់ការងារ យើងផ្តល់បណ្តុះបណ្តាល ថែទាំបង្ការ AMC និងគាំទ្របច្ចេកទេសបន្ត។" },
 ];
 
-const cambodiaOpsKm = [
+const cambodiaOpsKmClean = [
   { title: "អនុវត្តវិស្វកម្មក្នុងតំបន់កម្ពុជា", detail: "គម្រោងត្រូវបានអនុវត្តតាមក្រុមបច្ចេកទេសក្នុងតំបន់ ចាប់ពីស្ទង់ទីតាំង ដល់បើកប្រើប្រាស់។" },
-  { title: "ឆ្លើយតប Onsite លឿន និងបន្តសេវា", detail: "workflow គាំទ្រនៅកម្ពុជាជួយដោះស្រាយបញ្ហាបានលឿន និងរក្សាស្ថិរភាពប្រតិបត្តិការ។" },
-  { title: "ការដឹកជញ្ជូនមានស្តង់ដារ និងគ្រប់គ្រងគុណភាព", detail: "យើងអនុវត្ត SOP និង checklist បច្ចេកទេស ដើម្បីរក្សាគុណភាពឯកសណ្ឋានពីចាប់ផ្តើមដល់ប្រគល់ការងារ។" },
-  { title: "ភាពជឿជាក់រយៈពេលវែង និង AMC readiness", detail: "ផែនការបន្ទាប់ពីដំឡើង រួមមានបណ្តុះបណ្តាល ថែទាំបង្ការ និង AMC ដើម្បីបង្កើន uptime និងកាត់បន្ថយបញ្ហាដដែល។" },
+  { title: "ឆ្លើយតប Onsite លឿន និងបន្តសេវា", detail: "Workflow គាំទ្រនៅកម្ពុជាជួយដោះស្រាយបញ្ហាបានលឿន និងរក្សាស្ថិរភាពប្រតិបត្តិការ។" },
+  { title: "ការដឹកជញ្ជូនមានស្តង់ដារ និងគ្រប់គ្រងគុណភាព", detail: "យើងអនុវត្ត SOP និង Checklist បច្ចេកទេស ដើម្បីរក្សាគុណភាពឯកសណ្ឋានពីចាប់ផ្តើមដល់ប្រគល់ការងារ។" },
+  { title: "ភាពជឿជាក់រយៈពេលវែង និង AMC Ready", detail: "ផែនការបន្ទាប់ពីដំឡើង រួមមានបណ្តុះបណ្តាល ថែទាំបង្ការ និង AMC ដើម្បីបង្កើន Uptime។" },
 ];
 
-const offersKm = [
-  { title: "LED Display & Video Wall", desc: "អេក្រង់ LED ខាងក្នុង/ខាងក្រៅ Fine-pitch video wall Rental LED និងអេក្រង់បន្ទប់គ្រប់គ្រង។" },
-  { title: "Digital Signage", desc: "Digital signage សម្រាប់ផ្សារទំនើប បរិវេណសិក្សា បន្ទប់បង្ហាញ និងបណ្ដាញផ្សាយពាណិជ្ជកម្មតាមផ្លូវ។" },
+const offersKmClean = [
+  { title: "LED Display និង Video Wall", desc: "អេក្រង់ LED ខាងក្នុង/ខាងក្រៅ, Fine-pitch Video Wall, Rental LED និងអេក្រង់បន្ទប់គ្រប់គ្រង។" },
+  { title: "Digital Signage", desc: "ស្លាកឌីជីថលសម្រាប់ផ្សារទំនើប បរិវេណសិក្សា បន្ទប់តាំង និងបណ្ដាញផ្សាយពាណិជ្ជកម្មតាមផ្លូវ។" },
   { title: "Smart Board / Smart Classroom", desc: "អេក្រង់អន្តរកម្មសម្រាប់អប់រំ និងបន្ទប់ប្រជុំ ជាមួយការភ្ជាប់ OPS/PC។" },
-  { title: "PA System & Audio", desc: "ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ សម្រាប់ស្ថាប័ន រោងចក្រ វិហារ និងទីតាំងធំៗ។" },
-  { title: "Access Control Solutions", desc: "Turnstile gate Door access Attendance Biometric និងការគ្រប់គ្រងភ្ញៀវ។" },
-  { title: "Custom Integration & Support", desc: "បណ្តាញ ចែកចាយថាមពល ការតម្លើង ការបើកប្រើប្រាស់ និង AMC support។" },
+  { title: "PA System និង Audio", desc: "ប្រព័ន្ធផ្សាយសំឡេងសាធារណៈសម្រាប់ស្ថាប័ន រោងចក្រ វិហារ និងទីតាំងធំៗ។" },
+  { title: "Access Control Solutions", desc: "Turnstile Gate, Door Access, Attendance, Biometric និងការគ្រប់គ្រងភ្ញៀវ។" },
+  { title: "Custom Integration និង Support", desc: "បណ្ដាញ ចែកចាយថាមពល ការតម្លើង ការបើកប្រើប្រាស់ និង AMC Support។" },
 ];
 
-const achievementsKm = [
+const achievementsKmClean = [
   { title: "ការអនុវត្តគម្រោងស្ថាប័ន និងរដ្ឋាភិបាល", desc: "គម្រោងអនុវត្តជាមួយឯកសារត្រឹមត្រូវ និងការប្រគល់ការងារដោយវិជ្ជាជីវៈ។" },
-  { title: "ទំនុកចិត្តអតិថិជនរយៈពេលវែង", desc: "កើតចេញពីភាពថ្លៃថ្នូរ ផលិតផលពិតប្រាកដ និងសេវាគាំទ្រជឿជាក់។" },
-  { title: "សមត្ថភាពគាំទ្រ និងថែទាំ", desc: "ក្រុមគាំទ្រពិសេស ផែនការគ្រឿងបន្លាស់ និងប្រព័ន្ធថែទាំបង្ការ។" },
+  { title: "ទំនុកចិត្តអតិថិជនរយៈពេលវែង", desc: "កើតចេញពីភាពថ្លៃថ្នូរ ផលិតផលស្តង់ដារ និងសេវាគាំទ្រជឿជាក់។" },
+  { title: "សមត្ថភាពគាំទ្រ និងថែទាំ", desc: "ក្រុមគាំទ្រផ្ទាល់ខ្លួន ផែនការគ្រឿងបន្លាស់ និងប្រព័ន្ធថែទាំបង្ការ។" },
   { title: "វិស្វកម្មដំណោះស្រាយផ្តោតទីផ្សារកម្ពុជា", desc: "រចនាដំណោះស្រាយសមស្របសម្រាប់ភ្នំពេញ សៀមរាប ព្រះសីហនុ និងលក្ខខណ្ឌប្រតិបត្តិការទូទាំងប្រទេស។" },
   { title: "ការបញ្ចូលប្រព័ន្ធ LED, Signage និង Access ពេញលេញ", desc: "អនុវត្តបានជោគជ័យនូវប្រព័ន្ធរួមសម្រាប់បរិស្ថានអាជីវកម្មសំខាន់ៗ។" },
-  { title: "ដាក់ប្រើប្រាស់លឿនជាមួយ workflow មានរចនាសម្ព័ន្ធ", desc: "ដំណើរការពីស្ទង់ទីតាំងដល់បើកប្រើប្រាស់ ជាមួយ BOQ testing documentation និងគាំទ្របន្ទាប់ពីដំឡើង។" },
+  { title: "ដាក់ប្រើប្រាស់លឿនជាមួយ Workflow មានរចនាសម្ព័ន្ធ", desc: "ដំណើរការពីស្ទង់ទីតាំងដល់បើកប្រើ ជាមួយ BOQ, Testing, Documentation និងគាំទ្របន្ទាប់ពីដំឡើង។" },
 ];
 
-const faqsKm = [
-  { q: "Mugnee Cambodia ជាអ្វី ហើយឯកទេសលើអ្វីខ្លះ?", a: "Mugnee Cambodia ជាក្រុមហ៊ុនដំណោះស្រាយបច្ចេកវិទ្យា ឯកទេសលើ LED display, digital signage, smart classroom, PA និង access control ជាមួយការអនុវត្តគម្រោង end-to-end។" },
-  { q: "តើអ្នកផ្តល់សេវាគម្រោងពេញលេញពីរចនាដល់បើកប្រើប្រាស់ដែរ ឬទេ?", a: "បាទ/ចាស។ ក្រុមរបស់យើងគ្រប់គ្រង requirement analysis, site survey, technical design, product supply, installation, integration, commissioning, training និង after-sales support។" },
-  { q: "Mugnee Cambodia ផ្តល់ដំណោះស្រាយអ្វីខ្លះសម្រាប់អាជីវកម្ម និងស្ថាប័នសាធារណៈ?", a: "យើងផ្តល់ indoor/outdoor LED display, digital signage network, smart board, PA/announcement system, turnstile gate និង access control សម្រាប់វិស័យជាច្រើន។" },
-  { q: "តើអាចកែសម្រួលដំណោះស្រាយតាមទីតាំង និងថវិកាបានទេ?", a: "បាន។ យើងកែសម្រួល architecture តាមទំហំទីតាំង ចរាចរណ៍ ចម្ងាយមើល តម្រូវការសុវត្ថិភាព integration scope និងថវិកា។" },
-  { q: "តើអ្នកផ្តល់ដំឡើង និងគាំទ្រក្នុងតំបន់កម្ពុជាដែរឬទេ?", a: "បាទ/ចាស។ យើងផ្តល់គាំទ្រវិស្វកម្មក្នុងតំបន់កម្ពុជា សម្រាប់ដំឡើង troubleshooting ថែទាំបង្ការ និង AMC រយៈពេលវែង។" },
-  { q: "តើអ្នកធ្វើការជាមួយវិស័យណាខ្លះនៅកម្ពុជា?", a: "យើងគាំទ្រវិស័យលក់រាយ ការិយាល័យក្រុមហ៊ុន រោងចក្រ អប់រំ សុខាភិបាល បដិសណ្ឋារកិច្ច និងគម្រោងសាធារណៈ។" },
-  { q: "តើអ្នកធានាគុណភាព និងភាពជឿជាក់ក្នុងការអនុវត្តគម្រោងយ៉ាងដូចម្តេច?", a: "យើងអនុវត្ត workflow មានរចនាសម្ព័ន្ធ quality checkpoints ស្តង់ដារដំឡើងសុវត្ថិភាព system testing និង technical handover។" },
-  { q: "តើមានបណ្តុះបណ្តាល និងឯកសារបន្ទាប់ពីប្រគល់គម្រោងដែរឬទេ?", a: "មាន។ យើងផ្តល់បណ្តុះបណ្តាលអ្នកប្រើ ណែនាំ troubleshooting មូលដ្ឋាន និងឯកសារគម្រោងសម្រាប់ប្រតិបត្តិការប្រចាំថ្ងៃ។" },
-  { q: "តើប្រព័ន្ធរបស់អ្នកអាចភ្ជាប់ជាមួយ software/control platform ដែលមានស្រាប់បានទេ?", a: "បាន។ អាស្រ័យលើវិសាលភាពគម្រោង យើងអាចភ្ជាប់ជាមួយ CMS attendance visitor management និង platform ប្រតិបត្តិការផ្សេងៗ។" },
-  { q: "តើយើងអាចទាក់ទង Mugnee Cambodia ដើម្បីស្នើសុំតម្លៃដោយរបៀបណា?", a: "អ្នកអាចទាក់ទងតាមទំព័រ contact របស់វេបសាយ ជាមួយព័ត៌មានទីតាំង គោលដៅគម្រោង និងប្រភេទដំណោះស្រាយដែលត្រូវការ។" },
+const faqsKmClean = [
+  { q: "Mugnee Cambodia ជាអ្វី ហើយឯកទេសលើអ្វីខ្លះ?", a: "Mugnee Cambodia ជាក្រុមហ៊ុនដំណោះស្រាយបច្ចេកវិទ្យា ឯកទេសលើ LED Display, Digital Signage, Smart Classroom, PA និង Access Control ជាមួយការអនុវត្តគម្រោងពេញលេញ។" },
+  { q: "តើអ្នកផ្តល់សេវាគម្រោងពេញលេញពីរចនាដល់បើកប្រើប្រាស់ដែរ ឬទេ?", a: "បាទ/ចាស។ ក្រុមយើងគ្រប់គ្រង Requirement Analysis, Site Survey, Technical Design, Product Supply, Installation, Integration, Commissioning, Training និង After-sales Support។" },
+  { q: "Mugnee Cambodia ផ្តល់ដំណោះស្រាយអ្វីខ្លះសម្រាប់អាជីវកម្ម និងស្ថាប័នសាធារណៈ?", a: "យើងផ្តល់ Indoor/Outdoor LED Display, Digital Signage Network, Smart Board, PA/Announcement System, Turnstile Gate និង Access Control សម្រាប់វិស័យជាច្រើន។" },
+  { q: "តើអាចកែសម្រួលដំណោះស្រាយតាមទីតាំង និងថវិកាបានទេ?", a: "បាន។ យើងកែសម្រួលស្ថាបត្យកម្មតាមទំហំទីតាំង ចរាចរណ៍ ចម្ងាយមើល តម្រូវការសុវត្ថិភាព វិសាលភាព Integration និងថវិកា។" },
+  { q: "តើអ្នកផ្តល់ដំឡើង និងគាំទ្រនៅក្នុងតំបន់កម្ពុជាដែរ ឬទេ?", a: "បាទ/ចាស។ យើងផ្តល់គាំទ្រវិស្វកម្មក្នុងតំបន់កម្ពុជា សម្រាប់ដំឡើង Troubleshooting ថែទាំបង្ការ និង AMC រយៈពេលវែង។" },
+  { q: "តើអ្នកធ្វើការជាមួយវិស័យណាខ្លះនៅកម្ពុជា?", a: "យើងគាំទ្រវិស័យលក់រាយ ការិយាល័យក្រុមហ៊ុន រោងចក្រ អប់រំ សុខាភិបាល សណ្ឋាគារ និងគម្រោងសាធារណៈ។" },
+  { q: "តើអ្នកធានាគុណភាព និងភាពជឿជាក់ក្នុងការអនុវត្តគម្រោងយ៉ាងដូចម្តេច?", a: "យើងអនុវត្ត Workflow មានរចនាសម្ព័ន្ធ Quality Checkpoints ស្តង់ដារដំឡើងសុវត្ថិភាព System Testing និង Technical Handover។" },
+  { q: "តើមានបណ្តុះបណ្តាល និងឯកសារបន្ទាប់ពីប្រគល់គម្រោងដែរ ឬទេ?", a: "មាន។ យើងផ្តល់បណ្តុះបណ្តាលអ្នកប្រើ ណែនាំ Troubleshooting មូលដ្ឋាន និងឯកសារគម្រោងសម្រាប់ប្រតិបត្តិការប្រចាំថ្ងៃ។" },
+  { q: "តើប្រព័ន្ធរបស់អ្នកអាចភ្ជាប់ជាមួយ Software/Control Platform ដែលមានស្រាប់បានទេ?", a: "បាន។ អាស្រ័យលើវិសាលភាពគម្រោង យើងអាចភ្ជាប់ជាមួយ CMS, Attendance, Visitor Management និង Platform ប្រតិបត្តិការផ្សេងៗ។" },
+  { q: "តើយើងអាចទាក់ទង Mugnee Cambodia ដើម្បីស្នើសុំតម្លៃដោយរបៀបណា?", a: "អ្នកអាចទាក់ទងតាមទំព័រ Contact របស់វេបសាយ ជាមួយព័ត៌មានទីតាំង គោលដៅគម្រោង និងប្រភេទដំណោះស្រាយដែលត្រូវការ។" },
 ];
 
 const uiKm = {
   eyebrow: "អំពី Mugnee Cambodia",
   heroTitle: "Mugnee Cambodia",
   heroDesc:
-    "Mugnee Cambodia គឺជាក្រុមហ៊ុនដំណោះស្រាយបច្ចេកវិទ្យាអាជីវកម្ម ផ្តោតលើ LED display, digital signage, smart classroom, PA audio និង access control នៅកម្ពុជា។ យើងផ្តល់សេវាអនុវត្តគម្រោងពេញលេញ ចាប់ពីស្ទង់ទីតាំង រចនា ផ្គត់ផ្គង់ ដំឡើង បើកប្រើប្រាស់ បណ្តុះបណ្តាល និងគាំទ្របន្ទាប់ពីលក់រយៈពេលវែង។",
+    "Mugnee Cambodia គឺជាក្រុមហ៊ុនសម្ព័ន្ធរបស់ Mugnee Multiple ដែលផ្តោតលើដំណោះស្រាយ LED Display, Digital Signage, Smart Classroom, PA Audio និង Access Control នៅកម្ពុជា។ យើងផ្តល់សេវាអនុវត្តគម្រោងពេញលេញ ចាប់ពីការស្ទង់ទីតាំងបច្ចេកទេស និងការរចនាដំណោះស្រាយ រហូតដល់ការផ្គត់ផ្គង់ ការដំឡើង ការធ្វើ Commissioning ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាគាំទ្របន្ទាប់ពីលក់រយៈពេលវែង។ ក្រុមវិស្វកររបស់យើងជួយវិស័យលក់រាយ ក្រុមហ៊ុន រោងចក្រ អប់រំ សណ្ឋាគារ និងស្ថាប័នសាធារណៈ ឲ្យលើកកម្ពស់គុណភាពទំនាក់ទំនង ភាពមើលឃើញម៉ាក ប្រសិទ្ធភាពប្រតិបត្តិការ និងសុវត្ថិភាពទីតាំង តាមរយៈប្រព័ន្ធដែលអាចទុកចិត្តបាន អាចពង្រីកបាន និងងាយស្រួលថែទាំ សមស្របនឹងលក្ខខណ្ឌទីផ្សារកម្ពុជាពិតប្រាកដ។",
   ctaContact: "ទាក់ទងយើង",
-  ctaService: "សេវាកម្ម & គាំទ្រ",
+  ctaService: "សេវា និង គាំទ្រ",
   coverage: "បម្រើសេវា៖ ភ្នំពេញ - សៀមរាប - ព្រះសីហនុ",
   sec1: "បេសកកម្ម ចក្ខុវិស័យ និងកម្លាំង",
   sec2: "តម្លៃស្នូលរបស់យើង",
@@ -362,34 +365,33 @@ const uiKm = {
   sec5: "អ្នកចែកចាយដែលបានអនុញ្ញាត (កម្ពុជា)",
   sec6: "អ្វីដែលយើងធ្វើ",
   sec6p:
-    "គំរូអនុវត្តរបស់យើងបញ្ចូលវិស្វកម្ម បច្ចេកទេស ការអនុវត្តគម្រោង និងសេវាបន្ទាប់ពីលក់ ដើម្បីឱ្យអាជីវកម្មនៅកម្ពុជាអាចដាក់ប្រើប្រាស់ប្រព័ន្ធបានជាប់លាប់។",
+    "គំរូអនុវត្តរបស់យើងរួមបញ្ចូលវិស្វកម្ម បច្ចេកទេស ការអនុវត្តគម្រោង និងសេវាគាំទ្របន្ទាប់ពីលក់ ដើម្បីឲ្យអាជីវកម្មនៅកម្ពុជាអាចដាក់ប្រើប្រព័ន្ធបានដោយស្ថិរភាព។",
   sec7: "ប្រតិបត្តិការនៅកម្ពុជា",
   sec7p:
-    "គំរូប្រតិបត្តិការរបស់យើងនៅកម្ពុជា ត្រូវបានរចនាសម្រាប់ការអនុវត្តគម្រោងជឿជាក់ មានភាពទទួលខុសត្រូវក្នុងតំបន់ និងការគាំទ្រឆ្លើយតបលឿន។",
+    "គំរូប្រតិបត្តិការរបស់យើងនៅកម្ពុជា ត្រូវបានរចនាសម្រាប់ការអនុវត្តគម្រោងដែលអាចទុកចិត្តបាន ដោយមានភាពទទួលខុសត្រូវក្នុងតំបន់ និងការគាំទ្រឆ្លើយតបរហ័ស។",
   sec8: "អ្វីដែលយើងផ្តល់",
   sec9: "សមិទ្ធផលរបស់យើង",
   sec10: "សំណួរញឹកញាប់",
   sec11: "សាងសង់អនាគតជាមួយគ្នា",
   sec11p: "សូមចែករំលែកគោលដៅគម្រោង និងទីតាំងរបស់អ្នក។ យើងនឹងណែនាំដំណោះស្រាយសមស្រប និងផ្តល់តម្លៃច្បាស់លាស់។",
   sec11c: "ទាក់ទង Mugnee Cambodia",
-  note: "ចំណាំ៖ ការចែកចាយ ការអនុវត្តគម្រោង និងការសម្របសម្រួលគាំទ្រនៅកម្ពុជា ត្រូវបានគ្រប់គ្រងក្នុងតំបន់ដោយ Mugnee Multiple Co., Ltd។",
+  note: "ចំណាំ៖ ការចែកចាយ ការអនុវត្តគម្រោង និងការសម្របសម្រួលគាំទ្រនៅកម្ពុជា ត្រូវបានគ្រប់គ្រងក្នុងតំបន់ដោយ Mugnee Multiple Co., Ltd.",
 };
-
 export default function AboutClient() {
   const { lang } = useLang();
   const isKm = lang === "km";
-  const tags = isKm ? heroTagsKm : heroTags;
-  const highlightsData = isKm ? highlightsKm : highlights;
-  const valuesData = isKm ? valuesKm : values;
-  const storyPointsData = isKm ? storyPointsKm : storyPoints;
-  const storyMilestonesData = isKm ? storyMilestonesKm : storyMilestones;
-  const presenceData = isKm ? presenceKm : presence;
-  const distributorData = isKm ? authorizedDistributorKm : authorizedDistributor;
-  const whatWeDoData = isKm ? whatWeDoKm : whatWeDo;
-  const cambodiaOpsData = isKm ? cambodiaOpsKm : cambodiaOps;
-  const offersData = isKm ? offersKm : offers;
-  const achievementsData = isKm ? achievementsKm : achievements;
-  const faqsData = isKm ? faqsKm : faqs;
+  const tags = isKm ? heroTagsKmClean : heroTags;
+  const highlightsData = isKm ? highlightsKmClean : highlights;
+  const valuesData = isKm ? valuesKmClean : values;
+  const storyPointsData = isKm ? storyPointsKmClean : storyPoints;
+  const storyMilestonesData = isKm ? storyMilestonesKmClean : storyMilestones;
+  const presenceData = isKm ? presenceKmClean : presence;
+  const distributorData = isKm ? authorizedDistributorKmClean : authorizedDistributor;
+  const whatWeDoData = isKm ? whatWeDoKmClean : whatWeDo;
+  const cambodiaOpsData = isKm ? cambodiaOpsKmClean : cambodiaOps;
+  const offersData = isKm ? offersKmClean : offers;
+  const achievementsData = isKm ? achievementsKmClean : achievements;
+  const faqsData = isKm ? faqsKmClean : faqs;
 
   return (
     <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
@@ -481,7 +483,7 @@ export default function AboutClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{isKm ? uiKm.sec3 : "Our Story"}</h2>
           <p className="mt-2 max-w-5xl text-sm leading-relaxed text-slate-600">
             {isKm
-              ? "Mugnee Cambodia បានរីកចម្រើនពីក្រុមហ៊ុនផ្តោតលើវិស្វកម្ម ទៅជាដៃគូដំណោះស្រាយ end-to-end ដែលអាចទុកចិត្តបាន សម្រាប់ LED display, digital signage, smart classroom, PA និង access control។ ដំណើររបស់យើងផ្អែកលើគុណភាពអនុវត្តជាក់ស្តែង ការយល់ដឹងទីផ្សារក្នុងតំបន់ និងការប្តេជ្ញាបម្រើសេវារយៈពេលវែង។"
+              ? "Mugnee Cambodia បានរីកចម្រើនពីក្រុមហ៊ុនផ្តោតលើវិស្វកម្ម ទៅជាដៃគូដំណោះស្រាយពេញលេញដែលអាចទុកចិត្តបាន សម្រាប់ LED Display, Digital Signage, Smart Classroom, PA System និង Access Control។ ដំណើររបស់យើងផ្អែកលើគុណភាពអនុវត្តជាក់ស្តែង ការយល់ដឹងទីផ្សារក្នុងតំបន់ និងការប្តេជ្ញាផ្តល់សេវារយៈពេលវែង។"
               : "Mugnee Cambodia grew from an engineering-driven technology company into a trusted end-to-end solutions partner for LED display, digital signage, smart classroom, PA systems, and access control infrastructure. Our journey is built on practical implementation quality, local market understanding, and long-term service commitment for businesses and institutions across Cambodia."}
           </p>
           <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -663,3 +665,6 @@ export default function AboutClient() {
     </main>
   );
 }
+
+
+

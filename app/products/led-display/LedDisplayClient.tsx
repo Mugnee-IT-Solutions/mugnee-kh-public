@@ -211,20 +211,39 @@ const DEFAULT_TRUST_PROOF_CHIPS_KM = [
 const SEO_STRONG_TERMS_EN = [
   "LED display price in Cambodia",
   "LED screen solutions in Cambodia",
+  "indoor LED display solutions in Cambodia",
+  "outdoor LED display solutions in Cambodia",
   "outdoor LED display price",
   "indoor LED display price",
   "indoor LED display",
+  "P1.25 to P4 indoor LED display options",
+  "P2.5 to P10 outdoor LED display models",
   "outdoor LED billboard",
+  "high-brightness outdoor LED billboard systems",
+  "DOOH advertising",
+  "public digital signage projects",
   "LED video wall",
+  "fine-pitch indoor LED video wall systems",
   "digital signage screens",
   "LED advertising screen",
   "commercial advertising",
   "fine-pitch indoor LED screens",
+  "high brightness",
+  "seamless visuals",
+  "custom screen size planning",
+  "controller and power integration",
+  "BOQ preparation",
+  "project-based design",
+  "quotation",
   "high-brightness outdoor LED panels",
+  "weatherproof IP65-ready cabinet options",
   "IP65-ready outdoor options",
   "video processor setup",
   "site survey",
   "pixel-pitch planning",
+  "viewing-distance optimization",
+  "steel structure safety design",
+  "controller and power system integration",
   "refresh-rate optimization",
   "steel structure and cabinet planning",
   "installation",
@@ -330,6 +349,7 @@ export default function LedDisplayClient({
   pixelPitchSectionOverride,
   pixelPitchSectionOverrideKm,
   faqItemsOverride,
+  faqItemsOverrideKm,
   internalLinkClusterOverride,
   internalLinkClusterOverrideKm,
   trustSignalsOverride,
@@ -363,6 +383,7 @@ export default function LedDisplayClient({
   pixelPitchSectionOverride?: React.ReactNode;
   pixelPitchSectionOverrideKm?: React.ReactNode;
   faqItemsOverride?: Array<{ q: string; a: string }>;
+  faqItemsOverrideKm?: Array<{ q: string; a: string }>;
   internalLinkClusterOverride?: Array<{ title: string; href: string }>;
   internalLinkClusterOverrideKm?: Array<{ title: string; href: string }>;
   trustSignalsOverride?: string[];
@@ -387,7 +408,8 @@ export default function LedDisplayClient({
 }) {
   const { lang } = useLang();
   const faqItems =
-    faqItemsOverride ?? (lang === "en" ? LED_FAQS_EN : LED_FAQS_KM);
+    (lang === "en" ? faqItemsOverride : (faqItemsOverrideKm ?? faqItemsOverride)) ??
+    (lang === "en" ? LED_FAQS_EN : LED_FAQS_KM);
   const internalLinks =
     (lang === "en"
       ? internalLinkClusterOverride
@@ -1030,8 +1052,8 @@ export default function LedDisplayClient({
             </p>
             <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
               {lang === "en"
-                ? "Top Benefits of LED Display for Advertising, Branding & Business Communication"
-                : "អត្ថប្រយោជន៍សំខាន់ៗនៃអេក្រង់ LED សម្រាប់ការផ្សព្វផ្សាយ ម៉ាក និងការទំនាក់ទំនងអាជីវកម្ម"}
+                ? "LED Display Benefits for Advertising & Brand Visibility"
+                : "អត្ថប្រយោជន៍អេក្រង់ LED សម្រាប់ការផ្សព្វផ្សាយ និងការមើលឃើញម៉ាក"}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-slate-600">
               {lang === "en"
@@ -1614,7 +1636,7 @@ export default function LedDisplayClient({
                     alt={logo.label}
                     width={180}
                     height={32}
-                    className="h-8 w-auto object-contain"
+                    className={logo.label === "Lampro" ? "h-10 w-auto object-contain" : "h-8 w-auto object-contain"}
                   />
                 </div>
               ))}

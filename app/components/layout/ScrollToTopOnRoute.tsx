@@ -13,7 +13,14 @@ export default function ScrollToTopOnRoute() {
   }, []);
 
   useLayoutEffect(() => {
-    const scrollTop = () => window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    const scrollTop = () => {
+      const root = document.getElementById("app-scroll-root");
+      if (root instanceof HTMLElement) {
+        root.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        return;
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    };
 
     const raf = window.requestAnimationFrame(scrollTop);
 

@@ -10,6 +10,7 @@ const socialLinks = [
   { label: "X (Twitter)", platform: "x", href: "https://x.com/mugneeml" },
   { label: "Instagram", platform: "instagram", href: "https://www.instagram.com/sm.mugnee/" },
   { label: "LinkedIn", platform: "linkedin", href: "https://www.linkedin.com/company/mugnee-multiple-limited/" },
+  { label: "Telegram", platform: "telegram", href: "https://t.me/mugneemultiple" },
   { label: "Pinterest", platform: "pinterest", href: "https://www.pinterest.com/mugneeml/" },
 ];
 
@@ -144,6 +145,12 @@ function SocialIcon({ platform }: { platform: string }) {
       return (
         <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
           <path d="M12 2a10 10 0 0 0-3.6 19.3c0-.8 0-2 .2-2.9l1.4-5.8s-.3-.6-.3-1.4c0-1.3.8-2.3 1.8-2.3.8 0 1.2.6 1.2 1.3 0 .8-.5 2- .8 3-.3.9.7 1.6 1.6 1.6 1.9 0 3.4-2 3.4-4.8 0-2.5-1.8-4.3-4.4-4.3A4.6 4.6 0 0 0 9.2 10c0 .9.3 1.8.8 2.3.1.1.1.2.1.4l-.3 1.2c0 .2-.2.3-.4.2-1.5-.6-2.4-2.4-2.4-3.9 0-3.2 2.3-6.1 6.7-6.1 3.5 0 6.2 2.5 6.2 5.8 0 3.5-2.2 6.3-5.2 6.3-1 0-2-.5-2.3-1.2l-.6 2.3c-.2.8-.7 1.9-1 2.6.8.2 1.5.3 2.3.3A10 10 0 1 0 12 2z" />
+        </svg>
+      );
+    case "telegram":
+      return (
+        <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
+          <path d="M9.6 15.5 9.2 20c.6 0 .9-.3 1.3-.6l3.1-3 6.5 4.8c1.2.6 2 .3 2.3-1.1L24 3.2v-.1c.4-1.7-.6-2.3-1.8-1.9L1.2 9.3c-1.7.6-1.7 1.5-.3 2l5.4 1.7L19 5.1c.6-.4 1.1-.2.6.2" />
         </svg>
       );
     default:
@@ -354,8 +361,10 @@ export default function ContactClient() {
                               ? "bg-[#0A66C2] text-white"
                               : s.platform === "x"
                                 ? "bg-black text-white"
-                                : s.platform === "instagram"
-                                  ? "bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white"
+                              : s.platform === "instagram"
+                                ? "bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white"
+                                : s.platform === "telegram"
+                                  ? "bg-[#229ED9] text-white"
                                   : "bg-[#E60023] text-white";
 
                       return (
