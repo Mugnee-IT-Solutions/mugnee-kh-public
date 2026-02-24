@@ -590,7 +590,7 @@ export default function LedDisplayClient({
               name: "Mugnee Cambodia",
               url: `${SITE_URL}${schemaPath}`,
               image: `${SITE_URL}/images/hero/cambodia-led-hero.webp`,
-              telephone: "+855171927446",
+              telephone: "+85586817907",
               sameAs: [
                 "https://www.facebook.com/mugneemultiple/",
                 "https://www.youtube.com/@MugneeTech",
@@ -687,7 +687,7 @@ export default function LedDisplayClient({
 
           <div className="mt-5 flex flex-wrap gap-2.5">
             <a
-              href="https://wa.me/855171927446"
+              href="https://wa.me/85586817907"
               target="_blank"
               rel="noopener"
               className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
@@ -1578,7 +1578,7 @@ export default function LedDisplayClient({
               {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
             </a>
             <a
-              href="https://wa.me/855171927446"
+              href="https://wa.me/85586817907"
               target="_blank"
               rel="noopener"
               className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
@@ -1853,6 +1853,7 @@ export default function LedDisplayClient({
     </main>
   );
 }
+
 
 
 

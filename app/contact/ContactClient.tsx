@@ -36,8 +36,8 @@ const offices = [
 ];
 
 const contacts = [
-  { label: "Sales", value: "+8801711927445" },
-  { label: "Support", value: "+8801711927446" },
+  { label: "Sales", value: "+85586817907" },
+  { label: "Support", value: "+85586817907" },
   { label: "Email", value: "info.mugnee@gmail.com" },
 ];
 
@@ -63,8 +63,8 @@ const officesKm = [
 ];
 
 const contactsKm = [
-  { label: "ផ្នែកលក់", value: "+8801711927445" },
-  { label: "ផ្នែកគាំទ្រ", value: "+8801711927446" },
+  { label: "ផ្នែកលក់", value: "+85586817907" },
+  { label: "ផ្នែកគាំទ្រ", value: "+85586817907" },
   { label: "អ៊ីមែល", value: "info.mugnee@gmail.com" },
 ];
 
@@ -242,7 +242,7 @@ export default function ContactClient() {
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
-                  href="tel:+8801711927445"
+                  href="tel:+85586817907"
                   className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
                 >
                   {isKm ? uiKm.ctaContact : "Contact Us"}
@@ -450,7 +450,7 @@ export default function ContactClient() {
                     {isKm ? uiKm.requestQuote : "Request a Quotation"}
                   </Link>
                   <a
-                    href="tel:+8801711927445"
+                    href="tel:+85586817907"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
                   >
                     {isKm ? uiKm.contactOffice : "Contact Cambodia Office"}
@@ -464,7 +464,7 @@ export default function ContactClient() {
                   1st Floor, 11E0, Street 108, Night Market Area, Doun Penh, Phnom Penh,
                   Cambodia
                 </p>
-                <p className="mt-2">{isKm ? `${uiKm.phoneLabel}: +8801711927445` : "Phone: +8801711927445"}</p>
+                <p className="mt-2">{isKm ? `${uiKm.phoneLabel}: +85586817907` : "Phone: +85586817907"}</p>
                 <p className="mt-2">{isKm ? `${uiKm.hoursLabel}: ${uiKm.hoursValue}` : "Hours: Mon-Sat, 8:30am-6:00pm"}</p>
               </div>
             </div>

@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLang } from "../components/layout/LanguageProvider";
 
 const heroTags = [
@@ -54,7 +55,7 @@ const values = [
 ];
 
 const storyPoints = [
-  "Founded in 2014 to deliver engineering-grade LED and smart technology solutions.",
+  "Founded in 2016 to deliver engineering-grade LED and smart technology solutions.",
   "End-to-end execution: design, supply, installation, integration, commissioning, and support.",
   "Direct operations in Cambodia through Mugnee Multiple Co., Ltd with consistent service standards.",
 ];
@@ -276,7 +277,7 @@ const valuesKmClean = [
 ];
 
 const storyPointsKmClean = [
-  "បង្កើតឡើងក្នុងឆ្នាំ 2014 ដើម្បីផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាស្តង់ដារវិស្វកម្ម។",
+  "បង្កើតឡើងក្នុងឆ្នាំ 2016 ដើម្បីផ្តល់ដំណោះស្រាយបច្ចេកវិទ្យាស្តង់ដារវិស្វកម្ម។",
   "អនុវត្តគម្រោងពេញលេញ៖ រចនា ផ្គត់ផ្គង់ ដំឡើង បញ្ចូលប្រព័ន្ធ បើកប្រើ និងគាំទ្រ។",
   "មានប្រតិបត្តិការផ្ទាល់នៅកម្ពុជា តាមរយៈ Mugnee Multiple Co., Ltd ដោយស្តង់ដារសេវាដែលជាប់លាប់។",
 ];
@@ -354,7 +355,7 @@ const uiKm = {
   eyebrow: "អំពី Mugnee Cambodia",
   heroTitle: "Mugnee Cambodia",
   heroDesc:
-    "Mugnee Cambodia គឺជាក្រុមហ៊ុនសម្ព័ន្ធរបស់ Mugnee Multiple ដែលផ្តោតលើដំណោះស្រាយ LED Display, Digital Signage, Smart Classroom, PA Audio និង Access Control នៅកម្ពុជា។ យើងផ្តល់សេវាអនុវត្តគម្រោងពេញលេញ ចាប់ពីការស្ទង់ទីតាំងបច្ចេកទេស និងការរចនាដំណោះស្រាយ រហូតដល់ការផ្គត់ផ្គង់ ការដំឡើង ការធ្វើ Commissioning ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាគាំទ្របន្ទាប់ពីលក់រយៈពេលវែង។ ក្រុមវិស្វកររបស់យើងជួយវិស័យលក់រាយ ក្រុមហ៊ុន រោងចក្រ អប់រំ សណ្ឋាគារ និងស្ថាប័នសាធារណៈ ឲ្យលើកកម្ពស់គុណភាពទំនាក់ទំនង ភាពមើលឃើញម៉ាក ប្រសិទ្ធភាពប្រតិបត្តិការ និងសុវត្ថិភាពទីតាំង តាមរយៈប្រព័ន្ធដែលអាចទុកចិត្តបាន អាចពង្រីកបាន និងងាយស្រួលថែទាំ សមស្របនឹងលក្ខខណ្ឌទីផ្សារកម្ពុជាពិតប្រាកដ។",
+    "Mugnee គឺជាក្រុមហ៊ុនពហុជាតិ (MNC) ហើយ Mugnee Cambodia គឺជាក្រុមហ៊ុនសម្ព័ន្ធរបស់ Mugnee Multiple ដែលផ្តោតលើដំណោះស្រាយ LED Display, Digital Signage, Smart Classroom, PA Audio និង Access Control នៅកម្ពុជា។ យើងផ្តល់សេវាអនុវត្តគម្រោងពេញលេញ ចាប់ពីការស្ទង់ទីតាំងបច្ចេកទេស និងការរចនាដំណោះស្រាយ រហូតដល់ការផ្គត់ផ្គង់ ការដំឡើង ការធ្វើ Commissioning ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាគាំទ្របន្ទាប់ពីលក់រយៈពេលវែង។ ក្រុមវិស្វកររបស់យើងជួយវិស័យលក់រាយ ក្រុមហ៊ុន រោងចក្រ អប់រំ សណ្ឋាគារ និងស្ថាប័នសាធារណៈ ឲ្យលើកកម្ពស់គុណភាពទំនាក់ទំនង ភាពមើលឃើញម៉ាក ប្រសិទ្ធភាពប្រតិបត្តិការ និងសុវត្ថិភាពទីតាំង តាមរយៈប្រព័ន្ធដែលអាចទុកចិត្តបាន អាចពង្រីកបាន និងងាយស្រួលថែទាំ សមស្របនឹងលក្ខខណ្ឌទីផ្សារកម្ពុជាពិតប្រាកដ។",
   ctaContact: "ទាក់ទងយើង",
   ctaService: "សេវា និង គាំទ្រ",
   coverage: "បម្រើសេវា៖ ភ្នំពេញ - សៀមរាប - ព្រះសីហនុ",
@@ -410,7 +411,7 @@ export default function AboutClient() {
               <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
                 {isKm
                   ? uiKm.heroDesc
-                  : "Mugnee Cambodia is an affiliate company of Mugnee Multiple, focused on LED display, digital signage, smart classroom systems, PA audio systems, and access control integration in Cambodia. We provide complete project delivery from technical site survey and solution design to product supply, installation, commissioning, user training, and long-term after-sales support. Our engineering team helps retail, corporate, industrial, education, hospitality, and public-sector organizations improve communication quality, brand visibility, operational efficiency, and site security with reliable, scalable, and maintenance-ready systems built for real Cambodia market conditions."}
+                  : "Mugnee is a multinational company (MNC). In Cambodia, Mugnee operates as an affiliate of Mugnee Multiple and a leading provider of LED display, digital signage, smart classroom systems, PA audio systems, and access control integration. We provide complete project delivery from technical site survey and solution design to product supply, installation, commissioning, user training, and long-term after-sales support. Our engineering team helps retail, corporate, industrial, education, hospitality, and public-sector organizations improve communication quality, brand visibility, operational efficiency, and site security with reliable, scalable, and maintenance-ready systems built for real Cambodia market conditions."}
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {tags.map((tag) => (
@@ -514,13 +515,47 @@ export default function AboutClient() {
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{isKm ? uiKm.sec4 : "Our Presence"}</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {presenceData.map((item) => (
-              <div
+              <article
                 key={item.title}
-                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"
+                className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-lg"
               >
-                <div className="text-sm font-semibold text-slate-900">{item.title}</div>
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <Image
+                      src={item.title === "Bangladesh" || item.title === "បង់ក្លាដែស" ? "/images/partners/mugnee-bd-official.webp" : "/images/logo.png"}
+                      alt={item.title === "Bangladesh" || item.title === "បង់ក្លាដែស" ? "Mugnee Bangladesh official logo" : "Mugnee Cambodia official logo"}
+                      width={160}
+                      height={36}
+                      className={[
+                        "h-9 w-auto object-contain",
+                        item.title === "Bangladesh" || item.title === "បង់ក្លាដែស"
+                          ? "brightness-0 contrast-125"
+                          : "",
+                      ].join(" ")}
+                      loading="lazy"
+                    />
+                    <div className="text-sm font-semibold text-slate-900">{item.title}</div>
+                  </div>
+                  <span className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] font-semibold text-slate-600">
+                    {item.title}
+                  </span>
+                </div>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
-              </div>
+
+                <div className="mt-4 flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+                  <a
+                    href={item.title === "Bangladesh" || item.title === "បង់ក្លាដែស" ? "https://www.mugnee.com/" : "https://mugneekh.com/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 transition-all duration-300 hover:border-sky-300 hover:text-sky-700"
+                  >
+                    {isKm ? "ចូលមើលវេបសាយផ្លូវការ" : "Visit Official Website"}
+                  </a>
+                  <span className="text-xs font-medium text-slate-500">
+                    {item.title === "Bangladesh" || item.title === "បង់ក្លាដែស" ? "mugnee.com" : "mugneekh.com"}
+                  </span>
+                </div>
+              </article>
             ))}
           </div>
         </div>

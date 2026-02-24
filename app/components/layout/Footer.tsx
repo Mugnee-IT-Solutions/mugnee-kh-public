@@ -94,8 +94,8 @@ export default function SiteFooter() {
                   <span className="font-semibold">
                     <LangText en="Contact:" km="ទំនាក់ទំនង:" />
                   </span>{" "}
-                  <a className="no-underline transition hover:text-slate-900 hover:no-underline" href="tel:+855171927446">
-                    +855 17 192 7446
+                  <a className="no-underline transition hover:text-slate-900 hover:no-underline" href="tel:+85586817907">
+                    +85586817907
                   </a>{" "}
                   •{" "}
                   <a className="no-underline transition hover:text-slate-900 hover:no-underline" href="mailto:info.mugnee@gmail.com">

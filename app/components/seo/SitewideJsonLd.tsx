@@ -17,7 +17,7 @@ export default function SitewideJsonLd() {
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
     image: `${SITE_URL}/images/logo.png`,
-    telephone: "+8558001711927445",
+    telephone: "+85586817907",
     sameAs,
     areaServed: {
       "@type": "Country",

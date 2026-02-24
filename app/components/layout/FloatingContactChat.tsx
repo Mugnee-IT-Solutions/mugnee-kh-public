@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 
 const CONTACT_LINKS = {
-  whatsapp: "https://wa.me/855171927446",
+  whatsapp: "https://wa.me/85586817907",
   messenger: "https://m.me/mugneemultiple",
   telegram: "https://t.me/mugneemultiple",
-  call: "tel:+855171927446",
+  call: "tel:+85586817907",
 };
 
 function ChatIcon() {
@@ -125,12 +125,12 @@ export default function FloatingContactChat() {
 
   return (
     <div className="pointer-events-none fixed bottom-6 right-4 z-[70] sm:bottom-7 sm:right-6">
-      <div className="pointer-events-auto relative flex flex-col items-end gap-3">
+      <div className="pointer-events-auto relative inline-flex flex-col items-end">
         <div
-          className={`origin-bottom-right transition-all duration-200 ${
+          className={`pointer-events-none absolute bottom-[calc(100%+0.75rem)] right-0 origin-bottom-right transition-all duration-200 ${
             open
-              ? "translate-y-0 scale-100 opacity-100"
-              : "pointer-events-none translate-y-2 scale-95 opacity-0"
+              ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
+              : "translate-y-2 scale-95 opacity-0"
           }`}
         >
           <div className="relative w-[min(82vw,15rem)]">

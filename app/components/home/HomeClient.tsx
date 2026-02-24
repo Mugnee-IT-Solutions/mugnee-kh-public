@@ -88,6 +88,78 @@ const HERO_SLIDES = [
     alt: "Integrated systems delivery and support in Cambodia",
   },
 ];
+
+const UNIT_CARD_THEME: Record<
+  string,
+  { card: string; badge: string; glow: string; title: string }
+> = {
+  led_display: {
+    card: "border-cyan-200/80 bg-gradient-to-br from-cyan-50 via-white to-sky-50 hover:border-cyan-300",
+    badge: "bg-cyan-100/80 text-cyan-800 ring-cyan-200/70",
+    glow: "bg-cyan-300/45",
+    title: "text-slate-900",
+  },
+  indoor_led_display: {
+    card: "border-blue-200/80 bg-gradient-to-br from-blue-50 via-white to-indigo-50 hover:border-blue-300",
+    badge: "bg-blue-100/80 text-blue-800 ring-blue-200/70",
+    glow: "bg-blue-300/45",
+    title: "text-slate-900",
+  },
+  outdoor_billboard: {
+    card: "border-amber-200/80 bg-gradient-to-br from-amber-50 via-white to-orange-50 hover:border-amber-300",
+    badge: "bg-amber-100/80 text-amber-800 ring-amber-200/70",
+    glow: "bg-amber-300/45",
+    title: "text-slate-900",
+  },
+  receiving_card: {
+    card: "border-emerald-200/80 bg-gradient-to-br from-emerald-50 via-white to-teal-50 hover:border-emerald-300",
+    badge: "bg-emerald-100/80 text-emerald-800 ring-emerald-200/70",
+    glow: "bg-emerald-300/45",
+    title: "text-slate-900",
+  },
+  ifp: {
+    card: "border-fuchsia-200/80 bg-gradient-to-br from-fuchsia-50 via-white to-violet-50 hover:border-fuchsia-300",
+    badge: "bg-fuchsia-100/80 text-fuchsia-800 ring-fuchsia-200/70",
+    glow: "bg-fuchsia-300/45",
+    title: "text-slate-900",
+  },
+  turnstile: {
+    card: "border-rose-200/80 bg-gradient-to-br from-rose-50 via-white to-red-50 hover:border-rose-300",
+    badge: "bg-rose-100/80 text-rose-800 ring-rose-200/70",
+    glow: "bg-rose-300/45",
+    title: "text-slate-900",
+  },
+  pa_system: {
+    card: "border-violet-200/80 bg-gradient-to-br from-violet-50 via-white to-purple-50 hover:border-violet-300",
+    badge: "bg-violet-100/80 text-violet-800 ring-violet-200/70",
+    glow: "bg-violet-300/45",
+    title: "text-slate-900",
+  },
+  video_processor: {
+    card: "border-indigo-200/80 bg-gradient-to-br from-indigo-50 via-white to-blue-50 hover:border-indigo-300",
+    badge: "bg-indigo-100/80 text-indigo-800 ring-indigo-200/70",
+    glow: "bg-indigo-300/45",
+    title: "text-slate-900",
+  },
+  power_supply: {
+    card: "border-lime-200/80 bg-gradient-to-br from-lime-50 via-white to-green-50 hover:border-lime-300",
+    badge: "bg-lime-100/80 text-lime-800 ring-lime-200/70",
+    glow: "bg-lime-300/45",
+    title: "text-slate-900",
+  },
+  all_products: {
+    card: "border-sky-200/80 bg-gradient-to-br from-sky-50 via-white to-cyan-50 hover:border-sky-300",
+    badge: "bg-sky-100/80 text-sky-800 ring-sky-200/70",
+    glow: "bg-sky-300/45",
+    title: "text-slate-900",
+  },
+  default: {
+    card: "border-slate-200 bg-gradient-to-br from-slate-50 via-white to-slate-100/60 hover:border-slate-300",
+    badge: "bg-slate-100 text-slate-700 ring-slate-200",
+    glow: "bg-slate-300/45",
+    title: "text-slate-900",
+  },
+};
 const MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.3322027815047!2d104.92304627050727!3d11.573972618867787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951e6231c345b%3A0xebf28967942f76b6!2sMugnee%20Multiple%20Co.%2C%20Ltd!5e1!3m2!1sen!2sbd!4v1770445691312!5m2!1sen!2sbd";
 
@@ -203,8 +275,13 @@ export default function HomeClient({
   }, [showCatalog]);
 
   useEffect(() => {
+    if (!showLowerSections) return;
     const section = mapSectionRef.current;
     if (!section || showMap) return;
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      const timer = setTimeout(() => setShowMap(true), 0);
+      return () => clearTimeout(timer);
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -218,7 +295,7 @@ export default function HomeClient({
 
     observer.observe(section);
     return () => observer.disconnect();
-  }, [showMap]);
+  }, [showMap, showLowerSections]);
 
   useEffect(() => {
     const section = lowerSectionsRef.current;
@@ -251,12 +328,14 @@ export default function HomeClient({
       secProductsEyebrow: "What we deliver",
       secProductsTitle: "Core Business Units in Cambodia",
       secCatalogEyebrow: "Our Products",
-      secPartnersEyebrow: "Partnership",
-      secPartnersTitle: "Supported by International Development Partnerships",
+      secPartnersEyebrow: "Partnership Ecosystem",
+      secPartnersTitle: "International Development Partnership Ecosystem",
       secPartnersDesc:
-        "Our team has delivered projects supported by organizations such as The World Bank, JICA, Swisscontact, GIZ, and Mitsubishi Research Institute (MRI), with structured execution and documentation.",
+        "Mugnee is building collaboration pathways with globally recognized development finance institutions and agencies active in Cambodia and Southeast Asia.",
+      secPartnersDisclosure:
+        "Disclosure: Organizations listed below represent relevant development and investment ecosystem stakeholders. Inclusion does not imply a formal partnership unless officially announced.",
       secAuthEyebrow: "Partners",
-      secAuthTitle: "Authorized Distributor & Certified Engineering Partner",
+      secAuthTitle: "Authorized Smart Tech Distributor & Trusted Engineering Team",
       secAuthDesc:
         "Mugnee Cambodia works with recognized manufacturing partners and certified engineers for accountable project delivery.",
       secServiceEyebrow: "Service area",
@@ -282,12 +361,14 @@ export default function HomeClient({
       secProductsEyebrow: "អ្វីដែលយើងផ្តល់ជូន",
       secProductsTitle: "វិស័យសេវាកម្មសំខាន់ៗនៅកម្ពុជា",
       secCatalogEyebrow: "ផលិតផលរបស់យើង",
-      secPartnersEyebrow: "ភាពជាដៃគូ",
-      secPartnersTitle: "គាំទ្រដោយភាពជាដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
+      secPartnersEyebrow: "ប្រព័ន្ធភាពជាដៃគូ",
+      secPartnersTitle: "ប្រព័ន្ធភាពជាដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
       secPartnersDesc:
-        "យើងបានអនុវត្តគម្រោងក្រោមការគាំទ្រពីអង្គការអន្តរជាតិជាច្រើន ដូចជា The World Bank, JICA, Swisscontact, GIZ និង Mitsubishi Research Institute (MRI)។",
+        "Mugnee កំពុងបង្កើតផ្លូវសហការជាមួយស្ថាប័នហិរញ្ញវត្ថុអភិវឌ្ឍន៍ និងអង្គការអន្តរជាតិដែលមានការទទួលស្គាល់ និងសកម្មនៅកម្ពុជា និងអាស៊ីអាគ្នេយ៍។",
+      secPartnersDisclosure:
+        "ការបង្ហាញព័ត៌មាន៖ អង្គការខាងក្រោមត្រូវបានបង្ហាញជាផ្នែកនៃប្រព័ន្ធអភិវឌ្ឍន៍ និងវិនិយោគដែលពាក់ព័ន្ធ។ ការបញ្ចូលឈ្មោះមិនមានន័យថាជាដៃគូផ្លូវការទេ លុះត្រាតែមានការប្រកាសជាផ្លូវការ។",
       secAuthEyebrow: "ដៃគូ",
-      secAuthTitle: "អ្នកចែកចាយផ្លូវការ និងដៃគូវិស្វកម្មដែលមានវិញ្ញាបនបត្រ",
+      secAuthTitle: "អ្នកចែកចាយបច្ចេកវិទ្យាឆ្លាតវៃផ្លូវការ និងក្រុមវិស្វកម្មដែលគួរឱ្យទុកចិត្ត",
       secAuthDesc:
         "Mugnee Cambodia ផ្គត់ផ្គង់គ្រឿងបន្លាស់ LED និងប្រព័ន្ធគ្រប់គ្រងស្តង់ដារអន្តរជាតិ ជាមួយក្រុមវិស្វករដែលមានវិញ្ញាបនបត្រ និងសេវាកម្មគាំទ្រនៅកម្ពុជា។",
       secServiceEyebrow: "តំបន់សេវាកម្ម",
@@ -378,7 +459,7 @@ export default function HomeClient({
           {t.heroTitle}
         </h1>
 
-        <p className="text-base leading-relaxed text-white/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-[1.06rem]">
+        <p className="text-justify text-base leading-relaxed text-white/95 drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)] sm:text-[1.06rem]">
           {t.heroDesc}
         </p>
 
@@ -455,22 +536,41 @@ export default function HomeClient({
           />
 
           <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-            {categoryTiles.map((c) => (
-              <Link
-                key={c.key}
-                href={c.href}
-                className="home-unit-card group flex min-h-[124px] items-center justify-center rounded-xl border border-slate-200 bg-white p-4 text-center shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md no-underline hover:no-underline"
-              >
-                <div className="flex flex-col items-center justify-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center text-slate-700 transition-colors duration-200 group-hover:text-slate-900">
-                    {c.icon}
+            {categoryTiles.map((c) => {
+              const theme = UNIT_CARD_THEME[c.key] ?? UNIT_CARD_THEME.default;
+              return (
+                <Link
+                  key={c.key}
+                  href={c.href}
+                  className={[
+                    "home-unit-card group relative flex min-h-[124px] items-center justify-center overflow-hidden rounded-xl border p-4 text-center no-underline shadow-[0_2px_10px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(15,23,42,0.16)] hover:no-underline",
+                    theme.card,
+                  ].join(" ")}
+                >
+                  <span
+                    aria-hidden="true"
+                    className={[
+                      "pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full blur-2xl opacity-65 transition-opacity duration-300 group-hover:opacity-90",
+                      theme.glow,
+                    ].join(" ")}
+                  />
+
+                  <div className="relative flex flex-col items-center justify-center gap-3">
+                    <div
+                      className={[
+                        "flex h-12 w-12 items-center justify-center rounded-xl ring-1 shadow-sm transition-transform duration-300 group-hover:scale-105",
+                        theme.badge,
+                      ].join(" ")}
+                    >
+                      {c.icon}
+                    </div>
+                    <h3 className={`text-[1.05rem] font-semibold leading-tight ${theme.title}`}>
+                      {lang === "en" ? c.titleEn : sanitizeKhmer(c.titleKm, c.titleEn)}
+                    </h3>
                   </div>
-                  <h3 className="text-[1.05rem] font-medium leading-tight text-slate-900">
-                    {lang === "en" ? c.titleEn : sanitizeKhmer(c.titleKm, c.titleEn)}
-                  </h3>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
 
         </Container>
@@ -516,52 +616,108 @@ export default function HomeClient({
                 descClassName="max-w-none"
               />
 
-              <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
-                {[
-                  {
-                    label: "The World Bank",
-                    src: "/images/partners/world-bank.svg",
-                    href: "https://www.worldbank.org/",
-                  },
-                  {
-                    label: "JICA",
-                    src: "/images/partners/jica.svg",
-                    href: "https://www.jica.go.jp/english/",
-                  },
-                  {
-                    label: "Swisscontact",
-                    src: "/images/partners/swisscontact.svg",
-                    href: "https://www.swisscontact.org/en",
-                  },
-                  {
-                    label: "GIZ",
-                    src: "/images/partners/giz.svg",
-                    href: "https://www.giz.de/en/",
-                  },
-                  {
-                    label: "Mitsubishi Research Institute (MRI)",
-                    src: "/images/partners/mitsubishi.svg",
-                    href: "https://www.mri.co.jp/en/index.html",
-                  },
-                ].map((logo) => (
-                  <a
-                    key={logo.label}
-                    href={logo.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${logo.label} official website`}
-                    className="group flex h-20 items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 px-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-md md:h-24"
-                  >
-                    <Image
-                      src={logo.src}
-                      alt={logo.label}
-                      width={220}
-                      height={64}
-                      className="max-h-10 w-auto object-contain md:max-h-12"
-                      style={{ width: "auto", height: "auto" }}
-                    />
-                  </a>
-                ))}
+              <div className="relative mt-5 overflow-hidden rounded-3xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-slate-100/60 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-4">
+                <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-14 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent" />
+                <div className="home-partner-marquee-track flex w-max gap-3 py-1">
+                  {[
+                    { short: "ADB", label: "Asian Development Bank", href: "https://www.adb.org/", logo: "/images/partners/adb-official.png" },
+                    { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/", logo: "/images/partners/ifc-official.svg" },
+                    { short: "WBG", label: "World Bank Group", href: "https://www.worldbank.org/", logo: "/images/partners/world-bank.svg" },
+                    { short: "JICA", label: "Japan International Cooperation Agency", href: "https://www.jica.go.jp/english/", logo: "/images/partners/jica-official.png" },
+                    { short: "USAID", label: "USAID", href: "https://www.usaid.gov/", logo: "/images/partners/usaid-official.png" },
+                    { short: "EU", label: "EU Development Programs", href: "https://international-partnerships.ec.europa.eu/index_en", logo: "/images/partners/eu-official.svg" },
+                    { short: "UNDP", label: "UNDP", href: "https://www.undp.org/", logo: "/images/partners/undp-official.svg" },
+                    { short: "UNCTAD", label: "UNCTAD", href: "https://unctad.org/", logo: "/images/partners/unctad-official.png" },
+                    { short: "MCC", label: "Millennium Challenge Corporation (MCC)", href: "https://www.mcc.gov/", logo: "/images/partners/mcc-official.svg" },
+                    { short: "ADB", label: "Asian Development Bank", href: "https://www.adb.org/", logo: "/images/partners/adb-official.png" },
+                    { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/", logo: "/images/partners/ifc-official.svg" },
+                    { short: "WBG", label: "World Bank Group", href: "https://www.worldbank.org/", logo: "/images/partners/world-bank.svg" },
+                    { short: "JICA", label: "Japan International Cooperation Agency", href: "https://www.jica.go.jp/english/", logo: "/images/partners/jica-official.png" },
+                    { short: "USAID", label: "USAID", href: "https://www.usaid.gov/", logo: "/images/partners/usaid-official.png" },
+                    { short: "EU", label: "EU Development Programs", href: "https://international-partnerships.ec.europa.eu/index_en", logo: "/images/partners/eu-official.svg" },
+                    { short: "UNDP", label: "UNDP", href: "https://www.undp.org/", logo: "/images/partners/undp-official.svg" },
+                    { short: "UNCTAD", label: "UNCTAD", href: "https://unctad.org/", logo: "/images/partners/unctad-official.png" },
+                    { short: "MCC", label: "Millennium Challenge Corporation (MCC)", href: "https://www.mcc.gov/", logo: "/images/partners/mcc-official.svg" },
+                  ].map((org, idx) => (
+                    <a
+                      key={`${org.label}-${idx}`}
+                      href={org.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${org.label} official website`}
+                      className="group relative flex h-[104px] w-[300px] shrink-0 items-center justify-center overflow-hidden rounded-[22px] border border-slate-200/80 bg-white/95 px-6 text-center shadow-[0_6px_16px_rgba(15,23,42,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-200 hover:shadow-[0_16px_36px_rgba(15,23,42,0.16)]"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-sky-400/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      />
+                      <span
+                        aria-hidden="true"
+                        className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-sky-100/60 blur-2xl opacity-40 transition-opacity duration-300 group-hover:opacity-90"
+                      />
+                      {org.short === "UNDP" ? (
+                        <div className="relative flex w-full items-center justify-center">
+                          <div className="flex items-center gap-3">
+                            <Image
+                              src={org.logo}
+                              alt="UNDP official logo"
+                              width={42}
+                              height={56}
+                              className="h-14 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                            />
+                            <span className="text-left text-[15px] font-semibold leading-[1.12] text-[#0072BC]">
+                              United Nations
+                              <br />
+                              Development Programme
+                            </span>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="relative flex w-full flex-col items-center">
+                          <Image
+                            src={org.logo}
+                            alt={`${org.label} official logo`}
+                            width={220}
+                            height={48}
+                            className={[
+                              "w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]",
+                              org.short === "EU"
+                                ? "h-auto w-[184px] max-w-[72%] contrast-125 brightness-90 saturate-125"
+                                : org.short === "MCC"
+                                  ? "h-auto w-[188px] max-w-[80%]"
+                                : "h-12 max-w-[88%]",
+                            ].join(" ")}
+                          />
+                          {org.short === "ADB" ? (
+                            <span className="mt-2 text-[11px] font-semibold tracking-[0.06em] text-slate-600">
+                              Asian Development Bank
+                            </span>
+                          ) : null}
+                        </div>
+                      )}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                {lang === "en"
+                  ? "By aligning with trusted global development ecosystems, Mugnee supports responsible digital commerce growth, technology access, and inclusive market development in Cambodia."
+                  : "តាមរយៈការស្របតាមប្រព័ន្ធអភិវឌ្ឍន៍សកលដែលគួរឱ្យទុកចិត្ត Mugnee គាំទ្រកំណើនពាណិជ្ជកម្មឌីជីថលប្រកបដោយការទទួលខុសត្រូវ ការចូលប្រើបច្ចេកវិទ្យា និងការអភិវឌ្ឍទីផ្សារដែលរួមបញ្ចូលនៅកម្ពុជា។"}
+              </p>
+
+              <p className="mt-3 text-xs leading-relaxed text-slate-400">
+                {t.secPartnersDisclosure}
+              </p>
+
+              <div className="mt-4">
+                <a
+                  href="/contact"
+                  className="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+                >
+                  {lang === "en" ? "Explore Collaboration Opportunities" : "ស្វែងយល់អំពីឱកាសសហការ"}
+                </a>
               </div>
             </>
           ) : (
@@ -606,14 +762,20 @@ export default function HomeClient({
               ].map((logo, idx) => (
                 <div
                   key={`${logo.label}-${idx}`}
-                  className="flex h-16 w-40 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 px-4 sm:w-44 lg:w-48"
+                  className="flex h-16 w-40 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 px-3 sm:w-44 lg:w-48"
                 >
                   <Image
                     src={logo.src}
                     alt={logo.label}
                     width={180}
                     height={32}
-                    className={logo.label === "Lampro" ? "h-10 w-auto object-contain" : "h-8 w-auto object-contain"}
+                    className={
+                      logo.label === "Lampro"
+                        ? "h-8 w-auto max-w-[82%] object-contain"
+                        : logo.label === "G-energy"
+                          ? "h-9 w-auto max-w-[78%] object-contain"
+                          : "h-8 w-auto max-w-[84%] object-contain"
+                    }
                     style={{ width: "auto", height: "auto" }}
                   />
                 </div>
@@ -739,7 +901,7 @@ export default function HomeClient({
                     : "ជាន់ទី១, 11E0, ផ្លូវ 108, តំបន់ Night Market, Doun Penh, Phnom Penh, Cambodia"}
                 </p>
                 <p className="mt-2">
-                  {lang === "en" ? "Phone: +855 17 192 7446" : "ទូរស័ព្ទ៖ +855 17 192 7446"}
+                  {lang === "en" ? "Phone: +85586817907" : "ទូរស័ព្ទ៖ +85586817907"}
                 </p>
                 <p className="mt-2">
                   {lang === "en"
@@ -853,7 +1015,7 @@ export default function HomeClient({
           }
         }
         .home-partner-marquee-track {
-          animation: home-partner-marquee 24s linear infinite;
+          animation: home-partner-marquee 44s linear infinite;
           will-change: transform;
         }
         .home-partner-marquee-track:hover {
@@ -868,3 +1030,5 @@ export default function HomeClient({
     </div>
   );
 }
+
+

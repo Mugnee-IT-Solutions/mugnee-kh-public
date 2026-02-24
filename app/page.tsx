@@ -291,7 +291,7 @@ export default function HomePage() {
       {
         "@type": "ContactPoint",
         contactType: "sales",
-        telephone: "+855171927446",
+        telephone: "+85586817907",
         availableLanguage: ["English", "Khmer"],
       },
     ],
