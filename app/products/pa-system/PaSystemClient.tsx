@@ -17,7 +17,7 @@ export default function PaSystemClient() {
     const en = {
       breadcrumb: "" ,
       badge: "Cambodia - PA System - Public Address",
-      h1: "Mugnee PA System Solutions in Cambodia",
+      h1: "Commercial PA System Solutions in Cambodia by Mugnee",
       sub:
         "Mugnee Cambodia provides professional PA system and public address system solutions in Cambodia for factories, schools, hospitals, malls, hotels, offices, and public venues. We supply PA speakers, amplifiers, paging microphones, mixers, and accessories with zone planning, cabling, installation, commissioning, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
       cta1: "Get a Free Quotation",

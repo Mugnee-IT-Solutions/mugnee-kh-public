@@ -1,3 +1,10 @@
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
 export { metadata } from "../../products/led-display/video-processor/page";
 import LedDisplayClient from "../../products/led-display/LedDisplayClient";
 import { PRODUCTS } from "../../data/products";

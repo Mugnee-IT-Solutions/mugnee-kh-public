@@ -1,3 +1,10 @@
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
 import type { Metadata } from "next";
 import LedDisplayClient from "../../products/led-display/LedDisplayClient";
 import { PRODUCTS } from "../../data/products";
@@ -7,7 +14,7 @@ const PAGE_PATH = "/led-display/indoor-led-display";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Indoor LED Display in Cambodia | Fine-Pitch Video Wall Solutions",
+  title: "Indoor LED Display Cambodia | Best Price & Installation",
   description:
     "Indoor LED display solutions in Cambodia for boardrooms, control rooms, showrooms, retail, and hospitality with fine-pitch planning, installation, calibration, and local support.",
   keywords: [
@@ -20,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Indoor LED Display in Cambodia | Fine-Pitch Video Wall Solutions",
+    title: "Indoor LED Display Cambodia | Best Price & Installation",
     description:
       "Fine-pitch indoor LED display in Cambodia for corporate, retail, and control-room environments with local installation and after-sales support.",
     url: PAGE_URL,
@@ -37,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Indoor LED Display in Cambodia | Mugnee Cambodia",
+    title: "Indoor LED Display Cambodia | Best Price & Installation",
     description:
       "Fine-pitch indoor LED solutions in Cambodia with local installation, calibration, and support.",
     images: [`${SITE_URL}/images/cambodia/indoor-led-hero.webp`],

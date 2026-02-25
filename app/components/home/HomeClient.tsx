@@ -623,7 +623,6 @@ export default function HomeClient({
                   {[
                     { short: "ADB", label: "Asian Development Bank", href: "https://www.adb.org/", logo: "/images/partners/adb-official.png" },
                     { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/", logo: "/images/partners/ifc-official.svg" },
-                    { short: "WBG", label: "World Bank Group", href: "https://www.worldbank.org/", logo: "/images/partners/world-bank.svg" },
                     { short: "JICA", label: "Japan International Cooperation Agency", href: "https://www.jica.go.jp/english/", logo: "/images/partners/jica-official.png" },
                     { short: "USAID", label: "USAID", href: "https://www.usaid.gov/", logo: "/images/partners/usaid-official.png" },
                     { short: "EU", label: "EU Development Programs", href: "https://international-partnerships.ec.europa.eu/index_en", logo: "/images/partners/eu-official.svg" },
@@ -632,7 +631,6 @@ export default function HomeClient({
                     { short: "MCC", label: "Millennium Challenge Corporation (MCC)", href: "https://www.mcc.gov/", logo: "/images/partners/mcc-official.svg" },
                     { short: "ADB", label: "Asian Development Bank", href: "https://www.adb.org/", logo: "/images/partners/adb-official.png" },
                     { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/", logo: "/images/partners/ifc-official.svg" },
-                    { short: "WBG", label: "World Bank Group", href: "https://www.worldbank.org/", logo: "/images/partners/world-bank.svg" },
                     { short: "JICA", label: "Japan International Cooperation Agency", href: "https://www.jica.go.jp/english/", logo: "/images/partners/jica-official.png" },
                     { short: "USAID", label: "USAID", href: "https://www.usaid.gov/", logo: "/images/partners/usaid-official.png" },
                     { short: "EU", label: "EU Development Programs", href: "https://international-partnerships.ec.europa.eu/index_en", logo: "/images/partners/eu-official.svg" },
@@ -1030,5 +1028,4 @@ export default function HomeClient({
     </div>
   );
 }
-
 

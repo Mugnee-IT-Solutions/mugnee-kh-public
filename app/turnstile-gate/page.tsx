@@ -1,4 +1,11 @@
-﻿import type { Metadata } from "next";
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
+import type { Metadata } from "next";
 import TurnstileGateClient from "../products/turnstile-gate/TurnstileGateClient";
 
 const SITE_URL =
@@ -8,7 +15,7 @@ const PAGE_PATH = "/turnstile-gate";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Turnstile Gate in Cambodia | Access Control & Entry Solutions",
+  title: "Commercial Turnstile Gate Cambodia | Supply & Installation",
   description:
     "Professional turnstile gate solutions in Cambodia for offices, factories, schools, and public venues. Flap, tripod, speed, and full-height turnstiles with RFID, QR, biometric integration, and installation support.",
   alternates: { canonical: PAGE_URL },

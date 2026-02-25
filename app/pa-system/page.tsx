@@ -1,4 +1,11 @@
-﻿import PaSystemClient from "../products/pa-system/PaSystemClient";
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
+import PaSystemClient from "../products/pa-system/PaSystemClient";
 import type { Metadata } from "next";
 
 const SITE_URL =
@@ -8,7 +15,7 @@ const PAGE_PATH = "/pa-system";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "PA System in Cambodia | Public Address Solutions & Installation",
+  title: "Commercial PA System Cambodia | Design Supply & Installation",
   description:
     "Professional PA system solutions in Cambodia: amplifiers, mixers, speakers, microphones, and accessories. Designed for clear announcements in factories, schools, malls, and offices with expert installation support.",
   alternates: { canonical: PAGE_URL },

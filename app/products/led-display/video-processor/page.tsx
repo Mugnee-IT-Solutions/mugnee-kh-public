@@ -1,4 +1,11 @@
-﻿import Link from "next/link";
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
+import Link from "next/link";
 import type { Metadata } from "next";
 
 const SITE_URL =
@@ -8,12 +15,12 @@ const PAGE_PATH = "/led-display/video-processor";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "LED Video Processor in Cambodia | LED Display Scaling & Switching | Mugnee",
+  title: "LED Video Processor Cambodia | Best Price & Installation",
   description:
     "Professional LED video processors in Cambodia for smooth scaling, multi-input switching, and stable LED wall output. Ideal for indoor & outdoor LED displays with expert setup support.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "LED Video Processor in Cambodia",
+    title: "LED Video Processor Cambodia | Best Price & Installation",
     description:
       "Reliable video processors for LED walls with multi-input switching, clean scaling, and stable output. Expert configuration & support by Mugnee Cambodia.",
     url: PAGE_URL,

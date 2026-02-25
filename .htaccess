@@ -1,13 +1,29 @@
 <IfModule mod_rewrite.c>
-RewriteEngine On
+  RewriteEngine On
 
-# Enforce canonical product hub URLs with server-side 301 redirects (LiteSpeed/Apache).
-RewriteRule ^products/led-display/?$ /led-display/ [R=301,L,NC]
-RewriteRule ^products/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
-RewriteRule ^products/outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]
-RewriteRule ^products/interactive-flat-panel/?$ /interactive-flat-panel/ [R=301,L,NC]
-RewriteRule ^products/pa-system/?$ /pa-system/ [R=301,L,NC]
-RewriteRule ^products/turnstile-gate/?$ /turnstile-gate/ [R=301,L,NC]
-RewriteRule ^products/access-control-system/?$ /solutions/office-access-control-cambodia/ [R=301,L,NC]
+  # Next.js static-export RSC compatibility:
+  # /foo/__next.a.b.c.d.txt -> /foo/__next.a/b/c/d.txt
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3/$4/$5.txt [L,NC]
+
+  # /foo/__next.a.b.c.txt -> /foo/__next.a/b/c.txt
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3/$4.txt [L,NC]
+
+  # /foo/__next.a.b.txt -> /foo/__next.a/b.txt
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3.txt [L,NC]
+
+  # Enforce canonical product hub URLs with server-side 301 redirects (LiteSpeed/Apache).
+  RewriteRule ^products/led-display/?$ /led-display/ [R=301,L,NC]
+  RewriteRule ^products/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/interactive-flat-panel/?$ /interactive-flat-panel/ [R=301,L,NC]
+  RewriteRule ^products/pa-system/?$ /pa-system/ [R=301,L,NC]
+  RewriteRule ^products/turnstile-gate/?$ /turnstile-gate/ [R=301,L,NC]
+  RewriteRule ^products/access-control-system/?$ /solutions/office-access-control-cambodia/ [R=301,L,NC]
 </IfModule>
 

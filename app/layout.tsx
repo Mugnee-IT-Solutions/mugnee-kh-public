@@ -7,6 +7,13 @@ import SiteFooter from "./components/layout/Footer";
 import SitewideJsonLd from "./components/seo/SitewideJsonLd";
 import { SITE_URL } from "./lib/site";
 
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
 const ScrollToTopOnRoute = dynamic(() => import("./components/layout/ScrollToTopOnRoute"));
 const FloatingContactChat = dynamic(() => import("./components/layout/FloatingContactChat"));
 const GlobalBackToTop = dynamic(() => import("./components/layout/GlobalBackToTop"));

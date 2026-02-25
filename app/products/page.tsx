@@ -1,3 +1,10 @@
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
 "use client";
 
 import ProductGrid from "../components/sections/ProductGrid";

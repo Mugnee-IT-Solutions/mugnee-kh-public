@@ -1,3 +1,10 @@
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
 import type { Metadata } from "next";
 import Image from "next/image";
 import HomeClient from "./components/home/HomeClient";
@@ -88,14 +95,14 @@ const PAGE_PATH = "/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Mugnee Cambodia | Smart Technology Solutions & System Integration",
+  title: "Mugnee Cambodia | Leading Premium Technology Provider",
   description:
     "Mugnee Cambodia is a smart technology and system integration company serving Cambodia with local engineering, installation, commissioning, and after-sales support.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    title: "Mugnee Cambodia | Smart Technology Solutions & System Integration",
+    title: "Mugnee Cambodia | Leading Premium Technology Provider",
     description:
       "Brand overview of Mugnee Cambodia: smart technology, project delivery, and local support for commercial and institutional projects.",
     siteName: "Mugnee Cambodia",
@@ -110,7 +117,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mugnee Cambodia | Smart Technology Solutions",
+    title: "Mugnee Cambodia | Leading Premium Technology Provider",
     description:
       "Smart technology solutions, engineering delivery, and local support in Cambodia.",
     images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],

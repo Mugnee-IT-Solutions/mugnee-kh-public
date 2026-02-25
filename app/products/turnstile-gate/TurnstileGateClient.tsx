@@ -16,7 +16,7 @@ export default function TurnstileGateClient() {
     const en = {
       breadcrumb: "" ,
       badge: "Cambodia - Turnstile Gate - Access Control",
-      h1: "Mugnee Turnstile Gate Solutions in Cambodia",
+      h1: "Commercial Turnstile Gate Solutions in Cambodia by Mugnee",
       sub:
         "Mugnee Cambodia provides professional turnstile gate and access control solutions in Cambodia for offices, factories, schools, transport hubs, and public venues. We supply tripod turnstile gates, flap barriers, speed gates, and full-height turnstiles with RFID card, QR code, and biometric integration, including on-site installation, commissioning, and local after-sales support.",
       cta1: "Get a Free Quotation",

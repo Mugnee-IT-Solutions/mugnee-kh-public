@@ -9,6 +9,22 @@
   RewriteCond %{THE_REQUEST} \s/+(.+?)//+ [NC]
   RewriteRule .* /%1 [R=301,L]
 
+  # Next.js static-export RSC compatibility:
+  # /foo/__next.a.b.c.d.txt -> /foo/__next.a/b/c/d.txt
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3/$4/$5.txt [L,NC]
+
+  # /foo/__next.a.b.c.txt -> /foo/__next.a/b/c.txt
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3/$4.txt [L,NC]
+
+  # /foo/__next.a.b.txt -> /foo/__next.a/b.txt
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3.txt [L,NC]
+
   # Canonical product route redirects
   RewriteRule ^products/led-display/?$ /led-display/ [R=301,L,NC]
   RewriteRule ^products/led-display/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
@@ -44,3 +60,4 @@
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/jpeg "access plus 30 days"
 </IfModule>
+

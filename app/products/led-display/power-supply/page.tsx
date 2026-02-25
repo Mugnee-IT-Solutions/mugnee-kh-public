@@ -1,4 +1,11 @@
-﻿import Link from "next/link";
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
+import Link from "next/link";
 import type { Metadata } from "next";
 
 const SITE_URL =
@@ -8,12 +15,12 @@ const PAGE_PATH = "/led-display/power-supply";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "LED Power Supply in Cambodia | Reliable Power for LED Displays | Mugnee",
+  title: "LED Power Supply Cambodia | Best Price & Installation",
   description:
     "High-quality LED power supplies in Cambodia for indoor and outdoor LED displays. Stable voltage, safety protections, and expert selection support for long-term reliability.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "LED Power Supply in Cambodia",
+    title: "LED Power Supply Cambodia | Best Price & Installation",
     description:
       "Reliable LED power supplies for video walls and signage with stable output, safety protections, and professional support.",
     url: PAGE_URL,

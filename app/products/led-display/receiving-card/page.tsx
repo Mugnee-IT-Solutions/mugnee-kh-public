@@ -1,4 +1,11 @@
-﻿import Link from "next/link";
+/*
+  Developer Signature:
+  This website was developed by Mugnee IT Solutions.
+  Developer Name: Ankur Datta
+  Email: ankurdatta.official@gmail.com
+  Github: https://github.com/ankur-datta-official
+*/
+import Link from "next/link";
 import type { Metadata } from "next";
 
 const SITE_URL =
@@ -8,12 +15,12 @@ const PAGE_PATH = "/led-display/receiving-card";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Receiving Card for LED Display in Cambodia | Mugnee",
+  title: "LED Receiving Card Cambodia | Best Price & Installation",
   description:
     "High-performance LED receiving cards for indoor and outdoor LED displays in Cambodia. Stable data transfer, wide IC compatibility, flexible scan modes, and professional setup support.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Receiving Card for LED Display in Cambodia",
+    title: "LED Receiving Card Cambodia | Best Price & Installation",
     description:
       "Reliable receiving cards for LED video walls with stable data transfer, wide module compatibility, and expert configuration support.",
     url: PAGE_URL,

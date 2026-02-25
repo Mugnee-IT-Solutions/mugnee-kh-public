@@ -366,6 +366,7 @@ export default function LedDisplayClient({
   schemaNameOverride,
   schemaServiceNameOverride,
   schemaServiceDescOverride,
+  currentMonthYearEn,
   heroTitleOverride,
   heroTitleOverrideKm,
   heroIntroOverride,
@@ -400,6 +401,7 @@ export default function LedDisplayClient({
   schemaNameOverride?: string;
   schemaServiceNameOverride?: string;
   schemaServiceDescOverride?: string;
+  currentMonthYearEn?: string;
   heroTitleOverride?: string;
   heroTitleOverrideKm?: string;
   heroIntroOverride?: string;
@@ -432,13 +434,31 @@ export default function LedDisplayClient({
   const schemaServiceDesc =
     schemaServiceDescOverride ??
     "Indoor LED video walls, outdoor LED billboards, installation, commissioning and after-sales support in Cambodia.";
+  const monthYearLabel =
+    currentMonthYearEn ??
+    new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      year: "numeric",
+      timeZone: "Asia/Phnom_Penh",
+    })
+      .formatToParts(new Date())
+      .reduce(
+        (acc, part) => {
+          if (part.type === "month") acc.month = part.value;
+          if (part.type === "year") acc.year = part.value;
+          return acc;
+        },
+        { month: "", year: "" },
+      );
+  const formattedMonthYear =
+    typeof monthYearLabel === "string" ? monthYearLabel : `${monthYearLabel.month}, ${monthYearLabel.year}`;
 
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
-      h1: "LED Display Price in Cambodia 2026",
+      h1: `LED Display Price in Cambodia ${formattedMonthYear}`,
       intro:
-        "Need the right LED display price in Cambodia for your business goal and budget? Mugnee Cambodia provides complete LED screen solutions in Cambodia, from indoor LED display price planning to outdoor LED display price proposals for billboards, shops, showrooms, hotels, corporate offices, and public projects. We supply indoor LED display, outdoor LED billboard, LED video wall, digital signage screens, and LED advertising screen options with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready outdoor options and get Cambodia-based after-sales support for long-term stable performance.",
+        "Need the right LED display price in Cambodia for your business goal and budget? Mugnee Cambodia is a leading LED display company in Cambodia, trusted for premium-quality yet budget-friendly LED screen solutions. From indoor LED display planning to outdoor LED billboard proposals, we support shops, showrooms, hotels, corporate offices, and public projects with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready options and get dependable Cambodia-based after-sales support for stable long-term performance.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
@@ -451,7 +471,7 @@ export default function LedDisplayClient({
       breadcrumb: "ផលិតផល",
       h1: "តម្លៃអេក្រង់ LED នៅកម្ពុជា",
       intro:
-        "តើអ្នកកំពុងស្វែងរកតម្លៃអេក្រង់ LED ដែលសមស្របនៅកម្ពុជា សម្រាប់គោលដៅអាជីវកម្ម និងថវិការបស់អ្នកមែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយអេក្រង់ LED ពេញលេញនៅកម្ពុជា ចាប់ពីការរៀបចំតម្លៃអេក្រង់ LED ក្នុងអគារ រហូតដល់សំណើតម្លៃអេក្រង់ LED ខាងក្រៅ សម្រាប់ប៊ីលបត្រ ហាង Showroom សណ្ឋាគារ ការិយាល័យក្រុមហ៊ុន និងគម្រោងសាធារណៈ។ យើងផ្គត់ផ្គង់ Indoor LED Display, Outdoor LED Billboard, LED Video Wall, Digital Signage និង LED Advertising Screen ជាមួយសេវាស្ទង់ទីតាំង ការគណនា Pixel Pitch ការកំណត់ឧបករណ៍ Video Processor ការរៀបចំរចនាសម្ព័ន្ធដែក និង Cabinet ការដំឡើង ការធ្វើតេស្ត និងការធ្វើ Commissioning។ អ្នកអាចជ្រើស Fine-pitch Indoor LED ឬ Outdoor LED Panel កម្រិតពន្លឺខ្ពស់ ជាមួយជម្រើស IP65 សម្រាប់ខាងក្រៅ ហើយទទួលបានសេវាបន្ទាប់ពីលក់ក្នុងប្រទេសកម្ពុជា ដើម្បីធានាដំណើរការមានស្ថិរភាពរយៈពេលវែង។",
+        "តើអ្នកកំពុងស្វែងរកតម្លៃអេក្រង់ LED ដែលសមស្របនៅកម្ពុជា សម្រាប់គោលដៅអាជីវកម្ម និងថវិការបស់អ្នកមែនទេ? Mugnee Cambodia គឺជាក្រុមហ៊ុនឈានមុខក្នុងទីផ្សារអេក្រង់ LED នៅកម្ពុជា ដែលត្រូវបានទុកចិត្តសម្រាប់ផលិតផលគុណភាពខ្ពស់ និងតម្លៃសមរម្យ។ ចាប់ពីការរៀបចំតម្លៃអេក្រង់ LED ក្នុងអគារ រហូតដល់សំណើតម្លៃអេក្រង់ LED ខាងក្រៅ យើងគាំទ្រហាង Showroom សណ្ឋាគារ ការិយាល័យក្រុមហ៊ុន និងគម្រោងសាធារណៈ ជាមួយសេវាស្ទង់ទីតាំង ការគណនា Pixel Pitch ការកំណត់ឧបករណ៍ Video Processor ការរៀបចំរចនាសម្ព័ន្ធដែក និង Cabinet ការដំឡើង ការធ្វើតេស្ត និងការធ្វើ Commissioning។ អ្នកអាចជ្រើស Fine-pitch Indoor LED ឬ Outdoor LED Panel កម្រិតពន្លឺខ្ពស់ ជាមួយជម្រើស IP65 សម្រាប់ខាងក្រៅ ហើយទទួលបានសេវាបន្ទាប់ពីលក់ក្នុងស្រុកកម្ពុជា ដើម្បីធានាដំណើរការមានស្ថិរភាពរយៈពេលវែង។",
       cta1: "WhatsApp ស្នើសុំតម្លៃ",
       cta2: "ស្នើសុំសំណើបញ្ជីបរិមាណការងារ",
       cta3: "ចូលទៅផលិតផល",
@@ -461,12 +481,13 @@ export default function LedDisplayClient({
     };
 
     return lang === "en" ? en : km;
-  }, [lang]);
+  }, [formattedMonthYear, lang]);
 
   const quickLinks =
     lang === "en"
       ? [
           { label: "Products", href: "#products" },
+          { label: "Buying Flow", href: "#buyer-journey" },
           { label: "LED Basics", href: "#led-basics" },
           { label: "Types", href: "#types-cambodia" },
           { label: "Benefits", href: "#benefits-led-display" },
@@ -482,6 +503,7 @@ export default function LedDisplayClient({
         ]
       : [
           { label: "ផលិតផល", href: "#products" },
+          { label: "ដំណើរទិញ", href: "#buyer-journey" },
           { label: "មូលដ្ឋាន LED", href: "#led-basics" },
           { label: "ប្រភេទ", href: "#types-cambodia" },
           { label: "អត្ថប្រយោជន៍", href: "#benefits-led-display" },
@@ -813,6 +835,103 @@ export default function LedDisplayClient({
         </div>
       </section>
 
+      {/* BUYER JOURNEY FLOW */}
+      <section id="buyer-journey" className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="max-w-none">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+              {lang === "en" ? "Buyer Journey" : "ដំណើរអ្នកទិញ"}
+            </p>
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
+              {lang === "en"
+                ? "How to Buy LED Display in Cambodia Without Confusion"
+                : "របៀបទិញអេក្រង់ LED នៅកម្ពុជា ឲ្យច្បាស់លាស់មិនច្របូកច្របល់"}
+            </h2>
+            <p className="mt-3 w-full text-justify text-sm leading-relaxed text-slate-600">
+              {lang === "en"
+                ? "This buyer-first flow helps you move from idea to go-live with clear scope, transparent BOQ, and practical delivery steps. It is designed for indoor LED display, outdoor LED billboard, LED video wall, and digital signage projects in Cambodia."
+                : "ផ្លូវសម្រេចចិត្តនេះ ត្រូវបានរៀបចំសម្រាប់អ្នកទិញ ដើម្បីឲ្យដំណើរពីគំនិតរហូតដល់ដំណើរការពិត មានភាពច្បាស់លាស់ ជាមួយ BOQ តម្លាភាព និងជំហានអនុវត្តអាចអនុវត្តបាន។ វាសមស្របសម្រាប់គម្រោងអេក្រង់ LED ក្នុងអគារ ខាងក្រៅ ជញ្ជាំងវីដេអូ LED និង Digital Signage នៅកម្ពុជា។"}
+            </p>
+          </div>
+
+          <ol className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {(lang === "en"
+              ? [
+                  [
+                    "1) Share Requirement",
+                    "You provide location, use case, screen size goal, viewing distance, and budget range.",
+                    "Output: Project brief",
+                  ],
+                  [
+                    "2) Site Survey & BOQ",
+                    "We validate structure, power, heat/rain risks, then prepare pixel pitch options and transparent BOQ.",
+                    "Output: Technical proposal",
+                  ],
+                  [
+                    "3) Approve & Install",
+                    "After approval, our team executes installation, cabling, calibration, and commissioning checklist.",
+                    "Output: Go-live handover",
+                  ],
+                  [
+                    "4) Operate & Support",
+                    "You get operator training, preventive maintenance plan, and responsive after-sales support.",
+                    "Output: Stable long-term performance",
+                  ],
+                ]
+              : [
+                  [
+                    "1) ផ្តល់តម្រូវការ",
+                    "អ្នកផ្តល់ទីតាំង គោលបំណងប្រើប្រាស់ ទំហំអេក្រង់ ចម្ងាយមើល និងជួរថវិកា។",
+                    "លទ្ធផល៖ សង្ខេបគម្រោង",
+                  ],
+                  [
+                    "2) ស្ទង់ទីតាំង និង BOQ",
+                    "យើងពិនិត្យរចនាសម្ព័ន្ធ ថាមពល ហានិភ័យកម្តៅ/ភ្លៀង ហើយរៀបចំជម្រើស Pixel Pitch និង BOQ ច្បាស់លាស់។",
+                    "លទ្ធផល៖ សំណើបច្ចេកទេស",
+                  ],
+                  [
+                    "3) អនុម័ត និងដំឡើង",
+                    "បន្ទាប់ពីអនុម័ត ក្រុមយើងដំឡើង រៀបខ្សែ កែតម្រូវពណ៌ និងត្រួតពិនិត្យដំណើរការតាម checklist។",
+                    "លទ្ធផល៖ ប្រគល់ប្រើប្រាស់",
+                  ],
+                  [
+                    "4) ប្រើប្រាស់ និងគាំទ្រ",
+                    "អ្នកទទួលបានការបណ្តុះបណ្តាល ផែនការថែទាំបង្ការ និងសេវាបន្ទាប់ពីលក់ឆាប់រហ័ស។",
+                    "លទ្ធផល៖ ដំណើរការស្ថិរភាពរយៈពេលវែង",
+                  ],
+                ]
+            ).map(([title, desc, out]) => (
+              <li key={String(title)} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-sm">
+                <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{desc}</p>
+                <p className="mt-3 text-xs font-semibold text-sky-800">{out}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Link
+              href="/contact"
+              className="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white no-underline hover:bg-slate-800 hover:no-underline"
+            >
+              {lang === "en" ? "Request LED BOQ & Quotation" : "ស្នើសុំ BOQ និងតម្លៃ LED"}
+            </Link>
+            <Link
+              href="/led-display/indoor-led-display"
+              className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
+            >
+              {lang === "en" ? "Compare Indoor LED Display" : "ប្រៀបធៀប LED ក្នុងអគារ"}
+            </Link>
+            <Link
+              href="/led-display/outdoor-led-display"
+              className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
+            >
+              {lang === "en" ? "Compare Outdoor LED Billboard" : "ប្រៀបធៀប LED ខាងក្រៅ"}
+            </Link>
+          </div>
+        </div>
+      </section>
+
                   {/* LED TECHNOLOGY BASICS */}
       <section id="led-basics" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-2 py-12 sm:px-4 lg:px-6">
@@ -1046,7 +1165,7 @@ export default function LedDisplayClient({
       {/* BENEFITS OF LED DISPLAY */}
       <section id="benefits-led-display" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
+          <div className="max-w-none">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
               {lang === "en" ? "Benefits of LED Display" : "អត្ថប្រយោជន៍របស់អេក្រង់ LED"}
             </p>
@@ -1055,7 +1174,7 @@ export default function LedDisplayClient({
                 ? "LED Display Benefits for Advertising & Brand Visibility"
                 : "អត្ថប្រយោជន៍អេក្រង់ LED សម្រាប់ការផ្សព្វផ្សាយ និងការមើលឃើញម៉ាក"}
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600">
+            <p className="mt-3 w-full text-justify text-sm leading-relaxed text-slate-600">
               {lang === "en"
                 ? "LED display solutions are widely used for digital signage, indoor branding, outdoor advertising, and public information because they offer high brightness, energy-efficient operation, strong visibility, and flexible screen sizes. For businesses, LED screens improve audience attention, message clarity, and long-term marketing value with low maintenance and long lifespan."
                 : "ដំណោះស្រាយអេក្រង់ LED ត្រូវបានប្រើយ៉ាងទូលំទូលាយសម្រាប់អេក្រង់ផ្សព្វផ្សាយឌីជីថល ការបង្ហាញម៉ាកក្នុងអគារ ការផ្សព្វផ្សាយខាងក្រៅ និងការបង្ហាញព័ត៌មានសាធារណៈ ព្រោះវាមានពន្លឺខ្ពស់ ប្រើថាមពលមានប្រសិទ្ធភាព មើលឃើញច្បាស់ និងអាចបត់បែនទំហំអេក្រង់បាន។ សម្រាប់អាជីវកម្ម អេក្រង់ LED ជួយបង្កើនការចាប់អារម្មណ៍ ការបញ្ជូនសារច្បាស់លាស់ និងតម្លៃទីផ្សាររយៈពេលវែង ជាមួយការថែទាំងាយស្រួល និងអាយុកាលយូរ។"}
