@@ -1,4 +1,4 @@
-﻿export type ProductSpec = {
+export type ProductSpec = {
   labelEn: string;
   labelKm: string;
   valueEn: string;
@@ -348,7 +348,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD1010 (3-in-1)",
         valueKm: "SMD1010 (3-in-1)",
       },
@@ -360,7 +360,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "640,000 dots/m2",
         valueKm: "640,000 dots/m2",
       },
@@ -378,7 +378,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB320",
         valueKm: "HUB320",
       },
@@ -432,7 +432,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Rate",
-        labelKm: "Frame Rate",
+        labelKm: "អត្រាហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -530,7 +530,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD1212",
         valueKm: "SMD1212",
       },
@@ -542,7 +542,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "422,500 dots/m2",
         valueKm: "422,500 dots/m2",
       },
@@ -560,7 +560,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB320",
         valueKm: "HUB320",
       },
@@ -614,7 +614,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Frequency",
-        labelKm: "Frame Frequency",
+        labelKm: "ប្រេកង់ហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -716,7 +716,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD1515",
         valueKm: "SMD1515",
       },
@@ -728,7 +728,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "289,000 dots/m2",
         valueKm: "289,000 dots/m2",
       },
@@ -746,7 +746,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB320",
         valueKm: "HUB320",
       },
@@ -846,7 +846,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD1515",
         valueKm: "SMD1515",
       },
@@ -858,7 +858,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "250,000 dots/m2",
         valueKm: "250,000 dots/m2",
       },
@@ -876,7 +876,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB320",
         valueKm: "HUB320",
       },
@@ -977,7 +977,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD2020",
         valueKm: "SMD2020",
       },
@@ -989,7 +989,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "62,500 dots/m2",
         valueKm: "62,500 dots/m2",
       },
@@ -1007,7 +1007,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB320",
         valueKm: "HUB320",
       },
@@ -1134,13 +1134,13 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "160,000 dots/m2",
         valueKm: "160,000 dots/m2",
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD2121",
         valueKm: "SMD2121",
       },
@@ -1188,7 +1188,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Protection",
-        labelKm: "Protection",
+        labelKm: "ការការពារ",
         valueEn: "IP50",
         valueKm: "IP50",
       },
@@ -1281,13 +1281,13 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "111,111 dots/m2",
         valueKm: "111,111 dots/m2",
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD2121",
         valueKm: "SMD2121",
       },
@@ -1335,7 +1335,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Protection",
-        labelKm: "Protection",
+        labelKm: "ការការពារ",
         valueEn: "IP50",
         valueKm: "IP50",
       },
@@ -1428,13 +1428,13 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "40,000 dots/m2",
         valueKm: "40,000 dots/m2",
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD2121",
         valueKm: "SMD2121",
       },
@@ -1482,7 +1482,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Protection",
-        labelKm: "Protection",
+        labelKm: "ការការពារ",
         valueEn: "IP50",
         valueKm: "IP50",
       },
@@ -1569,7 +1569,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD1415",
         valueKm: "SMD1415",
       },
@@ -1581,7 +1581,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "160,000 dots/m2",
         valueKm: "160,000 dots/m2",
       },
@@ -1599,7 +1599,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB75",
         valueKm: "HUB75",
       },
@@ -1653,7 +1653,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Frequency",
-        labelKm: "Frame Frequency",
+        labelKm: "ប្រេកង់ហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -1775,7 +1775,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD 3-in-1",
         valueKm: "SMD 3-in-1",
       },
@@ -1805,13 +1805,13 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "IP Protection",
-        labelKm: "IP Protection",
+        labelKm: "កម្រិតការពារ IP",
         valueEn: "Front IP65, Rear IP54",
         valueKm: "Front IP65, Rear IP54",
       },
       {
         labelEn: "Operating Voltage",
-        labelKm: "Operating Voltage",
+        labelKm: "តង់ស្យុងដំណើរការ",
         valueEn: "AC 110V / 220V +/- 10%",
         valueKm: "AC 110V / 220V +/- 10%",
       },
@@ -1823,7 +1823,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Color Processing",
-        labelKm: "Color Processing",
+        labelKm: "ដំណើរការពណ៌",
         valueEn: "16-bit grayscale",
         valueKm: "16-bit grayscale",
       },
@@ -1835,25 +1835,25 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Control System",
-        labelKm: "Control System",
+        labelKm: "ប្រព័ន្ធបញ្ជា",
         valueEn: "NovaStar / Colorlight / Linsn",
         valueKm: "NovaStar / Colorlight / Linsn",
       },
       {
         labelEn: "Operating Temperature",
-        labelKm: "Operating Temperature",
+        labelKm: "សីតុណ្ហភាពដំណើរការ",
         valueEn: "-20 C to +60 C",
         valueKm: "-20 C to +60 C",
       },
       {
         labelEn: "Humidity Range",
-        labelKm: "Humidity Range",
+        labelKm: "ជួរសំណើម",
         valueEn: "10% to 90% RH",
         valueKm: "10% to 90% RH",
       },
       {
         labelEn: "Lifespan",
-        labelKm: "Lifespan",
+        labelKm: "អាយុកាល",
         valueEn: "100,000+ hours",
         valueKm: "100,000+ hours",
       },
@@ -1931,7 +1931,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD1921",
         valueKm: "SMD1921",
       },
@@ -1943,7 +1943,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "62,500 dots/m2",
         valueKm: "62,500 dots/m2",
       },
@@ -1961,7 +1961,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB75",
         valueKm: "HUB75",
       },
@@ -2015,7 +2015,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Frequency",
-        labelKm: "Frame Frequency",
+        labelKm: "ប្រេកង់ហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -2129,7 +2129,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD1921",
         valueKm: "SMD1921",
       },
@@ -2141,7 +2141,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "40,000 dots/m2",
         valueKm: "40,000 dots/m2",
       },
@@ -2159,7 +2159,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB75",
         valueKm: "HUB75",
       },
@@ -2213,7 +2213,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Frequency",
-        labelKm: "Frame Frequency",
+        labelKm: "ប្រេកង់ហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -2325,7 +2325,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD2727",
         valueKm: "SMD2727",
       },
@@ -2337,7 +2337,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "27,750 dots/m2",
         valueKm: "27,750 dots/m2",
       },
@@ -2355,7 +2355,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB75",
         valueKm: "HUB75",
       },
@@ -2409,7 +2409,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Frequency",
-        labelKm: "Frame Frequency",
+        labelKm: "ប្រេកង់ហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -2521,7 +2521,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD2727",
         valueKm: "SMD2727",
       },
@@ -2533,7 +2533,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "22,500 dots/m2",
         valueKm: "22,500 dots/m2",
       },
@@ -2551,7 +2551,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB75",
         valueKm: "HUB75",
       },
@@ -2605,7 +2605,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Frequency",
-        labelKm: "Frame Frequency",
+        labelKm: "ប្រេកង់ហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -2717,7 +2717,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD2727",
         valueKm: "SMD2727",
       },
@@ -2729,7 +2729,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "15,625 dots/m2",
         valueKm: "15,625 dots/m2",
       },
@@ -2747,7 +2747,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB75",
         valueKm: "HUB75",
       },
@@ -2801,7 +2801,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Frequency",
-        labelKm: "Frame Frequency",
+        labelKm: "ប្រេកង់ហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -2913,7 +2913,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "LED Type",
-        labelKm: "LED Type",
+        labelKm: "ប្រភេទ LED",
         valueEn: "SMD3535",
         valueKm: "SMD3535",
       },
@@ -2925,7 +2925,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Pixel Density",
-        labelKm: "Pixel Density",
+        labelKm: "ដង់ស៊ីតេភីកសែល",
         valueEn: "10,000 dots/m2",
         valueKm: "10,000 dots/m2",
       },
@@ -2943,7 +2943,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "HUB Type",
-        labelKm: "HUB Type",
+        labelKm: "ប្រភេទ HUB",
         valueEn: "HUB75",
         valueKm: "HUB75",
       },
@@ -2997,7 +2997,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Frame Frequency",
-        labelKm: "Frame Frequency",
+        labelKm: "ប្រេកង់ហ្វ្រេម",
         valueEn: "60 Hz",
         valueKm: "60 Hz",
       },
@@ -3707,7 +3707,7 @@ export const PRODUCTS: Product[] = [
         labelEn: "Gate Type",
         labelKm: "ប្រភេទច្រក",
         valueEn: "Turnstile gate",
-        valueKm: "Turnstile gate",
+        valueKm: "ច្រក Turnstile",
       },
       {
         labelEn: "Integration",
@@ -3750,7 +3750,7 @@ export const PRODUCTS: Product[] = [
         labelEn: "Gate Type",
         labelKm: "ប្រភេទច្រក",
         valueEn: "Turnstile gate",
-        valueKm: "Turnstile gate",
+        valueKm: "ច្រក Turnstile",
       },
       {
         labelEn: "Integration",
@@ -3793,7 +3793,7 @@ export const PRODUCTS: Product[] = [
         labelEn: "Gate Type",
         labelKm: "ប្រភេទច្រក",
         valueEn: "Turnstile gate",
-        valueKm: "Turnstile gate",
+        valueKm: "ច្រក Turnstile",
       },
       {
         labelEn: "Integration",
@@ -3914,7 +3914,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Operating Temperature",
-        labelKm: "Operating Temperature",
+        labelKm: "សីតុណ្ហភាពដំណើរការ",
         valueEn: "-40°C to +80°C",
         valueKm: "-40°C to +80°C",
       },
@@ -4052,7 +4052,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Operating Temperature",
-        labelKm: "Operating Temperature",
+        labelKm: "សីតុណ្ហភាពដំណើរការ",
         valueEn: "-40°C to +80°C",
         valueKm: "-40°C to +80°C",
       },
@@ -4190,7 +4190,7 @@ export const PRODUCTS: Product[] = [
       },
       {
         labelEn: "Operating Temperature",
-        labelKm: "Operating Temperature",
+        labelKm: "សីតុណ្ហភាពដំណើរការ",
         valueEn: "-20°C to +75°C",
         valueKm: "-20°C to +75°C",
       },
@@ -5257,7 +5257,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Accessory", valueKm: "PA Accessory" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "System support", valueKm: "System support" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA system compatible", valueKm: "PA system compatible" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA system compatible", valueKm: "អាចប្រើរួមជាមួយប្រព័ន្ធ PA" },
     ],
     heroImage: "/images/products/pa-ir-transmitters-receivers.webp",
     gallery: ["/images/products/pa-ir-transmitters-receivers.webp"],
@@ -5312,7 +5312,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Accessory", valueKm: "PA Accessory" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "System support", valueKm: "System support" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA system compatible", valueKm: "PA system compatible" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA system compatible", valueKm: "អាចប្រើរួមជាមួយប្រព័ន្ធ PA" },
     ],
     heroImage: "/images/products/pa-voting-recording-systems.webp",
     gallery: ["/images/products/pa-voting-recording-systems.webp"],
@@ -5369,7 +5369,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Controller", valueKm: "PA Controller" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Zone routing & control", valueKm: "Zone routing & control" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA & safety systems", valueKm: "PA & safety systems" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA & safety systems", valueKm: "ប្រព័ន្ធ PA និងសុវត្ថិភាព" },
     ],
     heroImage: "/images/products/pa-central-control-units.webp",
     gallery: ["/images/products/pa-central-control-units.webp"],
@@ -5833,7 +5833,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Controller", valueKm: "PA Controller" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Zone routing & control", valueKm: "Zone routing & control" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA & safety systems", valueKm: "PA & safety systems" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA & safety systems", valueKm: "ប្រព័ន្ធ PA និងសុវត្ថិភាព" },
     ],
     heroImage: "/images/products/pa-multi-zone-amplifiers.webp",
     gallery: ["/images/products/pa-multi-zone-amplifiers.webp"],
@@ -5888,7 +5888,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Accessory", valueKm: "PA Accessory" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "System support", valueKm: "System support" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA system compatible", valueKm: "PA system compatible" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA system compatible", valueKm: "អាចប្រើរួមជាមួយប្រព័ន្ធ PA" },
     ],
     heroImage: "/images/products/pa-portable-pa-setups.webp",
     gallery: ["/images/products/pa-portable-pa-setups.webp"],
@@ -6285,7 +6285,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Controller", valueKm: "PA Controller" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Zone routing & control", valueKm: "Zone routing & control" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA & safety systems", valueKm: "PA & safety systems" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA & safety systems", valueKm: "ប្រព័ន្ធ PA និងសុវត្ថិភាព" },
     ],
     heroImage: "/images/products/pa-remote-control-wall-panel.webp",
     gallery: ["/images/products/pa-remote-control-wall-panel.webp"],
@@ -6342,7 +6342,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Controller", valueKm: "PA Controller" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Zone routing & control", valueKm: "Zone routing & control" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA & safety systems", valueKm: "PA & safety systems" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA & safety systems", valueKm: "ប្រព័ន្ធ PA និងសុវត្ថិភាព" },
     ],
     heroImage: "/images/products/pa-pa-matrix-controller.webp",
     gallery: ["/images/products/pa-pa-matrix-controller.webp"],
@@ -6399,7 +6399,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Controller", valueKm: "PA Controller" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Zone routing & control", valueKm: "Zone routing & control" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA & safety systems", valueKm: "PA & safety systems" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA & safety systems", valueKm: "ប្រព័ន្ធ PA និងសុវត្ថិភាព" },
     ],
     heroImage: "/images/products/pa-zone-selector.png",
     gallery: ["/images/products/pa-zone-selector.png"],
@@ -6454,7 +6454,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Accessory", valueKm: "PA Accessory" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "System support", valueKm: "System support" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA system compatible", valueKm: "PA system compatible" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA system compatible", valueKm: "អាចប្រើរួមជាមួយប្រព័ន្ធ PA" },
     ],
     heroImage: "/images/products/pa-source-player-usb-fm-mp3.webp",
     gallery: ["/images/products/pa-source-player-usb-fm-mp3.webp"],
@@ -6798,7 +6798,7 @@ export const PRODUCTS: Product[] = [
     specs: [
       { labelEn: "Category", labelKm: "Category", valueEn: "PA Controller", valueKm: "PA Controller" },
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Zone routing & control", valueKm: "Zone routing & control" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "PA & safety systems", valueKm: "PA & safety systems" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA & safety systems", valueKm: "ប្រព័ន្ធ PA និងសុវត្ថិភាព" },
     ],
     heroImage: "/images/products/pa-digitally-managed-pa-matrix-controllers-2.png",
     gallery: ["/images/products/pa-digitally-managed-pa-matrix-controllers-2.png"],
@@ -6885,8 +6885,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Turnstile gate", valueKm: "Turnstile gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Turnstile gate", valueKm: "ច្រក Turnstile" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-ds-q20-turnstile-gate-advanced-access-control-system.webp",
     gallery: ["/images/products/tg-ds-q20-turnstile-gate-advanced-access-control-system.webp"],
@@ -6913,8 +6913,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Tripod turnstile", valueKm: "Tripod turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Tripod turnstile", valueKm: "ច្រកទ្វារបីដង" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-quantum-tripod-turnstile-ds-q50s.webp",
     gallery: ["/images/products/tg-quantum-tripod-turnstile-ds-q50s.webp"],
@@ -6941,8 +6941,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Turnstile gate", valueKm: "Turnstile gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Turnstile gate", valueKm: "ច្រក Turnstile" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-ds2000-turnstile-gate-price-in-bangladeh.webp",
     gallery: ["/images/products/tg-ds2000-turnstile-gate-price-in-bangladeh.webp"],
@@ -6969,8 +6969,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Flap barrier", valueKm: "Flap barrier" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Flap barrier", valueKm: "ច្រកស្លាបបិទបើក" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-flap-barrier-turnstile-gate-ds318.webp",
     gallery: ["/images/products/tg-flap-barrier-turnstile-gate-ds318.webp"],
@@ -6997,8 +6997,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Turnstile gate", valueKm: "Turnstile gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Turnstile gate", valueKm: "ច្រក Turnstile" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-turnstile-gate-ds-q30.webp",
     gallery: ["/images/products/tg-turnstile-gate-ds-q30.webp"],
@@ -7025,8 +7025,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Turnstile gate", valueKm: "Turnstile gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Turnstile gate", valueKm: "ច្រក Turnstile" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-ds212-turnstile-gate.webp",
     gallery: ["/images/products/tg-ds212-turnstile-gate.webp"],
@@ -7053,8 +7053,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Tripod turnstile", valueKm: "Tripod turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Tripod turnstile", valueKm: "ច្រកទ្វារបីដង" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-tripod-turnstile-gate-ds112.webp",
     gallery: ["/images/products/tg-tripod-turnstile-gate-ds112.webp"],
@@ -7081,8 +7081,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Turnstile gate", valueKm: "Turnstile gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Turnstile gate", valueKm: "ច្រក Turnstile" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-turnstile-gate-dsn-30.webp",
     gallery: ["/images/products/tg-turnstile-gate-dsn-30.webp"],
@@ -7109,8 +7109,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Speed gate", valueKm: "Speed gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Speed gate", valueKm: "ច្រកល្បឿនលឿន" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-ds7300-speed-gate-turnstile.webp",
     gallery: ["/images/products/tg-ds7300-speed-gate-turnstile.webp"],
@@ -7137,8 +7137,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Swing gate", valueKm: "Swing gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Swing gate", valueKm: "ច្រកស្លាបបើក" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-dsn-20-swing-turnstile-gate.webp",
     gallery: ["/images/products/tg-dsn-20-swing-turnstile-gate.webp"],
@@ -7165,8 +7165,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Full-height turnstile", valueKm: "Full-height turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Full-height turnstile", valueKm: "ច្រក Turnstile កម្ពស់ពេញ" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-full-height-turnstile-ds413-triple-lane-gate.webp",
     gallery: ["/images/products/tg-full-height-turnstile-ds413-triple-lane-gate.webp"],
@@ -7193,8 +7193,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Full-height turnstile", valueKm: "Full-height turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Full-height turnstile", valueKm: "ច្រក Turnstile កម្ពស់ពេញ" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-full-height-turnstile-ds403.webp",
     gallery: ["/images/products/tg-full-height-turnstile-ds403.webp"],
@@ -7221,8 +7221,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Full-height turnstile", valueKm: "Full-height turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Full-height turnstile", valueKm: "ច្រក Turnstile កម្ពស់ពេញ" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-full-height-turnstile-ds412.webp",
     gallery: ["/images/products/tg-full-height-turnstile-ds412.webp"],
@@ -7249,8 +7249,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Full-height turnstile", valueKm: "Full-height turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Full-height turnstile", valueKm: "ច្រក Turnstile កម្ពស់ពេញ" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-full-height-turnstile-gate-ds411.webp",
     gallery: ["/images/products/tg-full-height-turnstile-gate-ds411.webp"],
@@ -7277,8 +7277,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Flap barrier", valueKm: "Flap barrier" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Flap barrier", valueKm: "ច្រកស្លាបបិទបើក" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-flap-barrier-turnstile-ds312.webp",
     gallery: ["/images/products/tg-flap-barrier-turnstile-ds312.webp"],
@@ -7305,8 +7305,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Tripod turnstile", valueKm: "Tripod turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Tripod turnstile", valueKm: "ច្រកទ្វារបីដង" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-tripod-turnstile-gate-ds1000.webp",
     gallery: ["/images/products/tg-tripod-turnstile-gate-ds1000.webp"],
@@ -7333,8 +7333,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Tripod turnstile", valueKm: "Tripod turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Tripod turnstile", valueKm: "ច្រកទ្វារបីដង" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-quantum-tripod-turnstile-ds-q50.webp",
     gallery: ["/images/products/tg-quantum-tripod-turnstile-ds-q50.webp"],
@@ -7361,8 +7361,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Speed gate", valueKm: "Speed gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Speed gate", valueKm: "ច្រកល្បឿនលឿន" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-quantum-speed-gate-ds-q60.webp",
     gallery: ["/images/products/tg-quantum-speed-gate-ds-q60.webp"],
@@ -7389,8 +7389,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Speed gate", valueKm: "Speed gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Speed gate", valueKm: "ច្រកល្បឿនលឿន" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-ds7200-speed-gate-turnstile.webp",
     gallery: ["/images/products/tg-ds7200-speed-gate-turnstile.webp"],
@@ -7417,8 +7417,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Speed gate", valueKm: "Speed gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Speed gate", valueKm: "ច្រកល្បឿនលឿន" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-ds7100-automatic-speed-gate.webp",
     gallery: ["/images/products/tg-ds7100-automatic-speed-gate.webp"],
@@ -7445,8 +7445,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Speed gate", valueKm: "Speed gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Speed gate", valueKm: "ច្រកល្បឿនលឿន" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-speed-lane-turnstile-automatic-pedestrian-access-gate.webp",
     gallery: ["/images/products/tg-speed-lane-turnstile-automatic-pedestrian-access-gate.webp"],
@@ -7473,8 +7473,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Flap barrier", valueKm: "Flap barrier" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Flap barrier", valueKm: "ច្រកស្លាបបិទបើក" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-flap-turnstile-stainless-steel-double-wing-pedestrian-gate.webp",
     gallery: ["/images/products/tg-flap-turnstile-stainless-steel-double-wing-pedestrian-gate.webp"],
@@ -7501,8 +7501,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Sliding gate", valueKm: "Sliding gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Sliding gate", valueKm: "ច្រករុញរំកិល" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-tgw-pt020-counter-sliding-gate-turnstile.webp",
     gallery: ["/images/products/tg-tgw-pt020-counter-sliding-gate-turnstile.webp"],
@@ -7529,8 +7529,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Swing gate", valueKm: "Swing gate" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Swing gate", valueKm: "ច្រកស្លាបបើក" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-swing-turnstile-mechanical-automatic-barrier-gate.webp",
     gallery: ["/images/products/tg-swing-turnstile-mechanical-automatic-barrier-gate.webp"],
@@ -7557,8 +7557,8 @@ export const PRODUCTS: Product[] = [
     applicationsEn: ["Office", "Factory", "Public venue"],
     applicationsKm: ["ការិយាល័យ", "រោងចក្រ", "ទីតាំងសាធារណៈ"],
     specs: [
-      { labelEn: "Gate Type", labelKm: "Gate Type", valueEn: "Tripod turnstile", valueKm: "Tripod turnstile" },
-      { labelEn: "Integration", labelKm: "Integration", valueEn: "Access control ready", valueKm: "Access control ready" },
+      { labelEn: "Gate Type", labelKm: "ប្រភេទច្រក", valueEn: "Tripod turnstile", valueKm: "ច្រកទ្វារបីដង" },
+      { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "Access control ready", valueKm: "ត្រៀមរួចសម្រាប់ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ" },
     ],
     heroImage: "/images/products/tg-tripod-turnstiles-2.webp",
     gallery: ["/images/products/tg-tripod-turnstiles-2.webp"],

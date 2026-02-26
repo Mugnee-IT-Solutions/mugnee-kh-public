@@ -18,10 +18,31 @@ export default function VideoProcessorPage() {
     label: p.titleEn,
     href: `/products/catalog/${p.slug}`,
   }));
+  const videoProcessorFaq = [
+    {
+      q: "Why is a video processor important for LED display quality?",
+      a: "It scales and maps source content to LED wall resolution, improving stability, clarity, and switching reliability.",
+    },
+    {
+      q: "How do I select the correct processor model?",
+      a: "Choose by required inputs, pixel load, window layout needs, and compatibility with your sending/receiving system.",
+    },
+    {
+      q: "Can Mugnee configure processors on-site in Cambodia?",
+      a: "Yes. We provide setup, mapping, optimization, and post-deployment support.",
+    },
+  ];
 
   return (
     <LedDisplayClient
       productQuickChips={productQuickChips}
+      faqItemsOverride={videoProcessorFaq}
+      schemaPathOverride="/led-display/video-processor"
+      schemaNameOverride="LED Video Processor"
+      schemaServiceNameOverride="LED Video Processor Solutions in Cambodia"
+      schemaServiceDescOverride="LED video processor selection, setup, and commissioning support in Cambodia for indoor and outdoor LED display projects."
+      breadcrumbOverride="LED Video Processor"
+      heroTitleOverride="LED Video Processor in Cambodia"
       pixelPitchSectionOverride={
         <section className="border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

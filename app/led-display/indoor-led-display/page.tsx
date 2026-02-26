@@ -61,6 +61,7 @@ export default function IndoorLedDisplayPage() {
 
   const productQuickChips = indoorProducts.map((p) => ({
     label: p.titleEn,
+    labelKm: p.titleKm || p.titleEn,
     href: `/products/catalog/${p.slug}`,
   }));
   const indoorItemListJsonLd = {
@@ -102,24 +103,24 @@ export default function IndoorLedDisplayPage() {
   ];
   const indoorFaqKm = [
     {
-      q: "Pixel Pitch មួយណាល្អសម្រាប់អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា?",
-      a: "សម្រាប់ការមើលជិត P1.25-P1.86 គឺពេញនិយម។ សម្រាប់បន្ទប់ប្រជុំ និងបន្ទប់តាំងបង្ហាញ P2-P2.5 ជាជម្រើសអនុវត្តបានល្អ។ ការជ្រើសចុងក្រោយអាស្រ័យលើចម្ងាយមើល ប្រភេទមាតិកា និងថវិកា។",
+      q: "តើ Pixel Pitch មួយណាសមស្របបំផុតសម្រាប់អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា?",
+      a: "សម្រាប់ការមើលជិត គេប្រើ P1.25-P1.86 ជាញឹកញាប់។ សម្រាប់បន្ទប់ប្រជុំ និងបន្ទប់បង្ហាញ P2-P2.5 ជាជម្រើសអនុវត្តបានល្អ។ ជម្រើសចុងក្រោយអាស្រ័យលើចម្ងាយមើល មាតិកាបង្ហាញ និងថវិកា។",
     },
     {
-      q: "តើអេក្រង់ LED ក្នុងអគារត្រូវការពន្លឺខ្ពស់ដូចប៊ីលបត្រខាងក្រៅទេ?",
-      a: "មិនចាំបាច់ទេ។ អេក្រង់ LED ក្នុងអគារជាទូទៅប្រើកម្រិតពន្លឺទាបជាងខាងក្រៅ ដើម្បីកាត់បន្ថយការចាំងភ្នែក និងធ្វើឱ្យមើលស្រួលក្នុងបរិយាកាសបិទ។",
+      q: "តើអេក្រង់ LED ក្នុងអគារត្រូវការពន្លឺខ្ពស់ដូចប៊ីលបត្រ LED ខាងក្រៅទេ?",
+      a: "មិនចាំបាច់ទេ។ អេក្រង់ LED ក្នុងអគារជាទូទៅប្រើកម្រិតពន្លឺទាបជាងខាងក្រៅ ដើម្បីកាត់បន្ថយភ្លឺចាំង និងបង្កើនភាពស្រួលក្នុងការមើល។",
     },
     {
-      q: "តើការប្រើប្រាស់អេក្រង់ LED ក្នុងអគារនៅកម្ពុជាមានអ្វីខ្លះ?",
-      a: "ប្រើញឹកញាប់នៅបន្ទប់ប្រជុំ បន្ទប់បញ្ជា បន្ទប់តាំងបង្ហាញ ផ្សារទំនើប Lobby សណ្ឋាគារ សាលបណ្តុះបណ្តាល និងផ្ទាំងបង្ហាញក្នុងឆាកកម្មវិធីក្នុងអគារ។",
+      q: "ការប្រើប្រាស់អេក្រង់ LED ក្នុងអគារណាខ្លះដែលពេញនិយមនៅកម្ពុជា?",
+      a: "បន្ទប់ប្រជុំ បន្ទប់បញ្ជា បន្ទប់បង្ហាញ ផ្សារទំនើប ឡប់ប៊ីសណ្ឋាគារ សាលាសិក្សា និងផ្ទៃខាងក្រោយឆាកក្នុងអគារ ជាករណីប្រើប្រាស់ពេញនិយម។",
     },
     {
-      q: "តើអ្នកអាចដំឡើង និងកែតម្រូវពណ៌អេក្រង់ LED ក្នុងអគារនៅកម្ពុជាបានទេ?",
-      a: "បាទ/ចាស។ យើងផ្តល់សេវាស្ទង់ទីតាំង ដំឡើង តភ្ជាប់ខ្សែ កំណត់ឧបករណ៍បញ្ជា កែតម្រូវពណ៌ និងសេវាគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុក។",
+      q: "តើមានសេវាដំឡើង និងកែតម្រូវពណ៌អេក្រង់ LED ក្នុងអគារ នៅក្នុងស្រុកទេ?",
+      a: "មាន។ យើងផ្តល់សេវាស្ទង់ទីតាំង ដំឡើង គ្រប់គ្រងខ្សែ កំណត់ Controller កែតម្រូវពណ៌ និងសេវាគាំទ្របន្ទាប់ពីលក់នៅកម្ពុជា។",
     },
     {
-      q: "តើការដកស្រង់តម្លៃអេក្រង់ LED ក្នុងអគាររៀបចំយ៉ាងដូចម្តេច?",
-      a: "តម្លៃគឺតាមគម្រោង ដោយគិតលើ Pixel Pitch ទំហំអេក្រង់ ប្រភេទ Cabinet ឧបករណ៍បញ្ជា វិធីដំឡើង និងវិសាលភាពសេវាគាំទ្រ។",
+      q: "តើតម្លៃសម្រង់អេក្រង់ LED ក្នុងអគារគណនាយ៉ាងដូចម្តេច?",
+      a: "តម្លៃសម្រង់គឺផ្អែកលើគម្រោង ហើយអាស្រ័យលើ Pixel Pitch ទំហំអេក្រង់សរុប ប្រភេទកាប៊ីណេត Controller វិធីដំឡើង និងវិសាលភាពសេវាគាំទ្រ។",
     },
   ];
 
@@ -134,8 +135,8 @@ export default function IndoorLedDisplayPage() {
     { title: "Request Indoor LED Quotation", href: "/contact" },
   ];
   const indoorClusterKm = [
-    { title: "ទំព័រ LED Display មេ", href: "/led-display" },
-    { title: "អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា", href: "/led-display/outdoor-led-display" },
+    { title: "ទំព័រមេអេក្រង់ LED", href: "/led-display" },
+    { title: "អេក្រង់ LED ខាងក្រៅនៅកម្ពុជា", href: "/led-display/outdoor-led-display" },
     { title: "កាតាឡុកផលិតផល LED ក្នុងអគារ", href: "/products/catalog/indoor-led-display" },
     { title: "មគ្គុទ្ទេសក៍ទិញ Pixel Pitch", href: "/led-display" },
     { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស", href: "/service" },
@@ -149,6 +150,12 @@ export default function IndoorLedDisplayPage() {
     "Fine-pitch planning by viewing distance and room lighting conditions",
     "Local installation, calibration, and after-sales support in Cambodia",
     "Boardroom, showroom, control-room, and retail indoor deployment experience",
+  ];
+  const indoorTrustSignalsKm = [
+    "បានអនុវត្ត Structured FAQ និងសញ្ញា Entity សម្រាប់ Indoor LED ជាក់លាក់",
+    "រៀបចំផែនការ Fine-pitch តាមចម្ងាយមើល និងលក្ខខណ្ឌពន្លឺក្នុងបន្ទប់",
+    "មានសេវាដំឡើង កែតម្រូវ និងគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុកនៅកម្ពុជា",
+    "មានបទពិសោធន៍អនុវត្តគម្រោងក្នុងបន្ទប់ប្រជុំ បន្ទប់បង្ហាញ បន្ទប់បញ្ជា និងពាណិជ្ជកម្មក្នុងអគារ",
   ];
 
   return (
@@ -164,20 +171,25 @@ export default function IndoorLedDisplayPage() {
         internalLinkClusterOverride={indoorCluster}
         internalLinkClusterOverrideKm={indoorClusterKm}
         trustSignalsOverride={indoorTrustSignals}
+        trustSignalsOverrideKm={indoorTrustSignalsKm}
         trustTitleOverride="Trust & Delivery Signals for Indoor LED Projects in Cambodia"
+        trustTitleOverrideKm="សញ្ញានៃភាពទុកចិត្ត និងសមត្ថភាពអនុវត្តសម្រាប់គម្រោង LED ក្នុងអគារនៅកម្ពុជា"
         trustDescOverride="This indoor LED page is optimized for close-viewing commercial use cases with structured FAQ, local service evidence, and clear parent-child internal linking."
+        trustDescOverrideKm="ទំព័រ Indoor LED នេះត្រូវបានរៀបចំសម្រាប់ការប្រើប្រាស់ពាណិជ្ជកម្មដែលត្រូវការមើលជិត ដោយមាន FAQ តាមរចនាសម្ព័ន្ធ ភស្តុតាងសេវាកម្មក្នុងស្រុក និង internal linking មេ-កូនច្បាស់លាស់។"
         internalLinkTitleOverride="Indoor LED Internal Linking Cluster"
-        internalLinkTitleOverrideKm="តំណភ្ជាប់ខាងក្នុងសម្រាប់ Indoor LED"
+        internalLinkTitleOverrideKm="ក្រុមតំណភ្ជាប់ខាងក្នុងសម្រាប់ LED ក្នុងអគារ"
         internalLinkDescOverride="Navigate indoor buying paths by product type, technical guidance, related pages, and direct quotation routes."
-        internalLinkDescOverrideKm="សូមរុករកផ្លូវសម្រេចចិត្តទិញអេក្រង់ LED ក្នុងអគារ តាមប្រភេទផលិតផល មគ្គុទ្ទេសក៍បច្ចេកទេស ទំព័រពាក់ព័ន្ធ និងការស្នើសុំតម្លៃដោយផ្ទាល់។"
+        internalLinkDescOverrideKm="រុករកផ្លូវសម្រេចចិត្តទិញក្នុងអគារតាមប្រភេទផលិតផល មគ្គុទ្ទេសក៍បច្ចេកទេស ទំព័រពាក់ព័ន្ធ និងផ្លូវស្នើសុំតម្លៃដោយផ្ទាល់។"
         schemaPathOverride="/led-display/indoor-led-display"
         schemaNameOverride="Indoor LED Display"
         schemaServiceNameOverride="Indoor LED Display in Cambodia"
         schemaServiceDescOverride="Fine-pitch indoor LED display solutions in Cambodia with survey, design, installation, calibration, and local after-sales support."
         breadcrumbOverride="Indoor LED Display"
+        breadcrumbOverrideKm="អេក្រង់ LED ក្នុងអគារ"
         heroTitleOverride="Indoor LED Display in Cambodia"
+        heroTitleOverrideKm="អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា"
         heroIntroOverride="Mugnee provides indoor LED display solutions in Cambodia for boardrooms, retail shops, showrooms, control rooms, corporate offices, and hospitality venues. We deliver fine-pitch indoor LED video wall systems with high brightness, seamless visuals, custom screen size planning, controller and power integration, professional installation, calibration, and local after-sales support. From P1.25 to P4 indoor LED display options, our team supports project-based design, BOQ preparation, and quotation for reliable long-term performance."
-        heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារនៅកម្ពុជា សម្រាប់បន្ទប់ប្រជុំ ហាងលក់រាយ បន្ទប់តាំងបង្ហាញ បន្ទប់បញ្ជា ការិយាល័យក្រុមហ៊ុន និងទីតាំងបដិសណ្ឋារកិច្ច។ យើងផ្គត់ផ្គង់ប្រព័ន្ធជញ្ជាំងវីដេអូ LED ក្នុងអគារ ប្រភេទ fine-pitch ដែលមានពន្លឺខ្ពស់ រូបភាពតភ្ជាប់រលូន ការរៀបចំទំហំអេក្រង់តាមតម្រូវការ ការរួមបញ្ចូលឧបករណ៍បញ្ជា និងប្រព័ន្ធថាមពល ព្រមទាំងការដំឡើង ការកែតម្រូវពណ៌ និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក។ ចាប់ពីជម្រើស P1.25 ដល់ P4 ក្រុមការងារយើងគាំទ្រការរៀបចំគម្រោង ការរៀបចំ BOQ និងការដកស្រង់តម្លៃ ដើម្បីធានាប្រសិទ្ធភាពប្រើប្រាស់រយៈពេលវែង។"
+        heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារនៅកម្ពុជា សម្រាប់បន្ទប់ប្រជុំ ហាងលក់រាយ បន្ទប់បង្ហាញ បន្ទប់បញ្ជា ការិយាល័យ និងទីតាំងបដិសណ្ឋារកិច្ច។ យើងផ្គត់ផ្គង់ប្រព័ន្ធជញ្ជាំងវីដេអូ LED fine-pitch ដែលមានរូបភាពច្បាស់ល្អ ការរៀបចំទំហំអេក្រង់តាមតម្រូវការ ការរួមបញ្ចូល controller និងប្រព័ន្ធថាមពល ការដំឡើងវិជ្ជាជីវៈ ការកែតម្រូវ និងសេវាគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុក។ ចាប់ពីជម្រើស P1.25 ដល់ P4 ក្រុមការងារយើងគាំទ្រការរចនាតាមគម្រោង ការរៀបចំ BOQ និងសម្រង់តម្លៃ ដើម្បីធានាបានប្រសិទ្ធភាពយូរអង្វែង។"
         afterSpecsContent={
           <section className="border-t border-slate-200 bg-white">
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -245,53 +257,50 @@ export default function IndoorLedDisplayPage() {
                 ប្រភេទអេក្រង់ LED ក្នុងអគារ
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                អេក្រង់ LED ក្នុងអគារ ត្រូវបានជ្រើសរើសតាម pixel pitch, ចម្ងាយមើល និងតម្រូវការភាពធន់។
-                ប្រភេទខាងក្រោមពន្យល់អំពីបច្ចេកវិទ្យាបន្ទះ indoor ដែលគេប្រើញឹកញាប់នៅកម្ពុជា
-                ដើម្បីឱ្យអ្នកទិញអាចជ្រើសដំណោះស្រាយត្រឹមត្រូវសម្រាប់ភាពច្បាស់ ថវិកា
-                និងភាពទុកចិត្តបានរយៈពេលវែង។
+                ការជ្រើសរើសអេក្រង់ LED ក្នុងអគារ គួរពិនិត្យតាម Pixel Pitch ចម្ងាយមើល និងតម្រូវការភាពធន់។ ប្រភេទខាងក្រោមបង្ហាញបច្ចេកវិទ្យាផ្ទាំងក្នុងអគារដែលប្រើញឹកញាប់នៅកម្ពុជា ដើម្បីជួយអ្នកទិញជ្រើសដំណោះស្រាយត្រឹមត្រូវតាមភាពច្បាស់ ថវិកា និងភាពទុកចិត្តរយៈពេលវែង។
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                   [
-                    "Fine-Pitch SMD LED ក្នុងអគារ",
-                    "បន្ទះ Fine-pitch SMD ផ្តល់រូបភាពច្បាស់សម្រាប់ការមើលជិត ដូចជា​បន្ទប់ប្រជុំ ស្ទូឌីយោផ្សាយ និងបន្ទប់បញ្ជា។ វាសមតុល្យទាំងសមត្ថភាព និងថ្លៃដើម សម្រាប់វីដេអូវ៉ល indoor កម្រិតខ្ពស់។",
-                    ["P1.25 ដល់ P1.9", "មើលជិត", "ភាពច្បាស់ខ្ពស់"],
+                    "SMD Fine-Pitch សម្រាប់ក្នុងអគារ",
+                    "ផ្ទាំង SMD fine-pitch ផ្តល់រូបភាពលម្អិតខ្ពស់សម្រាប់កន្លែងមើលជិត ដូចជា បន្ទប់ប្រជុំ ស្ទូឌីយោផ្សាយ និងបន្ទប់បញ្ជា។ វាសមតុល្យល្អរវាងប្រសិទ្ធភាព និងថ្លៃដើម សម្រាប់ជញ្ជាំងវីដេអូក្នុងអគារកម្រិតខ្ពស់។",
+                    ["P1.25 ដល់ P1.9", "មើលជិត", "លម្អិតខ្ពស់"],
                   ],
                   [
-                    "COB Ultra-Fine LED ក្នុងអគារ",
-                    "COB (chip-on-board) ប្រើផ្ទៃម៉ាត់ ដើម្បីកាត់បន្ថយការឆ្លុះបញ្ចាំង និងបង្កើនកម្រិត contrast។ វាសមស្របសម្រាប់ការមើលជិតនៅ command center ស្ទូឌីយោ និងជញ្ជាំង indoor កម្រិត premium។",
-                    ["P0.7 ដល់ P1.8", "ឆ្លុះតិច", "Contrast ខ្ពស់"],
+                    "COB Ultra-Fine សម្រាប់ក្នុងអគារ",
+                    "COB (chip-on-board) មានផ្ទៃម៉ាត់ កាត់បន្ថយការឆ្លុះពន្លឺ និងបង្កើន contrast។ សមស្របសម្រាប់ការមើលជិតនៅបន្ទប់បញ្ជា ស្ទូឌីយោ និងជញ្ជាំងក្នុងអគារកម្រិតខ្ពស់។",
+                    ["P0.7 ដល់ P1.8", "ការឆ្លុះទាប", "Contrast ខ្ពស់"],
                   ],
                   [
-                    "GOB Protected LED ក្នុងអគារ",
-                    "GOB (glue-on-board) មានស្រទាប់ការពារ ដែលជួយបង្កើនភាពធន់នឹងការប៉ះទង្គិច ធូលី និងសំណើម។ វាសមស្របសម្រាប់ទីតាំង indoor ដែលមានមនុស្សច្រើន និងអេក្រង់បង្ហាញសាធារណៈ។",
-                    ["ផ្ទៃការពារ", "ធន់នឹងការប៉ះទង្គិច", "ថែទាំងាយ"],
+                    "GOB ការពារសម្រាប់ក្នុងអគារ",
+                    "GOB (glue-on-board) មានស្រទាប់ការពារបន្ថែម ដែលបង្កើនភាពធន់នឹងការប៉ះទង្គិច ធូលី និងសំណើម។ សមស្របសម្រាប់កន្លែងមានចរាចរណ៍ខ្ពស់ និងអេក្រង់ដែលប្រើសាធារណៈ។",
+                    ["ផ្ទៃការពារ", "ធន់ការប៉ះទង្គិច", "ថែទាំងាយ"],
                   ],
                   [
-                    "Standard Indoor SMD LED",
-                    "បន្ទះ Standard indoor SMD មានតម្លៃសមរម្យ និងប្រើបានទូលំទូលាយ សម្រាប់អេក្រង់ក្នុងអគារ signage និងការមើលចម្ងាយមធ្យម ដែលត្រូវការគ្រប់គ្រងថវិកា។",
-                    ["P1.5 ដល់ P3.9", "សមរម្យតាមថវិកា", "ប្រើទូទៅក្នុងអគារ"],
+                    "SMD ស្តង់ដារសម្រាប់ក្នុងអគារ",
+                    "ផ្ទាំង SMD ស្តង់ដារ គឺសន្សំសំចៃថវិកា និងអាចប្រើបានចម្រុះ សម្រាប់អេក្រង់ក្នុងអគារទូទៅ Digital Signage និងការមើលចម្ងាយមធ្យមដែលគិតថវិកា។",
+                    ["P1.5 ដល់ P3.9", "សមថវិកា", "ប្រើទូទៅក្នុងអគារ"],
                   ],
                 ].map((item, idx) => {
                   const [t, d, chips] = item as [string, string, string[]];
                   return (
-                  <div
-                    key={`${t}-${idx}`}
-                    className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
-                  >
-                    <div className="text-sm font-semibold text-slate-900">{t}</div>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{d}</p>
-                    <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-700">
-                      {chips.map((c) => (
-                        <span
-                          key={c}
-                          className="rounded-full border border-slate-200 bg-white px-2.5 py-1"
-                        >
-                          {c}
-                        </span>
-                      ))}
+                    <div
+                      key={`${t}-${idx}`}
+                      className="rounded-2xl border border-slate-200 bg-slate-50 p-5 shadow-sm"
+                    >
+                      <div className="text-sm font-semibold text-slate-900">{t}</div>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{d}</p>
+                      <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-700">
+                        {chips.map((c) => (
+                          <span
+                            key={c}
+                            className="rounded-full border border-slate-200 bg-white px-2.5 py-1"
+                          >
+                            {c}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
                   );
                 })}
               </div>
@@ -299,6 +308,7 @@ export default function IndoorLedDisplayPage() {
           </section>
         }
         pixelPitchIntroOverride="Choosing the right pixel pitch is the #1 factor for visual clarity and budget efficiency. Use this indoor-focused guide as a starting point for Cambodia installations."
+        pixelPitchIntroOverrideKm="ការជ្រើស Pixel Pitch ត្រឹមត្រូវ គឺជាកត្តាសំខាន់បំផុតសម្រាប់ភាពច្បាស់នៃរូបភាព និងប្រសិទ្ធភាពថវិកា។ ប្រើមគ្គុទ្ទេសក៍សម្រាប់ក្នុងអគារនេះ ជាចំណុចចាប់ផ្តើមសម្រាប់គម្រោងនៅកម្ពុជា។"
         pixelPitchRowsOverride={[
           [
             "P1.25-P1.86 (COB / Fine-pitch SMD)",
@@ -320,57 +330,29 @@ export default function IndoorLedDisplayPage() {
             "10-15 m",
             "Large halls, long-view indoor signage",
           ],
+         ]}
+        pixelPitchRowsOverrideKm={[
+          [
+            "P1.25-P1.86 (COB / SMD Fine-pitch)",
+            "2.5-5.6 m",
+            "បន្ទប់បញ្ជា ស្ទូឌីយោ បន្ទប់ប្រជុំកម្រិតខ្ពស់",
+          ],
+          [
+            "P2-P2.5 (SMD Fine-pitch)",
+            "4-7.5 m",
+            "បន្ទប់ប្រជុំ ហាងលក់រាយ ឡប់ប៊ីក្រុមហ៊ុន",
+          ],
+          [
+            "P3-P4 (SMD ស្តង់ដារក្នុងអគារ)",
+            "6-12 m",
+            "ឡប់ប៊ីសណ្ឋាគារ ឆាកក្នុងអគារ សាលប្រជុំធំ",
+          ],
+          [
+            "P5 (ក្នុងអគារទំហំធំ)",
+            "10-15 m",
+            "សាលធំ និងស្លាកសញ្ញាក្នុងអគារមើលឆ្ងាយ",
+          ],
         ]}
-        pixelPitchSectionOverrideKm={
-          <section className="border-t border-slate-200 bg-white">
-            <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-              <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-                មគ្គុទ្ទេសក៍ Pixel Pitch និងចម្ងាយមើល
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                ការជ្រើសរើស pixel pitch ឱ្យត្រឹមត្រូវ គឺជាកត្តាសំខាន់បំផុតសម្រាប់ភាពច្បាស់នៃរូបភាព និងប្រសិទ្ធភាពថវិកា។ សូមប្រើមគ្គុទ្ទេសក៍សម្រាប់អេក្រង់ក្នុងអគារនេះ ជាចំណុចចាប់ផ្តើមសម្រាប់ការដំឡើងនៅកម្ពុជា។
-              </p>
-              <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-                <div className="grid grid-cols-1 bg-slate-100 text-sm font-semibold text-slate-900 sm:grid-cols-3">
-                  <div className="p-3">Pixel Pitch</div>
-                  <div className="p-3">ចម្ងាយមើលល្អបំផុត</div>
-                  <div className="p-3">ការប្រើប្រាស់ទូទៅ</div>
-                </div>
-                {[
-                  [
-                    "P1.25-P1.86 (COB / Fine-pitch SMD)",
-                    "2.5-5.6 m",
-                    "បន្ទប់បញ្ជា ស្ទូឌីយោ និងបន្ទប់ប្រជុំកម្រិតខ្ពស់",
-                  ],
-                  [
-                    "P2-P2.5 (Fine-pitch SMD)",
-                    "4-7.5 m",
-                    "បន្ទប់ប្រជុំ ហាងលក់រាយ និងឡប់ប៊ីក្រុមហ៊ុន",
-                  ],
-                  [
-                    "P3-P4 (Standard indoor SMD)",
-                    "6-12 m",
-                    "ឡប់ប៊ីសណ្ឋាគារ ឆាកក្នុងអគារ និងសាលប្រជុំធំ",
-                  ],
-                  [
-                    "P5 (Large-venue indoor)",
-                    "10-15 m",
-                    "សាលធំ និងផ្ទាំងបង្ហាញក្នុងអគារសម្រាប់មើលចម្ងាយឆ្ងាយ",
-                  ],
-                ].map((row) => (
-                  <div
-                    key={row[0]}
-                    className="grid grid-cols-1 border-t border-slate-200 text-sm text-slate-700 sm:grid-cols-3"
-                  >
-                    <div className="p-3 font-semibold text-slate-900">{row[0]}</div>
-                    <div className="p-3">{row[1]}</div>
-                    <div className="p-3">{row[2]}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        }
         productGridOverride={{
           columns: 3,
           pageSize: 9,
@@ -383,3 +365,7 @@ export default function IndoorLedDisplayPage() {
     </>
   );
 }
+
+
+
+

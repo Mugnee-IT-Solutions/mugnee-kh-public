@@ -5,6 +5,9 @@
   RewriteCond %{HTTP_HOST} ^www\.mugneekh\.com$ [NC]
   RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [L,R=301]
 
+  RewriteCond %{HTTP_HOST} ^(www\.)?mugnee\.com$ [NC]
+  RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [L,R=301]
+
   RewriteCond %{HTTPS} !=on
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 

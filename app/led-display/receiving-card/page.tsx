@@ -18,10 +18,31 @@ export default function ReceivingCardPage() {
     label: p.titleEn,
     href: `/products/catalog/${p.slug}`,
   }));
+  const receivingCardFaq = [
+    {
+      q: "What does a receiving card do in an LED display system?",
+      a: "It receives video data from the sender and maps it to LED modules for stable output, grayscale control, and synchronized playback.",
+    },
+    {
+      q: "How do I choose the right receiving card for my project?",
+      a: "Match card capacity, scan mode support, driver IC compatibility, and redundancy requirements with your cabinet design.",
+    },
+    {
+      q: "Do you provide setup and after-sales support in Cambodia?",
+      a: "Yes. We support configuration, commissioning, troubleshooting, and local maintenance planning.",
+    },
+  ];
 
   return (
     <LedDisplayClient
       productQuickChips={productQuickChips}
+      faqItemsOverride={receivingCardFaq}
+      schemaPathOverride="/led-display/receiving-card"
+      schemaNameOverride="LED Receiving Card"
+      schemaServiceNameOverride="LED Receiving Card Solutions in Cambodia"
+      schemaServiceDescOverride="LED receiving card selection, setup, and support services in Cambodia for stable and reliable LED display operation."
+      breadcrumbOverride="LED Receiving Card"
+      heroTitleOverride="LED Receiving Card in Cambodia"
       pixelPitchSectionOverride={
         <section className="border-t border-slate-200 bg-white">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

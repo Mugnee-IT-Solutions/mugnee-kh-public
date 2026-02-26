@@ -23,16 +23,9 @@ export const metadata: Metadata = {
   description: "LED Display & Smart Solutions in Cambodia",
   metadataBase: new URL(SITE_URL),
   icons: {
-    icon: "/images/fav.ico",
-    shortcut: "/images/fav.ico",
-    apple: "/images/logo.png",
-  },
-  alternates: {
-    languages: {
-      en: "/",
-      km: "/?lang=km",
-      "x-default": "/",
-    },
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 

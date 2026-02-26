@@ -1,4 +1,4 @@
-const fs = require("fs");
+ï»¿const fs = require("fs");
 const path = require("path");
 const ts = require("typescript");
 
@@ -8,8 +8,8 @@ const sf = ts.createSourceFile(filePath, sourceText, ts.ScriptTarget.Latest, tru
 
 const khmerRe = /[\u1780-\u17FF]/g;
 const controlRe = /[\u0000-\u001F]/g;
-const mojibakeHintRe = /(Ã|Â|á?|á?|Ãƒ|Ã‚|â€|ï¿½)/;
-const mojibakeTokenRe = /(Ã|Â|á?|á?|Ãƒ|Ã‚|â€|ï¿½)/g;
+const mojibakeHintRe = /[\u00C3\u00C2\u00E2\u00E1\uFFFD]/;
+const mojibakeTokenRe = /[\u00C3\u00C2\u00E2\u00E1\uFFFD]/g;
 
 const cp1252Reverse = {
   0x20ac: 0x80, 0x201a: 0x82, 0x0192: 0x83, 0x201e: 0x84, 0x2026: 0x85,
@@ -123,3 +123,4 @@ for (const r of replacements) {
 
 fs.writeFileSync(filePath, out, "utf8");
 console.log(`Updated ${replacements.length} Km string literals in app/data/products.ts`);
+

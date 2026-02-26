@@ -6,28 +6,50 @@
   Github: https://github.com/ankur-datta-official
 */
 import type { Metadata } from "next";
+import ProjectsClient from "./ProjectsClient";
 import { SITE_URL } from "../lib/site";
+
+const PAGE_PATH = "/projects";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
   title: "Projects in Cambodia | Mugnee Cambodia",
   description:
     "Explore Mugnee Cambodia project references for LED display, digital signage, PA systems, and access control implementations.",
-  alternates: { canonical: `${SITE_URL}/projects` },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: PAGE_PATH,
+      km: `${PAGE_PATH}?lang=km`,
+      "x-default": PAGE_PATH,
+    },
+  },
+  openGraph: {
+    title: "Projects in Cambodia | Mugnee Cambodia",
+    description:
+      "See completed and ongoing technology projects by Mugnee Cambodia across LED display, PA, signage, and access control.",
+    url: PAGE_URL,
+    siteName: "Mugnee Cambodia",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/images/hero/cambodia-led-hero.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Mugnee Cambodia project portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects in Cambodia | Mugnee Cambodia",
+    description:
+      "Project references for LED display, digital signage, PA systems, and access control in Cambodia.",
+    images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function ProjectsPage() {
-  return (
-    <main className="bg-slate-50">
-      <section className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold text-slate-600">Projects</p>
-        <h1 className="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">
-          Cambodia Project References
-        </h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-slate-700">
-          This page is being prepared with live project highlights. For immediate references and
-          case details, contact our team.
-        </p>
-      </section>
-    </main>
-  );
+  return <ProjectsClient />;
 }

@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!solution) return {};
 
   const pageUrl = `${SITE_URL}/solutions/${solution.slug}`;
+  const ogImage = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
   return {
     title: `${solution.title} | Mugnee Cambodia`,
     description: solution.description,
@@ -39,11 +40,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url: pageUrl,
       siteName: "Mugnee Cambodia",
       type: "website",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${solution.title} | Mugnee Cambodia`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: `${solution.title} | Mugnee Cambodia`,
       description: solution.description,
+      images: [ogImage],
     },
   };
 }

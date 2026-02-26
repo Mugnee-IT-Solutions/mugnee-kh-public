@@ -13,6 +13,7 @@ const SITE_URL =
 
 const PAGE_PATH = "/pa-system";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
   title: "Commercial PA System Cambodia | Design Supply & Installation",
@@ -25,6 +26,21 @@ export const metadata: Metadata = {
       "Clear, reliable public address systems for factories, schools, malls, and offices. Complete supply, design, and installation support by Mugnee Cambodia.",
     url: PAGE_URL,
     type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "PA System Solutions in Cambodia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PA System in Cambodia",
+    description:
+      "Clear, reliable public address systems for factories, schools, malls, and offices. Complete supply, design, and installation support by Mugnee Cambodia.",
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
 };

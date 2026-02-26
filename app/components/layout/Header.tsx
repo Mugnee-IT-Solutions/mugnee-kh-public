@@ -244,7 +244,7 @@ export default function SiteHeader() {
     },
     {
       labelEn: "Message from CEO",
-      labelKm: "សារពី CEO",
+      labelKm: "សារពីនាយកប្រតិបត្តិ",
       href: "/about/message-from-ceo",
     },
   ];
@@ -252,42 +252,42 @@ export default function SiteHeader() {
   const solutionsMenu: NavItem[] = [
     {
       labelEn: "All Solutions",
-      labelKm: "All Solutions",
+      labelKm: "ដំណោះស្រាយទាំងអស់",
       href: "/solutions",
     },
     {
       labelEn: "Indoor Communication Solutions",
-      labelKm: "Indoor Communication Solutions",
+      labelKm: "ដំណោះស្រាយទំនាក់ទំនងក្នុងអគារ",
       href: "/solutions/indoor-communication-solutions-cambodia",
     },
     {
       labelEn: "Outdoor Campaign Solutions",
-      labelKm: "Outdoor Campaign Solutions",
+      labelKm: "ដំណោះស្រាយយុទ្ធនាការខាងក្រៅ",
       href: "/solutions/outdoor-campaign-solutions-cambodia",
     },
     {
       labelEn: "Retail Digital Signage Solutions",
-      labelKm: "Retail Digital Signage Solutions",
+      labelKm: "ដំណោះស្រាយស្លាកសញ្ញាឌីជីថលសម្រាប់លក់រាយ",
       href: "/solutions/retail-digital-signage-cambodia",
     },
     {
       labelEn: "Hotel Display Solutions",
-      labelKm: "Hotel Display Solutions",
+      labelKm: "ដំណោះស្រាយអេក្រង់សម្រាប់សណ្ឋាគារ",
       href: "/solutions/hotel-display-solutions-cambodia",
     },
     {
       labelEn: "Factory PA Announcement Solutions",
-      labelKm: "Factory PA Announcement Solutions",
+      labelKm: "ដំណោះស្រាយប្រកាសសំឡេង PA សម្រាប់រោងចក្រ",
       href: "/solutions/factory-pa-announcement-cambodia",
     },
     {
       labelEn: "Office Access Control Solutions",
-      labelKm: "Office Access Control Solutions",
+      labelKm: "ដំណោះស្រាយគ្រប់គ្រងការចូលចេញសម្រាប់ការិយាល័យ",
       href: "/solutions/office-access-control-cambodia",
     },
     {
       labelEn: "Education Smart Classroom Solutions",
-      labelKm: "Education Smart Classroom Solutions",
+      labelKm: "ដំណោះស្រាយថ្នាក់រៀនឆ្លាតវៃសម្រាប់វិស័យអប់រំ",
       href: "/solutions/education-smart-classroom-cambodia",
     },
   ];
@@ -618,7 +618,7 @@ export default function SiteHeader() {
                         setOpenMobile(false);
                       }}
                     >
-                      {lang === "en" ? "All LED Display" : "មើល LED Display ទាំងអស់"}
+                      {lang === "en" ? "All LED Display" : "មើលអេក្រង់ LED ទាំងអស់"}
                     </Link>
                     <Link
                       href="/led-display/receiving-card"
@@ -729,7 +729,7 @@ export default function SiteHeader() {
                     setOpenMobile(false);
                   }}
                 >
-                  {lang === "en" ? "Message from CEO" : "សារពី CEO"}
+                  {lang === "en" ? "Message from CEO" : "សារពីនាយកប្រតិបត្តិ"}
                 </Link>
                 <Link
                   href="/contact"

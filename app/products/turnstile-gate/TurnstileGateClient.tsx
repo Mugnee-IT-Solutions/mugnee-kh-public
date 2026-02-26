@@ -307,8 +307,8 @@ export default function TurnstileGateClient() {
       {
         qEn: "Which turnstile type is best for my site in Cambodia?",
         aEn:
-          "Choose based on security level, traffic volume, and environment. Full-height turnstiles suit perimeter or high-security sites and are built for outdoor use, with designs that deter climbing and tailgating. Speed or optical gates use multiâ€‘beam sensors to prevent piggybacking and are ideal for highâ€‘traffic lobbies. Tripod units are a costâ€‘effective fit for staff entrances and controlled indoor zones.",
-        qKm: "សម្រាប់ទីតាំងនៅកម្ពុជា តើគួរជ្រើស Turnstile ប្រភេទណា?",
+          "Choose based on security level, traffic volume, and environment. Full-height turnstiles suit perimeter or high-security sites and are built for outdoor use, with designs that deter climbing and tailgating. Speed or optical gates use multi-beam sensors to prevent piggybacking and are ideal for high-traffic lobbies. Tripod units are a cost-effective fit for staff entrances and controlled indoor zones.",
+        qKm: "សម្រាប់ទីតាំងនៅកម្ពុជា តើគួរជ្រើសច្រក Turnstile ប្រភេទណា?",
         aKm:
           "ត្រូវជ្រើសតាមកម្រិតសុវត្ថិភាព បរិមាណអ្នកឆ្លងកាត់ និងបរិយាកាសប្រើប្រាស់។ Full-height turnstile សមស្របសម្រាប់តំបន់ perimeter ឬកន្លែងសុវត្ថិភាពខ្ពស់ និងសាកសមការប្រើក្រៅអគារ។ Speed/optical gate មាន multi-beam sensor កាត់បន្ថយ piggybacking សមស្របសម្រាប់ lobby ដែលមានចរាចរណ៍ខ្ពស់។ Tripod unit គឺជាជម្រើសសន្សំថវិកាសម្រាប់ច្រកបុគ្គលិក និងតំបន់ក្នុងអគារដែលត្រូវការគ្រប់គ្រង។",
       },
@@ -316,7 +316,7 @@ export default function TurnstileGateClient() {
         qEn: "Which access methods can a turnstile gate integrate with?",
         aEn:
           "Most modern turnstiles integrate with RFID cards, QR or mobile tickets, PIN keypads, and biometric systems such as fingerprint or face recognition. We match the access method to your security policy and user type, then connect it to your access control or attendance platform.",
-        qKm: "Turnstile Gate អាចរួមបញ្ចូលជាមួយ access method អ្វីខ្លះ?",
+        qKm: "ច្រក Turnstile អាចរួមបញ្ចូលជាមួយវិធីផ្ទៀងផ្ទាត់អ្វីខ្លះ?",
         aKm:
           "Turnstile ទំនើបភាគច្រើនអាចរួមបញ្ចូលជាមួយ RFID card, QR/mobile ticket, PIN keypad និង biometric ដូចជា fingerprint ឬ face recognition។ យើងជ្រើស access method ឱ្យសមនឹងគោលនយោបាយសុវត្ថិភាព និងប្រភេទអ្នកប្រើ រួចភ្ជាប់ទៅ access control/attendance platform របស់អ្នក។",
       },
@@ -324,39 +324,39 @@ export default function TurnstileGateClient() {
         qEn: "Do we need an accessible gate next to a turnstile?",
         aEn:
           "Yes. Accessibility standards state that turnstiles cannot be part of an accessible route, and an accessible gate or door must be provided alongside them. We plan a compliant adjacent lane so all users can pass through comfortably.",
-        qKm: "តើត្រូវការច្រក accessible នៅជិត turnstile ដែរឬទេ?",
+        qKm: "តើត្រូវការច្រកអាចចូលប្រើបានសម្រាប់អ្នកគ្រប់ប្រភេទ នៅជិត Turnstile ដែរឬទេ?",
         aKm:
           "ត្រូវការ។ តាម accessibility standard, turnstile មិនអាចជាច្រកសម្រាប់អ្នកប្រើគ្រប់ប្រភេទបានទេ ដូច្នេះត្រូវមាន accessible gate/door នៅជាប់គ្នា។ យើងរៀបចំ lane បន្ថែមឱ្យស្របតាមស្តង់ដារ ដើម្បីឱ្យអ្នកប្រើទាំងអស់ឆ្លងកាត់បានងាយស្រួល។",
       },
       {
         qEn: "How do turnstiles handle emergency evacuation or power loss?",
         aEn:
-          "Turnstiles can be configured for failâ€‘safe or failâ€‘secure operation and connected to fireâ€‘alarm inputs so lanes release during emergencies. Many speed gates also support autoâ€‘open behavior during power failure or alarm events.",
-        qKm: "Turnstile ដំណើរការយ៉ាងដូចម្តេចពេល emergency evacuation ឬដាច់ភ្លើង?",
+          "Turnstiles can be configured for fail-safe or fail-secure operation and connected to fire-alarm inputs so lanes release during emergencies. Many speed gates also support auto-open behavior during power failure or alarm events.",
+        qKm: "Turnstile ដំណើរការយ៉ាងដូចម្តេចពេលជម្លៀសបន្ទាន់ ឬដាច់ភ្លើង?",
         aKm:
           "Turnstile អាចកំណត់ជា fail-safe ឬ fail-secure ហើយភ្ជាប់ fire-alarm input ដើម្បីបើក lane ពេលមានអាសន្ន។ Speed gate ជាច្រើនក៏គាំទ្រ auto-open នៅពេល power failure ឬ alarm event ផងដែរ។",
       },
       {
         qEn: "Are turnstile gates suitable for outdoor use in Cambodia?",
         aEn:
-          "Yes. Fullâ€‘height turnstiles are designed for outdoor and indoor installation with weatherâ€‘resistant materials, making them a good choice for perimeter security, factories, and transport sites.",
-        qKm: "Turnstile Gate សមស្របសម្រាប់ប្រើក្រៅអគារនៅកម្ពុជាដែរឬទេ?",
+          "Yes. Full-height turnstiles are designed for outdoor and indoor installation with weather-resistant materials, making them a good choice for perimeter security, factories, and transport sites.",
+        qKm: "ច្រក Turnstile សមស្របសម្រាប់ប្រើក្រៅអគារនៅកម្ពុជាដែរឬទេ?",
         aKm:
           "សមស្រប។ Full-height turnstile ត្រូវបានរចនាសម្រាប់ទាំង outdoor និង indoor ដោយប្រើវត្ថុធាតុធន់អាកាសធាតុ សាកសមសម្រាប់ perimeter security, factory និងទីតាំងដឹកជញ្ជូន។",
       },
       {
         qEn: "How do we estimate lane count and throughput?",
         aEn:
-          "We start with your peakâ€‘hour flow and target peopleâ€‘perâ€‘minute throughput. Speed/optical gates are designed for higher throughput and use sensor systems to keep flow smooth, while tripod or fullâ€‘height lanes prioritize stricter control. The final lane count balances flow, space, and security.",
-        qKm: "តើគណនាចំនួន lane និង throughput យ៉ាងដូចម្តេច?",
+          "We start with your peak-hour flow and target people-per-minute throughput. Speed/optical gates are designed for higher throughput and use sensor systems to keep flow smooth, while tripod or full-height lanes prioritize stricter control. The final lane count balances flow, space, and security.",
+        qKm: "តើគណនាចំនួនច្រក និងលំហូរអ្នកឆ្លងកាត់យ៉ាងដូចម្តេច?",
         aKm:
           "យើងចាប់ផ្តើមពី peak-hour flow និងគោលដៅ people-per-minute throughput។ Speed/optical gate សម្រាប់ throughput ខ្ពស់ និងលំហូររលូន ខណៈ tripod/full-height lane ផ្តោតលើការគ្រប់គ្រងតឹងរ៉ឹងជាង។ ចំនួន lane ចុងក្រោយត្រូវបានប៉ាន់ស្មានតាម flow, space និង security។",
       },
       {
         qEn: "Can turnstiles prevent tailgating or unauthorized entry?",
         aEn:
-          "Yes. Fullâ€‘height designs physically deter climbing and tailgating, while speed gates use infrared sensor arrays to detect piggybacking and trigger alarms or closures. We configure the detection level based on your risk profile.",
-        qKm: "Turnstile អាចការពារ tailgating ឬ unauthorized entry បានទេ?",
+          "Yes. Full-height designs physically deter climbing and tailgating, while speed gates use infrared sensor arrays to detect piggybacking and trigger alarms or closures. We configure the detection level based on your risk profile.",
+        qKm: "Turnstile អាចការពារការឆ្លងកាត់តាមក្រោយ ឬការចូលដោយគ្មានសិទ្ធិបានទេ?",
         aKm:
           "បាន។ Full-height design អាចរារាំងការឡើងរំលោភ និង tailgating ខណៈ speed gate ប្រើ infrared sensor array ដើម្បីរកឃើញ piggybacking ហើយបង្កើត alarm ឬបិទច្រក។ យើងកំណត់ detection level តាម risk profile របស់អ្នក។",
       },
@@ -364,7 +364,7 @@ export default function TurnstileGateClient() {
         qEn: "Can turnstiles connect to attendance or HR systems?",
         aEn:
           "Yes. We can sync turnstile events with attendance, visitor, or HR platforms through access controllers or API integrations, so entry logs and staff records update automatically.",
-        qKm: "Turnstile អាចភ្ជាប់ទៅ attendance ឬ HR system បានទេ?",
+        qKm: "Turnstile អាចភ្ជាប់ទៅប្រព័ន្ធវត្តមាន ឬប្រព័ន្ធធនធានមនុស្សបានទេ?",
         aKm:
           "បាន។ យើងអាច sync turnstile event ជាមួយ attendance, visitor ឬ HR platform តាម access controller ឬ API integration ដើម្បីឱ្យ entry log និង staff record update ស្វ័យប្រវត្តិ។",
       },
@@ -372,7 +372,7 @@ export default function TurnstileGateClient() {
         qEn: "What power and network requirements do turnstiles need?",
         aEn:
           "Turnstiles typically require stable power, a controller panel, and network connectivity for central management. We plan wiring routes, UPS options, and controller placement to ensure reliable operation.",
-        qKm: "Turnstile ត្រូវការ power និង network requirement អ្វីខ្លះ?",
+        qKm: "Turnstile ត្រូវការថាមពល និងតម្រូវការបណ្តាញអ្វីខ្លះ?",
         aKm:
           "ជាទូទៅ turnstile ត្រូវការ power ស្ថិរភាព, controller panel និង network connectivity សម្រាប់ការគ្រប់គ្រងកណ្តាល។ យើងរៀបចំ wiring route, UPS option និងទីតាំង controller ដើម្បីធានាការដំណើរការទុកចិត្តបាន។",
       },
@@ -380,7 +380,7 @@ export default function TurnstileGateClient() {
         qEn: "How long does turnstile installation and setup take?",
         aEn:
           "Timelines depend on lane count, civil work, and integrations. Most projects include a site survey, installation and wiring, integration testing, and training before handover.",
-        qKm: "ការដំឡើង និង setup Turnstile ចំណាយពេលប៉ុន្មាន?",
+        qKm: "ការដំឡើង និងកំណត់ប្រព័ន្ធ Turnstile ចំណាយពេលប៉ុន្មាន?",
         aKm:
           "Timeline អាស្រ័យលើចំនួន lane, civil work និង integration។ គម្រោងភាគច្រើនរួមមាន site survey, installation និង wiring, integration testing និង training មុនពេល handover។",
       },

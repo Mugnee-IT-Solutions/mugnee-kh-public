@@ -38,7 +38,13 @@ export default function BreadcrumbsJsonLd() {
 
   const jsonLd = useMemo(() => {
     const cleanPath = pathname.replace(/\/+$/, "") || "/";
-    const segments = cleanPath === "/" ? [] : cleanPath.split("/").filter(Boolean);
+    const segments =
+      cleanPath === "/"
+        ? []
+        : cleanPath
+            .split("/")
+            .filter(Boolean)
+            .map((segment) => decodeURIComponent(segment));
 
     const itemListElement = [
       {
@@ -62,6 +68,8 @@ export default function BreadcrumbsJsonLd() {
     return {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
+      "@id": `${SITE_URL}${cleanPath}#breadcrumb`,
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
       itemListElement,
     };
   }, [pathname]);

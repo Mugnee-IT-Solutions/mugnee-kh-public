@@ -13,6 +13,7 @@ const SITE_URL =
 
 const PAGE_PATH = "/led-display/power-supply";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
   title: "LED Power Supply Cambodia | Best Price & Installation",
@@ -26,6 +27,21 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "LED Power Supply in Cambodia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LED Power Supply Cambodia | Best Price & Installation",
+    description:
+      "Reliable LED power supplies for video walls and signage with stable output, safety protections, and professional support.",
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
 };

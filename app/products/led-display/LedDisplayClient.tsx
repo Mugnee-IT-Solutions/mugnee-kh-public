@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
 import { SITE_URL } from "../../lib/site";
@@ -372,9 +373,10 @@ export default function LedDisplayClient({
   heroIntroOverride,
   heroIntroOverrideKm,
   breadcrumbOverride,
+  breadcrumbOverrideKm,
 }: {
   productGridOverride?: ProductGridConfig;
-  productQuickChips?: { label: string; href: string }[];
+  productQuickChips?: Array<{ label: string; href: string; labelKm?: string }>;
   afterSpecsContent?: React.ReactNode;
   afterSpecsContentKm?: React.ReactNode;
   pixelPitchIntroOverride?: string;
@@ -407,7 +409,9 @@ export default function LedDisplayClient({
   heroIntroOverride?: string;
   heroIntroOverrideKm?: string;
   breadcrumbOverride?: string;
+  breadcrumbOverrideKm?: string;
 }) {
+  const pathname = usePathname();
   const { lang } = useLang();
   const faqItems =
     (lang === "en" ? faqItemsOverride : (faqItemsOverrideKm ?? faqItemsOverride)) ??
@@ -428,7 +432,7 @@ export default function LedDisplayClient({
     lang === "en" ? DEFAULT_TRUST_PROOF_CHIPS_EN : DEFAULT_TRUST_PROOF_CHIPS_KM;
   const trustSignalTitles =
     lang === "en" ? TRUST_SIGNAL_TITLES_EN : TRUST_SIGNAL_TITLES_KM;
-  const schemaPath = schemaPathOverride ?? "/led-display";
+  const schemaPath = schemaPathOverride ?? pathname ?? "/led-display";
   const schemaName = schemaNameOverride ?? "LED Display";
   const schemaServiceName = schemaServiceNameOverride ?? "LED Display in Cambodia";
   const schemaServiceDesc =
@@ -688,7 +692,10 @@ export default function LedDisplayClient({
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="text-xs text-slate-500">
             <span className="font-semibold text-slate-700">
-              {breadcrumbOverride ?? (lang === "en" ? "LED Display" : "អេក្រង់ LED")}
+              {(lang === "en"
+                ? breadcrumbOverride
+                : (breadcrumbOverrideKm ?? breadcrumbOverride)) ??
+                (lang === "en" ? "LED Display" : "អេក្រង់ LED")}
             </span>
           </div>
 
@@ -794,7 +801,7 @@ export default function LedDisplayClient({
                       href={chip.href}
                       className="quick-link rounded-full px-3 py-1 text-xs font-semibold text-slate-700 hover:text-slate-900"
                     >
-                      {chip.label}
+                      {lang === "en" ? chip.label : (chip.labelKm ?? chip.label)}
                     </Link>
                   ))}
                 </div>

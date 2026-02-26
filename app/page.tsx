@@ -98,7 +98,14 @@ export const metadata: Metadata = {
   title: "Mugnee Cambodia | Leading Premium Technology Provider",
   description:
     "Mugnee Cambodia is a smart technology and system integration company serving Cambodia with local engineering, installation, commissioning, and after-sales support.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: PAGE_PATH,
+      km: `${PAGE_PATH}?lang=km`,
+      "x-default": PAGE_PATH,
+    },
+  },
   openGraph: {
     type: "website",
     url: PAGE_URL,
@@ -168,7 +175,7 @@ const CATEGORY_TILES = [
     titleEn: "Interactive Flat Panel",
     titleKm: "អេក្រង់អន្តរកម្ម (IFP)",
     descEn: "Smart board solutions for classrooms, training rooms and boardrooms.",
-    descKm: "ដំណោះស្រាយ Smart Board សម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងបន្ទប់ប្រជុំ។",
+    descKm: "ដំណោះស្រាយបន្ទះឆ្លាតវៃសម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងបន្ទប់ប្រជុំ។",
     href: "/solutions/education-smart-classroom-cambodia",
     icon: <IconPresentation className="h-8 w-8 object-contain" />,
   },
@@ -177,7 +184,7 @@ const CATEGORY_TILES = [
     titleEn: "Turnstile Gates",
     titleKm: "ច្រកទ្វារ Turnstile",
     descEn: "Tripod, swing, flap barrier and speed gates for secure entry control.",
-    descKm: "Tripod, Swing, Flap Barrier និង Speed Gate សម្រាប់គ្រប់គ្រងច្រកចេញចូលដោយសុវត្ថិភាព។",
+    descKm: "ច្រកបីដង ច្រកស្លាបបើក ច្រកស្លាបបិទបើក និងច្រកល្បឿនលឿន សម្រាប់គ្រប់គ្រងច្រកចេញចូលដោយសុវត្ថិភាព។",
     href: "/solutions/office-access-control-cambodia",
     icon: <IconBarrier className="h-8 w-8 object-contain" />,
   },
@@ -195,7 +202,7 @@ const CATEGORY_TILES = [
     titleEn: "Video Processor",
     titleKm: "ឧបករណ៍ដំណើរការវីដេអូ",
     descEn: "Video processing components for switching, scaling, and stable content flow.",
-    descKm: "ឧបករណ៍កែច្នៃវីដេអូសម្រាប់ switching, scaling និងការបង្ហាញមាតិកាឱ្យមានស្ថិរភាពលើ LED។",
+    descKm: "ឧបករណ៍កែច្នៃវីដេអូសម្រាប់ប្ដូរប្រភព បំលែងទំហំ និងការបង្ហាញមាតិកាឱ្យមានស្ថិរភាពលើអេក្រង់ LED។",
     href: "/led-display/video-processor",
     icon: <IconTv className="h-8 w-8 object-contain" />,
   },
@@ -204,7 +211,7 @@ const CATEGORY_TILES = [
     titleEn: "Power Supply",
     titleKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
     descEn: "Reliable power supply options for stable LED display operation.",
-    descKm: "ជម្រើស Power Supply ដែលទុកចិត្តបាន សម្រាប់ធានាស្ថិរភាពប្រតិបត្តិការអេក្រង់ LED។",
+    descKm: "ជម្រើសឧបករណ៍ផ្គត់ផ្គង់ថាមពលដែលទុកចិត្តបាន សម្រាប់ធានាស្ថិរភាពប្រតិបត្តិការអេក្រង់ LED។",
     href: "/led-display/power-supply",
     icon: <IconPower className="h-8 w-8 text-slate-600" />,
   },
@@ -224,7 +231,7 @@ const FAQ = [
     qEn: "What does Mugnee Cambodia do?",
     aEn: "Mugnee Cambodia supports commercial and institutional technology projects with planning, implementation, commissioning, and local after-sales service.",
     qKm: "Mugnee Cambodia ធ្វើអ្វីខ្លះ?",
-    aKm: "Mugnee Cambodia គាំទ្រគម្រោងបច្ចេកវិទ្យាសម្រាប់អាជីវកម្ម និងស្ថាប័ន ដោយមានការរៀបចំផែនការ អនុវត្ត Commissioning និងសេវាកម្មបន្ទាប់ពីលក់នៅកម្ពុជា។",
+    aKm: "Mugnee Cambodia គាំទ្រគម្រោងបច្ចេកវិទ្យាសម្រាប់អាជីវកម្ម និងស្ថាប័ន ដោយមានការរៀបចំផែនការ អនុវត្ត ការត្រួតពិនិត្យដំណើរការ និងសេវាកម្មបន្ទាប់ពីលក់នៅកម្ពុជា។",
   },
   {
     qEn: "Which areas do you serve in Cambodia?",
@@ -272,7 +279,7 @@ const FAQ = [
     qEn: "How can I request a quotation?",
     aEn: "Share your location, project objective, and timeline. Our team will respond with a project-based scope and quotation.",
     qKm: "តើខ្ញុំអាចស្នើសុំសម្រង់តម្លៃបានដូចម្តេច?",
-    aKm: "សូមផ្ញើទីតាំង គោលបំណងគម្រោង និងពេលវេលាដែលអ្នកចង់អនុវត្ត។ ក្រុមការងារយើងនឹងឆ្លើយតបជាមួយ Scope និងសម្រង់តម្លៃតាមគម្រោង។",
+    aKm: "សូមផ្ញើទីតាំង គោលបំណងគម្រោង និងពេលវេលាដែលអ្នកចង់អនុវត្ត។ ក្រុមការងារយើងនឹងឆ្លើយតបជាមួយវិសាលភាពការងារ និងសម្រង់តម្លៃតាមគម្រោង។",
   },
   {
     qEn: "Where can I find detailed product-level information?",
@@ -372,7 +379,5 @@ export default function HomePage() {
     </main>
   );
 }
-
-
 
 

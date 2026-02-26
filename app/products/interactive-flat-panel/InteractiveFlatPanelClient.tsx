@@ -201,7 +201,7 @@ export default function InteractiveFlatPanelClient() {
       qEn: "What size interactive flat panel should I choose for a classroom?",
       aEn:
         "Choose based on viewing distance and room size. Common classroom sizes range from 65 to 86 inch, while larger halls often use 98 to 110 inch.",
-      qKm: "សម្រាប់ថ្នាក់រៀន តើគួរជ្រើសទំហំ Interactive Flat Panel ប៉ុន្មាន?",
+        qKm: "សម្រាប់ថ្នាក់រៀន តើគួរជ្រើសទំហំបន្ទះអន្តរកម្មប៉ុន្មាន?",
       aKm:
         "គួរជ្រើសតាម viewing distance និងទំហំបន្ទប់។ ទំហំដែលប្រើញឹកញាប់សម្រាប់ថ្នាក់រៀនគឺ 65-86 inch ខណៈបន្ទប់ធំអាចប្រើ 98-110 inch។",
     },
@@ -209,7 +209,7 @@ export default function InteractiveFlatPanelClient() {
       qEn: "How far should students sit from a smart board?",
       aEn:
         "Viewing distance depends on screen size. As a general guide, 65-inch panels suit around 2 to 3.5 meters, 75-inch suits around 2.5 to 4 meters, and 86-inch around 3 to 5 meters.",
-      qKm: "សិស្សគួរអង្គុយឆ្ងាយពី Smart Board ប៉ុន្មាន?",
+        qKm: "សិស្សគួរអង្គុយឆ្ងាយពីបន្ទះឆ្លាតវៃប៉ុន្មាន?",
       aKm:
         "ចម្ងាយមើលអាស្រ័យលើទំហំអេក្រង់។ ជាទូទៅ 65-inch សមស្របប្រហែល 2-3.5m, 75-inch ប្រហែល 2.5-4m និង 86-inch ប្រហែល 3-5m។",
     },
@@ -217,7 +217,7 @@ export default function InteractiveFlatPanelClient() {
       qEn: "Do interactive flat panels support Android and Windows?",
       aEn:
         "Most models include Android, and many offer OPS/Windows compatibility. Check the exact model for OS version and OPS options.",
-      qKm: "Interactive Flat Panel គាំទ្រ Android និង Windows ដែរឬទេ?",
+        qKm: "បន្ទះអន្តរកម្ម គាំទ្រ Android និង Windows ដែរឬទេ?",
       aKm:
         "ម៉ូឌែលភាគច្រើនមាន Android ហើយម៉ូឌែលជាច្រើនគាំទ្រ OPS/Windows ផងដែរ។ សូមពិនិត្យម៉ូឌែលជាក់លាក់សម្រាប់ OS version និង OPS option។",
     },
@@ -225,7 +225,7 @@ export default function InteractiveFlatPanelClient() {
       qEn: "How many touch points does an IFP support?",
       aEn:
         "Multi-touch is standard. For example, some models support 20-point touch, and higher-end models support 40-point touch.",
-      qKm: "IFP មួយអាចគាំទ្រ touch points បានប៉ុន្មាន?",
+        qKm: "បន្ទះអន្តរកម្មមួយអាចគាំទ្រចំណុចប៉ះបានប៉ុន្មាន?",
       aKm:
         "Multi-touch គឺជាស្តង់ដារ។ ឧទាហរណ៍ ម៉ូឌែលខ្លះគាំទ្រ 20-point touch ហើយម៉ូឌែលខ្ពស់គាំទ្រ 40-point touch។",
     },
@@ -233,7 +233,7 @@ export default function InteractiveFlatPanelClient() {
       qEn: "Can I connect laptops and phones wirelessly?",
       aEn:
         "Yes. Many models support wireless screen sharing, plus HDMI and USB-C for plug-and-play connectivity.",
-      qKm: "តើអាចភ្ជាប់ laptop និង phone ដោយ wireless បានទេ?",
+        qKm: "តើអាចភ្ជាប់កុំព្យូទ័រយួរដៃ និងទូរស័ព្ទដោយឥតខ្សែបានទេ?",
       aKm:
         "បាន។ ម៉ូឌែលជាច្រើនគាំទ្រ wireless screen sharing និងមាន HDMI/USB-C សម្រាប់ plug-and-play connectivity។",
     },
@@ -241,7 +241,7 @@ export default function InteractiveFlatPanelClient() {
       qEn: "Do you provide installation and user training in Cambodia?",
       aEn:
         "Yes. We provide installation, configuration, and training for classrooms, meeting rooms, and training centers.",
-      qKm: "តើអ្នកផ្តល់សេវា installation និង user training នៅកម្ពុជាដែរឬទេ?",
+        qKm: "តើអ្នកផ្តល់សេវាដំឡើង និងបណ្តុះបណ្តាលអ្នកប្រើ នៅកម្ពុជាដែរឬទេ?",
       aKm:
         "បាទ/ចាស។ យើងផ្តល់សេវា installation, configuration និង training សម្រាប់ classroom, meeting room និង training center។",
     },
@@ -249,7 +249,7 @@ export default function InteractiveFlatPanelClient() {
       qEn: "What are the key ports I should check?",
       aEn:
         "Look for HDMI, USB, USB-C, and LAN connectivity. These cover most classroom and meeting room setups.",
-      qKm: "ports សំខាន់ៗដែលគួរតែពិនិត្យមានអ្វីខ្លះ?",
+        qKm: "ច្រកតភ្ជាប់សំខាន់ៗដែលគួរតែពិនិត្យមានអ្វីខ្លះ?",
       aKm:
         "គួរពិនិត្យ HDMI, USB, USB-C និង LAN connectivity ព្រោះវាគ្របដណ្តប់ setup ភាគច្រើនសម្រាប់ classroom និង meeting room។",
     },
@@ -257,7 +257,7 @@ export default function InteractiveFlatPanelClient() {
       qEn: "Do you offer warranty and after-sales support?",
       aEn:
         "Yes. Warranty terms depend on the model and project scope. We share the coverage details during quotation.",
-      qKm: "តើមាន warranty និង after-sales support ដែរឬទេ?",
+        qKm: "តើមានការធានា និងសេវាគាំទ្របន្ទាប់ពីលក់ដែរឬទេ?",
       aKm:
         "មាន។ លក្ខខណ្ឌ warranty អាស្រ័យលើម៉ូឌែល និង scope គម្រោង ហើយយើងនឹងផ្តល់ព័ត៌មាន coverage ពេល quotation។",
     },

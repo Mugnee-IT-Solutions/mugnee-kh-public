@@ -13,6 +13,7 @@ const SITE_URL =
 
 const PAGE_PATH = "/interactive-flat-panel";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
   title: "Interactive Flat Panel in Cambodia | Smart Board for School & Office",
@@ -25,7 +26,23 @@ export const metadata: Metadata = {
       "4K touchscreen interactive flat panels for education and corporate use. Installation, wall mount/stand setup, training and after-sales support in Cambodia.",
     url: PAGE_URL,
     type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Interactive Flat Panel in Cambodia",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Interactive Flat Panel in Cambodia - Smart Board for School & Office",
+    description:
+      "4K touchscreen interactive flat panels for education and corporate use. Installation, wall mount/stand setup, training and after-sales support in Cambodia.",
+    images: [OG_IMAGE],
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function Page() {

@@ -13,6 +13,7 @@ const SITE_URL =
 
 const PAGE_PATH = "/about/message-from-ceo";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
   title: "Message from CEO | Mugnee Cambodia",
@@ -26,6 +27,21 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Message from CEO - Mugnee Cambodia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Message from CEO | Mugnee Cambodia",
+    description:
+      "A leadership message on innovation, integrity, and building reliable LED, signage, PA, and access control solutions in Cambodia.",
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
 };

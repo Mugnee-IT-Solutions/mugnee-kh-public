@@ -28,7 +28,7 @@ type Faq = {
   aKm: string;
 };
 
-const MOJIBAKE_RE = /Ã|Â|â|ƒ|\uFFFD|áž|áŸ|â€|\uFFFD/;
+const MOJIBAKE_RE = /\u00C3|\u00C2|\u00E2|\u0192|\uFFFD/;
 
 function decodeLatin1AsUtf8(str: string) {
   const bytes = Uint8Array.from(Array.from(str).map((ch) => ch.charCodeAt(0) & 0xff));
@@ -1028,4 +1028,3 @@ export default function HomeClient({
     </div>
   );
 }
-

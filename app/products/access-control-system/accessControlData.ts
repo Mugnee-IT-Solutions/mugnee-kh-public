@@ -22,7 +22,7 @@ export const ACCESS_CONTROL_ITEMS: AccessControlItem[] = [
     id: "ac-1",
     slug: "rfid-door-access-kit",
     titleEn: "RFID Door Access Kit",
-    titleKm: "ឧបករណ៍ RFID សម្រាប់ទ្វារ (Door Access Kit)",
+    titleKm: "ឧបករណ៍ RFID សម្រាប់ទ្វារ (ឈុតគ្រប់គ្រងការចូលតាមទ្វារ)",
     shortEn:
       "RFID card access with controller, reader, lock and exit button for offices.",
     shortKm:
@@ -53,7 +53,7 @@ export const ACCESS_CONTROL_ITEMS: AccessControlItem[] = [
     id: "ac-2",
     slug: "face-recognition-terminal",
     titleEn: "Face Recognition Terminal",
-    titleKm: "ម៉ាស៊ីនស្គាល់មុខ (Face Recognition Terminal)",
+    titleKm: "ម៉ាស៊ីនស្គាល់មុខ (ស្ថានីយផ្ទៀងផ្ទាត់មុខ)",
     shortEn:
       "Fast identification for attendance + access with door relay output.",
     shortKm:
@@ -84,7 +84,7 @@ export const ACCESS_CONTROL_ITEMS: AccessControlItem[] = [
     id: "ac-3",
     slug: "card-reader",
     titleEn: "RFID Card Reader",
-    titleKm: "ឧបករណ៍អានកាត RFID (Card Reader)",
+    titleKm: "ឧបករណ៍អានកាត RFID (ឧបករណ៍អានកាត)",
     shortEn: "Reliable proximity reader for indoor/outdoor doors.",
     shortKm: "Reader មានស្ថេរភាព សម្រាប់ទ្វារក្នុង/ក្រៅអគារ។",
     bestForEn: "Door entry points, lifts, restricted areas",
@@ -105,7 +105,7 @@ export const ACCESS_CONTROL_ITEMS: AccessControlItem[] = [
     id: "ac-4",
     slug: "magnetic-lock",
     titleEn: "Magnetic Lock (Maglock)",
-    titleKm: "សោម៉ាញេទិក (Maglock)",
+    titleKm: "សោម៉ាញេទិក (សោមេដែក)",
     shortEn: "Strong holding force for glass/wood/metal doors.",
     shortKm: "សោខ្លាំង សម្រាប់ទ្វារកញ្ចក់/ឈើ/ដែក។",
     bestForEn: "Office doors, emergency release setups",

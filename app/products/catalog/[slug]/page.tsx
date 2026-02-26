@@ -33,14 +33,24 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const product = getProductBySlug(params.slug);
   if (!product) return {};
   const productUrl = `${SITE_URL}/products/catalog/${product.slug}`;
-  const imageUrl = product.heroImage.startsWith("http")
-    ? product.heroImage
-    : `${SITE_URL}${product.heroImage}`;
+  const defaultImageUrl = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
+  const imageUrl = product.heroImage
+    ? product.heroImage.startsWith("http")
+      ? product.heroImage
+      : `${SITE_URL}${product.heroImage}`
+    : defaultImageUrl;
 
   return {
     title: product.seoTitleEn,
     description: product.seoDescEn,
-    alternates: { canonical: productUrl },
+    alternates: {
+      canonical: productUrl,
+      languages: {
+        en: `/products/catalog/${product.slug}`,
+        km: `/products/catalog/${product.slug}?lang=km`,
+        "x-default": `/products/catalog/${product.slug}`,
+      },
+    },
     robots: { index: true, follow: true },
     openGraph: {
       title: product.seoTitleEn,
@@ -70,11 +80,23 @@ export default function ProductDetailPage({ params }: PageProps) {
   const product = getProductBySlug(params.slug);
   if (!product) notFound();
   const productUrl = `${SITE_URL}/products/catalog/${product.slug}`;
+  const productsUrl = `${SITE_URL}/products`;
   const categoryLabel =
     getCategoryById(product.primaryCategoryId)?.labelEn ?? product.primaryCategoryId;
-  const imageUrl = product.heroImage.startsWith("http")
-    ? product.heroImage
-    : `${SITE_URL}${product.heroImage}`;
+  const defaultImageUrl = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
+  const imageUrl = product.heroImage
+    ? product.heroImage.startsWith("http")
+      ? product.heroImage
+      : `${SITE_URL}${product.heroImage}`
+    : defaultImageUrl;
+  const description = product.seoDescEn || product.shortDescEn || product.titleEn;
+  const additionalProperty = (product.specs || [])
+    .filter((spec) => spec.labelEn?.trim() && spec.valueEn?.trim())
+    .map((spec) => ({
+      "@type": "PropertyValue",
+      name: spec.labelEn,
+      value: spec.valueEn,
+    }));
 
   const productJsonLd = {
     "@context": "https://schema.org",
@@ -83,8 +105,8 @@ export default function ProductDetailPage({ params }: PageProps) {
     name: product.titleEn,
     url: productUrl,
     mainEntityOfPage: productUrl,
-    image: imageUrl,
-    description: product.seoDescEn,
+    image: [imageUrl],
+    description,
     sku: product.id,
     brand: {
       "@type": "Brand",
@@ -97,11 +119,32 @@ export default function ProductDetailPage({ params }: PageProps) {
     },
     category: categoryLabel,
     itemCondition: "https://schema.org/NewCondition",
-    additionalProperty: product.specs.map((spec) => ({
-      "@type": "PropertyValue",
-      name: spec.labelEn,
-      value: spec.valueEn,
-    })),
+    additionalProperty,
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${SITE_URL}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Products",
+        item: productsUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.titleEn,
+        item: productUrl,
+      },
+    ],
   };
 
   return (
@@ -109,6 +152,10 @@ export default function ProductDetailPage({ params }: PageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <ProductDetailClient product={product} />
     </main>

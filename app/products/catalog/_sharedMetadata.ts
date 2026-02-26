@@ -7,14 +7,24 @@ export function buildCatalogProductMetadata(slug: string): Metadata {
   if (!product) return {};
 
   const productUrl = `${SITE_URL}/products/catalog/${product.slug}`;
-  const imageUrl = product.heroImage.startsWith("http")
-    ? product.heroImage
-    : `${SITE_URL}${product.heroImage}`;
+  const defaultImageUrl = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
+  const imageUrl = product.heroImage
+    ? product.heroImage.startsWith("http")
+      ? product.heroImage
+      : `${SITE_URL}${product.heroImage}`
+    : defaultImageUrl;
 
   return {
     title: product.seoTitleEn,
     description: product.seoDescEn,
-    alternates: { canonical: productUrl },
+    alternates: {
+      canonical: productUrl,
+      languages: {
+        en: `/products/catalog/${product.slug}`,
+        km: `/products/catalog/${product.slug}?lang=km`,
+        "x-default": `/products/catalog/${product.slug}`,
+      },
+    },
     robots: { index: true, follow: true },
     openGraph: {
       title: product.seoTitleEn,

@@ -13,6 +13,7 @@ const SITE_URL =
 
 const PAGE_PATH = "/turnstile-gate";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
   title: "Commercial Turnstile Gate Cambodia | Supply & Installation",
@@ -25,6 +26,21 @@ export const metadata: Metadata = {
       "Secure entry control with flap, tripod, speed, and full-height turnstiles. Integration with access control and attendance systems.",
     url: PAGE_URL,
     type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Turnstile Gate Solutions in Cambodia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Turnstile Gate in Cambodia",
+    description:
+      "Secure entry control with flap, tripod, speed, and full-height turnstiles. Integration with access control and attendance systems.",
+    images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
 };
