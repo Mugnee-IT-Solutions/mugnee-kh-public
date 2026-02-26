@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Force canonical host (www -> non-www)
+  RewriteCond %{HTTP_HOST} ^www\.mugneekh\.com$ [NC]
+  RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [L,R=301]
+
   # Force HTTPS
   RewriteCond %{HTTPS} !=on
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
@@ -35,6 +39,7 @@
   RewriteRule ^products/interactive-flat-panel/?$ /interactive-flat-panel/ [R=301,L,NC]
   RewriteRule ^products/pa-system/?$ /pa-system/ [R=301,L,NC]
   RewriteRule ^products/turnstile-gate/?$ /turnstile-gate/ [R=301,L,NC]
+  RewriteRule ^products/access-control-system/?$ /solutions/office-access-control-cambodia/ [R=301,L,NC]
   RewriteRule ^products/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
   RewriteRule ^products/outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]
 
@@ -60,4 +65,3 @@
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/jpeg "access plus 30 days"
 </IfModule>
-

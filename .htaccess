@@ -1,6 +1,17 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Canonical host and protocol
+  RewriteCond %{HTTP_HOST} ^www\.mugneekh\.com$ [NC]
+  RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Remove duplicate slashes
+  RewriteCond %{THE_REQUEST} \s/+(.+?)//+ [NC]
+  RewriteRule .* /%1 [R=301,L]
+
   # Next.js static-export RSC compatibility:
   # /foo/__next.a.b.c.d.txt -> /foo/__next.a/b/c/d.txt
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -25,5 +36,17 @@
   RewriteRule ^products/pa-system/?$ /pa-system/ [R=301,L,NC]
   RewriteRule ^products/turnstile-gate/?$ /turnstile-gate/ [R=301,L,NC]
   RewriteRule ^products/access-control-system/?$ /solutions/office-access-control-cambodia/ [R=301,L,NC]
+  RewriteRule ^products/led-display/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/led-display/outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/led-display/receiving-card/?$ /led-display/receiving-card/ [R=301,L,NC]
+  RewriteRule ^products/led-display/video-processor/?$ /led-display/video-processor/ [R=301,L,NC]
+  RewriteRule ^products/led-display/power-supply/?$ /led-display/power-supply/ [R=301,L,NC]
+
+  # Legacy solutions URL redirects
+  RewriteRule ^solutions/led-billboard-cambodia/?$ /solutions/retail-digital-signage-cambodia/ [R=301,L,NC]
+  RewriteRule ^solutions/digital-signage-cambodia/?$ /solutions/retail-digital-signage-cambodia/ [R=301,L,NC]
+  RewriteRule ^solutions/pa-system-cambodia/?$ /solutions/factory-pa-announcement-cambodia/ [R=301,L,NC]
+  RewriteRule ^solutions/smart-classroom-cambodia/?$ /solutions/education-smart-classroom-cambodia/ [R=301,L,NC]
+  RewriteRule ^solutions/access-control-cambodia/?$ /solutions/office-access-control-cambodia/ [R=301,L,NC]
 </IfModule>
 

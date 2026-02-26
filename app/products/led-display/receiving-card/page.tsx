@@ -241,7 +241,7 @@ export default function Page() {
       <section className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
         <h2 className="text-xl font-semibold text-slate-900">Need the Right Receiving Card?</h2>
         <p className="mt-2 text-slate-700">
-          Share your screen size, pixel pitch, and usage scenario. We'll recommend a
+          Share your screen size, pixel pitch, and usage scenario. We&apos;ll recommend a
           compatible receiving card and provide a clear quotation.
         </p>
         <div className="mt-4">

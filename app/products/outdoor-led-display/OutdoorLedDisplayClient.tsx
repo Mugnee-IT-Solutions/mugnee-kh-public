@@ -171,7 +171,7 @@ export default function OutdoorLedDisplayClient() {
     return lang === "en" ? en : km;
   }, [lang]);
 
-  const faqs: FAQ[] = [
+  const faqs = useMemo<FAQ[]>(() => [
     {
       qEn: "Which pixel pitch is best for outdoor LED billboards?",
       aEn:
@@ -204,7 +204,7 @@ export default function OutdoorLedDisplayClient() {
       aKm:
         "áž˜áž¶áž“áŸ” áž˜áž¶áž“ support áž€áŸ’áž“áž»áž„ážŸáŸ’ážšáž»áž€ áž“áž·áž„ maintenance options (AMC) + spare parts planningáŸ”",
     },
-  ];
+  ], []);
 
   // âœ… Breadcrumb JSON-LD + FAQ JSON-LD (safe)
   const jsonLd = useMemo(() => {

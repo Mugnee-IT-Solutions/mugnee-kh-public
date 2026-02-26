@@ -254,7 +254,7 @@ export default function AccessControlClient() {
     return lang === "en" ? en : km;
   }, [lang]);
 
-  const faqs: FAQ[] = [
+  const faqs = useMemo<FAQ[]>(() => [
     {
       qEn: "Which access control method is best for offices?",
       aEn:
@@ -295,7 +295,7 @@ export default function AccessControlClient() {
       aKm:
         "áž”áž¶áž“áŸ” Access control system áž¢áž¶áž… integrate áž‡áž¶áž˜áž½áž™ turnstile gate áž“áž·áž„ speed gate ážŠáž¾áž˜áŸ’áž”áž¸áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž›áŸ†áž áž¼ážšáž…áž¼áž›áž²áŸ’áž™áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”",
     },
-  ];
+  ], []);
 
   const jsonLd = useMemo(() => {
     const site =

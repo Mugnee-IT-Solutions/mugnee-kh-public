@@ -6,11 +6,13 @@
   Github: https://github.com/ankur-datta-official
 */
 import type { Metadata } from "next";
+import { SITE_URL } from "../lib/site";
 
 export const metadata: Metadata = {
   title: "Projects in Cambodia | Mugnee Cambodia",
   description:
     "Explore Mugnee Cambodia project references for LED display, digital signage, PA systems, and access control implementations.",
+  alternates: { canonical: `${SITE_URL}/projects` },
 };
 
 export default function ProjectsPage() {

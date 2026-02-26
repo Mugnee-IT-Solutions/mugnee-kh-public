@@ -5,6 +5,7 @@
   message?: string;
 };
 
-export async function submitLead(_payload: LeadPayload) {
+export async function submitLead(payload: LeadPayload) {
+  void payload;
   return { ok: true };
 }

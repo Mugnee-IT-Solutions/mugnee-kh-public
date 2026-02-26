@@ -2,11 +2,138 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useLang } from "./LanguageProvider";
 
 type NavItem = { labelEn: string; labelKm: string; href: string };
+type Lang = "en" | "km";
+
+type DropdownProps = {
+  id: string;
+  title: string;
+  items: NavItem[];
+  align?: "left" | "center";
+  openMenu: string | null;
+  setOpenMenu: Dispatch<SetStateAction<string | null>>;
+  parentHrefById: Record<string, string>;
+  isPathActive: (href: string) => boolean;
+  desktopNavLinkClass: (active: boolean) => string;
+  forceScrollTop: () => void;
+  lang: Lang;
+};
+
+function Dropdown({
+  id,
+  title,
+  items,
+  align = "left",
+  openMenu,
+  setOpenMenu,
+  parentHrefById,
+  isPathActive,
+  desktopNavLinkClass,
+  forceScrollTop,
+  lang,
+}: DropdownProps) {
+  const isOpen = openMenu === id;
+  const panelPos = align === "center" ? "left-1/2 -translate-x-1/2" : "left-0";
+  const parentHref = parentHrefById[id] || "#";
+  const isActive = isPathActive(parentHref);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpenMenu(id)}
+      onMouseLeave={() => setOpenMenu(null)}
+    >
+      <div
+        className={[
+          "inline-flex items-center overflow-hidden rounded-xl",
+          "whitespace-nowrap",
+          isOpen || isActive ? "bg-white/10" : "hover:bg-white/10",
+        ].join(" ")}
+      >
+        <Link
+          href={parentHref}
+          className={desktopNavLinkClass(isActive)}
+          onClick={() => {
+            forceScrollTop();
+            setOpenMenu(null);
+          }}
+        >
+          {title}
+        </Link>
+
+        <button
+          type="button"
+          className={[
+            "px-2.5 py-2 text-slate-100/95 transition",
+            "whitespace-nowrap leading-none",
+            "hover:text-white",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30",
+          ].join(" ")}
+          aria-label="Open submenu"
+          aria-haspopup="menu"
+          aria-expanded={isOpen}
+          onClick={() => setOpenMenu(isOpen ? null : id)}
+        >
+          <svg
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            className={`h-4 w-4 text-white transition-transform ${isOpen ? "rotate-180" : ""}`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M5 7.5l5 5 5-5" />
+          </svg>
+        </button>
+      </div>
+
+      {isOpen ? (
+        <div role="menu" className={["absolute z-50", "top-full mt-2", panelPos].join(" ")}>
+          <div className="absolute -top-2 left-0 right-0 h-2" />
+
+          <div
+            className={[
+              "w-[340px] overflow-hidden rounded-2xl",
+              "border border-white/10",
+              "bg-slate-900/95 backdrop-blur",
+              "shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
+              "ring-1 ring-white/10",
+              "animate-[mmDrop_.14s_ease-out]",
+            ].join(" ")}
+          >
+            <div className="p-2">
+              {items.map((it) => (
+                <Link
+                  key={it.href}
+                  href={it.href}
+                  className={[
+                    "block rounded-xl px-3 py-2.5 text-sm no-underline hover:no-underline focus:no-underline",
+                    "text-slate-100/90",
+                    "transition",
+                    "hover:bg-white/10 hover:text-white",
+                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20",
+                  ].join(" ")}
+                  onClick={() => {
+                    forceScrollTop();
+                    setOpenMenu(null);
+                  }}
+                >
+                  {lang === "en" ? it.labelEn : it.labelKm}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 export default function SiteHeader() {
   const { lang, setLang } = useLang();
@@ -185,117 +312,6 @@ export default function SiteHeader() {
       active ? "after:opacity-100 after:bg-sky-300" : "after:opacity-0 after:bg-transparent",
     ].join(" ");
 
-  function Dropdown({
-    id,
-    title,
-    items,
-    align = "left",
-  }: {
-    id: string;
-    title: string;
-    items: NavItem[];
-    align?: "left" | "center";
-  }) {
-    const isOpen = openMenu === id;
-    const panelPos = align === "center" ? "left-1/2 -translate-x-1/2" : "left-0";
-
-    const parentHref = parentHrefById[id] || "#";
-    const isActive = isPathActive(parentHref);
-
-    return (
-      <div
-        className="relative"
-        onMouseEnter={() => setOpenMenu(id)}
-        onMouseLeave={() => setOpenMenu(null)}
-      >
-        <div
-          className={[
-            "inline-flex items-center overflow-hidden rounded-xl",
-            "whitespace-nowrap",
-            isOpen || isActive ? "bg-white/10" : "hover:bg-white/10",
-          ].join(" ")}
-        >
-          <Link
-            href={parentHref}
-            className={desktopNavLinkClass(isActive)}
-            onClick={() => {
-              forceScrollTop();
-              setOpenMenu(null);
-            }}
-          >
-            {title}
-          </Link>
-
-          <button
-            type="button"
-            className={[
-              "px-2.5 py-2 text-slate-100/95 transition",
-              "whitespace-nowrap leading-none",
-              "hover:text-white",
-              "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30",
-            ].join(" ")}
-            aria-label="Open submenu"
-            aria-haspopup="menu"
-            aria-expanded={isOpen}
-            onClick={() => setOpenMenu(isOpen ? null : id)}
-          >
-            <svg
-              viewBox="0 0 20 20"
-              aria-hidden="true"
-              className={`h-4 w-4 text-white transition-transform ${isOpen ? "rotate-180" : ""}`}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M5 7.5l5 5 5-5" />
-            </svg>
-          </button>
-        </div>
-
-        {isOpen ? (
-          <div role="menu" className={["absolute z-50", "top-full mt-2", panelPos].join(" ")}>
-            <div className="absolute -top-2 left-0 right-0 h-2" />
-
-            <div
-              className={[
-                "w-[340px] overflow-hidden rounded-2xl",
-                "border border-white/10",
-                "bg-slate-900/95 backdrop-blur",
-                "shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
-                "ring-1 ring-white/10",
-                "animate-[mmDrop_.14s_ease-out]",
-              ].join(" ")}
-            >
-              <div className="p-2">
-                {items.map((it) => (
-                  <Link
-                    key={it.href}
-                    href={it.href}
-                    className={[
-                      "block rounded-xl px-3 py-2.5 text-sm no-underline hover:no-underline focus:no-underline",
-                      "text-slate-100/90",
-                      "transition",
-                      "hover:bg-white/10 hover:text-white",
-                      "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20",
-                    ].join(" ")}
-                    onClick={() => {
-                      forceScrollTop();
-                      setOpenMenu(null);
-                    }}
-                  >
-                    {lang === "en" ? it.labelEn : it.labelKm}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        ) : null}
-      </div>
-    );
-  }
-
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const query = q.trim();
@@ -470,7 +486,18 @@ export default function SiteHeader() {
             className="hidden w-full items-center justify-between whitespace-nowrap lg:flex"
             aria-label="Primary"
           >
-            <Dropdown id="ledDisplay" title={t.ledDisplay} items={ledDisplayMenu} />
+            <Dropdown
+              id="ledDisplay"
+              title={t.ledDisplay}
+              items={ledDisplayMenu}
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+              parentHrefById={parentHrefById}
+              isPathActive={isPathActive}
+              desktopNavLinkClass={desktopNavLinkClass}
+              forceScrollTop={forceScrollTop}
+              lang={lang}
+            />
 
             <Link
               href="/interactive-flat-panel"
@@ -493,7 +520,19 @@ export default function SiteHeader() {
             >
               {t.turnstile}
             </Link>
-            <Dropdown id="solutions" title={t.solutions} items={solutionsMenu} align="center" />
+            <Dropdown
+              id="solutions"
+              title={t.solutions}
+              items={solutionsMenu}
+              align="center"
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+              parentHrefById={parentHrefById}
+              isPathActive={isPathActive}
+              desktopNavLinkClass={desktopNavLinkClass}
+              forceScrollTop={forceScrollTop}
+              lang={lang}
+            />
             <Link
               href="/service"
               onClick={forceScrollTop}
@@ -501,7 +540,19 @@ export default function SiteHeader() {
             >
               {t.service}
             </Link>
-            <Dropdown id="about" title={t.about} items={aboutMenu} align="center" />
+            <Dropdown
+              id="about"
+              title={t.about}
+              items={aboutMenu}
+              align="center"
+              openMenu={openMenu}
+              setOpenMenu={setOpenMenu}
+              parentHrefById={parentHrefById}
+              isPathActive={isPathActive}
+              desktopNavLinkClass={desktopNavLinkClass}
+              forceScrollTop={forceScrollTop}
+              lang={lang}
+            />
             <Link
               href="/contact"
               onClick={forceScrollTop}

@@ -182,7 +182,7 @@ export default function Page() {
         </p>
         <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700">
           We help you choose the correct model based on input type, required resolution, and
-          the LED wall's pixel load.
+          the LED wall&apos;s pixel load.
         </div>
       </section>
 
@@ -237,7 +237,7 @@ export default function Page() {
       <section className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
         <h2 className="text-xl font-semibold text-slate-900">Need a Video Processor?</h2>
         <p className="mt-2 text-slate-700">
-          Share your LED wall size, required inputs, and usage scenario. We'll recommend a
+          Share your LED wall size, required inputs, and usage scenario. We&apos;ll recommend a
           reliable processor and provide a clear quotation.
         </p>
         <div className="mt-4">

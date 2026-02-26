@@ -7,11 +7,13 @@
 */
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_URL } from "../../lib/site";
 
 export const metadata: Metadata = {
   title: "LED Controller in Cambodia | Mugnee Cambodia",
   description:
     "LED controller and processor solutions in Cambodia for stable screen control, signal management, and reliable project delivery.",
+  alternates: { canonical: `${SITE_URL}/products/led-controller` },
 };
 
 export default function LedControllerPage() {

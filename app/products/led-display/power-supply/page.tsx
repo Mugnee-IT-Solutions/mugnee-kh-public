@@ -201,7 +201,7 @@ export default function Page() {
       <section className="mt-8">
         <h2 className="text-xl font-semibold text-slate-900">Safety & Reliability</h2>
         <p className="mt-2 text-slate-700">
-          Power stability is critical for LED displays in Cambodia's climate. We recommend
+          Power stability is critical for LED displays in Cambodia&apos;s climate. We recommend
           models with strong protection features, stable output, and quality components to
           reduce downtime and protect your investment.
         </p>
@@ -230,7 +230,7 @@ export default function Page() {
       <section className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-6">
         <h2 className="text-xl font-semibold text-slate-900">Need a Reliable Power Supply?</h2>
         <p className="mt-2 text-slate-700">
-          Share your screen size, cabinet power draw, and environment. We'll recommend a
+          Share your screen size, cabinet power draw, and environment. We&apos;ll recommend a
           safe, efficient power supply and provide a clear quotation.
         </p>
         <div className="mt-4">
