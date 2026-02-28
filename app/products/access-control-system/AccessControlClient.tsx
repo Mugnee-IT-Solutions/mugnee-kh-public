@@ -259,41 +259,41 @@ export default function AccessControlClient() {
       qEn: "Which access control method is best for offices?",
       aEn:
         "RFID cards or PIN access are cost-effective and easy to manage. For higher security, fingerprint or face recognition can be added.",
-      qKm: "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ office ážáž¾ access control method áž˜áž½áž™ážŽáž¶áž›áŸ’áž¢áž‡áž¶áž„áž‚áŸ?",
+      qKm: "សម្រាប់ office តើ access control method មួយណាល្អជាងគេ?",
       aKm:
-        "RFID card áž¬ PIN access áž‚ážºážŸáž“áŸ’ážŸáŸ†ážŸáŸ†áž…áŸƒ áž“áž·áž„áž„áž¶áž™áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áŸ” áž”áž¾ážáŸ’ážšáž¼ážœáž€áž¶ážšážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–ážáŸ’áž–ážŸáŸ‹ áž¢áž¶áž…áž”áž“áŸ’ážáŸ‚áž˜ fingerprint áž¬ face recognition áž”áž¶áž“áŸ”",
+        "RFID card ឬ PIN access គឺសន្សំសំចៃ និងងាយគ្រប់គ្រង។ បើត្រូវការសុវត្ថិភាពខ្ពស់ អាចបន្ថែម fingerprint ឬ face recognition បាន។",
     },
     {
       qEn: "Can access control integrate with attendance?",
       aEn:
         "Yes. Many controllers and terminals support attendance logs and reporting for HR systems.",
-      qKm: "Access Control áž¢áž¶áž… integrate áž‡áž¶áž˜áž½áž™ attendance áž”áž¶áž“áž‘áŸ?",
+      qKm: "Access Control អាច integrate ជាមួយ attendance បានទេ?",
       aKm:
-        "áž”áž¶áž“áŸ” Controller áž“áž·áž„ terminal áž‡áž¶áž…áŸ’ážšáž¾áž“áž‚áž¶áŸ†áž‘áŸ’ážš attendance log áž“áž·áž„ reporting ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ HR systemáŸ”",
+        "បាន។ Controller និង terminal ជាច្រើនគាំទ្រ attendance log និង reporting សម្រាប់ HR system។",
     },
     {
       qEn: "Do you install access control systems in Cambodia?",
       aEn:
         "Yes. We provide site survey, wiring, device installation, configuration, and after-sales support nationwide.",
-      qKm: "ážáž¾áž¢áŸ’áž“áž€ážŠáŸ†áž¡áž¾áž„ Access Control System áž“áŸ…áž€áž˜áŸ’áž–áž»áž‡áž¶ážŠáŸ‚ážšáž¬áž‘áŸ?",
+      qKm: "តើអ្នកដំឡើង Access Control System នៅកម្ពុជាដែរឬទេ?",
       aKm:
-        "áž”áž¶áž‘/áž…áž¶ážŸáŸ” áž™áž¾áž„áž•áŸ’ážáž›áŸ‹ážŸáŸážœáž¶ site survey, wiring, device installation, configuration áž“áž·áž„ after-sales support áž‘áž¼áž‘áž¶áŸ†áž„áž”áŸ’ážšáž‘áŸážŸáŸ”",
+        "បាទ/ចាស។ យើងផ្តល់សេវា site survey, wiring, device installation, configuration និង after-sales support ទូទាំងប្រទេស។",
     },
     {
       qEn: "What information is needed for a quotation?",
       aEn:
         "Door count, door type (glass/wood/metal), access method preference, and whether you need online reporting.",
-      qKm: "ážáž¾ážáŸ’ážšáž¼ážœáž•áŸ’ážáž›áŸ‹áž–áŸážáŸŒáž˜áž¶áž“áž¢áŸ’ážœáž¸ážáŸ’áž›áŸ‡ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ážŸáŸ’áž“áž¾ážŸáž»áŸ† quotation?",
+      qKm: "តើត្រូវផ្តល់ព័ត៌មានអ្វីខ្លះសម្រាប់ស្នើសុំ quotation?",
       aKm:
-        "ážáŸ’ážšáž¼ážœáž•áŸ’ážáž›áŸ‹áž…áŸ†áž“áž½áž“áž‘áŸ’ážœáž¶ážš, áž”áŸ’ážšáž—áŸáž‘áž‘áŸ’ážœáž¶ážš (glass/wood/metal), access method preference áž“áž·áž„ážáž˜áŸ’ážšáž¼ážœáž€áž¶ážšáž”áŸ’ážšáž¾ online reportingáŸ”",
+        "ត្រូវផ្តល់ចំនួនទ្វារ, ប្រភេទទ្វារ (glass/wood/metal), access method preference និងតម្រូវការប្រើ online reporting។",
     },
     {
       qEn: "Can access control work with turnstiles or gates?",
       aEn:
         "Yes. Access control systems can be integrated with turnstile gates and speed gates for secure entry flow.",
-      qKm: "Access Control áž¢áž¶áž…ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšáž‡áž¶áž˜áž½áž™ Turnstile áž¬ Gate áž”áž¶áž“áž‘áŸ?",
+      qKm: "Access Control អាចដំណើរការជាមួយ Turnstile ឬ Gate បានទេ?",
       aKm:
-        "áž”áž¶áž“áŸ” Access control system áž¢áž¶áž… integrate áž‡áž¶áž˜áž½áž™ turnstile gate áž“áž·áž„ speed gate ážŠáž¾áž˜áŸ’áž”áž¸áž‚áŸ’ážšáž”áŸ‹áž‚áŸ’ážšáž„áž›áŸ†áž áž¼ážšáž…áž¼áž›áž²áŸ’áž™áž˜áž¶áž“ážŸáž»ážœážáŸ’ážáž·áž—áž¶áž–áŸ”",
+        "បាន។ Access control system អាច integrate ជាមួយ turnstile gate និង speed gate ដើម្បីគ្រប់គ្រងលំហូរចូលឲ្យមានសុវត្ថិភាព។",
     },
   ], []);
 

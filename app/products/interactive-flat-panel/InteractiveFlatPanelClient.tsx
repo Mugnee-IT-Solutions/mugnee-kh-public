@@ -796,7 +796,7 @@ export default function InteractiveFlatPanelClient() {
                   {recommendedSize
                     ? (lang === "en"
                         ? `Recommended size: ${recommendedSize}`
-                        : `áž‘áŸ†áž áŸ†ážŠáŸ‚áž›ážŽáŸ‚áž“áž¶áŸ†áŸ– ${recommendedSize}`)
+                        : `ទំហំដែលណែនាំ៖ ${recommendedSize}`)
                     : (lang === "en"
                         ? "Enter a viewing distance to get a recommendation."
                         : "សូមបញ្ចូលចម្ងាយមើល ដើម្បីទទួលបានការណែនាំ។")}

@@ -65,7 +65,8 @@ export default function SiteFooter() {
     <footer className="border-t border-slate-200 bg-gradient-to-b from-slate-100 to-slate-50">
       <div className="h-1 w-full bg-gradient-to-r from-sky-500 via-blue-600 to-slate-900" />
       <div className="w-full py-0">
-        <div className="w-full border-y border-slate-200 bg-white px-4 py-8 sm:px-6 md:py-10 lg:px-10">
+        <div className="w-full border-y border-slate-200 bg-white py-8 md:py-10">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <div className="flex items-center gap-2 font-semibold text-slate-900">
@@ -250,6 +251,7 @@ export default function SiteFooter() {
                 <LangText en="Contact" km="ទំនាក់ទំនង" />
               </Link>
             </div>
+          </div>
           </div>
         </div>
       </div>

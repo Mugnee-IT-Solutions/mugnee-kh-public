@@ -7,6 +7,7 @@ type ContactPayload = {
   phone?: string;
   subject?: string;
   message?: string;
+  website?: string;
 };
 
 type ValidContactData = {
@@ -25,6 +26,11 @@ type ValidationResult =
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^[+]?[\d\s().-]{7,20}$/;
+const RATE_WINDOW_MS = Number(process.env.CONTACT_RATE_LIMIT_WINDOW_MS || 10 * 60 * 1000);
+const RATE_MAX_REQUESTS = Number(process.env.CONTACT_RATE_LIMIT_MAX || 5);
+
+type RateBucket = { count: number; resetAt: number };
+const rateBuckets = new Map<string, RateBucket>();
 
 function clean(value: unknown, max = 1000) {
   return String(value ?? "")
@@ -37,14 +43,61 @@ function countDigits(value: string) {
   return (value.match(/\d/g) || []).length;
 }
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function getClientIp(req: Request) {
+  const forwarded = req.headers.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0]?.trim() || "unknown";
+  return (
+    req.headers.get("x-real-ip") ||
+    req.headers.get("cf-connecting-ip") ||
+    "unknown"
+  );
+}
+
+function getRateKey(req: Request) {
+  const ip = getClientIp(req);
+  const ua = req.headers.get("user-agent") || "unknown";
+  return `${ip}|${ua.slice(0, 120)}`;
+}
+
+function isRateLimited(key: string, now = Date.now()) {
+  const current = rateBuckets.get(key);
+  if (!current || now > current.resetAt) {
+    rateBuckets.set(key, { count: 1, resetAt: now + RATE_WINDOW_MS });
+    return false;
+  }
+  if (current.count >= RATE_MAX_REQUESTS) return true;
+  current.count += 1;
+  rateBuckets.set(key, current);
+  return false;
+}
+
 function validate(body: ContactPayload): ValidationResult {
   const name = clean(body.name, 120);
   const email = clean(body.email, 180).toLowerCase();
   const phone = clean(body.phone, 50);
   const subject = clean(body.subject, 180);
   const message = clean(body.message, 4000);
+  const website = clean(body.website, 180);
 
   const fieldErrors: FieldErrors = {};
+
+  // Hidden honeypot field: bots often fill this.
+  if (website) {
+    return {
+      ok: false,
+      message: "Unable to process submission.",
+      fieldErrors,
+    };
+  }
 
   if (!name || name.length < 2) fieldErrors.name = "Name must be at least 2 characters.";
   if (!email || !emailRegex.test(email)) fieldErrors.email = "Enter a valid email address.";
@@ -71,6 +124,14 @@ function validate(body: ContactPayload): ValidationResult {
 
 export async function POST(req: Request) {
   try {
+    const rateKey = getRateKey(req);
+    if (isRateLimited(rateKey)) {
+      return NextResponse.json(
+        { ok: false, message: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const json = (await req.json()) as ContactPayload;
     const parsed = validate(json);
     if (!parsed.ok) {
@@ -129,11 +190,11 @@ export async function POST(req: Request) {
       text: textBody,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+        <p><strong>Message:</strong><br/>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
       `,
     });
 

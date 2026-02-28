@@ -11,6 +11,7 @@ const BAD_SEQUENCES = [
   "\u00E2\u20AC\u2122",
   "\u00E2\u20AC\u0153",
   "\u00E2\u20AC\u201D",
+  "áž",
   "\uFFFD",
 ];
 

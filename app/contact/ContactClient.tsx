@@ -165,6 +165,7 @@ export default function ContactClient() {
     phone: string;
     subject: string;
     message: string;
+    website: string;
   };
   type FormErrors = Partial<Record<keyof FormState, string>>;
 
@@ -201,6 +202,7 @@ export default function ContactClient() {
     phone: "",
     subject: "",
     message: "",
+    website: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [sending, setSending] = useState(false);
@@ -275,7 +277,7 @@ export default function ContactClient() {
           ? "សាររបស់អ្នកត្រូវបានផ្ញើជោគជ័យ។ ក្រុមការងារយើងនឹងទាក់ទងត្រឡប់វិញឆាប់ៗនេះ។"
           : "Your message was sent successfully. Our team will contact you soon.",
       });
-      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+      setForm({ name: "", email: "", phone: "", subject: "", message: "", website: "" });
       setErrors({});
     } catch {
       setStatus({
@@ -415,6 +417,15 @@ export default function ContactClient() {
                 </div>
 
                 <div className="sm:col-span-2">
+                  <input
+                    type="text"
+                    value={form.website}
+                    onChange={(e) => updateField("website", e.target.value)}
+                    autoComplete="off"
+                    tabIndex={-1}
+                    className="hidden"
+                    aria-hidden="true"
+                  />
                   <textarea
                     rows={5}
                     value={form.message}

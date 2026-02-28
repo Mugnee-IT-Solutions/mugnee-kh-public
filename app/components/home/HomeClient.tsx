@@ -72,19 +72,19 @@ const HERO_SLIDES = [
     alt: "Mugnee Cambodia company project delivery",
   },
   {
-    src: "/images/hero/cambodia-led-billboard-advertising.webp",
+    src: "/images/hero/cambodia-led-billboard-advertising.png",
     alt: "Commercial project execution in Cambodia",
   },
   {
-    src: "/images/hero/cambodia-indoor-led-video-wall-retail.webp",
+    src: "/images/hero/cambodia-indoor-led-video-wall-retail.png",
     alt: "Retail and enterprise deployment support",
   },
   {
-    src: "/images/hero/cambodia-smart-classroom-interactive-flat-panel.webp",
+    src: "/images/hero/cambodia-smart-classroom-interactive-flat-panel.png",
     alt: "Smart classroom interactive flat panel solution in Cambodia",
   },
   {
-    src: "/images/hero/cambodia-access-control-turnstile-pa-system.webp",
+    src: "/images/hero/cambodia-access-control-turnstile-pa-system.png",
     alt: "Integrated systems delivery and support in Cambodia",
   },
 ];
@@ -352,36 +352,36 @@ export default function HomeClient({
     };
 
     const km = {
-      badge: "កម្ពុជា • Mugnee Cambodia • ការអនុវត្តគម្រោង",
+      badge: "កម្ពុជា • Mugnee Cambodia • ដំណោះស្រាយបច្ចេកវិទ្យា",
       heroTitle: "ដំណោះស្រាយ Digital Display & Smart Technology នៅកម្ពុជា",
       heroDesc:
-        "Mugnee គឺជាក្រុមហ៊ុនបច្ចេកវិទ្យាពហុជាតិ ហើយ Mugnee Cambodia គឺជាប្រតិបត្តិការពហុជាតិនៅកម្ពុជា ដែលផ្តល់សេវារៀបចំគម្រោង ដឹកជញ្ជូន ដំឡើង ការត្រួតពិនិត្យដំណើរការ និងការគាំទ្ររយៈពេលវែង សម្រាប់អាជីវកម្ម និងស្ថាប័ន។",
+        "Mugnee ជាក្រុមហ៊ុនបច្ចេកវិទ្យាពហុជាតិ ហើយ Mugnee Cambodia ជាប្រតិបត្តិការក្នុងស្រុកសម្រាប់ទីផ្សារកម្ពុជា ដោយផ្តល់សេវារៀបចំគម្រោង ដំឡើង សាកល្បងដំណើរការ និងគាំទ្ររយៈពេលវែងសម្រាប់អាជីវកម្ម និងស្ថាប័ន។",
       ctaQuote: "ស្នើសុំតម្លៃ",
-      ctaLed: "មើល អេក្រង់ LED",
-      secProductsEyebrow: "អ្វីដែលយើងផ្តល់ជូន",
-      secProductsTitle: "វិស័យសេវាកម្មសំខាន់ៗនៅកម្ពុជា",
+      ctaLed: "មើល LED Display",
+      secProductsEyebrow: "អ្វីដែលយើងផ្តល់",
+      secProductsTitle: "អង្គភាពអាជីវកម្មស្នូលនៅកម្ពុជា",
       secCatalogEyebrow: "ផលិតផលរបស់យើង",
-      secPartnersEyebrow: "ប្រព័ន្ធភាពជាដៃគូ",
-      secPartnersTitle: "ប្រព័ន្ធភាពជាដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
+      secPartnersEyebrow: "បណ្តាញដៃគូ",
+      secPartnersTitle: "បណ្តាញដៃគូអភិវឌ្ឍន៍អន្តរជាតិ",
       secPartnersDesc:
-        "Mugnee កំពុងបង្កើតផ្លូវសហការជាមួយស្ថាប័នហិរញ្ញវត្ថុអភិវឌ្ឍន៍ និងអង្គការអន្តរជាតិដែលមានការទទួលស្គាល់ និងសកម្មនៅកម្ពុជា និងអាស៊ីអាគ្នេយ៍។",
+        "Mugnee កំពុងបង្កើតផ្លូវសហការជាមួយស្ថាប័នហិរញ្ញវត្ថុអភិវឌ្ឍន៍ និងអង្គភាពអន្តរជាតិដែលសកម្មនៅកម្ពុជា និងអាស៊ីអាគ្នេយ៍។",
       secPartnersDisclosure:
-        "ការបង្ហាញព័ត៌មាន៖ អង្គការខាងក្រោមត្រូវបានបង្ហាញជាផ្នែកនៃប្រព័ន្ធអភិវឌ្ឍន៍ និងវិនិយោគដែលពាក់ព័ន្ធ។ ការបញ្ចូលឈ្មោះមិនមានន័យថាជាដៃគូផ្លូវការទេ លុះត្រាតែមានការប្រកាសជាផ្លូវការ។",
+        "កំណត់សម្គាល់៖ អង្គភាពដែលរាយបញ្ជីខាងក្រោមជាផ្នែកនៃបរិបទអេកូស៊ីស្ទឹមអភិវឌ្ឍន៍ និងវិនិយោគ។ ការដាក់បញ្ជីមិនមានន័យថាជាដៃគូផ្លូវការទេ លុះត្រាតែមានការប្រកាសជាផ្លូវការ។",
       secAuthEyebrow: "ដៃគូ",
-      secAuthTitle: "អ្នកចែកចាយបច្ចេកវិទ្យាឆ្លាតវៃផ្លូវការ និងក្រុមវិស្វកម្មដែលគួរឱ្យទុកចិត្ត",
+      secAuthTitle: "អ្នកចែកចាយបច្ចេកវិទ្យាឆ្លាតវៃដែលទទួលស្គាល់ និងក្រុមវិស្វករដែលអាចទុកចិត្តបាន",
       secAuthDesc:
-        "Mugnee Cambodia ផ្គត់ផ្គង់គ្រឿងបន្លាស់ LED និងប្រព័ន្ធគ្រប់គ្រងស្តង់ដារអន្តរជាតិ ជាមួយក្រុមវិស្វករដែលមានវិញ្ញាបនបត្រ និងសេវាកម្មគាំទ្រនៅកម្ពុជា។",
+        "Mugnee Cambodia ធ្វើការជាមួយដៃគូផលិតកម្មដែលទទួលស្គាល់ និងក្រុមវិស្វករដែលមានវិញ្ញាបនបត្រ ដើម្បីធានាការអនុវត្តគម្រោងបានត្រឹមត្រូវ។",
       secServiceEyebrow: "តំបន់សេវាកម្ម",
-      secServiceTitle: "តំបន់សេវាកម្មទូទាំងកម្ពុជា",
+      secServiceTitle: "សេវាកម្មទូទាំងកម្ពុជា",
       secServiceDesc:
-        "សេវាដំឡើង ការត្រួតពិនិត្យដំណើរការ និងសេវាកម្មបន្ទាប់ពីលក់ នៅ Phnom Penh, Siem Reap, Sihanoukville និងតំបន់ជិតខាង។",
-      secContactEyebrow: "គាំទ្រក្នុងស្រុក",
-      secContactTitle: "ការិយាល័យកម្ពុជា & សេវាគាំទ្រគម្រោង",
+        "សេវាដំឡើង សាកល្បងដំណើរការ និងគាំទ្របន្ទាប់ពីលក់ នៅ Phnom Penh, Siem Reap, Sihanoukville និងខេត្តជិតខាង។",
+      secContactEyebrow: "ការគាំទ្រក្នុងស្រុក",
+      secContactTitle: "ការិយាល័យកម្ពុជា និងការគាំទ្រគម្រោង",
       secContactDesc:
-        "ទាក់ទងក្រុមការងារនៅកម្ពុជា សម្រាប់ការកំណត់ Scope, ពេលវេលា និងស្នើសុំតម្លៃតាមគម្រោង។",
+        "ទំនាក់ទំនងក្រុមការងារក្នុងស្រុករបស់យើង សម្រាប់កំណត់ Scope គម្រោង រៀបចំកាលវិភាគ និងស្នើសុំតម្លៃ។",
       secFaqEyebrow: "សំណួរញឹកញាប់",
-      secFaqTitle: "សំណួរដែលអ្នកទិញនៅកម្ពុជាសួរញឹកញាប់",
-      secFaqDesc: "ចម្លើយខ្លី និងច្បាស់ ដើម្បីជួយអ្នកសម្រេចចិត្តបានមានទំនុកចិត្ត។",
+      secFaqTitle: "សំណួរញឹកញាប់ពីអតិថិជននៅកម្ពុជា",
+      secFaqDesc: "ចម្លើយខ្លីៗ ច្បាស់ៗ ដើម្បីជួយអ្នកសម្រេចចិត្តបានកាន់តែជាក់ច្បាស់។",
     };
 
     return lang === "en" ? en : sanitizeLocaleText(km, en);
@@ -510,7 +510,18 @@ export default function HomeClient({
       aria-label="Previous slide"
       className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/45 text-white ring-1 ring-white/30 backdrop-blur-[2px] transition hover:bg-black/65"
     >
-      <span aria-hidden="true">←</span>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
     </button>
   </div>
   <div className="absolute inset-y-0 right-0 z-30 flex items-center pr-3 sm:pr-4">
@@ -520,7 +531,18 @@ export default function HomeClient({
       aria-label="Next slide"
       className="pointer-events-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/45 text-white ring-1 ring-white/30 backdrop-blur-[2px] transition hover:bg-black/65"
     >
-      <span aria-hidden="true">→</span>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M9 18l6-6-6-6" />
+      </svg>
     </button>
   </div>
 </section>
@@ -702,7 +724,7 @@ export default function HomeClient({
               <p className="mt-4 text-sm leading-relaxed text-slate-600">
                 {lang === "en"
                   ? "By aligning with trusted global development ecosystems, Mugnee supports responsible digital commerce growth, technology access, and inclusive market development in Cambodia."
-                  : "តាមរយៈការស្របតាមប្រព័ន្ធអភិវឌ្ឍន៍សកលដែលគួរឱ្យទុកចិត្ត Mugnee គាំទ្រកំណើនពាណិជ្ជកម្មឌីជីថលប្រកបដោយការទទួលខុសត្រូវ ការចូលប្រើបច្ចេកវិទ្យា និងការអភិវឌ្ឍទីផ្សារដែលរួមបញ្ចូលនៅកម្ពុជា។"}
+                  : "តាមរយៈការសម្របសម្រួលជាមួយបណ្តាញអភិវឌ្ឍន៍អន្តរជាតិដែលអាចទុកចិត្តបាន Mugnee គាំទ្រកំណើនពាណិជ្ជកម្មឌីជីថល ការចូលដំណើរការបច្ចេកវិទ្យា និងការអភិវឌ្ឍទីផ្សារដែលរួមបញ្ចូលនៅកម្ពុជា។"}
               </p>
 
               <p className="mt-3 text-xs leading-relaxed text-slate-400">
@@ -714,7 +736,7 @@ export default function HomeClient({
                   href="/contact"
                   className="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
                 >
-                  {lang === "en" ? "Explore Collaboration Opportunities" : "ស្វែងយល់អំពីឱកាសសហការ"}
+                  {lang === "en" ? "Explore Collaboration Opportunities" : "ស្វែងរកឱកាសសហការ"}
                 </a>
               </div>
             </>
@@ -793,9 +815,9 @@ export default function HomeClient({
               : [
                   "អង្គភាពមានវិញ្ញាបនបត្រ ISO",
                   "វិស្វករមានវិញ្ញាបនបត្រ ABC",
-                  "បទពិសោធន៍ដឹកនាំគម្រោង",
-                  "សេវាគាំទ្រ 24/7",
-                  "សេវាកម្មលើទីតាំង",
+                  "បទពិសោធន៍តាមឧស្សាហកម្ម",
+                  "គាំទ្រ 24/7",
+                  "សេវាកម្មនៅទីតាំង",
                 ]).map((badge) => (
               <span
                 key={badge}
@@ -865,15 +887,29 @@ export default function HomeClient({
                 <p className="text-sm text-slate-600">
                   {lang === "en"
                     ? "Share your location, project type, and timeline. Our team will propose a practical scope and quotation."
-                    : "សូមចែករំលែកទីតាំង ប្រភេទគម្រោង និងពេលវេលា ដើម្បីឲ្យក្រុមការងារយើងរៀបចំ Scope និងសម្រង់តម្លៃសមស្រប។"}
+                    : "សូមចែករំលែកទីតាំង ប្រភេទគម្រោង និងកាលវិភាគ។ ក្រុមការងារយើងនឹងស្នើ Scope និងតម្លៃដែលសមស្របជាក់ស្តែង។"}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-6 py-3 text-base font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(15,23,42,0.45)]"
                   >
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15 text-sm">
-                      →
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15">
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        className="h-3.5 w-3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+                        <path d="M14 3v5h5" />
+                        <path d="M9 13h6" />
+                        <path d="M9 17h6" />
+                      </svg>
                     </span>
                     {lang === "en" ? "Request a Quotation" : "ស្នើសុំតម្លៃ"}
                   </a>
@@ -881,8 +917,19 @@ export default function HomeClient({
                     href="/contact"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
                   >
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-sm text-slate-700">
-                      ☎
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                      <svg
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        className="h-3.5 w-3.5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.64a2 2 0 0 1-.45 2.11L8 9.89a16 16 0 0 0 6.11 6.11l1.42-1.32a2 2 0 0 1 2.11-.45c.85.32 1.74.54 2.64.66A2 2 0 0 1 22 16.92z" />
+                      </svg>
                     </span>
                     {lang === "en" ? "Contact Cambodia Office" : "ទាក់ទងការិយាល័យកម្ពុជា"}
                   </a>
@@ -899,12 +946,12 @@ export default function HomeClient({
                     : "ជាន់ទី១, 11E0, ផ្លូវ 108, តំបន់ Night Market, Doun Penh, Phnom Penh, Cambodia"}
                 </p>
                 <p className="mt-2">
-                  {lang === "en" ? "Phone: +85586817907" : "ទូរស័ព្ទ៖ +85586817907"}
+                  {lang === "en" ? "Phone: +85586817907" : "ទូរស័ព្ទ: +85586817907"}
                 </p>
                 <p className="mt-2">
                   {lang === "en"
                     ? "Hours: Mon-Sat, 8:30am-6:00pm"
-                    : "ម៉ោងធ្វើការ៖ ចន្ទ-សៅរ៍ 8:30am-6:00pm"}
+                    : "ម៉ោងធ្វើការ: ច័ន្ទ-សៅរ៍ 8:30am-6:00pm"}
                 </p>
               </div>
             </div>
@@ -1028,3 +1075,5 @@ export default function HomeClient({
     </div>
   );
 }
+
+

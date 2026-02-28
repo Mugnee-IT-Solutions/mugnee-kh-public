@@ -16,21 +16,18 @@ import {
 import { SITE_URL } from "../../../lib/site";
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
-  const params = new Set<string>();
-  for (const product of getAllProducts()) {
-    if (product.slug) params.add(product.slug);
-    if (product.id) params.add(product.id);
-    if (product.id?.startsWith("pa-")) params.add(product.id.replace(/^pa-/, ""));
-  }
-  return Array.from(params).map((slug) => ({ slug }));
+  return getAllProducts()
+    .filter((product) => Boolean(product.slug))
+    .map((product) => ({ slug: product.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const product = getProductBySlug(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) return {};
   const productUrl = `${SITE_URL}/products/catalog/${product.slug}`;
   const defaultImageUrl = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
@@ -76,8 +73,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function ProductDetailPage({ params }: PageProps) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) notFound();
   const productUrl = `${SITE_URL}/products/catalog/${product.slug}`;
   const productsUrl = `${SITE_URL}/products`;

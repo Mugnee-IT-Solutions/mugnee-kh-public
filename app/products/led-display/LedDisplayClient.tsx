@@ -737,33 +737,6 @@ export default function LedDisplayClient({
             </a>
           </div>
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            {(lang === "en"
-              ? [
-                  ["Indoor LED Display", "/led-display/indoor-led-display"],
-                  ["Outdoor LED Display", "/led-display/outdoor-led-display"],
-                  ["Receiving Card Guide", "/led-display/receiving-card"],
-                  ["Video Processor Guide", "/led-display/video-processor"],
-                  ["Power Supply Guide", "/led-display/power-supply"],
-                ]
-              : [
-                  ["អេក្រង់ LED ក្នុងអគារ", "/led-display/indoor-led-display"],
-                  ["អេក្រង់ LED ខាងក្រៅ", "/led-display/outdoor-led-display"],
-                  ["មគ្គុទ្ទេសក៍ Receiving Card", "/led-display/receiving-card"],
-                  ["មគ្គុទ្ទេសក៍ Video Processor", "/led-display/video-processor"],
-                  ["មគ្គុទ្ទេសក៍ Power Supply", "/led-display/power-supply"],
-                ]
-            ).map(([label, href]) => (
-              <Link
-                key={href}
-                href={href}
-                className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-
         </div>
       </section>
 

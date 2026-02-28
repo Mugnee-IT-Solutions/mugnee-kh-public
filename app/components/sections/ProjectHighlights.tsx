@@ -38,24 +38,24 @@ const KHMER_RE = /[\u1780-\u17FF]/;
 const MOJIBAKE_RE = /\u00C3|\u00C2|\u00E2|\u0192|\uFFFD|\u00E1\u017E/;
 
 const CATEGORY_LABEL_KM_FALLBACK: Record<string, string> = {
-  indoor_led_display: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’áž“áž»áž„",
-  outdoor_led_display: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’ážšáŸ…",
-  rental_led_display: "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‡áž½áž›",
-  led_accessories: "áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ LED",
-  power_supply: "áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ážáž¶áž˜áž–áž›",
-  video_processor: "ážœáž¸ážŠáŸáž¢áž¼áž”áŸ’ážšáž¼ážŸáŸážŸáŸážš",
-  interactive_panel: "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜",
-  pa_speakers: "áž§áž”áž€ážšážŽáŸáž”áŸ†áž–áž„ážŸáŸ†áž¡áŸáž„ PA",
-  pa_microphones: "áž˜áž¸áž€áŸ’ážšáž¼áž áŸ’ážœáž¼áž“ PA",
-  pa_amplifiers: "áž¢áŸ†áž–áŸ’áž›áž¸áž áŸ’ážœáž¶áž™áž¢áŸážš PA",
-  pa_controllers: "áž§áž”áž€ážšážŽáŸáž”áž‰áŸ’áž‡áž¶ PA",
-  pa_network: "áž¢áž¼ážŒáž¸áž™áŸ‰áž¼áž”ážŽáŸ’ážáž¶áž‰",
-  pa_software: "áž€áž˜áŸ’áž˜ážœáž·áž’áž¸ PA",
-  pa_accessories: "áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ PA",
-  turnstile_tripod: "áž…áŸ’ážšáž€ Tripod Turnstile",
-  turnstile_flap_barrier: "áž…áŸ’ážšáž€ Flap Barrier",
-  turnstile_speed_gate: "áž…áŸ’ážšáž€ Speed Gate",
-  turnstile_full_height: "áž…áŸ’ážšáž€áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰",
+  indoor_led_display: "អេក្រង់ LED ខាងក្នុង",
+  outdoor_led_display: "អេក្រង់ LED ខាងក្រៅ",
+  rental_led_display: "អេក្រង់ LED សម្រាប់ជួល",
+  led_accessories: "គ្រឿងបន្លាស់ LED",
+  power_supply: "ផ្គត់ផ្គង់ថាមពល",
+  video_processor: "វីដេអូប្រូសេស័រ",
+  interactive_panel: "អេក្រង់អន្តរកម្ម",
+  pa_speakers: "ឧបករណ៍បំពងសំឡេង PA",
+  pa_microphones: "មីក្រូហ្វូន PA",
+  pa_amplifiers: "អំព្លីហ្វាយអ័រ PA",
+  pa_controllers: "ឧបករណ៍បញ្ជា PA",
+  pa_network: "អូឌីយ៉ូបណ្តាញ",
+  pa_software: "កម្មវិធី PA",
+  pa_accessories: "គ្រឿងបន្លាស់ PA",
+  turnstile_tripod: "ច្រក Tripod Turnstile",
+  turnstile_flap_barrier: "ច្រក Flap Barrier",
+  turnstile_speed_gate: "ច្រក Speed Gate",
+  turnstile_full_height: "ច្រកកម្ពស់ពេញ",
 };
 
 const DEFAULT_ALL_PRODUCTS_ORDER = [
@@ -124,42 +124,42 @@ function autoTranslateToKhmer(input: string) {
   if (!text || hasKhmer(text)) return text;
 
   const map: Array<[string, string]> = [
-    ["Interactive Flat Panel", "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜"],
-    ["Indoor LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’áž“áž»áž„"],
-    ["Outdoor LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’ážšáŸ…"],
-    ["Rental LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‡áž½áž›"],
-    ["LED Display Module", "áž˜áŸ‰áž¼ážŒáž»áž›áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
-    ["LED Screen Panel", "áž”áž“áŸ’áž‘áŸ‡áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
-    ["LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
-    ["Video Processor", "ážœáž¸ážŠáŸáž¢áž¼áž”áŸ’ážšáž¼ážŸáŸážŸáŸážš"],
-    ["Power Supply", "áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ážáž¶áž˜áž–áž›"],
-    ["PA System", "áž”áŸ’ážšáž–áŸáž“áŸ’áž’ PA"],
-    ["PA Speakers", "áž§áž”áž€ážšážŽáŸáž”áŸ†áž–áž„ážŸáŸ†áž¡áŸáž„ PA"],
-    ["PA Microphones", "áž˜áž¸áž€áŸ’ážšáž¼áž áŸ’ážœáž¼áž“ PA"],
-    ["PA Amplifiers", "áž¢áŸ†áž–áŸ’áž›áž¸áž áŸ’ážœáž¶áž™áž¢áŸážš PA"],
-    ["PA Controllers", "áž§áž”áž€ážšážŽáŸáž”áž‰áŸ’áž‡áž¶ PA"],
-    ["Network Audio", "áž¢áž¼ážŒáž¸áž™áŸ‰áž¼áž”ážŽáŸ’ážáž¶áž‰"],
-    ["PA Software", "áž€áž˜áŸ’áž˜ážœáž·áž’áž¸ PA"],
-    ["PA Accessories", "áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ PA"],
-    ["Interactive Panel", "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜"],
-    ["Smart Board", "ážŸáŸ’áž˜áž¶ážáž”áž¼ážŠ"],
-    ["Turnstile Gate", "áž…áŸ’ážšáž€ Turnstile"],
-    ["Tripod Turnstile", "áž…áŸ’ážšáž€ Tripod Turnstile"],
-    ["Flap Barrier", "áž…áŸ’ážšáž€ Flap Barrier"],
-    ["Speed Gate", "áž…áŸ’ážšáž€ Speed Gate"],
-    ["Full Height", "áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰"],
-    ["Ceiling Speakers", "áž§áž”áž€ážšážŽáŸáž”áŸ†áž–áž„ážŸáŸ†áž¡áŸáž„áž–áž·ážŠáž¶áž“"],
-    ["All-in-one", "ážšáž½áž˜áž”áž‰áŸ’áž…áž¼áž›áž‚áŸ’áž“áž¶"],
-    ["high resolution", "áž‚áž»ážŽáž—áž¶áž–áž”áž„áŸ’áž áž¶áž‰ážáŸ’áž–ážŸáŸ‹"],
-    ["high clarity", "áž—áž¶áž–áž…áŸ’áž”áž¶ážŸáŸ‹ážáŸ’áž–ážŸáŸ‹"],
-    ["close-view", "áž˜áž¾áž›áž‡áž·áž"],
-    ["close viewing", "áž€áž¶ážšáž˜áž¾áž›áž‡áž·áž"],
-    ["for", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹"],
-    ["with", "áž‡áž¶áž˜áž½áž™"],
-    ["and", "áž“áž·áž„"],
-    ["in", "áž“áŸ…áž€áŸ’áž“áž»áž„"],
-    ["to", "áž‘áŸ…"],
-    ["from", "áž–áž¸"],
+    ["Interactive Flat Panel", "អេក្រង់អន្តរកម្ម"],
+    ["Indoor LED Display", "អេក្រង់ LED ខាងក្នុង"],
+    ["Outdoor LED Display", "អេក្រង់ LED ខាងក្រៅ"],
+    ["Rental LED Display", "អេក្រង់ LED សម្រាប់ជួល"],
+    ["LED Display Module", "ម៉ូឌុលអេក្រង់ LED"],
+    ["LED Screen Panel", "បន្ទះអេក្រង់ LED"],
+    ["LED Display", "អេក្រង់ LED"],
+    ["Video Processor", "វីដេអូប្រូសេស័រ"],
+    ["Power Supply", "ផ្គត់ផ្គង់ថាមពល"],
+    ["PA System", "ប្រព័ន្ធ PA"],
+    ["PA Speakers", "ឧបករណ៍បំពងសំឡេង PA"],
+    ["PA Microphones", "មីក្រូហ្វូន PA"],
+    ["PA Amplifiers", "អំព្លីហ្វាយអ័រ PA"],
+    ["PA Controllers", "ឧបករណ៍បញ្ជា PA"],
+    ["Network Audio", "អូឌីយ៉ូបណ្តាញ"],
+    ["PA Software", "កម្មវិធី PA"],
+    ["PA Accessories", "គ្រឿងបន្លាស់ PA"],
+    ["Interactive Panel", "អេក្រង់អន្តរកម្ម"],
+    ["Smart Board", "ស្មាតបូដ"],
+    ["Turnstile Gate", "ច្រក Turnstile"],
+    ["Tripod Turnstile", "ច្រក Tripod Turnstile"],
+    ["Flap Barrier", "ច្រក Flap Barrier"],
+    ["Speed Gate", "ច្រក Speed Gate"],
+    ["Full Height", "កម្ពស់ពេញ"],
+    ["Ceiling Speakers", "ឧបករណ៍បំពងសំឡេងពិដាន"],
+    ["All-in-one", "រួមបញ្ចូលគ្នា"],
+    ["high resolution", "គុណភាពបង្ហាញខ្ពស់"],
+    ["high clarity", "ភាពច្បាស់ខ្ពស់"],
+    ["close-view", "មើលជិត"],
+    ["close viewing", "ការមើលជិត"],
+    ["for", "សម្រាប់"],
+    ["with", "ជាមួយ"],
+    ["and", "និង"],
+    ["in", "នៅក្នុង"],
+    ["to", "ទៅ"],
+    ["from", "ពី"],
   ];
 
   let out = text;
@@ -168,7 +168,7 @@ function autoTranslateToKhmer(input: string) {
   }
 
   if (hasKhmer(out)) return out;
-  return `áž•áž›áž·ážáž•áž› ${text}`;
+  return `ផលិតផល ${text}`;
 }
 
 function localizedKhmer(valueKm: string, fallbackEn: string) {
@@ -384,7 +384,7 @@ export default function ProductGrid({
                   : "border-slate-200 bg-white text-slate-700 hover:border-slate-300",
               ].join(" ")}
             >
-              {lang === "en" ? "All Products" : "áž•áž›áž·ážáž•áž›áž‘áž¶áŸ†áž„áž¢ážŸáŸ‹"}
+              {lang === "en" ? "All Products" : "ផលិតផលទាំងអស់"}
             </button>
             {availableCategories.map((cat) => (
               <button
@@ -452,7 +452,7 @@ export default function ProductGrid({
           <div className="col-span-full rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600">
             {lang === "en"
               ? `No results found${searchTerm?.trim() ? ` for "${searchTerm.trim()}"` : ""}.`
-              : `ážšáž€áž˜áž·áž“ážƒáž¾áž‰áž›áž‘áŸ’áž’áž•áž›${searchTerm?.trim() ? ` ážŸáž˜áŸ’ážšáž¶áž”áŸ‹ "${searchTerm.trim()}"` : ""}áŸ”`}
+              : `រកមិនឃើញលទ្ធផល${searchTerm?.trim() ? ` សម្រាប់ "${searchTerm.trim()}"` : ""}។`}
           </div>
         ) : null}
         {paginated.map((product) => {
@@ -464,7 +464,7 @@ export default function ProductGrid({
               : getCategoryLabel(primaryCategory, "km")
             : lang === "en"
               ? "Product"
-              : "áž•áž›áž·ážáž•áž›";
+              : "ផលិតផល";
 
           return (
             <div
@@ -511,13 +511,13 @@ export default function ProductGrid({
                     href="/contact"
                     className="rounded-full bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white no-underline hover:bg-slate-800"
                   >
-                    {lang === "en" ? "Get Quotation" : "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ"}
+                    {lang === "en" ? "Get Quotation" : "ស្នើសុំតម្លៃ"}
                   </Link>
                   <Link
                     href={detailHref}
                     className="rounded-full border border-slate-200 px-3 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-300"
                   >
-                    {lang === "en" ? "View details" : "áž˜áž¾áž›áž›áž˜áŸ’áž¢áž·áž"}
+                    {lang === "en" ? "View details" : "មើលលម្អិត"}
                   </Link>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-/*
+﻿/*
   Developer Signature:
   This website was developed by Mugnee IT Solutions.
   Developer Name: Ankur Datta
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`,
+        url: `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.png`,
         width: 1200,
         height: 630,
         alt: "Outdoor LED display and billboard in Cambodia",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Outdoor LED Display Cambodia | Best Price & Installation",
     description:
       "Outdoor LED billboard and digital signage solutions in Cambodia with local installation and support.",
-    images: [`${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`],
+    images: [`${SITE_URL}/images/hero/cambodia-led-billboard-advertising.png`],
   },
 };
 
@@ -258,7 +258,9 @@ export default function OutdoorLedDisplayPage() {
                 ប្រភេទអេក្រង់ LED ខាងក្រៅ
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                ការជ្រើសរើសអេក្រង់ LED ខាងក្រៅ គួរពិនិត្យតាមកម្រិតពន្លឺ កម្រិតការពារ IP ចម្ងាយមើល និងសុវត្ថិភាពរចនាសម្ព័ន្ធ។ ប្រភេទខាងក្រោមគឺជាប្រភេទផ្ទាំងខាងក្រៅដែលប្រើញឹកញាប់នៅតាមផ្លូវជាតិ លើដំបូល និងទីតាំងព័ត៌មានសាធារណៈនៅកម្ពុជា។
+                ការជ្រើសរើសអេក្រង់ LED ខាងក្រៅគួរពិនិត្យតាមកម្រិតពន្លឺ កម្រិតការពារ IP
+                ចម្ងាយមើល និងសុវត្ថិភាពរចនាសម្ព័ន្ធ។ ប្រភេទខាងក្រោមគឺជាប្រភេទផ្ទាំងខាងក្រៅ
+                ដែលប្រើញឹកញាប់នៅតាមផ្លូវជាតិ លើដំបូល និងតំបន់សាធារណៈនៅកម្ពុជា។
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
@@ -366,3 +368,5 @@ export default function OutdoorLedDisplayPage() {
     </>
   );
 }
+
+
