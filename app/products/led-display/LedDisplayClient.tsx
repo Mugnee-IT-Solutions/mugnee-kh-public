@@ -1031,6 +1031,171 @@ export default function LedDisplayClient({
           </div>
         </div>
       </section>
+      {/* LED MODULE TECHNOLOGY */}
+      <section id="led-module-technology" className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+              {lang === "en" ? "LED Module Technology" : "បច្ចេកវិទ្យាម៉ូឌុល LED"}
+            </p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900">
+              {lang === "en"
+                ? "Types of LED Display Technology – SMD, GOB & COB"
+                : "ប្រភេទបច្ចេកវិទ្យាអេក្រង់ LED – SMD, GOB និង COB"}
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 lg:whitespace-nowrap">
+              {lang === "en"
+                ? "Compare SMD, GOB, and COB LED display technology for indoor LED display, outdoor LED screen, fine-pitch LED video wall, and rental LED panel projects in Cambodia."
+                : "ប្រៀបធៀបបច្ចេកវិទ្យា SMD, GOB និង COB សម្រាប់គម្រោងអេក្រង់ LED ក្នុងអគារ អេក្រង់ LED ខាងក្រៅ ជញ្ជាំងវីដេអូ LED ភីកសែលល្អិត និងអេក្រង់ LED សម្រាប់ជួលនៅកម្ពុជា។"}
+            </p>
+
+            <div className="mt-6 grid gap-4 lg:grid-cols-[1.15fr_.85fr]">
+              <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-3 shadow-sm">
+                <div className="mb-2 text-xs font-semibold text-slate-500">
+                  {lang === "en"
+                    ? "Watch: SMD vs GOB vs COB – LED Display Technology Guide for Video Walls"
+                    : "វីដេអូ៖ SMD vs GOB vs COB - មគ្គុទ្ទេសក៍បច្ចេកវិទ្យាអេក្រង់ LED សម្រាប់ Video Wall"}
+                </div>
+                <div className="flex-1 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+                  <div className="relative h-full w-full overflow-hidden bg-black pt-[56.25%] lg:pt-0">
+                    <iframe
+                      className="absolute inset-0 h-full w-full"
+                      src="https://www.youtube-nocookie.com/embed/XqDWk-xHyJM?rel=0&modestbranding=1&playsinline=1&iv_load_policy=3"
+                      title="SMD vs GOB vs COB LED Display Technology"
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid gap-4">
+                {(lang === "en"
+                  ? [
+                      [
+                        "GOB Technology (Extra Protection Layer)",
+                        "GOB (Glue on Board) adds a clear protection layer over SMD LEDs for tougher daily use.",
+                        [
+                          "Best for: rental screens, school stages, and control rooms.",
+                          "Protection: stronger against impact, dust, and humidity.",
+                          "Maintenance: easier front cleaning with lower pixel damage risk.",
+                        ],
+                        ["GOB LED", "Impact resistant", "Rental ready"],
+                      ],
+                      [
+                        "COB Technology (Premium Fine Pitch)",
+                        "COB (Chip on Board) mounts LED chips directly on PCB for premium fine-pitch display quality.",
+                        [
+                          "Best for: boardrooms, studios, command centers, and showrooms.",
+                          "Viewing: better uniformity, deeper black level, and low glare.",
+                          "Durability: strong surface protection for long-term stability.",
+                        ],
+                        ["COB LED", "Fine pitch", "Premium indoor"],
+                      ],
+                    ]
+                  : [
+                      [
+                        "បច្ចេកវិទ្យា GOB (ស្រទាប់ការពារបន្ថែម)",
+                        "GOB (Glue on Board) មានស្រទាប់ការពារថ្លាលើ SMD LED ដែលសមស្របសម្រាប់ការប្រើប្រាស់ខ្ពស់ប្រចាំថ្ងៃ។",
+                        [
+                          "សមស្របសម្រាប់៖ អេក្រង់ជួល ឆាកសាលារៀន និងបន្ទប់បញ្ជា។",
+                          "ការការពារ៖ ធន់ល្អចំពោះការប៉ះទង្គិច ធូលី និងសំណើម។",
+                          "ការថែទាំ៖ សម្អាតផ្ទៃខាងមុខងាយ និងកាត់បន្ថយហានិភ័យខូចភីកសែល។",
+                        ],
+                        ["ការពារការប៉ះទង្គិច", "ងាយសម្អាត", "ធន់ជាងមុន"],
+                      ],
+                      [
+                        "បច្ចេកវិទ្យា COB (Fine Pitch កម្រិតខ្ពស់)",
+                        "COB (Chip on Board) ដំឡើងឈីប LED ផ្ទាល់លើ PCB ដើម្បីផ្តល់គុណភាពបង្ហាញ Fine Pitch កម្រិតខ្ពស់។",
+                        [
+                          "សមស្របសម្រាប់៖ បន្ទប់ប្រជុំ ស្ទូឌីយោ បន្ទប់បញ្ជា និង showroom។",
+                          "ការមើល៖ ភាពស្មើរគ្នាល្អ កម្រិតខ្មៅជ្រៅ និងពន្លឺមិនចាំងពេលមើលជិត។",
+                          "ភាពធន់៖ ការពារផ្ទៃបានល្អ និងរក្សាគុណភាពរូបភាពបានយូរ។",
+                        ],
+                        ["ភីកសែលល្អិត", "គុណភាពខ្ពស់", "មើលជិតច្បាស់"],
+                      ],
+                    ]
+                ).map((item) => {
+                  const [title, desc, bullets, chips] = item as [string, string, string[], string[]];
+                  return (
+                    <div key={title} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+                      <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+                      <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
+                        {bullets.map((b) => (
+                          <li key={b} className="flex gap-2">
+                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
+                            <span>{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-700">
+                        {chips.map((chip) => (
+                          <span
+                            key={chip}
+                            className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1"
+                          >
+                            {chip}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+              <h3 className="text-sm font-semibold text-slate-900">
+                {lang === "en"
+                  ? "SMD Technology (Most Common Type)"
+                  : "បច្ចេកវិទ្យា SMD (ប្រើប្រាស់ទូលំទូលាយបំផុត)"}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                {lang === "en"
+                  ? "SMD (Surface-Mounted Device) is the most common LED module technology for indoor LED screen and outdoor LED billboard projects, offering balanced price, brightness, and maintenance."
+                  : "SMD គឺជាបច្ចេកវិទ្យាដែលប្រើប្រាស់ទូលំទូលាយសម្រាប់អេក្រង់ LED ក្នុងអគារ និងខាងក្រៅ ដោយមានតុល្យភាពល្អរវាងតម្លៃ កម្រិតពន្លឺ និងភាពងាយស្រួលថែទាំ។"}
+              </p>
+              <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
+                {(lang === "en"
+                  ? [
+                      "Best for: retail digital signage, roadside LED billboard, church LED wall, and stage rental screens.",
+                      "Maintenance: easy LED module replacement with fast service turnaround.",
+                      "Visual performance: strong brightness, wide viewing angle, and stable color output.",
+                      "Cost efficiency: budget-friendly option across multiple pixel pitch ranges.",
+                    ]
+                  : [
+                      "សមស្របសម្រាប់៖ ផ្ទាំងផ្សព្វផ្សាយខាងក្រៅ ស្លាកសញ្ញាហាងលក់រាយ និងជញ្ជាំង LED សម្រាប់ឆាកជួល។",
+                      "ការថែទាំ៖ ប្តូរម៉ូឌុលងាយ និងសេវាកម្មលឿន។",
+                      "រូបភាព៖ មុំមើលល្អ និងពណ៌បង្ហាញល្អសម្រាប់ការប្រើប្រាស់ភាគច្រើន។",
+                      "ថវិកា៖ ជម្រើសសន្សំសំចៃជាមួយជម្រើស Pixel Pitch ទូលំទូលាយ។",
+                    ]
+                ).map((b) => (
+                  <li key={b} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-900" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-semibold text-slate-700">
+                {(lang === "en"
+                  ? ["SMD LED", "Indoor & Outdoor", "Cost-efficient"]
+                  : ["តម្លៃសមរម្យ", "ងាយថែទាំ", "ក្នុងអគារ និងខាងក្រៅ"]
+                ).map((chip) => (
+                  <span
+                    key={chip}
+                    className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* TYPES IN CAMBODIA */}
       <section id="types-cambodia" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

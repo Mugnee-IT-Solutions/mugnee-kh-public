@@ -48,7 +48,7 @@ export const PRODUCT_CATEGORIES: ProductCategory[] = [
     labelKm: "អេក្រង់ LED",
     slug: "led-display",
     descriptionEn: "Indoor, outdoor and rental LED display systems.",
-    descriptionKm: "ប្រព័ន្ធអេក្រង់ LED សម្រាប់ក្នុង អក្រៅ និងជួល។",
+    descriptionKm: "ប្រព័ន្ធអេក្រង់ LED សម្រាប់ក្នុង ខាងក្រៅ និងជួល។",
   },
   {
     id: "indoor_led_display",
@@ -488,7 +488,7 @@ export const PRODUCTS: Product[] = [
     seoDescEn:
       "Buy P1.25mm Indoor LED Display Module from Mugnee – ultra-high resolution display for control rooms, studios, and premium indoor signage.",
     seoDescKm:
-      "Buy P1.25mm Indoor LED Display Module from Mugnee  ultra-high resolution display for control rooms, studios, and premium indoor signage.",
+      "Buy P1.25mm Indoor LED Display Module from Mugnee – ultra-high resolution display for control rooms, studios, and premium indoor signage.",
   },
   {
     id: "p1-53-indoor-led-module",
@@ -6196,7 +6196,7 @@ export const PRODUCTS: Product[] = [
     shortDescEn:
       "Key Features • Function: Automatic Audio Playback &amp; Zone Scheduling • Scheduling Options: Daily, Weekly, Monthly Event Schedules • Control Interface: Touchscreen LCD Display • Playback Support: MP3/WAV via USB &amp; Internal Storage • Zone Control: Supports Up to 8 Output Zones • Internal Storage: Built-in Flash Memory (Up to 16GB) • External Storage: USB Port for Additional Audio Files • Audio Outputs: 100V Line or RCA Outputs • Connectivity: RS-485 / TCP-IP / USB • Power Supply: AC 110V–240V, 50/60Hz • Mount Type: Standard 1U Rack-Mountable • Warranty: 1 Year",
     shortDescKm:
-      "Key Features  Function: Automatic Audio Playback &amp; Zone Scheduling  Scheduling Options: Daily, Weekly, Monthly Event Schedules  Control Interface: Touchscreen LCD Display  Playback Support: MP3/WAV via USB &amp; Internal Storage  Zone Control: Supports Up to 8 Output Zones  Internal Storage: Built-in Flash Memory (Up to 16GB)  External Storage: USB Port for Additional Audio Files  Audio Outputs: 100V Line or RCA Outputs  Connectivity: RS-485 / TCP-IP / USB  Power Supply: AC 110V240V, 50/60Hz  Mount Type: Standard 1U Rack-Mountable  Warranty: 1 Year",
+      "Key Features • Function: Automatic Audio Playback &amp; Zone Scheduling • Scheduling Options: Daily, Weekly, Monthly Event Schedules • Control Interface: Touchscreen LCD Display • Playback Support: MP3/WAV via USB &amp; Internal Storage • Zone Control: Supports Up to 8 Output Zones • Internal Storage: Built-in Flash Memory (Up to 16GB) • External Storage: USB Port for Additional Audio Files • Audio Outputs: 100V Line or RCA Outputs • Connectivity: RS-485 / TCP-IP / USB • Power Supply: AC 110V–240V, 50/60Hz • Mount Type: Standard 1U Rack-Mountable • Warranty: 1 Year",
     descriptionEn:
       "Scheduler Based Audio Control System supports reliable public address deployments for schools, offices, factories, and public venues across Cambodia.",
     descriptionKm:
@@ -6239,7 +6239,7 @@ export const PRODUCTS: Product[] = [
     seoDescEn:
       "Key Features • Function: Automatic Audio Playback &amp; Zone Scheduling • Scheduling Options: Daily, Weekly, Monthly Event Schedules • Control Interface: Touchscreen LCD Display • Playback Support: MP3/WAV via USB &amp; Internal Storage • Zone Control: Supports Up to 8 Output Zones • Internal Storage: Built-in Flash Memory (Up to 16GB) • External Storage: USB Port for Additional Audio Files • Audio Outputs: 100V Line or RCA Outputs • Connectivity: RS-485 / TCP-IP / USB • Power Supply: AC 110V–240V, 50/60Hz • Mount Type: Standard 1U Rack-Mountable • Warranty: 1 Year",
     seoDescKm:
-      "Key Features  Function: Automatic Audio Playback &amp; Zone Scheduling  Scheduling Options: Daily, Weekly, Monthly Event Schedules  Control Interface: Touchscreen LCD Display  Playback Support: MP3/WAV via USB &amp; Internal Storage  Zone Control: Supports Up to 8 Output Zones  Internal Storage: Built-in Flash Memory (Up to 16GB)  External Storage: USB Port for Additional Audio Files  Audio Outputs: 100V Line or RCA Outputs  Connectivity: RS-485 / TCP-IP / USB  Power Supply: AC 110V240V, 50/60Hz  Mount Type: Standard 1U Rack-Mountable  Warranty: 1 Year",
+      "Key Features • Function: Automatic Audio Playback &amp; Zone Scheduling • Scheduling Options: Daily, Weekly, Monthly Event Schedules • Control Interface: Touchscreen LCD Display • Playback Support: MP3/WAV via USB &amp; Internal Storage • Zone Control: Supports Up to 8 Output Zones • Internal Storage: Built-in Flash Memory (Up to 16GB) • External Storage: USB Port for Additional Audio Files • Audio Outputs: 100V Line or RCA Outputs • Connectivity: RS-485 / TCP-IP / USB • Power Supply: AC 110V–240V, 50/60Hz • Mount Type: Standard 1U Rack-Mountable • Warranty: 1 Year",
   },
   {
     id: "pa-remote-control-wall-panel",
@@ -6308,7 +6308,7 @@ export const PRODUCTS: Product[] = [
     shortDescEn:
       "Key Features •Matrix Routing: 8 Audio Inputs × 8 Zone Outputs •Digital Control: Full Matrix DSP with Zone Assignment •Control Options: Front Panel, Remote Paging Mic, or PC Software •Input Types: MIC/LINE Selectable Inputs with Phantom Power •Output Types: Balanced Line Outputs (Zone Selectable) •Audio Processing: Built-in DSP for EQ, Gain, Priority, Delay •Display: LCD Display with Navigation Buttons •Communication Port: RS-232 / RS-485 / TCP/IP •Remote Control: Compatible with Wall Controllers &amp; Paging Stations •Power Supply: AC 110V–240V, 50/60Hz •Mount Type: Standard 2U Rack-Mount •Warranty: 2 Years",
     shortDescKm:
-      "Key Features Matrix Routing: 8 Audio Inputs × 8 Zone Outputs Digital Control: Full Matrix DSP with Zone Assignment Control Options: Front Panel, Remote Paging Mic, or PC Software Input Types: MIC/LINE Selectable Inputs with Phantom Power Output Types: Balanced Line Outputs (Zone Selectable) Audio Processing: Built-in DSP for EQ, Gain, Priority, Delay Display: LCD Display with Navigation Buttons Communication Port: RS-232 / RS-485 / TCP/IP Remote Control: Compatible with Wall Controllers &amp; Paging Stations Power Supply: AC 110V240V, 50/60Hz Mount Type: Standard 2U Rack-Mount Warranty: 2 Years",
+      "Key Features •Matrix Routing: 8 Audio Inputs × 8 Zone Outputs •Digital Control: Full Matrix DSP with Zone Assignment •Control Options: Front Panel, Remote Paging Mic, or PC Software •Input Types: MIC/LINE Selectable Inputs with Phantom Power •Output Types: Balanced Line Outputs (Zone Selectable) •Audio Processing: Built-in DSP for EQ, Gain, Priority, Delay •Display: LCD Display with Navigation Buttons •Communication Port: RS-232 / RS-485 / TCP/IP •Remote Control: Compatible with Wall Controllers &amp; Paging Stations •Power Supply: AC 110V–240V, 50/60Hz •Mount Type: Standard 2U Rack-Mount •Warranty: 2 Years",
     descriptionEn:
       "PA Matrix Controller supports reliable public address deployments for schools, offices, factories, and public venues across Cambodia.",
     descriptionKm:
@@ -6353,7 +6353,7 @@ export const PRODUCTS: Product[] = [
     seoDescEn:
       "Key Features •Matrix Routing: 8 Audio Inputs × 8 Zone Outputs •Digital Control: Full Matrix DSP with Zone Assignment •Control Options: Front Panel, Remote Paging Mic, or PC Software •Input Types: MIC/LINE Selectable Inputs with Phantom Power •Output Types: Balanced Line Outputs (Zone Selectable) •Audio Processing: Built-in DSP for EQ, Gain, Priority, Delay •Display: LCD Display with Navigation Buttons •Communication Port: RS-232 / RS-485 / TCP/IP •Remote Control: Compatible with Wall Controllers &amp; Paging Stations •Power Supply: AC 110V–240V, 50/60Hz •Mount Type: Standard 2U Rack-Mount •Warranty: 2 Years",
     seoDescKm:
-      "Key Features Matrix Routing: 8 Audio Inputs × 8 Zone Outputs Digital Control: Full Matrix DSP with Zone Assignment Control Options: Front Panel, Remote Paging Mic, or PC Software Input Types: MIC/LINE Selectable Inputs with Phantom Power Output Types: Balanced Line Outputs (Zone Selectable) Audio Processing: Built-in DSP for EQ, Gain, Priority, Delay Display: LCD Display with Navigation Buttons Communication Port: RS-232 / RS-485 / TCP/IP Remote Control: Compatible with Wall Controllers &amp; Paging Stations Power Supply: AC 110V240V, 50/60Hz Mount Type: Standard 2U Rack-Mount Warranty: 2 Years",
+      "Key Features •Matrix Routing: 8 Audio Inputs × 8 Zone Outputs •Digital Control: Full Matrix DSP with Zone Assignment •Control Options: Front Panel, Remote Paging Mic, or PC Software •Input Types: MIC/LINE Selectable Inputs with Phantom Power •Output Types: Balanced Line Outputs (Zone Selectable) •Audio Processing: Built-in DSP for EQ, Gain, Priority, Delay •Display: LCD Display with Navigation Buttons •Communication Port: RS-232 / RS-485 / TCP/IP •Remote Control: Compatible with Wall Controllers &amp; Paging Stations •Power Supply: AC 110V–240V, 50/60Hz •Mount Type: Standard 2U Rack-Mount •Warranty: 2 Years",
   },
   {
     id: "pa-zone-selector",
@@ -7047,7 +7047,7 @@ export const PRODUCTS: Product[] = [
     shortDescEn: "Tripod turnstile for secure access control.",
     shortDescKm: "ច្រកទ្វារបីដង for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
     descriptionEn: "Key Features: • Framework Material : 304 Full Stainless Steel• Passing Direction : Single / Bi-directional• Passage Width : 550 mm (Arm Length 500 mm)• Passing Speed : Up to 35 Persons / Minute• LED Indicator : Yes• Emergency Function : Automatic Arm Open When Power Off• Operation Voltage : 24V DC• Power Supply : AC 110V / 220V, 50/60Hz• Power Consumption : 40W• Working Environment : Indoor / Outdoor• Communication Interface : Dry Contact, Relay Signal, RS485",
-    descriptionKm: "Key Features:  Framework Material : 304 Full Stainless Steel Passing Direction : Single / Bi-directional Passage Width : 550 mm (Arm Length 500 mm) Passing Speed : Up to 35 Persons / Minute LED Indicator : Yes Emergency Function : Automatic Arm Open When Power Off Operation Voltage : 24V DC ឧបករណ៍ផ្គត់ផ្គង់ថាមពល : AC 110V / 220V, 50/60Hz ការប្រើប្រាស់ថាមពល : 40W Working Environment : ក្នុងអគារ / ខាងក្រៅ Communication Interface : Dry Contact, Relay Signal, RS485",
+    descriptionKm: "Key Features: • Framework Material : 304 Full Stainless Steel• Passing Direction : Single / Bi-directional• Passage Width : 550 mm (Arm Length 500 mm)• Passing Speed : Up to 35 Persons / Minute• LED Indicator : Yes• Emergency Function : Automatic Arm Open When Power Off• Operation Voltage : 24V DC• ឧបករណ៍ផ្គត់ផ្គង់ថាមពល : AC 110V / 220V, 50/60Hz• ការប្រើប្រាស់ថាមពល : 40W• Working Environment : ក្នុងអគារ / ខាងក្រៅ• Communication Interface : Dry Contact, Relay Signal, RS485",
     featuresEn: ["Tripod turnstile design", "RFID/QR/biometric integration", "Durable stainless-steel body"],
     featuresKm: ["ច្រកទ្វារបីដង design", "RFID/QR/biometric ការរួមបញ្ចូលប្រព័ន្ធ", "Durable stainless-steel body"],
     applicationsEn: ["Office", "Factory", "Public venue"],
@@ -7063,7 +7063,7 @@ export const PRODUCTS: Product[] = [
     seoTitleEn: "Tripod Turnstile Gate DS112 for Secure Access Control in Cambodia",
     seoTitleKm: "ច្រកទ្វារបីដង Gate DS112 for Secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ in Cambodia",
     seoDescEn: "Key Features: • Framework Material : 304 Full Stainless Steel• Passing Direction : Single / Bi-directional• Passage Width : 550 mm (Arm Length 500 mm)• Passing Speed : Up to 35 Persons / Minute• LED Indicator : Yes• Emergency Function : Automatic Arm Open When Power Off• Operation Voltage : 24V DC• Power Supply : AC 110V / 220V, 50/60Hz• Power Consumption : 40W• Working Environment : Indoor / Outdoor• Communication Interface : Dry Contact, Relay Signal, RS485",
-    seoDescKm: "Key Features:  Framework Material : 304 Full Stainless Steel Passing Direction : Single / Bi-directional Passage Width : 550 mm (Arm Length 500 mm) Passing Speed : Up to 35 Persons / Minute LED Indicator : Yes Emergency Function : Automatic Arm Open When Power Off Operation Voltage : 24V DC ឧបករណ៍ផ្គត់ផ្គង់ថាមពល : AC 110V / 220V, 50/60Hz ការប្រើប្រាស់ថាមពល : 40W Working Environment : ក្នុងអគារ / ខាងក្រៅ Communication Interface : Dry Contact, Relay Signal, RS485",
+    seoDescKm: "Key Features: • Framework Material : 304 Full Stainless Steel• Passing Direction : Single / Bi-directional• Passage Width : 550 mm (Arm Length 500 mm)• Passing Speed : Up to 35 Persons / Minute• LED Indicator : Yes• Emergency Function : Automatic Arm Open When Power Off• Operation Voltage : 24V DC• ឧបករណ៍ផ្គត់ផ្គង់ថាមពល : AC 110V / 220V, 50/60Hz• ការប្រើប្រាស់ថាមពល : 40W• Working Environment : ក្នុងអគារ / ខាងក្រៅ• Communication Interface : Dry Contact, Relay Signal, RS485",
   },
   {
     id: "turnstile-turnstile-gate-dsn-30",
@@ -7103,7 +7103,7 @@ export const PRODUCTS: Product[] = [
     shortDescEn: "Speed gate for secure access control.",
     shortDescKm: "ច្រកល្បឿនលឿន for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
     descriptionEn: "DS7300 Speed Gate Turnstile with stainless steel body, Plexiglas arm, single/bi-directional access, 45–55 persons/min flow, and IR sensors.",
-    descriptionKm: "DS7300 ច្រកល្បឿនលឿន Turnstile with stainless steel body, Plexiglas arm, single/bi-directional access, 4555 persons/min flow, and IR sensors.",
+    descriptionKm: "DS7300 ច្រកល្បឿនលឿន Turnstile with stainless steel body, Plexiglas arm, single/bi-directional access, 45–55 persons/min flow, and IR sensors.",
     featuresEn: ["Speed gate design", "RFID/QR/biometric integration", "Durable stainless-steel body"],
     featuresKm: ["ច្រកល្បឿនលឿន design", "RFID/QR/biometric ការរួមបញ្ចូលប្រព័ន្ធ", "Durable stainless-steel body"],
     applicationsEn: ["Office", "Factory", "Public venue"],
@@ -7119,7 +7119,7 @@ export const PRODUCTS: Product[] = [
     seoTitleEn: "DS7300 Speed Gate Turnstile for Secure Access in Cambodia",
     seoTitleKm: "DS7300 ច្រកល្បឿនលឿន Turnstile for Secure Access in Cambodia",
     seoDescEn: "DS7300 Speed Gate Turnstile with stainless steel body, Plexiglas arm, single/bi-directional access, 45–55 persons/min flow, and IR sensors.",
-    seoDescKm: "DS7300 ច្រកល្បឿនលឿន Turnstile with stainless steel body, Plexiglas arm, single/bi-directional access, 4555 persons/min flow, and IR sensors.",
+    seoDescKm: "DS7300 ច្រកល្បឿនលឿន Turnstile with stainless steel body, Plexiglas arm, single/bi-directional access, 45–55 persons/min flow, and IR sensors.",
   },
   {
     id: "turnstile-dsn-20-swing-turnstile-gate",
@@ -7411,7 +7411,7 @@ export const PRODUCTS: Product[] = [
     shortDescEn: "Speed gate for secure access control.",
     shortDescKm: "ច្រកល្បឿនលឿន for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
     descriptionEn: "The DS7100 Automatic Speed Gate Turnstile features a 304 stainless steel body, a Plexiglas arm, a single/bi-directional mode, a 600–1200 mm passage, and a 45–55 person/min speed.",
-    descriptionKm: "The DS7100 Automatic ច្រកល្បឿនលឿន Turnstile features a 304 stainless steel body, a Plexiglas arm, a single/bi-directional mode, a 6001200 mm passage, and a 4555 person/min speed.",
+    descriptionKm: "The DS7100 Automatic ច្រកល្បឿនលឿន Turnstile features a 304 stainless steel body, a Plexiglas arm, a single/bi-directional mode, a 600–1200 mm passage, and a 45–55 person/min speed.",
     featuresEn: ["Speed gate design", "RFID/QR/biometric integration", "Durable stainless-steel body"],
     featuresKm: ["ច្រកល្បឿនលឿន design", "RFID/QR/biometric ការរួមបញ្ចូលប្រព័ន្ធ", "Durable stainless-steel body"],
     applicationsEn: ["Office", "Factory", "Public venue"],
@@ -7427,7 +7427,7 @@ export const PRODUCTS: Product[] = [
     seoTitleEn: "DS7100 Automatic Speed Gate Turnstile for Access Control in Cambodia",
     seoTitleKm: "DS7100 Automatic ច្រកល្បឿនលឿន Turnstile for ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ in Cambodia",
     seoDescEn: "The DS7100 Automatic Speed Gate Turnstile features a 304 stainless steel body, a Plexiglas arm, a single/bi-directional mode, a 600–1200 mm passage, and a 45–55 person/min speed.",
-    seoDescKm: "The DS7100 Automatic ច្រកល្បឿនលឿន Turnstile features a 304 stainless steel body, a Plexiglas arm, a single/bi-directional mode, a 6001200 mm passage, and a 4555 person/min speed.",
+    seoDescKm: "The DS7100 Automatic ច្រកល្បឿនលឿន Turnstile features a 304 stainless steel body, a Plexiglas arm, a single/bi-directional mode, a 600–1200 mm passage, and a 45–55 person/min speed.",
   },
   {
     id: "turnstile-speed-lane-turnstile-automatic-pedestrian-access-gate",
@@ -7435,11 +7435,11 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate", "turnstile_speed_gate"],
     primaryCategoryId: "turnstile_speed_gate",
     titleEn: "Speed Lane Turnstile – Automatic Pedestrian Access Gate",
-    titleKm: "Speed Lane Turnstile  Automatic Pedestrian Access Gate",
+    titleKm: "Speed Lane Turnstile – Automatic Pedestrian Access Gate",
     shortDescEn: "Speed gate for secure access control.",
     shortDescKm: "ច្រកល្បឿនលឿន for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
     descriptionEn: "Key Features 304 stainless steel construction with modern design Programmable operation modes for various access needs Anti-collision safety with gentle gate retraction Automatic reset after timeout (1–60 seconds) Integration with access control, ticketing, and ESD systems Advanced infrared sensor array for safety and security LED direction indicators for clear entry/exit guidance Bi-directional operation with remote control support Handles 30–45 persons per minute",
-    descriptionKm: "Key Features 304 stainless steel construction with modern design Programmable operation modes for various access needs Anti-collision safety with gentle gate retraction Automatic reset after timeout (160 seconds) ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and ESD systems Advanced infrared sensor array for safety and security LED direction indicators for clear entry/exit guidance Bi-directional operation with remote control support Handles 3045 persons per minute",
+    descriptionKm: "Key Features 304 stainless steel construction with modern design Programmable operation modes for various access needs Anti-collision safety with gentle gate retraction Automatic reset after timeout (1–60 seconds) ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and ESD systems Advanced infrared sensor array for safety and security LED direction indicators for clear entry/exit guidance Bi-directional operation with remote control support Handles 30–45 persons per minute",
     featuresEn: ["Speed gate design", "RFID/QR/biometric integration", "Durable stainless-steel body"],
     featuresKm: ["ច្រកល្បឿនលឿន design", "RFID/QR/biometric ការរួមបញ្ចូលប្រព័ន្ធ", "Durable stainless-steel body"],
     applicationsEn: ["Office", "Factory", "Public venue"],
@@ -7453,9 +7453,9 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["Turnstile", "Access Control", "Cambodia"],
     tagsKm: ["Turnstile", "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", "Cambodia"],
     seoTitleEn: "Speed Lane Turnstile – Automatic Pedestrian Access Gate in Cambodia",
-    seoTitleKm: "Speed Lane Turnstile  Automatic Pedestrian Access Gate in Cambodia",
+    seoTitleKm: "Speed Lane Turnstile – Automatic Pedestrian Access Gate in Cambodia",
     seoDescEn: "Key Features 304 stainless steel construction with modern design Programmable operation modes for various access needs Anti-collision safety with gentle gate retraction Automatic reset after timeout (1–60 seconds) Integration with access control, ticketing, and ESD systems Advanced infrared sensor array for safety and security LED direction indicators for clear entry/exit guidance Bi-directional operation with remote control support Handles 30–45 persons per minute",
-    seoDescKm: "Key Features 304 stainless steel construction with modern design Programmable operation modes for various access needs Anti-collision safety with gentle gate retraction Automatic reset after timeout (160 seconds) ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and ESD systems Advanced infrared sensor array for safety and security LED direction indicators for clear entry/exit guidance Bi-directional operation with remote control support Handles 3045 persons per minute",
+    seoDescKm: "Key Features 304 stainless steel construction with modern design Programmable operation modes for various access needs Anti-collision safety with gentle gate retraction Automatic reset after timeout (1–60 seconds) ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and ESD systems Advanced infrared sensor array for safety and security LED direction indicators for clear entry/exit guidance Bi-directional operation with remote control support Handles 30–45 persons per minute",
   },
   {
     id: "turnstile-flap-turnstile-stainless-steel-double-wing-pedestrian-gate",
@@ -7463,11 +7463,11 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate", "turnstile_speed_gate"],
     primaryCategoryId: "turnstile_speed_gate",
     titleEn: "Flap Turnstile – Stainless Steel Double Wing Pedestrian Gate",
-    titleKm: "Flap Turnstile  Stainless Steel Double Wing Pedestrian Gate",
+    titleKm: "Flap Turnstile – Stainless Steel Double Wing Pedestrian Gate",
     shortDescEn: "Flap barrier for secure access control.",
     shortDescKm: "ច្រកស្លាបបិទបើក for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
     descriptionEn: "Key features Configurable operation modes: auto, one-way, or two-way Dual synchronized wings for smooth, coordinated movement Anti-collision safety with gentle gate retraction Automatic reset if passage is not completed within set time Integration with access control, ticketing, and biometric systems Three pairs of infrared sensors for safety and security LED direction indicators for user guidance Durable 304 stainless steel construction Handles 30–45 persons per minute",
-    descriptionKm: "Key features Configurable operation modes: auto, one-way, or two-way Dual synchronized wings for smooth, coordinated movement Anti-collision safety with gentle gate retraction Automatic reset if passage is not completed within set time ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and biometric systems Three pairs of infrared sensors for safety and security LED direction indicators for user guidance Durable 304 stainless steel construction Handles 3045 persons per minute",
+    descriptionKm: "Key features Configurable operation modes: auto, one-way, or two-way Dual synchronized wings for smooth, coordinated movement Anti-collision safety with gentle gate retraction Automatic reset if passage is not completed within set time ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and biometric systems Three pairs of infrared sensors for safety and security LED direction indicators for user guidance Durable 304 stainless steel construction Handles 30–45 persons per minute",
     featuresEn: ["Flap barrier design", "RFID/QR/biometric integration", "Durable stainless-steel body"],
     featuresKm: ["ច្រកស្លាបបិទបើក design", "RFID/QR/biometric ការរួមបញ្ចូលប្រព័ន្ធ", "Durable stainless-steel body"],
     applicationsEn: ["Office", "Factory", "Public venue"],
@@ -7481,9 +7481,9 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["Turnstile", "Access Control", "Cambodia"],
     tagsKm: ["Turnstile", "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", "Cambodia"],
     seoTitleEn: "Flap Turnstile – Stainless Steel Double Wing Pedestrian Gate in Cambodia",
-    seoTitleKm: "Flap Turnstile  Stainless Steel Double Wing Pedestrian Gate in Cambodia",
+    seoTitleKm: "Flap Turnstile – Stainless Steel Double Wing Pedestrian Gate in Cambodia",
     seoDescEn: "Key features Configurable operation modes: auto, one-way, or two-way Dual synchronized wings for smooth, coordinated movement Anti-collision safety with gentle gate retraction Automatic reset if passage is not completed within set time Integration with access control, ticketing, and biometric systems Three pairs of infrared sensors for safety and security LED direction indicators for user guidance Durable 304 stainless steel construction Handles 30–45 persons per minute",
-    seoDescKm: "Key features Configurable operation modes: auto, one-way, or two-way Dual synchronized wings for smooth, coordinated movement Anti-collision safety with gentle gate retraction Automatic reset if passage is not completed within set time ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and biometric systems Three pairs of infrared sensors for safety and security LED direction indicators for user guidance Durable 304 stainless steel construction Handles 3045 persons per minute",
+    seoDescKm: "Key features Configurable operation modes: auto, one-way, or two-way Dual synchronized wings for smooth, coordinated movement Anti-collision safety with gentle gate retraction Automatic reset if passage is not completed within set time ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and biometric systems Three pairs of infrared sensors for safety and security LED direction indicators for user guidance Durable 304 stainless steel construction Handles 30–45 persons per minute",
   },
   {
     id: "turnstile-tgw-pt020-counter-sliding-gate-turnstile",
@@ -7495,7 +7495,7 @@ export const PRODUCTS: Product[] = [
     shortDescEn: "Sliding gate for secure access control.",
     shortDescKm: "ច្រករុញរំកិល for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
     descriptionEn: "Key Features Integrated LED counters for real-time entry/exit tracking 304 stainless steel cabinet with acrylic sliding panels Silent brushless DC motor for smooth, durable operation Supports RFID, QR code, barcode, and biometric authentication Multiple infrared sensors prevent tailgating and collisions Auto-reset mechanism for enhanced security Adjustable passage width: 550–900 mm Fast opening speed: 0.5–1.0 seconds Service life of up to 5 million operations",
-    descriptionKm: "Key Features Integrated LED counters for real-time entry/exit tracking 304 stainless steel កាប៊ីណេត with acrylic sliding panels Silent brushless DC motor for smooth, durable operation Supports RFID, QR code, barcode, and biometric authentication Multiple infrared sensors prព្រឹត្តិការណ៍ tailgating and collisions Auto-reset mechanism for enhanced security Adjustable passage width: 550900 mm Fast opening speed: 0.51.0 seconds Service life of up to 5 million operations",
+    descriptionKm: "Key Features Integrated LED counters for real-time entry/exit tracking 304 stainless steel កាប៊ីណេត with acrylic sliding panels Silent brushless DC motor for smooth, durable operation Supports RFID, QR code, barcode, and biometric authentication Multiple infrared sensors ការពារ tailgating and collisions Auto-reset mechanism for enhanced security Adjustable passage width: 550–900 mm Fast opening speed: 0.5–1.0 seconds Service life of up to 5 million operations",
     featuresEn: ["Sliding gate design", "RFID/QR/biometric integration", "Durable stainless-steel body"],
     featuresKm: ["ច្រករុញរំកិល design", "RFID/QR/biometric ការរួមបញ្ចូលប្រព័ន្ធ", "Durable stainless-steel body"],
     applicationsEn: ["Office", "Factory", "Public venue"],
@@ -7511,7 +7511,7 @@ export const PRODUCTS: Product[] = [
     seoTitleEn: "TGW-PT020 Counter Sliding Gate Turnstile in Cambodia",
     seoTitleKm: "TGW-PT020 Counter ច្រករុញរំកិល Turnstile in Cambodia",
     seoDescEn: "Key Features Integrated LED counters for real-time entry/exit tracking 304 stainless steel cabinet with acrylic sliding panels Silent brushless DC motor for smooth, durable operation Supports RFID, QR code, barcode, and biometric authentication Multiple infrared sensors prevent tailgating and collisions Auto-reset mechanism for enhanced security Adjustable passage width: 550–900 mm Fast opening speed: 0.5–1.0 seconds Service life of up to 5 million operations",
-    seoDescKm: "Key Features Integrated LED counters for real-time entry/exit tracking 304 stainless steel កាប៊ីណេត with acrylic sliding panels Silent brushless DC motor for smooth, durable operation Supports RFID, QR code, barcode, and biometric authentication Multiple infrared sensors prព្រឹត្តិការណ៍ tailgating and collisions Auto-reset mechanism for enhanced security Adjustable passage width: 550900 mm Fast opening speed: 0.51.0 seconds Service life of up to 5 million operations",
+    seoDescKm: "Key Features Integrated LED counters for real-time entry/exit tracking 304 stainless steel កាប៊ីណេត with acrylic sliding panels Silent brushless DC motor for smooth, durable operation Supports RFID, QR code, barcode, and biometric authentication Multiple infrared sensors ការពារ tailgating and collisions Auto-reset mechanism for enhanced security Adjustable passage width: 550–900 mm Fast opening speed: 0.5–1.0 seconds Service life of up to 5 million operations",
   },
   {
     id: "turnstile-swing-turnstile-mechanical-automatic-barrier-gate",
@@ -7519,11 +7519,11 @@ export const PRODUCTS: Product[] = [
     categoryIds: ["turnstile_gate"],
     primaryCategoryId: "turnstile_gate",
     titleEn: "Swing Turnstile – Mechanical Automatic Barrier Gate",
-    titleKm: "Swing Turnstile  Mechanical Automatic Barrier Gate",
+    titleKm: "Swing Turnstile – Mechanical Automatic Barrier Gate",
     shortDescEn: "Swing gate for secure access control.",
     shortDescKm: "ច្រកបើកបិទបង្វិល for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
     descriptionEn: "Key Features Configurable for auto, one-way, or bi-directional access 304 stainless steel construction with 1.5 mm thickness Anti-collision mechanism for user safety Automatic reset function (1–60 seconds) Infrared safety sensors: 2 pairs anti-collision + 2 pairs alarm LED direction indicators on each cabinet Remote control and monitoring support Integration with access control, ticketing, and biometric systems Service life up to 5 million cycles",
-    descriptionKm: "Key Features Configurable for auto, one-way, or bi-directional access 304 stainless steel construction with 1.5 mm thickness Anti-collision mechanism for user safety Automatic reset function (160 seconds) Infrared safety sensors: 2 pairs anti-collision + 2 pairs alarm LED direction indicators on each កាប៊ីណេត Remote control and monitoring support ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and biometric systems Service life up to 5 million cycles",
+    descriptionKm: "Key Features Configurable for auto, one-way, or bi-directional access 304 stainless steel construction with 1.5 mm thickness Anti-collision mechanism for user safety Automatic reset function (1–60 seconds) Infrared safety sensors: 2 pairs anti-collision + 2 pairs alarm LED direction indicators on each កាប៊ីណេត Remote control and monitoring support ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and biometric systems Service life up to 5 million cycles",
     featuresEn: ["Swing gate design", "RFID/QR/biometric integration", "Durable stainless-steel body"],
     featuresKm: ["ច្រកបើកបិទបង្វិល design", "RFID/QR/biometric ការរួមបញ្ចូលប្រព័ន្ធ", "Durable stainless-steel body"],
     applicationsEn: ["Office", "Factory", "Public venue"],
@@ -7537,9 +7537,9 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["Turnstile", "Access Control", "Cambodia"],
     tagsKm: ["Turnstile", "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", "Cambodia"],
     seoTitleEn: "Swing Turnstile – Mechanical Automatic Barrier Gate in Cambodia",
-    seoTitleKm: "Swing Turnstile  Mechanical Automatic Barrier Gate in Cambodia",
+    seoTitleKm: "Swing Turnstile – Mechanical Automatic Barrier Gate in Cambodia",
     seoDescEn: "Key Features Configurable for auto, one-way, or bi-directional access 304 stainless steel construction with 1.5 mm thickness Anti-collision mechanism for user safety Automatic reset function (1–60 seconds) Infrared safety sensors: 2 pairs anti-collision + 2 pairs alarm LED direction indicators on each cabinet Remote control and monitoring support Integration with access control, ticketing, and biometric systems Service life up to 5 million cycles",
-    seoDescKm: "Key Features Configurable for auto, one-way, or bi-directional access 304 stainless steel construction with 1.5 mm thickness Anti-collision mechanism for user safety Automatic reset function (160 seconds) Infrared safety sensors: 2 pairs anti-collision + 2 pairs alarm LED direction indicators on each កាប៊ីណេត Remote control and monitoring support ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and biometric systems Service life up to 5 million cycles",
+    seoDescKm: "Key Features Configurable for auto, one-way, or bi-directional access 304 stainless steel construction with 1.5 mm thickness Anti-collision mechanism for user safety Automatic reset function (1–60 seconds) Infrared safety sensors: 2 pairs anti-collision + 2 pairs alarm LED direction indicators on each កាប៊ីណេត Remote control and monitoring support ការរួមបញ្ចូលប្រព័ន្ធ with ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ, ticketing, and biometric systems Service life up to 5 million cycles",
   },
   {
     id: "turnstile-tripod-turnstiles-2",
@@ -7551,7 +7551,7 @@ export const PRODUCTS: Product[] = [
     shortDescEn: "Tripod turnstile for secure access control.",
     shortDescKm: "ច្រកទ្វារបីដង for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
     descriptionEn: "Key Features: Three-arm tripod mechanism for controlled single-person access High-grade stainless steel body for durability and corrosion resistance Smooth and fast operation for high-traffic environments Supports RFID card, fingerprint, face recognition, QR code &amp; ticketing systems Bi-directional access with configurable entry/exit control Anti-tailgating design to prevent unauthorized access Emergency drop-arm / free-pass function during power failure Low power consumption and minimal maintenance Suitable for indoor and semi-outdoor installations Ideal for offices, factories, metro stations, stadiums, and campuses",
-    descriptionKm: "Key Features: Three-arm tripod mechanism for controlled single-person access High-grade stainless steel body for durability and corrosion resistance Smooth and fast operation for high-traffic environments Supports RFID card, fingerprint, face recognition, QR code &amp; ticketing systems Bi-directional access with configurable entry/exit control Anti-tailgating design to prព្រឹត្តិការណ៍ unauthorized access Emergency drop-arm / free-pass function during power failure Low ការប្រើប្រាស់ថាមពល and minimal ការថែទាំ Suitable for ក្នុងអគារ and semi-ខាងក្រៅ ការដំឡើងs Ideal for ការិយាល័យs, factories, metro stations, stadiums, and campuses",
+    descriptionKm: "Key Features: Three-arm tripod mechanism for controlled single-person access High-grade stainless steel body for durability and corrosion resistance Smooth and fast operation for high-traffic environments Supports RFID card, fingerprint, face recognition, QR code &amp; ticketing systems Bi-directional access with configurable entry/exit control Anti-tailgating design to ការពារ unauthorized access Emergency drop-arm / free-pass function during power failure Low ការប្រើប្រាស់ថាមពល and minimal ការថែទាំ Suitable for ក្នុងអគារ and semi-ខាងក្រៅ ការដំឡើង Ideal for ការិយាល័យ, factories, metro stations, stadiums, and campuses",
     featuresEn: ["Tripod turnstile design", "RFID/QR/biometric integration", "Durable stainless-steel body"],
     featuresKm: ["ច្រកទ្វារបីដង design", "RFID/QR/biometric ការរួមបញ្ចូលប្រព័ន្ធ", "Durable stainless-steel body"],
     applicationsEn: ["Office", "Factory", "Public venue"],
@@ -7567,7 +7567,7 @@ export const PRODUCTS: Product[] = [
     seoTitleEn: "Tripod Turnstiles Gate in Cambodia",
     seoTitleKm: "ច្រកទ្វារបីដងs Gate in Cambodia",
     seoDescEn: "Key Features: Three-arm tripod mechanism for controlled single-person access High-grade stainless steel body for durability and corrosion resistance Smooth and fast operation for high-traffic environments Supports RFID card, fingerprint, face recognition, QR code &amp; ticketing systems Bi-directional access with configurable entry/exit control Anti-tailgating design to prevent unauthorized access Emergency drop-arm / free-pass function during power failure Low power consumption and minimal maintenance Suitable for indoor and semi-outdoor installations Ideal for offices, factories, metro stations, stadiums, and campuses",
-    seoDescKm: "Key Features: Three-arm tripod mechanism for controlled single-person access High-grade stainless steel body for durability and corrosion resistance Smooth and fast operation for high-traffic environments Supports RFID card, fingerprint, face recognition, QR code &amp; ticketing systems Bi-directional access with configurable entry/exit control Anti-tailgating design to prព្រឹត្តិការណ៍ unauthorized access Emergency drop-arm / free-pass function during power failure Low ការប្រើប្រាស់ថាមពល and minimal ការថែទាំ Suitable for ក្នុងអគារ and semi-ខាងក្រៅ ការដំឡើងs Ideal for ការិយាល័យs, factories, metro stations, stadiums, and campuses",
+    seoDescKm: "Key Features: Three-arm tripod mechanism for controlled single-person access High-grade stainless steel body for durability and corrosion resistance Smooth and fast operation for high-traffic environments Supports RFID card, fingerprint, face recognition, QR code &amp; ticketing systems Bi-directional access with configurable entry/exit control Anti-tailgating design to ការពារ unauthorized access Emergency drop-arm / free-pass function during power failure Low ការប្រើប្រាស់ថាមពល and minimal ការថែទាំ Suitable for ក្នុងអគារ and semi-ខាងក្រៅ ការដំឡើង Ideal for ការិយាល័យ, factories, metro stations, stadiums, and campuses",
   },
 
 
@@ -7601,7 +7601,6 @@ export function getProductsByCategory(categoryId: string) {
 export function getCategoryById(categoryId: string) {
   return PRODUCT_CATEGORIES.find((c) => c.id === categoryId);
 }
-
 
 
 

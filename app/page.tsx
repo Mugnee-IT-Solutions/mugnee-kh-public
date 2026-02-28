@@ -149,7 +149,7 @@ const CATEGORY_TILES = [
     titleKm: "ដំណោះស្រាយអេក្រង់ខាងក្នុង",
     descEn: "Indoor communication environments for offices and public spaces.",
     descKm: "សមស្របសម្រាប់ការិយាល័យ Showroom និងតំបន់សាធារណៈដែលត្រូវការទំនាក់ទំនងតាម LED Display។",
-    href: "/led-display/indoor-led-display",
+    href: "/indoor-led-display",
     icon: <IconSparkles className="h-8 w-8 object-contain" />,
   },
   {
@@ -167,7 +167,7 @@ const CATEGORY_TILES = [
     titleKm: "កាតទទួលសញ្ញា",
     descEn: "Signal and control components for reliable system performance.",
     descKm: "សមាសភាគសញ្ញា និងការគ្រប់គ្រង សម្រាប់ធានាស្ថិរភាពដំណើរការប្រព័ន្ធ LED។",
-    href: "/led-display/receiving-card",
+    href: "/receiving-card",
     icon: <IconLock className="h-8 w-8 object-contain" />,
   },
   {
@@ -203,7 +203,7 @@ const CATEGORY_TILES = [
     titleKm: "ឧបករណ៍ដំណើរការវីដេអូ",
     descEn: "Video processing components for switching, scaling, and stable content flow.",
     descKm: "ឧបករណ៍កែច្នៃវីដេអូសម្រាប់ប្ដូរប្រភព បំលែងទំហំ និងការបង្ហាញមាតិកាឱ្យមានស្ថិរភាពលើអេក្រង់ LED។",
-    href: "/led-display/video-processor",
+    href: "/video-processor",
     icon: <IconTv className="h-8 w-8 object-contain" />,
   },
   {
@@ -212,7 +212,7 @@ const CATEGORY_TILES = [
     titleKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
     descEn: "Reliable power supply options for stable LED display operation.",
     descKm: "ជម្រើសឧបករណ៍ផ្គត់ផ្គង់ថាមពលដែលទុកចិត្តបាន សម្រាប់ធានាស្ថិរភាពប្រតិបត្តិការអេក្រង់ LED។",
-    href: "/led-display/power-supply",
+    href: "/power-supply",
     icon: <IconPower className="h-8 w-8 text-slate-600" />,
   },
   {
@@ -379,5 +379,4 @@ export default function HomePage() {
     </main>
   );
 }
-
 

@@ -212,27 +212,27 @@ export default function SiteHeader() {
     {
       labelEn: "Indoor LED Display",
       labelKm: "អេក្រង់ LED ក្នុងអគារ",
-      href: "/led-display/indoor-led-display",
+      href: "/indoor-led-display",
     },
     {
       labelEn: "Outdoor LED Display",
       labelKm: "អេក្រង់ LED ក្រៅអគារ",
-      href: "/led-display/outdoor-led-display",
+      href: "/outdoor-led-display",
     },
     {
       labelEn: "Receiving Card",
       labelKm: "កាតទទួលសញ្ញា",
-      href: "/led-display/receiving-card",
+      href: "/receiving-card",
     },
     {
       labelEn: "Video Processor",
       labelKm: "ឧបករណ៍ដំណើរការវីដេអូ",
-      href: "/led-display/video-processor",
+      href: "/video-processor",
     },
     {
       labelEn: "Power Supply",
       labelKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
-      href: "/led-display/power-supply",
+      href: "/power-supply",
     },
   ];
 
@@ -591,7 +591,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "All LED Display" : t.ledDisplay}
                     </Link>
                     <Link
-                      href="/led-display/indoor-led-display"
+                      href="/indoor-led-display"
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -601,7 +601,7 @@ export default function SiteHeader() {
                       {t.indoorLed}
                     </Link>
                     <Link
-                      href="/led-display/outdoor-led-display"
+                      href="/outdoor-led-display"
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -621,7 +621,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "All LED Display" : "មើលអេក្រង់ LED ទាំងអស់"}
                     </Link>
                     <Link
-                      href="/led-display/receiving-card"
+                      href="/receiving-card"
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -631,7 +631,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "Receiving Card" : "កាតទទួលសញ្ញា"}
                     </Link>
                     <Link
-                      href="/led-display/video-processor"
+                      href="/video-processor"
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -641,7 +641,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "Video Processor" : "ឧបករណ៍ដំណើរការវីដេអូ"}
                     </Link>
                     <Link
-                      href="/led-display/power-supply"
+                      href="/power-supply"
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -749,3 +749,4 @@ export default function SiteHeader() {
     </header>
   );
 }
+

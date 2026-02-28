@@ -159,38 +159,105 @@ function SocialIcon({ platform }: { platform: string }) {
 }
 
 export default function ContactClient() {
+  type FormState = {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+  };
+  type FormErrors = Partial<Record<keyof FormState, string>>;
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[+]?[\d\s().-]{7,20}$/;
+
+  const validateForm = (values: FormState): FormErrors => {
+    const errors: FormErrors = {};
+    const name = values.name.trim();
+    const email = values.email.trim();
+    const phone = values.phone.trim();
+    const subject = values.subject.trim();
+    const message = values.message.trim();
+    const phoneDigits = (phone.match(/\d/g) || []).length;
+
+    if (name.length < 2) errors.name = "Name must be at least 2 characters.";
+    if (!emailRegex.test(email)) errors.email = "Enter a valid email address.";
+    if (!phoneRegex.test(phone) || phoneDigits < 7) errors.phone = "Enter a valid phone number.";
+    if (subject.length < 3) errors.subject = "Subject must be at least 3 characters.";
+    if (message.length < 10) errors.message = "Message must be at least 10 characters.";
+
+    return errors;
+  };
+
+  const hasError = (errors: FormErrors, key: keyof FormState) => Boolean(errors[key]);
+
   const { lang } = useLang();
   const isKm = lang === "km";
   const officesData = isKm ? officesKm : offices;
   const contactsData = isKm ? contactsKm : contacts;
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<{ type: "idle" | "success" | "error"; text: string }>({
     type: "idle",
     text: "",
   });
 
+  const updateField = (field: keyof FormState, value: string) => {
+    setForm((prev) => {
+      const next = { ...prev, [field]: value };
+      if (errors[field]) {
+        const nextErrors = validateForm(next);
+        setErrors((old) => ({ ...old, [field]: nextErrors[field] }));
+      }
+      return next;
+    });
+  };
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (sending) return;
     setStatus({ type: "idle", text: "" });
+    const nextErrors = validateForm(form);
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      setStatus({
+        type: "error",
+        text: "Please correct the highlighted fields and try again.",
+      });
+      return;
+    }
+
+    setErrors({});
     setSending(true);
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          name: form.name.trim(),
+          email: form.email.trim(),
+          phone: form.phone.trim(),
+          subject: form.subject.trim(),
+          message: form.message.trim(),
+        }),
       });
-      const data = (await res.json()) as { ok?: boolean; message?: string };
+      const data = (await res.json()) as {
+        ok?: boolean;
+        message?: string;
+        fieldErrors?: FormErrors;
+      };
 
       if (!res.ok || !data.ok) {
+        if (data.fieldErrors) setErrors(data.fieldErrors);
         setStatus({
           type: "error",
           text:
@@ -209,6 +276,7 @@ export default function ContactClient() {
           : "Your message was sent successfully. Our team will contact you soon.",
       });
       setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+      setErrors({});
     } catch {
       setStatus({
         type: "error",
@@ -271,50 +339,99 @@ export default function ContactClient() {
                 {isKm ? uiKm.formDesc : "Fill out the form and our team will contact you as soon as possible with the next steps."}
               </p>
               <form className="mt-5 grid gap-3 sm:grid-cols-2" onSubmit={onSubmit}>
-                <input
-                  type="text"
-                  value={form.name}
-                  onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
-                  placeholder={isKm ? uiKm.name : "Your Name"}
-                  required
-                  minLength={2}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
-                />
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-                  placeholder={isKm ? uiKm.email : "Your Email"}
-                  required
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
-                />
-                <input
-                  type="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
-                  placeholder={isKm ? uiKm.phone : "Phone Number"}
-                  required
-                  minLength={6}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
-                />
-                <input
-                  type="text"
-                  value={form.subject}
-                  onChange={(e) => setForm((prev) => ({ ...prev, subject: e.target.value }))}
-                  placeholder={isKm ? uiKm.subject : "Subject"}
-                  required
-                  minLength={2}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
-                />
-                <textarea
-                  rows={5}
-                  value={form.message}
-                  onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-                  placeholder={isKm ? uiKm.message : "Your Message"}
-                  required
-                  minLength={10}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-2"
-                />
+                <div className="sm:col-span-1">
+                  <input
+                    type="text"
+                    value={form.name}
+                    onChange={(e) => updateField("name", e.target.value)}
+                    onBlur={() => setErrors((prev) => ({ ...prev, name: validateForm(form).name }))}
+                    placeholder={isKm ? uiKm.name : "Your Name"}
+                    required
+                    minLength={2}
+                    maxLength={120}
+                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
+                      hasError(errors, "name")
+                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
+                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
+                    }`}
+                  />
+                  {errors.name ? <p className="mt-1 text-xs text-red-600">{errors.name}</p> : null}
+                </div>
+
+                <div className="sm:col-span-1">
+                  <input
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => updateField("email", e.target.value)}
+                    onBlur={() => setErrors((prev) => ({ ...prev, email: validateForm(form).email }))}
+                    placeholder={isKm ? uiKm.email : "Your Email"}
+                    required
+                    maxLength={180}
+                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
+                      hasError(errors, "email")
+                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
+                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
+                    }`}
+                  />
+                  {errors.email ? <p className="mt-1 text-xs text-red-600">{errors.email}</p> : null}
+                </div>
+
+                <div className="sm:col-span-1">
+                  <input
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => updateField("phone", e.target.value)}
+                    onBlur={() => setErrors((prev) => ({ ...prev, phone: validateForm(form).phone }))}
+                    placeholder={isKm ? uiKm.phone : "Phone Number"}
+                    required
+                    minLength={6}
+                    maxLength={20}
+                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
+                      hasError(errors, "phone")
+                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
+                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
+                    }`}
+                  />
+                  {errors.phone ? <p className="mt-1 text-xs text-red-600">{errors.phone}</p> : null}
+                </div>
+
+                <div className="sm:col-span-1">
+                  <input
+                    type="text"
+                    value={form.subject}
+                    onChange={(e) => updateField("subject", e.target.value)}
+                    onBlur={() => setErrors((prev) => ({ ...prev, subject: validateForm(form).subject }))}
+                    placeholder={isKm ? uiKm.subject : "Subject"}
+                    required
+                    minLength={2}
+                    maxLength={180}
+                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
+                      hasError(errors, "subject")
+                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
+                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
+                    }`}
+                  />
+                  {errors.subject ? <p className="mt-1 text-xs text-red-600">{errors.subject}</p> : null}
+                </div>
+
+                <div className="sm:col-span-2">
+                  <textarea
+                    rows={5}
+                    value={form.message}
+                    onChange={(e) => updateField("message", e.target.value)}
+                    onBlur={() => setErrors((prev) => ({ ...prev, message: validateForm(form).message }))}
+                    placeholder={isKm ? uiKm.message : "Your Message"}
+                    required
+                    minLength={10}
+                    maxLength={4000}
+                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
+                      hasError(errors, "message")
+                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
+                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
+                    }`}
+                  />
+                  {errors.message ? <p className="mt-1 text-xs text-red-600">{errors.message}</p> : null}
+                </div>
                 <button
                   type="submit"
                   disabled={sending}
@@ -332,9 +449,6 @@ export default function ContactClient() {
                   </p>
                 ) : null}
               </form>
-              <p className="mt-2 text-xs text-slate-500">
-                {isKm ? "Form ពេញលេញនឹងត្រូវបានផ្ញើទៅអ៊ីមែលក្រុមការងាររបស់អ្នកដោយផ្ទាល់។" : "Form submissions are sent directly to your team email."}
-              </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -514,3 +628,4 @@ export default function ContactClient() {
     </main>
   );
 }
+

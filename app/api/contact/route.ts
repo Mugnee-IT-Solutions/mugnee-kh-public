@@ -17,17 +17,24 @@ type ValidContactData = {
   message: string;
 };
 
+type FieldErrors = Partial<Record<keyof ValidContactData, string>>;
+
 type ValidationResult =
-  | { ok: false; error: string }
+  | { ok: false; message: string; fieldErrors: FieldErrors }
   | { ok: true; data: ValidContactData };
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phoneRegex = /^[+]?[\d\s().-]{7,20}$/;
 
 function clean(value: unknown, max = 1000) {
   return String(value ?? "")
     .trim()
     .replace(/\s+/g, " ")
     .slice(0, max);
+}
+
+function countDigits(value: string) {
+  return (value.match(/\d/g) || []).length;
 }
 
 function validate(body: ContactPayload): ValidationResult {
@@ -37,11 +44,27 @@ function validate(body: ContactPayload): ValidationResult {
   const subject = clean(body.subject, 180);
   const message = clean(body.message, 4000);
 
-  if (!name || name.length < 2) return { ok: false, error: "Invalid name." };
-  if (!email || !emailRegex.test(email)) return { ok: false, error: "Invalid email." };
-  if (!phone || phone.length < 6) return { ok: false, error: "Invalid phone number." };
-  if (!subject || subject.length < 2) return { ok: false, error: "Invalid subject." };
-  if (!message || message.length < 10) return { ok: false, error: "Message is too short." };
+  const fieldErrors: FieldErrors = {};
+
+  if (!name || name.length < 2) fieldErrors.name = "Name must be at least 2 characters.";
+  if (!email || !emailRegex.test(email)) fieldErrors.email = "Enter a valid email address.";
+  if (!phone || !phoneRegex.test(phone) || countDigits(phone) < 7) {
+    fieldErrors.phone = "Enter a valid phone number.";
+  }
+  if (!subject || subject.length < 3) {
+    fieldErrors.subject = "Subject must be at least 3 characters.";
+  }
+  if (!message || message.length < 10) {
+    fieldErrors.message = "Message must be at least 10 characters.";
+  }
+
+  if (Object.keys(fieldErrors).length > 0) {
+    return {
+      ok: false,
+      message: "Please correct the highlighted fields and try again.",
+      fieldErrors,
+    };
+  }
 
   return { ok: true, data: { name, email, phone, subject, message } };
 }
@@ -51,7 +74,10 @@ export async function POST(req: Request) {
     const json = (await req.json()) as ContactPayload;
     const parsed = validate(json);
     if (!parsed.ok) {
-      return NextResponse.json({ ok: false, message: parsed.error }, { status: 400 });
+      return NextResponse.json(
+        { ok: false, message: parsed.message, fieldErrors: parsed.fieldErrors },
+        { status: 400 }
+      );
     }
 
     const smtpHost = process.env.SMTP_HOST || process.env.MAIL_HOST || "smtp.gmail.com";
@@ -101,6 +127,14 @@ export async function POST(req: Request) {
       replyTo: email,
       subject: `[Contact Form] ${subject}`,
       text: textBody,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>
+      `,
     });
 
     return NextResponse.json({ ok: true, message: "Message sent successfully." });
