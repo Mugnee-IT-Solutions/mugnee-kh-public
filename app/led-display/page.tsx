@@ -9,7 +9,11 @@ import type { Metadata } from "next";
 import LedDisplayClient from "../products/led-display/LedDisplayClient";
 import { SITE_URL } from "../lib/site";
 
-const LED_DISPLAY_META_TITLE = "LED Display Price Cambodia | Indoor & Outdoor LED Supplier";
+const currentYear = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  timeZone: "Asia/Phnom_Penh",
+}).format(new Date());
+const LED_DISPLAY_META_TITLE = `LED Display Price in Cambodia ${currentYear}`;
 
 export function generateMetadata(): Metadata {
   return {
@@ -67,5 +71,5 @@ export function generateMetadata(): Metadata {
 }
 
 export default function Page() {
-  return <LedDisplayClient />;
+  return <LedDisplayClient currentYearEn={currentYear} />;
 }

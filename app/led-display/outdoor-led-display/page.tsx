@@ -10,7 +10,7 @@ import LedDisplayClient from "../../products/led-display/LedDisplayClient";
 import { PRODUCTS } from "../../data/products";
 import { SITE_URL } from "../../lib/site";
 
-const PAGE_PATH = "/outdoor-led-display/";
+const PAGE_PATH = "/led-display/outdoor-led-display/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {

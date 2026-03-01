@@ -1,86 +1,82 @@
-<IfModule mod_headers.c>
-  Header always set X-Content-Type-Options "nosniff"
-  Header always set X-Frame-Options "SAMEORIGIN"
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://www.google.com https://www.youtube-nocookie.com https://challenges.cloudflare.com"
-
-  # Prevent stale HTML (including extensionless routes) after deploys.
-  Header always set Cache-Control "no-cache, no-store, must-revalidate" "expr=%{resp:Content-Type} =~ m#^text/html#"
-  Header always set CDN-Cache-Control "no-store" "expr=%{resp:Content-Type} =~ m#^text/html#"
-  Header always set Pragma "no-cache" "expr=%{resp:Content-Type} =~ m#^text/html#"
-  Header always set Expires "0" "expr=%{resp:Content-Type} =~ m#^text/html#"
-
-  # Keep crawler control files fresh but cacheable for short periods.
-  <FilesMatch "^(robots\.txt|sitemap\.xml)$">
-    Header always set Cache-Control "public, max-age=3600, s-maxage=3600"
-    Header always set CDN-Cache-Control "public, max-age=3600"
-  </FilesMatch>
-</IfModule>
+# =========================================
+# MugneeKH - Clean Canonical .htaccess
+# CyberPanel / Apache / LiteSpeed friendly
+# =========================================
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Canonical host + https in one hop (when handled at origin).
-  RewriteCond %{HTTP_HOST} !^mugneekh\.com$ [NC,OR]
-  RewriteCond %{HTTPS} !=on
+  # 0) Allow well-known (SSL, etc.)
+  RewriteRule ^\.well-known/ - [L]
+
+  # 1) Single-hop canonical: force https + non-www
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\.mugneekh\.com$ [NC]
   RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [R=301,L]
 
-  # Remove duplicate slashes
+  # 2) Remove duplicate slashes (only when requested URL contains //)
   RewriteCond %{THE_REQUEST} \s/+(.+?)//+ [NC]
-  RewriteRule .* /%1 [R=301,L]
+  RewriteRule ^ %1 [R=301,L]
 
-  # Use trailing slash for canonical content URLs (exclude files/system paths).
-  RewriteCond %{REQUEST_URI} !^/$
-  RewriteCond %{REQUEST_URI} !^/(api|_next|images|favicon\.ico|robots\.txt|sitemap\.xml|manifest\.webmanifest) [NC]
-  RewriteCond %{REQUEST_URI} !\.[A-Za-z0-9]{1,8}$ [NC]
+  # 3) Enforce trailing slash for “pages” (skip real files/folders)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{1,5}$ [NC]
   RewriteCond %{REQUEST_URI} !/$
-  RewriteRule ^(.+)$ /$1/ [R=301,L]
+  RewriteRule ^ %{REQUEST_URI}/ [R=301,L]
 
-  # Next.js static-export RSC compatibility:
-  # /foo/__next.a.b.c.d.txt -> /foo/__next.a/b/c/d.txt
+  # 4) Next.js static-export RSC compatibility (keep as you had)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3/$4/$5.txt [L,NC]
 
-  # /foo/__next.a.b.c.txt -> /foo/__next.a/b/c.txt
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3/$4.txt [L,NC]
 
-  # /foo/__next.a.b.txt -> /foo/__next.a/b.txt
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3.txt [L,NC]
 
-  # Enforce canonical product hub URLs with server-side 301 redirects (LiteSpeed/Apache).
+  # 5) Canonical product route redirects
   RewriteRule ^products/led-display/?$ /led-display/ [R=301,L,NC]
-  RewriteRule ^products/indoor-led-display/?$ /indoor-led-display/ [R=301,L,NC]
-  RewriteRule ^products/outdoor-led-display/?$ /outdoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/led-display/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/led-display/outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]
+  RewriteRule ^products/led-display/receiving-card/?$ /led-display/receiving-card/ [R=301,L,NC]
+  RewriteRule ^products/led-display/video-processor/?$ /led-display/video-processor/ [R=301,L,NC]
+  RewriteRule ^products/led-display/power-supply/?$ /led-display/power-supply/ [R=301,L,NC]
   RewriteRule ^products/interactive-flat-panel/?$ /interactive-flat-panel/ [R=301,L,NC]
   RewriteRule ^products/pa-system/?$ /pa-system/ [R=301,L,NC]
   RewriteRule ^products/turnstile-gate/?$ /turnstile-gate/ [R=301,L,NC]
   RewriteRule ^products/access-control-system/?$ /solutions/office-access-control-cambodia/ [R=301,L,NC]
-  RewriteRule ^products/led-display/indoor-led-display/?$ /indoor-led-display/ [R=301,L,NC]
-  RewriteRule ^products/led-display/outdoor-led-display/?$ /outdoor-led-display/ [R=301,L,NC]
-  RewriteRule ^products/led-display/receiving-card/?$ /receiving-card/ [R=301,L,NC]
-  RewriteRule ^products/led-display/video-processor/?$ /video-processor/ [R=301,L,NC]
-  RewriteRule ^products/led-display/power-supply/?$ /power-supply/ [R=301,L,NC]
-  RewriteRule ^led-display/indoor-led-display/?$ /indoor-led-display/ [R=301,L,NC]
-  RewriteRule ^led-display/outdoor-led-display/?$ /outdoor-led-display/ [R=301,L,NC]
-  RewriteRule ^led-display/receiving-card/?$ /receiving-card/ [R=301,L,NC]
-  RewriteRule ^led-display/video-processor/?$ /video-processor/ [R=301,L,NC]
-  RewriteRule ^led-display/power-supply/?$ /power-supply/ [R=301,L,NC]
-  RewriteRule ^products/catalog/p2-indoor-led-display-board-price-in-bangladesh/?$ /products/catalog/p2-indoor-led-display-board-price-in-cambodia/ [R=301,L,NC]
-  RewriteRule ^products/catalog/p10-outdoor-led-sign-board-price-in-bd/?$ /products/catalog/p10-outdoor-led-sign-board-price-in-cambodia/ [R=301,L,NC]
-  RewriteRule ^products/catalog/ds2000-turnstile-gate-price-in-bangladeh/?$ /products/catalog/ds2000-turnstile-gate-price-in-cambodia/ [R=301,L,NC]
 
-  # Legacy solutions URL redirects
+  # 6) IMPORTANT: Fix sitemap-level duplicates (top-level -> /led-display/...)
+  RewriteRule ^indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
+  RewriteRule ^outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]
+  RewriteRule ^receiving-card/?$ /led-display/receiving-card/ [R=301,L,NC]
+  RewriteRule ^video-processor/?$ /led-display/video-processor/ [R=301,L,NC]
+  RewriteRule ^power-supply/?$ /led-display/power-supply/ [R=301,L,NC]
+
+  # 7) Legacy solutions URL redirects
   RewriteRule ^solutions/led-billboard-cambodia/?$ /solutions/retail-digital-signage-cambodia/ [R=301,L,NC]
   RewriteRule ^solutions/digital-signage-cambodia/?$ /solutions/retail-digital-signage-cambodia/ [R=301,L,NC]
   RewriteRule ^solutions/pa-system-cambodia/?$ /solutions/factory-pa-announcement-cambodia/ [R=301,L,NC]
   RewriteRule ^solutions/smart-classroom-cambodia/?$ /solutions/education-smart-classroom-cambodia/ [R=301,L,NC]
   RewriteRule ^solutions/access-control-cambodia/?$ /solutions/office-access-control-cambodia/ [R=301,L,NC]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
 </IfModule>
 

@@ -367,7 +367,7 @@ export default function LedDisplayClient({
   schemaNameOverride,
   schemaServiceNameOverride,
   schemaServiceDescOverride,
-  currentMonthYearEn,
+  currentYearEn,
   heroTitleOverride,
   heroTitleOverrideKm,
   heroIntroOverride,
@@ -403,7 +403,7 @@ export default function LedDisplayClient({
   schemaNameOverride?: string;
   schemaServiceNameOverride?: string;
   schemaServiceDescOverride?: string;
-  currentMonthYearEn?: string;
+  currentYearEn?: string;
   heroTitleOverride?: string;
   heroTitleOverrideKm?: string;
   heroIntroOverride?: string;
@@ -438,29 +438,13 @@ export default function LedDisplayClient({
   const schemaServiceDesc =
     schemaServiceDescOverride ??
     "Indoor LED video walls, outdoor LED billboards, installation, commissioning and after-sales support in Cambodia.";
-  const monthYearLabel =
-    currentMonthYearEn ??
-    new Intl.DateTimeFormat("en-US", {
-      month: "long",
-      year: "numeric",
-      timeZone: "Asia/Phnom_Penh",
-    })
-      .formatToParts(new Date())
-      .reduce(
-        (acc, part) => {
-          if (part.type === "month") acc.month = part.value;
-          if (part.type === "year") acc.year = part.value;
-          return acc;
-        },
-        { month: "", year: "" },
-      );
-  const formattedMonthYear =
-    typeof monthYearLabel === "string" ? monthYearLabel : `${monthYearLabel.month}, ${monthYearLabel.year}`;
-
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
-      h1: `LED Display Price in Cambodia ${formattedMonthYear}`,
+      h1: `LED Display Price in Cambodia ${currentYearEn ?? new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        timeZone: "Asia/Phnom_Penh",
+      }).format(new Date())}`,
       intro:
         "Need the right LED display price in Cambodia for your business goal and budget? Mugnee Cambodia is a leading LED display company in Cambodia, trusted for premium-quality yet budget-friendly LED screen solutions. From indoor LED display planning to outdoor LED billboard proposals, we support shops, showrooms, hotels, corporate offices, and public projects with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready options and get dependable Cambodia-based after-sales support for stable long-term performance.",
       cta1: "WhatsApp for Quotation",
@@ -485,7 +469,7 @@ export default function LedDisplayClient({
     };
 
     return lang === "en" ? en : km;
-  }, [formattedMonthYear, lang]);
+  }, [currentYearEn, lang]);
 
   const quickLinks =
     lang === "en"
