@@ -2,12 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLayoutEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type Dispatch, type SetStateAction } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useLang } from "./LanguageProvider";
 
 type NavItem = { labelEn: string; labelKm: string; href: string };
 type Lang = "en" | "km";
+type SearchProduct = {
+  slug: string;
+  titleEn: string;
+  titleKm: string;
+  tagsEn: string[];
+  tagsKm: string[];
+};
 
 type DropdownProps = {
   id: string;
@@ -143,6 +150,11 @@ export default function SiteHeader() {
   const [openMobile, setOpenMobile] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [q, setQ] = useState("");
+  const [searchResults, setSearchResults] = useState<SearchProduct[]>([]);
+  const [searchOpenDesktop, setSearchOpenDesktop] = useState(false);
+  const [searchOpenMobile, setSearchOpenMobile] = useState(false);
+  const desktopSearchRef = useRef<HTMLDivElement | null>(null);
+  const mobileSearchRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
     const headerEl = headerRef.current;
@@ -322,6 +334,65 @@ export default function SiteHeader() {
     window.location.href = `/products?${params.toString()}`;
   };
 
+  const onSearchItemClick = (slug: string) => {
+    setSearchOpenDesktop(false);
+    setSearchOpenMobile(false);
+    setQ("");
+    forceScrollTop();
+    if (lang === "km") {
+      router.push(`/products/catalog/${slug}/?lang=km`);
+      return;
+    }
+    router.push(`/products/catalog/${slug}/`);
+  };
+
+  useEffect(() => {
+    const term = q.trim().toLowerCase();
+    if (term.length < 2) {
+      setSearchResults([]);
+      return;
+    }
+
+    const timer = window.setTimeout(async () => {
+      const { PRODUCTS } = await import("../../data/products");
+      const results = PRODUCTS.filter((product) => {
+        const haystack = [
+          product.titleEn,
+          product.titleKm,
+          product.slug,
+          ...product.tagsEn,
+          ...product.tagsKm,
+        ]
+          .join(" ")
+          .toLowerCase();
+        return haystack.includes(term);
+      })
+        .slice(0, 8)
+        .map((product) => ({
+          slug: product.slug,
+          titleEn: product.titleEn,
+          titleKm: product.titleKm,
+          tagsEn: product.tagsEn,
+          tagsKm: product.tagsKm,
+        }));
+      setSearchResults(results);
+    }, 120);
+
+    return () => window.clearTimeout(timer);
+  }, [q]);
+
+  useEffect(() => {
+    const onPointerDown = (event: MouseEvent) => {
+      const target = event.target as Node;
+      const isInsideDesktop = desktopSearchRef.current?.contains(target);
+      const isInsideMobile = mobileSearchRef.current?.contains(target);
+      if (!isInsideDesktop) setSearchOpenDesktop(false);
+      if (!isInsideMobile) setSearchOpenMobile(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    return () => document.removeEventListener("mousedown", onPointerDown);
+  }, []);
+
   const forceScrollTop = () => {
     const root = document.getElementById("app-scroll-root");
     const scrollingEl =
@@ -367,10 +438,12 @@ export default function SiteHeader() {
           </Link>
 
           <form onSubmit={onSearch} className="hidden flex-1 lg:block">
+            <div ref={desktopSearchRef} className="relative">
             <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
+                onFocus={() => setSearchOpenDesktop(true)}
                 placeholder={t.searchPlaceholder}
                 aria-label={t.searchAria}
                 className="min-w-0 flex-1 rounded-none bg-transparent px-3 py-1.5 text-sm text-slate-900 outline-none ring-0 placeholder:text-slate-400"
@@ -381,6 +454,35 @@ export default function SiteHeader() {
               >
                 {t.go}
               </button>
+            </div>
+            {searchOpenDesktop && q.trim().length >= 2 ? (
+              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+                {searchResults.length > 0 ? (
+                  <ul className="max-h-80 overflow-y-auto py-1">
+                    {searchResults.map((item) => (
+                      <li key={item.slug}>
+                        <button
+                          type="button"
+                          onClick={() => onSearchItemClick(item.slug)}
+                          className="block w-full px-3 py-2 text-left hover:bg-slate-50"
+                        >
+                          <p className="text-sm font-semibold text-slate-900">
+                            {lang === "en" ? item.titleEn : item.titleKm}
+                          </p>
+                          <p className="text-xs text-slate-500">
+                            /products/catalog/{item.slug}/
+                          </p>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="px-3 py-3 text-sm text-slate-500">
+                    {lang === "en" ? "No matching products found." : "រកមិនឃើញផលិតផលដែលត្រូវគ្នា។"}
+                  </p>
+                )}
+              </div>
+            ) : null}
             </div>
           </form>
 
@@ -430,10 +532,12 @@ export default function SiteHeader() {
 
         <div className="mx-auto w-full max-w-7xl px-4 pb-3 sm:px-6 lg:hidden lg:px-8">
           <form onSubmit={onSearch}>
+            <div ref={mobileSearchRef} className="relative">
             <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
+                onFocus={() => setSearchOpenMobile(true)}
                 placeholder={t.searchPlaceholder}
                 aria-label={t.searchAria}
                 className="min-w-0 flex-1 rounded-none bg-transparent px-3 py-1.5 text-sm text-slate-900 outline-none placeholder:text-slate-400"
@@ -444,6 +548,35 @@ export default function SiteHeader() {
               >
                 {t.go}
               </button>
+            </div>
+            {searchOpenMobile && q.trim().length >= 2 ? (
+              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+                {searchResults.length > 0 ? (
+                  <ul className="max-h-72 overflow-y-auto py-1">
+                    {searchResults.map((item) => (
+                      <li key={`m-${item.slug}`}>
+                        <button
+                          type="button"
+                          onClick={() => onSearchItemClick(item.slug)}
+                          className="block w-full px-3 py-2 text-left hover:bg-slate-50"
+                        >
+                          <p className="text-sm font-semibold text-slate-900">
+                            {lang === "en" ? item.titleEn : item.titleKm}
+                          </p>
+                          <p className="text-xs text-slate-500">
+                            /products/catalog/{item.slug}/
+                          </p>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="px-3 py-3 text-sm text-slate-500">
+                    {lang === "en" ? "No matching products found." : "រកមិនឃើញផលិតផលដែលត្រូវគ្នា។"}
+                  </p>
+                )}
+              </div>
+            ) : null}
             </div>
 
             <div className="mt-2 flex items-center justify-between sm:hidden">
