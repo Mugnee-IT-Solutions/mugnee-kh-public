@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) return {};
-  const productUrl = `${SITE_URL}/products/catalog/${product.slug}`;
+  const productUrl = `${SITE_URL}/products/catalog/${product.slug}/`;
   const defaultImageUrl = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
   const imageUrl = product.heroImage
     ? product.heroImage.startsWith("http")
@@ -43,9 +43,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: productUrl,
       languages: {
-        en: `/products/catalog/${product.slug}`,
-        km: `/products/catalog/${product.slug}?lang=km`,
-        "x-default": `/products/catalog/${product.slug}`,
+        en: `/products/catalog/${product.slug}/`,
+        km: `/products/catalog/${product.slug}/?lang=km`,
+        "x-default": `/products/catalog/${product.slug}/`,
       },
     },
     robots: { index: true, follow: true },
@@ -77,8 +77,8 @@ export default async function ProductDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) notFound();
-  const productUrl = `${SITE_URL}/products/catalog/${product.slug}`;
-  const productsUrl = `${SITE_URL}/products`;
+  const productUrl = `${SITE_URL}/products/catalog/${product.slug}/`;
+  const productsUrl = `${SITE_URL}/products/`;
   const categoryLabel =
     getCategoryById(product.primaryCategoryId)?.labelEn ?? product.primaryCategoryId;
   const defaultImageUrl = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;

@@ -6,7 +6,7 @@ export function buildCatalogProductMetadata(slug: string): Metadata {
   const product = getProductBySlug(slug);
   if (!product) return {};
 
-  const productUrl = `${SITE_URL}/products/catalog/${product.slug}`;
+  const productUrl = `${SITE_URL}/products/catalog/${product.slug}/`;
   const defaultImageUrl = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
   const imageUrl = product.heroImage
     ? product.heroImage.startsWith("http")
@@ -20,9 +20,9 @@ export function buildCatalogProductMetadata(slug: string): Metadata {
     alternates: {
       canonical: productUrl,
       languages: {
-        en: `/products/catalog/${product.slug}`,
-        km: `/products/catalog/${product.slug}?lang=km`,
-        "x-default": `/products/catalog/${product.slug}`,
+        en: `/products/catalog/${product.slug}/`,
+        km: `/products/catalog/${product.slug}/?lang=km`,
+        "x-default": `/products/catalog/${product.slug}/`,
       },
     },
     robots: { index: true, follow: true },

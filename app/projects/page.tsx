@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import ProjectsClient from "./ProjectsClient";
 import { SITE_URL } from "../lib/site";
 
-const PAGE_PATH = "/projects";
+const PAGE_PATH = "/projects/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {

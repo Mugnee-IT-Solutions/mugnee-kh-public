@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  trailingSlash: false,
+  trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -12,6 +11,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "mri.co.jp" },
     ],
   },
+  ...(process.env.STATIC_EXPORT === "true" ? { output: "export" } : {}),
 };
 
 export default nextConfig;

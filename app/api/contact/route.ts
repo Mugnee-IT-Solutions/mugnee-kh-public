@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+export const dynamic = "force-static";
+export const revalidate = false;
+
 type ContactPayload = {
   name?: string;
   email?: string;
@@ -8,6 +11,7 @@ type ContactPayload = {
   subject?: string;
   message?: string;
   website?: string;
+  turnstileToken?: string;
 };
 
 type ValidContactData = {
@@ -31,6 +35,9 @@ const RATE_MAX_REQUESTS = Number(process.env.CONTACT_RATE_LIMIT_MAX || 5);
 
 type RateBucket = { count: number; resetAt: number };
 const rateBuckets = new Map<string, RateBucket>();
+const UPSTASH_REDIS_REST_URL = process.env.UPSTASH_REDIS_REST_URL;
+const UPSTASH_REDIS_REST_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY;
 
 function clean(value: unknown, max = 1000) {
   return String(value ?? "")
@@ -80,6 +87,62 @@ function isRateLimited(key: string, now = Date.now()) {
   return false;
 }
 
+async function isRateLimitedUpstash(key: string) {
+  if (!UPSTASH_REDIS_REST_URL || !UPSTASH_REDIS_REST_TOKEN) return null;
+
+  const redisKey = `contact-rate:${key}`;
+  const ttlSeconds = Math.max(1, Math.floor(RATE_WINDOW_MS / 1000));
+
+  const body = JSON.stringify([
+    ["INCR", redisKey],
+    ["EXPIRE", redisKey, ttlSeconds, "NX"],
+  ]);
+
+  const res = await fetch(`${UPSTASH_REDIS_REST_URL}/pipeline`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${UPSTASH_REDIS_REST_TOKEN}`,
+      "Content-Type": "application/json",
+    },
+    body,
+    cache: "no-store",
+  });
+
+  if (!res.ok) return null;
+
+  const json = (await res.json()) as Array<{ result?: number }>;
+  const count = Number(json?.[0]?.result ?? 0);
+  if (!Number.isFinite(count) || count <= 0) return null;
+  return count > RATE_MAX_REQUESTS;
+}
+
+async function isRateLimitedSafe(key: string) {
+  try {
+    const upstashLimited = await isRateLimitedUpstash(key);
+    if (upstashLimited !== null) return upstashLimited;
+  } catch {}
+  return isRateLimited(key);
+}
+
+async function verifyTurnstileToken(req: Request, token: string) {
+  const formData = new URLSearchParams();
+  formData.set("secret", TURNSTILE_SECRET_KEY as string);
+  formData.set("response", token);
+  const ip = getClientIp(req);
+  if (ip && ip !== "unknown") formData.set("remoteip", ip);
+
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: formData.toString(),
+    cache: "no-store",
+  });
+
+  if (!res.ok) return false;
+  const result = (await res.json()) as { success?: boolean };
+  return Boolean(result.success);
+}
+
 function validate(body: ContactPayload): ValidationResult {
   const name = clean(body.name, 120);
   const email = clean(body.email, 180).toLowerCase();
@@ -125,7 +188,7 @@ function validate(body: ContactPayload): ValidationResult {
 export async function POST(req: Request) {
   try {
     const rateKey = getRateKey(req);
-    if (isRateLimited(rateKey)) {
+    if (await isRateLimitedSafe(rateKey)) {
       return NextResponse.json(
         { ok: false, message: "Too many requests. Please try again later." },
         { status: 429 }
@@ -133,6 +196,25 @@ export async function POST(req: Request) {
     }
 
     const json = (await req.json()) as ContactPayload;
+
+    if (TURNSTILE_SECRET_KEY) {
+      const token = clean(json.turnstileToken, 2048);
+      if (!token) {
+        return NextResponse.json(
+          { ok: false, message: "Captcha verification required." },
+          { status: 400 }
+        );
+      }
+
+      const isValidCaptcha = await verifyTurnstileToken(req, token);
+      if (!isValidCaptcha) {
+        return NextResponse.json(
+          { ok: false, message: "Captcha verification failed." },
+          { status: 400 }
+        );
+      }
+    }
+
     const parsed = validate(json);
     if (!parsed.ok) {
       return NextResponse.json(
@@ -205,4 +287,22 @@ export async function POST(req: Request) {
       { status: 500 }
     );
   }
+}
+
+export async function GET() {
+  return NextResponse.json(
+    { ok: false, message: "Method not allowed. Use POST for contact submissions." },
+    { status: 405, headers: { Allow: "POST, OPTIONS" } }
+  );
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 204,
+    headers: {
+      Allow: "POST, OPTIONS",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
 }

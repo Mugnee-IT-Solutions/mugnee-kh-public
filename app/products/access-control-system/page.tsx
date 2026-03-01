@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "../../lib/site";
 
-const TARGET_PATH = "/solutions/office-access-control-cambodia";
+const TARGET_PATH = "/solutions/office-access-control-cambodia/";
 const TARGET_URL = `${SITE_URL}${TARGET_PATH}`;
 
 export const metadata: Metadata = {

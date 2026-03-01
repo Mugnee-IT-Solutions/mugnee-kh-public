@@ -24,7 +24,7 @@ function IconAntenna({ className }: IconProps) {
 }
 
 function IconTv({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/sound-system.png" alt="" width={32} height={32} className={className} aria-hidden="true" />;
+  return <Image src="/images/home/unit-icons/sound-system.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
 }
 
 function IconPresentation({ className }: IconProps) {
@@ -32,11 +32,11 @@ function IconPresentation({ className }: IconProps) {
 }
 
 function IconBarrier({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/turnstile-gate.png" alt="" width={32} height={32} className={className} aria-hidden="true" />;
+  return <Image src="/images/home/unit-icons/turnstile-gate.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
 }
 
 function IconLock({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/security.png" alt="" width={32} height={32} className={className} aria-hidden="true" />;
+  return <Image src="/images/home/unit-icons/security.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
 }
 
 function IconMic({ className }: IconProps) {
@@ -290,39 +290,7 @@ const FAQ = [
 ];
 
 export default function HomePage() {
-  // ---------- JSON-LD (Organization + Website + FAQPage) ----------
-  const orgJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Mugnee Cambodia",
-    url: SITE_URL,
-    logo: `${SITE_URL}/images/logo.png`,
-    areaServed: { "@type": "Country", name: "Cambodia" },
-    sameAs: [
-      // Add official pages later
-    ],
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "sales",
-        telephone: "+85586817907",
-        availableLanguage: ["English", "Khmer"],
-      },
-    ],
-  };
-
-  const websiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Mugnee Cambodia",
-    url: SITE_URL,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${SITE_URL}/products?search={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
-  };
-
+  // ---------- JSON-LD (FAQPage) ----------
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -361,14 +329,6 @@ export default function HomePage() {
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
@@ -379,4 +339,3 @@ export default function HomePage() {
     </main>
   );
 }
-

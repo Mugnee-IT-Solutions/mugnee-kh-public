@@ -11,7 +11,7 @@ import TurnstileGateClient from "../products/turnstile-gate/TurnstileGateClient"
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
 
-const PAGE_PATH = "/turnstile-gate";
+const PAGE_PATH = "/turnstile-gate/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 

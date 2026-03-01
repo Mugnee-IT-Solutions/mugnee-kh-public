@@ -1,19 +1,42 @@
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://www.google.com https://www.youtube-nocookie.com https://challenges.cloudflare.com"
+
+  # Prevent stale HTML (including extensionless routes) after deploys.
+  Header always set Cache-Control "no-cache, no-store, must-revalidate" "expr=%{resp:Content-Type} =~ m#^text/html#"
+  Header always set CDN-Cache-Control "no-store" "expr=%{resp:Content-Type} =~ m#^text/html#"
+  Header always set Pragma "no-cache" "expr=%{resp:Content-Type} =~ m#^text/html#"
+  Header always set Expires "0" "expr=%{resp:Content-Type} =~ m#^text/html#"
+
+  # Keep crawler control files fresh but cacheable for short periods.
+  <FilesMatch "^(robots\.txt|sitemap\.xml)$">
+    Header always set Cache-Control "public, max-age=3600, s-maxage=3600"
+    Header always set CDN-Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Canonical host and protocol
-  RewriteCond %{HTTP_HOST} ^www\.mugneekh\.com$ [NC]
-  RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [L,R=301]
-
-  RewriteCond %{HTTP_HOST} ^(www\.)?mugnee\.com$ [NC]
-  RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [L,R=301]
-
+  # Canonical host + https in one hop (when handled at origin).
+  RewriteCond %{HTTP_HOST} !^mugneekh\.com$ [NC,OR]
   RewriteCond %{HTTPS} !=on
-  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [R=301,L]
 
   # Remove duplicate slashes
   RewriteCond %{THE_REQUEST} \s/+(.+?)//+ [NC]
   RewriteRule .* /%1 [R=301,L]
+
+  # Use trailing slash for canonical content URLs (exclude files/system paths).
+  RewriteCond %{REQUEST_URI} !^/$
+  RewriteCond %{REQUEST_URI} !^/(api|_next|images|favicon\.ico|robots\.txt|sitemap\.xml|manifest\.webmanifest) [NC]
+  RewriteCond %{REQUEST_URI} !\.[A-Za-z0-9]{1,8}$ [NC]
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.+)$ /$1/ [R=301,L]
 
   # Next.js static-export RSC compatibility:
   # /foo/__next.a.b.c.d.txt -> /foo/__next.a/b/c/d.txt
@@ -49,6 +72,9 @@
   RewriteRule ^led-display/receiving-card/?$ /receiving-card/ [R=301,L,NC]
   RewriteRule ^led-display/video-processor/?$ /video-processor/ [R=301,L,NC]
   RewriteRule ^led-display/power-supply/?$ /power-supply/ [R=301,L,NC]
+  RewriteRule ^products/catalog/p2-indoor-led-display-board-price-in-bangladesh/?$ /products/catalog/p2-indoor-led-display-board-price-in-cambodia/ [R=301,L,NC]
+  RewriteRule ^products/catalog/p10-outdoor-led-sign-board-price-in-bd/?$ /products/catalog/p10-outdoor-led-sign-board-price-in-cambodia/ [R=301,L,NC]
+  RewriteRule ^products/catalog/ds2000-turnstile-gate-price-in-bangladeh/?$ /products/catalog/ds2000-turnstile-gate-price-in-cambodia/ [R=301,L,NC]
 
   # Legacy solutions URL redirects
   RewriteRule ^solutions/led-billboard-cambodia/?$ /solutions/retail-digital-signage-cambodia/ [R=301,L,NC]

@@ -13,7 +13,7 @@ import { buildCatalogProductMetadata } from "../_sharedMetadata";
 
 export const dynamic = "force-static";
 
-const SLUG = "p2-indoor-led-display-board-price-in-bangladesh";
+const SLUG = "p2-indoor-led-display-board-price-in-cambodia";
 
 export function generateMetadata(): Metadata {
   return buildCatalogProductMetadata(SLUG);

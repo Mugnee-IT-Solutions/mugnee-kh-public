@@ -33,10 +33,10 @@ export function generateMetadata(): Metadata {
       "LED installation Phnom Penh",
     ],
     alternates: {
-      canonical: `${SITE_URL}/led-display`,
+      canonical: `${SITE_URL}/led-display/`,
       languages: {
-        en: `${SITE_URL}/led-display`,
-        km: `${SITE_URL}/led-display?lang=km`,
+        en: `${SITE_URL}/led-display/`,
+        km: `${SITE_URL}/led-display/?lang=km`,
       },
     },
     robots: { index: true, follow: true },
@@ -44,7 +44,7 @@ export function generateMetadata(): Metadata {
       title: LED_DISPLAY_META_TITLE,
       description:
         "Cambodia-focused LED display solutions for retail, corporate, hotels, events, and outdoor advertising with local engineering and after-sales support.",
-      url: `${SITE_URL}/led-display`,
+      url: `${SITE_URL}/led-display/`,
       siteName: "Mugnee Cambodia",
       type: "website",
       images: [

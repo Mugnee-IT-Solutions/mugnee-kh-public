@@ -1,8 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import Script from "next/script";
 import { useLang } from "../components/layout/LanguageProvider";
+
+declare global {
+  interface Window {
+    onTurnstileSuccess?: (token: string) => void;
+    onTurnstileExpired?: () => void;
+  }
+}
 
 const socialLinks = [
   { label: "Facebook", platform: "facebook", href: "https://www.facebook.com/mugneemultiple/" },
@@ -210,6 +218,19 @@ export default function ContactClient() {
     type: "idle",
     text: "",
   });
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
+  const turnstileEnabled = Boolean(turnstileSiteKey);
+
+  useEffect(() => {
+    if (!turnstileEnabled) return;
+    window.onTurnstileSuccess = (token: string) => setTurnstileToken(token);
+    window.onTurnstileExpired = () => setTurnstileToken("");
+    return () => {
+      window.onTurnstileSuccess = undefined;
+      window.onTurnstileExpired = undefined;
+    };
+  }, [turnstileEnabled]);
 
   const updateField = (field: keyof FormState, value: string) => {
     setForm((prev) => {
@@ -222,6 +243,20 @@ export default function ContactClient() {
     });
   };
 
+  const openMailFallback = (payload: FormState) => {
+    const subject = payload.subject.trim() || "Website inquiry";
+    const bodyLines = [
+      `Name: ${payload.name.trim()}`,
+      `Email: ${payload.email.trim()}`,
+      `Phone: ${payload.phone.trim()}`,
+      "",
+      payload.message.trim(),
+    ];
+    const body = encodeURIComponent(bodyLines.join("\n"));
+    const mailto = `mailto:info.mugnee@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailto;
+  };
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (sending) return;
@@ -232,6 +267,14 @@ export default function ContactClient() {
       setStatus({
         type: "error",
         text: "Please correct the highlighted fields and try again.",
+      });
+      return;
+    }
+
+    if (turnstileEnabled && !turnstileToken) {
+      setStatus({
+        type: "error",
+        text: "Please complete the captcha verification.",
       });
       return;
     }
@@ -250,41 +293,53 @@ export default function ContactClient() {
           phone: form.phone.trim(),
           subject: form.subject.trim(),
           message: form.message.trim(),
+          turnstileToken,
         }),
       });
-      const data = (await res.json()) as {
-        ok?: boolean;
-        message?: string;
-        fieldErrors?: FormErrors;
-      };
+
+      let data: { ok?: boolean; message?: string; fieldErrors?: FormErrors } = {};
+      try {
+        data = (await res.json()) as {
+          ok?: boolean;
+          message?: string;
+          fieldErrors?: FormErrors;
+        };
+      } catch {
+        data = {};
+      }
 
       if (!res.ok || !data.ok) {
+        if (res.status === 404 || res.status === 405) {
+          openMailFallback(form);
+          setStatus({
+            type: "success",
+            text:
+              "Server contact endpoint is unavailable on this hosting. Email composer opened as fallback.",
+          });
+          return;
+        }
+
         if (data.fieldErrors) setErrors(data.fieldErrors);
         setStatus({
           type: "error",
-          text:
-            data.message ||
-            (isKm
-              ? "មិនអាចផ្ញើសារបានទេ។ សូមព្យាយាមម្តងទៀត។"
-              : "Unable to send your message. Please try again."),
+          text: data.message || "Unable to send your message. Please try again.",
         });
         return;
       }
 
       setStatus({
         type: "success",
-        text: isKm
-          ? "សាររបស់អ្នកត្រូវបានផ្ញើជោគជ័យ។ ក្រុមការងារយើងនឹងទាក់ទងត្រឡប់វិញឆាប់ៗនេះ។"
-          : "Your message was sent successfully. Our team will contact you soon.",
+        text: "Your message was sent successfully. Our team will contact you soon.",
       });
       setForm({ name: "", email: "", phone: "", subject: "", message: "", website: "" });
+      setTurnstileToken("");
       setErrors({});
     } catch {
+      openMailFallback(form);
       setStatus({
-        type: "error",
-        text: isKm
-          ? "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេបានទេ។ សូមព្យាយាមម្តងទៀត។"
-          : "Could not connect to server. Please try again.",
+        type: "success",
+        text:
+          "Could not connect to server endpoint. Email composer opened as fallback.",
       });
     } finally {
       setSending(false);
@@ -293,6 +348,13 @@ export default function ContactClient() {
 
   return (
     <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+      {turnstileEnabled ? (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          async
+          defer
+        />
+      ) : null}
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-28 top-8 h-56 w-56 rounded-full bg-cyan-300/15 blur-3xl" />
@@ -458,6 +520,17 @@ export default function ContactClient() {
                   >
                     {status.text}
                   </p>
+                ) : null}
+                {turnstileEnabled ? (
+                  <div className="sm:col-span-2">
+                    <div
+                      className="cf-turnstile"
+                      data-sitekey={turnstileSiteKey}
+                      data-callback="onTurnstileSuccess"
+                      data-expired-callback="onTurnstileExpired"
+                      data-theme="light"
+                    />
+                  </div>
                 ) : null}
               </form>
             </div>

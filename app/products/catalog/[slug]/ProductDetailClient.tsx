@@ -204,7 +204,13 @@ export default function ProductDetailClient({ product }: { product: Product }) {
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             {galleryImages.length > 1 ? (
               <div className="grid gap-4 sm:grid-cols-[0.2fr_0.8fr]">
-                <div className="order-2 flex gap-3 overflow-x-auto pb-2 sm:order-1 sm:flex-col sm:overflow-visible sm:pb-0">
+                <div
+                  className={`order-2 flex gap-3 overflow-x-auto pb-2 sm:order-1 sm:flex-col sm:pb-0 ${
+                    galleryImages.length > 3
+                      ? "sm:max-h-[372px] sm:overflow-y-auto sm:pr-1"
+                      : "sm:overflow-visible"
+                  }`}
+                >
                   {galleryImages.map((img) => {
                     const isActive = img === activeImage;
                     return (

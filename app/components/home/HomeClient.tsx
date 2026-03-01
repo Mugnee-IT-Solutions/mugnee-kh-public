@@ -72,19 +72,19 @@ const HERO_SLIDES = [
     alt: "Mugnee Cambodia company project delivery",
   },
   {
-    src: "/images/hero/cambodia-led-billboard-advertising.png",
+    src: "/images/hero/cambodia-led-billboard-advertising.webp",
     alt: "Commercial project execution in Cambodia",
   },
   {
-    src: "/images/hero/cambodia-indoor-led-video-wall-retail.png",
+    src: "/images/hero/cambodia-indoor-led-video-wall-retail.webp",
     alt: "Retail and enterprise deployment support",
   },
   {
-    src: "/images/hero/cambodia-smart-classroom-interactive-flat-panel.png",
+    src: "/images/hero/cambodia-smart-classroom-interactive-flat-panel.webp",
     alt: "Smart classroom interactive flat panel solution in Cambodia",
   },
   {
-    src: "/images/hero/cambodia-access-control-turnstile-pa-system.png",
+    src: "/images/hero/cambodia-access-control-turnstile-pa-system.webp",
     alt: "Integrated systems delivery and support in Cambodia",
   },
 ];
@@ -1075,5 +1075,4 @@ export default function HomeClient({
     </div>
   );
 }
-
 

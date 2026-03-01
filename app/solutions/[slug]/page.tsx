@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const solution = INDUSTRY_SOLUTIONS_BY_SLUG[slug];
   if (!solution) return {};
 
-  const pageUrl = `${SITE_URL}/solutions/${solution.slug}`;
+  const pageUrl = `${SITE_URL}/solutions/${solution.slug}/`;
   const ogImage = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
   return {
     title: `${solution.title} | Mugnee Cambodia`,

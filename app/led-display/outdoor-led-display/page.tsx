@@ -10,7 +10,7 @@ import LedDisplayClient from "../../products/led-display/LedDisplayClient";
 import { PRODUCTS } from "../../data/products";
 import { SITE_URL } from "../../lib/site";
 
-const PAGE_PATH = "/led-display/outdoor-led-display";
+const PAGE_PATH = "/outdoor-led-display/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.png`,
+        url: `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`,
         width: 1200,
         height: 630,
         alt: "Outdoor LED display and billboard in Cambodia",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Outdoor LED Display Cambodia | Best Price & Installation",
     description:
       "Outdoor LED billboard and digital signage solutions in Cambodia with local installation and support.",
-    images: [`${SITE_URL}/images/hero/cambodia-led-billboard-advertising.png`],
+    images: [`${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`],
   },
 };
 
@@ -368,5 +368,3 @@ export default function OutdoorLedDisplayPage() {
     </>
   );
 }
-
-
