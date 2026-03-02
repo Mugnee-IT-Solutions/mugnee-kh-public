@@ -52,38 +52,38 @@ function autoTranslateToKhmer(input: string) {
   if (!text || hasKhmer(text)) return text;
 
   const map: Array<[string, string]> = [
-    ["Interactive Flat Panel", "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜"],
-    ["Indoor LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’áž“áž»áž„"],
-    ["Outdoor LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’ážšáŸ…"],
-    ["Rental LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‡áž½áž›"],
-    ["LED Display Module", "áž˜áŸ‰áž¼ážŒáž»áž›áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
-    ["LED Screen Panel", "áž”áž“áŸ’áž‘áŸ‡áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
-    ["LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
-    ["Video Processor", "ážœáž¸ážŠáŸáž¢áž¼áž”áŸ’ážšáž¼ážŸáŸážŸáŸážš"],
-    ["Power Supply", "áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ážáž¶áž˜áž–áž›"],
-    ["PA Speakers", "áž§áž”áž€ážšážŽáŸáž”áŸ†áž–áž„ážŸáŸ†áž¡áŸáž„ PA"],
-    ["PA Microphones", "áž˜áž¸áž€áŸ’ážšáž¼áž áŸ’ážœáž¼áž“ PA"],
-    ["PA Amplifiers", "áž¢áŸ†áž–áŸ’áž›áž¸áž áŸ’ážœáž¶áž™áž¢áŸážš PA"],
-    ["PA Controllers", "áž§áž”áž€ážšážŽáŸáž”áž‰áŸ’áž‡áž¶ PA"],
-    ["Network Audio", "áž¢áž¼ážŒáž¸áž™áŸ‰áž¼áž”ážŽáŸ’ážáž¶áž‰"],
-    ["PA Software", "áž€áž˜áŸ’áž˜ážœáž·áž’áž¸ PA"],
-    ["PA Accessories", "áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ PA"],
-    ["Turnstile Gate", "áž…áŸ’ážšáž€ Turnstile"],
-    ["Tripod Turnstile", "áž…áŸ’ážšáž€ Tripod Turnstile"],
-    ["Flap Barrier", "áž…áŸ’ážšáž€ Flap Barrier"],
-    ["Speed Gate", "áž…áŸ’ážšáž€ Speed Gate"],
-    ["Full Height", "áž…áŸ’ážšáž€áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰"],
-    ["Key Features", "áž›áž€áŸ’ážážŽáŸˆáž–áž·ážŸáŸážŸ"],
-    ["Overview", "áž‘áž·ážŠáŸ’áž‹áž—áž¶áž–áž‘áž¼áž‘áŸ…"],
-    ["Specifications", "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ"],
-    ["Applications", "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹"],
-    ["Product", "áž•áž›áž·ážáž•áž›"],
-    ["for", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹"],
-    ["with", "áž‡áž¶áž˜áž½áž™"],
-    ["and", "áž“áž·áž„"],
-    ["in", "áž€áŸ’áž“áž»áž„"],
-    ["to", "áž‘áŸ…"],
-    ["from", "áž–áž¸"],
+    ["Interactive Flat Panel", "Interactive Flat Panel"],
+    ["Indoor LED Display", "Indoor LED Display"],
+    ["Outdoor LED Display", "Outdoor LED Display"],
+    ["Rental LED Display", "Rental LED Display"],
+    ["LED Display Module", "LED Display Module"],
+    ["LED Screen Panel", "LED Screen Panel"],
+    ["LED Display", "LED Display"],
+    ["Video Processor", "Video Processor"],
+    ["Power Supply", "Power Supply"],
+    ["PA Speakers", "PA Speakers"],
+    ["PA Microphones", "PA Microphones"],
+    ["PA Amplifiers", "PA Amplifiers"],
+    ["PA Controllers", "PA Controllers"],
+    ["Network Audio", "Network Audio"],
+    ["PA Software", "PA Software"],
+    ["PA Accessories", "PA Accessories"],
+    ["Turnstile Gate", "Turnstile Gate"],
+    ["Tripod Turnstile", "Tripod Turnstile"],
+    ["Flap Barrier", "Flap Barrier"],
+    ["Speed Gate", "Speed Gate"],
+    ["Full Height", "Full Height"],
+    ["Key Features", "Key Features"],
+    ["Overview", "Overview"],
+    ["Specifications", "Specifications"],
+    ["Applications", "Applications"],
+    ["Product", "Product"],
+    ["for", "for"],
+    ["with", "with"],
+    ["and", "and"],
+    ["in", "in"],
+    ["to", "to"],
+    ["from", "from"],
   ];
 
   let out = text;
@@ -92,7 +92,7 @@ function autoTranslateToKhmer(input: string) {
   }
 
   if (hasKhmer(out)) return out;
-  return `áž•áž›áž·ážáž•áž› ${text}`;
+  return `Product ${text}`;
 }
 
 function localizedKhmer(valueKm: string, fallbackEn: string) {
@@ -321,7 +321,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             )}
             <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                {lang === "en" ? "Product" : "áž•áž›áž·ážáž•áž›"}
+                Product
               </p>
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
                 {title}
@@ -344,25 +344,22 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   href={toLangHref("/contact")}
                   className="cta-anim relative rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white no-underline hover:bg-slate-800"
                 >
-                  {lang === "en" ? "Get Quotation" : "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ"}
+                  Get Quotation
                 </Link>
                 <Link
                   href={toLangHref("/products")}
                   className="cta-anim relative rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 no-underline hover:border-slate-300"
                 >
-                  {lang === "en" ? "Back to Products" : "ážáŸ’ážšáž¡áž”áŸ‹áž‘áŸ…áž•áž›áž·ážáž•áž›"}
+                  Back to Products
                 </Link>
               </div>
               <div className="mt-5 rounded-2xl border border-sky-200 bg-sky-50/70 p-4">
                 <p className="text-sm font-semibold text-slate-900">
-                  {lang === "en"
-                    ? "Need LED display project pricing and installation guidance?"
-                    : "ážáŸ’ážšáž¼ážœáž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†ážáž˜áŸ’áž›áŸƒ áž“áž·áž„ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED?"}
+                  Need LED display project pricing and installation guidance?
                 </p>
                 <p className="mt-1 text-xs leading-relaxed text-slate-600">
-                  {lang === "en"
-                    ? "Use our LED Display Cambodia pillar page for BOQ factors, indoor/outdoor planning, and project workflow."
-                    : "ážŸáž¼áž˜áž˜áž¾áž›áž‘áŸ†áž–áŸážš LED Display Cambodia ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€ážáŸ’ážáž¶ BOQ áž€áž¶ážšážšáŸ€áž”áž…áŸ† indoor/outdoor áž“áž·áž„ workflow áž‚áž˜áŸ’ážšáŸ„áž„áŸ”"}
+                  Use our LED Display Cambodia pillar page for BOQ factors, indoor/outdoor
+                  planning, and project workflow.
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   <Link
@@ -394,12 +391,12 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h2 className="text-xl font-semibold text-slate-900">
-              {lang === "en" ? "Overview" : "áž‘áž·ážŠáŸ’áž‹áž—áž¶áž–áž‘áž¼áž‘áŸ…"}
+              Overview
             </h2>
             <p className="mt-3 text-base leading-relaxed text-slate-600">{description}</p>
 
             <h3 className="mt-8 text-lg font-semibold tracking-tight text-slate-900">
-              {lang === "en" ? "Key Features" : "áž›áž€áŸ’ážážŽáŸˆáž–áž·ážŸáŸážŸ"}
+              Key Features
             </h3>
             <ul className="mt-3 space-y-2 text-[15px] font-medium leading-relaxed text-slate-700">
               {features.map((item) => (
@@ -411,7 +408,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             </ul>
 
             <h3 className="mt-8 text-lg font-semibold text-slate-900">
-              {lang === "en" ? "Applications" : "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹"}
+              Applications
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               {applications.map((item) => (
@@ -425,7 +422,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-slate-900">
-              {lang === "en" ? "Specifications" : "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ"}
+              Specifications
             </h3>
             <dl className="mt-4 space-y-3 text-sm">
               {product.specs.map((spec) => (
@@ -454,7 +451,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <section className="border-t border-slate-100 bg-slate-50/60">
           <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
             <h3 className="text-lg font-semibold text-slate-900">
-              {lang === "en" ? "Related Products" : "áž•áž›áž·ážáž•áž›áž–áž¶áž€áŸ‹áž–áŸáž“áŸ’áž’"}
+              Related Products
             </h3>
             <div className="mt-4 flex gap-4 overflow-x-auto pb-2">
               {relatedProducts.map((item) => {

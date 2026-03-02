@@ -155,6 +155,7 @@ export default function SiteHeader() {
   const [searchResults, setSearchResults] = useState<SearchProduct[]>([]);
   const [searchOpenDesktop, setSearchOpenDesktop] = useState(false);
   const [searchOpenMobile, setSearchOpenMobile] = useState(false);
+  const [showQuotePhone, setShowQuotePhone] = useState(false);
   const desktopSearchRef = useRef<HTMLDivElement | null>(null);
   const mobileSearchRef = useRef<HTMLDivElement | null>(null);
 
@@ -200,6 +201,14 @@ export default function SiteHeader() {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setShowQuotePhone((prev) => !prev);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   const t = useMemo(() => {
     const en = {
       solutions: "Solutions",
@@ -209,6 +218,7 @@ export default function SiteHeader() {
       about: "About",
       contact: "Contact",
       quote: "Get a Free Quotation",
+      quotePhone: "ហៅ +855 86 817 907",
       close: "Close",
       menu: "Menu",
       searchPlaceholder: "Search products, solutions...",
@@ -229,6 +239,7 @@ export default function SiteHeader() {
       about: "អំពីយើង",
       contact: "ទាក់ទងយើង",
       quote: "ស្នើសុំតម្លៃ (Free)",
+      quotePhone: "Call +855 86 817 907",
       close: "បិទ",
       menu: "ម៉ឺនុយ",
       searchPlaceholder: "ស្វែងរកផលិតផល/ដំណោះស្រាយ...",
@@ -243,6 +254,9 @@ export default function SiteHeader() {
     };
     return lang === "en" ? en : km;
   }, [lang]);
+
+  const quotePhoneLabel = lang === "en" ? "Call +855 86 817 907" : "ហៅ +855 86 817 907";
+  const quoteCtaLabel = showQuotePhone ? quotePhoneLabel : t.quote;
 
   const ledDisplayMenu: NavItem[] = [
     {
@@ -438,7 +452,7 @@ export default function SiteHeader() {
 
   return (
     <header ref={headerRef} className="fixed top-0 z-50 w-full">
-      <div className="border-b border-slate-200 bg-white/90 backdrop-blur">
+      <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
           <Link
             href={toLangHref("/")}
@@ -474,7 +488,7 @@ export default function SiteHeader() {
               </button>
             </div>
             {searchOpenDesktop && q.trim().length >= 2 ? (
-              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 isolate overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.18)] ring-1 ring-slate-200/70">
                 {searchResults.length > 0 ? (
                   <ul className="max-h-80 overflow-y-auto py-1">
                     {searchResults.map((item) => (
@@ -530,11 +544,11 @@ export default function SiteHeader() {
             </div>
 
             <Link
-              href={toLangHref("/contact")}
-              onClick={forceScrollTop}
-              className="hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 lg:inline-flex"
+              href="tel:+85586817907"
+              className="cta-attract hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 lg:inline-flex"
+              aria-label="Call Mugnee Cambodia at +855 86 817 907"
             >
-              {t.quote}
+              {quoteCtaLabel}
             </Link>
 
             <button
@@ -568,7 +582,7 @@ export default function SiteHeader() {
               </button>
             </div>
             {searchOpenMobile && q.trim().length >= 2 ? (
-              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 isolate overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_rgba(15,23,42,0.18)] ring-1 ring-slate-200/70">
                 {searchResults.length > 0 ? (
                   <ul className="max-h-72 overflow-y-auto py-1">
                     {searchResults.map((item) => (
@@ -620,11 +634,11 @@ export default function SiteHeader() {
               </div>
 
               <Link
-                href={toLangHref("/contact")}
-                onClick={forceScrollTop}
-                className="rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white hover:bg-slate-800"
+                href="tel:+85586817907"
+                className="cta-attract rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
+                aria-label="Call Mugnee Cambodia at +855 86 817 907"
               >
-                {t.quote}
+                {quoteCtaLabel}
               </Link>
             </div>
           </form>
