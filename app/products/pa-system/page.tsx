@@ -5,5 +5,11 @@
   Email: ankurdatta.official@gmail.com
   Github: https://github.com/ankur-datta-official
 */
-export { metadata } from "../../pa-system/page";
+import type { Metadata } from "next";
+import { buildLegacyAliasMetadata } from "../../lib/seoLegacy";
+
+export const metadata: Metadata = buildLegacyAliasMetadata({
+  canonicalPath: "/pa-system/",
+});
+
 export { default } from "../../pa-system/page";

@@ -16,7 +16,14 @@ export const metadata: Metadata = {
   title: "Access Control Solutions in Cambodia | Mugnee Cambodia",
   description:
     "Office access control solution references and implementation support in Cambodia.",
-  alternates: { canonical: TARGET_URL },
+  alternates: {
+    canonical: TARGET_URL,
+    languages: {
+      en: "/solutions/office-access-control-cambodia/",
+      km: "/km/solutions/office-access-control-cambodia/",
+      "x-default": "/solutions/office-access-control-cambodia/",
+    },
+  },
   robots: { index: false, follow: true },
 };
 

@@ -24,7 +24,14 @@ export const metadata: Metadata = {
     "IP65 LED screen Cambodia",
     "roadside LED billboard Phnom Penh",
   ],
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/led-display/outdoor-led-display/",
+      km: "/km/led-display/outdoor-led-display/",
+      "x-default": "/led-display/outdoor-led-display/",
+    },
+  },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Outdoor LED Display Cambodia | Best Price & Installation",

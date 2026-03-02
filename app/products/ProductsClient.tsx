@@ -4,8 +4,9 @@ import ProductGrid from "../components/sections/ProductGrid";
 import { useLang } from "../components/layout/LanguageProvider";
 import { useSearchParams } from "next/navigation";
 
-export default function ProductsClient() {
-  const { lang } = useLang();
+export default function ProductsClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get("search") ?? "";
 
@@ -31,7 +32,7 @@ export default function ProductsClient() {
 
       <section className="py-10">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-          <ProductGrid columns={3} searchTerm={searchTerm} />
+          <ProductGrid columns={3} searchTerm={searchTerm} forcedLang={lang} />
         </div>
       </section>
     </main>

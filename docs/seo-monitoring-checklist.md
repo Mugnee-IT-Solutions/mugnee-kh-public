@@ -12,7 +12,7 @@
 - `Page = https://mugneekh.com/led-display/`
 4. Compare query groups:
 - Brand: `mugnee`, `mugnee cambodia`
-- LED intent: `led display cambodia`, `led screen cambodia`, `led display price cambodia`
+- LED intent: `led display cambodia`, `led display price cambodia`, `indoor led display cambodia`, `outdoor led display cambodia`, `អេក្រង់ LED`
 
 ## Weekly Review (2-4 Weeks)
 1. Check homepage for non-brand query growth.
@@ -24,4 +24,3 @@
 - `Brand CTR` on `/` increases.
 - `LED CTR` and impressions on `/led-display/` increase.
 - Query/page intent alignment becomes stable over 2-4 weeks.
-

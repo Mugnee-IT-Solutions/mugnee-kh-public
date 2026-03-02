@@ -11,6 +11,8 @@ type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
 export default function AccessControlClient() {
   const { lang } = useLang();
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
 
   const t = useMemo(() => {
     const en = {
@@ -444,7 +446,7 @@ export default function AccessControlClient() {
 
               <div className="mt-4 flex flex-wrap items-center gap-2.5">
                 <Link
-                  href="/contact"
+                  href={toLangHref("/contact")}
                   className="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                 >
                   {t.cta1}
@@ -476,7 +478,7 @@ export default function AccessControlClient() {
 
                 <div className="mt-4">
                   <Link
-                    href="/contact"
+                    href={toLangHref("/contact")}
                     className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                   >
                     {t.finalCta}
@@ -515,7 +517,7 @@ export default function AccessControlClient() {
               ].map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={toLangHref(item.href)}
                   className="quick-link rounded-full px-4 py-1.5 text-xs font-semibold text-slate-700 hover:text-slate-900"
                 >
                   {item.label}
@@ -705,7 +707,7 @@ export default function AccessControlClient() {
 
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href={toLangHref("/contact")}
                 className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
               >
                 {t.finalCta}

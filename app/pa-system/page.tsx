@@ -19,7 +19,14 @@ export const metadata: Metadata = {
   title: "Commercial PA System Cambodia | Design Supply & Installation",
   description:
     "Professional PA system solutions in Cambodia: amplifiers, mixers, speakers, microphones, and accessories. Designed for clear announcements in factories, schools, malls, and offices with expert installation support.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/pa-system/",
+      km: "/km/pa-system/",
+      "x-default": "/pa-system/",
+    },
+  },
   openGraph: {
     title: "PA System in Cambodia",
     description:

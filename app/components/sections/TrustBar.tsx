@@ -219,6 +219,8 @@ export default function ProductGrid({
   searchTerm,
 }: ProductGridProps) {
   const { lang } = useLang();
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const [activeCategory, setActiveCategory] = useState(categoryId || "all");
   const [sortOrder, setSortOrder] = useState<"az" | "za">("az");
   const [page, setPage] = useState(1);
@@ -456,7 +458,7 @@ export default function ProductGrid({
           </div>
         ) : null}
         {paginated.map((product) => {
-          const detailHref = `${detailBasePath}/${product.slug}`;
+          const detailHref = toLangHref(`${detailBasePath}/${product.slug}`);
           const primaryCategory = getCategoryById(product.primaryCategoryId);
           const primaryLabel = primaryCategory
             ? lang === "en"
@@ -508,7 +510,7 @@ export default function ProductGrid({
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Link
-                    href="/contact"
+                    href={toLangHref("/contact")}
                     className="rounded-full bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white no-underline hover:bg-slate-800"
                   >
                     {lang === "en" ? "Get Quotation" : "ស្នើសុំតម្លៃ"}

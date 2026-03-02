@@ -6,6 +6,7 @@ import { LanguageProvider } from "./components/layout/LanguageProvider";
 import SiteHeader from "./components/layout/Header";
 import SiteFooter from "./components/layout/Footer";
 import SitewideJsonLd from "./components/seo/SitewideJsonLd";
+import WebVitalsReporter from "./components/seo/WebVitalsReporter";
 import { SITE_URL } from "./lib/site";
 
 /*
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Suspense fallback={null}>
           <LanguageProvider>
             <SitewideJsonLd />
+            <WebVitalsReporter />
             <ScrollToTopOnRoute />
             <SiteHeader />
             <main

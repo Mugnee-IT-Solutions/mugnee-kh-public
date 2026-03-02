@@ -2,16 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
+import { trackEvent } from "../../lib/analytics";
+import { BUSINESS_ADDRESS, BUSINESS_PHONE_E164, BUSINESS_SAME_AS, BUSINESS_NAME, SERVICE_AREAS } from "../../lib/nap";
 import { SITE_URL } from "../../lib/site";
-
-const ProductGrid = dynamic(() => import("../../components/sections/ProductGrid"), {
-  ssr: false,
-  loading: () => <div className="h-32 w-full animate-pulse rounded-2xl bg-slate-100" />,
-});
+import ProductGrid from "../../components/sections/ProductGrid";
 
 type ProductGridConfig = {
   columns?: 2 | 3 | 4;
@@ -290,55 +287,20 @@ function DeferredSection({
   id,
   className,
   children,
-  minHeight = 140,
 }: {
   id?: string;
   className?: string;
   children: React.ReactNode;
-  minHeight?: number;
 }) {
-  const [isVisible, setIsVisible] = useState(() => {
-    if (typeof window === "undefined" || !id) return false;
-    return window.location.hash === `#${id}`;
-  });
-  const hostRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    if (isVisible) {
-      return;
-    }
-
-    const node = hostRef.current;
-    if (!node) return;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setIsVisible(true);
-          io.disconnect();
-        }
-      },
-      { rootMargin: "600px 0px" }
-    );
-
-    io.observe(node);
-    return () => io.disconnect();
-  }, [id, isVisible]);
-
   return (
-    <section id={id} ref={hostRef} className={className}>
-      {isVisible ? (
-        children
-      ) : (
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <div className="h-8 w-48 animate-pulse rounded bg-slate-200/80" style={{ minHeight }} />
-        </div>
-      )}
+    <section id={id} className={className}>
+      {children}
     </section>
   );
 }
 
 export default function LedDisplayClient({
+  forcedLang,
   productGridOverride,
   productQuickChips,
   afterSpecsContent,
@@ -375,6 +337,7 @@ export default function LedDisplayClient({
   breadcrumbOverride,
   breadcrumbOverrideKm,
 }: {
+  forcedLang?: "en" | "km";
   productGridOverride?: ProductGridConfig;
   productQuickChips?: Array<{ label: string; href: string; labelKm?: string }>;
   afterSpecsContent?: React.ReactNode;
@@ -412,7 +375,10 @@ export default function LedDisplayClient({
   breadcrumbOverrideKm?: string;
 }) {
   const pathname = usePathname();
-  const { lang } = useLang();
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const faqItems =
     (lang === "en" ? faqItemsOverride : (faqItemsOverrideKm ?? faqItemsOverride)) ??
     (lang === "en" ? LED_FAQS_EN : LED_FAQS_KM);
@@ -438,6 +404,14 @@ export default function LedDisplayClient({
   const schemaServiceDesc =
     schemaServiceDescOverride ??
     "Indoor LED video walls, outdoor LED billboards, installation, commissioning and after-sales support in Cambodia.";
+  const trackLeadClick = (cta: string, section: string) => {
+    trackEvent("lead_cta_click", {
+      cta,
+      section,
+      page: schemaPath,
+      lang,
+    });
+  };
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
@@ -475,6 +449,7 @@ export default function LedDisplayClient({
     lang === "en"
       ? [
           { label: "Products", href: "#products" },
+          { label: "Price & BOQ", href: "#price-boq" },
           { label: "Buying Flow", href: "#buyer-journey" },
           { label: "LED Basics", href: "#led-basics" },
           { label: "Types", href: "#types-cambodia" },
@@ -491,6 +466,7 @@ export default function LedDisplayClient({
         ]
       : [
           { label: "ផលិតផល", href: "#products" },
+          { label: "តម្លៃ និង BOQ", href: "#price-boq" },
           { label: "ដំណើរទិញ", href: "#buyer-journey" },
           { label: "មូលដ្ឋាន LED", href: "#led-basics" },
           { label: "ប្រភេទ", href: "#types-cambodia" },
@@ -597,25 +573,18 @@ export default function LedDisplayClient({
             {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "Mugnee Cambodia",
+              name: BUSINESS_NAME,
               url: `${SITE_URL}${schemaPath}`,
               image: `${SITE_URL}/images/hero/cambodia-led-hero.webp`,
-              telephone: "+85586817907",
-              sameAs: [
-                "https://www.facebook.com/mugneemultiple/",
-                "https://www.youtube.com/@MugneeTech",
-                "https://www.linkedin.com/company/mugnee-multiple-limited/",
-                "https://x.com/mugneeml",
-                "https://www.instagram.com/sm.mugnee/",
-              ],
+              telephone: BUSINESS_PHONE_E164,
+              sameAs: BUSINESS_SAME_AS,
               address: {
                 "@type": "PostalAddress",
-                streetAddress:
-                  "1st Floor, 11E0, Street 108, Night Market Area, Doun Penh",
-                addressLocality: "Phnom Penh",
-                addressCountry: "KH",
+                streetAddress: BUSINESS_ADDRESS.streetAddress,
+                addressLocality: BUSINESS_ADDRESS.addressLocality,
+                addressCountry: BUSINESS_ADDRESS.addressCountry,
               },
-              areaServed: ["Phnom Penh", "Siem Reap", "Sihanoukville"],
+              areaServed: SERVICE_AREAS,
             },
             {
               "@context": "https://schema.org",
@@ -626,7 +595,7 @@ export default function LedDisplayClient({
               serviceType: "LED Display Solutions",
               provider: {
                 "@type": "LocalBusiness",
-                name: "Mugnee Cambodia",
+                name: BUSINESS_NAME,
               },
             },
             {
@@ -703,12 +672,14 @@ export default function LedDisplayClient({
               href="https://wa.me/85586817907"
               target="_blank"
               rel="noopener"
+              onClick={() => trackLeadClick("whatsapp", "hero")}
               className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
             >
               {t.cta1}
             </a>
             <Link
-              href="/contact"
+              href={toLangHref("/contact")}
+              onClick={() => trackLeadClick("request_boq", "hero")}
               className="rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-100"
             >
               {t.cta2}
@@ -875,19 +846,19 @@ export default function LedDisplayClient({
 
           <div className="mt-5 flex flex-wrap gap-2">
             <Link
-              href="/contact"
+              href={toLangHref("/contact")}
               className="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white no-underline hover:bg-slate-800 hover:no-underline"
             >
               {lang === "en" ? "Request LED BOQ & Quotation" : "ស្នើសុំ BOQ និងតម្លៃ LED"}
             </Link>
             <Link
-              href="/led-display/indoor-led-display"
+              href={toLangHref("/led-display/indoor-led-display")}
               className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Compare Indoor LED Display" : "ប្រៀបធៀប LED ក្នុងអគារ"}
             </Link>
             <Link
-              href="/led-display/outdoor-led-display"
+              href={toLangHref("/led-display/outdoor-led-display")}
               className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Compare Outdoor LED Billboard" : "ប្រៀបធៀប LED ខាងក្រៅ"}
@@ -1550,8 +1521,96 @@ export default function LedDisplayClient({
         </div>
       </section>
 
+      {/* PRICE & BOQ FACTORS */}
+      <DeferredSection id="price-boq" className="border-t border-slate-200 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            {lang === "en"
+              ? "LED Display Price in Cambodia: Key Cost Factors & BOQ Process"
+              : "តម្លៃអេក្រង់ LED នៅកម្ពុជា៖ កត្តាចំណាយសំខាន់ និងដំណើរការ BOQ"}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600">
+            {lang === "en"
+              ? "Final project price is based on technical scope, installation condition, and reliability requirements. This framework helps buyers compare quotations using the same engineering baseline."
+              : "តម្លៃចុងក្រោយសម្រាប់គម្រោង អាស្រ័យលើស៊ុមបច្ចេកទេស លក្ខខណ្ឌដំឡើង និងតម្រូវការភាពទុកចិត្តបាន។ ស៊ុមនេះជួយឱ្យអ្នកទិញប្រៀបធៀបសំណើតម្លៃលើមូលដ្ឋានវិស្វកម្មដូចគ្នា។"}
+          </p>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {(lang === "en"
+              ? [
+                  ["1. Pixel Pitch & Screen Size", "Smaller pitch and larger display area increase module count and budget."],
+                  ["2. Brightness & Outdoor Protection", "Higher nits, IP65+ cabinet design, and heat control raise outdoor project cost."],
+                  ["3. Controller & Video Processing", "Input requirements, scaling quality, and redundancy options affect system specification."],
+                  ["4. Structure, Mounting & Safety", "Steel structure design, civil prep, and grounding scope vary by site risk profile."],
+                  ["5. Installation Complexity", "Height, cable route, power condition, and timeline impact labor and execution cost."],
+                  ["6. After-Sales Scope", "Warranty terms, spare-parts readiness, AMC, and response SLA influence total ownership cost."],
+                ]
+              : [
+                  ["1. Pixel Pitch និងទំហំអេក្រង់", "Pitch តូច និងទំហំអេក្រង់ធំ នាំឱ្យចំនួនម៉ូឌុលកើនឡើង និងថវិកាកើន។"],
+                  ["2. កម្រិតពន្លឺ និងការពារខាងក្រៅ", "Nits ខ្ពស់ កាប៊ីណេត IP65+ និងការគ្រប់គ្រងកម្តៅ បង្កើនចំណាយគម្រោងខាងក្រៅ។"],
+                  ["3. Controller និង Video Processing", "តម្រូវការ Input គុណភាពបម្លែងរូបភាព និងជម្រើសបម្រុងទុក ប៉ះពាល់ដល់ស៊ុមប្រព័ន្ធ។"],
+                  ["4. រចនាសម្ព័ន្ធ និងសុវត្ថិភាព", "ការរចនាដែក ការរៀបចំទីតាំង និងប្រព័ន្ធដីសុវត្ថិភាព ផ្លាស់ប្តូរតាមហានិភ័យទីតាំង។"],
+                  ["5. ភាពស្មុគស្មាញនៃការដំឡើង", "កម្ពស់ ទិសខ្សែ ស្ថានភាពថាមពល និងពេលវេលាអនុវត្ត ប៉ះពាល់ដល់ថ្លៃអនុវត្ត។"],
+                  ["6. វិសាលភាពសេវាបន្ទាប់ពីលក់", "រយៈពេលធានា គម្រោងគ្រឿងបន្លាស់ AMC និង SLA ប៉ះពាល់ដល់ចំណាយសរុបរយៈពេលវែង។"],
+                ]
+            ).map(([title, desc]) => (
+              <div
+                key={String(title)}
+                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+              >
+                <div className="text-sm font-semibold text-slate-900">{title}</div>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 className="text-base font-semibold text-slate-900">
+              {lang === "en" ? "How Mugnee prepares project BOQ" : "របៀប Mugnee រៀបចំ BOQ គម្រោង"}
+            </h3>
+            <div className="mt-3 grid gap-3 sm:grid-cols-3">
+              {(lang === "en"
+                ? [
+                    ["Step 1", "Collect site data: viewing distance, target size, power readiness, and timeline."],
+                    ["Step 2", "Prepare option sets: pixel pitch, brightness class, controller stack, and structure method."],
+                    ["Step 3", "Share BOQ with scope split: materials, installation, commissioning, and after-sales terms."],
+                  ]
+                : [
+                    ["ជំហាន 1", "ប្រមូលទិន្នន័យទីតាំង៖ ចម្ងាយមើល ទំហំគោលដៅ ស្ថានភាពថាមពល និងពេលវេលា។"],
+                    ["ជំហាន 2", "រៀបចំជម្រើស៖ Pixel Pitch កម្រិតពន្លឺ Controller និងរបៀបរចនាសម្ព័ន្ធ។"],
+                    ["ជំហាន 3", "ផ្ញើ BOQ ជាមួយការបំបែកវិសាលភាព៖ សម្ភារៈ ដំឡើង Commissioning និងលក្ខខណ្ឌបន្ទាប់ពីលក់។"],
+                  ]
+              ).map(([title, desc]) => (
+                <div
+                  key={String(title)}
+                  className="rounded-xl border border-slate-200 bg-slate-50 p-3"
+                >
+                  <div className="text-xs font-semibold uppercase tracking-wide text-slate-700">{title}</div>
+                  <p className="mt-1 text-xs leading-relaxed text-slate-600">{desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href={toLangHref("/contact")}
+                onClick={() => trackLeadClick("request_boq", "price_boq")}
+                className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white no-underline hover:bg-slate-800 hover:no-underline"
+              >
+                {lang === "en" ? "Request BOQ & Quotation" : "ស្នើសុំ BOQ និងសំណើតម្លៃ"}
+              </Link>
+              <Link
+                href={toLangHref("/service")}
+                className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 no-underline hover:bg-slate-100 hover:no-underline"
+              >
+                {lang === "en" ? "View Installation Service Scope" : "មើលវិសាលភាពសេវាដំឡើង"}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </DeferredSection>
+
       {/* USE-CASE BY INDUSTRY */}
-      <DeferredSection id="industry-use-cases" className="border-t border-slate-200 bg-white" minHeight={180}>
+      <DeferredSection id="industry-use-cases" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
@@ -1673,7 +1732,7 @@ export default function LedDisplayClient({
       </DeferredSection>
 
       {/* INSTALLATION PROCESS */}
-      <DeferredSection id="installation-workflow" className="border-t border-slate-200 bg-white" minHeight={180}>
+      <DeferredSection id="installation-workflow" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
@@ -1758,7 +1817,7 @@ export default function LedDisplayClient({
       </DeferredSection>
 
       {/* WHY CHOOSE MUGNEE */}
-      <DeferredSection id="why-mugnee" className="border-t border-slate-200 bg-white" minHeight={180}>
+      <DeferredSection id="why-mugnee" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
@@ -1820,7 +1879,8 @@ export default function LedDisplayClient({
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="/contact"
+              href={toLangHref("/contact")}
+              onClick={() => trackLeadClick("contact", "final_cta")}
               className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
             >
               {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
@@ -1829,6 +1889,7 @@ export default function LedDisplayClient({
               href="https://wa.me/85586817907"
               target="_blank"
               rel="noopener"
+              onClick={() => trackLeadClick("whatsapp", "final_cta")}
               className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
             >
               {lang === "en" ? "WhatsApp for Quotation" : "WhatsApp ស្នើសុំតម្លៃ"}
@@ -1838,7 +1899,7 @@ export default function LedDisplayClient({
       </DeferredSection>
 
       {/* AUTHORIZED DISTRIBUTOR */}
-      <DeferredSection id="partners" className="border-t border-slate-200 bg-white" minHeight={180}>
+      <DeferredSection id="partners" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
             {lang === "en" ? "Partners" : "ដៃគូ"}
@@ -1920,7 +1981,7 @@ export default function LedDisplayClient({
       </DeferredSection>
 
       {/* SERVICE AREA */}
-      <DeferredSection id="service-areas" className="border-t border-slate-200 bg-slate-50" minHeight={160}>
+      <DeferredSection id="service-areas" className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
             {lang === "en" ? "Service area" : "តំបន់សេវាកម្ម"}
@@ -1957,7 +2018,7 @@ export default function LedDisplayClient({
       </DeferredSection>
 
       {/* TRUST / ENTITY SIGNALS */}
-      <DeferredSection className="border-t border-slate-200 bg-gradient-to-b from-white to-slate-50" minHeight={180}>
+      <DeferredSection className="border-t border-slate-200 bg-gradient-to-b from-white to-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
             {lang === "en" ? "Trust Signals" : "សញ្ញានៃភាពទុកចិត្ត"}
@@ -2002,19 +2063,19 @@ export default function LedDisplayClient({
           </div>
           <div className="mt-5 flex flex-wrap gap-2">
             <Link
-              href="/led-display/indoor-led-display"
+              href={toLangHref("/led-display/indoor-led-display")}
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Explore Indoor LED Displays" : "មើលអេក្រង់ LED ក្នុងអគារ"}
             </Link>
             <Link
-              href="/led-display/outdoor-led-display"
+              href={toLangHref("/led-display/outdoor-led-display")}
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Explore Outdoor LED Displays" : "មើលអេក្រង់ LED ខាងក្រៅ"}
             </Link>
             <Link
-              href="/contact"
+              href={toLangHref("/contact")}
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Request LED Quotation" : "ស្នើសុំតម្លៃអេក្រង់ LED"}
@@ -2024,7 +2085,7 @@ export default function LedDisplayClient({
       </DeferredSection>
 
       {/* INTERNAL LINK CLUSTER */}
-      <DeferredSection className="border-t border-slate-200 bg-slate-50" minHeight={180}>
+      <DeferredSection className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/80 to-sky-50/40 p-5 shadow-sm sm:p-6">
             <div className="flex flex-wrap items-start justify-between gap-3">
@@ -2077,7 +2138,7 @@ export default function LedDisplayClient({
       </DeferredSection>
 
       {/* FAQ */}
-      <DeferredSection id="faq" className="border-t border-slate-200 bg-white" minHeight={180}>
+      <DeferredSection id="faq" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en" ? "Frequently Asked Question (FAQ)" : "សំណួរដែលសួរញឹកញាប់"}

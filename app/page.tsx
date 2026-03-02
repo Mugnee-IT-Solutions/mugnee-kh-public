@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
     languages: {
       en: PAGE_PATH,
-      km: `${PAGE_PATH}?lang=km`,
+      km: `/km/`,
       "x-default": PAGE_PATH,
     },
   },

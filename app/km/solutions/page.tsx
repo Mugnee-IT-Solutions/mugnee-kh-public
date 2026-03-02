@@ -1,0 +1,25 @@
+import type { Metadata } from "next";
+import SolutionsClient from "../../solutions/SolutionsClient";
+import { SITE_URL } from "../../lib/site";
+
+const PAGE_PATH = "/km/solutions/";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+
+export const metadata: Metadata = {
+  title: "ដំណោះស្រាយនៅកម្ពុជា | LED Display, Digital Signage, Access Control",
+  description:
+    "ស្វែងរកដំណោះស្រាយដែលសមស្របទីផ្សារកម្ពុជា ពី Mugnee Cambodia ជាមួយការរចនា ដំឡើង និងគាំទ្ររយៈពេលវែង។",
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/solutions/",
+      km: PAGE_PATH,
+      "x-default": "/solutions/",
+    },
+  },
+  robots: { index: true, follow: true },
+};
+
+export default function KmSolutionsPage() {
+  return <SolutionsClient forcedLang="km" />;
+}

@@ -10,6 +10,8 @@ type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
 export default function InteractiveFlatPanelClient() {
   const { lang } = useLang();
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
 
   const t = useMemo(() => {
     const en = {
@@ -454,7 +456,7 @@ export default function InteractiveFlatPanelClient() {
 
           <div className="mt-5 flex flex-wrap gap-2.5">
             <Link
-              href="/contact"
+              href={toLangHref("/contact")}
               className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
             >
               {t.cta1}
@@ -538,7 +540,7 @@ export default function InteractiveFlatPanelClient() {
               ).map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={toLangHref(item.href)}
                   className="quick-link rounded-full px-4 py-1.5 text-xs font-semibold text-slate-700 hover:text-slate-900"
                 >
                   {item.label}
@@ -1033,13 +1035,13 @@ export default function InteractiveFlatPanelClient() {
 
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href={toLangHref("/contact")}
                 className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
               >
                 {t.finalCta}
               </Link>
               <Link
-                href="/interactive-flat-panel#models"
+                href={toLangHref("/interactive-flat-panel#models")}
                 className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
               >
                 View Products

@@ -378,8 +378,11 @@ const uiKm = {
   sec11c: "ទាក់ទង Mugnee Cambodia",
   note: "ចំណាំ៖ ការចែកចាយ ការអនុវត្តគម្រោង និងការសម្របសម្រួលគាំទ្រនៅកម្ពុជា ត្រូវបានគ្រប់គ្រងក្នុងតំបន់ដោយ Mugnee Multiple Co., Ltd.",
 };
-export default function AboutClient() {
-  const { lang } = useLang();
+export default function AboutClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const isKm = lang === "km";
   const tags = isKm ? heroTagsKmClean : heroTags;
   const highlightsData = isKm ? highlightsKmClean : highlights;
@@ -425,13 +428,13 @@ export default function AboutClient() {
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
-                  href="/contact"
+                  href={toLangHref("/contact")}
                   className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
                 >
                   {isKm ? uiKm.ctaContact : "Contact Us"}
                 </Link>
                 <Link
-                  href="/service"
+                  href={toLangHref("/service")}
                   className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
                 >
                   {isKm ? uiKm.ctaService : "Service & Support"}
@@ -688,7 +691,7 @@ export default function AboutClient() {
             </p>
             <div className="mt-4">
               <Link
-                href="/contact"
+                href={toLangHref("/contact")}
                 className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {isKm ? uiKm.sec11c : "Contact Mugnee Cambodia"}

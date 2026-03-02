@@ -12,6 +12,7 @@ import {
 } from "../../data/products";
 
 type ProductGridProps = {
+  forcedLang?: "en" | "km";
   categoryId?: string;
   showCategoryFilters?: boolean;
   showSort?: boolean;
@@ -202,7 +203,15 @@ function getCategoryLabel(
   return CATEGORY_LABEL_KM_FALLBACK[category.id] || repaired;
 }
 
+function toLocalizedHref(href: string, lang: "en" | "km") {
+  if (!href.startsWith("/")) return href;
+  if (lang === "km" && !href.startsWith("/km/")) return `/km${href}`;
+  if (lang === "en" && href.startsWith("/km/")) return href.slice(3);
+  return href;
+}
+
 export default function ProductGrid({
+  forcedLang,
   categoryId,
   showCategoryFilters = true,
   showSort = true,
@@ -218,7 +227,8 @@ export default function ProductGrid({
   topLeftContent,
   searchTerm,
 }: ProductGridProps) {
-  const { lang } = useLang();
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
   const [activeCategory, setActiveCategory] = useState(categoryId || "all");
   const [sortOrder, setSortOrder] = useState<"az" | "za">("az");
   const [page, setPage] = useState(1);
@@ -462,7 +472,7 @@ export default function ProductGrid({
           </div>
         ) : null}
         {paginated.map((product) => {
-          const detailHref = `${detailBasePath}/${product.slug}`;
+          const detailHref = toLocalizedHref(`${detailBasePath}/${product.slug}`, lang);
           const primaryCategory = getCategoryById(product.primaryCategoryId);
           const primaryLabel = primaryCategory
             ? lang === "en"
@@ -514,7 +524,7 @@ export default function ProductGrid({
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Link
-                    href="/contact"
+                    href={toLocalizedHref("/contact", lang)}
                     className="rounded-full bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white no-underline hover:bg-slate-800"
                   >
                     {lang === "en" ? "Get Quotation" : "ស្នើសុំតម្លៃ"}

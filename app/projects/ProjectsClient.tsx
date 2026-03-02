@@ -2,8 +2,9 @@
 
 import { useLang } from "../components/layout/LanguageProvider";
 
-export default function ProjectsClient() {
-  const { lang } = useLang();
+export default function ProjectsClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
 
   return (
     <main className="bg-slate-50">

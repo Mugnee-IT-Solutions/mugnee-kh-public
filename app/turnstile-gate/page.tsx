@@ -19,7 +19,14 @@ export const metadata: Metadata = {
   title: "Commercial Turnstile Gate Cambodia | Supply & Installation",
   description:
     "Professional turnstile gate solutions in Cambodia for offices, factories, schools, and public venues. Flap, tripod, speed, and full-height turnstiles with RFID, QR, biometric integration, and installation support.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/turnstile-gate/",
+      km: "/km/turnstile-gate/",
+      "x-default": "/turnstile-gate/",
+    },
+  },
   openGraph: {
     title: "Turnstile Gate in Cambodia",
     description:

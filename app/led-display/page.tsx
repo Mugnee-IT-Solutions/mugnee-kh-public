@@ -13,13 +13,13 @@ const currentYear = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   timeZone: "Asia/Phnom_Penh",
 }).format(new Date());
-const LED_DISPLAY_META_TITLE = `LED Display Price in Cambodia ${currentYear}`;
+const LED_DISPLAY_META_TITLE = `LED Display Cambodia: Price, Installation & Video Wall (${currentYear})`;
 
 export function generateMetadata(): Metadata {
   return {
     title: LED_DISPLAY_META_TITLE,
     description:
-      "LED display solutions in Cambodia for indoor video wall, outdoor billboard, and commercial signage with BOQ planning, installation, commissioning, and local after-sales support.",
+      "LED display solutions in Cambodia with project-based price planning, engineering BOQ, installation, commissioning, and after-sales support for indoor video walls and outdoor billboards.",
     keywords: [
       "LED display Cambodia",
       "LED screen Cambodia",
@@ -40,14 +40,15 @@ export function generateMetadata(): Metadata {
       canonical: `${SITE_URL}/led-display/`,
       languages: {
         en: `${SITE_URL}/led-display/`,
-        km: `${SITE_URL}/led-display/?lang=km`,
+        km: `${SITE_URL}/km/led-display/`,
+        "x-default": `${SITE_URL}/led-display/`,
       },
     },
     robots: { index: true, follow: true },
     openGraph: {
       title: LED_DISPLAY_META_TITLE,
       description:
-        "Cambodia-focused LED display solutions for retail, corporate, hotels, events, and outdoor advertising with local engineering and after-sales support.",
+        "Cambodia-focused LED display solutions for retail, corporate, hotel, public, and event projects with local engineering, BOQ planning, and installation support.",
       url: `${SITE_URL}/led-display/`,
       siteName: "Mugnee Cambodia",
       type: "website",
@@ -64,7 +65,7 @@ export function generateMetadata(): Metadata {
       card: "summary_large_image",
       title: LED_DISPLAY_META_TITLE,
       description:
-        "Indoor and outdoor LED display solutions in Cambodia with project-based quotation and local support.",
+        "Indoor and outdoor LED display solutions in Cambodia with BOQ-based quotation, installation, and local support.",
       images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
     },
   };

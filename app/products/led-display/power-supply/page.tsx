@@ -18,7 +18,14 @@ export const metadata: Metadata = {
   title: "LED Power Supply Cambodia | Best Price & Installation",
   description:
     "High-quality LED power supplies in Cambodia for indoor and outdoor LED displays. Stable voltage, safety protections, and expert selection support for long-term reliability.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/led-display/power-supply/",
+      km: "/km/led-display/power-supply/",
+      "x-default": "/led-display/power-supply/",
+    },
+  },
   openGraph: {
     title: "LED Power Supply Cambodia | Best Price & Installation",
     description:
@@ -42,7 +49,7 @@ export const metadata: Metadata = {
       "Reliable LED power supplies for video walls and signage with stable output, safety protections, and professional support.",
     images: [OG_IMAGE],
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export { default } from "../../../led-display/power-supply/page";

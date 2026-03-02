@@ -393,8 +393,11 @@ const faqsKm = [
   { q: "ដំណោះស្រាយខាងក្រៅសមស្របអាកាសធាតុទេ?", a: "សមស្រប។ យើងជ្រើសឧបករណ៍ខាងក្រៅដែលមានស្តង់ដារ IP និងការការពារត្រឹមត្រូវ។" },
 ];
 
-export default function SolutionsClient() {
-  const { lang } = useLang();
+export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const isKhmer = lang === "km";
   const t = isKhmer ? KM : EN;
 
@@ -453,7 +456,7 @@ export default function SolutionsClient() {
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
               <li>
-                <Link href="/" className="hover:text-slate-700">
+                <Link href={toLangHref("/")} className="hover:text-slate-700">
                   {t.breadcrumbHome}
                 </Link>
               </li>
@@ -467,10 +470,42 @@ export default function SolutionsClient() {
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{t.heroTitle}</h1>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{t.heroDesc}</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/contact" className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.ctaQuote}</Link>
-            <Link href="/products" className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md">{t.ctaProducts}</Link>
+            <Link href={toLangHref("/contact")} className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.ctaQuote}</Link>
+            <Link href={toLangHref("/products")} className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md">{t.ctaProducts}</Link>
           </div>
           <div className="mt-4 text-xs text-slate-500">{t.heroFoot}</div>
+          <div className="mt-5 rounded-2xl border border-cyan-200 bg-cyan-50/70 p-4">
+            <p className="text-sm font-semibold text-slate-900">
+              {isKhmer
+                ? "LED display intent-এর জন্য dedicated pillar page"
+                : "For LED display buyer intent, use this dedicated pillar page"}
+            </p>
+            <p className="mt-1 text-xs leading-relaxed text-slate-600">
+              {isKhmer
+                ? "Price, BOQ, installation workflow, এবং use-case অনুযায়ী LED planning দেখতে LED Display Cambodia hub-এ যান।"
+                : "Navigate to the LED Display Cambodia hub for pricing factors, BOQ planning, installation workflow, and use-case guidance."}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Link
+                href={toLangHref("/led-display")}
+                className="rounded-full border border-cyan-300 bg-white px-3 py-1.5 text-xs font-semibold text-cyan-900 transition hover:bg-cyan-100"
+              >
+                {isKhmer ? "LED Display Cambodia Hub" : "LED Display Cambodia Hub"}
+              </Link>
+              <Link
+                href={toLangHref("/led-display/indoor-led-display")}
+                className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
+              >
+                {isKhmer ? "Indoor LED Display" : "Indoor LED Display"}
+              </Link>
+              <Link
+                href={toLangHref("/led-display/outdoor-led-display")}
+                className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
+              >
+                {isKhmer ? "Outdoor LED Billboard" : "Outdoor LED Billboard"}
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -509,7 +544,7 @@ export default function SolutionsClient() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.categoriesTitle}</h2>
           <p className="mt-2 text-slate-600">{t.categoriesDesc}</p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{solutionLinks.filter((item) => typeof item.href === "string" && item.href.length > 0).map((item) => <Link key={item.title} href={item.href} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 no-underline shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_16px_40px_-20px_rgba(14,165,233,0.55)] hover:no-underline focus:no-underline"><div className="relative text-sm font-semibold text-slate-900 transition-colors duration-300 group-hover:text-sky-700">{item.title}</div><p className="relative mt-2 text-sm leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-700">{item.desc}</p></Link>)}</div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{solutionLinks.filter((item) => typeof item.href === "string" && item.href.length > 0).map((item) => <Link key={item.title} href={toLangHref(item.href)} className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 no-underline shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:border-sky-300 hover:shadow-[0_16px_40px_-20px_rgba(14,165,233,0.55)] hover:no-underline focus:no-underline"><div className="relative text-sm font-semibold text-slate-900 transition-colors duration-300 group-hover:text-sky-700">{item.title}</div><p className="relative mt-2 text-sm leading-relaxed text-slate-600 transition-colors duration-300 group-hover:text-slate-700">{item.desc}</p></Link>)}</div>
         </div>
       </section>
 
@@ -528,7 +563,7 @@ export default function SolutionsClient() {
                   {cluster.links.filter((item) => typeof item.href === "string" && item.href.length > 0).map((item) => (
                     <Link
                       key={item.href}
-                      href={item.href}
+                      href={toLangHref(item.href)}
                       className={[
                         "rounded-full border px-3 py-2 text-sm font-semibold transition hover:-translate-y-0.5",
                         clusterIndex % 2 === 0
@@ -607,8 +642,8 @@ export default function SolutionsClient() {
             <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.finalTitle}</h2>
             <p className="mt-2 text-slate-600">{t.finalDesc}</p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <Link href="/contact" className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.finalCta1}</Link>
-              <Link href="/products" className="inline-flex rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md">{t.finalCta2}</Link>
+              <Link href={toLangHref("/contact")} className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.finalCta1}</Link>
+              <Link href={toLangHref("/products")} className="inline-flex rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md">{t.finalCta2}</Link>
             </div>
           </div>
         </div>

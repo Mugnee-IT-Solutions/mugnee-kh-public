@@ -5,5 +5,11 @@
   Email: ankurdatta.official@gmail.com
   Github: https://github.com/ankur-datta-official
 */
-export { metadata } from "../led-display/power-supply/page";
+import type { Metadata } from "next";
+import { buildLegacyAliasMetadata } from "../lib/seoLegacy";
+
+export const metadata: Metadata = buildLegacyAliasMetadata({
+  canonicalPath: "/led-display/power-supply/",
+});
+
 export { default } from "../led-display/power-supply/page";

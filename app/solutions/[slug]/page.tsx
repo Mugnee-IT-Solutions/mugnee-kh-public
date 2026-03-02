@@ -8,6 +8,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "../../lib/site";
+import { getSolutionMetaOverride } from "../../lib/seoCtrOverrides";
 import IndustrySolutionPage from "../_components/IndustrySolutionPage";
 import { INDUSTRY_SOLUTIONS, INDUSTRY_SOLUTIONS_BY_SLUG } from "../_data/industrySolutions";
 
@@ -29,14 +30,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const pageUrl = `${SITE_URL}/solutions/${solution.slug}/`;
   const ogImage = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
+  const override = getSolutionMetaOverride(solution.slug, "en");
+  const title = override?.title ?? `${solution.title} | Mugnee Cambodia`;
+  const description = override?.description ?? solution.description;
   return {
-    title: `${solution.title} | Mugnee Cambodia`,
-    description: solution.description,
-    alternates: { canonical: pageUrl },
+    title,
+    description,
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        en: `/solutions/${solution.slug}/`,
+        km: `/km/solutions/${solution.slug}/`,
+        "x-default": `/solutions/${solution.slug}/`,
+      },
+    },
     robots: { index: true, follow: true },
     openGraph: {
-      title: `${solution.title} | Mugnee Cambodia`,
-      description: solution.description,
+      title,
+      description,
       url: pageUrl,
       siteName: "Mugnee Cambodia",
       type: "website",
@@ -45,14 +56,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: `${solution.title} | Mugnee Cambodia`,
+          alt: title,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${solution.title} | Mugnee Cambodia`,
-      description: solution.description,
+      title,
+      description,
       images: [ogImage],
     },
   };

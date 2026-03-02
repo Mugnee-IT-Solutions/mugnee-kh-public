@@ -1,32 +1,34 @@
 import JsonLd from "./JsonLd";
+import {
+  BUSINESS_ADDRESS,
+  BUSINESS_NAME,
+  BUSINESS_PHONE_E164,
+  BUSINESS_SAME_AS,
+} from "../../lib/nap";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
-
-const sameAs = [
-  "https://www.facebook.com/mugneemultiple",
-  "https://www.linkedin.com/company/mugnee",
-];
 
 export default function SitewideJsonLd() {
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": ["Organization", "LocalBusiness"],
     "@id": `${SITE_URL}#organization`,
-    name: "Mugnee Cambodia",
+    name: BUSINESS_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
     image: `${SITE_URL}/images/logo.png`,
-    telephone: "+85586817907",
-    sameAs,
+    telephone: BUSINESS_PHONE_E164,
+    sameAs: BUSINESS_SAME_AS,
     areaServed: {
       "@type": "Country",
       name: "Cambodia",
     },
     address: {
       "@type": "PostalAddress",
-      addressCountry: "KH",
-      addressLocality: "Phnom Penh",
+      streetAddress: BUSINESS_ADDRESS.streetAddress,
+      addressLocality: BUSINESS_ADDRESS.addressLocality,
+      addressCountry: BUSINESS_ADDRESS.addressCountry,
     },
   };
 
@@ -34,7 +36,7 @@ export default function SitewideJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${SITE_URL}#website`,
-    name: "Mugnee Cambodia",
+    name: BUSINESS_NAME,
     url: SITE_URL,
     inLanguage: ["en", "km"],
     publisher: {

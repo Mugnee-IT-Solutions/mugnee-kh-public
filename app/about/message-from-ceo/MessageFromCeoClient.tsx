@@ -43,8 +43,11 @@ const KM = {
   cta1: "ទាក់ទងយើង",
   cta2: "មើលដំណោះស្រាយ",
 };
-export default function MessageFromCeoClient() {
-  const { lang } = useLang();
+export default function MessageFromCeoClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const t = lang === "km" ? KM : EN;
 
   return (
@@ -95,13 +98,13 @@ export default function MessageFromCeoClient() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href="/contact"
+                  href={toLangHref("/contact")}
                   className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                 >
                   {t.cta1}
                 </Link>
                 <Link
-                  href="/solutions"
+                  href={toLangHref("/solutions")}
                   className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-50"
                 >
                   {t.cta2}

@@ -166,7 +166,7 @@ function SocialIcon({ platform }: { platform: string }) {
   }
 }
 
-export default function ContactClient() {
+export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
   type FormState = {
     name: string;
     email: string;
@@ -200,7 +200,10 @@ export default function ContactClient() {
 
   const hasError = (errors: FormErrors, key: keyof FormState) => Boolean(errors[key]);
 
-  const { lang } = useLang();
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const isKm = lang === "km";
   const officesData = isKm ? officesKm : offices;
   const contactsData = isKm ? contactsKm : contacts;
@@ -380,7 +383,7 @@ export default function ContactClient() {
                   {isKm ? uiKm.ctaContact : "Contact Us"}
                 </a>
                 <Link
-                  href="/solutions"
+                  href={toLangHref("/solutions")}
                   className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
                 >
                   {isKm ? uiKm.ctaExplore : "Explore Solutions"}
@@ -642,7 +645,7 @@ export default function ContactClient() {
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
-                    href="/contact"
+                    href={toLangHref("/contact")}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(15,23,42,0.45)]"
                   >
                     {isKm ? uiKm.requestQuote : "Request a Quotation"}
@@ -694,13 +697,13 @@ export default function ContactClient() {
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="/solutions"
+                href={toLangHref("/solutions")}
                 className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {isKm ? uiKm.viewSolutions : "View Solutions"}
               </Link>
               <Link
-                href="/products"
+                href={toLangHref("/products")}
                 className="inline-flex rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
               >
                 {isKm ? uiKm.viewProducts : "View Products"}

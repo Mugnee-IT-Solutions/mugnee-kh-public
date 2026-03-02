@@ -28,9 +28,10 @@
   - `led display cambodia`
   - `led display price cambodia`
   - `indoor led display cambodia`
-  - `outdoor led billboard cambodia`
+  - `outdoor led display cambodia`
+  - `អេក្រង់ LED`
+  - `តម្លៃ អេក្រង់ LED`
 - Monitor weekly:
   - impressions
   - average position
   - CTR
-

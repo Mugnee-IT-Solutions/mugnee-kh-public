@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -52,38 +52,38 @@ function autoTranslateToKhmer(input: string) {
   if (!text || hasKhmer(text)) return text;
 
   const map: Array<[string, string]> = [
-    ["Interactive Flat Panel", "អេក្រង់អន្តរកម្ម"],
-    ["Indoor LED Display", "អេក្រង់ LED ខាងក្នុង"],
-    ["Outdoor LED Display", "អេក្រង់ LED ខាងក្រៅ"],
-    ["Rental LED Display", "អេក្រង់ LED សម្រាប់ជួល"],
-    ["LED Display Module", "ម៉ូឌុលអេក្រង់ LED"],
-    ["LED Screen Panel", "បន្ទះអេក្រង់ LED"],
-    ["LED Display", "អេក្រង់ LED"],
-    ["Video Processor", "វីដេអូប្រូសេស័រ"],
-    ["Power Supply", "ផ្គត់ផ្គង់ថាមពល"],
-    ["PA Speakers", "ឧបករណ៍បំពងសំឡេង PA"],
-    ["PA Microphones", "មីក្រូហ្វូន PA"],
-    ["PA Amplifiers", "អំព្លីហ្វាយអ័រ PA"],
-    ["PA Controllers", "ឧបករណ៍បញ្ជា PA"],
-    ["Network Audio", "អូឌីយ៉ូបណ្តាញ"],
-    ["PA Software", "កម្មវិធី PA"],
-    ["PA Accessories", "គ្រឿងបន្លាស់ PA"],
-    ["Turnstile Gate", "ច្រក Turnstile"],
-    ["Tripod Turnstile", "ច្រក Tripod Turnstile"],
-    ["Flap Barrier", "ច្រក Flap Barrier"],
-    ["Speed Gate", "ច្រក Speed Gate"],
-    ["Full Height", "ច្រកកម្ពស់ពេញ"],
-    ["Key Features", "លក្ខណៈពិសេស"],
-    ["Overview", "ទិដ្ឋភាពទូទៅ"],
-    ["Specifications", "លក្ខណៈបច្ចេកទេស"],
-    ["Applications", "ការប្រើប្រាស់"],
-    ["Product", "ផលិតផល"],
-    ["for", "សម្រាប់"],
-    ["with", "ជាមួយ"],
-    ["and", "និង"],
-    ["in", "ក្នុង"],
-    ["to", "ទៅ"],
-    ["from", "ពី"],
+    ["Interactive Flat Panel", "áž¢áŸáž€áŸ’ážšáž„áŸ‹áž¢áž“áŸ’ážážšáž€áž˜áŸ’áž˜"],
+    ["Indoor LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’áž“áž»áž„"],
+    ["Outdoor LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážáž¶áž„áž€áŸ’ážšáŸ…"],
+    ["Rental LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž‡áž½áž›"],
+    ["LED Display Module", "áž˜áŸ‰áž¼ážŒáž»áž›áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
+    ["LED Screen Panel", "áž”áž“áŸ’áž‘áŸ‡áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
+    ["LED Display", "áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED"],
+    ["Video Processor", "ážœáž¸ážŠáŸáž¢áž¼áž”áŸ’ážšáž¼ážŸáŸážŸáŸážš"],
+    ["Power Supply", "áž•áŸ’áž‚ážáŸ‹áž•áŸ’áž‚áž„áŸ‹ážáž¶áž˜áž–áž›"],
+    ["PA Speakers", "áž§áž”áž€ážšážŽáŸáž”áŸ†áž–áž„ážŸáŸ†áž¡áŸáž„ PA"],
+    ["PA Microphones", "áž˜áž¸áž€áŸ’ážšáž¼áž áŸ’ážœáž¼áž“ PA"],
+    ["PA Amplifiers", "áž¢áŸ†áž–áŸ’áž›áž¸áž áŸ’ážœáž¶áž™áž¢áŸážš PA"],
+    ["PA Controllers", "áž§áž”áž€ážšážŽáŸáž”áž‰áŸ’áž‡áž¶ PA"],
+    ["Network Audio", "áž¢áž¼ážŒáž¸áž™áŸ‰áž¼áž”ážŽáŸ’ážáž¶áž‰"],
+    ["PA Software", "áž€áž˜áŸ’áž˜ážœáž·áž’áž¸ PA"],
+    ["PA Accessories", "áž‚áŸ’ážšáž¿áž„áž”áž“áŸ’áž›áž¶ážŸáŸ‹ PA"],
+    ["Turnstile Gate", "áž…áŸ’ážšáž€ Turnstile"],
+    ["Tripod Turnstile", "áž…áŸ’ážšáž€ Tripod Turnstile"],
+    ["Flap Barrier", "áž…áŸ’ážšáž€ Flap Barrier"],
+    ["Speed Gate", "áž…áŸ’ážšáž€ Speed Gate"],
+    ["Full Height", "áž…áŸ’ážšáž€áž€áž˜áŸ’áž–ážŸáŸ‹áž–áŸáž‰"],
+    ["Key Features", "áž›áž€áŸ’ážážŽáŸˆáž–áž·ážŸáŸážŸ"],
+    ["Overview", "áž‘áž·ážŠáŸ’áž‹áž—áž¶áž–áž‘áž¼áž‘áŸ…"],
+    ["Specifications", "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ"],
+    ["Applications", "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹"],
+    ["Product", "áž•áž›áž·ážáž•áž›"],
+    ["for", "ážŸáž˜áŸ’ážšáž¶áž”áŸ‹"],
+    ["with", "áž‡áž¶áž˜áž½áž™"],
+    ["and", "áž“áž·áž„"],
+    ["in", "áž€áŸ’áž“áž»áž„"],
+    ["to", "áž‘áŸ…"],
+    ["from", "áž–áž¸"],
   ];
 
   let out = text;
@@ -92,7 +92,7 @@ function autoTranslateToKhmer(input: string) {
   }
 
   if (hasKhmer(out)) return out;
-  return `ផលិតផល ${text}`;
+  return `áž•áž›áž·ážáž•áž› ${text}`;
 }
 
 function localizedKhmer(valueKm: string, fallbackEn: string) {
@@ -103,6 +103,8 @@ function localizedKhmer(valueKm: string, fallbackEn: string) {
 
 export default function ProductDetailClient({ product }: { product: Product }) {
   const { lang } = useLang();
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
 
   useEffect(() => {
     const scrollTop = () => {
@@ -319,7 +321,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             )}
             <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                {lang === "en" ? "Product" : "ផលិតផល"}
+                {lang === "en" ? "Product" : "áž•áž›áž·ážáž•áž›"}
               </p>
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
                 {title}
@@ -339,31 +341,49 @@ export default function ProductDetailClient({ product }: { product: Product }) {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href="/contact"
+                  href={toLangHref("/contact")}
                   className="cta-anim relative rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white no-underline hover:bg-slate-800"
                 >
-                  {lang === "en" ? "Get Quotation" : "ស្នើសុំតម្លៃ"}
+                  {lang === "en" ? "Get Quotation" : "ážŸáŸ’áž“áž¾ážŸáž»áŸ†ážáž˜áŸ’áž›áŸƒ"}
                 </Link>
                 <Link
-                  href="/products"
+                  href={toLangHref("/products")}
                   className="cta-anim relative rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 no-underline hover:border-slate-300"
                 >
-                  {lang === "en" ? "Back to Products" : "ត្រឡប់ទៅផលិតផល"}
+                  {lang === "en" ? "Back to Products" : "ážáŸ’ážšáž¡áž”áŸ‹áž‘áŸ…áž•áž›áž·ážáž•áž›"}
                 </Link>
               </div>
-
-              <div className="mt-6">
-                <h2 className="text-base font-semibold text-slate-900">
-                  {lang === "en" ? "Key Features" : "លក្ខណៈពិសេស"}
-                </h2>
-                <ul className="mt-3 space-y-2 text-sm font-medium text-black">
-                  {features.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-black" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="mt-5 rounded-2xl border border-sky-200 bg-sky-50/70 p-4">
+                <p className="text-sm font-semibold text-slate-900">
+                  {lang === "en"
+                    ? "Need LED display project pricing and installation guidance?"
+                    : "ážáŸ’ážšáž¼ážœáž€áž¶ážšážŽáŸ‚áž“áž¶áŸ†ážáž˜áŸ’áž›áŸƒ áž“áž·áž„ážŠáŸ†ážŽáž¾ážšáž€áž¶ážšážŠáŸ†áž¡áž¾áž„áž¢áŸáž€áŸ’ážšáž„áŸ‹ LED?"}
+                </p>
+                <p className="mt-1 text-xs leading-relaxed text-slate-600">
+                  {lang === "en"
+                    ? "Use our LED Display Cambodia pillar page for BOQ factors, indoor/outdoor planning, and project workflow."
+                    : "ážŸáž¼áž˜áž˜áž¾áž›áž‘áŸ†áž–áŸážš LED Display Cambodia ážŸáž˜áŸ’ážšáž¶áž”áŸ‹áž€ážáŸ’ážáž¶ BOQ áž€áž¶ážšážšáŸ€áž”áž…áŸ† indoor/outdoor áž“áž·áž„ workflow áž‚áž˜áŸ’ážšáŸ„áž„áŸ”"}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <Link
+                    href={toLangHref("/led-display")}
+                    className="rounded-full border border-sky-300 bg-white px-3 py-1.5 text-xs font-semibold text-sky-900 transition hover:bg-sky-100"
+                  >
+                    LED Display Cambodia Hub
+                  </Link>
+                  <Link
+                    href={toLangHref("/led-display/indoor-led-display")}
+                    className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
+                  >
+                    Indoor LED Display
+                  </Link>
+                  <Link
+                    href={toLangHref("/led-display/outdoor-led-display")}
+                    className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
+                  >
+                    Outdoor LED Billboard
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -374,24 +394,24 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h2 className="text-xl font-semibold text-slate-900">
-              {lang === "en" ? "Overview" : "ទិដ្ឋភាពទូទៅ"}
+              {lang === "en" ? "Overview" : "áž‘áž·ážŠáŸ’áž‹áž—áž¶áž–áž‘áž¼áž‘áŸ…"}
             </h2>
             <p className="mt-3 text-base leading-relaxed text-slate-600">{description}</p>
 
-            <h3 className="mt-8 text-lg font-semibold text-slate-900">
-              {lang === "en" ? "Key Features" : "លក្ខណៈពិសេស"}
+            <h3 className="mt-8 text-lg font-semibold tracking-tight text-slate-900">
+              {lang === "en" ? "Key Features" : "áž›áž€áŸ’ážážŽáŸˆáž–áž·ážŸáŸážŸ"}
             </h3>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+            <ul className="mt-3 space-y-2 text-[15px] font-medium leading-relaxed text-slate-700">
               {features.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-600" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
             <h3 className="mt-8 text-lg font-semibold text-slate-900">
-              {lang === "en" ? "Applications" : "ការប្រើប្រាស់"}
+              {lang === "en" ? "Applications" : "áž€áž¶ážšáž”áŸ’ážšáž¾áž”áŸ’ážšáž¶ážŸáŸ‹"}
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               {applications.map((item) => (
@@ -405,7 +425,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-slate-900">
-              {lang === "en" ? "Specifications" : "លក្ខណៈបច្ចេកទេស"}
+              {lang === "en" ? "Specifications" : "áž›áž€áŸ’ážážŽáŸˆáž”áž…áŸ’áž…áŸáž€áž‘áŸážŸ"}
             </h3>
             <dl className="mt-4 space-y-3 text-sm">
               {product.specs.map((spec) => (
@@ -434,7 +454,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <section className="border-t border-slate-100 bg-slate-50/60">
           <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
             <h3 className="text-lg font-semibold text-slate-900">
-              {lang === "en" ? "Related Products" : "ផលិតផលពាក់ព័ន្ធ"}
+              {lang === "en" ? "Related Products" : "áž•áž›áž·ážáž•áž›áž–áž¶áž€áŸ‹áž–áŸáž“áŸ’áž’"}
             </h3>
             <div className="mt-4 flex gap-4 overflow-x-auto pb-2">
               {relatedProducts.map((item) => {
@@ -447,7 +467,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 return (
                   <Link
                     key={item.slug}
-                    href={`/products/catalog/${item.slug}`}
+                    href={toLangHref(`/products/catalog/${item.slug}`)}
                     className="min-w-[220px] max-w-[240px] flex-1 rounded-2xl border border-slate-200 bg-white p-4 text-left no-underline shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-slate-100 bg-slate-50">
@@ -509,3 +529,4 @@ export default function ProductDetailClient({ product }: { product: Product }) {
     </div>
   );
 }
+

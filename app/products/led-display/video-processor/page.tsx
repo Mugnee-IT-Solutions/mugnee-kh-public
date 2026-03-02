@@ -18,7 +18,14 @@ export const metadata: Metadata = {
   title: "LED Video Processor Cambodia | Best Price & Installation",
   description:
     "Professional LED video processors in Cambodia for smooth scaling, multi-input switching, and stable LED wall output. Ideal for indoor & outdoor LED displays with expert setup support.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/led-display/video-processor/",
+      km: "/km/led-display/video-processor/",
+      "x-default": "/led-display/video-processor/",
+    },
+  },
   openGraph: {
     title: "LED Video Processor Cambodia | Best Price & Installation",
     description:
@@ -42,7 +49,7 @@ export const metadata: Metadata = {
       "Reliable video processors for LED walls with multi-input switching, clean scaling, and stable output. Expert configuration & support by Mugnee Cambodia.",
     images: [OG_IMAGE],
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export { default } from "../../../led-display/video-processor/page";

@@ -16,6 +16,8 @@ type Props = {
 export default function IndustrySolutionPage({ solution }: Props) {
   const { lang } = useLang();
   const isKm = lang === "km";
+  const toLangHref = (href: string) =>
+    isKm && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
 
   const indoorCommunicationKm =
     solution.slug === "indoor-communication-solutions-cambodia"
@@ -586,13 +588,13 @@ export default function IndustrySolutionPage({ solution }: Props) {
           <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
               <li>
-                <Link href="/" className="hover:text-slate-700">
+                <Link href={toLangHref("/")} className="hover:text-slate-700">
                   {ui.home}
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/solutions" className="hover:text-slate-700">
+                <Link href={toLangHref("/solutions")} className="hover:text-slate-700">
                   {ui.solutions}
                 </Link>
               </li>
@@ -611,16 +613,22 @@ export default function IndustrySolutionPage({ solution }: Props) {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href="/contact"
+              href={toLangHref("/contact")}
               className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               {ui.requestQuotation}
             </Link>
             <Link
-              href="/solutions"
+              href={toLangHref("/solutions")}
               className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:border-slate-400"
             >
               {ui.backToHub}
+            </Link>
+            <Link
+              href={toLangHref("/led-display")}
+              className="rounded-xl border border-sky-300 bg-sky-50 px-5 py-2.5 text-sm font-semibold text-sky-900 transition hover:border-sky-400 hover:bg-sky-100"
+            >
+              {isKm ? "មើល LED Display Cambodia Hub" : "Open LED Display Cambodia Hub"}
             </Link>
           </div>
         </div>
@@ -690,7 +698,7 @@ export default function IndustrySolutionPage({ solution }: Props) {
             {localizedSolution.internalLinks.map((item, idx) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={toLangHref(item.href)}
                 className={[
                   "rounded-full border px-3 py-2 text-sm font-semibold transition hover:-translate-y-0.5",
                   idx % 2 === 0
@@ -717,7 +725,7 @@ export default function IndustrySolutionPage({ solution }: Props) {
             {crossIntentLinks.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href={toLangHref(item.href)}
                 className="rounded-full border border-sky-200 bg-sky-50 px-3 py-2 text-sm font-semibold text-sky-900 transition hover:-translate-y-0.5 hover:border-sky-300 hover:bg-sky-100"
               >
                 {item.label}
@@ -739,7 +747,7 @@ export default function IndustrySolutionPage({ solution }: Props) {
             {(relatedSolutions.length > 0 ? relatedSolutions : supplementalSolutions).map((item) => (
               <Link
                 key={item.slug}
-                href={`/solutions/${item.slug}`}
+                href={toLangHref(`/solutions/${item.slug}`)}
                 className={`rounded-2xl border p-4 shadow-sm transition hover:-translate-y-0.5 ${
                   `/solutions/${item.slug}` === currentPath
                     ? "border-slate-300 bg-slate-100"

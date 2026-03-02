@@ -19,7 +19,14 @@ export const metadata: Metadata = {
   title: "Interactive Flat Panel in Cambodia | Smart Board for School & Office",
   description:
     "Interactive Flat Panel (IFP) in Cambodia for classrooms, meeting rooms and training centers. 4K touchscreen smart board with Android OS, wireless screen sharing, built-in whiteboard and local installation & support.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/interactive-flat-panel/",
+      km: "/km/interactive-flat-panel/",
+      "x-default": "/interactive-flat-panel/",
+    },
+  },
   openGraph: {
     title: "Interactive Flat Panel in Cambodia - Smart Board for School & Office",
     description:

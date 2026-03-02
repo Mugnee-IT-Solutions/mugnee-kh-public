@@ -18,7 +18,14 @@ export const metadata: Metadata = {
   title: "LED Receiving Card Cambodia | Best Price & Installation",
   description:
     "High-performance LED receiving cards for indoor and outdoor LED displays in Cambodia. Stable data transfer, wide IC compatibility, flexible scan modes, and professional setup support.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/led-display/receiving-card/",
+      km: "/km/led-display/receiving-card/",
+      "x-default": "/led-display/receiving-card/",
+    },
+  },
   openGraph: {
     title: "LED Receiving Card Cambodia | Best Price & Installation",
     description:
@@ -42,7 +49,7 @@ export const metadata: Metadata = {
       "Reliable receiving cards for LED video walls with stable data transfer, wide module compatibility, and expert configuration support.",
     images: [OG_IMAGE],
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export { default } from "../../../led-display/receiving-card/page";

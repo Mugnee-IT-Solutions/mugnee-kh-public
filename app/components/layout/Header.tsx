@@ -27,6 +27,7 @@ type DropdownProps = {
   isPathActive: (href: string) => boolean;
   desktopNavLinkClass: (active: boolean) => string;
   forceScrollTop: () => void;
+  toLangHref: (href: string) => string;
   lang: Lang;
 };
 
@@ -41,6 +42,7 @@ function Dropdown({
   isPathActive,
   desktopNavLinkClass,
   forceScrollTop,
+  toLangHref,
   lang,
 }: DropdownProps) {
   const isOpen = openMenu === id;
@@ -62,7 +64,7 @@ function Dropdown({
         ].join(" ")}
       >
         <Link
-          href={parentHref}
+          href={toLangHref(parentHref)}
           className={desktopNavLinkClass(isActive)}
           onClick={() => {
             forceScrollTop();
@@ -118,7 +120,7 @@ function Dropdown({
               {items.map((it) => (
                 <Link
                   key={it.href}
-                  href={it.href}
+                  href={toLangHref(it.href)}
                   className={[
                     "block rounded-xl px-3 py-2.5 text-sm no-underline hover:no-underline focus:no-underline",
                     "text-slate-100/90",
@@ -155,6 +157,28 @@ export default function SiteHeader() {
   const [searchOpenMobile, setSearchOpenMobile] = useState(false);
   const desktopSearchRef = useRef<HTMLDivElement | null>(null);
   const mobileSearchRef = useRef<HTMLDivElement | null>(null);
+
+  const stripLangPrefix = (value: string) => {
+    if (value === "/km") return "/";
+    if (value.startsWith("/km/")) return value.slice(3);
+    return value;
+  };
+
+  const toLangHref = (href: string) => {
+    if (!href) return href;
+    if (
+      href.startsWith("http://") ||
+      href.startsWith("https://") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:") ||
+      href.startsWith("#")
+    ) {
+      return href;
+    }
+    const normalized = stripLangPrefix(href);
+    if (lang === "km") return normalized === "/" ? "/km/" : `/km${normalized}`;
+    return normalized;
+  };
 
   useLayoutEffect(() => {
     const headerEl = headerRef.current;
@@ -224,27 +248,27 @@ export default function SiteHeader() {
     {
       labelEn: "Indoor LED Display",
       labelKm: "អេក្រង់ LED ក្នុងអគារ",
-      href: "/indoor-led-display",
+      href: "/led-display/indoor-led-display",
     },
     {
       labelEn: "Outdoor LED Display",
       labelKm: "អេក្រង់ LED ក្រៅអគារ",
-      href: "/outdoor-led-display",
+      href: "/led-display/outdoor-led-display",
     },
     {
       labelEn: "Receiving Card",
       labelKm: "កាតទទួលសញ្ញា",
-      href: "/receiving-card",
+      href: "/led-display/receiving-card",
     },
     {
       labelEn: "Video Processor",
       labelKm: "ឧបករណ៍ដំណើរការវីដេអូ",
-      href: "/video-processor",
+      href: "/led-display/video-processor",
     },
     {
       labelEn: "Power Supply",
       labelKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
-      href: "/power-supply",
+      href: "/led-display/power-supply",
     },
   ];
 
@@ -312,8 +336,9 @@ export default function SiteHeader() {
     about: "/about",
   };
 
+  const normalizedPathname = stripLangPrefix(pathname || "/");
   const isPathActive = (href: string) =>
-    pathname === href || pathname.startsWith(`${href}/`);
+    normalizedPathname === href || normalizedPathname.startsWith(`${href}/`);
 
   const desktopNavLinkClass = (active: boolean) =>
     [
@@ -330,8 +355,7 @@ export default function SiteHeader() {
     if (!query) return;
     const params = new URLSearchParams();
     params.set("search", query);
-    if (lang === "km") params.set("lang", "km");
-    window.location.href = `/products?${params.toString()}`;
+    window.location.href = `${toLangHref("/products")}?${params.toString()}`;
   };
 
   const onSearchItemClick = (slug: string) => {
@@ -339,11 +363,7 @@ export default function SiteHeader() {
     setSearchOpenMobile(false);
     setQ("");
     forceScrollTop();
-    if (lang === "km") {
-      router.push(`/products/catalog/${slug}/?lang=km`);
-      return;
-    }
-    router.push(`/products/catalog/${slug}/`);
+    router.push(toLangHref(`/products/catalog/${slug}/`));
   };
 
   useEffect(() => {
@@ -405,17 +425,15 @@ export default function SiteHeader() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   };
 
-  const applyLangToUrl = (nextLang: "en" | "km") => {
-    const params = new URLSearchParams(window.location.search);
-    if (nextLang === "km") params.set("lang", "km");
-    else params.delete("lang");
-    const qs = params.toString();
-    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-  };
-
   const handleLanguageChange = (nextLang: "en" | "km") => {
     setLang(nextLang);
-    applyLangToUrl(nextLang);
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    url.searchParams.delete("lang");
+    const basePath = stripLangPrefix(url.pathname);
+    const nextPath = nextLang === "km" ? (basePath === "/" ? "/km/" : `/km${basePath}`) : basePath;
+    const query = url.searchParams.toString();
+    router.replace(`${nextPath}${query ? `?${query}` : ""}${url.hash}`, { scroll: false });
   };
 
   return (
@@ -423,7 +441,7 @@ export default function SiteHeader() {
       <div className="border-b border-slate-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
           <Link
-            href="/"
+            href={toLangHref("/")}
             onClick={forceScrollTop}
             className="flex shrink-0 items-center gap-2 font-semibold text-slate-900"
           >
@@ -512,7 +530,7 @@ export default function SiteHeader() {
             </div>
 
             <Link
-              href="/contact"
+              href={toLangHref("/contact")}
               onClick={forceScrollTop}
               className="hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800 lg:inline-flex"
             >
@@ -602,7 +620,7 @@ export default function SiteHeader() {
               </div>
 
               <Link
-                href="/contact"
+                href={toLangHref("/contact")}
                 onClick={forceScrollTop}
                 className="rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white hover:bg-slate-800"
               >
@@ -629,25 +647,26 @@ export default function SiteHeader() {
               isPathActive={isPathActive}
               desktopNavLinkClass={desktopNavLinkClass}
               forceScrollTop={forceScrollTop}
+              toLangHref={toLangHref}
               lang={lang}
             />
 
             <Link
-              href="/interactive-flat-panel"
+              href={toLangHref("/interactive-flat-panel")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/interactive-flat-panel"))}
             >
               {t.ifp}
             </Link>
             <Link
-              href="/pa-system"
+              href={toLangHref("/pa-system")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/pa-system"))}
             >
               {t.paSystem}
             </Link>
             <Link
-              href="/turnstile-gate"
+              href={toLangHref("/turnstile-gate")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/turnstile-gate"))}
             >
@@ -664,10 +683,11 @@ export default function SiteHeader() {
               isPathActive={isPathActive}
               desktopNavLinkClass={desktopNavLinkClass}
               forceScrollTop={forceScrollTop}
+              toLangHref={toLangHref}
               lang={lang}
             />
             <Link
-              href="/service"
+              href={toLangHref("/service")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/service"))}
             >
@@ -684,10 +704,11 @@ export default function SiteHeader() {
               isPathActive={isPathActive}
               desktopNavLinkClass={desktopNavLinkClass}
               forceScrollTop={forceScrollTop}
+              toLangHref={toLangHref}
               lang={lang}
             />
             <Link
-              href="/contact"
+              href={toLangHref("/contact")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/contact"))}
             >
@@ -703,7 +724,7 @@ export default function SiteHeader() {
               <div className="grid gap-2">
                 <div className="mt-1">
                   <Link
-                    href="/led-display"
+                    href={toLangHref("/led-display")}
                     className="inline-flex rounded-lg px-3 pb-1 pt-1 text-xs font-semibold text-white/80 hover:bg-white/10 hover:text-white"
                     onClick={() => {
                       forceScrollTop();
@@ -714,7 +735,7 @@ export default function SiteHeader() {
                   </Link>
                   <div className="grid gap-1">
                     <Link
-                      href="/led-display"
+                      href={toLangHref("/led-display")}
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -724,7 +745,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "All LED Display" : t.ledDisplay}
                     </Link>
                     <Link
-                      href="/indoor-led-display"
+                      href={toLangHref("/led-display/indoor-led-display")}
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -734,7 +755,7 @@ export default function SiteHeader() {
                       {t.indoorLed}
                     </Link>
                     <Link
-                      href="/outdoor-led-display"
+                      href={toLangHref("/led-display/outdoor-led-display")}
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -744,7 +765,7 @@ export default function SiteHeader() {
                       {t.outdoorLed}
                     </Link>
                     <Link
-                      href="/led-display"
+                      href={toLangHref("/led-display")}
                       className="hidden rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -754,7 +775,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "All LED Display" : "មើលអេក្រង់ LED ទាំងអស់"}
                     </Link>
                     <Link
-                      href="/receiving-card"
+                      href={toLangHref("/led-display/receiving-card")}
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -764,7 +785,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "Receiving Card" : "កាតទទួលសញ្ញា"}
                     </Link>
                     <Link
-                      href="/video-processor"
+                      href={toLangHref("/led-display/video-processor")}
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -774,7 +795,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "Video Processor" : "ឧបករណ៍ដំណើរការវីដេអូ"}
                     </Link>
                     <Link
-                      href="/power-supply"
+                      href={toLangHref("/led-display/power-supply")}
                       className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
                         forceScrollTop();
@@ -787,7 +808,7 @@ export default function SiteHeader() {
                 </div>
 
                 <Link
-                  href="/interactive-flat-panel"
+                  href={toLangHref("/interactive-flat-panel")}
                   className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => {
                     forceScrollTop();
@@ -797,7 +818,7 @@ export default function SiteHeader() {
                   {t.ifp}
                 </Link>
                 <Link
-                  href="/pa-system"
+                  href={toLangHref("/pa-system")}
                   className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => {
                     forceScrollTop();
@@ -807,7 +828,7 @@ export default function SiteHeader() {
                   {t.paSystem}
                 </Link>
                 <Link
-                  href="/turnstile-gate"
+                  href={toLangHref("/turnstile-gate")}
                   className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => {
                     forceScrollTop();
@@ -822,7 +843,7 @@ export default function SiteHeader() {
                     {solutionsMenu.map((item) => (
                       <Link
                         key={item.href}
-                        href={item.href}
+                        href={toLangHref(item.href)}
                         className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                         onClick={() => {
                           forceScrollTop();
@@ -835,7 +856,7 @@ export default function SiteHeader() {
                   </div>
                 </div>
                 <Link
-                  href="/service"
+                  href={toLangHref("/service")}
                   className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => {
                     forceScrollTop();
@@ -845,7 +866,7 @@ export default function SiteHeader() {
                   {t.service}
                 </Link>
                 <Link
-                  href="/about"
+                  href={toLangHref("/about")}
                   className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => {
                     forceScrollTop();
@@ -855,7 +876,7 @@ export default function SiteHeader() {
                   {t.about}
                 </Link>
                 <Link
-                  href="/about/message-from-ceo"
+                  href={toLangHref("/about/message-from-ceo")}
                   className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => {
                     forceScrollTop();
@@ -865,7 +886,7 @@ export default function SiteHeader() {
                   {lang === "en" ? "Message from CEO" : "សារពីនាយកប្រតិបត្តិ"}
                 </Link>
                 <Link
-                  href="/contact"
+                  href={toLangHref("/contact")}
                   className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => {
                     forceScrollTop();

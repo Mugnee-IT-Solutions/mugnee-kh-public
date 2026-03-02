@@ -14,6 +14,7 @@ import {
   getProductBySlug,
 } from "../../../data/products";
 import { SITE_URL } from "../../../lib/site";
+import { getCatalogMetaOverride } from "../../../lib/seoCtrOverrides";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -36,22 +37,25 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       ? product.heroImage
       : `${SITE_URL}${product.heroImage}`
     : defaultImageUrl;
+  const override = getCatalogMetaOverride(product.slug, "en");
+  const seoTitle = override?.title || product.seoTitleEn;
+  const seoDesc = override?.description || product.seoDescEn;
 
   return {
-    title: product.seoTitleEn,
-    description: product.seoDescEn,
+    title: seoTitle,
+    description: seoDesc,
     alternates: {
       canonical: productUrl,
       languages: {
         en: `/products/catalog/${product.slug}/`,
-        km: `/products/catalog/${product.slug}/?lang=km`,
+        km: `/km/products/catalog/${product.slug}/`,
         "x-default": `/products/catalog/${product.slug}/`,
       },
     },
     robots: { index: true, follow: true },
     openGraph: {
-      title: product.seoTitleEn,
-      description: product.seoDescEn,
+      title: seoTitle,
+      description: seoDesc,
       url: productUrl,
       type: "website",
       siteName: "Mugnee Cambodia",
@@ -66,8 +70,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: product.seoTitleEn,
-      description: product.seoDescEn,
+      title: seoTitle,
+      description: seoDesc,
       images: [imageUrl],
     },
   };

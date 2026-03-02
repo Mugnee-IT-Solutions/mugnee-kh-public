@@ -23,6 +23,12 @@ function stripTrailingSlash(route: string) {
   return route.endsWith("/") ? route.slice(0, -1) : route;
 }
 
+function stripLocalePrefix(route: string) {
+  if (route === "/km" || route === "/km/") return "/";
+  if (route.startsWith("/km/")) return route.slice(3) || "/";
+  return route;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes = [
     "/",
@@ -52,8 +58,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const productRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/products/catalog/${p.slug}`));
+  const kmCoreRoutes = [
+    "/km",
+    ...coreRoutes.filter((route) => route !== "/").map((route) => `/km${route}`),
+  ].map(toCanonicalRoute);
+  const kmProductRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/km/products/catalog/${p.slug}`));
   const allRoutes = Array.from(
-    new Set([...coreRoutes.map(toCanonicalRoute), ...productRoutes])
+    new Set([...coreRoutes.map(toCanonicalRoute), ...productRoutes, ...kmCoreRoutes, ...kmProductRoutes])
   );
   const fallbackLastModified =
     getFileModified("app/layout.tsx") || getFileModified("app/page.tsx") || new Date("2026-01-01");
@@ -87,10 +98,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allRoutes.map((route) => ({
     url: `${SITE_URL}${toCanonicalRoute(route)}`,
-    lastModified: stripTrailingSlash(route).startsWith("/products/catalog/")
+    lastModified: stripLocalePrefix(stripTrailingSlash(route)).startsWith("/products/catalog/")
       ? productDataModified
-      : getFileModified(routeToSource.get(stripTrailingSlash(route)) || "") || fallbackLastModified,
-    changeFrequency: stripTrailingSlash(route).startsWith("/products/catalog/") ? "weekly" : "monthly",
-    priority: stripTrailingSlash(route) === "/led-display" ? 1 : route === "/" ? 0.9 : 0.8,
+      : getFileModified(routeToSource.get(stripLocalePrefix(stripTrailingSlash(route))) || "") || fallbackLastModified,
+    changeFrequency: stripLocalePrefix(stripTrailingSlash(route)).startsWith("/products/catalog/") ? "weekly" : "monthly",
+    priority: stripLocalePrefix(stripTrailingSlash(route)) === "/led-display" ? 1 : stripLocalePrefix(stripTrailingSlash(route)) === "/" ? 0.9 : 0.8,
   }));
 }

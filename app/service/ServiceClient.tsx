@@ -352,8 +352,11 @@ const faqsKm = [
   { q: "តើយើងអាចស្នើសុំតម្លៃសម្រាប់ AMC, repair ឬ SLA ដោយរបៀបណា?", a: "សូមផ្ញើប្រភេទប្រព័ន្ធ ទីតាំង និងប្រភេទបញ្ហា។ យើងនឹងណែនាំផែនការសមស្រប និងជម្រើស SLA។" },
 ];
 
-export default function ServiceClient() {
-  const { lang } = useLang();
+export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
+  const toLangHref = (href: string) =>
+    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const isKm = lang === "km";
   const t = isKm
     ? uiKm
@@ -439,13 +442,13 @@ export default function ServiceClient() {
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href={toLangHref("/contact")}
                 className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {t.cta1}
               </Link>
               <Link
-                href="/products"
+                href={toLangHref("/products")}
                 className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
               >
                 {t.cta2}
@@ -453,6 +456,38 @@ export default function ServiceClient() {
             </div>
             <div className="mt-4 text-xs text-slate-500">
               {t.coverageLine}
+            </div>
+            <div className="mt-5 rounded-2xl border border-sky-200 bg-sky-50/70 p-4">
+              <p className="text-sm font-semibold text-slate-900">
+                {isKm
+                  ? "សម្រាប់គម្រោងអេក្រង់ LED ថ្មី ឬកែលម្អប្រព័ន្ធ"
+                  : "Planning a new LED display project in Cambodia?"}
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-slate-600">
+                {isKm
+                  ? "មើលមគ្គុទ្ទេសក៍តម្លៃ ការរៀបចំ BOQ និងដំណើរការដំឡើងអេក្រង់ LED មុនពេលស្នើសុំសេវា។"
+                  : "Use our LED Display Cambodia hub for price factors, BOQ planning, and installation workflow before requesting service."}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Link
+                  href={toLangHref("/led-display")}
+                  className="rounded-full border border-sky-300 bg-white px-3 py-1.5 text-xs font-semibold text-sky-900 transition hover:bg-sky-100"
+                >
+                  {isKm ? "មើលទំព័រ អេក្រង់ LED កម្ពុជា" : "Explore LED Display Cambodia Hub"}
+                </Link>
+                <Link
+                  href={toLangHref("/led-display/indoor-led-display")}
+                  className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
+                >
+                  {isKm ? "អេក្រង់ LED ក្នុងអគារ" : "Indoor LED Display Guide"}
+                </Link>
+                <Link
+                  href={toLangHref("/led-display/outdoor-led-display")}
+                  className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
+                >
+                  {isKm ? "អេក្រង់ LED ខាងក្រៅ" : "Outdoor LED Billboard Guide"}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -695,13 +730,13 @@ export default function ServiceClient() {
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href={toLangHref("/contact")}
                 className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {t.finalCta1}
               </Link>
               <Link
-                href="/products"
+                href={toLangHref("/products")}
                 className="inline-flex rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
               >
                 {t.finalCta2}

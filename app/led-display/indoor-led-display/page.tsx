@@ -24,7 +24,14 @@ export const metadata: Metadata = {
     "conference room LED display Cambodia",
     "control room LED display Cambodia",
   ],
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/led-display/indoor-led-display/",
+      km: "/km/led-display/indoor-led-display/",
+      "x-default": "/led-display/indoor-led-display/",
+    },
+  },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Indoor LED Display Cambodia | Best Price & Installation",

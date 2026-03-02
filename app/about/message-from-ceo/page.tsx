@@ -19,7 +19,14 @@ export const metadata: Metadata = {
   title: "Message from CEO | Mugnee Cambodia",
   description:
     "Read the CEO message from Mugnee Cambodia about vision, innovation, customer commitment, and long-term technology partnership.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      en: "/about/message-from-ceo/",
+      km: "/km/about/message-from-ceo/",
+      "x-default": "/about/message-from-ceo/",
+    },
+  },
   openGraph: {
     title: "Message from CEO | Mugnee Cambodia",
     description:

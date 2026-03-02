@@ -5,5 +5,11 @@
   Email: ankurdatta.official@gmail.com
   Github: https://github.com/ankur-datta-official
 */
-export { metadata } from "../led-display/video-processor/page";
+import type { Metadata } from "next";
+import { buildLegacyAliasMetadata } from "../lib/seoLegacy";
+
+export const metadata: Metadata = buildLegacyAliasMetadata({
+  canonicalPath: "/led-display/video-processor/",
+});
+
 export { default } from "../led-display/video-processor/page";

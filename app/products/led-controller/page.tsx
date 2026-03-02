@@ -13,7 +13,14 @@ export const metadata: Metadata = {
   title: "LED Controller in Cambodia | Mugnee Cambodia",
   description:
     "LED controller and processor solutions in Cambodia for stable screen control, signal management, and reliable project delivery.",
-  alternates: { canonical: `${SITE_URL}/products/led-controller/` },
+  alternates: {
+    canonical: `${SITE_URL}/products/led-controller/`,
+    languages: {
+      en: "/products/led-controller/",
+      "x-default": "/products/led-controller/",
+    },
+  },
+  robots: { index: false, follow: true },
 };
 
 export default function LedControllerPage() {
