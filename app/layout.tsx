@@ -7,6 +7,7 @@ import SiteHeader from "./components/layout/Header";
 import SiteFooter from "./components/layout/Footer";
 import SitewideJsonLd from "./components/seo/SitewideJsonLd";
 import WebVitalsReporter from "./components/seo/WebVitalsReporter";
+import ChunkRecovery from "./components/seo/ChunkRecovery";
 import { SITE_URL } from "./lib/site";
 
 /*
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <LanguageProvider>
             <SitewideJsonLd />
             <WebVitalsReporter />
+            <ChunkRecovery />
             <ScrollToTopOnRoute />
             <SiteHeader />
             <main

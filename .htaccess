@@ -66,6 +66,17 @@
 </IfModule>
 
 <IfModule mod_headers.c>
+  # Prevent stale HTML from referencing deleted hashed JS chunks after deploy.
+  <FilesMatch "\.(html|htm)$">
+    Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+  </FilesMatch>
+
+  # Keep Next.js hashed static assets aggressively cached.
+  SetEnvIfNoCase Request_URI "^/_next/static/" is_next_static=1
+  Header always set Cache-Control "public, max-age=31536000, immutable" env=is_next_static
+
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
