@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/about/message-from-ceo/",
-      km: "/km/about/message-from-ceo/",
+      "en-kh": "/about/message-from-ceo/",
+      "km-kh": "/km/about/message-from-ceo/",
       "x-default": "/about/message-from-ceo/",
     },
   },

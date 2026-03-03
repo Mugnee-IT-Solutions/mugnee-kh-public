@@ -42,8 +42,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     alternates: {
       canonical: kmUrl,
       languages: {
-        en: `/products/catalog/${product.slug}/`,
-        km: `/km/products/catalog/${product.slug}/`,
+        "en-kh": `/products/catalog/${product.slug}/`,
+        "km-kh": `/km/products/catalog/${product.slug}/`,
         "x-default": `/products/catalog/${product.slug}/`,
       },
     },

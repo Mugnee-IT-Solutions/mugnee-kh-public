@@ -411,7 +411,7 @@ export default function AboutClient({ forcedLang }: { forcedLang?: "en" | "km" }
                 <span className="font-semibold text-slate-700">{isKm ? uiKm.eyebrow : "About Mugnee Cambodia"}</span>
               </div>
               <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{isKm ? uiKm.heroTitle : "Mugnee Cambodia"}</h1>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base [text-align:justify]">
                 {isKm
                   ? uiKm.heroDesc
                   : "Mugnee is a multinational company (MNC). In Cambodia, Mugnee operates as an affiliate of Mugnee Multiple and a leading provider of LED display, digital signage, smart classroom systems, PA audio systems, and access control integration. We provide complete project delivery from technical site survey and solution design to product supply, installation, commissioning, user training, and long-term after-sales support. Our engineering team helps retail, corporate, industrial, education, hospitality, and public-sector organizations improve communication quality, brand visibility, operational efficiency, and site security with reliable, scalable, and maintenance-ready systems built for real Cambodia market conditions."}
@@ -525,16 +525,11 @@ export default function AboutClient({ forcedLang }: { forcedLang?: "en" | "km" }
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-3">
                     <Image
-                      src={item.title === "Bangladesh" || item.title === "បង់ក្លាដែស" ? "/images/partners/mugnee-bd-official.webp" : "/images/logo.png"}
+                      src={item.title === "Bangladesh" || item.title === "បង់ក្លាដែស" ? "/images/partners/mugnee-bd-official-transparent.webp" : "/images/logo.png"}
                       alt={item.title === "Bangladesh" || item.title === "បង់ក្លាដែស" ? "Mugnee Bangladesh official logo" : "Mugnee Cambodia official logo"}
                       width={160}
                       height={36}
-                      className={[
-                        "h-9 w-auto object-contain",
-                        item.title === "Bangladesh" || item.title === "បង់ក្លាដែស"
-                          ? "brightness-0 contrast-125"
-                          : "",
-                      ].join(" ")}
+                      className="h-9 w-auto object-contain"
                       loading="lazy"
                     />
                     <div className="text-sm font-semibold text-slate-900">{item.title}</div>

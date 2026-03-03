@@ -24,7 +24,7 @@ export default function ProductsClient({ forcedLang }: { forcedLang?: "en" | "km
           </h1>
           <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-600">
             {lang === "en"
-              ? "Browse all SKUs by category. Use filters to quickly find indoor, outdoor, smart board, PA system, turnstile and more."
+              ? "Browse all products by category. Use filters to quickly find indoor, outdoor, smart board, PA system, turnstile and more."
               : "រុករក SKU ទាំងអស់តាមប្រភេទ។ ប្រើតម្រងដើម្បីស្វែងរកបានលឿនដូចជា ក្នុងអគារ ខាងក្រៅ smart board ប្រព័ន្ធ PA turnstile និងផលិតផលផ្សេងៗទៀត។"}
           </p>
         </div>

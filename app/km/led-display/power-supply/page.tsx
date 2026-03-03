@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/led-display/power-supply/",
-      km: PAGE_PATH,
+      "en-kh": "/led-display/power-supply/",
+      "km-kh": PAGE_PATH,
       "x-default": "/led-display/power-supply/",
     },
   },

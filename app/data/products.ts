@@ -479,8 +479,8 @@ export const PRODUCTS: Product[] = [
         valueKm: "BIS / CE / CB / ROHS / EAC",
       },
     ],
-    heroImage: "/images/products/p1-25-indoor-led-video-wall-boardroom.png",
-    gallery: ["/images/products/p1-25-indoor-led-video-wall-boardroom.png", "/images/products/P1.25.webp"],
+    heroImage: "/images/products/p1-25-indoor-led-video-wall-boardroom.webp",
+    gallery: ["/images/products/p1-25-indoor-led-video-wall-boardroom.webp", "/images/products/P1.25.webp"],
     tagsEn: ["P1.25", "Indoor LED", "LED Module"],
     tagsKm: ["P1.25", "អេក្រង់ LED ក្នុងអគារ", "ម៉ូឌុល LED"],
     seoTitleEn: "P1.25mm Indoor LED Display Module",
@@ -661,9 +661,9 @@ export const PRODUCTS: Product[] = [
         valueKm: "BIS / CE / CB / ROHS / EAC",
       },
     ],
-    heroImage: "/images/products/p1-53-indoor-led-hospital-screen.png",
+    heroImage: "/images/products/p1-53-indoor-led-hospital-screen.webp",
     gallery: [
-      "/images/products/p1-53-indoor-led-hospital-screen.png",
+      "/images/products/p1-53-indoor-led-hospital-screen.webp",
       "/images/products/P1.53.webp",
       "/images/products/P1.53-Front.webp",
       "/images/products/P1.53-back.webp",
@@ -795,9 +795,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p1-86-indoor-led-video-wall-fashion-store-aeon-mall-phnom-penh-cambodia.png",
+      "/images/products/p1-86-indoor-led-video-wall-fashion-store-aeon-mall-phnom-penh-cambodia.webp",
     gallery: [
-      "/images/products/p1-86-indoor-led-video-wall-fashion-store-aeon-mall-phnom-penh-cambodia.png",
+      "/images/products/p1-86-indoor-led-video-wall-fashion-store-aeon-mall-phnom-penh-cambodia.webp",
       "/images/products/P1.86.webp",
       "/images/products/P1.86-Front.webp",
       "/images/products/P1.86-Back.webp",
@@ -927,9 +927,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p2-indoor-led-display-cambodia-university-auditorium-education-conference-2026.png",
+      "/images/products/p2-indoor-led-display-cambodia-university-auditorium-education-conference-2026.webp",
     gallery: [
-      "/images/products/p2-indoor-led-display-cambodia-university-auditorium-education-conference-2026.png",
+      "/images/products/p2-indoor-led-display-cambodia-university-auditorium-education-conference-2026.webp",
       "/images/products/P2-300x300-1.webp",
       "/images/products/P2-Front.webp",
       "/images/products/P2-back.webp",
@@ -1059,9 +1059,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p4-indoor-led-display-lucky-supermarket-cambodia-grocery-advertising.png",
+      "/images/products/p4-indoor-led-display-lucky-supermarket-cambodia-grocery-advertising.webp",
     gallery: [
-      "/images/products/p4-indoor-led-display-lucky-supermarket-cambodia-grocery-advertising.png",
+      "/images/products/p4-indoor-led-display-lucky-supermarket-cambodia-grocery-advertising.webp",
       "/images/products/P4.webp",
       "/images/products/P4-M.webp",
       "/images/products/P4-B-.webp",
@@ -1212,9 +1212,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p2-5-indoor-led-display-acleda-bank-phnom-penh-cambodia-digital-banking-qr-payment.png",
+      "/images/products/p2-5-indoor-led-display-acleda-bank-phnom-penh-cambodia-digital-banking-qr-payment.webp",
     gallery: [
-      "/images/products/p2-5-indoor-led-display-acleda-bank-phnom-penh-cambodia-digital-banking-qr-payment.png",
+      "/images/products/p2-5-indoor-led-display-acleda-bank-phnom-penh-cambodia-digital-banking-qr-payment.webp",
       "/images/products/P2.5.webp",
     ],
     tagsEn: ["P2.5", "Indoor LED", "LED Module"],
@@ -1360,9 +1360,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p3-indoor-led-display-brown-coffee-phnom-penh-cambodia-cafe-menu-promotion.png",
+      "/images/products/p3-indoor-led-display-brown-coffee-phnom-penh-cambodia-cafe-menu-promotion.webp",
     gallery: [
-      "/images/products/p3-indoor-led-display-brown-coffee-phnom-penh-cambodia-cafe-menu-promotion.png",
+      "/images/products/p3-indoor-led-display-brown-coffee-phnom-penh-cambodia-cafe-menu-promotion.webp",
       "/images/products/P2.5.webp",
     ],
     tagsEn: ["P3", "Indoor LED", "LED Module"],
@@ -1508,9 +1508,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p5-indoor-led-display-stage-chaktomuk-conference-hall-phnom-penh-cambodia.png",
+      "/images/products/p5-indoor-led-display-stage-chaktomuk-conference-hall-phnom-penh-cambodia.webp",
     gallery: [
-      "/images/products/p5-indoor-led-display-stage-chaktomuk-conference-hall-phnom-penh-cambodia.png",
+      "/images/products/p5-indoor-led-display-stage-chaktomuk-conference-hall-phnom-penh-cambodia.webp",
       "/images/products/P2.5.webp",
     ],
     tagsEn: ["P5", "Indoor LED", "LED Module"],
@@ -1710,9 +1710,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p2-5-outdoor-led-display-bkk1-phnom-penh-smart-axiata-5g-angkor-beer-khmer-new-year-night-street.png",
+      "/images/products/p2-5-outdoor-led-display-bkk1-phnom-penh-smart-axiata-5g-angkor-beer-khmer-new-year-night-street.webp",
     gallery: [
-      "/images/products/p2-5-outdoor-led-display-bkk1-phnom-penh-smart-axiata-5g-angkor-beer-khmer-new-year-night-street.png",
+      "/images/products/p2-5-outdoor-led-display-bkk1-phnom-penh-smart-axiata-5g-angkor-beer-khmer-new-year-night-street.webp",
     ],
     tagsEn: ["P2.5", "Outdoor LED", "LED Display"],
     tagsKm: ["P2.5", "អេក្រង់ LED ខាងក្រៅ", "LED Display"],
@@ -1877,9 +1877,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p3-outdoor-led-display-sisowath-quay-phnom-penh-cambodia-riverfront-evening-advertising.png",
+      "/images/products/p3-outdoor-led-display-sisowath-quay-phnom-penh-cambodia-riverfront-evening-advertising.webp",
     gallery: [
-      "/images/products/p3-outdoor-led-display-sisowath-quay-phnom-penh-cambodia-riverfront-evening-advertising.png",
+      "/images/products/p3-outdoor-led-display-sisowath-quay-phnom-penh-cambodia-riverfront-evening-advertising.webp",
     ],
     tagsEn: ["P3", "Outdoor LED", "LED Module"],
     tagsKm: ["P3", "អេក្រង់ LED ខាងក្រៅ", "ម៉ូឌុល LED"],
@@ -2078,9 +2078,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p4-outdoor-led-display-olympia-mall-phnom-penh-cambodia.png",
+      "/images/products/p4-outdoor-led-display-olympia-mall-phnom-penh-cambodia.webp",
     gallery: [
-      "/images/products/p4-outdoor-led-display-olympia-mall-phnom-penh-cambodia.png",
+      "/images/products/p4-outdoor-led-display-olympia-mall-phnom-penh-cambodia.webp",
     ],
     tagsEn: ["P4", "Outdoor LED", "LED Module"],
     tagsKm: ["P4", "អេក្រង់ LED ខាងក្រៅ", "ម៉ូឌុល LED"],
@@ -2279,9 +2279,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p5-outdoor-led-display-russian-market-phnom-penh-cambodia-busy-street-advertising.png",
+      "/images/products/p5-outdoor-led-display-russian-market-phnom-penh-cambodia-busy-street-advertising.webp",
     gallery: [
-      "/images/products/p5-outdoor-led-display-russian-market-phnom-penh-cambodia-busy-street-advertising.png",
+      "/images/products/p5-outdoor-led-display-russian-market-phnom-penh-cambodia-busy-street-advertising.webp",
       "/images/products/p5-outdoor.webp",
     ],
     tagsEn: ["P5", "Outdoor LED", "LED Module"],
@@ -2479,9 +2479,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p6-outdoor-led-display-national-road1-cambodia-sunset-advertising-billboard.png",
+      "/images/products/p6-outdoor-led-display-national-road1-cambodia-sunset-advertising-billboard.webp",
     gallery: [
-      "/images/products/p6-outdoor-led-display-national-road1-cambodia-sunset-advertising-billboard.png",
+      "/images/products/p6-outdoor-led-display-national-road1-cambodia-sunset-advertising-billboard.webp",
       "/images/products/p6-outdoor.webp",
     ],
     tagsEn: ["P6", "Outdoor LED", "LED Display"],
@@ -2679,10 +2679,10 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p6.67-outdoor-led-display-phnom-penh-special-economic-zone-industrial-advertising.png",
+      "/images/products/p6.67-outdoor-led-display-phnom-penh-special-economic-zone-industrial-advertising.webp",
     gallery: [
-      "/images/products/p6.67-outdoor-led-display-phnom-penh-special-economic-zone-industrial-advertising.png",
-      "/images/products/p6-67-outdoor.jpg",
+      "/images/products/p6.67-outdoor-led-display-phnom-penh-special-economic-zone-industrial-advertising.webp",
+      "/images/products/p6-67-outdoor.webp",
     ],
     tagsEn: ["P6.67", "Outdoor LED", "LED Module"],
     tagsKm: ["P6.67", "អេក្រង់ LED ខាងក្រៅ", "ម៉ូឌុល LED"],
@@ -2879,9 +2879,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p8-outdoor-led-billboard-siem-reap-night-market-cambodia.png",
+      "/images/products/p8-outdoor-led-billboard-siem-reap-night-market-cambodia.webp",
     gallery: [
-      "/images/products/p8-outdoor-led-billboard-siem-reap-night-market-cambodia.png",
+      "/images/products/p8-outdoor-led-billboard-siem-reap-night-market-cambodia.webp",
       "/images/products/p8-outdoor.webp",
     ],
     tagsEn: ["P8", "Outdoor LED", "LED Display"],
@@ -3079,9 +3079,9 @@ export const PRODUCTS: Product[] = [
       },
     ],
     heroImage:
-      "/images/products/p10-outdoor-led-signboard-phnom-penh-cambodia-street-advertising.png",
+      "/images/products/p10-outdoor-led-signboard-phnom-penh-cambodia-street-advertising.webp",
     gallery: [
-      "/images/products/p10-outdoor-led-signboard-phnom-penh-cambodia-street-advertising.png",
+      "/images/products/p10-outdoor-led-signboard-phnom-penh-cambodia-street-advertising.webp",
       "/images/products/p10-outdoor.webp",
     ],
     tagsEn: ["P10", "Outdoor LED", "LED Sign Board"],
@@ -4509,8 +4509,8 @@ export const PRODUCTS: Product[] = [
       { labelEn: "Output", labelKm: "Output", valueEn: "5V 40A", valueKm: "5V 40A" },
       { labelEn: "Power", labelKm: "Power", valueEn: "200W", valueKm: "200W" },
     ],
-    heroImage: "/images/products/g-energy-5v-40a.png",
-    gallery: ["/images/products/g-energy-5v-40a.png"],
+    heroImage: "/images/products/g-energy-5v-40a.webp",
+    gallery: ["/images/products/g-energy-5v-40a.webp"],
     tagsEn: ["Power Supply", "5V 40A", "G-Energy", "LED Display"],
     tagsKm: ["ឧបករណ៍ផ្គត់ផ្គង់ថាមពល", "5V 40A", "G-Energy", "LED Display"],
     seoTitleEn: "G-Energy 5V 40A Power Supply | LED Display 200W",
@@ -6439,8 +6439,8 @@ export const PRODUCTS: Product[] = [
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Zone routing & control", valueKm: "Zone routing & control" },
       { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA & safety systems", valueKm: "ប្រព័ន្ធ PA និងសុវត្ថិភាព" },
     ],
-    heroImage: "/images/products/pa-zone-selector.png",
-    gallery: ["/images/products/pa-zone-selector.png"],
+    heroImage: "/images/products/pa-zone-selector.webp",
+    gallery: ["/images/products/pa-zone-selector.webp"],
     tagsEn: ["PA System", "PA Products", "Cambodia"],
     tagsKm: ["PA System", "PA Products", "Cambodia"],
     seoTitleEn: "Zone Selector | PA System Cambodia",
@@ -6551,8 +6551,8 @@ export const PRODUCTS: Product[] = [
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Paging & announcements", valueKm: "Paging & announcements" },
       { labelEn: "Mounting", labelKm: "Mounting", valueEn: "Desk/Gooseneck", valueKm: "Desk/Gooseneck" },
     ],
-    heroImage: "/images/products/pa-paging-microphones.jpeg",
-    gallery: ["/images/products/pa-paging-microphones.jpeg"],
+    heroImage: "/images/products/pa-paging-microphones.webp",
+    gallery: ["/images/products/pa-paging-microphones.webp"],
     tagsEn: ["PA System", "PA Products", "Cambodia"],
     tagsKm: ["PA System", "PA Products", "Cambodia"],
     seoTitleEn: "Paging Microphones | PA System Cambodia",
@@ -6667,8 +6667,8 @@ export const PRODUCTS: Product[] = [
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Multi-zone audio", valueKm: "Multi-zone audio" },
       { labelEn: "Inputs", labelKm: "Inputs", valueEn: "Mic/Line sources", valueKm: "Mic/Line sources" },
     ],
-    heroImage: "/images/products/pa-all-in-one-amplifier-speaker-units.png",
-    gallery: ["/images/products/pa-all-in-one-amplifier-speaker-units.png"],
+    heroImage: "/images/products/pa-all-in-one-amplifier-speaker-units.webp",
+    gallery: ["/images/products/pa-all-in-one-amplifier-speaker-units.webp"],
     tagsEn: ["PA System", "PA Products", "Cambodia"],
     tagsKm: ["PA System", "PA Products", "Cambodia"],
     seoTitleEn: "All-in-one amplifier-speaker units | PA System Cambodia",
@@ -6724,8 +6724,8 @@ export const PRODUCTS: Product[] = [
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "IP/Dante PA systems", valueKm: "IP/Dante PA systems" },
       { labelEn: "Control", labelKm: "Control", valueEn: "Remote monitoring", valueKm: "Remote monitoring" },
     ],
-    heroImage: "/images/products/pa-dante-control-panels.png",
-    gallery: ["/images/products/pa-dante-control-panels.png"],
+    heroImage: "/images/products/pa-dante-control-panels.webp",
+    gallery: ["/images/products/pa-dante-control-panels.webp"],
     tagsEn: ["PA System", "PA Products", "Cambodia"],
     tagsKm: ["PA System", "PA Products", "Cambodia"],
     seoTitleEn: "Dante Control Panels | PA System Cambodia",
@@ -6781,8 +6781,8 @@ export const PRODUCTS: Product[] = [
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "IP/Dante PA systems", valueKm: "IP/Dante PA systems" },
       { labelEn: "Control", labelKm: "Control", valueEn: "Remote monitoring", valueKm: "Remote monitoring" },
     ],
-    heroImage: "/images/products/pa-ip-based-amplifiers-terminals.png",
-    gallery: ["/images/products/pa-ip-based-amplifiers-terminals.png"],
+    heroImage: "/images/products/pa-ip-based-amplifiers-terminals.webp",
+    gallery: ["/images/products/pa-ip-based-amplifiers-terminals.webp"],
     tagsEn: ["PA System", "PA Products", "Cambodia"],
     tagsKm: ["PA System", "PA Products", "Cambodia"],
     seoTitleEn: "IP-based amplifiers & terminals | PA System Cambodia",
@@ -6838,8 +6838,8 @@ export const PRODUCTS: Product[] = [
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Zone routing & control", valueKm: "Zone routing & control" },
       { labelEn: "Integration", labelKm: "ការរួមបញ្ចូល", valueEn: "PA & safety systems", valueKm: "ប្រព័ន្ធ PA និងសុវត្ថិភាព" },
     ],
-    heroImage: "/images/products/pa-digitally-managed-pa-matrix-controllers-2.png",
-    gallery: ["/images/products/pa-digitally-managed-pa-matrix-controllers-2.png"],
+    heroImage: "/images/products/pa-digitally-managed-pa-matrix-controllers-2.webp",
+    gallery: ["/images/products/pa-digitally-managed-pa-matrix-controllers-2.webp"],
     tagsEn: ["PA System", "PA Products", "Cambodia"],
     tagsKm: ["PA System", "PA Products", "Cambodia"],
     seoTitleEn: "Digitally managed PA matrix controllers | PA System Cambodia",
@@ -6895,8 +6895,8 @@ export const PRODUCTS: Product[] = [
       { labelEn: "Typical Use", labelKm: "Typical Use", valueEn: "Multi-zone audio", valueKm: "Multi-zone audio" },
       { labelEn: "Inputs", labelKm: "Inputs", valueEn: "Mic/Line sources", valueKm: "Mic/Line sources" },
     ],
-    heroImage: "/images/products/pa-traditional-pa-amplifiers.png",
-    gallery: ["/images/products/pa-traditional-pa-amplifiers.png"],
+    heroImage: "/images/products/pa-traditional-pa-amplifiers.webp",
+    gallery: ["/images/products/pa-traditional-pa-amplifiers.webp"],
     tagsEn: ["PA System", "PA Products", "Cambodia"],
     tagsKm: ["PA System", "PA Products", "Cambodia"],
     seoTitleEn: "Traditional PA amplifiers | PA System Cambodia",
@@ -7639,6 +7639,7 @@ export function getProductsByCategory(categoryId: string) {
 export function getCategoryById(categoryId: string) {
   return PRODUCT_CATEGORIES.find((c) => c.id === categoryId);
 }
+
 
 
 

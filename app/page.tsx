@@ -8,6 +8,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import HomeClient from "./components/home/HomeClient";
+import {
+  BUSINESS_ADDRESS,
+  BUSINESS_PHONE_E164,
+  BUSINESS_SAME_AS,
+} from "./lib/nap";
 
 type IconProps = { className?: string };
 
@@ -95,23 +100,23 @@ const PAGE_PATH = "/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Mugnee Cambodia | Leading Premium Technology Provider",
+  title: "Mugnee Cambodia – Digital Signage, Smart AV & Technology Solutions",
   description:
-    "Mugnee Cambodia is a smart technology and system integration company serving Cambodia with local engineering, installation, commissioning, and after-sales support.",
+    "Mugnee Cambodia provides digital signage, interactive panels, smart classroom technology, PA systems and access control solutions across Phnom Penh and Cambodia with professional installation and local support.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: PAGE_PATH,
-      km: `/km/`,
-      "x-default": PAGE_PATH,
+      "en-kh": `${SITE_URL}/`,
+      "km-kh": `${SITE_URL}/km/`,
+      "x-default": `${SITE_URL}/`,
     },
   },
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    title: "Mugnee Cambodia | Leading Premium Technology Provider",
+    title: "Mugnee Cambodia – Digital Signage, Smart AV & Technology Solutions",
     description:
-      "Brand overview of Mugnee Cambodia: smart technology, project delivery, and local support for commercial and institutional projects.",
+      "Digital signage, interactive panels, smart classroom technology, PA systems and access control solutions with professional installation and local support across Cambodia.",
     siteName: "Mugnee Cambodia",
     images: [
       {
@@ -124,9 +129,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mugnee Cambodia | Leading Premium Technology Provider",
+    title: "Mugnee Cambodia – Digital Signage, Smart AV & Technology Solutions",
     description:
-      "Smart technology solutions, engineering delivery, and local support in Cambodia.",
+      "Digital signage, smart AV, PA systems and access control solutions with local Cambodia support.",
     images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
   },
 };
@@ -148,8 +153,8 @@ const CATEGORY_TILES = [
     titleEn: "Indoor Display Solutions",
     titleKm: "ដំណោះស្រាយអេក្រង់ខាងក្នុង",
     descEn: "Indoor communication environments for offices and public spaces.",
-    descKm: "សមស្របសម្រាប់ការិយាល័យ Showroom និងតំបន់សាធារណៈដែលត្រូវការទំនាក់ទំនងតាម LED Display។",
-    href: "/indoor-led-display",
+    descKm: "សមស្របសម្រាប់ការិយាល័យ Showroom និងតំបន់សាធារណៈដែលត្រូវការបច្ចេកវិទ្យាបង្ហាញទំនើប។",
+    href: "/led-display/indoor-led-display",
     icon: <IconSparkles className="h-8 w-8 object-contain" />,
   },
   {
@@ -158,7 +163,7 @@ const CATEGORY_TILES = [
     titleKm: "ប្រព័ន្ធផ្សព្វផ្សាយខាងក្រៅ",
     descEn: "Outdoor campaign deployment with structured implementation and support.",
     descKm: "សម្រាប់យុទ្ធនាការខាងក្រៅ ដោយមានការអនុវត្តជាជំហាន និងសេវាគាំទ្របន្ត។",
-    href: "/solutions/retail-digital-signage-cambodia",
+    href: "/led-display/outdoor-led-display",
     icon: <IconAntenna className="h-8 w-8 object-contain" />,
   },
   {
@@ -167,7 +172,7 @@ const CATEGORY_TILES = [
     titleKm: "កាតទទួលសញ្ញា",
     descEn: "Signal and control components for reliable system performance.",
     descKm: "សមាសភាគសញ្ញា និងការគ្រប់គ្រង សម្រាប់ធានាស្ថិរភាពដំណើរការប្រព័ន្ធ LED។",
-    href: "/receiving-card",
+    href: "/led-display/receiving-card",
     icon: <IconLock className="h-8 w-8 object-contain" />,
   },
   {
@@ -176,7 +181,7 @@ const CATEGORY_TILES = [
     titleKm: "អេក្រង់អន្តរកម្ម (IFP)",
     descEn: "Smart board solutions for classrooms, training rooms and boardrooms.",
     descKm: "ដំណោះស្រាយបន្ទះឆ្លាតវៃសម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងបន្ទប់ប្រជុំ។",
-    href: "/solutions/education-smart-classroom-cambodia",
+    href: "/interactive-flat-panel",
     icon: <IconPresentation className="h-8 w-8 object-contain" />,
   },
   {
@@ -185,7 +190,7 @@ const CATEGORY_TILES = [
     titleKm: "ច្រកទ្វារ Turnstile",
     descEn: "Tripod, swing, flap barrier and speed gates for secure entry control.",
     descKm: "ច្រកបីដង ច្រកស្លាបបើក ច្រកស្លាបបិទបើក និងច្រកល្បឿនលឿន សម្រាប់គ្រប់គ្រងច្រកចេញចូលដោយសុវត្ថិភាព។",
-    href: "/solutions/office-access-control-cambodia",
+    href: "/turnstile-gate",
     icon: <IconBarrier className="h-8 w-8 object-contain" />,
   },
   {
@@ -203,16 +208,16 @@ const CATEGORY_TILES = [
     titleKm: "ឧបករណ៍ដំណើរការវីដេអូ",
     descEn: "Video processing components for switching, scaling, and stable content flow.",
     descKm: "ឧបករណ៍កែច្នៃវីដេអូសម្រាប់ប្ដូរប្រភព បំលែងទំហំ និងការបង្ហាញមាតិកាឱ្យមានស្ថិរភាពលើអេក្រង់ LED។",
-    href: "/video-processor",
+    href: "/led-display/video-processor",
     icon: <IconTv className="h-8 w-8 object-contain" />,
   },
   {
     key: "power_supply",
     titleEn: "Power Supply",
     titleKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
-    descEn: "Reliable power supply options for stable LED display operation.",
+    descEn: "Reliable power supply options for stable visual system operation.",
     descKm: "ជម្រើសឧបករណ៍ផ្គត់ផ្គង់ថាមពលដែលទុកចិត្តបាន សម្រាប់ធានាស្ថិរភាពប្រតិបត្តិការអេក្រង់ LED។",
-    href: "/power-supply",
+    href: "/led-display/power-supply",
     icon: <IconPower className="h-8 w-8 text-slate-600" />,
   },
   {
@@ -324,12 +329,33 @@ export default function HomePage() {
     }),
   };
 
+  const orgLocalJsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    name: "Mugnee Cambodia",
+    url: PAGE_URL,
+    inLanguage: "en",
+    areaServed: "Cambodia",
+    telephone: BUSINESS_PHONE_E164,
+    sameAs: [...BUSINESS_SAME_AS],
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: BUSINESS_ADDRESS.streetAddress,
+      addressLocality: BUSINESS_ADDRESS.addressLocality,
+      addressCountry: "Cambodia",
+    },
+  };
+
   return (
     <main className="bg-white text-slate-900">
       {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLocalJsonLd) }}
       />
 
       <HomeClient

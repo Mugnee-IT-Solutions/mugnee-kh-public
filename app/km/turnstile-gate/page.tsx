@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/turnstile-gate/",
-      km: PAGE_PATH,
+      "en-kh": "/turnstile-gate/",
+      "km-kh": PAGE_PATH,
       "x-default": "/turnstile-gate/",
     },
   },

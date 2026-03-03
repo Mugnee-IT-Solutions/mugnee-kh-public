@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/contact/",
-      km: PAGE_PATH,
+      "en-kh": "/contact/",
+      "km-kh": PAGE_PATH,
       "x-default": "/contact/",
     },
   },

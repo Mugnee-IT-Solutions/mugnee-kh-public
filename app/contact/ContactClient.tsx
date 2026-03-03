@@ -370,7 +370,7 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
                 <span className="font-semibold text-slate-700">{isKm ? uiKm.eyebrow : "Contact Us"}</span>
               </div>
               <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{isKm ? uiKm.h1 : "Get in Touch"}</h1>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base [text-align:justify]">
                 {isKm
                   ? uiKm.heroDesc
                   : "Have a project in mind? Contact Mugnee Cambodia for LED display, digital signage, smart classroom, PA system, and access control solutions with end-to-end technical support. Share your site location, use case, budget range, and timeline, and our team will provide a practical quotation plan, site survey guidance, and deployment recommendations tailored for Cambodia business environments."}

@@ -39,8 +39,8 @@ export function generateMetadata(): Metadata {
     alternates: {
       canonical: `${SITE_URL}/led-display/`,
       languages: {
-        en: `${SITE_URL}/led-display/`,
-        km: `${SITE_URL}/km/led-display/`,
+        "en-kh": `${SITE_URL}/led-display/`,
+        "km-kh": `${SITE_URL}/km/led-display/`,
         "x-default": `${SITE_URL}/led-display/`,
       },
     },

@@ -1945,7 +1945,7 @@ export default function LedDisplayClient({
                     alt={logo.label}
                     width={180}
                     height={32}
-                    className={logo.label === "Lampro" ? "h-10 w-auto object-contain" : "h-8 w-auto object-contain"}
+                    className={logo.label === "Lampro" ? "h-10 w-36 object-contain" : "h-8 w-36 object-contain"}
                   />
                 </div>
               ))}

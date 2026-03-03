@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/led-display/indoor-led-display/",
-      km: "/km/led-display/indoor-led-display/",
+      "en-kh": "/led-display/indoor-led-display/",
+      "km-kh": "/km/led-display/indoor-led-display/",
       "x-default": "/led-display/indoor-led-display/",
     },
   },

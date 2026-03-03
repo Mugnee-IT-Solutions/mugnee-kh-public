@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/led-display/receiving-card/",
-      km: "/km/led-display/receiving-card/",
+      "en-kh": "/led-display/receiving-card/",
+      "km-kh": "/km/led-display/receiving-card/",
       "x-default": "/led-display/receiving-card/",
     },
   },

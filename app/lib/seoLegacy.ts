@@ -21,8 +21,8 @@ export function buildLegacyAliasMetadata({
     alternates: {
       canonical: `${SITE_URL}${canonicalRoute}`,
       languages: {
-        en: canonicalRoute,
-        ...(kmRoute ? { km: kmRoute } : {}),
+        "en-kh": canonicalRoute,
+        ...(kmRoute ? { "km-kh": kmRoute } : {}),
         "x-default": canonicalRoute,
       },
     },

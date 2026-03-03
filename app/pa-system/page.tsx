@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/pa-system/",
-      km: "/km/pa-system/",
+      "en-kh": "/pa-system/",
+      "km-kh": "/km/pa-system/",
       "x-default": "/pa-system/",
     },
   },

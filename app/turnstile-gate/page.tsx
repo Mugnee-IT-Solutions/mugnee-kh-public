@@ -16,14 +16,14 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
-  title: "Commercial Turnstile Gate Cambodia | Supply & Installation",
+  title: "Turnstile Gate Cambodia | Supply & Installation",
   description:
     "Professional turnstile gate solutions in Cambodia for offices, factories, schools, and public venues. Flap, tripod, speed, and full-height turnstiles with RFID, QR, biometric integration, and installation support.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/turnstile-gate/",
-      km: "/km/turnstile-gate/",
+      "en-kh": "/turnstile-gate/",
+      "km-kh": "/km/turnstile-gate/",
       "x-default": "/turnstile-gate/",
     },
   },

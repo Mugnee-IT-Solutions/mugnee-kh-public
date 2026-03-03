@@ -322,7 +322,7 @@ export default function HomeClient({
   const t = useMemo(() => {
     const en = {
       badge: "Cambodia • Mugnee Cambodia • Project Delivery",
-      heroTitle: "Digital Display & Smart Technology Solutions in Cambodia",
+      heroTitle: "Premium Digital Signage & Smart AV Solutions in Cambodia",
       heroDesc:
         "Mugnee is a multinational technology company, and Mugnee Cambodia serves as its local multinational operation for Cambodia with project planning, delivery, installation, commissioning, and long-term support for commercial and institutional clients.",
       ctaQuote: "Get Quotation",
@@ -417,7 +417,6 @@ export default function HomeClient({
             src={slide.src}
             alt={slide.alt}
             fill
-            priority={idx === 0}
             loading={idx === 0 ? "eager" : "lazy"}
             sizes="100vw"
             className="object-cover object-center"
@@ -565,7 +564,7 @@ export default function HomeClient({
               return (
                 <Link
                   key={c.key}
-                  href={c.href}
+                  href={toLangHref(c.href)}
                   className={[
                     "home-unit-card group relative flex min-h-[124px] items-center justify-center overflow-hidden rounded-xl border p-4 text-center no-underline shadow-[0_2px_10px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(15,23,42,0.16)] hover:no-underline",
                     theme.card,
@@ -686,7 +685,7 @@ export default function HomeClient({
                               alt="UNDP official logo"
                               width={42}
                               height={56}
-                              className="h-14 w-auto shrink-0 object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                              className="h-14 w-11 shrink-0 object-contain transition-transform duration-300 group-hover:scale-[1.03]"
                             />
                             <span className="text-left text-[15px] font-semibold leading-[1.12] text-[#0072BC]">
                               United Nations
@@ -703,12 +702,12 @@ export default function HomeClient({
                             width={220}
                             height={48}
                             className={[
-                              "w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03]",
+                              "object-contain transition-transform duration-300 group-hover:scale-[1.03]",
                               org.short === "EU"
-                                ? "h-auto w-[184px] max-w-[72%] contrast-125 brightness-90 saturate-125"
+                                ? "h-10 w-[184px] max-w-[72%] contrast-125 brightness-90 saturate-125"
                                 : org.short === "MCC"
-                                  ? "h-auto w-[188px] max-w-[80%]"
-                                : "h-12 max-w-[88%]",
+                                  ? "h-10 w-[188px] max-w-[80%]"
+                                : "h-12 w-[200px] max-w-[88%]",
                             ].join(" ")}
                           />
                           {org.short === "ADB" ? (
@@ -793,12 +792,11 @@ export default function HomeClient({
                     height={32}
                     className={
                       logo.label === "Lampro"
-                        ? "h-8 w-auto max-w-[82%] object-contain"
+                        ? "h-8 w-32 max-w-[82%] object-contain"
                         : logo.label === "G-energy"
-                          ? "h-9 w-auto max-w-[78%] object-contain"
-                          : "h-8 w-auto max-w-[84%] object-contain"
+                          ? "h-9 w-32 max-w-[78%] object-contain"
+                          : "h-8 w-36 max-w-[84%] object-contain"
                     }
-                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
               ))}

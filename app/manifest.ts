@@ -14,13 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
     icons: [
       {
         src: "/images/fav.webp",
-        sizes: "192x192",
         type: "image/webp",
-      },
-      {
-        src: "/images/fav.ico",
-        sizes: "any",
-        type: "image/x-icon",
       },
     ],
   };

@@ -425,7 +425,7 @@ export default function InteractiveFlatPanelClient() {
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
             {t.h1}
           </h1>
-          <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 [text-align:justify] sm:text-base">
             {lang === "en" ? (
               <>
                 Mugnee Cambodia provides <strong>interactive flat panel</strong> (

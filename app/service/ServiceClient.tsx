@@ -437,7 +437,7 @@ export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km"
             <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
               {t.heroTitle}
             </h1>
-            <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base [text-align:justify]">
               {t.heroDesc}
             </p>
             <div className="mt-7 flex flex-wrap gap-3">

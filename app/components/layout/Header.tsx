@@ -49,6 +49,13 @@ function Dropdown({
   const panelPos = align === "center" ? "left-1/2 -translate-x-1/2" : "left-0";
   const parentHref = parentHrefById[id] || "#";
   const isActive = isPathActive(parentHref);
+  const activeItemHref = useMemo(() => {
+    const matches = items
+      .map((item) => item.href)
+      .filter((href) => isPathActive(href))
+      .sort((a, b) => b.length - a.length);
+    return matches[0] ?? null;
+  }, [items, isPathActive]);
 
   return (
     <div
@@ -117,25 +124,37 @@ function Dropdown({
             ].join(" ")}
           >
             <div className="p-2">
-              {items.map((it) => (
-                <Link
-                  key={it.href}
-                  href={toLangHref(it.href)}
-                  className={[
-                    "block rounded-xl px-3 py-2.5 text-sm no-underline hover:no-underline focus:no-underline",
-                    "text-slate-100/90",
-                    "transition",
-                    "hover:bg-white/10 hover:text-white",
-                    "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20",
-                  ].join(" ")}
-                  onClick={() => {
-                    forceScrollTop();
-                    setOpenMenu(null);
-                  }}
-                >
-                  {lang === "en" ? it.labelEn : it.labelKm}
-                </Link>
-              ))}
+              {items.map((it) => {
+                const itemIsActive = activeItemHref === it.href;
+                return (
+                  <Link
+                    key={it.href}
+                    href={toLangHref(it.href)}
+                    aria-current={itemIsActive ? "page" : undefined}
+                    className={[
+                      "flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm no-underline hover:no-underline focus:no-underline",
+                      "transition",
+                      itemIsActive
+                        ? "bg-sky-500/15 text-white ring-1 ring-sky-300/35"
+                        : "text-slate-100/90 hover:bg-white/10 hover:text-white",
+                      "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20",
+                    ].join(" ")}
+                    onClick={() => {
+                      forceScrollTop();
+                      setOpenMenu(null);
+                    }}
+                  >
+                    <span>{lang === "en" ? it.labelEn : it.labelKm}</span>
+                    <span
+                      aria-hidden="true"
+                      className={[
+                        "h-1.5 w-1.5 shrink-0 rounded-full transition",
+                        itemIsActive ? "bg-sky-300" : "bg-transparent",
+                      ].join(" ")}
+                    />
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -363,6 +382,33 @@ export default function SiteHeader() {
       active ? "after:opacity-100 after:bg-sky-300" : "after:opacity-0 after:bg-transparent",
     ].join(" ");
 
+  const pickBestActiveHref = (hrefs: string[]) => {
+    const matches = hrefs.filter((href) => isPathActive(href)).sort((a, b) => b.length - a.length);
+    return matches[0] ?? null;
+  };
+
+  const ledMobileHrefs = [
+    "/led-display",
+    "/led-display/indoor-led-display",
+    "/led-display/outdoor-led-display",
+    "/led-display/receiving-card",
+    "/led-display/video-processor",
+    "/led-display/power-supply",
+  ];
+  const aboutMobileHrefs = ["/about", "/about/message-from-ceo"];
+  const ledMobileActiveHref = pickBestActiveHref(ledMobileHrefs);
+  const solutionsMobileActiveHref = pickBestActiveHref(solutionsMenu.map((item) => item.href));
+  const aboutMobileActiveHref = pickBestActiveHref(aboutMobileHrefs);
+
+  const mobileItemClass = (active: boolean) =>
+    [
+      "relative flex items-center rounded-xl px-3 py-2 pr-6 text-sm font-semibold no-underline hover:no-underline",
+      "transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20",
+      "after:absolute after:right-3 after:top-1/2 after:h-1.5 after:w-1.5 after:-translate-y-1/2 after:rounded-full after:transition-colors",
+      active ? "bg-sky-500/15 text-white ring-1 ring-sky-300/35" : "text-white hover:bg-white/10",
+      active ? "after:bg-sky-300" : "after:bg-transparent",
+    ].join(" ");
+
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const query = q.trim();
@@ -464,7 +510,6 @@ export default function SiteHeader() {
               alt="Mugnee Cambodia"
               width={210}
               height={64}
-              priority
               className="h-9 w-auto"
             />
           </Link>
@@ -739,7 +784,10 @@ export default function SiteHeader() {
                 <div className="mt-1">
                   <Link
                     href={toLangHref("/led-display")}
-                    className="inline-flex rounded-lg px-3 pb-1 pt-1 text-xs font-semibold text-white/80 hover:bg-white/10 hover:text-white"
+                    className={[
+                      "inline-flex rounded-lg px-3 pb-1 pt-1 text-xs font-semibold transition",
+                      ledMobileActiveHref ? "text-sky-200" : "text-white/80 hover:bg-white/10 hover:text-white",
+                    ].join(" ")}
                     onClick={() => {
                       forceScrollTop();
                       setOpenMobile(false);
@@ -750,7 +798,8 @@ export default function SiteHeader() {
                   <div className="grid gap-1">
                     <Link
                       href={toLangHref("/led-display")}
-                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      aria-current={ledMobileActiveHref === "/led-display" ? "page" : undefined}
+                      className={mobileItemClass(ledMobileActiveHref === "/led-display")}
                       onClick={() => {
                         forceScrollTop();
                         setOpenMobile(false);
@@ -760,7 +809,8 @@ export default function SiteHeader() {
                     </Link>
                     <Link
                       href={toLangHref("/led-display/indoor-led-display")}
-                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      aria-current={ledMobileActiveHref === "/led-display/indoor-led-display" ? "page" : undefined}
+                      className={mobileItemClass(ledMobileActiveHref === "/led-display/indoor-led-display")}
                       onClick={() => {
                         forceScrollTop();
                         setOpenMobile(false);
@@ -770,7 +820,8 @@ export default function SiteHeader() {
                     </Link>
                     <Link
                       href={toLangHref("/led-display/outdoor-led-display")}
-                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      aria-current={ledMobileActiveHref === "/led-display/outdoor-led-display" ? "page" : undefined}
+                      className={mobileItemClass(ledMobileActiveHref === "/led-display/outdoor-led-display")}
                       onClick={() => {
                         forceScrollTop();
                         setOpenMobile(false);
@@ -790,7 +841,8 @@ export default function SiteHeader() {
                     </Link>
                     <Link
                       href={toLangHref("/led-display/receiving-card")}
-                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      aria-current={ledMobileActiveHref === "/led-display/receiving-card" ? "page" : undefined}
+                      className={mobileItemClass(ledMobileActiveHref === "/led-display/receiving-card")}
                       onClick={() => {
                         forceScrollTop();
                         setOpenMobile(false);
@@ -800,7 +852,8 @@ export default function SiteHeader() {
                     </Link>
                     <Link
                       href={toLangHref("/led-display/video-processor")}
-                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      aria-current={ledMobileActiveHref === "/led-display/video-processor" ? "page" : undefined}
+                      className={mobileItemClass(ledMobileActiveHref === "/led-display/video-processor")}
                       onClick={() => {
                         forceScrollTop();
                         setOpenMobile(false);
@@ -810,7 +863,8 @@ export default function SiteHeader() {
                     </Link>
                     <Link
                       href={toLangHref("/led-display/power-supply")}
-                      className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                      aria-current={ledMobileActiveHref === "/led-display/power-supply" ? "page" : undefined}
+                      className={mobileItemClass(ledMobileActiveHref === "/led-display/power-supply")}
                       onClick={() => {
                         forceScrollTop();
                         setOpenMobile(false);
@@ -823,7 +877,8 @@ export default function SiteHeader() {
 
                 <Link
                   href={toLangHref("/interactive-flat-panel")}
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  aria-current={isPathActive("/interactive-flat-panel") ? "page" : undefined}
+                  className={mobileItemClass(isPathActive("/interactive-flat-panel"))}
                   onClick={() => {
                     forceScrollTop();
                     setOpenMobile(false);
@@ -833,7 +888,8 @@ export default function SiteHeader() {
                 </Link>
                 <Link
                   href={toLangHref("/pa-system")}
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  aria-current={isPathActive("/pa-system") ? "page" : undefined}
+                  className={mobileItemClass(isPathActive("/pa-system"))}
                   onClick={() => {
                     forceScrollTop();
                     setOpenMobile(false);
@@ -843,7 +899,8 @@ export default function SiteHeader() {
                 </Link>
                 <Link
                   href={toLangHref("/turnstile-gate")}
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  aria-current={isPathActive("/turnstile-gate") ? "page" : undefined}
+                  className={mobileItemClass(isPathActive("/turnstile-gate"))}
                   onClick={() => {
                     forceScrollTop();
                     setOpenMobile(false);
@@ -852,26 +909,38 @@ export default function SiteHeader() {
                   {t.turnstile}
                 </Link>
                 <div className="mt-1">
-                  <p className="px-3 pb-1 text-xs font-semibold text-white/70">{t.solutions}</p>
+                  <p
+                    className={[
+                      "px-3 pb-1 text-xs font-semibold",
+                      solutionsMobileActiveHref ? "text-sky-200" : "text-white/70",
+                    ].join(" ")}
+                  >
+                    {t.solutions}
+                  </p>
                   <div className="grid gap-1">
-                    {solutionsMenu.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={toLangHref(item.href)}
-                        className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
-                        onClick={() => {
-                          forceScrollTop();
-                          setOpenMobile(false);
-                        }}
-                      >
-                        {lang === "en" ? item.labelEn : item.labelKm}
-                      </Link>
-                    ))}
+                    {solutionsMenu.map((item) => {
+                      const itemIsActive = solutionsMobileActiveHref === item.href;
+                      return (
+                        <Link
+                          key={item.href}
+                          href={toLangHref(item.href)}
+                          aria-current={itemIsActive ? "page" : undefined}
+                          className={mobileItemClass(itemIsActive)}
+                          onClick={() => {
+                            forceScrollTop();
+                            setOpenMobile(false);
+                          }}
+                        >
+                          {lang === "en" ? item.labelEn : item.labelKm}
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
                 <Link
                   href={toLangHref("/service")}
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  aria-current={isPathActive("/service") ? "page" : undefined}
+                  className={mobileItemClass(isPathActive("/service"))}
                   onClick={() => {
                     forceScrollTop();
                     setOpenMobile(false);
@@ -881,7 +950,8 @@ export default function SiteHeader() {
                 </Link>
                 <Link
                   href={toLangHref("/about")}
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  aria-current={aboutMobileActiveHref === "/about" ? "page" : undefined}
+                  className={mobileItemClass(aboutMobileActiveHref === "/about")}
                   onClick={() => {
                     forceScrollTop();
                     setOpenMobile(false);
@@ -891,7 +961,8 @@ export default function SiteHeader() {
                 </Link>
                 <Link
                   href={toLangHref("/about/message-from-ceo")}
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  aria-current={aboutMobileActiveHref === "/about/message-from-ceo" ? "page" : undefined}
+                  className={mobileItemClass(aboutMobileActiveHref === "/about/message-from-ceo")}
                   onClick={() => {
                     forceScrollTop();
                     setOpenMobile(false);
@@ -901,7 +972,8 @@ export default function SiteHeader() {
                 </Link>
                 <Link
                   href={toLangHref("/contact")}
-                  className="rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
+                  aria-current={isPathActive("/contact") ? "page" : undefined}
+                  className={mobileItemClass(isPathActive("/contact"))}
                   onClick={() => {
                     forceScrollTop();
                     setOpenMobile(false);

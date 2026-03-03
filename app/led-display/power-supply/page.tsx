@@ -35,6 +35,11 @@ export default function PowerSupplyPage() {
 
   return (
     <LedDisplayClient
+      productGridOverride={{
+        allowedCategoryIds: ["power_supply"],
+        filterCategoryIds: ["power_supply"],
+        categoryOrderIds: ["power_supply"],
+      }}
       productQuickChips={productQuickChips}
       faqItemsOverride={powerSupplyFaq}
       schemaPathOverride="/led-display/power-supply"

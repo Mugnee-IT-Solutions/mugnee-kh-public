@@ -468,7 +468,7 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
             <span className="font-semibold text-slate-700">{t.heroEyebrow}</span>
           </div>
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{t.heroTitle}</h1>
-          <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{t.heroDesc}</p>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base [text-align:justify]">{t.heroDesc}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href={toLangHref("/contact")} className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.ctaQuote}</Link>
             <Link href={toLangHref("/products")} className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md">{t.ctaProducts}</Link>
@@ -651,5 +651,4 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
     </main>
   );
 }
-
 

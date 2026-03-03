@@ -58,7 +58,7 @@ export default function MessageFromCeoClient({ forcedLang }: { forcedLang?: "en"
             {t.eyebrow}
           </p>
           <h1 className="mt-1.5 text-3xl font-bold tracking-tight sm:text-[2.05rem]">{t.title}</h1>
-          <p className="mt-1.5 text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p className="mt-1.5 text-sm leading-relaxed text-slate-600 sm:text-base [text-align:justify]">
             {t.subtitle}
           </p>
         </div>
@@ -75,7 +75,6 @@ export default function MessageFromCeoClient({ forcedLang }: { forcedLang?: "en"
                   width={800}
                   height={800}
                   className="h-auto w-full object-cover"
-                  priority
                 />
               </div>
               <div className="mt-4 text-center">
@@ -86,10 +85,10 @@ export default function MessageFromCeoClient({ forcedLang }: { forcedLang?: "en"
 
             <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
               <p className="text-base font-semibold text-slate-900">{t.greeting}</p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p1}</p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p2}</p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p3}</p>
-              <p className="mt-4 text-sm leading-relaxed text-slate-700">{t.p4}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-700 [text-align:justify]">{t.p1}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-700 [text-align:justify]">{t.p2}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-700 [text-align:justify]">{t.p3}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate-700 [text-align:justify]">{t.p4}</p>
 
               <div className="mt-8 border-t border-slate-200 pt-5">
                 <p className="text-sm font-semibold text-slate-900">{t.signatureName}</p>

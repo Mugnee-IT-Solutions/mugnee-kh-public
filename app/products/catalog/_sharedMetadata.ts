@@ -24,8 +24,8 @@ export function buildCatalogProductMetadata(slug: string): Metadata {
     alternates: {
       canonical: productUrl,
       languages: {
-        en: `/products/catalog/${product.slug}/`,
-        km: `/km/products/catalog/${product.slug}/`,
+        "en-kh": `/products/catalog/${product.slug}/`,
+        "km-kh": `/km/products/catalog/${product.slug}/`,
         "x-default": `/products/catalog/${product.slug}/`,
       },
     },

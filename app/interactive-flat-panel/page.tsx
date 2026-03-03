@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      en: "/interactive-flat-panel/",
-      km: "/km/interactive-flat-panel/",
+      "en-kh": "/interactive-flat-panel/",
+      "km-kh": "/km/interactive-flat-panel/",
       "x-default": "/interactive-flat-panel/",
     },
   },

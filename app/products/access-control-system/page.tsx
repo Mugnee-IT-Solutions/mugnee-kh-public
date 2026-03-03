@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: TARGET_URL,
     languages: {
-      en: "/solutions/office-access-control-cambodia/",
-      km: "/km/solutions/office-access-control-cambodia/",
+      "en-kh": "/solutions/office-access-control-cambodia/",
+      "km-kh": "/km/solutions/office-access-control-cambodia/",
       "x-default": "/solutions/office-access-control-cambodia/",
     },
   },

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${SITE_URL}/products/led-controller/`,
     languages: {
-      en: "/products/led-controller/",
+      "en-kh": "/products/led-controller/",
       "x-default": "/products/led-controller/",
     },
   },

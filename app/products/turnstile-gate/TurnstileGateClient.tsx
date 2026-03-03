@@ -18,7 +18,7 @@ export default function TurnstileGateClient() {
     const en = {
       breadcrumb: "" ,
       badge: "Cambodia - Turnstile Gate - Access Control",
-      h1: "Commercial Turnstile Gate Solutions in Cambodia by Mugnee",
+      h1: "Turnstile Gate Solutions in Cambodia by Mugnee",
       sub:
         "Mugnee Cambodia provides professional turnstile gate and access control solutions in Cambodia for offices, factories, schools, transport hubs, and public venues. We supply tripod turnstile gates, flap barriers, speed gates, and full-height turnstiles with RFID card, QR code, and biometric integration, including on-site installation, commissioning, and local after-sales support.",
       cta1: "Get a Free Quotation",
@@ -161,7 +161,7 @@ export default function TurnstileGateClient() {
     const km = {
       breadcrumb: "" ,
       badge: "កម្ពុជា - ច្រកទ្វារ Turnstile - គ្រប់គ្រងការចូលចេញ",
-      h1: "ដំណោះស្រាយច្រកទ្វារ Turnstile របស់ Mugnee នៅកម្ពុជា",
+      h1: "ដំណោះស្រាយច្រកទ្វារ Turnstile នៅកម្ពុជា ដោយ Mugnee",
       sub:
         "Mugnee Cambodia ផ្តល់ប្រព័ន្ធច្រកទ្វារ turnstile ដោយវិជ្ជាជីវៈ សម្រាប់គ្រប់គ្រងការចូលចេញឱ្យមានសុវត្ថិភាព នៅការិយាល័យ រោងចក្រ សាលារៀន មជ្ឈមណ្ឌលដឹកជញ្ជូន និងទីតាំងសាធារណៈ។ យើងផ្គត់ផ្គង់ flap barrier, tripod turnstile, speed gate និង full-height turnstile ដែលអាចរួមបញ្ចូល RFID, QR និង biometric ព្រមទាំងសេវាដំឡើង commissioning និង after-sales support ក្នុងស្រុក។",
       cta1: "ស្នើសុំតម្លៃឥតគិតថ្លៃ",
@@ -532,7 +532,7 @@ export default function TurnstileGateClient() {
           <div className="mt-4">
             <div className="max-w-none">
               <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{t.h1}</h1>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base">
+              <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base [text-align:justify]">
                 {lang === "en" ? (
                   <>
                     Mugnee Cambodia provides professional <strong>turnstile gate</strong>{" "}

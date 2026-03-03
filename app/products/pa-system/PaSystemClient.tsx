@@ -485,7 +485,7 @@ export default function PaSystemClient() {
           <div className="mt-4">
             <div>
               <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">{t.h1}</h1>
-              <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base max-w-none">
+              <p className="mt-2 text-sm leading-relaxed text-slate-700/90 sm:text-base max-w-none [text-align:justify]">
                 {lang === "en" ? (
                   <>
                     Mugnee Cambodia provides professional <strong>PA system</strong> and{" "}
