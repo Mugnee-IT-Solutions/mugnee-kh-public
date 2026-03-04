@@ -3,6 +3,12 @@
 # CyberPanel / Apache / LiteSpeed friendly
 # =========================================
 
+<IfModule mod_alias.c>
+  # Enforce legacy catalog URLs to canonical product URLs.
+  RedirectMatch 301 ^/products/catalog/(.+)/?$ /products/$1/
+  RedirectMatch 301 ^/km/products/catalog/(.+)/?$ /km/products/$1/
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -39,6 +45,10 @@
   RewriteRule ^(.+)/__next\.([^.\/]+)\.([^.\/]+)\.txt$ $1/__next.$2/$3.txt [L,NC]
 
   # 5) Canonical product route redirects
+  RewriteRule ^products/catalog/(.+)/?$ /products/$1/ [R=301,L,NC]
+  RewriteRule ^km/products/catalog/(.+)/?$ /km/products/$1/ [R=301,L,NC]
+  RewriteRule ^products/p10-outdoor-led-sign-board-price-in-bd/?$ /products/p10-outdoor-led-sign-board-price-in-cambodia/ [R=301,L,NC]
+
   RewriteRule ^products/led-display/?$ /led-display/ [R=301,L,NC]
   RewriteRule ^products/led-display/indoor-led-display/?$ /led-display/indoor-led-display/ [R=301,L,NC]
   RewriteRule ^products/led-display/outdoor-led-display/?$ /led-display/outdoor-led-display/ [R=301,L,NC]

@@ -1,95 +1,79 @@
-/*
-  Developer Signature:
-  This website was developed by Mugnee IT Solutions.
-  Developer Name: Ankur Datta
-  Email: ankurdatta.official@gmail.com
-  Github: https://github.com/ankur-datta-official
-*/
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import HomeClient from "./components/home/HomeClient";
-import {
-  BUSINESS_ADDRESS,
-  BUSINESS_PHONE_E164,
-  BUSINESS_SAME_AS,
-} from "./lib/nap";
 
 type IconProps = { className?: string };
 
-function IconMonitor({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/digital-display-2.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
+function unitIcon(src: string, alt: string) {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={24}
+      height={24}
+      className="h-6 w-6 object-contain"
+    />
+  );
 }
 
 function IconSparkles({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/smart-board.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3l1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3z" />
+      <path d="M19 4l.8 1.8L21 6.5l-1.2.7L19 9l-.8-1.8L17 6.5l1.2-.7L19 4z" />
+    </svg>
+  );
 }
 
 function IconAntenna({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/kiosk.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2v6" />
+      <path d="M5 8c4.7-4.7 9.3-4.7 14 0" />
+      <path d="M7.5 10.5c3.3-3.3 5.7-3.3 9 0" />
+      <circle cx="12" cy="14" r="2" />
+      <path d="M12 16v6" />
+    </svg>
+  );
+}
+
+function IconChip({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="7" y="7" width="10" height="10" rx="1.8" />
+      <path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4" />
+      <path d="M10 10h4v4h-4z" />
+    </svg>
+  );
 }
 
 function IconTv({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/sound-system.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
-}
-
-function IconPresentation({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/smart-board.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
-}
-
-function IconBarrier({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/turnstile-gate.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
-}
-
-function IconLock({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/security.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
-}
-
-function IconMic({ className }: IconProps) {
-  return <Image src="/images/home/unit-icons/pa-system.webp" alt="" width={32} height={32} className={className} aria-hidden="true" />;
-}
-
-function IconPower({ className }: IconProps) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="7" y="8" width="10" height="9" rx="1.5" />
-      <path d="M10 8V5.5" />
-      <path d="M14 8V5.5" />
-      <path d="M12 17v2.5" />
-      <path d="M9.5 19.5h5" />
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="5" width="18" height="12" rx="2" />
+      <path d="M7 19h10" />
     </svg>
   );
 }
 
-function IconCatalog({ className }: IconProps) {
+function IconBolt({ className }: IconProps) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      className={className}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="4" y="4" width="6" height="6" rx="1" />
-      <rect x="14" y="4" width="6" height="6" rx="1" />
-      <rect x="4" y="14" width="6" height="6" rx="1" />
-      <rect x="14" y="14" width="6" height="6" rx="1" />
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M13 2L5 13h6l-1 9 8-11h-6l1-9z" />
     </svg>
   );
 }
 
-
+function IconGrid({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="4" y="4" width="6" height="6" rx="1.2" />
+      <rect x="14" y="4" width="6" height="6" rx="1.2" />
+      <rect x="4" y="14" width="6" height="6" rx="1.2" />
+      <rect x="14" y="14" width="6" height="6" rx="1.2" />
+    </svg>
+  );
+}
 /** Set this in production:
  * NEXT_PUBLIC_SITE_URL=https://mugneekh.com
  */
@@ -100,38 +84,31 @@ const PAGE_PATH = "/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Mugnee Cambodia – Digital Signage, Smart AV & Technology Solutions",
+  title: "LED Display & Digital Signage Solutions in Cambodia | Mugnee Cambodia",
   description:
-    "Mugnee Cambodia provides digital signage, interactive panels, smart classroom technology, PA systems and access control solutions across Phnom Penh and Cambodia with professional installation and local support.",
-  alternates: {
-    canonical: PAGE_URL,
-    languages: {
-      "en-kh": `${SITE_URL}/`,
-      "km-kh": `${SITE_URL}/km/`,
-      "x-default": `${SITE_URL}/`,
-    },
-  },
+    "Mugnee Cambodia delivers LED display, digital signage, interactive flat panels (smart boards), turnstile gates, PA systems, and access control solutions. Site survey, installation, commissioning, and local after-sales support across Phnom Penh, Siem Reap & Sihanoukville.",
+  alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    title: "Mugnee Cambodia – Digital Signage, Smart AV & Technology Solutions",
+    title: "LED Display & Digital Signage Solutions in Cambodia | Mugnee Cambodia",
     description:
-      "Digital signage, interactive panels, smart classroom technology, PA systems and access control solutions with professional installation and local support across Cambodia.",
+      "End-to-end LED display, digital signage, IFP smart board, turnstile, PA system & access control solutions in Cambodia with local installation and support.",
     siteName: "Mugnee Cambodia",
     images: [
       {
         url: `${SITE_URL}/images/hero/cambodia-led-hero.webp`,
         width: 1200,
         height: 630,
-        alt: "Mugnee Cambodia company and project delivery overview",
+        alt: "Mugnee Cambodia LED display and smart technology solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mugnee Cambodia – Digital Signage, Smart AV & Technology Solutions",
+    title: "LED Display & Digital Signage Solutions in Cambodia | Mugnee Cambodia",
     description:
-      "Digital signage, smart AV, PA systems and access control solutions with local Cambodia support.",
+      "LED Display, Digital Signage, Smart Boards, Turnstile Gates, PA Systems & Access Control in Cambodia.",
     images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
   },
 };
@@ -139,163 +116,194 @@ export const metadata: Metadata = {
 const CATEGORY_TILES = [
   {
     key: "led_display",
-    titleEn: "Display Systems",
-    titleKm: "ប្រព័ន្ធអេក្រង់បង្ហាញ",
+    titleEn: "LED Display",
+    titleKm: "អេក្រង់ LED",
     descEn:
-      "Commercial display projects with planning, deployment, and local support.",
+      "Indoor & outdoor LED video wall solutions for retail, events and advertising.",
     descKm:
-      "គម្រោងអេក្រង់ពាណិជ្ជកម្មជាមួយការរៀបចំផែនការ ការដំឡើង និងសេវាគាំទ្រក្នុងស្រុក។",
+      "ដំណោះស្រាយអេក្រង់ LED Video Wall សម្រាប់ក្នុងអគារ និងក្រៅអគារ ប្រើបានសម្រាប់ហាង ព្រឹត្តិការណ៍ និងការផ្សព្វផ្សាយពាណិជ្ជកម្ម។",
     href: "/led-display",
-    icon: <IconMonitor className="h-8 w-8 object-contain" />,
+    icon: unitIcon("/images/home/unit-icons/digital-display-2.webp", "LED Display"),
   },
   {
     key: "indoor_led_display",
-    titleEn: "Indoor Display Solutions",
-    titleKm: "ដំណោះស្រាយអេក្រង់ខាងក្នុង",
-    descEn: "Indoor communication environments for offices and public spaces.",
-    descKm: "សមស្របសម្រាប់ការិយាល័យ Showroom និងតំបន់សាធារណៈដែលត្រូវការបច្ចេកវិទ្យាបង្ហាញទំនើប។",
+    titleEn: "Indoor LED Display",
+    titleKm: "អេក្រង់ LED ខាងក្នុង",
+    descEn: "Meeting rooms, showrooms & indoor LED walls.",
+    descKm: "សម្រាប់បន្ទប់ប្រជុំ Showroom និងជញ្ជាំងអេក្រង់ LED ខាងក្នុង។",
     href: "/led-display/indoor-led-display",
-    icon: <IconSparkles className="h-8 w-8 object-contain" />,
+    icon: <IconSparkles className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "outdoor_billboard",
-    titleEn: "Outdoor Media Systems",
-    titleKm: "ប្រព័ន្ធផ្សព្វផ្សាយខាងក្រៅ",
-    descEn: "Outdoor campaign deployment with structured implementation and support.",
-    descKm: "សម្រាប់យុទ្ធនាការខាងក្រៅ ដោយមានការអនុវត្តជាជំហាន និងសេវាគាំទ្របន្ត។",
+    titleEn: "Outdoor LED Billboard",
+    titleKm: "ប៊ីលបត LED ខាងក្រៅ",
+    descEn: "High-brightness LED screens built for heat, rain and 24/7 operation.",
+    descKm: "អេក្រង់ LED ពន្លឺខ្ពស់ សមស្របសម្រាប់កំដៅ ភ្លៀង និងដំណើរការ 24/7។",
     href: "/led-display/outdoor-led-display",
-    icon: <IconAntenna className="h-8 w-8 object-contain" />,
+    icon: <IconAntenna className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "receiving_card",
     titleEn: "Receiving Card",
     titleKm: "កាតទទួលសញ្ញា",
-    descEn: "Signal and control components for reliable system performance.",
-    descKm: "សមាសភាគសញ្ញា និងការគ្រប់គ្រង សម្រាប់ធានាស្ថិរភាពដំណើរការប្រព័ន្ធ LED។",
+    descEn: "Reliable LED receiving cards for stable signal distribution and display control.",
+    descKm: "កាតទទួលសញ្ញា LED ដែលមានស្ថិរភាព សម្រាប់ចែកចាយសញ្ញា និងគ្រប់គ្រងការបង្ហាញបានត្រឹមត្រូវ។",
     href: "/led-display/receiving-card",
-    icon: <IconLock className="h-8 w-8 object-contain" />,
+    icon: <IconChip className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "ifp",
     titleEn: "Interactive Flat Panel",
     titleKm: "អេក្រង់អន្តរកម្ម (IFP)",
     descEn: "Smart board solutions for classrooms, training rooms and boardrooms.",
-    descKm: "ដំណោះស្រាយបន្ទះឆ្លាតវៃសម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងបន្ទប់ប្រជុំ។",
+    descKm: "ដំណោះស្រាយ Smart Board សម្រាប់ថ្នាក់រៀន បន្ទប់បណ្តុះបណ្តាល និងបន្ទប់ប្រជុំ។",
     href: "/interactive-flat-panel",
-    icon: <IconPresentation className="h-8 w-8 object-contain" />,
+    icon: unitIcon("/images/home/unit-icons/smart-board.webp", "Interactive Flat Panel"),
   },
   {
     key: "turnstile",
     titleEn: "Turnstile Gates",
     titleKm: "ច្រកទ្វារ Turnstile",
     descEn: "Tripod, swing, flap barrier and speed gates for secure entry control.",
-    descKm: "ច្រកបីដង ច្រកស្លាបបើក ច្រកស្លាបបិទបើក និងច្រកល្បឿនលឿន សម្រាប់គ្រប់គ្រងច្រកចេញចូលដោយសុវត្ថិភាព។",
+    descKm: "Tripod, Swing, Flap Barrier និង Speed Gate សម្រាប់គ្រប់គ្រងច្រកចេញចូលដោយសុវត្ថិភាព។",
     href: "/turnstile-gate",
-    icon: <IconBarrier className="h-8 w-8 object-contain" />,
+    icon: unitIcon("/images/home/unit-icons/turnstile-gate.webp", "Turnstile Gates"),
   },
   {
     key: "pa_system",
     titleEn: "PA System",
     titleKm: "ប្រព័ន្ធ PA",
     descEn: "Public address systems for factories, schools, buildings and venues.",
-    descKm: "ប្រព័ន្ធផ្សព្វផ្សាយសម្លេងសម្រាប់រោងចក្រ សាលារៀន អគារ និងទីតាំងព្រឹត្តិការណ៍។",
+    descKm: "ប្រព័ន្ធផ្សព្វផ្សាយសម្លេង សម្រាប់រោងចក្រ សាលារៀន អគារ និងទីតាំងព្រឹត្តិការណ៍។",
     href: "/pa-system",
-    icon: <IconMic className="h-8 w-8 object-contain" />,
+    icon: unitIcon("/images/home/unit-icons/pa-system.webp", "PA System"),
   },
   {
     key: "video_processor",
     titleEn: "Video Processor",
-    titleKm: "ឧបករណ៍ដំណើរការវីដេអូ",
-    descEn: "Video processing components for switching, scaling, and stable content flow.",
-    descKm: "ឧបករណ៍កែច្នៃវីដេអូសម្រាប់ប្ដូរប្រភព បំលែងទំហំ និងការបង្ហាញមាតិកាឱ្យមានស្ថិរភាពលើអេក្រង់ LED។",
+    titleKm: "ឧបករណ៍កែច្នៃវីដេអូ",
+    descEn: "Advanced video processors for multi-input scaling, switching and LED screen optimization.",
+    descKm: "ឧបករណ៍កែច្នៃវីដេអូកម្រិតខ្ពស់ សម្រាប់ multi-input scaling, switching និងបង្កើនប្រសិទ្ធភាពអេក្រង់ LED។",
     href: "/led-display/video-processor",
-    icon: <IconTv className="h-8 w-8 object-contain" />,
+    icon: <IconTv className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "power_supply",
     titleEn: "Power Supply",
     titleKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
-    descEn: "Reliable power supply options for stable visual system operation.",
-    descKm: "ជម្រើសឧបករណ៍ផ្គត់ផ្គង់ថាមពលដែលទុកចិត្តបាន សម្រាប់ធានាស្ថិរភាពប្រតិបត្តិការអេក្រង់ LED។",
+    descEn: "Stable LED power supplies and SMPS units for reliable operation.",
+    descKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល LED និង SMPS សម្រាប់ប្រតិបត្តិការដែលមានស្ថិរភាព។",
     href: "/led-display/power-supply",
-    icon: <IconPower className="h-8 w-8 text-slate-600" />,
+    icon: <IconBolt className="h-5 w-5 text-slate-700" />,
   },
   {
     key: "all_products",
-    titleEn: "All Product Categories",
-    titleKm: "ប្រភេទផលិតផលទាំងអស់",
-    descEn: "Browse all available product categories and solution components.",
-    descKm: "មើលប្រភេទផលិតផល និងសមាសភាគដំណោះស្រាយទាំងអស់សម្រាប់គម្រោងរបស់អ្នក។",
+    titleEn: "All Products",
+    titleKm: "ផលិតផលទាំងអស់",
+    descEn: "Browse the complete product catalog for Cambodia projects.",
+    descKm: "មើលកាតាឡុកផលិតផលពេញលេញ សម្រាប់គម្រោងនៅកម្ពុជា។",
     href: "/products",
-    icon: <IconCatalog className="h-8 w-8 text-slate-600" />,
+    icon: <IconGrid className="h-5 w-5 text-slate-700" />,
   },
 ];
 
 const FAQ = [
   {
-    qEn: "What does Mugnee Cambodia do?",
-    aEn: "Mugnee Cambodia supports commercial and institutional technology projects with planning, implementation, commissioning, and local after-sales service.",
-    qKm: "Mugnee Cambodia ធ្វើអ្វីខ្លះ?",
-    aKm: "Mugnee Cambodia គាំទ្រគម្រោងបច្ចេកវិទ្យាសម្រាប់អាជីវកម្ម និងស្ថាប័ន ដោយមានការរៀបចំផែនការ អនុវត្ត ការត្រួតពិនិត្យដំណើរការ និងសេវាកម្មបន្ទាប់ពីលក់នៅកម្ពុជា។",
+    qEn: "Do you provide LED display installation across Cambodia?",
+    aEn: "Yes. We provide site survey, installation, commissioning, and after-sales support for projects in Phnom Penh, Siem Reap, Sihanoukville, and other provinces.",
+    qKm: "តើអ្នកផ្តល់សេវាដំឡើង LED Display ទូទាំងកម្ពុជាដែរឬទេ?",
+    aKm: "បាទ/ចាស។ យើងផ្តល់សេវា site survey, installation, commissioning និង after-sales support សម្រាប់គម្រោងនៅ Phnom Penh, Siem Reap, Sihanoukville និងខេត្តផ្សេងៗ។",
   },
   {
-    qEn: "Which areas do you serve in Cambodia?",
-    aEn: "Our team supports Phnom Penh, Siem Reap, Sihanoukville, and additional provinces based on project requirements.",
-    qKm: "តើអ្នកបម្រើតំបន់ណាខ្លះនៅកម្ពុជា?",
-    aKm: "ក្រុមការងារយើងគាំទ្រនៅភ្នំពេញ សៀមរាប ព្រះសីហនុ និងខេត្តផ្សេងៗទៀត អាស្រ័យលើតម្រូវការគម្រោង។",
+    qEn: "How do I choose the right pixel pitch for my project?",
+    aEn: "A practical method is to match pixel pitch with viewing distance and content type. We recommend the right pitch based on room size, audience distance, and budget.",
+    qKm: "តើខ្ញុំជ្រើសរើស pixel pitch សមស្របសម្រាប់គម្រោងយ៉ាងដូចម្តេច?",
+    aKm: "វិធីសាស្ត្រដែលត្រឹមត្រូវគឺផ្គូផ្គង pixel pitch ជាមួយ viewing distance និងប្រភេទ content។ យើងណែនាំ pitch សមស្របតាមទំហំបន្ទប់ ចម្ងាយអ្នកមើល និងថវិកា។",
   },
   {
-    qEn: "How does your project workflow run?",
-    aEn: "Typical workflow includes requirement review, site assessment, proposal, implementation, testing, handover, and support.",
-    qKm: "ដំណើរការគម្រោងរបស់អ្នកដំណើរការយ៉ាងដូចម្តេច?",
-    aKm: "ដំណើរការធម្មតារួមមាន ពិនិត្យតម្រូវការ វាយតម្លៃទីតាំង រៀបចំសំណើ អនុវត្តការងារ ធ្វើតេស្ត ប្រគល់ការងារ និងគាំទ្របន្ត។",
+    qEn: "What brightness and IP rating are recommended for outdoor LED screens?",
+    aEn: "Most outdoor projects use high-brightness panels with IP65 or higher weather protection. Final specs depend on sunlight exposure, installation height, and operating hours.",
+    qKm: "Outdoor LED screen គួរប្រើ brightness និង IP rating ប៉ុន្មាន?",
+    aKm: "គម្រោង outdoor ភាគច្រើនប្រើ panel ភ្លឺខ្ពស់ជាមួយ IP65 ឬលើសនេះ ដើម្បីការពារអាកាសធាតុ។ ស្តង់ដារចុងក្រោយអាស្រ័យលើពន្លឺថ្ងៃ កម្ពស់ដំឡើង និងម៉ោងប្រើប្រាស់។",
   },
   {
-    qEn: "Do you provide documentation and training?",
-    aEn: "Yes. We provide handover documentation and onboarding guidance so your team can operate confidently.",
-    qKm: "តើអ្នកផ្តល់ឯកសារ និងការបណ្តុះបណ្តាលទេ?",
-    aKm: "បាទ/ចាស។ យើងផ្តល់ឯកសារប្រគល់ការងារ និងការណែនាំប្រើប្រាស់ដំបូង ដើម្បីឲ្យក្រុមរបស់អ្នកប្រើប្រព័ន្ធបានដោយទំនុកចិត្ត។",
+    qEn: "What is the difference between indoor and outdoor LED display?",
+    aEn: "Indoor LED is optimized for close viewing and finer pixel pitch, while outdoor LED is designed for stronger brightness, weather resistance, and long-distance visibility.",
+    qKm: "Indoor LED និង Outdoor LED ខុសគ្នាយ៉ាងដូចម្តេច?",
+    aKm: "Indoor LED ត្រូវបានរចនាសម្រាប់មើលជិត និង fine pixel pitch ខណៈ Outdoor LED រចនាសម្រាប់ភ្លឺខ្ពស់ ទប់ទល់អាកាសធាតុ និងមើលឃើញចម្ងាយឆ្ងាយ។",
   },
   {
-    qEn: "Do you support both private and public sector projects?",
-    aEn: "Yes. Our team works with private companies, institutions, and public-sector organizations using project-based delivery.",
-    qKm: "តើអ្នកគាំទ្រគម្រោងទាំងឯកជន និងរដ្ឋទេ?",
-    aKm: "បាទ/ចាស។ ក្រុមរបស់យើងធ្វើការជាមួយក្រុមហ៊ុនឯកជន ស្ថាប័ន និងអង្គភាពរដ្ឋ តាមរបៀបអនុវត្តគម្រោងជាក់លាក់ (project-based)។",
+    qEn: "Do you supply digital signage solutions for malls, hotels, and retail stores?",
+    aEn: "Yes. We design and install digital signage systems for promotions, menu boards, wayfinding, and brand communication across retail and hospitality environments.",
+    qKm: "តើអ្នកផ្គត់ផ្គង់ Digital Signage សម្រាប់ mall, hotel និង retail store ដែរឬទេ?",
+    aKm: "បាទ/ចាស។ យើងរចនា និងដំឡើងប្រព័ន្ធ Digital Signage សម្រាប់ promotion, menu board, wayfinding និង brand communication ក្នុងអាជីវកម្ម retail និង hospitality។",
   },
   {
-    qEn: "Can you coordinate with contractors and consultants?",
-    aEn: "Yes. We coordinate with project stakeholders to align site readiness, implementation timeline, and handover requirements.",
-    qKm: "តើអ្នកអាចសម្របសម្រួលជាមួយអ្នកម៉ៅការ និងអ្នកប្រឹក្សាបានទេ?",
-    aKm: "បាទ/ចាស។ យើងសម្របសម្រួលជាមួយភាគីពាក់ព័ន្ធក្នុងគម្រោង ដើម្បីឲ្យការត្រៀមទីតាំង កាលវិភាគអនុវត្ត និងលក្ខខណ្ឌប្រគល់ការងារស្របគ្នា។",
+    qEn: "Can you integrate turnstile gates with RFID and biometric access control?",
+    aEn: "Yes. We integrate turnstile gates with RFID cards, fingerprint, face recognition, and attendance platforms for offices, factories, and institutions.",
+    qKm: "តើអ្នកអាច integrate Turnstile Gate ជាមួយ RFID និង biometric access control ដែរឬទេ?",
+    aKm: "បាទ/ចាស។ យើងអាច integrate turnstile gate ជាមួយ RFID card, fingerprint, face recognition និង attendance platform សម្រាប់ office, factory និងស្ថាប័ន។",
   },
   {
-    qEn: "How long does a typical project take?",
-    aEn: "Timeline depends on scope and site readiness. We provide a clear schedule after initial requirement and site review.",
-    qKm: "គម្រោងមួយធម្មតាចំណាយពេលប៉ុន្មាន?",
-    aKm: "រយៈពេលអាស្រ័យលើទំហំការងារ និងភាពត្រៀមរួចរបស់ទីតាំង។ យើងនឹងផ្តល់កាលវិភាគច្បាស់លាស់ បន្ទាប់ពីពិនិត្យតម្រូវការ និងទីតាំងដំបូង។",
+    qEn: "Do you provide PA system design and installation for factories and campuses?",
+    aEn: "Yes. We provide PA system planning, zoning, amplifier and speaker configuration, emergency announcement setup, and long-term maintenance support.",
+    qKm: "តើអ្នកផ្តល់សេវា design និង installation ប្រព័ន្ធ PA សម្រាប់រោងចក្រ និង campus ដែរឬទេ?",
+    aKm: "បាទ/ចាស។ យើងផ្តល់សេវា PA system planning, zoning, amplifier/speaker configuration, emergency announcement setup និង maintenance support រយៈពេលវែង។",
   },
   {
-    qEn: "Do you offer warranty and ongoing support?",
-    aEn: "Yes. We provide warranty coverage and support plans to maintain performance after handover.",
-    qKm: "តើមានការធានា និងសេវាគាំទ្របន្តទេ?",
-    aKm: "បាទ/ចាស។ យើងផ្តល់ការធានា និងផែនការគាំទ្របន្ត ដើម្បីរក្សាស្ថិរភាព និងប្រសិទ្ធភាពប្រព័ន្ធបន្ទាប់ពីប្រគល់ការងារ។",
+    qEn: "How long does a typical LED display project take from survey to handover?",
+    aEn: "Timeline depends on site readiness and scope, but most projects follow a structured workflow from survey and BOQ to installation, testing, and final handover.",
+    qKm: "គម្រោង LED Display ទូទៅ ចាប់ពី survey ដល់ handover ចំណាយពេលប៉ុន្មាន?",
+    aKm: "Timeline អាស្រ័យលើការត្រៀម site និង scope ការងារ ប៉ុន្តែភាគច្រើនដំណើរការតាម workflow ច្បាស់លាស់ពី survey និង BOQ ដល់ installation, testing និង handover ចុងក្រោយ។",
   },
   {
-    qEn: "How can I request a quotation?",
-    aEn: "Share your location, project objective, and timeline. Our team will respond with a project-based scope and quotation.",
-    qKm: "តើខ្ញុំអាចស្នើសុំសម្រង់តម្លៃបានដូចម្តេច?",
-    aKm: "សូមផ្ញើទីតាំង គោលបំណងគម្រោង និងពេលវេលាដែលអ្នកចង់អនុវត្ត។ ក្រុមការងារយើងនឹងឆ្លើយតបជាមួយវិសាលភាពការងារ និងសម្រង់តម្លៃតាមគម្រោង។",
+    qEn: "Do you offer warranty and preventive maintenance plans?",
+    aEn: "Yes. We provide warranty coverage, preventive maintenance, health checks, and support plans to reduce downtime and improve system reliability.",
+    qKm: "តើមាន warranty និង preventive maintenance plan ដែរឬទេ?",
+    aKm: "មាន។ យើងផ្តល់ warranty coverage, preventive maintenance, health check និង support plan ដើម្បីកាត់បន្ថយ downtime និងបង្កើនភាពទុកចិត្តរបស់ប្រព័ន្ធ។",
   },
   {
-    qEn: "Where can I find detailed product-level information?",
-    aEn: "You can visit each dedicated product page from this site for focused technical details, specifications, and use-case guidance.",
-    qKm: "តើខ្ញុំអាចរកព័ត៌មានលម្អិតតាមផលិតផលនៅឯណា?",
-    aKm: "អ្នកអាចចូលមើលទំព័រផលិតផលនីមួយៗក្នុងគេហទំព័រនេះ ដើម្បីទទួលបានព័ត៌មានបច្ចេកទេស លក្ខណៈបញ្ជាក់ និងការណែនាំតាមការប្រើប្រាស់។",
+    qEn: "How can I get a quotation for LED display, signage, or access control in Cambodia?",
+    aEn: "Share your site location, required screen size or lane count, usage type, and timeline. Our team will recommend a practical configuration and provide a project-based quotation.",
+    qKm: "ខ្ញុំអាចស្នើសុំ quotation សម្រាប់ LED Display, Signage ឬ Access Control នៅកម្ពុជាយ៉ាងដូចម្តេច?",
+    aKm: "សូមផ្ញើទីតាំង site, ទំហំអេក្រង់ ឬចំនួន lane, ប្រភេទការប្រើប្រាស់ និង timeline។ ក្រុមការងារយើងនឹងណែនាំ configuration សមស្រប និងផ្តល់ project-based quotation។",
   },
 ];
-
 export default function HomePage() {
-  // ---------- JSON-LD (FAQPage) ----------
+  // ---------- JSON-LD (Organization + Website + FAQPage) ----------
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Mugnee Cambodia",
+    url: SITE_URL,
+    logo: `${SITE_URL}/images/logo.png`,
+    areaServed: { "@type": "Country", name: "Cambodia" },
+    sameAs: [
+      // Add official pages later
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: "+855-XXX-XXX-XXX",
+        availableLanguage: ["English", "Khmer"],
+      },
+    ],
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Mugnee Cambodia",
+    url: SITE_URL,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/products?search={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -329,33 +337,20 @@ export default function HomePage() {
     }),
   };
 
-  const orgLocalJsonLd = {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
-    name: "Mugnee Cambodia",
-    url: PAGE_URL,
-    inLanguage: "en",
-    areaServed: "Cambodia",
-    telephone: BUSINESS_PHONE_E164,
-    sameAs: [...BUSINESS_SAME_AS],
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: BUSINESS_ADDRESS.streetAddress,
-      addressLocality: BUSINESS_ADDRESS.addressLocality,
-      addressCountry: "Cambodia",
-    },
-  };
-
   return (
     <main className="bg-white text-slate-900">
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLocalJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       <HomeClient
@@ -365,3 +360,12 @@ export default function HomePage() {
     </main>
   );
 }
+
+
+
+
+
+
+
+
+

@@ -1,307 +1,205 @@
-﻿
 "use client";
 
 import Link from "next/link";
 import { useMemo } from "react";
-import ProductGrid from "../../components/sections/ProductGrid";
 import { useLang } from "../../components/layout/LanguageProvider";
-import { PRODUCTS } from "../../data/products";
+import { ACCESS_CONTROL_ITEMS } from "./accessControlData";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
 export default function AccessControlClient() {
   const { lang } = useLang();
-  const toLangHref = (href: string) =>
-    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
 
   const t = useMemo(() => {
     const en = {
       breadcrumb: "Products",
-      badge: "Cambodia - Access Control - Door Security",
+      badge: "Cambodia • Access Control • Door Security",
       h1: "Access Control System in Cambodia",
       sub:
-        "Door access control for offices, factories, hotels, schools, and public facilities. We supply RFID, QR, fingerprint, and face recognition systems with controllers, locks, and attendance integration, plus installation and after-sales support in Cambodia.",
+        "Door access control, RFID card/QR/face recognition and attendance-ready solutions for offices, factories, hotels and schools. We handle site survey, installation, commissioning and local after-sales support.",
       cta1: "Get a Free Quotation",
-      cta2: "View Access Control Products",
-      serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
+      cta2: "View Models",
+      serving: "Serving: Phnom Penh • Siem Reap • Sihanoukville",
 
-      quickTitle: "Browse access control categories and services",
-      quickSub:
-        "Quick links help you reach access methods, device types, integrations, products, and support.",
+      kTitle: "Key Components & Capabilities",
+      kSub:
+        "Build a reliable access control setup with the right controller, readers, locks and safety design.",
+      k1: "កុងត្រូល័រ និងរេឡេទ្វារ",
+      k1d: "1–4 door controllers (expandable), door relay, anti-passback (model dependent).",
+      k2: "Credentials",
+      k2d: "RFID card, PIN, QR, face recognition and attendance integration options.",
+      k3: "Door hardware",
+      k3d: "Magnetic lock, electric strike, exit button, door sensor, emergency release planning.",
+      k4: "Software & reporting",
+      k4d: "User roles, access schedules, logs/export, and project-based configuration.",
 
-      specsTitle: "Access Control System Specifications for Cambodia",
-      specsSub:
-        "Use these practical ranges to plan secure entry control, attendance tracking, and reliable operation for indoor and outdoor sites.",
-      sCard1t: "Access Methods",
-      sCard1d: "RFID cards, QR, PIN, fingerprint, and face recognition.",
-      sCard2t: "Controller Capacity",
-      sCard2d: "Single-door to multi-door systems with expansion options.",
-      sCard3t: "Door Hardware",
-      sCard3d: "Maglocks, electric strikes, exit buttons, and sensors.",
-      sCard4t: "Software & Logs",
-      sCard4d: "User roles, schedules, audit logs, and reports.",
-      sCard5t: "Safety",
-      sCard5d: "Emergency release, fire alarm linkage, and fail-safe design.",
-      sCard6t: "Installation",
-      sCard6d: "Cabling, power design, testing, and commissioning.",
-
-      basicsLabel: "ACCESS CONTROL BASICS",
-      basicsTitle: "What Is an Access Control System?",
-      basicsDesc:
-        "An access control system manages who can enter specific doors or areas using cards, PINs, QR, or biometrics. It replaces keys with digital permissions, records access events, and improves safety for staff and visitors.",
-      howTitle: "How Does Access Control Work?",
-      howDesc:
-        "Readers or terminals capture credentials, the controller verifies access rules, and the lock opens if authorized. Software handles users, schedules, and reporting, and can integrate with attendance and visitor management.",
-      benefitTitle: "Key Benefits for Cambodia Sites",
-      b1: "Controlled entry with role-based permissions",
-      b2: "Attendance-ready logs and access history",
-      b3: "Scalable from single doors to multi-door buildings",
-      b4: "Reduced key loss and stronger security policy",
-      b5: "Integration with turnstiles, CCTV, and alarms",
-
-      methodsTitle: "Access Control Device Types",
-      methodsSub:
-        "Choose devices based on traffic flow, security level, and operating environment.",
-      m1: "RFID Card Reader",
-      m1d: "Reliable access for offices, schools, and staff entrances.",
-      m2: "Fingerprint Terminal",
-      m2d: "Secure identification for attendance and controlled areas.",
-      m3: "Face Recognition Terminal",
-      m3d: "Fast, touchless access for high-traffic sites.",
-      m4: "QR / Mobile Access",
-      m4d: "Visitor passes and temporary access for events or contractors.",
-      m5: "Controller & Door Relay",
-      m5d: "Central control for multiple doors and time schedules.",
-      m6: "Maglock / Electric Strike",
-      m6d: "Durable door locking solutions for secure entry.",
-
-      useTitle: "Where Access Control Is Used",
+      useTitle: "Where Access Control Works Best",
       useSub:
-        "Common deployment scenarios for access control systems in Cambodia.",
-      u1t: "Offices & Corporate Buildings",
-      u1d: "Staff entry, server rooms, restricted areas, and visitor logs.",
+        "Common use-cases in Cambodia—plan by door count, users, and security level.",
+      u1t: "Office & Corporate Buildings",
+      u1d: "Staff entry, server rooms, restricted areas, visitor logs.",
       u2t: "Factories & Warehouses",
-      u2d: "Shift attendance, gate access, and multi-door control.",
+      u2d: "Shift attendance, gate access, multi-door control, safety compliance.",
       u3t: "Hotels & Apartments",
-      u3d: "Staff zones, service doors, lift access, and time schedules.",
+      u3d: "Staff zones, service doors, lift access, time-based permissions.",
       u4t: "Schools & Campuses",
-      u4d: "Classroom access, attendance terminals, and admin control.",
-      u5t: "Hospitals & Clinics",
-      u5d: "Restricted areas and staff movement control.",
-      u6t: "Banks & Sensitive Facilities",
-      u6d: "Strict access rules with audit logs and hardware planning.",
-
-      integrationsTitle: "Integration Options",
-      integrationsSub:
-        "Access control can connect with attendance, visitor, and security systems.",
-      i1: "Attendance and payroll software",
-      i2: "Visitor management systems",
-      i3: "Turnstile gates and speed gates",
-      i4: "CCTV and monitoring systems",
-      i5: "Fire alarm and emergency release",
-      i6: "Elevator and multi-floor control",
+      u4d: "Classroom/lab access, attendance terminals, admin control.",
+      u5t: "Banks & Sensitive Facilities",
+      u5d: "Access schedules, audit logs, strict door hardware planning.",
+      u6t: "Turnstile & Entry Gates",
+      u6d: "Relay integration with turnstile gates for controlled entry.",
 
       chooseTitle: "How to Choose the Right Access Control System",
       chooseSub:
-        "A short checklist to avoid wrong device selection and ensure reliable operation.",
-      c1: "How many doors and users?",
+        "Simple checklist to avoid wrong device selection and reduce rework cost.",
+      c1: "How many doors & users?",
+      c1d: "Choose controller capacity + credential type (card/face/QR) based on users & doors.",
       c2: "Online vs offline system",
-      c3: "Door type and lock selection",
-      c4: "Security level and audit needs",
-      c5: "Integration with attendance or visitors",
-      c6: "Power, cabling, and network readiness",
+      c2d: "Networked systems enable central control & reporting. Offline works for small sites.",
+      c3: "Door type & lock selection",
+      c3d: "Glass/wood/metal doors need different brackets and lock types (maglock/strike).",
+      c4: "Safety & power design",
+      c4d: "Grounding, cable routing, power rating and emergency release planning are critical.",
 
-      gridTitle: "Access Control Products",
+      gridTitle: "Popular Access Control Models",
       gridSub:
-        "Browse access control devices, locks, readers, and controllers for Cambodia projects.",
+        "Pick a starting point. Final model selection depends on site conditions and integration requirements.",
 
-      processTitle: "Installation, Setup & Training",
+      processTitle: "Our Delivery Process",
       processSub:
         "A structured workflow for stable operation and clean installation.",
-      p1: "Site survey and requirement review",
-      p2: "System design and quotation",
-      p3: "Installation, wiring, and commissioning",
-      p4: "User training and after-sales support",
+      p1: "Site Survey & Requirement",
+      p2: "System Design & Quotation",
+      p3: "Installation & Commissioning",
+      p4: "Training & After-Sales Support",
 
-      faqTitle: "FAQ - Access Control System",
-      finalTitle: "Get a Project-Based Quotation",
+      faqTitle: "FAQ — Access Control System",
+      finalTitle: "Plan Your Access Control Project",
       finalSub:
-        "Send door count, credential preference (card/face/QR), and site details. We will recommend compatible devices and provide a clear quotation.",
-      finalCta: "Contact & Get Quotation",
-      viewProducts: "View Products",
+        "Send door count, location, credential preference (card/face/QR), and any existing system details. We will propose compatible devices and a project-based quotation.",
+      finalCta: "Contact & Get Quote",
+      seeProjects: "See Projects",
       note:
-        "Note: Final quotation depends on door count, lock type, cabling distance, and integration requirements.",
-      getQuote: "Get Quotation",
+        "Note: Final bill depends on door count, cable distance, lock type, network plan and site safety requirements.",
+      viewDetails: "View details",
+      getQuote: "Get quote",
     };
 
     const km = {
-      breadcrumb: "Products",
-      badge: "Cambodia - Access Control - Door Security",
-      h1: "Access Control System in Cambodia",
+      breadcrumb: "ផលិតផល",
+      badge: "កម្ពុជា • Access Control • សុវត្ថិភាពទ្វារ",
+      h1: "ប្រព័ន្ធ Access Control នៅកម្ពុជា",
       sub:
-        "Door access control for offices, factories, hotels, schools, and public facilities. We supply RFID, QR, fingerprint, and face recognition systems with controllers, locks, and attendance integration, plus installation and after-sales support in Cambodia.",
-      cta1: "Get a Free Quotation",
-      cta2: "View Access Control Products",
-      serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
+        "ដំណោះស្រាយគ្រប់គ្រងការចូលទ្វារ (Door Access), RFID/QR/ស្គាល់មុខ និង Attendance-ready សម្រាប់ការិយាល័យ រោងចក្រ សណ្ឋាគារ និងសាលារៀន។ យើងធ្វើ site survey, installation, commissioning និង after-sales support ក្នុងស្រុក។",
+      cta1: "ស្នើសុំតម្លៃ (Free)",
+      cta2: "មើលម៉ូដែល",
+      serving: "សេវាកម្ម៖ Phnom Penh • Siem Reap • Sihanoukville",
 
-      quickTitle: "Browse access control categories and services",
-      quickSub:
-        "Quick links help you reach access methods, device types, integrations, products, and support.",
+      kTitle: "សមាសធាតុសំខាន់ៗ & សមត្ថភាព",
+      kSub:
+        "បង្កើតប្រព័ន្ធមានស្ថេរភាព ដោយជ្រើស controller, reader, lock និងការរចនាសុវត្ថិភាពឲ្យត្រឹមត្រូវ។",
+      k1: "កុងត្រូល័រ និងរេឡេទ្វារ",
+      k1d: "Controller ១–៤ ទ្វារ (អាចបន្ថែម), door relay, anti-passback (អាស្រ័យម៉ូដែល)।",
+      k2: "វិធីផ្ទៀងផ្ទាត់សិទ្ធិចូល",
+      k2d: "RFID card, PIN, QR, ស្គាល់មុខ និងជម្រើសភ្ជាប់ attendance។",
+      k3: "គ្រឿងបរិក្ខារទ្វារ",
+      k3d: "Maglock, electric strike, exit button, door sensor និងផែនការ emergency release។",
+      k4: "កម្មវិធី និងរបាយការណ៍",
+      k4d: "User role, access schedule, logs/export និង setup តាមគម្រោង។",
 
-      specsTitle: "Access Control System Specifications for Cambodia",
-      specsSub:
-        "Use these practical ranges to plan secure entry control, attendance tracking, and reliable operation for indoor and outdoor sites.",
-      sCard1t: "Access Methods",
-      sCard1d: "RFID cards, QR, PIN, fingerprint, and face recognition.",
-      sCard2t: "Controller Capacity",
-      sCard2d: "Single-door to multi-door systems with expansion options.",
-      sCard3t: "Door Hardware",
-      sCard3d: "Maglocks, electric strikes, exit buttons, and sensors.",
-      sCard4t: "Software & Logs",
-      sCard4d: "User roles, schedules, audit logs, and reports.",
-      sCard5t: "Safety",
-      sCard5d: "Emergency release, fire alarm linkage, and fail-safe design.",
-      sCard6t: "Installation",
-      sCard6d: "Cabling, power design, testing, and commissioning.",
-
-      basicsLabel: "ACCESS CONTROL BASICS",
-      basicsTitle: "What Is an Access Control System?",
-      basicsDesc:
-        "An access control system manages who can enter specific doors or areas using cards, PINs, QR, or biometrics. It replaces keys with digital permissions, records access events, and improves safety for staff and visitors.",
-      howTitle: "How Does Access Control Work?",
-      howDesc:
-        "Readers or terminals capture credentials, the controller verifies access rules, and the lock opens if authorized. Software handles users, schedules, and reporting, and can integrate with attendance and visitor management.",
-      benefitTitle: "Key Benefits for Cambodia Sites",
-      b1: "Controlled entry with role-based permissions",
-      b2: "Attendance-ready logs and access history",
-      b3: "Scalable from single doors to multi-door buildings",
-      b4: "Reduced key loss and stronger security policy",
-      b5: "Integration with turnstiles, CCTV, and alarms",
-
-      methodsTitle: "Access Control Device Types",
-      methodsSub:
-        "Choose devices based on traffic flow, security level, and operating environment.",
-      m1: "RFID Card Reader",
-      m1d: "Reliable access for offices, schools, and staff entrances.",
-      m2: "Fingerprint Terminal",
-      m2d: "Secure identification for attendance and controlled areas.",
-      m3: "Face Recognition Terminal",
-      m3d: "Fast, touchless access for high-traffic sites.",
-      m4: "QR / Mobile Access",
-      m4d: "Visitor passes and temporary access for events or contractors.",
-      m5: "Controller & Door Relay",
-      m5d: "Central control for multiple doors and time schedules.",
-      m6: "Maglock / Electric Strike",
-      m6d: "Durable door locking solutions for secure entry.",
-
-      useTitle: "Where Access Control Is Used",
+      useTitle: "កន្លែងដែល Access Control សមស្រប",
       useSub:
-        "Common deployment scenarios for access control systems in Cambodia.",
-      u1t: "Offices & Corporate Buildings",
-      u1d: "Staff entry, server rooms, restricted areas, and visitor logs.",
-      u2t: "Factories & Warehouses",
-      u2d: "Shift attendance, gate access, and multi-door control.",
-      u3t: "Hotels & Apartments",
-      u3d: "Staff zones, service doors, lift access, and time schedules.",
-      u4t: "Schools & Campuses",
-      u4d: "Classroom access, attendance terminals, and admin control.",
-      u5t: "Hospitals & Clinics",
-      u5d: "Restricted areas and staff movement control.",
-      u6t: "Banks & Sensitive Facilities",
-      u6d: "Strict access rules with audit logs and hardware planning.",
+        "ករណីប្រើប្រាស់ពេញនិយមនៅកម្ពុជា—គ្រោងតាមចំនួនទ្វារ អ្នកប្រើ និងកម្រិតសុវត្ថិភាព។",
+      u1t: "ការិយាល័យ & អគារក្រុមហ៊ុន",
+      u1d: "ច្រកបុគ្គលិក, server room, តំបន់មានកំណត់ និង visitor logs។",
+      u2t: "រោងចក្រ & ឃ្លាំង",
+      u2d: "attendance ក្រុមម៉ោង, gate access, គ្រប់គ្រងច្រើនទ្វារ និង compliance។",
+      u3t: "សណ្ឋាគារ & អាផាតមិន",
+      u3d: "តំបន់បុគ្គលិក, service door, lift access និង permission តាមម៉ោង។",
+      u4t: "សាលារៀន & Campus",
+      u4d: "lab/classroom access, attendance terminal និង admin control។",
+      u5t: "ធនាគារ & ទីតាំងសន្តិសុខខ្ពស់",
+      u5d: "access schedule, audit log និងការជ្រើស lock ត្រឹមត្រូវ។",
+      u6t: "ច្រកបង្វិល និងច្រកចេញចូល",
+      u6d: "ភ្ជាប់ relay ជាមួយ turnstile gate សម្រាប់ចូល-ចេញត្រឹមត្រូវ។",
 
-      integrationsTitle: "Integration Options",
-      integrationsSub:
-        "Access control can connect with attendance, visitor, and security systems.",
-      i1: "Attendance and payroll software",
-      i2: "Visitor management systems",
-      i3: "Turnstile gates and speed gates",
-      i4: "CCTV and monitoring systems",
-      i5: "Fire alarm and emergency release",
-      i6: "Elevator and multi-floor control",
-
-      chooseTitle: "How to Choose the Right Access Control System",
+      chooseTitle: "របៀបជ្រើសប្រព័ន្ធ Access Control ឲ្យត្រឹមត្រូវ",
       chooseSub:
-        "A short checklist to avoid wrong device selection and ensure reliable operation.",
-      c1: "How many doors and users?",
-      c2: "Online vs offline system",
-      c3: "Door type and lock selection",
-      c4: "Security level and audit needs",
-      c5: "Integration with attendance or visitors",
-      c6: "Power, cabling, and network readiness",
+        "បញ្ជីពិនិត្យសាមញ្ញ ដើម្បីជៀសវាងជ្រើសខុស និងកាត់បន្ថយថ្លៃ rework។",
+      c1: "មានប៉ុន្មានទ្វារ & អ្នកប្រើ?",
+      c1d: "ជ្រើស capacity controller + credential (កាត/មុខ/QR) តាម doors & users។",
+      c2: "ប្រព័ន្ធអនឡាញ និងអอฟឡាញ",
+      c2d: "Networked system អាចគ្រប់គ្រងមជ្ឈមណ្ឌល និង report។ Offline សមស្របសម្រាប់ site តូច។",
+      c3: "ប្រភេទទ្វារ & ជ្រើស lock",
+      c3d: "ទ្វារកញ្ចក់/ឈើ/ដែក ត្រូវការ bracket និង lock ប្រភេទខុសគ្នា (maglock/strike)។",
+      c4: "សុវត្ថិភាព & power design",
+      c4d: "Grounding, cable routing, power rating និង emergency release គឺសំខាន់។",
 
-      gridTitle: "Access Control Products",
+      gridTitle: "ម៉ូដែល Access Control ពេញនិយម",
       gridSub:
-        "Browse access control devices, locks, readers, and controllers for Cambodia projects.",
+        "ជ្រើសជាចំណុចចាប់ផ្តើម។ ការជ្រើសចុងក្រោយអាស្រ័យលើ site និង integration requirement។",
 
-      processTitle: "Installation, Setup & Training",
+      processTitle: "ដំណើរការដឹកជញ្ជូនគម្រោង",
       processSub:
-        "A structured workflow for stable operation and clean installation.",
-      p1: "Site survey and requirement review",
-      p2: "System design and quotation",
-      p3: "Installation, wiring, and commissioning",
-      p4: "User training and after-sales support",
+        "Workflow ត្រឹមត្រូវ សម្រាប់ការដំណើរការស្ថេរភាព និងដំឡើងស្អាត។",
+      p1: "Site Survey & តម្រូវការ",
+      p2: "រចនា System & Quotation",
+      p3: "ដំឡើង & Commissioning",
+      p4: "បង្រៀនប្រើ & After-Sales Support",
 
-      faqTitle: "FAQ - Access Control System",
-      finalTitle: "Get a Project-Based Quotation",
+      faqTitle: "សំណួរញឹកញាប់អំពីប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+      finalTitle: "រៀបចំគម្រោង Access Control របស់អ្នក",
       finalSub:
-        "Send door count, credential preference (card/face/QR), and site details. We will recommend compatible devices and provide a clear quotation.",
-      finalCta: "Contact & Get Quotation",
-      viewProducts: "View Products",
+        "ផ្ញើចំនួនទ្វារ, ទីតាំង, credential (កាត/មុខ/QR) និងព័ត៌មានប្រព័ន្ធដែលមានស្រាប់។ យើងនឹងស្នើម៉ូដែលឆបគ្នា និង quotation តាមគម្រោង។",
+      finalCta: "ទំនាក់ទំនង & ស្នើសុំតម្លៃ",
+      seeProjects: "មើលគម្រោង",
       note:
-        "Note: Final quotation depends on door count, lock type, cabling distance, and integration requirements.",
-      getQuote: "Get Quotation",
+        "ចំណាំ៖ ថ្លៃចុងក្រោយអាស្រ័យលើចំនួនទ្វារ ចម្ងាយខ្សែ ប្រភេទ lock network plan និងសុវត្ថិភាពទីតាំង។",
+      viewDetails: "មើលព័ត៌មានលម្អិត",
+      getQuote: "ស្នើសុំតម្លៃ",
     };
 
     return lang === "en" ? en : km;
   }, [lang]);
 
-  const faqs = useMemo<FAQ[]>(() => [
+  const faqs: FAQ[] = [
     {
-      qEn: "Which access control method is best for offices?",
+      qEn: "Which access control is better—RFID or Face recognition?",
       aEn:
-        "RFID cards or PIN access are cost-effective and easy to manage. For higher security, fingerprint or face recognition can be added.",
-      qKm: "សម្រាប់ office តើ access control method មួយណាល្អជាងគេ?",
+        "RFID is budget-friendly and easy to maintain. Face recognition is faster for attendance-heavy sites and improves convenience. We recommend based on doors, users and policy.",
+      qKm: "RFID ល្អជាងឬ Face recognition ល្អជាង?",
       aKm:
-        "RFID card ឬ PIN access គឺសន្សំសំចៃ និងងាយគ្រប់គ្រង។ បើត្រូវការសុវត្ថិភាពខ្ពស់ អាចបន្ថែម fingerprint ឬ face recognition បាន។",
+        "RFID សន្សំថវិកា និងថែទាំងាយ។ Face recognition លឿនសម្រាប់ site មាន attendance ច្រើន និងងាយស្រួលប្រើ។ យើងណែនាំតាម doors, users និង policy។",
     },
     {
-      qEn: "Can access control integrate with attendance?",
+      qEn: "Can you integrate access control with attendance?",
       aEn:
-        "Yes. Many controllers and terminals support attendance logs and reporting for HR systems.",
-      qKm: "Access Control អាច integrate ជាមួយ attendance បានទេ?",
+        "Yes. Many terminals/controllers support attendance logs. We can configure users, schedules and export/report options.",
+      qKm: "អាចភ្ជាប់ access control ជាមួយ attendance បានទេ?",
       aKm:
-        "បាន។ Controller និង terminal ជាច្រើនគាំទ្រ attendance log និង reporting សម្រាប់ HR system។",
+        "បាន។ ឧបករណ៍ជាច្រើនគាំទ្រ logs សម្រាប់ attendance។ យើងអាច setup users, schedules និង export/report។",
     },
     {
-      qEn: "Do you install access control systems in Cambodia?",
+      qEn: "Do you provide installation and after-sales support in Cambodia?",
       aEn:
-        "Yes. We provide site survey, wiring, device installation, configuration, and after-sales support nationwide.",
-      qKm: "តើអ្នកដំឡើង Access Control System នៅកម្ពុជាដែរឬទេ?",
+        "Yes. We handle site survey, wiring checks, commissioning and provide maintenance options with local support.",
+      qKm: "មានសេវាដំឡើង និង after-sales support នៅកម្ពុជាដែរឬទេ?",
       aKm:
-        "បាទ/ចាស។ យើងផ្តល់សេវា site survey, wiring, device installation, configuration និង after-sales support ទូទាំងប្រទេស។",
+        "មាន។ យើងធ្វើ site survey, ពិនិត្យ wiring, commissioning និងមានជម្រើសថែទាំជាមួយ support ក្នុងស្រុក។",
     },
     {
-      qEn: "What information is needed for a quotation?",
+      qEn: "What information should I send for a quotation?",
       aEn:
-        "Door count, door type (glass/wood/metal), access method preference, and whether you need online reporting.",
-      qKm: "តើត្រូវផ្តល់ព័ត៌មានអ្វីខ្លះសម្រាប់ស្នើសុំ quotation?",
+        "Door count, door type (glass/wood/metal), credential choice, user count and whether you need online reporting.",
+      qKm: "ត្រូវផ្ញើព័ត៌មានអ្វីខ្លះសម្រាប់ quotation?",
       aKm:
-        "ត្រូវផ្តល់ចំនួនទ្វារ, ប្រភេទទ្វារ (glass/wood/metal), access method preference និងតម្រូវការប្រើ online reporting។",
+        "ចំនួនទ្វារ, ប្រភេទទ្វារ (កញ្ចក់/ឈើ/ដែក), credential, ចំនួនអ្នកប្រើ និងតម្រូវការ online reporting។",
     },
-    {
-      qEn: "Can access control work with turnstiles or gates?",
-      aEn:
-        "Yes. Access control systems can be integrated with turnstile gates and speed gates for secure entry flow.",
-      qKm: "Access Control អាចដំណើរការជាមួយ Turnstile ឬ Gate បានទេ?",
-      aKm:
-        "បាន។ Access control system អាច integrate ជាមួយ turnstile gate និង speed gate ដើម្បីគ្រប់គ្រងលំហូរចូលឲ្យមានសុវត្ថិភាព។",
-    },
-  ], []);
+  ];
 
   const jsonLd = useMemo(() => {
     const site =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
+      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
     const url = site + "/products/access-control-system";
 
     const breadcrumb = {
@@ -327,84 +225,13 @@ export default function AccessControlClient() {
       })),
     };
 
-    const itemList = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      itemListElement: PRODUCTS.filter((p) => p.primaryCategoryId === "access_control")
-        .slice(0, 8)
-        .map((p, idx) => ({
-          "@type": "ListItem",
-          position: idx + 1,
-          name: lang === "en" ? p.titleEn : p.titleKm,
-          url: url + "#products",
-        })),
-    };
-
-    return { breadcrumb, faqSchema, itemList };
+    // ✅ Safe ItemList (no pricing)
+    return { breadcrumb, faqSchema };
   }, [faqs, lang]);
 
   return (
     <main className="bg-white text-slate-900">
-      <style jsx global>{`
-        .quick-link {
-          position: relative;
-          border: 1px solid transparent;
-          background:
-            linear-gradient(#fff, #fff) padding-box,
-            linear-gradient(
-              90deg,
-              rgba(14, 116, 144, 0),
-              rgba(14, 116, 144, 0.85),
-              rgba(2, 132, 199, 0.9),
-              rgba(14, 116, 144, 0)
-            )
-              border-box;
-          background-size: 100% 100%, 240% 240%;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .quick-link:hover {
-          animation: quickLinkBorder 1.2s linear infinite;
-          box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
-        }
-        @keyframes quickLinkBorder {
-          0% {
-            background-position: 0 0, 0 0;
-          }
-          100% {
-            background-position: 0 0, 220% 0;
-          }
-        }
-
-        .spec-card {
-          position: relative;
-          border: 1px solid transparent;
-          background:
-            linear-gradient(#fff, #fff) padding-box,
-            linear-gradient(
-              120deg,
-              rgba(14, 116, 144, 0.1),
-              rgba(2, 132, 199, 0.45),
-              rgba(59, 130, 246, 0.45),
-              rgba(14, 116, 144, 0.1)
-            )
-              border-box;
-          background-size: 100% 100%, 260% 260%;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .spec-card:hover {
-          animation: specBorder 2s linear infinite;
-          box-shadow: 0 12px 28px rgba(2, 6, 23, 0.12);
-        }
-        @keyframes specBorder {
-          0% {
-            background-position: 0 0, 0 0;
-          }
-          100% {
-            background-position: 0 0, 260% 0;
-          }
-        }
-      `}</style>
-
+      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.breadcrumb) }}
@@ -413,11 +240,7 @@ export default function AccessControlClient() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.itemList) }}
-      />
-
+      {/* HERO */}
       <section className="relative isolate overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
@@ -446,13 +269,13 @@ export default function AccessControlClient() {
 
               <div className="mt-4 flex flex-wrap items-center gap-2.5">
                 <Link
-                  href={toLangHref("/contact")}
+                  href="/contact"
                   className="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                 >
                   {t.cta1}
                 </Link>
                 <a
-                  href="#products"
+                  href="#models"
                   className="rounded-xl border border-slate-200 bg-white/85 px-4 py-2.5 text-sm font-semibold text-slate-900 backdrop-blur hover:bg-white"
                 >
                   {t.cta2}
@@ -460,25 +283,36 @@ export default function AccessControlClient() {
               </div>
 
               <p className="mt-4 text-xs text-slate-600">{t.serving}</p>
+
+              <div className="mt-5 rounded-2xl border border-slate-200 bg-white/85 p-4 backdrop-blur">
+                <div className="text-sm font-bold text-slate-900">{t.kTitle}</div>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{t.kSub}</p>
+
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                  <KeyRow title={t.k1} desc={t.k1d} />
+                  <KeyRow title={t.k2} desc={t.k2d} />
+                  <KeyRow title={t.k3} desc={t.k3d} />
+                  <KeyRow title={t.k4} desc={t.k4d} />
+                </div>
+              </div>
             </div>
 
+            {/* Right card */}
             <div className="lg:col-span-5">
               <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 shadow-sm backdrop-blur">
                 <div className="text-base font-bold text-slate-900">{t.chooseTitle}</div>
                 <p className="mt-1 text-sm leading-relaxed text-slate-700">{t.chooseSub}</p>
 
-                <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                  {[t.c1, t.c2, t.c3, t.c4, t.c5, t.c6].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-900" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-4 grid gap-3">
+                  <GuideRow title={t.c1} desc={t.c1d} />
+                  <GuideRow title={t.c2} desc={t.c2d} />
+                  <GuideRow title={t.c3} desc={t.c3d} />
+                  <GuideRow title={t.c4} desc={t.c4d} />
+                </div>
 
                 <div className="mt-4">
                   <Link
-                    href={toLangHref("/contact")}
+                    href="/contact"
                     className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                   >
                     {t.finalCta}
@@ -490,114 +324,8 @@ export default function AccessControlClient() {
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-2 py-10 sm:px-4 lg:px-6">
-          <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-white p-4 shadow-sm sm:p-6">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <div className="text-sm font-semibold text-slate-900">{t.quickTitle}</div>
-                <div className="mt-1 text-xs text-slate-600">{t.quickSub}</div>
-              </div>
-              <div className="hidden rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600 sm:block">
-                Quick Links
-              </div>
-            </div>
-
-            <div className="mt-4 flex flex-wrap gap-2">
-              {[
-                { label: "Specifications", href: "#specs" },
-                { label: "Basics", href: "#basics" },
-                { label: "Device Types", href: "#device-types" },
-                { label: "Use Cases", href: "#use-cases" },
-                { label: "Integrations", href: "#integrations" },
-                { label: "Products", href: "#products" },
-                { label: "Process", href: "#process" },
-                { label: "FAQ", href: "#faq" },
-                { label: "Get Quotation", href: "#contact" },
-              ].map((item) => (
-                <a
-                  key={item.href}
-                  href={toLangHref(item.href)}
-                  className="quick-link rounded-full px-4 py-1.5 text-xs font-semibold text-slate-700 hover:text-slate-900"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="specs" className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.specsTitle}</h2>
-          <p className="mt-2 text-slate-600">{t.specsSub}</p>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <SpecCard title={t.sCard1t} desc={t.sCard1d} />
-            <SpecCard title={t.sCard2t} desc={t.sCard2d} />
-            <SpecCard title={t.sCard3t} desc={t.sCard3d} />
-            <SpecCard title={t.sCard4t} desc={t.sCard4d} />
-            <SpecCard title={t.sCard5t} desc={t.sCard5d} />
-            <SpecCard title={t.sCard6t} desc={t.sCard6d} />
-          </div>
-        </div>
-      </section>
-
-      <section id="basics" className="border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-12 lg:items-start">
-            <div className="lg:col-span-7">
-              <div className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                {t.basicsLabel}
-              </div>
-              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
-                {t.basicsTitle}
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-                {t.basicsDesc}
-              </p>
-
-              <h3 className="mt-6 text-lg font-semibold text-slate-900">{t.howTitle}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">
-                {t.howDesc}
-              </p>
-            </div>
-
-            <div className="lg:col-span-5">
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                <div className="text-sm font-semibold text-slate-900">{t.benefitTitle}</div>
-                <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                  {[t.b1, t.b2, t.b3, t.b4, t.b5].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-slate-900" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="device-types" className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.methodsTitle}</h2>
-          <p className="mt-2 text-slate-600">{t.methodsSub}</p>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <TypeCard title={t.m1} desc={t.m1d} />
-            <TypeCard title={t.m2} desc={t.m2d} />
-            <TypeCard title={t.m3} desc={t.m3d} />
-            <TypeCard title={t.m4} desc={t.m4d} />
-            <TypeCard title={t.m5} desc={t.m5d} />
-            <TypeCard title={t.m6} desc={t.m6d} />
-          </div>
-        </div>
-      </section>
-
-      <section id="use-cases" className="border-t border-slate-200 bg-slate-50">
+      {/* USE CASES */}
+      <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.useTitle}</h2>
           <p className="mt-2 text-slate-600">{t.useSub}</p>
@@ -613,48 +341,37 @@ export default function AccessControlClient() {
         </div>
       </section>
 
-      <section id="integrations" className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {t.integrationsTitle}
-          </h2>
-          <p className="mt-2 text-slate-600">{t.integrationsSub}</p>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[t.i1, t.i2, t.i3, t.i4, t.i5, t.i6].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700 shadow-sm"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="products" className="border-t border-slate-200 bg-white">
+      {/* MODELS GRID */}
+      <section id="models" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.gridTitle}</h2>
           <p className="mt-2 text-slate-600">{t.gridSub}</p>
 
-          <div className="mt-6">
-            <ProductGrid
-              columns={3}
-              pageSize={9}
-              allowedCategoryIds={["access_control"]}
-              filterCategoryIds={["access_control"]}
-              showCategoryFilters
-              showSort
-              showPagination
-            />
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {ACCESS_CONTROL_ITEMS.map((p) => (
+              <ProductCard
+                key={p.id}
+                title={lang === "en" ? p.titleEn : p.titleKm}
+                short={lang === "en" ? p.shortEn : p.shortKm}
+                bestFor={lang === "en" ? p.bestForEn : p.bestForKm}
+                highlights={lang === "en" ? p.highlightsEn : p.highlightsKm}
+                specs={p.specs.map((s) => ({
+                  k: lang === "en" ? s.kEn : s.kKm,
+                  v: lang === "en" ? s.vEn : s.vKm,
+                }))}
+                tags={lang === "en" ? p.tagsEn : p.tagsKm}
+                img={p.img}
+                ctaLabel={t.getQuote}
+              />
+            ))}
           </div>
 
           <p className="mt-4 text-xs text-slate-500">{t.note}</p>
         </div>
       </section>
 
-      <section id="process" className="border-t border-slate-200 bg-slate-50">
+      {/* PROCESS */}
+      <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.processTitle}</h2>
           <p className="mt-2 text-slate-600">{t.processSub}</p>
@@ -668,11 +385,37 @@ export default function AccessControlClient() {
         </div>
       </section>
 
-      <section id="faq" className="border-t border-slate-200 bg-white">
+      {/* FINAL CTA */}
+      <section className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <h3 className="text-lg font-bold text-slate-900">{t.finalTitle}</h3>
+            <p className="mt-2 text-slate-600">{t.finalSub}</p>
+
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+              >
+                {t.finalCta}
+              </Link>
+              <Link
+                href="/projects"
+                className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
+              >
+                {t.seeProjects}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.faqTitle}</h2>
 
-          <div className="mt-6 grid gap-3 md:grid-cols-2">
+          <div className="mt-6 grid gap-3">
             {faqs.map((f) => (
               <details
                 key={f.qEn}
@@ -684,7 +427,7 @@ export default function AccessControlClient() {
                       {lang === "en" ? f.qEn : f.qKm}
                     </div>
                     <span className="mt-0.5 text-slate-400 transition group-open:rotate-180">
-                      v
+                      ▾
                     </span>
                   </div>
                   <div className="mt-2 hidden h-px w-full bg-slate-100 group-open:block" />
@@ -698,48 +441,28 @@ export default function AccessControlClient() {
           </div>
         </div>
       </section>
-
-      <section id="contact" className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-lg font-bold text-slate-900">{t.finalTitle}</h3>
-            <p className="mt-2 text-slate-600">{t.finalSub}</p>
-
-            <div className="mt-4 flex flex-wrap gap-3">
-              <Link
-                href={toLangHref("/contact")}
-                className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
-              >
-                {t.finalCta}
-              </Link>
-              <a
-                href="#products"
-                className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
-              >
-                {t.viewProducts}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }
 
-function SpecCard({ title, desc }: { title: string; desc: string }) {
+/* ======================
+   Small UI components
+   ====================== */
+
+function KeyRow({ title, desc }: { title: string; desc: string }) {
   return (
-    <div className="spec-card rounded-2xl bg-white p-5 shadow-sm">
-      <div className="text-sm font-semibold text-slate-900">{title}</div>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+    <div className="rounded-xl border border-slate-200 bg-slate-50/90 px-4 py-3">
+      <div className="text-sm font-bold text-slate-900">{title}</div>
+      <div className="mt-1 text-sm leading-relaxed text-slate-700">{desc}</div>
     </div>
   );
 }
 
-function TypeCard({ title, desc }: { title: string; desc: string }) {
+function GuideRow({ title, desc }: { title: string; desc: string }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="text-sm font-semibold text-slate-900">{title}</div>
-      <p className="mt-2 text-sm leading-relaxed text-slate-600">{desc}</p>
+    <div className="rounded-xl border border-slate-200 bg-white px-4 py-3">
+      <div className="text-sm font-bold text-slate-900">{title}</div>
+      <div className="mt-1 text-sm leading-relaxed text-slate-700">{desc}</div>
     </div>
   );
 }
@@ -762,3 +485,71 @@ function StepCard({ n, title }: { n: string; title: string }) {
   );
 }
 
+function ProductCard({
+  title,
+  short,
+  bestFor,
+  highlights,
+  specs,
+  tags,
+  img,
+  ctaLabel,
+}: {
+  title: string;
+  short: string;
+  bestFor: string;
+  highlights: string[];
+  specs: { k: string; v: string }[];
+  tags: string[];
+  img?: string;
+  ctaLabel: string;
+}) {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div className="p-5">
+        <div className="text-sm font-semibold text-slate-900">{title}</div>
+        <p className="mt-2 text-sm leading-relaxed text-slate-600">{short}</p>
+
+        <div className="mt-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+          <div className="text-xs font-semibold text-slate-700">Best for</div>
+          <div className="mt-1 text-sm text-slate-700">{bestFor}</div>
+        </div>
+
+        <ul className="mt-3 list-disc space-y-1 pl-5 text-xs text-slate-600">
+          {highlights.map((h) => (
+            <li key={h}>{h}</li>
+          ))}
+        </ul>
+
+        <div className="mt-4 grid gap-2">
+          {specs.slice(0, 3).map((s) => (
+            <div key={s.k} className="flex items-start justify-between gap-3 text-xs">
+              <span className="font-semibold text-slate-700">{s.k}</span>
+              <span className="text-slate-600">{s.v}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags.map((t) => (
+            <span
+              key={t}
+              className="inline-flex items-center rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-700"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-5 flex gap-2">
+          <Link
+            href="/contact"
+            className="inline-flex flex-1 items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
+          >
+            {ctaLabel}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

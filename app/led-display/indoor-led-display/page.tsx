@@ -1,4 +1,4 @@
-/*
+﻿/*
   Developer Signature:
   This website was developed by Mugnee IT Solutions.
   Developer Name: Ankur Datta
@@ -69,7 +69,7 @@ export default function IndoorLedDisplayPage() {
   const productQuickChips = indoorProducts.map((p) => ({
     label: p.titleEn,
     labelKm: p.titleKm || p.titleEn,
-    href: `/products/catalog/${p.slug}`,
+    href: `/products/${p.slug}`,
   }));
   const indoorItemListJsonLd = {
     "@context": "https://schema.org",
@@ -80,7 +80,7 @@ export default function IndoorLedDisplayPage() {
     itemListElement: indoorSchemaProducts.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `${SITE_URL}/products/catalog/${product.slug}`,
+      url: `${SITE_URL}/products/${product.slug}`,
       name: product.titleEn,
       image: `${SITE_URL}${product.heroImage}`,
     })),
@@ -134,7 +134,7 @@ export default function IndoorLedDisplayPage() {
   const indoorCluster = [
     { title: "Parent LED Display Page", href: "/led-display" },
     { title: "Outdoor LED Display in Cambodia", href: "/led-display/outdoor-led-display" },
-    { title: "Indoor LED Product Catalog", href: "/products/catalog/indoor-led-display" },
+    { title: "Indoor LED Product Catalog", href: "/products/indoor-led-display" },
     { title: "Pixel Pitch Buying Guide", href: "/led-display" },
     { title: "Installation & Service Support", href: "/service" },
     { title: "Cambodia Industry Solutions", href: "/solutions" },
@@ -144,7 +144,7 @@ export default function IndoorLedDisplayPage() {
   const indoorClusterKm = [
     { title: "ទំព័រមេអេក្រង់ LED", href: "/led-display" },
     { title: "អេក្រង់ LED ខាងក្រៅនៅកម្ពុជា", href: "/led-display/outdoor-led-display" },
-    { title: "កាតាឡុកផលិតផល LED ក្នុងអគារ", href: "/products/catalog/indoor-led-display" },
+    { title: "កាតាឡុកផលិតផល LED ក្នុងអគារ", href: "/products/indoor-led-display" },
     { title: "មគ្គុទ្ទេសក៍ទិញ Pixel Pitch", href: "/led-display" },
     { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស", href: "/service" },
     { title: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា", href: "/solutions" },
@@ -372,6 +372,7 @@ export default function IndoorLedDisplayPage() {
     </>
   );
 }
+
 
 
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import ServiceClient from "../../service/ServiceClient";
 import { SITE_URL } from "../../lib/site";
 

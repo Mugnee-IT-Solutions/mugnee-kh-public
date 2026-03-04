@@ -1940,13 +1940,15 @@ export default function LedDisplayClient({
                   key={`${logo.label}-${idx}`}
                   className="flex h-16 w-40 shrink-0 items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 px-4 sm:w-44 lg:w-48"
                 >
-                  <Image
-                    src={logo.src}
-                    alt={logo.label}
-                    width={180}
-                    height={32}
-                    className={logo.label === "Lampro" ? "h-10 w-36 object-contain" : "h-8 w-36 object-contain"}
-                  />
+                  <div className={logo.label === "Lampro" ? "relative h-10 w-36" : "relative h-8 w-36"}>
+                    <Image
+                      src={logo.src}
+                      alt={logo.label}
+                      fill
+                      sizes="(max-width: 640px) 120px, 144px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               ))}
             </div>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -258,7 +258,7 @@ export default function SiteHeader() {
       about: "អំពីយើង",
       contact: "ទាក់ទងយើង",
       quote: "ស្នើសុំតម្លៃ (Free)",
-      quotePhone: "Call +855 86 817 907",
+      quotePhone: "ហៅ +855 86 817 907",
       close: "បិទ",
       menu: "ម៉ឺនុយ",
       searchPlaceholder: "ស្វែងរកផលិតផល/ដំណោះស្រាយ...",
@@ -423,7 +423,7 @@ export default function SiteHeader() {
     setSearchOpenMobile(false);
     setQ("");
     forceScrollTop();
-    router.push(toLangHref(`/products/catalog/${slug}/`));
+    router.push(toLangHref(`/products/${slug}/`));
   };
 
   useEffect(() => {
@@ -518,6 +518,7 @@ export default function SiteHeader() {
             <div ref={desktopSearchRef} className="relative">
             <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
+                name="site_search_desktop"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 onFocus={() => setSearchOpenDesktop(true)}
@@ -547,7 +548,7 @@ export default function SiteHeader() {
                             {lang === "en" ? item.titleEn : item.titleKm}
                           </p>
                           <p className="text-xs text-slate-500">
-                            /products/catalog/{item.slug}/
+                            /products/{item.slug}/
                           </p>
                         </button>
                       </li>
@@ -612,6 +613,7 @@ export default function SiteHeader() {
             <div ref={mobileSearchRef} className="relative">
             <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
+                name="site_search_mobile"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 onFocus={() => setSearchOpenMobile(true)}
@@ -641,7 +643,7 @@ export default function SiteHeader() {
                             {lang === "en" ? item.titleEn : item.titleKm}
                           </p>
                           <p className="text-xs text-slate-500">
-                            /products/catalog/{item.slug}/
+                            /products/{item.slug}/
                           </p>
                         </button>
                       </li>
@@ -989,4 +991,5 @@ export default function SiteHeader() {
     </header>
   );
 }
+
 

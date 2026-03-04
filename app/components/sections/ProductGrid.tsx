@@ -219,7 +219,7 @@ export default function ProductGrid({
   limit,
   pageSize = 12,
   showPagination = true,
-  detailBasePath = "/products/catalog",
+  detailBasePath = "/products",
   allowedCategoryIds,
   filterCategoryIds,
   categoryOrderIds,

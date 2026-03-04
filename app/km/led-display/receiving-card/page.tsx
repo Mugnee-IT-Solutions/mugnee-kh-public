@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import ReceivingCardPage from "../../../led-display/receiving-card/page";
 import { SITE_URL } from "../../../lib/site";
 
@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/led-display/receiving-card/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Receiving Card អេក្រង់ LED នៅកម្ពុជា | កំណត់រចនា និងគាំទ្រ",
+  title: "កាតទទួលសញ្ញាអេក្រង់ LED នៅកម្ពុជា | រចនា និងគាំទ្រ",
   description:
-    "ដំណោះស្រាយ LED receiving card នៅកម្ពុជា ជាមួយការណែនាំ configuration, integration support និងអនុសាសន៍ដំឡើងជាក់ស្តែង។",
+    "ដំណោះស្រាយកាតទទួលសញ្ញា LED នៅកម្ពុជា ជាមួយការណែនាំកំណត់រចនាសម្ព័ន្ធ ការភ្ជាប់ប្រព័ន្ធ និងអនុសាសន៍ដំឡើងជាក់ស្តែង។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

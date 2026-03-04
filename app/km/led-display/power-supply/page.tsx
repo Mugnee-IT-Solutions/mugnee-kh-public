@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PowerSupplyPage from "../../../led-display/power-supply/page";
 import { SITE_URL } from "../../../lib/site";
 
@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/led-display/power-supply/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Power Supply សម្រាប់ LED នៅកម្ពុជា | SMPS ជ្រើសរើស និងគាំទ្រ",
+  title: "ផ្គត់ផ្គង់ថាមពលសម្រាប់អេក្រង់ LED នៅកម្ពុជា | ជ្រើសរើស និងគាំទ្រ",
   description:
-    "ការជ្រើសរើស និងបញ្ចូល power supply សម្រាប់ LED display នៅកម្ពុជា ដើម្បីរក្សាស្ថិរភាព និងភាពជឿជាក់រយៈពេលវែង។",
+    "ការជ្រើសរើស និងកំណត់ប្រព័ន្ធផ្គត់ផ្គង់ថាមពលសម្រាប់អេក្រង់ LED នៅកម្ពុជា ដើម្បីរក្សាស្ថិរភាព និងអាយុកាលប្រព័ន្ធ។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

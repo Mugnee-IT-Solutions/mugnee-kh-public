@@ -187,7 +187,7 @@ const intentClustersEn = [
     links: [
       { label: "Office Access Control Solutions", href: "/solutions/office-access-control-cambodia" },
       { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
-      { label: "Access Control Catalog", href: "/products/catalog/access-control" },
+      { label: "Access Control Catalog", href: "/products/access-control" },
     ],
   },
   {
@@ -195,7 +195,7 @@ const intentClustersEn = [
     links: [
       { label: "Education Smart Classroom Solutions", href: "/solutions/education-smart-classroom-cambodia" },
       { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
-      { label: "Smart Board Catalog", href: "/products/catalog/smart-board" },
+      { label: "Smart Board Catalog", href: "/products/smart-board" },
     ],
   },
   {
@@ -203,7 +203,7 @@ const intentClustersEn = [
     links: [
       { label: "Factory PA Announcement Solutions", href: "/solutions/factory-pa-announcement-cambodia" },
       { label: "PA System Hub", href: "/pa-system" },
-      { label: "IP Paging Microphones", href: "/products/catalog/ip-paging-microphones" },
+      { label: "IP Paging Microphones", href: "/products/ip-paging-microphones" },
     ],
   },
 ];
@@ -224,7 +224,7 @@ const intentClustersKm = [
     links: [
       { label: "ដំណោះស្រាយ ការិយាល័យ ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", href: "/solutions/office-access-control-cambodia" },
       { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
-      { label: "Access Control Catalog", href: "/products/catalog/access-control" },
+      { label: "Access Control Catalog", href: "/products/access-control" },
     ],
   },
   {
@@ -232,7 +232,7 @@ const intentClustersKm = [
     links: [
       { label: "ដំណោះស្រាយ អប់រំ ថ្នាក់រៀនឆ្លាតវៃ", href: "/solutions/education-smart-classroom-cambodia" },
       { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
-      { label: "Smart Board Catalog", href: "/products/catalog/smart-board" },
+      { label: "Smart Board Catalog", href: "/products/smart-board" },
     ],
   },
   {
@@ -240,7 +240,7 @@ const intentClustersKm = [
     links: [
       { label: "ដំណោះស្រាយ ប្រព័ន្ធផ្សាយសំឡេងរោងចក្រ", href: "/solutions/factory-pa-announcement-cambodia" },
       { label: "PA System Hub", href: "/pa-system" },
-      { label: "IP Paging Microphones", href: "/products/catalog/ip-paging-microphones" },
+      { label: "IP Paging Microphones", href: "/products/ip-paging-microphones" },
     ],
   },
 ];
@@ -477,12 +477,12 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
           <div className="mt-5 rounded-2xl border border-cyan-200 bg-cyan-50/70 p-4">
             <p className="text-sm font-semibold text-slate-900">
               {isKhmer
-                ? "LED display intent-এর জন্য dedicated pillar page"
+                ? "សម្រាប់បំណងស្វែងរកអេក្រង់ LED សូមប្រើទំព័រគោលនេះជាមុន"
                 : "For LED display buyer intent, use this dedicated pillar page"}
             </p>
             <p className="mt-1 text-xs leading-relaxed text-slate-600">
               {isKhmer
-                ? "Price, BOQ, installation workflow, এবং use-case অনুযায়ী LED planning দেখতে LED Display Cambodia hub-এ যান।"
+                ? "សូមចូលទៅកាន់ទំព័រមេអេក្រង់ LED ដើម្បីមើលកត្តាតម្លៃ BOQ ដំណើរការដំឡើង និងការរៀបចំគម្រោងតាមករណីប្រើប្រាស់។"
                 : "Navigate to the LED Display Cambodia hub for pricing factors, BOQ planning, installation workflow, and use-case guidance."}
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -490,19 +490,19 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
                 href={toLangHref("/led-display")}
                 className="rounded-full border border-cyan-300 bg-white px-3 py-1.5 text-xs font-semibold text-cyan-900 transition hover:bg-cyan-100"
               >
-                {isKhmer ? "LED Display Cambodia Hub" : "LED Display Cambodia Hub"}
+                {isKhmer ? "ទំព័រមេអេក្រង់ LED" : "LED Display Cambodia Hub"}
               </Link>
               <Link
                 href={toLangHref("/led-display/indoor-led-display")}
                 className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
               >
-                {isKhmer ? "Indoor LED Display" : "Indoor LED Display"}
+                {isKhmer ? "អេក្រង់ LED ខាងក្នុង" : "Indoor LED Display"}
               </Link>
               <Link
                 href={toLangHref("/led-display/outdoor-led-display")}
                 className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
               >
-                {isKhmer ? "Outdoor LED Billboard" : "Outdoor LED Billboard"}
+                {isKhmer ? "អេក្រង់ LED ខាងក្រៅ" : "Outdoor LED Billboard"}
               </Link>
             </div>
           </div>
@@ -651,4 +651,5 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
     </main>
   );
 }
+
 

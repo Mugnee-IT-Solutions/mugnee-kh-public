@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "../../../lib/site";
 import { getSolutionMetaOverride } from "../../../lib/seoCtrOverrides";
@@ -11,6 +11,12 @@ import {
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
+
+const KHMER_RE = /[\u1780-\u17FF]/;
+
+function hasKhmer(text: string | null | undefined) {
+  return Boolean(text && KHMER_RE.test(text));
+}
 
 export const dynamic = "force-static";
 export const dynamicParams = false;
@@ -27,8 +33,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const pageUrl = `${SITE_URL}/km/solutions/${solution.slug}/`;
   const ogImage = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
   const override = getSolutionMetaOverride(solution.slug, "km");
-  const kmTitle = override?.title ?? `ដំណោះស្រាយ: ${solution.title}`;
-  const description = override?.description ?? solution.description;
+  const kmTitle = hasKhmer(override?.title)
+    ? override!.title
+    : "ដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា";
+  const description = hasKhmer(override?.description)
+    ? override!.description
+    : "ទំព័រដំណោះស្រាយនេះផ្តល់ព័ត៌មានអំពីការរៀបចំគម្រោង ដំឡើង និងគាំទ្របច្ចេកទេសក្នុងស្រុក សម្រាប់អាជីវកម្មនៅកម្ពុជា។";
 
   return {
     title: `${kmTitle} | Mugnee Cambodia`,

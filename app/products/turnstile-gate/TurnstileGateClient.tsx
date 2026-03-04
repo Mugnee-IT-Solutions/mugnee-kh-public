@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useMemo } from "react";
 import ProductGrid from "../../components/sections/ProductGrid";
 import { useLang } from "../../components/layout/LanguageProvider";
-import { PRODUCTS } from "../../data/products";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
@@ -67,19 +66,19 @@ export default function TurnstileGateClient() {
       typesTitle: "Types of Turnstile Gates",
       typesSub:
         "Choose the right turnstile gate type by security level, traffic volume, lane width, and the look of your site in Cambodia.",
-      t1: "Tripod Turnstile",
+      t1: "ច្រកទ្វារបីដង",
       t1d:
         "Budget-friendly tripod turnstiles for staff entrances, schools, and factories. Reliable one-at-a-time control with RFID or QR access and low maintenance.",
-      t2: "Flap Barrier",
+      t2: "ច្រកស្លាបបិទបើក",
       t2d:
         "Elegant flap barrier gates for office lobbies, hotels, and public buildings. Faster passage, sensor safety, and premium aesthetics for modern spaces.",
-      t3: "Speed Gate",
+      t3: "ច្រកល្បឿនលឿន",
       t3d:
         "High-throughput speed gates for metro stations, airports, and corporate HQs. Smooth glass panels, anti-tailgating logic, and fast flow control.",
-      t4: "Full-Height Turnstile",
+      t4: "ច្រកកម្ពស់ពេញ",
       t4d:
         "Full-height turnstiles for maximum security at factories, stadiums, and restricted areas. Rugged construction for outdoor and 24/7 use.",
-      t5: "Swing Gate / Optical",
+      t5: "ច្រកស្វ៊ីង / អុបទិក",
       t5d:
         "Swing/optical gates for accessible wide lanes and stroller or wheelchair access. Ideal for mixed-traffic entrances and visitor-friendly sites.",
 
@@ -210,19 +209,19 @@ export default function TurnstileGateClient() {
       typesTitle: "ប្រភេទច្រកទ្វារ Turnstile",
       typesSub:
         "ជ្រើសប្រភេទ turnstile ឱ្យត្រឹមត្រូវ ដោយផ្អែកលើកម្រិតសុវត្ថិភាព បរិមាណអ្នកឆ្លងកាត់ ទទឹង lane និងរចនាប័ទ្មទីតាំង។",
-      t1: "Tripod Turnstile",
+      t1: "ច្រកទ្វារបីដង",
       t1d:
         "ជម្រើសសន្សំថវិកាសម្រាប់ច្រកបុគ្គលិក សាលារៀន និងរោងចក្រ។ គ្រប់គ្រងម្នាក់ម្តងបានទុកចិត្ត ជាមួយ RFID ឬ QR និងថែទាំងាយស្រួល។",
-      t2: "Flap Barrier",
+      t2: "ច្រកស្លាបបិទបើក",
       t2d:
         "ច្រក flap barrier សម្រាប់ lobby ការិយាល័យ សណ្ឋាគារ និងអគារសាធារណៈ។ ឆ្លងកាត់លឿន មាន sensor សុវត្ថិភាព និងរចនាស្អាតទំនើប។",
-      t3: "Speed Gate",
+      t3: "ច្រកល្បឿនលឿន",
       t3d:
         "speed gate សមត្ថភាពខ្ពស់ សម្រាប់ស្ថានីយ៍ អាកាសយានដ្ឋាន និងអគារសាជីវកម្ម។ កញ្ចក់រលូន anti-tailgating និងគ្រប់គ្រងលំហូរលឿន។",
-      t4: "Full-Height Turnstile",
+      t4: "ច្រកកម្ពស់ពេញ",
       t4d:
         "full-height turnstile សម្រាប់សុវត្ថិភាពខ្ពស់បំផុត នៅរោងចក្រ កីឡដ្ឋាន និងតំបន់កំណត់សិទ្ធិ។ រឹងមាំ សមស្របសម្រាប់ក្រៅអគារ និងប្រើ 24/7។",
-      t5: "Swing Gate / Optical",
+      t5: "ច្រកស្វ៊ីង / អុបទិក",
       t5d:
         "swing/optical gate សម្រាប់ lane ទូលាយ និងអ្នកប្រើ stroller ឬ wheelchair។ សមស្របសម្រាប់ច្រកចេញចូលចម្រុះ និងទីតាំងដែលងាយស្រួលសម្រាប់ភ្ញៀវ។",
 
@@ -417,20 +416,7 @@ export default function TurnstileGateClient() {
       })),
     };
 
-    const itemList = {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      itemListElement: PRODUCTS.filter((p) => p.primaryCategoryId === "turnstile_gate")
-        .slice(0, 8)
-        .map((p, idx) => ({
-          "@type": "ListItem",
-          position: idx + 1,
-          name: lang === "en" ? p.titleEn : p.titleKm,
-          url: url + "#products",
-        })),
-    };
-
-    return { breadcrumb, faqSchema, itemList };
+    return { breadcrumb, faqSchema };
   }, [faqs, lang]);
 
   return (
@@ -503,11 +489,6 @@ export default function TurnstileGateClient() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.itemList) }}
-      />
-
       <section className="relative isolate overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100" />
@@ -551,9 +532,9 @@ export default function TurnstileGateClient() {
                     Mugnee Cambodia ផ្តល់ដំណោះស្រាយ <strong>Turnstile Gate</strong>{" "}
                     និង <strong>Access Control</strong> នៅកម្ពុជា សម្រាប់ការិយាល័យ
                     រោងចក្រ សាលារៀន មជ្ឈមណ្ឌលដឹកជញ្ជូន និងទីតាំងសាធារណៈ។ យើងផ្គត់ផ្គង់{" "}
-                    <strong>Tripod Turnstile Gate</strong>,{" "}
-                    <strong>Flap Barrier</strong>, <strong>Speed Gate</strong>, និង{" "}
-                    <strong>Full-Height Turnstile</strong> ជាមួយ{" "}
+                    <strong>ច្រកទ្វារបីដង Gate</strong>,{" "}
+                    <strong>ច្រកស្លាបបិទបើក</strong>, <strong>ច្រកល្បឿនលឿន</strong>, និង{" "}
+                    <strong>ច្រកកម្ពស់ពេញ</strong> ជាមួយ{" "}
                     <strong>RFID Card</strong>, <strong>QR Code</strong>, និង{" "}
                     <strong>Biometric Integration</strong> រួមទាំង{" "}
                     <strong>Installation</strong>, <strong>Commissioning</strong> និង
@@ -913,5 +894,4 @@ function StepCard({ n, title, desc }: { n: string; title: string; desc: string }
     </div>
   );
 }
-
 

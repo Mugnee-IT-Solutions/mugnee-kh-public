@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 
@@ -66,7 +66,7 @@ export default function IndustrySolutionPage({ solution }: Props) {
           internalLinks: [
             { label: "ដំណោះស្រាយអេក្រង់សណ្ឋាគារ", href: "/solutions/hotel-display-solutions-cambodia" },
             { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
-            { label: "ផលិតផល Digital Signage", href: "/products/catalog/digital-signage" },
+            { label: "ផលិតផល Digital Signage", href: "/products/digital-signage" },
             { label: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
             { label: "ស្នើសុំតម្លៃ", href: "/contact" },
           ],
@@ -174,7 +174,7 @@ export default function IndustrySolutionPage({ solution }: Props) {
           internalLinks: [
             { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
             { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display" },
-            { label: "ផលិតផល Digital Signage", href: "/products/catalog/digital-signage" },
+            { label: "ផលិតផល Digital Signage", href: "/products/digital-signage" },
             { label: "ជម្រើស Video Processor", href: "/led-display/video-processor" },
             { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
           ],
@@ -229,7 +229,7 @@ export default function IndustrySolutionPage({ solution }: Props) {
             { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
             { label: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
             { label: "ប្រព័ន្ធ PA", href: "/pa-system" },
-            { label: "ផលិតផល Digital Signage", href: "/products/catalog/digital-signage" },
+            { label: "ផលិតផល Digital Signage", href: "/products/digital-signage" },
             { label: "ស្នើសុំតម្លៃ", href: "/contact" },
           ],
         }
@@ -281,8 +281,8 @@ export default function IndustrySolutionPage({ solution }: Props) {
           ],
           internalLinks: [
             { label: "ទំព័រមេ PA System", href: "/pa-system" },
-            { label: "កាតាឡុកផលិតផល PA System", href: "/products/catalog/pa-system" },
-            { label: "IP Paging Microphones", href: "/products/catalog/ip-paging-microphones" },
+            { label: "កាតាឡុកផលិតផល PA System", href: "/products/pa-system" },
+            { label: "IP Paging Microphones", href: "/products/ip-paging-microphones" },
             { label: "ការរួមបញ្ចូល Turnstile Gate", href: "/turnstile-gate" },
             { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
           ],
@@ -335,8 +335,8 @@ export default function IndustrySolutionPage({ solution }: Props) {
           ],
           internalLinks: [
             { label: "Turnstile Gate", href: "/turnstile-gate" },
-            { label: "ផលិតផល Access Control", href: "/products/catalog/access-control" },
-            { label: "កាតាឡុកផលិតផល Turnstile", href: "/products/catalog/turnstile-gate" },
+            { label: "ផលិតផល Access Control", href: "/products/access-control" },
+            { label: "កាតាឡុកផលិតផល Turnstile", href: "/products/turnstile-gate" },
             { label: "សេវា និងគាំទ្រ", href: "/service" },
             { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
           ],
@@ -389,8 +389,8 @@ export default function IndustrySolutionPage({ solution }: Props) {
           ],
           internalLinks: [
             { label: "ទំព័រមេ Interactive Flat Panel", href: "/interactive-flat-panel" },
-            { label: "កាតាឡុកផលិតផល Interactive Panel", href: "/products/catalog/interactive-panel" },
-            { label: "កាតាឡុក Smart Board", href: "/products/catalog/smart-board" },
+            { label: "កាតាឡុកផលិតផល Interactive Panel", href: "/products/interactive-panel" },
+            { label: "កាតាឡុក Smart Board", href: "/products/smart-board" },
             { label: "ដំណោះស្រាយ Indoor Communication", href: "/solutions/indoor-communication-solutions-cambodia" },
             { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
           ],
@@ -482,18 +482,18 @@ export default function IndustrySolutionPage({ solution }: Props) {
     ],
     audio: [
       { label: "PA System Hub", href: "/pa-system" },
-      { label: "PA Product Catalog", href: "/products/catalog/pa-system" },
-      { label: "IP Paging Microphones", href: "/products/catalog/ip-paging-microphones" },
+      { label: "PA Product Catalog", href: "/products/pa-system" },
+      { label: "IP Paging Microphones", href: "/products/ip-paging-microphones" },
     ],
     security: [
       { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
-      { label: "Access Control Catalog", href: "/products/catalog/access-control" },
-      { label: "Turnstile Catalog", href: "/products/catalog/turnstile-gate" },
+      { label: "Access Control Catalog", href: "/products/access-control" },
+      { label: "Turnstile Catalog", href: "/products/turnstile-gate" },
     ],
     education: [
       { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
-      { label: "Interactive Panel Catalog", href: "/products/catalog/interactive-panel" },
-      { label: "Smart Board Catalog", href: "/products/catalog/smart-board" },
+      { label: "Interactive Panel Catalog", href: "/products/interactive-panel" },
+      { label: "Smart Board Catalog", href: "/products/smart-board" },
     ],
   };
 
@@ -508,18 +508,18 @@ export default function IndustrySolutionPage({ solution }: Props) {
     ],
     audio: [
       { label: "ទំព័រមេ PA System", href: "/pa-system" },
-      { label: "កាតាឡុកផលិតផល PA", href: "/products/catalog/pa-system" },
-      { label: "មីក្រូហ្វូន IP Paging", href: "/products/catalog/ip-paging-microphones" },
+      { label: "កាតាឡុកផលិតផល PA", href: "/products/pa-system" },
+      { label: "មីក្រូហ្វូន IP Paging", href: "/products/ip-paging-microphones" },
     ],
     security: [
       { label: "ទំព័រមេ Turnstile Gate", href: "/turnstile-gate" },
-      { label: "កាតាឡុក Access Control", href: "/products/catalog/access-control" },
-      { label: "កាតាឡុក Turnstile", href: "/products/catalog/turnstile-gate" },
+      { label: "កាតាឡុក Access Control", href: "/products/access-control" },
+      { label: "កាតាឡុក Turnstile", href: "/products/turnstile-gate" },
     ],
     education: [
       { label: "ទំព័រមេ Interactive Flat Panel", href: "/interactive-flat-panel" },
-      { label: "កាតាឡុក Interactive Panel", href: "/products/catalog/interactive-panel" },
-      { label: "កាតាឡុក Smart Board", href: "/products/catalog/smart-board" },
+      { label: "កាតាឡុក Interactive Panel", href: "/products/interactive-panel" },
+      { label: "កាតាឡុក Smart Board", href: "/products/smart-board" },
     ],
   };
 
@@ -780,3 +780,4 @@ export default function IndustrySolutionPage({ solution }: Props) {
     </main>
   );
 }
+

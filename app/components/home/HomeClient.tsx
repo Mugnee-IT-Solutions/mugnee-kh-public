@@ -680,13 +680,15 @@ export default function HomeClient({
                       {org.short === "UNDP" ? (
                         <div className="relative flex w-full items-center justify-center">
                           <div className="flex items-center gap-3">
-                            <Image
-                              src={org.logo}
-                              alt="UNDP official logo"
-                              width={42}
-                              height={56}
-                              className="h-14 w-11 shrink-0 object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-                            />
+                            <div className="relative h-14 w-11 shrink-0">
+                              <Image
+                                src={org.logo}
+                                alt="UNDP official logo"
+                                fill
+                                sizes="44px"
+                                className="object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                              />
+                            </div>
                             <span className="text-left text-[15px] font-semibold leading-[1.12] text-[#0072BC]">
                               United Nations
                               <br />
@@ -696,20 +698,27 @@ export default function HomeClient({
                         </div>
                       ) : (
                         <div className="relative flex w-full flex-col items-center">
-                          <Image
-                            src={org.logo}
-                            alt={`${org.label} official logo`}
-                            width={220}
-                            height={48}
+                          <div
                             className={[
-                              "object-contain transition-transform duration-300 group-hover:scale-[1.03]",
+                              "relative",
                               org.short === "EU"
-                                ? "h-10 w-[184px] max-w-[72%] contrast-125 brightness-90 saturate-125"
+                                ? "h-10 w-[184px] max-w-[72%]"
                                 : org.short === "MCC"
                                   ? "h-10 w-[188px] max-w-[80%]"
                                 : "h-12 w-[200px] max-w-[88%]",
                             ].join(" ")}
-                          />
+                          >
+                            <Image
+                              src={org.logo}
+                              alt={`${org.label} official logo`}
+                              fill
+                              sizes="(max-width: 640px) 140px, 200px"
+                              className={[
+                                "object-contain transition-transform duration-300 group-hover:scale-[1.03]",
+                                org.short === "EU" ? "contrast-125 brightness-90 saturate-125" : "",
+                              ].join(" ")}
+                            />
+                          </div>
                           {org.short === "ADB" ? (
                             <span className="mt-2 text-[11px] font-semibold tracking-[0.06em] text-slate-600">
                               Asian Development Bank
@@ -785,19 +794,23 @@ export default function HomeClient({
                   key={`${logo.label}-${idx}`}
                   className="flex h-16 w-40 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-slate-50/70 to-slate-100/60 px-3 sm:w-44 lg:w-48"
                 >
-                  <Image
-                    src={logo.src}
-                    alt={logo.label}
-                    width={180}
-                    height={32}
+                  <div
                     className={
                       logo.label === "Lampro"
-                        ? "h-8 w-32 max-w-[82%] object-contain"
+                        ? "relative h-8 w-32 max-w-[82%]"
                         : logo.label === "G-energy"
-                          ? "h-9 w-32 max-w-[78%] object-contain"
-                          : "h-8 w-36 max-w-[84%] object-contain"
+                          ? "relative h-9 w-32 max-w-[78%]"
+                          : "relative h-8 w-36 max-w-[84%]"
                     }
-                  />
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.label}
+                      fill
+                      sizes="(max-width: 640px) 120px, 144px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               ))}
             </div>

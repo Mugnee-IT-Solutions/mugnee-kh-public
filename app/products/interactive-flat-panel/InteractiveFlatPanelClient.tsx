@@ -1,12 +1,24 @@
 ﻿"use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
 import ProductGrid from "../../components/sections/ProductGrid";
-import { PRODUCTS } from "../../data/products";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
+type IfpProduct = {
+  id: string;
+  slug: string;
+  categoryIds: string[];
+  titleEn: string;
+  titleKm: string;
+  shortDescEn: string;
+  shortDescKm: string;
+  heroImage: string;
+  featuresEn: string[];
+  featuresKm: string[];
+  specs: Array<{ labelEn: string; valueEn: string }>;
+};
 
 export default function InteractiveFlatPanelClient() {
   const { lang } = useLang();
@@ -61,23 +73,23 @@ export default function InteractiveFlatPanelClient() {
         "Why many schools and offices in Cambodia upgrade to smart interactive panels.",
       cA: "Brighter & clearer in daylight rooms",
       cB: "No lamp replacement, lower maintenance",
-      cC: "Touch writing + annotation built-in",
+      cC: "សរសេរប៉ះអេក្រង់ និងកំណត់ចំណាំបានភ្លាមៗ",
       cD: "Wireless sharing + multiple device support",
 
       setupTitle: "Installation, Setup & Training",
       setupSub:
         "We ensure safe mounting, correct wiring, and user training for smooth operation.",
-      s1: "Site check & mounting plan",
-      s2: "Wall mount / floor stand setup",
+      s1: "ពិនិត្យទីតាំង និងផែនការដំឡើង",
+      s2: "ដំឡើងជញ្ជាំង ឬជើងឈរ",
       s3: "Apps, Wi-Fi/LAN and screen sharing configuration",
-      s4: "Teacher/staff training and handover",
+      s4: "បណ្តុះបណ្តាលអ្នកប្រើ និងប្រគល់ប្រព័ន្ធ",
 
       softwareTitle: "Software & Compatibility",
       softwareSub:
         "Works with laptops, smartphones, and popular meeting or learning workflows.",
-      sw1: "Whiteboard + annotation apps",
-      sw2: "Wireless casting (Windows/macOS/Android/iOS)",
-      sw3: "OPS/PC option for Windows applications",
+      sw1: "កម្មវិធីក្តារស និងកំណត់ចំណាំ",
+      sw2: "បញ្ជូនអេក្រង់ឥតខ្សែ (Windows/macOS/Android/iOS)",
+      sw3: "ជម្រើស OPS/PC សម្រាប់កម្មវិធី Windows",
       sw4: "HDMI/USB-C support for quick plug & play",
 
       faqTitle: "FAQ - Interactive Flat Panel",
@@ -91,72 +103,72 @@ export default function InteractiveFlatPanelClient() {
     };
 
     const km = {
-      breadcrumb: "Interactive Flat Panel",
-      badge: "កម្ពុជា • Interactive Flat Panel • Smart Board",
-      h1: "Interactive Flat Panel នៅកម្ពុជា",
+      breadcrumb: "បន្ទះអេក្រង់អន្តរកម្ម",
+      badge: "កម្ពុជា • បន្ទះអេក្រង់អន្តរកម្ម • ក្តារឆ្លាតវៃ",
+      h1: "តម្លៃបន្ទះអេក្រង់អន្តរកម្ម នៅកម្ពុជា",
       sub:
         "Mugnee Multiple ផ្តល់ដំណោះស្រាយ Interactive Flat Panel (smart board) នៅកម្ពុជា សម្រាប់សាលារៀន សាកលវិទ្យាល័យ មជ្ឈមណ្ឌលបណ្តុះបណ្តាល បន្ទប់ប្រជុំក្រុមហ៊ុន និងស្ថាប័នរដ្ឋាភិបាល។ យើងផ្គត់ផ្គង់អេក្រង់ 4K touch ជាមួយ wireless screen sharing ជម្រើស Android/OPS ការដំឡើងដោយវិជ្ជាជីវៈ ការបណ្តុះបណ្តាលអ្នកប្រើ និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុក នៅភ្នំពេញ សៀមរាប និងព្រះសីហនុ សម្រាប់ប្រសិទ្ធភាពប្រើប្រាស់រយៈពេលវែង។",
-      cta1: "ស្នើសុំតម្លៃ (Free)",
-      cta2: "មើល IFP Models",
+      cta1: "ស្នើសុំតម្លៃ (ឥតគិតថ្លៃ)",
+      cta2: "មើលម៉ូដែល",
       serving: "សេវាកម្ម៖ Phnom Penh • Siem Reap • Sihanoukville",
 
-      seoTitle: "Smart Board & Interactive Display Solutions",
+      seoTitle: "ដំណោះស្រាយក្តារឆ្លាតវៃ និងអេក្រង់អន្តរកម្ម",
       seoText:
         "Interactive Flat Panel (smart board) គឺសម្រាប់ការបង្រៀន និងការសហការ modern។ ជ្រើស model ត្រូវគិតពី screen size, touch performance, connectivity ports និង mounting method។ យើងផ្គត់ផ្គង់ ដំឡើង និង support សម្រាប់ schools, universities, offices និង training centers ជាមួយ quotation តាមគម្រោង។",
 
-      keyTitle: "Interactive Flat Panel Specifications for Cambodia",
+      keyTitle: "លក្ខណៈបច្ចេកទេសបន្ទះអេក្រង់អន្តរកម្ម សម្រាប់កម្ពុជា",
       keySub:
         "តម្រូវការសម្រាប់ writing ស្មੂត និងរូបភាពច្បាស់សម្រាប់ប្រើរៀងរាល់ថ្ងៃ។",
-      k1: "Display & Resolution",
+      k1: "អេក្រង់ និងកម្រិតភាពច្បាស់",
       k1d: "4K UHD + anti-glare glass សម្រាប់មើលច្បាស់នៅបន្ទប់ភ្លឺ។",
-      k2: "Touch Performance",
+      k2: "សមត្ថភាពប៉ះអេក្រង់",
       k2d: "Multi-touch សម្រាប់សរសេរ/annotation និង collaboration។",
-      k3: "Operating System",
+      k3: "ប្រព័ន្ធប្រតិបត្តិការ",
       k3d: "Android built-in; OPS/PC optional សម្រាប់ Windows apps។",
-      k4: "Connectivity",
+      k4: "ការតភ្ជាប់",
       k4d: "HDMI/USB/USB-C, Wi-Fi/LAN, screen sharing និង audio output។",
 
-      productTitle: "Interactive Flat Panel Models",
+      productTitle: "ម៉ូដែលបន្ទះអេក្រង់អន្តរកម្ម",
       productSub:
         "ជ្រើសទំហំតាម room size និង viewing distance។ សូមផ្ញើ room size + use-case ដើម្បីណែនាំបានត្រឹមត្រូវ។",
 
-      useTitle: "Best Use Cases in Cambodia",
+      useTitle: "ករណីប្រើប្រាស់ល្អបំផុតនៅកម្ពុជា",
       useSub:
         "កន្លែងដែល IFP ផ្តល់ value ខ្ពស់សម្រាប់ learning និង presentation។",
-      u1: "Schools & Smart Classrooms",
+      u1: "សាលារៀន និងថ្នាក់រៀនឆ្លាតវៃ",
       u1d: "Whiteboard, annotation, multimedia និង interactive lessons។",
-      u2: "Meeting Rooms & Boardrooms",
+      u2: "បន្ទប់ប្រជុំ និងបន្ទប់គ្រប់គ្រង",
       u2d: "Presentation + collaboration + wireless sharing។",
-      u3: "Training Centers",
+      u3: "មជ្ឈមណ្ឌលបណ្តុះបណ្តាល",
       u3d: "Training sessions ជាមួយ visuals ច្បាស់ និង demonstration។",
-      u4: "Government & Institutions",
+      u4: "ស្ថាប័នរដ្ឋ និងឯកជន",
       u4d: "ប្រើប្រាស់រៀងរាល់ថ្ងៃសម្រាប់ briefings និង reporting។",
 
-      compareTitle: "Interactive Flat Panel vs Projector",
+      compareTitle: "បន្ទះអេក្រង់អន្តរកម្ម ប្រៀបធៀបនឹងប្រូជែកទ័រ",
       compareSub:
         "ហេតុអ្វី schools/offices នៅកម្ពុជា upgrade ទៅ smart panel។",
       cA: "មើលច្បាស់នៅបន្ទប់ភ្លឺ",
       cB: "maintenance តិច (no lamp)",
-      cC: "Touch writing + annotation built-in",
-      cD: "Wireless sharing + multi-device",
+      cC: "សរសេរប៉ះអេក្រង់ និងកំណត់ចំណាំបានភ្លាមៗ",
+      cD: "ចែករំលែកឥតខ្សែ និងគាំទ្រឧបករណ៍ច្រើន",
 
-      setupTitle: "Installation, Setup & Training",
+      setupTitle: "ការដំឡើង កំណត់ប្រព័ន្ធ និងបណ្តុះបណ្តាល",
       setupSub:
         "ដំឡើងសុវត្ថិភាព, wiring ត្រឹមត្រូវ និងបង្រៀនប្រើប្រាស់។",
-      s1: "Site check & mounting plan",
-      s2: "Wall mount / floor stand setup",
-      s3: "Wi-Fi/LAN + screen sharing configuration",
-      s4: "Teacher/staff training and handover",
+      s1: "ពិនិត្យទីតាំង និងផែនការដំឡើង",
+      s2: "ដំឡើងជញ្ជាំង ឬជើងឈរ",
+      s3: "កំណត់ Wi-Fi/LAN និងការចែកអេក្រង់",
+      s4: "បណ្តុះបណ្តាលអ្នកប្រើ និងប្រគល់ប្រព័ន្ធ",
 
-      softwareTitle: "Software & Compatibility",
+      softwareTitle: "កម្មវិធី និងភាពឆបគ្នា",
       softwareSub:
         "Support laptops/phones និង meeting/learning workflow ពេញនិយម។",
-      sw1: "Whiteboard + annotation apps",
-      sw2: "Wireless casting (Windows/macOS/Android/iOS)",
-      sw3: "OPS/PC option for Windows applications",
-      sw4: "HDMI/USB-C plug & play",
+      sw1: "កម្មវិធីក្តារស និងកំណត់ចំណាំ",
+      sw2: "បញ្ជូនអេក្រង់ឥតខ្សែ (Windows/macOS/Android/iOS)",
+      sw3: "ជម្រើស OPS/PC សម្រាប់កម្មវិធី Windows",
+      sw4: "HDMI/USB-C ដោតប្រើបានភ្លាម",
 
-      faqTitle: "FAQ - Interactive Flat Panel",
+      faqTitle: "សំណួរញឹកញាប់ - បន្ទះអេក្រង់អន្តរកម្ម",
       finalTitle: "ស្នើសុំ Quotation តាមគម្រោង",
       finalSub:
         "ផ្ញើ room size, screen size និង use-case (classroom/meeting)। យើងនឹងណែនាំ model + installation + support options។",
@@ -169,21 +181,46 @@ export default function InteractiveFlatPanelClient() {
     return lang === "en" ? en : km;
   }, [lang]);
 
-  const ifpProducts = useMemo(
-    () =>
-      PRODUCTS.filter((p) => p.categoryIds.includes("smart_board")).sort((a, b) => {
-        const aSize = parseInt(
-          a.specs.find((s) => s.labelEn === "Display Size")?.valueEn || "0",
-          10
-        );
-        const bSize = parseInt(
-          b.specs.find((s) => s.labelEn === "Display Size")?.valueEn || "0",
-          10
-        );
-        return aSize - bSize;
-      }),
-    []
-  );
+  const [ifpProducts, setIfpProducts] = useState<IfpProduct[]>([]);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    (async () => {
+      const { PRODUCTS } = await import("../../data/products");
+      if (!isMounted) return;
+      const list = PRODUCTS.filter((p) => p.categoryIds.includes("smart_board"))
+        .map((p) => ({
+          id: p.id,
+          slug: p.slug,
+          categoryIds: p.categoryIds,
+          titleEn: p.titleEn,
+          titleKm: p.titleKm,
+          shortDescEn: p.shortDescEn,
+          shortDescKm: p.shortDescKm,
+          heroImage: p.heroImage,
+          featuresEn: p.featuresEn,
+          featuresKm: p.featuresKm,
+          specs: p.specs.map((s) => ({ labelEn: s.labelEn, valueEn: s.valueEn })),
+        }))
+        .sort((a, b) => {
+          const aSize = parseInt(
+            a.specs.find((s) => s.labelEn === "Display Size")?.valueEn || "0",
+            10
+          );
+          const bSize = parseInt(
+            b.specs.find((s) => s.labelEn === "Display Size")?.valueEn || "0",
+            10
+          );
+          return aSize - bSize;
+        });
+      setIfpProducts(list);
+    })();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const [viewDistance, setViewDistance] = useState("");
 
@@ -786,6 +823,7 @@ export default function InteractiveFlatPanelClient() {
                 {lang === "en" ? "Viewing distance (m)" : "ចម្ងាយមើល (m)"}
               </label>
               <input
+                name="view_distance_m"
                 value={viewDistance}
                 onChange={(e) => setViewDistance(e.target.value)}
                 inputMode="decimal"
@@ -1075,6 +1113,7 @@ function StepCard({
     </div>
   );
 }
+
 
 
 

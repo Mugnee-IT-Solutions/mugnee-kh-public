@@ -16,7 +16,7 @@ export default function PowerSupplyPage() {
 
   const productQuickChips = accessoryProducts.map((p) => ({
     label: p.titleEn,
-    href: `/products/catalog/${p.slug}`,
+    href: `/products/${p.slug}`,
   }));
   const powerSupplyFaq = [
     {

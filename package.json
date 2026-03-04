@@ -9,10 +9,12 @@
     "dev": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next dev --webpack",
     "dev:webpack": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next dev --webpack",
     "dev:turbo": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next dev --turbopack",
-    "build": "npm run lint:encoding && next build --webpack",
+    "build": "npm run lint:encoding && npm run lint:i18n && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "lint:encoding": "node scripts/check-encoding-mojibake.cjs",
+    "lint:i18n": "node scripts/check-khmer-integrity.cjs",
+    "verify:gsc:product-fix": "node scripts/verify-gsc-product-fix.cjs",
     "gen:products": "powershell -ExecutionPolicy Bypass -File scripts/generate-product-pages.ps1"
   },
   "dependencies": {

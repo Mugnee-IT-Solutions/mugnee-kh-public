@@ -57,12 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
   ];
 
-  const productRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/products/catalog/${p.slug}`));
+  const productRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/products/${p.slug}`));
   const kmCoreRoutes = [
     "/km",
     ...coreRoutes.filter((route) => route !== "/").map((route) => `/km${route}`),
   ].map(toCanonicalRoute);
-  const kmProductRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/km/products/catalog/${p.slug}`));
+  const kmProductRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/km/products/${p.slug}`));
   const allRoutes = Array.from(
     new Set([...coreRoutes.map(toCanonicalRoute), ...productRoutes, ...kmCoreRoutes, ...kmProductRoutes])
   );
@@ -98,10 +98,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return allRoutes.map((route) => ({
     url: `${SITE_URL}${toCanonicalRoute(route)}`,
-    lastModified: stripLocalePrefix(stripTrailingSlash(route)).startsWith("/products/catalog/")
+    lastModified: stripLocalePrefix(stripTrailingSlash(route)).startsWith("/products/")
       ? productDataModified
       : getFileModified(routeToSource.get(stripLocalePrefix(stripTrailingSlash(route))) || "") || fallbackLastModified,
-    changeFrequency: stripLocalePrefix(stripTrailingSlash(route)).startsWith("/products/catalog/") ? "weekly" : "monthly",
+    changeFrequency: stripLocalePrefix(stripTrailingSlash(route)).startsWith("/products/") ? "weekly" : "monthly",
     priority: stripLocalePrefix(stripTrailingSlash(route)) === "/led-display" ? 1 : stripLocalePrefix(stripTrailingSlash(route)) === "/" ? 0.9 : 0.8,
   }));
 }

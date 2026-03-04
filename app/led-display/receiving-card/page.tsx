@@ -1,4 +1,4 @@
-/*
+﻿/*
   Developer Signature:
   This website was developed by Mugnee IT Solutions.
   Developer Name: Ankur Datta
@@ -16,7 +16,7 @@ export default function ReceivingCardPage() {
 
   const productQuickChips = accessoryProducts.map((p) => ({
     label: p.titleEn,
-    href: `/products/catalog/${p.slug}`,
+    href: `/products/${p.slug}`,
   }));
   const receivingCardFaq = [
     {
@@ -240,3 +240,4 @@ export default function ReceivingCardPage() {
     />
   );
 }
+

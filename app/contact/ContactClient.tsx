@@ -1,16 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { FormEvent, useEffect, useState } from "react";
-import Script from "next/script";
+import { FormEvent, useState } from "react";
 import { useLang } from "../components/layout/LanguageProvider";
-
-declare global {
-  interface Window {
-    onTurnstileSuccess?: (token: string) => void;
-    onTurnstileExpired?: () => void;
-  }
-}
 
 const socialLinks = [
   { label: "Facebook", platform: "facebook", href: "https://www.facebook.com/mugneemultiple/" },
@@ -166,183 +158,68 @@ function SocialIcon({ platform }: { platform: string }) {
   }
 }
 
-export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
-  type FormState = {
-    name: string;
-    email: string;
-    phone: string;
-    subject: string;
-    message: string;
-    website: string;
-  };
-  type FormErrors = Partial<Record<keyof FormState, string>>;
+type ContactClientProps = {
+  forcedLang?: "en" | "km";
+};
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^[+]?[\d\s().-]{7,20}$/;
-
-  const validateForm = (values: FormState): FormErrors => {
-    const errors: FormErrors = {};
-    const name = values.name.trim();
-    const email = values.email.trim();
-    const phone = values.phone.trim();
-    const subject = values.subject.trim();
-    const message = values.message.trim();
-    const phoneDigits = (phone.match(/\d/g) || []).length;
-
-    if (name.length < 2) errors.name = "Name must be at least 2 characters.";
-    if (!emailRegex.test(email)) errors.email = "Enter a valid email address.";
-    if (!phoneRegex.test(phone) || phoneDigits < 7) errors.phone = "Enter a valid phone number.";
-    if (subject.length < 3) errors.subject = "Subject must be at least 3 characters.";
-    if (message.length < 10) errors.message = "Message must be at least 10 characters.";
-
-    return errors;
-  };
-
-  const hasError = (errors: FormErrors, key: keyof FormState) => Boolean(errors[key]);
-
+export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
   const { lang: contextLang } = useLang();
   const lang = forcedLang ?? contextLang;
-  const toLangHref = (href: string) =>
-    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const isKm = lang === "km";
   const officesData = isKm ? officesKm : offices;
   const contactsData = isKm ? contactsKm : contacts;
-  const [form, setForm] = useState<FormState>({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
     subject: "",
     message: "",
-    website: "",
   });
-  const [errors, setErrors] = useState<FormErrors>({});
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<{ type: "idle" | "success" | "error"; text: string }>({
     type: "idle",
     text: "",
   });
-  const [turnstileToken, setTurnstileToken] = useState("");
-  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
-  const turnstileEnabled = Boolean(turnstileSiteKey);
-
-  useEffect(() => {
-    if (!turnstileEnabled) return;
-    window.onTurnstileSuccess = (token: string) => setTurnstileToken(token);
-    window.onTurnstileExpired = () => setTurnstileToken("");
-    return () => {
-      window.onTurnstileSuccess = undefined;
-      window.onTurnstileExpired = undefined;
-    };
-  }, [turnstileEnabled]);
-
-  const updateField = (field: keyof FormState, value: string) => {
-    setForm((prev) => {
-      const next = { ...prev, [field]: value };
-      if (errors[field]) {
-        const nextErrors = validateForm(next);
-        setErrors((old) => ({ ...old, [field]: nextErrors[field] }));
-      }
-      return next;
-    });
-  };
-
-  const openMailFallback = (payload: FormState) => {
-    const subject = payload.subject.trim() || "Website inquiry";
-    const bodyLines = [
-      `Name: ${payload.name.trim()}`,
-      `Email: ${payload.email.trim()}`,
-      `Phone: ${payload.phone.trim()}`,
-      "",
-      payload.message.trim(),
-    ];
-    const body = encodeURIComponent(bodyLines.join("\n"));
-    const mailto = `mailto:info.mugnee@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    window.location.href = mailto;
-  };
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (sending) return;
     setStatus({ type: "idle", text: "" });
-    const nextErrors = validateForm(form);
-    if (Object.keys(nextErrors).length > 0) {
-      setErrors(nextErrors);
-      setStatus({
-        type: "error",
-        text: "Please correct the highlighted fields and try again.",
-      });
-      return;
-    }
-
-    if (turnstileEnabled && !turnstileToken) {
-      setStatus({
-        type: "error",
-        text: "Please complete the captcha verification.",
-      });
-      return;
-    }
-
-    setErrors({});
     setSending(true);
 
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...form,
-          name: form.name.trim(),
-          email: form.email.trim(),
-          phone: form.phone.trim(),
-          subject: form.subject.trim(),
-          message: form.message.trim(),
-          turnstileToken,
-        }),
+        body: JSON.stringify(form),
       });
-
-      let data: { ok?: boolean; message?: string; fieldErrors?: FormErrors } = {};
-      try {
-        data = (await res.json()) as {
-          ok?: boolean;
-          message?: string;
-          fieldErrors?: FormErrors;
-        };
-      } catch {
-        data = {};
-      }
+      const data = (await res.json()) as { ok?: boolean; message?: string };
 
       if (!res.ok || !data.ok) {
-        if (res.status === 404 || res.status === 405) {
-          openMailFallback(form);
-          setStatus({
-            type: "success",
-            text:
-              "Server contact endpoint is unavailable on this hosting. Email composer opened as fallback.",
-          });
-          return;
-        }
-
-        if (data.fieldErrors) setErrors(data.fieldErrors);
         setStatus({
           type: "error",
-          text: data.message || "Unable to send your message. Please try again.",
+          text:
+            data.message ||
+            (isKm
+              ? "មិនអាចផ្ញើសារបានទេ។ សូមព្យាយាមម្តងទៀត។"
+              : "Unable to send your message. Please try again."),
         });
         return;
       }
 
       setStatus({
         type: "success",
-        text: "Your message was sent successfully. Our team will contact you soon.",
+        text: isKm
+          ? "សាររបស់អ្នកត្រូវបានផ្ញើជោគជ័យ។ ក្រុមការងារយើងនឹងទាក់ទងត្រឡប់វិញឆាប់ៗនេះ។"
+          : "Your message was sent successfully. Our team will contact you soon.",
       });
-      setForm({ name: "", email: "", phone: "", subject: "", message: "", website: "" });
-      setTurnstileToken("");
-      setErrors({});
+      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
     } catch {
-      openMailFallback(form);
       setStatus({
-        type: "success",
-        text:
-          "Could not connect to server endpoint. Email composer opened as fallback.",
+        type: "error",
+        text: isKm
+          ? "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេបានទេ។ សូមព្យាយាមម្តងទៀត។"
+          : "Could not connect to server. Please try again.",
       });
     } finally {
       setSending(false);
@@ -351,13 +228,6 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
 
   return (
     <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
-      {turnstileEnabled ? (
-        <Script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-          async
-          defer
-        />
-      ) : null}
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-28 top-8 h-56 w-56 rounded-full bg-cyan-300/15 blur-3xl" />
@@ -370,7 +240,7 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
                 <span className="font-semibold text-slate-700">{isKm ? uiKm.eyebrow : "Contact Us"}</span>
               </div>
               <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{isKm ? uiKm.h1 : "Get in Touch"}</h1>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base [text-align:justify]">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
                 {isKm
                   ? uiKm.heroDesc
                   : "Have a project in mind? Contact Mugnee Cambodia for LED display, digital signage, smart classroom, PA system, and access control solutions with end-to-end technical support. Share your site location, use case, budget range, and timeline, and our team will provide a practical quotation plan, site survey guidance, and deployment recommendations tailored for Cambodia business environments."}
@@ -383,7 +253,7 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
                   {isKm ? uiKm.ctaContact : "Contact Us"}
                 </a>
                 <Link
-                  href={toLangHref("/solutions")}
+                  href="/solutions"
                   className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
                 >
                   {isKm ? uiKm.ctaExplore : "Explore Solutions"}
@@ -406,108 +276,55 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
                 {isKm ? uiKm.formDesc : "Fill out the form and our team will contact you as soon as possible with the next steps."}
               </p>
               <form className="mt-5 grid gap-3 sm:grid-cols-2" onSubmit={onSubmit}>
-                <div className="sm:col-span-1">
-                  <input
-                    type="text"
-                    value={form.name}
-                    onChange={(e) => updateField("name", e.target.value)}
-                    onBlur={() => setErrors((prev) => ({ ...prev, name: validateForm(form).name }))}
-                    placeholder={isKm ? uiKm.name : "Your Name"}
-                    required
-                    minLength={2}
-                    maxLength={120}
-                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
-                      hasError(errors, "name")
-                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
-                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
-                    }`}
-                  />
-                  {errors.name ? <p className="mt-1 text-xs text-red-600">{errors.name}</p> : null}
-                </div>
-
-                <div className="sm:col-span-1">
-                  <input
-                    type="email"
-                    value={form.email}
-                    onChange={(e) => updateField("email", e.target.value)}
-                    onBlur={() => setErrors((prev) => ({ ...prev, email: validateForm(form).email }))}
-                    placeholder={isKm ? uiKm.email : "Your Email"}
-                    required
-                    maxLength={180}
-                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
-                      hasError(errors, "email")
-                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
-                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
-                    }`}
-                  />
-                  {errors.email ? <p className="mt-1 text-xs text-red-600">{errors.email}</p> : null}
-                </div>
-
-                <div className="sm:col-span-1">
-                  <input
-                    type="tel"
-                    value={form.phone}
-                    onChange={(e) => updateField("phone", e.target.value)}
-                    onBlur={() => setErrors((prev) => ({ ...prev, phone: validateForm(form).phone }))}
-                    placeholder={isKm ? uiKm.phone : "Phone Number"}
-                    required
-                    minLength={6}
-                    maxLength={20}
-                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
-                      hasError(errors, "phone")
-                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
-                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
-                    }`}
-                  />
-                  {errors.phone ? <p className="mt-1 text-xs text-red-600">{errors.phone}</p> : null}
-                </div>
-
-                <div className="sm:col-span-1">
-                  <input
-                    type="text"
-                    value={form.subject}
-                    onChange={(e) => updateField("subject", e.target.value)}
-                    onBlur={() => setErrors((prev) => ({ ...prev, subject: validateForm(form).subject }))}
-                    placeholder={isKm ? uiKm.subject : "Subject"}
-                    required
-                    minLength={2}
-                    maxLength={180}
-                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
-                      hasError(errors, "subject")
-                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
-                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
-                    }`}
-                  />
-                  {errors.subject ? <p className="mt-1 text-xs text-red-600">{errors.subject}</p> : null}
-                </div>
-
-                <div className="sm:col-span-2">
-                  <input
-                    type="text"
-                    value={form.website}
-                    onChange={(e) => updateField("website", e.target.value)}
-                    autoComplete="off"
-                    tabIndex={-1}
-                    className="hidden"
-                    aria-hidden="true"
-                  />
-                  <textarea
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) => updateField("message", e.target.value)}
-                    onBlur={() => setErrors((prev) => ({ ...prev, message: validateForm(form).message }))}
-                    placeholder={isKm ? uiKm.message : "Your Message"}
-                    required
-                    minLength={10}
-                    maxLength={4000}
-                    className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:ring-2 ${
-                      hasError(errors, "message")
-                        ? "border-red-300 focus:border-red-400 focus:ring-red-100"
-                        : "border-slate-200 focus:border-sky-400 focus:ring-sky-100"
-                    }`}
-                  />
-                  {errors.message ? <p className="mt-1 text-xs text-red-600">{errors.message}</p> : null}
-                </div>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
+                  placeholder={isKm ? uiKm.name : "Your Name"}
+                  required
+                  minLength={2}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
+                  placeholder={isKm ? uiKm.email : "Your Email"}
+                  required
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
+                  placeholder={isKm ? uiKm.phone : "Phone Number"}
+                  required
+                  minLength={6}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  value={form.subject}
+                  onChange={(e) => setForm((prev) => ({ ...prev, subject: e.target.value }))}
+                  placeholder={isKm ? uiKm.subject : "Subject"}
+                  required
+                  minLength={2}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
+                />
+                <textarea
+                  name="message"
+                  rows={5}
+                  value={form.message}
+                  onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
+                  placeholder={isKm ? uiKm.message : "Your Message"}
+                  required
+                  minLength={10}
+                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-2"
+                />
                 <button
                   type="submit"
                   disabled={sending}
@@ -524,18 +341,10 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
                     {status.text}
                   </p>
                 ) : null}
-                {turnstileEnabled ? (
-                  <div className="sm:col-span-2">
-                    <div
-                      className="cf-turnstile"
-                      data-sitekey={turnstileSiteKey}
-                      data-callback="onTurnstileSuccess"
-                      data-expired-callback="onTurnstileExpired"
-                      data-theme="light"
-                    />
-                  </div>
-                ) : null}
               </form>
+              <p className="mt-2 text-xs text-slate-500">
+                {isKm ? "Form ពេញលេញនឹងត្រូវបានផ្ញើទៅអ៊ីមែលក្រុមការងាររបស់អ្នកដោយផ្ទាល់។" : "Form submissions are sent directly to your team email."}
+              </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -645,7 +454,7 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
-                    href={toLangHref("/contact")}
+                    href="/contact"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(15,23,42,0.45)]"
                   >
                     {isKm ? uiKm.requestQuote : "Request a Quotation"}
@@ -697,13 +506,13 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href={toLangHref("/solutions")}
+                href="/solutions"
                 className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {isKm ? uiKm.viewSolutions : "View Solutions"}
               </Link>
               <Link
-                href={toLangHref("/products")}
+                href="/products"
                 className="inline-flex rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
               >
                 {isKm ? uiKm.viewProducts : "View Products"}
@@ -715,4 +524,3 @@ export default function ContactClient({ forcedLang }: { forcedLang?: "en" | "km"
     </main>
   );
 }
-

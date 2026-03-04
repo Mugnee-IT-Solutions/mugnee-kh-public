@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import LedDisplayClient from "../../products/led-display/LedDisplayClient";
 import { SITE_URL } from "../../lib/site";
 
@@ -9,14 +9,13 @@ const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 export const metadata: Metadata = {
   title: "តម្លៃអេក្រង់ LED នៅកម្ពុជា | ការដំឡើង និង BOQ",
   description:
-    "ដំណោះស្រាយអេក្រង់ LED នៅកម្ពុជា សម្រាប់ Indoor Video Wall និង Outdoor Billboard ជាមួយការរៀបចំ BOQ ការដំឡើង Commissioning និងសេវាបន្ទាប់ពីលក់ក្នុងស្រុក។",
+    "ដំណោះស្រាយអេក្រង់ LED នៅកម្ពុជា សម្រាប់អេក្រង់ក្នុងអគារ និងក្រៅអគារ ជាមួយការរៀបចំ BOQ ការដំឡើង បើកប្រើប្រាស់ និងសេវាបន្ទាប់ពីលក់។",
   keywords: [
     "តម្លៃអេក្រង់ LED នៅកម្ពុជា",
     "អេក្រង់ LED កម្ពុជា",
-    "LED display Cambodia",
-    "LED screen Phnom Penh",
-    "LED video wall Cambodia",
-    "Outdoor LED billboard Cambodia",
+    "អេក្រង់ LED ភ្នំពេញ",
+    "អេក្រង់វីដេអូជញ្ជាំង",
+    "ប៊ីលបត LED ខាងក្រៅ",
   ],
   alternates: {
     canonical: PAGE_URL,
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "តម្លៃអេក្រង់ LED នៅកម្ពុជា | ការដំឡើង និង BOQ",
     description:
-      "អេក្រង់ LED ក្នុងអគារ និងខាងក្រៅនៅកម្ពុជា ជាមួយការរៀបចំ BOQ ការដំឡើងតាមស្តង់ដារ និងសេវាបន្ទាប់ពីលក់។",
+      "អេក្រង់ LED ក្នុងអគារ និងក្រៅអគារនៅកម្ពុជា ជាមួយការរៀបចំ BOQ ការដំឡើងតាមស្តង់ដារ និងសេវាបន្ទាប់ពីលក់។",
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "website",
@@ -59,7 +58,7 @@ export default function KmLedDisplayPage() {
       schemaPathOverride={PAGE_PATH}
       schemaNameOverride="អេក្រង់ LED"
       schemaServiceNameOverride="សេវាអេក្រង់ LED នៅកម្ពុជា"
-      schemaServiceDescOverride="សេវាអេក្រង់ LED ក្នុងអគារ និងខាងក្រៅនៅកម្ពុជា រួមមានការស្ទង់ទីតាំង BOQ ការដំឡើង Commissioning និងសេវាគាំទ្របន្ទាប់ពីលក់។"
+      schemaServiceDescOverride="សេវាអេក្រង់ LED ក្នុងអគារ និងក្រៅអគារនៅកម្ពុជា រួមមានការស្ទង់ទីតាំង BOQ ការដំឡើង បើកប្រើប្រាស់ និងសេវាគាំទ្របន្ទាប់ពីលក់។"
       breadcrumbOverrideKm="អេក្រង់ LED"
     />
   );

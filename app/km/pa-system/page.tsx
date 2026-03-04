@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import PaSystemPage from "../../pa-system/page";
 import { SITE_URL } from "../../lib/site";
 
@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/pa-system/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "PA System នៅកម្ពុជា | រចនា ផ្គត់ផ្គង់ និងដំឡើង",
+  title: "ប្រព័ន្ធសំឡេងសាធារណៈនៅកម្ពុជា | រចនា ផ្គត់ផ្គង់ និងដំឡើង",
   description:
-    "ដំណោះស្រាយ PA System នៅកម្ពុជា ជាមួយការរចនា ផ្គត់ផ្គង់ ដំឡើង commissioning និងសេវាគាំទ្រក្នុងតំបន់។",
+    "ដំណោះស្រាយប្រព័ន្ធសំឡេងសាធារណៈនៅកម្ពុជា ជាមួយការរចនា ផ្គត់ផ្គង់ ដំឡើង បើកប្រើប្រាស់ និងគាំទ្របច្ចេកទេស។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

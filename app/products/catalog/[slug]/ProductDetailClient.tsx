@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -6,7 +6,6 @@ import { useEffect, useMemo, useState } from "react";
 import type { MouseEvent } from "react";
 import { useLang } from "../../../components/layout/LanguageProvider";
 import type { Product } from "../../../data/products";
-import { PRODUCTS, PRODUCT_CATEGORIES } from "../../../data/products";
 
 const KHMER_RE = /[\u1780-\u17FF]/;
 const MOJIBAKE_RE = /\u00C3|\u00C2|\u00E2|\u0192|\uFFFD|\u00E1\u017E/;
@@ -52,38 +51,38 @@ function autoTranslateToKhmer(input: string) {
   if (!text || hasKhmer(text)) return text;
 
   const map: Array<[string, string]> = [
-    ["Interactive Flat Panel", "Interactive Flat Panel"],
-    ["Indoor LED Display", "Indoor LED Display"],
-    ["Outdoor LED Display", "Outdoor LED Display"],
-    ["Rental LED Display", "Rental LED Display"],
-    ["LED Display Module", "LED Display Module"],
-    ["LED Screen Panel", "LED Screen Panel"],
-    ["LED Display", "LED Display"],
-    ["Video Processor", "Video Processor"],
-    ["Power Supply", "Power Supply"],
-    ["PA Speakers", "PA Speakers"],
-    ["PA Microphones", "PA Microphones"],
-    ["PA Amplifiers", "PA Amplifiers"],
-    ["PA Controllers", "PA Controllers"],
-    ["Network Audio", "Network Audio"],
-    ["PA Software", "PA Software"],
-    ["PA Accessories", "PA Accessories"],
-    ["Turnstile Gate", "Turnstile Gate"],
-    ["Tripod Turnstile", "Tripod Turnstile"],
-    ["Flap Barrier", "Flap Barrier"],
-    ["Speed Gate", "Speed Gate"],
-    ["Full Height", "Full Height"],
-    ["Key Features", "Key Features"],
-    ["Overview", "Overview"],
-    ["Specifications", "Specifications"],
-    ["Applications", "Applications"],
-    ["Product", "Product"],
-    ["for", "for"],
-    ["with", "with"],
-    ["and", "and"],
-    ["in", "in"],
-    ["to", "to"],
-    ["from", "from"],
+    ["Interactive Flat Panel", "អេក្រង់អន្តរកម្ម"],
+    ["Indoor LED Display", "អេក្រង់ LED ក្នុងអគារ"],
+    ["Outdoor LED Display", "អេក្រង់ LED ខាងក្រៅ"],
+    ["Rental LED Display", "អេក្រង់ LED សម្រាប់ជួល"],
+    ["LED Display Module", "ម៉ូឌុលអេក្រង់ LED"],
+    ["LED Screen Panel", "បន្ទះអេក្រង់ LED"],
+    ["LED Display", "អេក្រង់ LED"],
+    ["Video Processor", "ឧបករណ៍កែច្នៃវីដេអូ"],
+    ["Power Supply", "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល"],
+    ["PA Speakers", "ឧបករណ៍បំពងសំឡេង PA"],
+    ["PA Microphones", "មីក្រូហ្វូន PA"],
+    ["PA Amplifiers", "អំព្លីសំឡេង PA"],
+    ["PA Controllers", "ឧបករណ៍បញ្ជា PA"],
+    ["Network Audio", "សំឡេងតាមបណ្ដាញ"],
+    ["PA Software", "កម្មវិធី PA"],
+    ["PA Accessories", "គ្រឿងបន្លាស់ PA"],
+    ["Turnstile Gate", "ច្រកសុវត្ថិភាព"],
+    ["Tripod Turnstile", "ច្រកសុវត្ថិភាព Tripod"],
+    ["Flap Barrier", "ច្រកស្លាបបិទបើក"],
+    ["Speed Gate", "ច្រកល្បឿនលឿន"],
+    ["Full Height", "កម្ពស់ពេញ"],
+    ["Key Features", "មុខងារសំខាន់ៗ"],
+    ["Overview", "ទិដ្ឋភាពទូទៅ"],
+    ["Specifications", "លក្ខណៈបច្ចេកទេស"],
+    ["Applications", "ការប្រើប្រាស់"],
+    ["Product", "ផលិតផល"],
+    ["for", "សម្រាប់"],
+    ["with", "ជាមួយ"],
+    ["and", "និង"],
+    ["in", "នៅ"],
+    ["to", "ទៅ"],
+    ["from", "ពី"],
   ];
 
   let out = text;
@@ -92,7 +91,7 @@ function autoTranslateToKhmer(input: string) {
   }
 
   if (hasKhmer(out)) return out;
-  return `Product ${text}`;
+  return "ព័ត៌មានលម្អិតផលិតផល";
 }
 
 function localizedKhmer(valueKm: string, fallbackEn: string) {
@@ -101,10 +100,53 @@ function localizedKhmer(valueKm: string, fallbackEn: string) {
   return autoTranslateToKhmer(cleaned);
 }
 
-export default function ProductDetailClient({ product }: { product: Product }) {
+function localizedKhmerStrict(valueKm: string, fallbackEn: string) {
+  return sanitizeKhmer(valueKm, fallbackEn);
+}
+
+type ProductDetailClientProps = {
+  product: Product;
+  relatedProducts: Product[];
+};
+
+export default function ProductDetailClient({ product, relatedProducts }: ProductDetailClientProps) {
   const { lang } = useLang();
   const toLangHref = (href: string) =>
     lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
+  const ui =
+    lang === "km"
+      ? {
+          productLabel: "ផលិតផល",
+          getQuotation: "ស្នើសុំតម្លៃ",
+          backToProducts: "ត្រឡប់ទៅផលិតផល",
+          guidanceTitle: "ត្រូវការតម្លៃគម្រោងអេក្រង់ LED និងការណែនាំដំឡើងមែនទេ?",
+          guidanceDesc:
+            "ប្រើទំព័រ LED Display Cambodia Hub របស់យើង សម្រាប់កត្តា BOQ ការរៀបចំក្នុងអគារ/ក្រៅអគារ និងលំហូរការងារគម្រោង។",
+          hubLink: "មជ្ឈមណ្ឌល LED Display Cambodia",
+          indoorLink: "អេក្រង់ LED ក្នុងអគារ",
+          outdoorLink: "ប៊ីលបត LED ខាងក្រៅ",
+          overview: "ទិដ្ឋភាពទូទៅ",
+          keyFeatures: "មុខងារសំខាន់ៗ",
+          applications: "ការប្រើប្រាស់",
+          specifications: "លក្ខណៈបច្ចេកទេស",
+          relatedProducts: "ផលិតផលដែលពាក់ព័ន្ធ",
+        }
+      : {
+          productLabel: "Product",
+          getQuotation: "Get Quotation",
+          backToProducts: "Back to Products",
+          guidanceTitle: "Need LED display project pricing and installation guidance?",
+          guidanceDesc:
+            "Use our LED Display Cambodia pillar page for BOQ factors, indoor/outdoor planning, and project workflow.",
+          hubLink: "LED Display Cambodia Hub",
+          indoorLink: "Indoor LED Display",
+          outdoorLink: "Outdoor LED Billboard",
+          overview: "Overview",
+          keyFeatures: "Key Features",
+          applications: "Applications",
+          specifications: "Specifications",
+          relatedProducts: "Related Products",
+        };
 
   useEffect(() => {
     const scrollTop = () => {
@@ -157,39 +199,6 @@ export default function ProductDetailClient({ product }: { product: Product }) {
   }, [product.heroImage, product.gallery]);
   const [activeImage, setActiveImage] = useState(galleryImages[0] ?? product.heroImage);
   const [zoom, setZoom] = useState({ x: 50, y: 50, show: false, px: 0, py: 0 });
-  const relatedProducts = useMemo(() => {
-    const categoryMap = new Map(PRODUCT_CATEGORIES.map((category) => [category.id, category]));
-    const primaryCategory = categoryMap.get(product.primaryCategoryId);
-    const parentCategoryId = primaryCategory?.parentId ?? null;
-
-    const samePrimary = PRODUCTS.filter((item) => {
-      if (item.slug === product.slug) return false;
-      return item.primaryCategoryId === product.primaryCategoryId;
-    });
-
-    if (samePrimary.length >= 8) return samePrimary.slice(0, 8);
-
-    const sameParent = PRODUCTS.filter((item) => {
-      if (item.slug === product.slug) return false;
-      const itemPrimary = categoryMap.get(item.primaryCategoryId);
-      return (
-        parentCategoryId &&
-        itemPrimary?.parentId &&
-        itemPrimary.parentId === parentCategoryId
-      );
-    });
-
-    const merged = [...samePrimary];
-    for (const item of sameParent) {
-      if (!merged.some((p) => p.slug === item.slug)) {
-        merged.push(item);
-      }
-      if (merged.length >= 8) break;
-    }
-
-    return merged.slice(0, 8);
-  }, [product]);
-
   const handleZoomMove = (event: MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const relX = event.clientX - rect.left;
@@ -321,7 +330,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             )}
             <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                Product
+                {ui.productLabel}
               </p>
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
                 {title}
@@ -329,9 +338,9 @@ export default function ProductDetailClient({ product }: { product: Product }) {
               <p className="mt-3 text-base leading-relaxed text-slate-600">{shortDesc}</p>
 
               <div className="mt-4 flex flex-wrap gap-2">
-                {tags.map((tag) => (
+                {tags.map((tag, idx) => (
                   <span
-                    key={tag}
+                    key={`tag-${idx}-${tag}`}
                     className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600"
                   >
                     {tag}
@@ -344,41 +353,40 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   href={toLangHref("/contact")}
                   className="cta-anim relative rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white no-underline hover:bg-slate-800"
                 >
-                  Get Quotation
+                  {ui.getQuotation}
                 </Link>
                 <Link
                   href={toLangHref("/products")}
                   className="cta-anim relative rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 no-underline hover:border-slate-300"
                 >
-                  Back to Products
+                  {ui.backToProducts}
                 </Link>
               </div>
               <div className="mt-5 rounded-2xl border border-sky-200 bg-sky-50/70 p-4">
                 <p className="text-sm font-semibold text-slate-900">
-                  Need LED display project pricing and installation guidance?
+                  {ui.guidanceTitle}
                 </p>
                 <p className="mt-1 text-xs leading-relaxed text-slate-600">
-                  Use our LED Display Cambodia pillar page for BOQ factors, indoor/outdoor
-                  planning, and project workflow.
+                  {ui.guidanceDesc}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   <Link
                     href={toLangHref("/led-display")}
                     className="rounded-full border border-sky-300 bg-white px-3 py-1.5 text-xs font-semibold text-sky-900 transition hover:bg-sky-100"
                   >
-                    LED Display Cambodia Hub
+                    {ui.hubLink}
                   </Link>
                   <Link
                     href={toLangHref("/led-display/indoor-led-display")}
                     className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
                   >
-                    Indoor LED Display
+                    {ui.indoorLink}
                   </Link>
                   <Link
                     href={toLangHref("/led-display/outdoor-led-display")}
                     className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
                   >
-                    Outdoor LED Billboard
+                    {ui.outdoorLink}
                   </Link>
                 </div>
               </div>
@@ -391,16 +399,16 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <h2 className="text-xl font-semibold text-slate-900">
-              Overview
+              {ui.overview}
             </h2>
             <p className="mt-3 text-base leading-relaxed text-slate-600">{description}</p>
 
             <h3 className="mt-8 text-lg font-semibold tracking-tight text-slate-900">
-              Key Features
+              {ui.keyFeatures}
             </h3>
             <ul className="mt-3 space-y-2 text-[15px] font-medium leading-relaxed text-slate-700">
-              {features.map((item) => (
-                <li key={item} className="flex gap-2">
+              {features.map((item, idx) => (
+                <li key={`feature-${idx}-${item}`} className="flex gap-2">
                   <span className="mt-2 h-1.5 w-1.5 rounded-full bg-slate-600" />
                   <span>{item}</span>
                 </li>
@@ -408,11 +416,11 @@ export default function ProductDetailClient({ product }: { product: Product }) {
             </ul>
 
             <h3 className="mt-8 text-lg font-semibold text-slate-900">
-              Applications
+              {ui.applications}
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
-              {applications.map((item) => (
-                <li key={item} className="flex gap-2">
+              {applications.map((item, idx) => (
+                <li key={`application-${idx}-${item}`} className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-slate-400" />
                   <span>{item}</span>
                 </li>
@@ -422,7 +430,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-slate-900">
-              Specifications
+              {ui.specifications}
             </h3>
             <dl className="mt-4 space-y-3 text-sm">
               {product.specs.map((spec) => (
@@ -433,12 +441,12 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                   <dt className="font-semibold text-slate-700">
                     {lang === "en"
                       ? spec.labelEn
-                      : localizedKhmer(spec.labelKm, spec.labelEn)}
+                      : localizedKhmerStrict(spec.labelKm, spec.labelEn)}
                   </dt>
                   <dd className="text-right text-slate-600">
                     {lang === "en"
                       ? spec.valueEn
-                      : localizedKhmer(spec.valueKm, spec.valueEn)}
+                      : localizedKhmerStrict(spec.valueKm, spec.valueEn)}
                   </dd>
                 </div>
               ))}
@@ -451,7 +459,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <section className="border-t border-slate-100 bg-slate-50/60">
           <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
             <h3 className="text-lg font-semibold text-slate-900">
-              Related Products
+              {ui.relatedProducts}
             </h3>
             <div className="mt-4 flex gap-4 overflow-x-auto pb-2">
               {relatedProducts.map((item) => {
@@ -464,7 +472,7 @@ export default function ProductDetailClient({ product }: { product: Product }) {
                 return (
                   <Link
                     key={item.slug}
-                    href={toLangHref(`/products/catalog/${item.slug}`)}
+                    href={toLangHref(`/products/${item.slug}`)}
                     className="min-w-[220px] max-w-[240px] flex-1 rounded-2xl border border-slate-200 bg-white p-4 text-left no-underline shadow-sm transition hover:-translate-y-0.5 hover:border-slate-300"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-slate-100 bg-slate-50">
