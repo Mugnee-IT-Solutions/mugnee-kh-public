@@ -25,6 +25,9 @@ const SEGMENT_LABELS: Record<string, { en: string; km: string }> = {
   "message-from-ceo": { en: "Message from CEO", km: "សារពី CEO" },
   contact: { en: "Contact", km: "ទាក់ទងយើង" },
   projects: { en: "Projects", km: "គម្រោង" },
+  blog: { en: "Blog", km: "ប្លក់" },
+  "return-policy": { en: "Return Policy", km: "គោលការណ៍ត្រឡប់ទំនិញ" },
+  "terms-and-conditions": { en: "Terms & Conditions", km: "លក្ខខណ្ឌ និងកិច្ចព្រមព្រៀង" },
 };
 
 function prettifySegment(segment: string) {

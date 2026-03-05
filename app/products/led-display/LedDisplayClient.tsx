@@ -24,95 +24,103 @@ type ProductGridConfig = {
 
 const LED_FAQS_EN: Array<{ q: string; a: string }> = [
   {
-    q: "Where can I buy LED display in Cambodia with installation support?",
-    a: "You can source LED display in Cambodia through project-based suppliers who provide survey, BOQ, installation, commissioning, and local after-sales support.",
+    q: "How much does an LED display project cost in Cambodia?",
+    a: "LED project cost depends on pixel pitch, total screen size (sqm), brightness, cabinet type, structure, controller, power setup, and site access. That is why accurate pricing in Cambodia is usually provided through a project BOQ, not a single fixed list price.",
   },
   {
-    q: "What is the best LED display for indoor use in Cambodia?",
-    a: "Indoor LED screens work best with finer pixel pitch (P1.25-P2.5) for close viewing in boardrooms, showrooms, and control rooms. Viewing distance is the key factor for clarity.",
+    q: "Which pixel pitch is right for my viewing distance?",
+    a: "For close viewing (about 1.5-4m), finer pitch such as P1.5-P2.5 is common. Mid-distance use often fits P2.5-P4. Larger outdoor roadside viewing often uses P4-P10. Final selection should match real viewer distance, content type, and budget.",
   },
   {
-    q: "What brightness (nits) is required for outdoor LED billboards?",
-    a: "Outdoor LED displays typically use high brightness (around 4,500-7,000+ nits) so content stays visible in Cambodia sunlight.",
+    q: "What is the best LED display type for indoor and outdoor use in Cambodia?",
+    a: "Indoor environments usually prioritize finer pixel pitch and color consistency. Outdoor screens prioritize high brightness, weather protection, and strong cabinet durability for sun, rain, and dust conditions in Cambodia.",
   },
   {
-    q: "What IP rating is recommended for outdoor LED screens in Cambodia?",
-    a: "Outdoor LED installations usually require IP65+ (front) for rain and dust protection. This is a common standard for billboards.",
+    q: "What brightness (nits) is recommended for outdoor LED billboards in Cambodia?",
+    a: "Outdoor billboards typically require high brightness, often around 4,500-7,000+ nits, so content remains visible under strong daylight in Phnom Penh and other Cambodian cities.",
   },
   {
-    q: "How do I choose the right pixel pitch and viewing distance?",
-    a: "Pixel pitch should match viewing distance. Smaller pitch is for close viewing; larger pitch is for longer viewing and budget efficiency.",
+    q: "What IP rating should I choose for outdoor LED screens?",
+    a: "A common recommendation is at least IP65 on the front side for rain and dust protection. For demanding sites, cabinet build quality, rear protection, and sealing quality are just as important as the IP label.",
   },
   {
-    q: "What refresh rate is recommended for LED displays?",
-    a: "Many LED systems use 1,920Hz or higher. For camera use or broadcast, 3,840Hz or higher is preferred to reduce flicker.",
+    q: "What refresh rate is suitable for LED displays used with cameras?",
+    a: "Many commercial installations run at 1,920Hz or above. For camera-heavy use, livestream, studio, or stage applications, 3,840Hz or higher is preferred to reduce flicker and scan lines.",
   },
   {
-    q: "How long does an LED display last?",
-    a: "A quality LED display can last 50,000+ hours depending on brightness settings, usage hours, and maintenance conditions.",
+    q: "How much electricity does an LED display use?",
+    a: "Power use depends on screen size, brightness settings, content, and operating hours. A proper quotation should include estimated max and average consumption so you can plan monthly electricity cost before purchase.",
   },
   {
-    q: "Does outdoor LED need special heat or climate protection?",
-    a: "Yes. Outdoor LED in Cambodia needs heat management, weatherproof cabinets, and proper grounding to handle heat, rain, and dust.",
+    q: "How long does delivery and installation usually take in Cambodia?",
+    a: "Timeline depends on model availability, structure complexity, and site readiness. A typical process includes survey, BOQ confirmation, fabrication/procurement, installation, calibration, and commissioning.",
   },
   {
-    q: "Why choose LED instead of LCD for large outdoor screens?",
-    a: "LED is seamless, brighter, and scalable for large formats. LCD is usually for smaller sizes and has visible bezels.",
+    q: "What warranty and after-sales support should I expect?",
+    a: "A reliable LED supplier should provide clear warranty terms, spare-part support, onsite troubleshooting, and preventive maintenance options. Ask for written scope, response process, and exclusions before confirming.",
   },
   {
-    q: "Can LED display price be fixed from a price list?",
-    a: "Prices depend on pixel pitch, size, brightness, structure, and site conditions. That is why we provide project-based quotations.",
+    q: "Should I rent LED screens or buy a permanent installation?",
+    a: "Rental LED is suitable for temporary events and short campaigns. Permanent installation is usually better for daily branding, retail, corporate communication, and long-term cost efficiency.",
   },
   {
-    q: "Do you provide installation and after-sales support in Cambodia?",
-    a: "Yes. We handle survey, installation, commissioning, training, and ongoing maintenance support.",
+    q: "Do outdoor LED billboards need permit or structure approval in Cambodia?",
+    a: "Large roadside installations may require permit and structure compliance based on location. It is best to confirm local requirements early and include structural safety checks in the project plan.",
+  },
+  {
+    q: "What information is needed to get an accurate LED display quotation?",
+    a: "Share target use (indoor/outdoor), preferred size or wall area, viewing distance, installation location, operating hours, and timeline. This allows accurate BOQ, system design, and realistic project costing.",
   },
 ];
 
 const LED_FAQS_KM: Array<{ q: string; a: string }> = [
   {
-    q: "តើខ្ញុំអាចទិញ អេក្រង់ LED នៅកម្ពុជា ជាមួយសេវាដំឡើងបាននៅណា?",
-    a: "អ្នកអាចទិញ អេក្រង់ LED តាមអ្នកផ្គត់ផ្គង់បែបគម្រោង ដែលផ្តល់សេវាស្ទង់ទីតាំង បញ្ជីបរិមាណការងារ ដំឡើង ត្រួតពិនិត្យដំណើរការ និងសេវាគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុក។",
+    q: "គម្រោងអេក្រង់ LED នៅកម្ពុជា តម្លៃប្រហែលប៉ុន្មាន?",
+    a: "តម្លៃអាស្រ័យលើ Pixel Pitch ទំហំអេក្រង់ (sqm) កម្រិតពន្លឺ ប្រភេទកាប៊ីណេត រចនាសម្ព័ន្ធ Controller ប្រព័ន្ធភ្លើង និងលក្ខខណ្ឌទីតាំង។ ដូច្នេះការគណនាត្រឹមត្រូវគួរធ្វើតាម BOQ គម្រោង មិនមែនតារាងតម្លៃថេរតែមួយទេ។",
   },
   {
-    q: "តើ អេក្រង់ LED ប្រភេទណាល្អសម្រាប់ប្រើប្រាស់ក្នុងអគារនៅកម្ពុជា?",
-    a: "អេក្រង់ LED ក្នុងអគារ គួរជ្រើស Pixel Pitch ល្អិត (P1.25-P2.5) សម្រាប់ចម្ងាយមើលជិត ដូចជា បន្ទប់ប្រជុំ បន្ទប់តាំងបង្ហាញ និងបន្ទប់បញ្ជា។ ចម្ងាយមើលគឺជាកត្តាសំខាន់សម្រាប់ភាពច្បាស់។",
+    q: "តើត្រូវជ្រើស Pixel Pitch ដូចម្តេចឱ្យសមនឹងចម្ងាយមើល?",
+    a: "បើមើលជិត (ប្រហែល 1.5-4m) ជាទូទៅសមស្របជាមួយ P1.5-P2.5។ ចម្ងាយមធ្យមជាញឹកញាប់ប្រើ P2.5-P4។ សម្រាប់ការមើលឆ្ងាយខាងក្រៅភាគច្រើនប្រើ P4-P10។ ជម្រើសចុងក្រោយត្រូវអាស្រ័យលើចម្ងាយមើលពិត មាតិកា និងថវិកា។",
   },
   {
-    q: "សម្រាប់ផ្ទាំងផ្សព្វផ្សាយ LED ខាងក្រៅ ត្រូវការកម្រិតពន្លឺប៉ុន្មាន nits?",
-    a: "អេក្រង់ LED ខាងក្រៅជាទូទៅត្រូវការកម្រិតពន្លឺខ្ពស់ (ប្រហែល 4,500-7,000+ nits) ដើម្បីឱ្យមើលឃើញច្បាស់ក្រោមពន្លឺថ្ងៃ។",
+    q: "អេក្រង់ LED ប្រភេទណាល្អសម្រាប់ក្នុងអគារ និងក្រៅអគារនៅកម្ពុជា?",
+    a: "ក្នុងអគារត្រូវផ្តោតលើ Pixel Pitch ល្អិត និងពណ៌មានស្ថេរភាព។ ខាងក្រៅត្រូវផ្តោតលើពន្លឺខ្ពស់ ការការពារអាកាសធាតុ និងកាប៊ីណេតរឹងមាំ ដើម្បីទប់ទល់កំដៅ ភ្លៀង និងធូលីនៅកម្ពុជា។",
   },
   {
-    q: "Outdoor LED នៅកម្ពុជា គួរតែមានកម្រិតការពារ IP ប៉ុន្មាន?",
-    a: "ការដំឡើងខាងក្រៅភាគច្រើនត្រូវការ IP65+ (ផ្នែកខាងមុខ) ដើម្បីការពារទឹកភ្លៀង និងធូលី។ នេះជាស្តង់ដារដែលគេប្រើញឹកញាប់សម្រាប់ផ្ទាំងផ្សព្វផ្សាយធំ។",
+    q: "សម្រាប់ប៊ីលបត LED ខាងក្រៅនៅកម្ពុជា ត្រូវការពន្លឺប៉ុន្មាន nits?",
+    a: "អេក្រង់ខាងក្រៅភាគច្រើនត្រូវការពន្លឺខ្ពស់ ប្រហែល 4,500-7,000+ nits ដើម្បីឱ្យមាតិកាមើលឃើញច្បាស់ក្រោមពន្លឺថ្ងៃខ្លាំង នៅភ្នំពេញ និងតំបន់ផ្សេងៗ។",
   },
   {
-    q: "តើជ្រើស Pixel Pitch និងចម្ងាយមើលឱ្យត្រឹមត្រូវយ៉ាងដូចម្តេច?",
-    a: "Pixel Pitch ត្រូវតែសមនឹងចម្ងាយមើល។ Pitch តូចសម្រាប់មើលជិត ខណៈ Pitch ធំសម្រាប់មើលឆ្ងាយ និងសន្សំថវិកា។",
+    q: "Outdoor LED គួរតែជ្រើស IP rating ប៉ុន្មាន?",
+    a: "ជាទូទៅណែនាំយ៉ាងហោចណាស់ IP65 ផ្នែកខាងមុខ សម្រាប់ការពារទឹកភ្លៀង និងធូលី។ សម្រាប់ទីតាំងតឹងរ៉ឹង គុណភាពកាប៊ីណេត ការបិទស្រោប និងការការពារផ្នែកខាងក្រោយក៏សំខាន់ដូចគ្នា។",
   },
   {
-    q: "អត្រាផ្ទុកឡើងវិញ ប៉ុន្មានសមស្របសម្រាប់ អេក្រង់ LED?",
-    a: "ប្រព័ន្ធ LED ជាច្រើនប្រើ 1,920Hz ឬខ្ពស់ជាងនេះ។ សម្រាប់ការថតកាមេរ៉ា ឬការផ្សាយផ្ទាល់ គួរប្រើ 3,840Hz ឬខ្ពស់ជាងនេះ ដើម្បីកាត់បន្ថយរូបភាពញ័រ។",
+    q: "Refresh rate ប៉ុន្មានសមស្របសម្រាប់ការប្រើជាមួយកាមេរ៉ា?",
+    a: "ការដំឡើងពាណិជ្ជកម្មជាច្រើនប្រើ 1,920Hz ឬខ្ពស់ជាងនេះ។ បើប្រើសម្រាប់ថតវីដេអូ Livestream ឬ Studio គួរជ្រើស 3,840Hz ឬខ្ពស់ជាងនេះ ដើម្បីកាត់បន្ថយ flicker និង scan line។",
   },
   {
-    q: "អេក្រង់ LED មានអាយុកាលប៉ុន្មាន?",
-    a: "LED ដែលមានគុណភាពអាចប្រើបានលើស 50,000 ម៉ោង អាស្រ័យលើកម្រិតពន្លឺ ម៉ោងប្រើប្រាស់ និងការថែទាំ។",
+    q: "អេក្រង់ LED ប្រើអគ្គិសនីប៉ុន្មាន?",
+    a: "ការប្រើអគ្គិសនីអាស្រ័យលើទំហំអេក្រង់ កម្រិតពន្លឺ ប្រភេទមាតិកា និងម៉ោងដំណើរការ។ Quotation ល្អគួរបង្ហាញទាំងកម្រិតប្រើប្រាស់អតិបរមា និងមធ្យម ដើម្បីគណនាចំណាយភ្លើងប្រចាំខែបានមុនពេលទិញ។",
   },
   {
-    q: "Outdoor LED ត្រូវការការការពារកំដៅ ឬអាកាសធាតុពិសេសទេ?",
-    a: "ត្រូវការ។ អេក្រង់ LED ខាងក្រៅត្រូវមានការគ្រប់គ្រងកំដៅ គ្រោងការពារអាកាសធាតុ និងប្រព័ន្ធដីសុវត្ថិភាពត្រឹមត្រូវ ដើម្បីទប់ទល់នឹងកំដៅ ភ្លៀង និងធូលី។",
+    q: "ការដឹកជញ្ជូន និងដំឡើងនៅកម្ពុជា ជាទូទៅចំណាយពេលប៉ុន្មាន?",
+    a: "រយៈពេលអាស្រ័យលើស្តុកម៉ូដែល ភាពស្មុគស្មាញរចនាសម្ព័ន្ធ និងភាពរួចរាល់ទីតាំង។ ដំណើរការធម្មតារួមមានស្ទង់ទីតាំង អនុម័ត BOQ ផលិត/ផ្គត់ផ្គង់ ដំឡើង កំណត់រចនា និងបើកប្រើប្រាស់។",
   },
   {
-    q: "ហេតុអ្វីគួរជ្រើស LED ជំនួស LCD សម្រាប់អេក្រង់ធំខាងក្រៅ?",
-    a: "LED គ្មានស៊ុមភ្ជាប់ភ្លឹបភ្លែត ភ្លឺជាង និងពង្រីកទំហំបានងាយស្រួលសម្រាប់ទម្រង់ធំ។ LCD ជាទូទៅសមស្របសម្រាប់ទំហំតូច និងមាន bezel មើលឃើញ។",
+    q: "តើ Warranty និងសេវាបន្ទាប់ពីលក់គួរមានអ្វីខ្លះ?",
+    a: "អ្នកផ្គត់ផ្គង់ដែលអាចទុកចិត្តបានគួរផ្តល់លក្ខខណ្ឌ Warranty ច្បាស់លាស់ គ្រឿងបន្លាស់ជំនួស សេវាជួសជុល Onsite និងផែនការថែទាំជាប្រចាំ។ មុនបញ្ជាក់គម្រោង គួរស្នើសុំឯកសារកំណត់វិសាលភាព និងករណីមិនគ្របដណ្តប់។",
   },
   {
-    q: "តម្លៃ អេក្រង់ LED អាចកំណត់ថេរតាមតារាងតម្លៃបានទេ?",
-    a: "តម្លៃអាស្រ័យលើ Pixel Pitch ទំហំ កម្រិតពន្លឺ រចនាសម្ព័ន្ធ និងលក្ខខណ្ឌទីតាំង។ ដូច្នេះយើងផ្តល់ជូនតម្លៃតាមគម្រោង។",
+    q: "គួរជួលអេក្រង់ LED ឬទិញដំឡើងអចិន្ត្រៃយ៍?",
+    a: "LED សម្រាប់ជួលសមស្របសម្រាប់ព្រឹត្តិការណ៍បណ្តោះអាសន្ន ឬយុទ្ធនាការខ្លី។ ការដំឡើងអចិន្ត្រៃយ៍ភាគច្រើនសមស្របសម្រាប់ការប្រើប្រចាំថ្ងៃ ការផ្សព្វផ្សាយម៉ាក និងប្រសិទ្ធភាពថ្លៃដើមរយៈពេលវែង។",
   },
   {
-    q: "តើអ្នកមានសេវាដំឡើង និងការគាំទ្របន្ទាប់ពីលក់នៅកម្ពុជាទេ?",
-    a: "មាន។ យើងផ្តល់សេវាស្ទង់ទីតាំង ដំឡើង ត្រួតពិនិត្យដំណើរការ បណ្តុះបណ្តាល និងការគាំទ្រថែទាំបន្ត។",
+    q: "ប៊ីលបត LED ខាងក្រៅ ត្រូវការអាជ្ញាបណ្ណ ឬការអនុម័តរចនាសម្ព័ន្ធទេ?",
+    a: "សម្រាប់គម្រោងធំតាមផ្លូវសាធារណៈ អាចត្រូវការអាជ្ញាបណ្ណ និងការអនុវត្តតាមបទប្បញ្ញត្តិក្នុងតំបន់។ គួរតែពិនិត្យតម្រូវការតាំងពីដំណាក់កាលដំបូង និងបញ្ចូលការត្រួតពិនិត្យសុវត្ថិភាពរចនាសម្ព័ន្ធក្នុងផែនការ។",
+  },
+  {
+    q: "តើត្រូវផ្តល់ព័ត៌មានអ្វីខ្លះ ដើម្បីទទួលបានតម្លៃអេក្រង់ LED ត្រឹមត្រូវ?",
+    a: "សូមផ្តល់ប្រភេទប្រើប្រាស់ (ក្នុងអគារ/ក្រៅអគារ) ទំហំឬផ្ទៃដំឡើង ចម្ងាយមើល ទីតាំងដំឡើង ម៉ោងប្រើប្រាស់ និងពេលវេលាចង់អនុវត្ត។ ព័ត៌មានទាំងនេះជួយរៀបចំ BOQ និងគណនាតម្លៃគម្រោងបានត្រឹមត្រូវ។",
   },
 ];
 
@@ -420,7 +428,7 @@ export default function LedDisplayClient({
         timeZone: "Asia/Phnom_Penh",
       }).format(new Date())}`,
       intro:
-        "Need the right LED display price in Cambodia for your business goal and budget? Mugnee Cambodia is a leading LED display company in Cambodia, trusted for premium-quality yet budget-friendly LED screen solutions. From indoor LED display planning to outdoor LED billboard proposals, we support shops, showrooms, hotels, corporate offices, and public projects with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready options and get dependable Cambodia-based after-sales support for stable long-term performance.",
+        "Looking for a trusted LED screen supplier in Phnom Penh, Cambodia? Mugnee Cambodia is a market-leading LED display company and a preferred market leader for indoor LED display, outdoor LED billboard, LED video wall, and digital advertising display projects. From indoor LED display planning to outdoor LED billboard proposals, we support shops, showrooms, hotels, corporate offices, and public projects with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready options and dependable Cambodia-based after-sales support for stable long-term performance.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
@@ -433,7 +441,7 @@ export default function LedDisplayClient({
       breadcrumb: "ផលិតផល",
       h1: "តម្លៃអេក្រង់ LED នៅកម្ពុជា",
       intro:
-        "តើអ្នកកំពុងស្វែងរកតម្លៃអេក្រង់ LED ដែលសមស្របនៅកម្ពុជា សម្រាប់គោលដៅអាជីវកម្ម និងថវិការបស់អ្នកមែនទេ? Mugnee Cambodia គឺជាក្រុមហ៊ុនឈានមុខក្នុងទីផ្សារអេក្រង់ LED នៅកម្ពុជា ដែលត្រូវបានទុកចិត្តសម្រាប់ផលិតផលគុណភាពខ្ពស់ និងតម្លៃសមរម្យ។ ចាប់ពីការរៀបចំតម្លៃអេក្រង់ LED ក្នុងអគារ រហូតដល់សំណើតម្លៃអេក្រង់ LED ខាងក្រៅ យើងគាំទ្រហាង Showroom សណ្ឋាគារ ការិយាល័យក្រុមហ៊ុន និងគម្រោងសាធារណៈ ជាមួយសេវាស្ទង់ទីតាំង ការគណនា Pixel Pitch ការកំណត់ឧបករណ៍ Video Processor ការរៀបចំរចនាសម្ព័ន្ធដែក និង Cabinet ការដំឡើង ការធ្វើតេស្ត និងការធ្វើ Commissioning។ អ្នកអាចជ្រើស Fine-pitch Indoor LED ឬ Outdoor LED Panel កម្រិតពន្លឺខ្ពស់ ជាមួយជម្រើស IP65 សម្រាប់ខាងក្រៅ ហើយទទួលបានសេវាបន្ទាប់ពីលក់ក្នុងស្រុកកម្ពុជា ដើម្បីធានាដំណើរការមានស្ថិរភាពរយៈពេលវែង។",
+        "កំពុងស្វែងរកអ្នកផ្គត់ផ្គង់អេក្រង់ LED ដែលអាចទុកចិត្តបាននៅភ្នំពេញ កម្ពុជា មែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារ អេក្រង់ប៊ីលបត LED ខាងក្រៅ និង LED Video Wall ជាមួយសេវាស្ទង់ទីតាំង គណនា Pixel Pitch រៀបចំ BOQ រៀបចំរចនាសម្ព័ន្ធដែក និង Cabinet ការដំឡើង ការធ្វើតេស្ត និងការធ្វើ Commissioning ដោយវិជ្ជាជីវៈ។ ទទួលបានតម្លៃតាមគម្រោង ជម្រើស IP65 សម្រាប់ខាងក្រៅ និងសេវាបន្ទាប់ពីលក់ក្នុងស្រុកកម្ពុជា ដើម្បីធានាដំណើរការមានស្ថិរភាពរយៈពេលវែង។",
       cta1: "WhatsApp ស្នើសុំតម្លៃ",
       cta2: "ស្នើសុំសំណើបញ្ជីបរិមាណការងារ",
       cta3: "ចូលទៅផលិតផល",
@@ -619,7 +627,10 @@ export default function LedDisplayClient({
             {
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              inLanguage: lang === "en" ? "en" : "km",
+              "@id": `${SITE_URL}${schemaPath}#faq`,
+              url: `${SITE_URL}${schemaPath}#faq`,
+              name: lang === "en" ? "LED Display FAQ - Cambodia" : "សំណួរញឹកញាប់អំពីអេក្រង់ LED - កម្ពុជា",
+              inLanguage: lang === "en" ? "en-KH" : "km-KH",
               about: {
                 "@type": "Country",
                 name: "Cambodia",

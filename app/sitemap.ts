@@ -55,6 +55,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/about/message-from-ceo",
     "/contact",
+    "/blog",
+    "/return-policy",
+    "/terms-and-conditions",
   ];
 
   const productRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/products/${p.slug}`));
@@ -87,6 +90,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/about", "app/about/page.tsx"],
     ["/about/message-from-ceo", "app/about/message-from-ceo/page.tsx"],
     ["/contact", "app/contact/page.tsx"],
+    ["/blog", "app/blog/page.tsx"],
+    ["/return-policy", "app/return-policy/page.tsx"],
+    ["/terms-and-conditions", "app/terms-and-conditions/page.tsx"],
     ["/solutions/indoor-communication-solutions-cambodia", "app/content/solutions/digital-signage-cambodia.ts"],
     ["/solutions/outdoor-campaign-solutions-cambodia", "app/content/solutions/led-billboard-cambodia.ts"],
     ["/solutions/retail-digital-signage-cambodia", "app/content/solutions/digital-signage-cambodia.ts"],

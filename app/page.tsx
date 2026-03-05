@@ -82,18 +82,21 @@ const SITE_URL =
 
 const PAGE_PATH = "/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const ORG_ID = `${SITE_URL}#organization`;
+const WEBSITE_ID = `${SITE_URL}#website`;
+const FAQ_PAGE_ID = `${PAGE_URL}#faq`;
 
 export const metadata: Metadata = {
-  title: "LED Display & Digital Signage Solutions in Cambodia | Mugnee Cambodia",
+  title: "Digital Signage, Smart Board & Access Control in Cambodia | Mugnee Cambodia",
   description:
-    "Mugnee Cambodia delivers LED display, digital signage, interactive flat panels (smart boards), turnstile gates, PA systems, and access control solutions. Site survey, installation, commissioning, and local after-sales support across Phnom Penh, Siem Reap & Sihanoukville.",
+    "Mugnee Cambodia delivers digital signage, interactive smart boards, turnstile gates, PA systems, and access control solutions in Cambodia. Get site survey, system design, installation, commissioning, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    title: "LED Display & Digital Signage Solutions in Cambodia | Mugnee Cambodia",
+    title: "Digital Signage, Smart Board & Access Control in Cambodia | Mugnee Cambodia",
     description:
-      "End-to-end LED display, digital signage, IFP smart board, turnstile, PA system & access control solutions in Cambodia with local installation and support.",
+      "End-to-end digital signage, smart board, turnstile gate, PA system, and access control solutions in Cambodia with local installation and support.",
     siteName: "Mugnee Cambodia",
     images: [
       {
@@ -106,9 +109,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LED Display & Digital Signage Solutions in Cambodia | Mugnee Cambodia",
+    title: "Digital Signage, Smart Board & Access Control in Cambodia | Mugnee Cambodia",
     description:
-      "LED Display, Digital Signage, Smart Boards, Turnstile Gates, PA Systems & Access Control in Cambodia.",
+      "Digital Signage, Smart Boards, Turnstile Gates, PA Systems, and Access Control solutions in Cambodia.",
     images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
   },
 };
@@ -210,70 +213,101 @@ const CATEGORY_TILES = [
 
 const FAQ = [
   {
-    qEn: "Do you provide LED display installation across Cambodia?",
-    aEn: "Yes. We provide site survey, installation, commissioning, and after-sales support for projects in Phnom Penh, Siem Reap, Sihanoukville, and other provinces.",
-    qKm: "តើអ្នកផ្តល់សេវាដំឡើង LED Display ទូទាំងកម្ពុជាដែរឬទេ?",
-    aKm: "បាទ/ចាស។ យើងផ្តល់សេវា site survey, installation, commissioning និង after-sales support សម្រាប់គម្រោងនៅ Phnom Penh, Siem Reap, Sihanoukville និងខេត្តផ្សេងៗ។",
+    qEn: "Are you a digital signage, smart board, and access control supplier in Cambodia?",
+    aEn: "Yes. Mugnee Cambodia provides solution design, supply, installation, commissioning, and local support for digital signage, smart board, access control, turnstile, and PA system projects.",
+    qKm: "តើអ្នកផ្តល់ដំណោះស្រាយ Digital Signage, Smart Board, Access Control និង PA System ទូទាំងកម្ពុជាដែរឬទេ?",
+    aKm: "បាទ/ចាស។ Mugnee Cambodia ផ្តល់សេវាពេញលេញចាប់ពី solution design, supply, installation, commissioning ដល់ local support សម្រាប់ digital signage, smart board, access control, turnstile និង PA system។",
   },
   {
-    qEn: "How do I choose the right pixel pitch for my project?",
-    aEn: "A practical method is to match pixel pitch with viewing distance and content type. We recommend the right pitch based on room size, audience distance, and budget.",
-    qKm: "តើខ្ញុំជ្រើសរើស pixel pitch សមស្របសម្រាប់គម្រោងយ៉ាងដូចម្តេច?",
-    aKm: "វិធីសាស្ត្រដែលត្រឹមត្រូវគឺផ្គូផ្គង pixel pitch ជាមួយ viewing distance និងប្រភេទ content។ យើងណែនាំ pitch សមស្របតាមទំហំបន្ទប់ ចម្ងាយអ្នកមើល និងថវិកា។",
+    qEn: "Do you serve Phnom Penh only, or all Cambodia provinces?",
+    aEn: "We serve Phnom Penh, Siem Reap, Sihanoukville, and other provinces across Cambodia with onsite survey, installation, and after-sales support.",
+    qKm: "តើអ្នកបម្រើតែ Phnom Penh ប៉ុណ្ណោះ ឬទូទាំងខេត្តនៅកម្ពុជាទាំងអស់?",
+    aKm: "យើងបម្រើទាំង Phnom Penh, Siem Reap, Sihanoukville និងខេត្តផ្សេងៗទូទាំងកម្ពុជា ជាមួយ onsite survey, installation និង after-sales support។",
   },
   {
-    qEn: "What brightness and IP rating are recommended for outdoor LED screens?",
-    aEn: "Most outdoor projects use high-brightness panels with IP65 or higher weather protection. Final specs depend on sunlight exposure, installation height, and operating hours.",
-    qKm: "Outdoor LED screen គួរប្រើ brightness និង IP rating ប៉ុន្មាន?",
-    aKm: "គម្រោង outdoor ភាគច្រើនប្រើ panel ភ្លឺខ្ពស់ជាមួយ IP65 ឬលើសនេះ ដើម្បីការពារអាកាសធាតុ។ ស្តង់ដារចុងក្រោយអាស្រ័យលើពន្លឺថ្ងៃ កម្ពស់ដំឡើង និងម៉ោងប្រើប្រាស់។",
+    qEn: "Which industries in Cambodia do you support?",
+    aEn: "We support retail, hospitality, education, factories, offices, healthcare, real estate, and public-sector projects with practical AV and security system packages.",
+    qKm: "តើអ្នកបម្រើវិស័យអ្វីខ្លះនៅកម្ពុជា?",
+    aKm: "យើងបម្រើវិស័យ retail, hospitality, education, factory, office, healthcare, real estate និងគម្រោងសាធារណៈ ជាមួយកញ្ចប់ប្រព័ន្ធ AV និងសុវត្ថិភាពដែលរៀបចំតាមតម្រូវការ។",
   },
   {
-    qEn: "What is the difference between indoor and outdoor LED display?",
-    aEn: "Indoor LED is optimized for close viewing and finer pixel pitch, while outdoor LED is designed for stronger brightness, weather resistance, and long-distance visibility.",
-    qKm: "Indoor LED និង Outdoor LED ខុសគ្នាយ៉ាងដូចម្តេច?",
-    aKm: "Indoor LED ត្រូវបានរចនាសម្រាប់មើលជិត និង fine pixel pitch ខណៈ Outdoor LED រចនាសម្រាប់ភ្លឺខ្ពស់ ទប់ទល់អាកាសធាតុ និងមើលឃើញចម្ងាយឆ្ងាយ។",
+    qEn: "Can you integrate multiple systems into one workflow?",
+    aEn: "Yes. We integrate signage content control, smart boards, access control, attendance, and PA announcements into a practical operating workflow based on your site and team.",
+    qKm: "តើអ្នកអាចបញ្ចូលប្រព័ន្ធច្រើនជាមួយគ្នាជា workflow តែមួយបានទេ?",
+    aKm: "បាន។ យើងអាចបញ្ចូល signage content control, smart board, access control, attendance និង PA announcement ឱ្យដំណើរការជា workflow តែមួយសមស្របតាមទីតាំង និងក្រុមការងាររបស់អ្នក។",
   },
   {
-    qEn: "Do you supply digital signage solutions for malls, hotels, and retail stores?",
-    aEn: "Yes. We design and install digital signage systems for promotions, menu boards, wayfinding, and brand communication across retail and hospitality environments.",
-    qKm: "តើអ្នកផ្គត់ផ្គង់ Digital Signage សម្រាប់ mall, hotel និង retail store ដែរឬទេ?",
-    aKm: "បាទ/ចាស។ យើងរចនា និងដំឡើងប្រព័ន្ធ Digital Signage សម្រាប់ promotion, menu board, wayfinding និង brand communication ក្នុងអាជីវកម្ម retail និង hospitality។",
+    qEn: "Do you provide site survey and BOQ before project execution?",
+    aEn: "Yes. We run site assessment first, then share scope, BOQ, technical recommendations, and commercial quotation so you can compare options clearly before approval.",
+    qKm: "មុនចាប់ផ្តើមគម្រោង តើមាន site survey និង BOQ ដែរឬទេ?",
+    aKm: "មាន។ យើងធ្វើ site assessment មុនគេ ហើយបញ្ជូន scope, BOQ, technical recommendation និង commercial quotation ដើម្បីឱ្យអ្នកប្រៀបធៀបជម្រើសបានច្បាស់មុនអនុម័ត។",
   },
   {
-    qEn: "Can you integrate turnstile gates with RFID and biometric access control?",
-    aEn: "Yes. We integrate turnstile gates with RFID cards, fingerprint, face recognition, and attendance platforms for offices, factories, and institutions.",
-    qKm: "តើអ្នកអាច integrate Turnstile Gate ជាមួយ RFID និង biometric access control ដែរឬទេ?",
-    aKm: "បាទ/ចាស។ យើងអាច integrate turnstile gate ជាមួយ RFID card, fingerprint, face recognition និង attendance platform សម្រាប់ office, factory និងស្ថាប័ន។",
+    qEn: "What is the price range for digital signage, smart board, and access control in Cambodia?",
+    aEn: "Pricing depends on screen size, software features, hardware grade, installation scope, and integration needs. We provide project-based quotation with clear BOQ and optional package tiers.",
+    qKm: "តម្លៃ Digital Signage, Smart Board និង Access Control នៅកម្ពុជាប្រហែលប៉ុន្មាន?",
+    aKm: "តម្លៃអាស្រ័យលើទំហំប្រព័ន្ធ មុខងារ software គុណភាព hardware វិសាលភាពដំឡើង និងតម្រូវការ integration។ យើងផ្តល់ project-based quotation ជាមួយ BOQ ច្បាស់លាស់ និង package tiers ជម្រើសបាន។",
   },
   {
-    qEn: "Do you provide PA system design and installation for factories and campuses?",
-    aEn: "Yes. We provide PA system planning, zoning, amplifier and speaker configuration, emergency announcement setup, and long-term maintenance support.",
-    qKm: "តើអ្នកផ្តល់សេវា design និង installation ប្រព័ន្ធ PA សម្រាប់រោងចក្រ និង campus ដែរឬទេ?",
-    aKm: "បាទ/ចាស។ យើងផ្តល់សេវា PA system planning, zoning, amplifier/speaker configuration, emergency announcement setup និង maintenance support រយៈពេលវែង។",
+    qEn: "Do you offer local after-sales support and preventive maintenance in Cambodia?",
+    aEn: "Yes. We provide warranty support, preventive maintenance, health checks, spare parts planning, and troubleshooting support to reduce downtime.",
+    qKm: "តើអ្នកមាន after-sales support និង preventive maintenance ក្នុងកម្ពុជាដែរឬទេ?",
+    aKm: "មាន។ យើងផ្តល់ warranty support, preventive maintenance, health check, spare parts planning និង troubleshooting support ដើម្បីកាត់បន្ថយ downtime។",
   },
   {
-    qEn: "How long does a typical LED display project take from survey to handover?",
-    aEn: "Timeline depends on site readiness and scope, but most projects follow a structured workflow from survey and BOQ to installation, testing, and final handover.",
-    qKm: "គម្រោង LED Display ទូទៅ ចាប់ពី survey ដល់ handover ចំណាយពេលប៉ុន្មាន?",
-    aKm: "Timeline អាស្រ័យលើការត្រៀម site និង scope ការងារ ប៉ុន្តែភាគច្រើនដំណើរការតាម workflow ច្បាស់លាស់ពី survey និង BOQ ដល់ installation, testing និង handover ចុងក្រោយ។",
+    qEn: "Do you offer AMC or annual maintenance contracts?",
+    aEn: "Yes. We offer AMC plans with scheduled preventive visits, response SLA, reporting, and priority support to keep your system stable year-round.",
+    qKm: "តើអ្នកមាន AMC ឬ annual maintenance contract ដែរឬទេ?",
+    aKm: "មាន។ យើងផ្តល់ផែនការ AMC ជាមួយ preventive visit តាមកាលវិភាគ response SLA របាយការណ៍បច្ចេកទេស និង priority support ដើម្បីរក្សាប្រព័ន្ធឱ្យមានស្ថិរភាព។",
   },
   {
-    qEn: "Do you offer warranty and preventive maintenance plans?",
-    aEn: "Yes. We provide warranty coverage, preventive maintenance, health checks, and support plans to reduce downtime and improve system reliability.",
-    qKm: "តើមាន warranty និង preventive maintenance plan ដែរឬទេ?",
-    aKm: "មាន។ យើងផ្តល់ warranty coverage, preventive maintenance, health check និង support plan ដើម្បីកាត់បន្ថយ downtime និងបង្កើនភាពទុកចិត្តរបស់ប្រព័ន្ធ។",
+    qEn: "Can you connect turnstile and door access systems with attendance software?",
+    aEn: "Yes. We integrate RFID, fingerprint, and face recognition devices with attendance and reporting platforms for offices, factories, schools, and institutions.",
+    qKm: "តើអ្នកអាចភ្ជាប់ turnstile/door access ជាមួយ attendance software បានទេ?",
+    aKm: "បាន។ យើងអាច integrate RFID, fingerprint និង face recognition devices ជាមួយ attendance និង reporting platform សម្រាប់ office, factory, school និងស្ថាប័ន។",
   },
   {
-    qEn: "How can I get a quotation for LED display, signage, or access control in Cambodia?",
-    aEn: "Share your site location, required screen size or lane count, usage type, and timeline. Our team will recommend a practical configuration and provide a project-based quotation.",
-    qKm: "ខ្ញុំអាចស្នើសុំ quotation សម្រាប់ LED Display, Signage ឬ Access Control នៅកម្ពុជាយ៉ាងដូចម្តេច?",
-    aKm: "សូមផ្ញើទីតាំង site, ទំហំអេក្រង់ ឬចំនួន lane, ប្រភេទការប្រើប្រាស់ និង timeline។ ក្រុមការងារយើងនឹងណែនាំ configuration សមស្រប និងផ្តល់ project-based quotation។",
+    qEn: "Do you have ready stock in Phnom Penh or import per project?",
+    aEn: "Both models are available. Common items may be available from local stock, while customized configurations are supplied per project timeline and approved specification.",
+    qKm: "តើមាន ready stock នៅ Phnom Penh ឬត្រូវនាំចូលតាមគម្រោង?",
+    aKm: "មានទាំងពីររបៀប។ ផលិតផលដែលប្រើញឹកញាប់អាចមាន ready stock ក្នុងស្រុក ខណៈ configuration ពិសេសនឹងផ្គត់ផ្គង់តាម timeline និង specification ដែលបានអនុម័ត។",
+  },
+  {
+    qEn: "Do you provide training and handover documents after installation?",
+    aEn: "Yes. After commissioning, we provide user training, operating guides, and handover documents so your team can run and maintain systems correctly.",
+    qKm: "បន្ទាប់ពីដំឡើង តើអ្នកផ្តល់ training និង handover documents ដែរឬទេ?",
+    aKm: "ផ្តល់ជូន។ បន្ទាប់ពី commissioning យើងផ្តល់ user training, operating guide និង handover documents ដើម្បីឱ្យក្រុមការងារអ្នកប្រើប្រាស់ និងថែទាំប្រព័ន្ធបានត្រឹមត្រូវ។",
+  },
+  {
+    qEn: "How long does a typical project take from survey to handover?",
+    aEn: "Timeline depends on scope, site readiness, and integration complexity. Most projects follow a structured process: survey, BOQ approval, installation, testing, training, and handover.",
+    qKm: "គម្រោងទូទៅ ចាប់ពី survey ដល់ handover ចំណាយពេលប៉ុន្មាន?",
+    aKm: "រយៈពេលអាស្រ័យលើ scope ការងារ ការត្រៀមទីតាំង និងកម្រិត integration។ ភាគច្រើនដំណើរការតាមជំហានច្បាស់លាស់៖ survey, BOQ approval, installation, testing, training និង handover។",
+  },
+  {
+    qEn: "What makes your service different from low-cost suppliers in Cambodia?",
+    aEn: "Our focus is long-term reliability: proper engineering, clear BOQ, safe installation, integration testing, user training, and responsive local support instead of only hardware supply.",
+    qKm: "សេវារបស់អ្នកខុសពីអ្នកផ្គត់ផ្គង់តម្លៃទាបនៅកម្ពុជាយ៉ាងដូចម្តេច?",
+    aKm: "ចំណុចខុសគ្នាគឺភាពជឿជាក់រយៈពេលវែង៖ engineering ត្រឹមត្រូវ, BOQ ច្បាស់លាស់, ដំឡើងមានសុវត្ថិភាព, integration testing, user training និង local support ឆ្លើយតបលឿន មិនមែនផ្គត់ផ្គង់ hardware ប៉ុណ្ណោះទេ។",
+  },
+  {
+    qEn: "Can you support government or enterprise procurement requirements?",
+    aEn: "Yes. We can support documentation for technical comparison, BOQ-based evaluation, and structured project delivery required in enterprise and institutional procurement workflows.",
+    qKm: "តើអ្នកអាចគាំទ្រតម្រូវការទិញសម្រាប់រដ្ឋាភិបាល ឬស្ថាប័នធំៗបានទេ?",
+    aKm: "បាន។ យើងអាចគាំទ្រឯកសារសម្រាប់ technical comparison, BOQ-based evaluation និង structured project delivery ដែលត្រូវការសម្រាប់ procurement របស់ស្ថាប័នធំៗ។",
+  },
+  {
+    qEn: "How can I request a quotation for my Cambodia project?",
+    aEn: "Share your site location, project type, user flow, required features, and target timeline. We will review and provide a practical configuration with a project-based quotation.",
+    qKm: "ខ្ញុំអាចស្នើសុំ quotation សម្រាប់គម្រោងនៅកម្ពុជាយ៉ាងដូចម្តេច?",
+    aKm: "សូមផ្ញើទីតាំងគម្រោង ប្រភេទការប្រើប្រាស់ user flow មុខងារដែលត្រូវការ និង timeline។ ក្រុមយើងនឹងពិនិត្យ ហើយផ្តល់ configuration សមស្របជាមួយ project-based quotation។",
   },
 ];
 export default function HomePage() {
   // ---------- JSON-LD (Organization + Website + FAQPage) ----------
   const orgJsonLd = {
     "@context": "https://schema.org",
+    "@id": ORG_ID,
     "@type": "Organization",
     name: "Mugnee Cambodia",
     url: SITE_URL,
@@ -294,9 +328,12 @@ export default function HomePage() {
 
   const websiteJsonLd = {
     "@context": "https://schema.org",
+    "@id": WEBSITE_ID,
     "@type": "WebSite",
     name: "Mugnee Cambodia",
     url: SITE_URL,
+    inLanguage: ["en", "km"],
+    publisher: { "@id": ORG_ID },
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/products?search={search_term_string}`,
@@ -306,8 +343,13 @@ export default function HomePage() {
 
   const faqJsonLd = {
     "@context": "https://schema.org",
+    "@id": FAQ_PAGE_ID,
     "@type": "FAQPage",
+    url: PAGE_URL,
+    name: "Mugnee Cambodia Homepage FAQ",
     inLanguage: ["en", "km"],
+    isPartOf: { "@id": WEBSITE_ID },
+    publisher: { "@id": ORG_ID },
     about: {
       "@type": "Country",
       name: "Cambodia",

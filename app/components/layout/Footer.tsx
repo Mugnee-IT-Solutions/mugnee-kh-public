@@ -80,19 +80,19 @@ export default function SiteFooter() {
                 />
               </div>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                <LangText en="Mugnee Cambodia provides LED Display, Digital Signage, Interactive Flat Panel, PA System, Turnstile Gate, and Access Control solutions with project design, installation, commissioning, and after-sales support." km="Mugnee Cambodia provides LED Display, Digital Signage, Interactive Flat Panel, PA System, Turnstile Gate, and Access Control solutions with project design, installation, commissioning, and after-sales support."
+                <LangText en="Mugnee Cambodia provides LED Display, Digital Signage, Interactive Flat Panel, PA System, Turnstile Gate, and Access Control solutions with project design, installation, commissioning, and after-sales support." km="Mugnee Cambodia ផ្តល់ជូនដំណោះស្រាយ LED Display, Digital Signage, Interactive Flat Panel, PA System, Turnstile Gate និង Access Control ជាមួយសេវារចនាគម្រោង ដំឡើង ធ្វើតេស្តដំណើរការ និងគាំទ្របន្ទាប់ពីលក់។"
                 />
               </p>
               <div className="mt-4 space-y-1 text-sm text-slate-700">
                 <p>
                   <span className="font-semibold">
-                    <LangText en="Service Areas:" km="Service Areas:" />
+                    <LangText en="Service Areas:" km="តំបន់សេវាកម្ម:" />
                   </span>{" "}
                   {SERVICE_AREAS.join(" | ")}
                 </p>
                 <p>
                   <span className="font-semibold">
-                    <LangText en="Contact:" km="Contact:" />
+                    <LangText en="Contact:" km="ទំនាក់ទំនង:" />
                   </span>{" "}
                   <a className="no-underline transition hover:text-slate-900 hover:no-underline" href={`tel:${BUSINESS_PHONE_E164}`}>
                     {BUSINESS_PHONE_DISPLAY}
@@ -105,7 +105,7 @@ export default function SiteFooter() {
               </div>
               <div className="mt-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
-                  <LangText en="Follow Mugnee" km="Follow Mugnee" />
+                  <LangText en="Follow Mugnee" km="តាមដាន Mugnee" />
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {FOOTER_SOCIAL_LINKS.map((item) => {
@@ -145,27 +145,42 @@ export default function SiteFooter() {
 
             <div className="lg:col-span-2">
               <p className="text-sm font-semibold text-slate-900">
-                <LangText en="Company" km="Company" />
+                <LangText en="Company" km="ក្រុមហ៊ុន" />
               </p>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/about">
-                    <LangText en="About Us" km="About Us" />
+                    <LangText en="About Us" km="អំពីយើង" />
                   </Link>
                 </li>
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/solutions">
-                    <LangText en="Solutions" km="Solutions" />
+                    <LangText en="Solutions" km="ដំណោះស្រាយ" />
+                  </Link>
+                </li>
+                <li>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/blog">
+                    <LangText en="Blog" km="ប្លក់" />
                   </Link>
                 </li>
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/service">
-                    <LangText en="Service & Support" km="Service & Support" />
+                    <LangText en="Service & Support" km="សេវាកម្ម និងគាំទ្រ" />
+                  </Link>
+                </li>
+                <li>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/return-policy">
+                    <LangText en="Return Policy" km="គោលការណ៍ត្រឡប់ទំនិញ" />
+                  </Link>
+                </li>
+                <li>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/terms-and-conditions">
+                    <LangText en="Terms & Conditions" km="លក្ខខណ្ឌ និងកិច្ចព្រមព្រៀង" />
                   </Link>
                 </li>
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/contact">
-                    <LangText en="Contact" km="Contact" />
+                    <LangText en="Contact" km="ទាក់ទង" />
                   </Link>
                 </li>
               </ul>
@@ -173,32 +188,32 @@ export default function SiteFooter() {
 
             <div className="lg:col-span-3">
               <p className="text-sm font-semibold text-slate-900">
-                <LangText en="Top Product Categories" km="Top Product Categories" />
+                <LangText en="Top Product Categories" km="ប្រភេទផលិតផលពេញនិយម" />
               </p>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/led-display">
-                    LED Display
+                    <LangText en="LED Display" km="អេក្រង់ LED" />
                   </Link>
                 </li>
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/interactive-flat-panel">
-                    Interactive Flat Panel
+                    <LangText en="Interactive Flat Panel" km="អេក្រង់អន្តរកម្ម" />
                   </Link>
                 </li>
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/pa-system">
-                    PA System
+                    <LangText en="PA System" km="ប្រព័ន្ធ PA" />
                   </Link>
                 </li>
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/turnstile-gate">
-                    Turnstile Gate
+                    <LangText en="Turnstile Gate" km="ច្រក Turnstile" />
                   </Link>
                 </li>
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/products">
-                    <LangText en="View All Products" km="View All Products" />
+                    <LangText en="View All Products" km="មើលផលិតផលទាំងអស់" />
                   </Link>
                 </li>
               </ul>
@@ -207,10 +222,10 @@ export default function SiteFooter() {
             <div className="lg:col-span-3">
               <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-100 p-5 shadow-sm">
                 <p className="text-sm font-semibold text-slate-900">
-                  <LangText en="Get a Project Quotation" km="Get a Project Quotation" />
+                  <LangText en="Get a Project Quotation" km="ស្នើសុំតម្លៃគម្រោង" />
                 </p>
                 <p className="mt-2 text-sm text-slate-600">
-                  <LangText en="Share your project type, location, and timeline. Our team will recommend a practical configuration and budget plan." km="Share your project type, location, and timeline. Our team will recommend a practical configuration and budget plan."
+                  <LangText en="Share your project type, location, and timeline. Our team will recommend a practical configuration and budget plan." km="សូមចែករំលែកប្រភេទគម្រោង ទីតាំង និងពេលវេលារបស់អ្នក។ ក្រុមការងារយើងនឹងណែនាំការកំណត់រចនាសម្ព័ន្ធដែលអនុវត្តបាន និងផែនការថវិកាសមស្រប។"
                   />
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -218,13 +233,13 @@ export default function SiteFooter() {
                     href="/contact"
                     className="inline-flex rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white no-underline transition hover:-translate-y-0.5 hover:bg-slate-800 hover:no-underline"
                   >
-                    <LangText en="Contact Mugnee Cambodia" km="Contact Mugnee Cambodia" />
+                    <LangText en="Contact Mugnee Cambodia" km="ទាក់ទង Mugnee Cambodia" />
                   </Link>
                   <Link
                     href="/products"
                     className="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 no-underline transition hover:-translate-y-0.5 hover:border-slate-400 hover:text-slate-900 hover:no-underline"
                   >
-                    <LangText en="Explore Products" km="Explore Products" />
+                    <LangText en="Explore Products" km="ស្វែងរកផលិតផល" />
                   </Link>
                 </div>
               </div>
@@ -234,7 +249,7 @@ export default function SiteFooter() {
 
           <div className="mt-8 flex flex-col gap-2 border-t border-slate-200 pt-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
             <p>
-              &copy; 2025 Mugnee Cambodia. Designed and Developed by{" "}
+              <LangText en="© 2025 Mugnee Cambodia. Designed and Developed by " km="© 2025 Mugnee Cambodia។ រចនា និងអភិវឌ្ឍដោយ " />
               <a
                 href="https://mugneeit.com/"
                 target="_blank"
@@ -247,16 +262,25 @@ export default function SiteFooter() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/about">
-                <LangText en="About" km="About" />
+                <LangText en="About" km="អំពីយើង" />
               </Link>
               <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/solutions">
-                <LangText en="Solutions" km="Solutions" />
+                <LangText en="Solutions" km="ដំណោះស្រាយ" />
               </Link>
               <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/service">
-                <LangText en="Service" km="Service" />
+                <LangText en="Service" km="សេវាកម្ម" />
               </Link>
               <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/contact">
-                <LangText en="Contact" km="Contact" />
+                <LangText en="Contact" km="ទាក់ទង" />
+              </Link>
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/blog">
+                <LangText en="Blog" km="ប្លក់" />
+              </Link>
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/return-policy">
+                <LangText en="Return Policy" km="គោលការណ៍ត្រឡប់ទំនិញ" />
+              </Link>
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/terms-and-conditions">
+                <LangText en="Terms" km="លក្ខខណ្ឌ" />
               </Link>
             </div>
           </div>
