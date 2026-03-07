@@ -1,0 +1,2742 @@
+{
+  "generatedAt": "2026-03-07T11:26:13.073Z",
+  "categories": [
+    {
+      "id": "led_display",
+      "labelEn": "LED Display",
+      "labelKm": "អេក្រង់ LED",
+      "slug": "led-display",
+      "descriptionEn": "Indoor, outdoor and rental LED display systems.",
+      "descriptionKm": "ប្រព័ន្ធអេក្រង់ LED សម្រាប់ក្នុង ខាងក្រៅ និងជួល។"
+    },
+    {
+      "id": "indoor_led_display",
+      "parentId": "led_display",
+      "labelEn": "Indoor LED Screens",
+      "labelKm": "អេក្រង់ LED ខាងក្នុង",
+      "slug": "indoor-led-display",
+      "descriptionEn": "Fine pitch and indoor LED modules.",
+      "descriptionKm": "ម៉ូឌុល LED ខាងក្នុង និង Fine Pitch។"
+    },
+    {
+      "id": "outdoor_led_display",
+      "parentId": "led_display",
+      "labelEn": "Outdoor LED Billboards",
+      "labelKm": "ប៊ីលបត LED ខាងក្រៅ",
+      "slug": "outdoor-led-display",
+      "descriptionEn": "Weather-ready LED modules for outdoor use.",
+      "descriptionKm": "ម៉ូឌុល LED ខាងក្រៅ សម្រាប់អាកាសធាតុខាងក្រៅ។"
+    },
+    {
+      "id": "rental_led_display",
+      "parentId": "led_display",
+      "labelEn": "Rental LED Walls",
+      "labelKm": "អេក្រង់ LED សម្រាប់ជួល",
+      "slug": "rental-led-display",
+      "descriptionEn": "Rental LED panels for events and stage.",
+      "descriptionKm": "បន្ទះ LED សម្រាប់ជួល និងព្រឹត្តិការណ៍។"
+    },
+    {
+      "id": "led_accessories",
+      "parentId": "led_display",
+      "labelEn": "LED Accessories & Parts",
+      "labelKm": "គ្រឿងបន្លាស់ LED",
+      "slug": "led-accessories",
+      "descriptionEn": "Controllers, receiving cards, power supplies and cabinets.",
+      "descriptionKm": "កុងត្រូល러, កាតទទួលសញ្ញា, ឧបករណ៍ផ្គត់ផ្គង់ថាមពល និង កាប៊ីណេត។"
+    },
+    {
+      "id": "power_supply",
+      "parentId": "led_display",
+      "labelEn": "Power Supply",
+      "labelKm": "ផ្គត់ផ្គង់ថាមពល",
+      "slug": "power-supply",
+      "descriptionEn": "LED display power supplies and SMPS units.",
+      "descriptionKm": "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល LED និងឯកតា SMPS។"
+    },
+    {
+      "id": "video_processor",
+      "parentId": "led_display",
+      "labelEn": "Video Processor",
+      "labelKm": "វីដេអូប្រូសេស័រ",
+      "slug": "video-processor",
+      "descriptionEn": "LED video processors and scalers for LED screens.",
+      "descriptionKm": "វីដេអូប្រូសេស័រ និងឧបករណ៍ស្កេលសម្រាប់អេក្រង់ LED។"
+    },
+    {
+      "id": "smart_board",
+      "labelEn": "Smart Board",
+      "labelKm": "ស្មាតបូដ",
+      "slug": "smart-board",
+      "descriptionEn": "Interactive flat panels and smart classroom displays.",
+      "descriptionKm": "អេក្រង់អន្តរកម្មសម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ។"
+    },
+    {
+      "id": "interactive_panel",
+      "parentId": "smart_board",
+      "labelEn": "Interactive Panel",
+      "labelKm": "អេក្រង់អន្តរកម្ម",
+      "slug": "interactive-panel",
+      "descriptionEn": "Interactive flat panels for classrooms and meeting rooms.",
+      "descriptionKm": "អេក្រង់អន្តរកម្មសម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ។"
+    },
+    {
+      "id": "digital_signage",
+      "labelEn": "Digital Signage",
+      "labelKm": "ស្លាកឌីជីថល",
+      "slug": "digital-signage",
+      "descriptionEn": "Commercial digital signage displays and kiosks.",
+      "descriptionKm": "អេក្រង់ស្លាកឌីជីថល និងក្យូសសម្រាប់ពាណិជ្ជកម្ម។"
+    },
+    {
+      "id": "pa_system",
+      "labelEn": "PA System",
+      "labelKm": "ប្រព័ន្ធ PA",
+      "slug": "pa-system",
+      "descriptionEn": "Public address sound systems and audio solutions.",
+      "descriptionKm": "ប្រព័ន្ធផ្សព្វផ្សាយសំឡេង និងaudio solutions។"
+    },
+    {
+      "id": "pa_speakers",
+      "parentId": "pa_system",
+      "labelEn": "PA Speakers",
+      "labelKm": "ឧបករណ៍បំពងសំឡេង PA",
+      "slug": "pa-speakers",
+      "descriptionEn": "Ceiling, wall, horn, and column speakers for PA systems.",
+      "descriptionKm": "ស្ប៉ីក័រពិដាន ជញ្ជាំង ហ៊ន និងជួរឈរសម្រាប់ប្រព័ន្ធ PA។"
+    },
+    {
+      "id": "pa_microphones",
+      "parentId": "pa_system",
+      "labelEn": "PA Microphones",
+      "labelKm": "មីក្រូហ្វូន PA",
+      "slug": "pa-microphones",
+      "descriptionEn": "Paging, gooseneck, and desktop microphones for PA systems.",
+      "descriptionKm": "មីក្រូហ្វូន Paging, Gooseneck និង Desktop សម្រាប់ប្រព័ន្ធ PA។"
+    },
+    {
+      "id": "pa_amplifiers",
+      "parentId": "pa_system",
+      "labelEn": "PA Amplifiers",
+      "labelKm": "អំព្លីហ្វាយអ័រ PA",
+      "slug": "pa-amplifiers",
+      "descriptionEn": "Mixers, amplifiers, and multi-zone PA power solutions.",
+      "descriptionKm": "មិចសឺរ អំព្លីហ្វាយអ័រ និងដំណោះស្រាយថាមពល PA ច្រើនតំបន់។"
+    },
+    {
+      "id": "pa_controllers",
+      "parentId": "pa_system",
+      "labelEn": "PA Controllers",
+      "labelKm": "ឧបករណ៍បញ្ជា PA",
+      "slug": "pa-controllers",
+      "descriptionEn": "Matrix, zone, and control systems for PA deployments.",
+      "descriptionKm": "ប្រព័ន្ធ Matrix, Zone និង Control សម្រាប់ការដំឡើង PA។"
+    },
+    {
+      "id": "pa_network",
+      "parentId": "pa_system",
+      "labelEn": "Network Audio",
+      "labelKm": "អូឌីយ៉ូបណ្តាញ",
+      "slug": "pa-network-audio",
+      "descriptionEn": "IP/Dante audio devices for networked PA systems.",
+      "descriptionKm": "ឧបករណ៍អូឌីយ៉ូ IP/Dante សម្រាប់ប្រព័ន្ធ PA តាមបណ្តាញ។"
+    },
+    {
+      "id": "pa_software",
+      "parentId": "pa_system",
+      "labelEn": "PA Software",
+      "labelKm": "កម្មវិធី PA",
+      "slug": "pa-software",
+      "descriptionEn": "Scheduling and management software for PA systems.",
+      "descriptionKm": "កម្មវិធីកំណត់ពេល និងគ្រប់គ្រងសម្រាប់ប្រព័ន្ធ PA។"
+    },
+    {
+      "id": "pa_accessories",
+      "parentId": "pa_system",
+      "labelEn": "PA Accessories",
+      "labelKm": "គ្រឿងបន្លាស់ PA",
+      "slug": "pa-accessories",
+      "descriptionEn": "Source players, IR systems, and PA accessories.",
+      "descriptionKm": "ឧបករណ៍ចាក់ប្រភព ប្រព័ន្ធ IR និងគ្រឿងបន្លាស់ PA។"
+    },
+    {
+      "id": "smart_home",
+      "labelEn": "Smart Home",
+      "labelKm": "ស្មាតហោម",
+      "slug": "smart-home",
+      "descriptionEn": "Smart home automation devices.",
+      "descriptionKm": "ឧបករណ៍ស្មាតហោម និង automation។"
+    },
+    {
+      "id": "smart_office",
+      "labelEn": "Smart Office",
+      "labelKm": "ស្មាតការិយាល័យ",
+      "slug": "smart-office",
+      "descriptionEn": "Office automation and meeting solutions.",
+      "descriptionKm": "ការិយាល័យឆ្លាតវៃ និងសម្ភារៈបន្ទប់ប្រជុំ។"
+    },
+    {
+      "id": "security",
+      "labelEn": "Security",
+      "labelKm": "សុវត្ថិភាព",
+      "slug": "security",
+      "descriptionEn": "Security monitoring and surveillance devices.",
+      "descriptionKm": "ឧបករណ៍សុវត្ថិភាព និងសម្ងាត់គ្រប់គ្រង។"
+    },
+    {
+      "id": "access_control",
+      "labelEn": "Access Control",
+      "labelKm": "ប្រព័ន្ធគ្រប់គ្រងចូលចេញ",
+      "slug": "access-control",
+      "descriptionEn": "RFID, biometric and access control systems.",
+      "descriptionKm": "ប្រព័ន្ធ RFID, biometric និងការគ្រប់គ្រងចូលចេញ។"
+    },
+    {
+      "id": "turnstile_gate",
+      "labelEn": "Turnstile Gate",
+      "labelKm": "ច្រកទ្វារ Turnstile",
+      "slug": "turnstile-gate",
+      "descriptionEn": "Entry control turnstile gates and barriers.",
+      "descriptionKm": "ច្រកទ្វារ និងទ្វាររារាំងសម្រាប់គ្រប់គ្រងចូលចេញ។"
+    },
+    {
+      "id": "turnstile_tripod",
+      "parentId": "turnstile_gate",
+      "labelEn": "Tripod Turnstile",
+      "labelKm": "ច្រក ច្រកទ្វារបីដង",
+      "slug": "tripod-turnstile",
+      "descriptionEn": "Tripod turnstile gates for controlled entry.",
+      "descriptionKm": "ច្រក ច្រកទ្វារបីដង សម្រាប់ការគ្រប់គ្រងចូលចេញ។"
+    },
+    {
+      "id": "turnstile_flap_barrier",
+      "parentId": "turnstile_gate",
+      "labelEn": "Flap Barrier",
+      "labelKm": "ច្រក ច្រកស្លាបបិទបើក",
+      "slug": "flap-barrier",
+      "descriptionEn": "Flap barrier turnstiles for fast and secure access.",
+      "descriptionKm": "ច្រក ច្រកស្លាបបិទបើក សម្រាប់ចូលចេញលឿន និងសុវត្ថិភាព។"
+    },
+    {
+      "id": "turnstile_speed_gate",
+      "parentId": "turnstile_gate",
+      "labelEn": "Speed Gate",
+      "labelKm": "ច្រក ច្រកល្បឿនលឿន",
+      "slug": "speed-gate",
+      "descriptionEn": "Speed gates for high-traffic access control.",
+      "descriptionKm": "ច្រក ច្រកល្បឿនលឿន សម្រាប់តំបន់ចរាចរណ៍ខ្ពស់។"
+    },
+    {
+      "id": "turnstile_full_height",
+      "parentId": "turnstile_gate",
+      "labelEn": "Full Height",
+      "labelKm": "ច្រកកម្ពស់ពេញ",
+      "slug": "full-height",
+      "descriptionEn": "Full-height turnstiles for maximum security.",
+      "descriptionKm": "ច្រកកម្ពស់ពេញសម្រាប់សុវត្ថិភាពអតិបរមា។"
+    },
+    {
+      "id": "industrial_solution",
+      "labelEn": "Industrial Solution",
+      "labelKm": "ដំណោះស្រាយឧស្សាហកម្ម",
+      "slug": "industrial-solution",
+      "descriptionEn": "Industrial equipment and project solutions.",
+      "descriptionKm": "ឧបករណ៍ឧស្សាហកម្ម និងដំណោះស្រាយគម្រោង។"
+    },
+    {
+      "id": "machineries",
+      "labelEn": "Machineries",
+      "labelKm": "ម៉ាស៊ីនឧស្សាហកម្ម",
+      "slug": "machineries",
+      "descriptionEn": "Industrial machineries and hardware.",
+      "descriptionKm": "ម៉ាស៊ីនឧស្សាហកម្ម និងឧបករណ៍ពាក់ព័ន្ធ។"
+    }
+  ],
+  "products": [
+    {
+      "id": "p1-25-indoor-led-module",
+      "slug": "p1-25mm-indoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "indoor_led_display"
+      ],
+      "primaryCategoryId": "indoor_led_display",
+      "titleEn": "P1.25mm Indoor LED Display Module",
+      "titleKm": "P1.25mm អេក្រង់ LED ក្នុងអគារ Display ម៉ូឌុល",
+      "shortDescEn": "Ultra-high resolution P1.25mm indoor LED display module for control rooms, studios, and premium indoor signage.",
+      "shortDescKm": "Ultra-high resolution P1.25mm indoor LED display module for control rooms, studios, and premium indoor signage.",
+      "heroImage": "/images/products/p1-25-indoor-led-video-wall-boardroom.webp",
+      "tagsEn": [
+        "P1.25",
+        "Indoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P1.25",
+        "អេក្រង់ LED ក្នុងអគារ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p1-53-indoor-led-module",
+      "slug": "p1-53mm-indoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "indoor_led_display"
+      ],
+      "primaryCategoryId": "indoor_led_display",
+      "titleEn": "P1.53mm Indoor LED Display Module",
+      "titleKm": "P1.53mm អេក្រង់ LED ក្នុងអគារ Display ម៉ូឌុល",
+      "shortDescEn": "P1.53 indoor LED display module for close-view, high-clarity indoor video walls.",
+      "shortDescKm": "P1.53 indoor LED display module for close-view, high-clarity indoor video walls.",
+      "heroImage": "/images/products/p1-53-indoor-led-hospital-screen.webp",
+      "tagsEn": [
+        "P1.53",
+        "Indoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P1.53",
+        "អេក្រង់ LED ក្នុងអគារ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p1-86-indoor-led-module",
+      "slug": "p1-86-indoor-led-video-wall-display",
+      "categoryIds": [
+        "led_display",
+        "indoor_led_display"
+      ],
+      "primaryCategoryId": "indoor_led_display",
+      "titleEn": "P1.86 Indoor LED Video Wall Display",
+      "titleKm": "P1.86 អេក្រង់ LED ក្នុងអគារ Video Wall Display",
+      "shortDescEn": "P1.86 indoor LED video wall display for high-clarity close viewing.",
+      "shortDescKm": "P1.86 indoor LED video wall display for high-clarity close viewing.",
+      "heroImage": "/images/products/p1-86-indoor-led-video-wall-fashion-store-aeon-mall-phnom-penh-cambodia.webp",
+      "tagsEn": [
+        "P1.86",
+        "Indoor LED",
+        "LED Video Wall"
+      ],
+      "tagsKm": [
+        "P1.86",
+        "អេក្រង់ LED ក្នុងអគារ",
+        "ជញ្ជាំងវីដេអូ LED"
+      ]
+    },
+    {
+      "id": "p2-indoor-led-module",
+      "slug": "p2-indoor-led-display-board-price-in-cambodia",
+      "categoryIds": [
+        "led_display",
+        "indoor_led_display"
+      ],
+      "primaryCategoryId": "indoor_led_display",
+      "titleEn": "P2 Indoor LED Display Board",
+      "titleKm": "P2 អេក្រង់ LED ក្នុងអគារ Display Board",
+      "shortDescEn": "P2 indoor LED display board for sharp indoor signage.",
+      "shortDescKm": "P2 អេក្រង់ LED ក្នុងអគារ display board for sharp ក្នុងអគារ signage.",
+      "heroImage": "/images/products/p2-indoor-led-display-cambodia-university-auditorium-education-conference-2026.webp",
+      "tagsEn": [
+        "P2",
+        "Indoor LED",
+        "LED Display Board"
+      ],
+      "tagsKm": [
+        "P2",
+        "អេក្រង់ LED ក្នុងអគារ",
+        "ផ្ទាំងបង្ហាញ LED"
+      ]
+    },
+    {
+      "id": "p4-indoor-led-module",
+      "slug": "p4-indoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "indoor_led_display"
+      ],
+      "primaryCategoryId": "indoor_led_display",
+      "titleEn": "P4 Indoor LED Display Module",
+      "titleKm": "P4 អេក្រង់ LED ក្នុងអគារ Display ម៉ូឌុល",
+      "shortDescEn": "P4 indoor LED display module for cost-effective indoor screens.",
+      "shortDescKm": "P4 អេក្រង់ LED ក្នុងអគារ display ម៉ូឌុល for cost-effective ក្នុងអគារ screens.",
+      "heroImage": "/images/products/p4-indoor-led-display-lucky-supermarket-cambodia-grocery-advertising.webp",
+      "tagsEn": [
+        "P4",
+        "Indoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P4",
+        "អេក្រង់ LED ក្នុងអគារ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p2-5-indoor-led-module",
+      "slug": "p2-5-indoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "indoor_led_display"
+      ],
+      "primaryCategoryId": "indoor_led_display",
+      "titleEn": "P2.5 Indoor LED Display Module",
+      "titleKm": "P2.5 អេក្រង់ LED ក្នុងអគារ Display ម៉ូឌុល",
+      "shortDescEn": "P2.5 indoor LED module with fine pixel pitch for sharp, close-viewing visuals.",
+      "shortDescKm": "P2.5 indoor LED module with fine pixel pitch for sharp, close-viewing visuals.",
+      "heroImage": "/images/products/p2-5-indoor-led-display-acleda-bank-phnom-penh-cambodia-digital-banking-qr-payment.webp",
+      "tagsEn": [
+        "P2.5",
+        "Indoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P2.5",
+        "អេក្រង់ LED ក្នុងអគារ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p3-indoor-led-module",
+      "slug": "p3-indoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "indoor_led_display"
+      ],
+      "primaryCategoryId": "indoor_led_display",
+      "titleEn": "P3 Indoor LED Display Module",
+      "titleKm": "P3 អេក្រង់ LED ក្នុងអគារ Display ម៉ូឌុល",
+      "shortDescEn": "P3 indoor LED module for balanced clarity in meeting rooms and showrooms.",
+      "shortDescKm": "P3 indoor LED module for balanced clarity in meeting rooms and showrooms.",
+      "heroImage": "/images/products/p3-indoor-led-display-brown-coffee-phnom-penh-cambodia-cafe-menu-promotion.webp",
+      "tagsEn": [
+        "P3",
+        "Indoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P3",
+        "អេក្រង់ LED ក្នុងអគារ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p5-indoor-led-module",
+      "slug": "p5-indoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "indoor_led_display"
+      ],
+      "primaryCategoryId": "indoor_led_display",
+      "titleEn": "P5 Indoor LED Display Module",
+      "titleKm": "P5 អេក្រង់ LED ក្នុងអគារ Display ម៉ូឌុល",
+      "shortDescEn": "P5 indoor LED module for cost-effective indoor video walls and signage.",
+      "shortDescKm": "P5 indoor LED module for cost-effective indoor video walls and signage.",
+      "heroImage": "/images/products/p5-indoor-led-display-stage-chaktomuk-conference-hall-phnom-penh-cambodia.webp",
+      "tagsEn": [
+        "P5",
+        "Indoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P5",
+        "អេក្រង់ LED ក្នុងអគារ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p2-5-outdoor-led-display",
+      "slug": "p2-5-outdoor-led-display",
+      "categoryIds": [
+        "led_display",
+        "outdoor_led_display"
+      ],
+      "primaryCategoryId": "outdoor_led_display",
+      "titleEn": "P2.5 Outdoor LED Display",
+      "titleKm": "P2.5 អេក្រង់ LED ខាងក្រៅ Display",
+      "shortDescEn": "High-clarity P2.5 outdoor LED display for close-view advertising and smart city signage.",
+      "shortDescKm": "High-clarity P2.5 outdoor LED display for close-view advertising and smart city signage.",
+      "heroImage": "/images/products/p2-5-outdoor-led-display-bkk1-phnom-penh-smart-axiata-5g-angkor-beer-khmer-new-year-night-street.webp",
+      "tagsEn": [
+        "P2.5",
+        "Outdoor LED",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "P2.5",
+        "អេក្រង់ LED ខាងក្រៅ",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "p3-outdoor-led-module",
+      "slug": "p3-outdoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "outdoor_led_display"
+      ],
+      "primaryCategoryId": "outdoor_led_display",
+      "titleEn": "P3 Outdoor LED Display Module",
+      "titleKm": "P3 អេក្រង់ LED ខាងក្រៅ Display ម៉ូឌុល",
+      "shortDescEn": "High-brightness P3 outdoor LED module for billboards, stadiums, and digital signage.",
+      "shortDescKm": "High-brightness P3 outdoor LED module for billboards, stadiums, and digital signage.",
+      "heroImage": "/images/products/p3-outdoor-led-display-sisowath-quay-phnom-penh-cambodia-riverfront-evening-advertising.webp",
+      "tagsEn": [
+        "P3",
+        "Outdoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P3",
+        "អេក្រង់ LED ខាងក្រៅ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p4-outdoor-led-screen-panel-module",
+      "slug": "p4-outdoor-led-display-screen-panel-module",
+      "categoryIds": [
+        "led_display",
+        "outdoor_led_display"
+      ],
+      "primaryCategoryId": "outdoor_led_display",
+      "titleEn": "P4 Outdoor LED Display Screen Panel Module",
+      "titleKm": "P4 អេក្រង់ LED ខាងក្រៅ Display Screen Panel ម៉ូឌុល",
+      "shortDescEn": "P4 outdoor LED screen panel module with 320 x 160 mm size and high brightness.",
+      "shortDescKm": "P4 outdoor LED screen panel module with 320 x 160 mm size and high brightness.",
+      "heroImage": "/images/products/p4-outdoor-led-display-olympia-mall-phnom-penh-cambodia.webp",
+      "tagsEn": [
+        "P4",
+        "Outdoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P4",
+        "អេក្រង់ LED ខាងក្រៅ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p5-outdoor-led-module",
+      "slug": "p5-outdoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "outdoor_led_display"
+      ],
+      "primaryCategoryId": "outdoor_led_display",
+      "titleEn": "P5 Outdoor LED Display Module",
+      "titleKm": "P5 អេក្រង់ LED ខាងក្រៅ Display ម៉ូឌុល",
+      "shortDescEn": "P5 outdoor LED module with 320 x 160 mm size for long-distance advertising.",
+      "shortDescKm": "P5 outdoor LED module with 320 x 160 mm size for long-distance advertising.",
+      "heroImage": "/images/products/p5-outdoor-led-display-russian-market-phnom-penh-cambodia-busy-street-advertising.webp",
+      "tagsEn": [
+        "P5",
+        "Outdoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P5",
+        "អេក្រង់ LED ខាងក្រៅ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p6-outdoor-led-display",
+      "slug": "p6-outdoor-led-display",
+      "categoryIds": [
+        "led_display",
+        "outdoor_led_display"
+      ],
+      "primaryCategoryId": "outdoor_led_display",
+      "titleEn": "P6 Outdoor LED Display",
+      "titleKm": "P6 អេក្រង់ LED ខាងក្រៅ Display",
+      "shortDescEn": "P6 outdoor LED display with 192 x 192 mm module size and durable IP protection.",
+      "shortDescKm": "P6 outdoor LED display with 192 x 192 mm module size and durable IP protection.",
+      "heroImage": "/images/products/p6-outdoor-led-display-national-road1-cambodia-sunset-advertising-billboard.webp",
+      "tagsEn": [
+        "P6",
+        "Outdoor LED",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "P6",
+        "អេក្រង់ LED ខាងក្រៅ",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "p6-67-outdoor-led-module",
+      "slug": "p6-67-outdoor-led-display-module",
+      "categoryIds": [
+        "led_display",
+        "outdoor_led_display"
+      ],
+      "primaryCategoryId": "outdoor_led_display",
+      "titleEn": "P6.67 Outdoor LED Display Module",
+      "titleKm": "P6.67 អេក្រង់ LED ខាងក្រៅ Display ម៉ូឌុល",
+      "shortDescEn": "P6.67 outdoor LED module with 320 x 160 mm size for cost-efficient outdoor signage.",
+      "shortDescKm": "P6.67 outdoor LED module with 320 x 160 mm size for cost-efficient outdoor signage.",
+      "heroImage": "/images/products/p6.67-outdoor-led-display-phnom-penh-special-economic-zone-industrial-advertising.webp",
+      "tagsEn": [
+        "P6.67",
+        "Outdoor LED",
+        "LED Module"
+      ],
+      "tagsKm": [
+        "P6.67",
+        "អេក្រង់ LED ខាងក្រៅ",
+        "ម៉ូឌុល LED"
+      ]
+    },
+    {
+      "id": "p8-outdoor-led-display",
+      "slug": "p8-outdoor-led-display",
+      "categoryIds": [
+        "led_display",
+        "outdoor_led_display"
+      ],
+      "primaryCategoryId": "outdoor_led_display",
+      "titleEn": "P8 Outdoor LED Display",
+      "titleKm": "P8 អេក្រង់ LED ខាងក្រៅ Display",
+      "shortDescEn": "P8 outdoor LED display with 320 x 160 mm size for large advertising screens.",
+      "shortDescKm": "P8 outdoor LED display with 320 x 160 mm size for large advertising screens.",
+      "heroImage": "/images/products/p8-outdoor-led-billboard-siem-reap-night-market-cambodia.webp",
+      "tagsEn": [
+        "P8",
+        "Outdoor LED",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "P8",
+        "អេក្រង់ LED ខាងក្រៅ",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "p10-outdoor-led-sign-board",
+      "slug": "p10-outdoor-led-sign-board-price-in-cambodia",
+      "categoryIds": [
+        "led_display",
+        "outdoor_led_display"
+      ],
+      "primaryCategoryId": "outdoor_led_display",
+      "titleEn": "P10 Outdoor LED Sign Board",
+      "titleKm": "P10 អេក្រង់ LED ខាងក្រៅ Sign Board",
+      "shortDescEn": "P10 outdoor LED sign board for long-distance viewing and budget-friendly advertising.",
+      "shortDescKm": "P10 outdoor LED sign board for long-distance viewing and budget-friendly advertising.",
+      "heroImage": "/images/products/p10-outdoor-led-signboard-phnom-penh-cambodia-street-advertising.webp",
+      "tagsEn": [
+        "P10",
+        "Outdoor LED",
+        "LED Sign Board"
+      ],
+      "tagsKm": [
+        "P10",
+        "អេក្រង់ LED ខាងក្រៅ",
+        "LED Sign Board"
+      ]
+    },
+    {
+      "id": "interactive-screen-98",
+      "slug": "premium-quality-interactive-screen-98",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Premium Quality Interactive Screen 98\"",
+      "titleKm": "អេក្រង់អន្តរកម្មគុណភាពខ្ពស់ 98\"",
+      "shortDescEn": "Large format interactive flat panel for classrooms and boardrooms.",
+      "shortDescKm": "អេក្រង់អន្តរកម្មទំហំធំ សម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ។",
+      "heroImage": "/images/products/ifp-18-96.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "interactive-screen-85",
+      "slug": "premium-quality-interactive-screen-85",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Premium Quality Interactive Screen 85\"",
+      "titleKm": "អេក្រង់អន្តរកម្មគុណភាពខ្ពស់ 85\"",
+      "shortDescEn": "Large interactive screen for classrooms and boardrooms.",
+      "shortDescKm": "អេក្រង់អន្តរកម្មទំហំធំ សម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ។",
+      "heroImage": "/images/products/ifp-18-75.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "interactive-screen-75",
+      "slug": "premium-quality-interactive-screen-75",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Premium Quality Interactive Screen 75\"",
+      "titleKm": "អេក្រង់អន្តរកម្មគុណភាពខ្ពស់ 75\"",
+      "shortDescEn": "Interactive screen for classrooms and meetings.",
+      "shortDescKm": "អេក្រង់អន្តរកម្មសម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ។",
+      "heroImage": "/images/products/ifp-18-75.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "interactive-screen-65",
+      "slug": "premium-quality-interactive-screen-65",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Premium Quality Interactive Screen 65\"",
+      "titleKm": "អេក្រង់អន្តរកម្មគុណភាពខ្ពស់ 65\"",
+      "shortDescEn": "Interactive screen for classrooms and meetings.",
+      "shortDescKm": "អេក្រង់អន្តរកម្មសម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ។",
+      "heroImage": "/images/products/ifp-18-65.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "interactive-screen-55",
+      "slug": "premium-quality-interactive-screen-55",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Premium Quality Interactive Screen 55\"",
+      "titleKm": "អេក្រង់អន្តរកម្មគុណភាពខ្ពស់ 55\"",
+      "shortDescEn": "Compact interactive screen for small rooms.",
+      "shortDescKm": "អេក្រង់អន្តរកម្មទំហំតូច សម្រាប់បន្ទប់តូច។",
+      "heroImage": "/images/products/ifp-18-55.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "vanwinda-75",
+      "slug": "vanwinda-smart-board-4k-75",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "VANWINDA Smart Board 4K UHD 75\"",
+      "titleKm": "VANWINDA Smart Board 4K UHD 75\"",
+      "shortDescEn": "Smart board for classrooms and meeting rooms.",
+      "shortDescKm": "ស្មាតបូដសម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ។",
+      "heroImage": "/images/products/ifp-18-75.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "vanwinda-65",
+      "slug": "vanwinda-smart-board-4k-65",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "VANWINDA Smart Board 4K UHD 65\"",
+      "titleKm": "VANWINDA Smart Board 4K UHD 65\"",
+      "shortDescEn": "65-inch smart board for classrooms and meeting rooms.",
+      "shortDescKm": "ស្មាតបូដ 65\" សម្រាប់ថ្នាក់រៀន និងបន្ទប់ប្រជុំ។",
+      "heroImage": "/images/products/ifp-18-65.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "vanwinda-86",
+      "slug": "vanwinda-smart-board-4k-86",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "VANWINDA Smart Board 4K UHD 86\"",
+      "titleKm": "VANWINDA Smart Board 4K UHD 86\"",
+      "shortDescEn": "Large 86-inch smart board for big classrooms.",
+      "shortDescKm": "ស្មាតបូដ 86\" សម្រាប់ថ្នាក់រៀនធំៗ។",
+      "heroImage": "/images/products/ifp-18-86.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Training"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "បណ្តុះបណ្តាល"
+      ]
+    },
+    {
+      "id": "skyworth-86",
+      "slug": "skyworth-smart-board-4k-86",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Skyworth Smart Board 4K 86\"",
+      "titleKm": "Skyworth Smart Board 4K 86\"",
+      "shortDescEn": "Large 86-inch smart board for premium classrooms.",
+      "shortDescKm": "ស្មាតបូដ 86\" សម្រាប់ថ្នាក់រៀនគុណភាពខ្ពស់។",
+      "heroImage": "/images/products/ifp-18-86.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "skyworth-75",
+      "slug": "skyworth-smart-board-4k-75",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Skyworth Smart Board 4K 75\"",
+      "titleKm": "Skyworth Smart Board 4K 75\"",
+      "shortDescEn": "75-inch smart board for classrooms and training rooms.",
+      "shortDescKm": "ស្មាតបូដ 75\" សម្រាប់ថ្នាក់រៀន និងបន្ទប់បណ្តុះបណ្តាល។",
+      "heroImage": "/images/products/ifp-18-75.webp",
+      "tagsEn": [
+        "Smart Board",
+        "Education"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ",
+        "ការអប់រំ"
+      ]
+    },
+    {
+      "id": "smart-board-86",
+      "slug": "smart-board-86",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Smart Board 86\"",
+      "titleKm": "ស្មាតបូដ 86\"",
+      "shortDescEn": "86-inch interactive smart board.",
+      "shortDescKm": "ស្មាតបូដអន្តរកម្ម 86\"។",
+      "heroImage": "/images/products/ifp-18-86.webp",
+      "tagsEn": [
+        "Smart Board"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ"
+      ]
+    },
+    {
+      "id": "smart-board-75",
+      "slug": "smart-board-75",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Smart Board 75\"",
+      "titleKm": "ស្មាតបូដ 75\"",
+      "shortDescEn": "75-inch interactive smart board.",
+      "shortDescKm": "ស្មាតបូដអន្តរកម្ម 75\"។",
+      "heroImage": "/images/products/ifp-18-75.webp",
+      "tagsEn": [
+        "Smart Board"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ"
+      ]
+    },
+    {
+      "id": "smart-board-65",
+      "slug": "smart-board-65",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Smart Board 65\"",
+      "titleKm": "ស្មាតបូដ 65\"",
+      "shortDescEn": "65-inch interactive smart board.",
+      "shortDescKm": "ស្មាតបូដអន្តរកម្ម 65\"។",
+      "heroImage": "/images/products/ifp-18-65.webp",
+      "tagsEn": [
+        "Smart Board"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ"
+      ]
+    },
+    {
+      "id": "smart-board-55",
+      "slug": "smart-board-55",
+      "categoryIds": [
+        "smart_board"
+      ],
+      "primaryCategoryId": "smart_board",
+      "titleEn": "Smart Board 55\"",
+      "titleKm": "ស្មាតបូដ 55\"",
+      "shortDescEn": "55-inch interactive smart board.",
+      "shortDescKm": "ស្មាតបូដអន្តរកម្ម 55\"។",
+      "heroImage": "/images/products/ifp-18-55.webp",
+      "tagsEn": [
+        "Smart Board"
+      ],
+      "tagsKm": [
+        "ស្មាតបូដ"
+      ]
+    },
+    {
+      "id": "turnstile-ds-tm",
+      "slug": "ds-tm-turnstile-gate",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "DS-TM Turnstile Gate",
+      "titleKm": "ច្រកទ្វារ Turnstile DS-TM",
+      "shortDescEn": "Turnstile gate for controlled access.",
+      "shortDescKm": "Turnstile សម្រាប់គ្រប់គ្រងចូលចេញ។",
+      "heroImage": "/images/products/tg-tripod-turnstile-gate-ds1000.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Security"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "សុវត្ថិភាព"
+      ]
+    },
+    {
+      "id": "turnstile-ds-tmg",
+      "slug": "ds-tmg-turnstile-gate",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "DS-TMG Turnstile Gate",
+      "titleKm": "ច្រកទ្វារ Turnstile DS-TMG",
+      "shortDescEn": "Turnstile gate for secure entry.",
+      "shortDescKm": "Turnstile សម្រាប់ចូលចេញមានសុវត្ថិភាព។",
+      "heroImage": "/images/products/tg-turnstile-gate-ds-q30.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Security"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "សុវត្ថិភាព"
+      ]
+    },
+    {
+      "id": "turnstile-ds-tms",
+      "slug": "ds-tms-turnstile-gate",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "DS-TMS Turnstile Gate",
+      "titleKm": "ច្រកទ្វារ Turnstile DS-TMS",
+      "shortDescEn": "Turnstile gate for secure access.",
+      "shortDescKm": "Turnstile សម្រាប់ចូលចេញមានសុវត្ថិភាព។",
+      "heroImage": "/images/products/tg-ds-q20-turnstile-gate-advanced-access-control-system.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Security"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "សុវត្ថិភាព"
+      ]
+    },
+    {
+      "id": "hd-r716-receiving-card",
+      "slug": "hd-r716-receiving-card",
+      "categoryIds": [
+        "led_display",
+        "led_accessories"
+      ],
+      "primaryCategoryId": "led_accessories",
+      "titleEn": "HD-R716 Receiving Card",
+      "titleKm": "HD-R716 កាតទទួលសញ្ញា",
+      "shortDescEn": "High-capacity receiving card with 16 HUB75E ports for fine-pitch LED video walls.",
+      "shortDescKm": "High-capacity receiving card with 16 HUB75E ports for fine-pitch LED video walls.",
+      "heroImage": "/images/products/hd-r716.webp",
+      "tagsEn": [
+        "Receiving Card",
+        "Huidu",
+        "HUB75E",
+        "LED Accessories"
+      ],
+      "tagsKm": [
+        "កាតទទួលសញ្ញា",
+        "Huidu",
+        "HUB75E",
+        "LED Accessories"
+      ]
+    },
+    {
+      "id": "hd-r516-receiving-card",
+      "slug": "hd-r516-receiving-card",
+      "categoryIds": [
+        "led_display",
+        "led_accessories"
+      ],
+      "primaryCategoryId": "led_accessories",
+      "titleEn": "HD-R516 Receiving Card",
+      "titleKm": "HD-R516 កាតទទួលសញ្ញា",
+      "shortDescEn": "16 HUB75E port receiving card with 256 x 512 pixel load and dual Gigabit Ethernet.",
+      "shortDescKm": "16 HUB75E port receiving card with 256 x 512 pixel load and dual Gigabit Ethernet.",
+      "heroImage": "/images/products/hd-r516.webp",
+      "tagsEn": [
+        "Receiving Card",
+        "Huidu",
+        "HUB75E",
+        "LED Accessories"
+      ],
+      "tagsKm": [
+        "កាតទទួលសញ្ញា",
+        "Huidu",
+        "HUB75E",
+        "LED Accessories"
+      ]
+    },
+    {
+      "id": "r-732-receiving-card",
+      "slug": "r-732-receiving-card",
+      "categoryIds": [
+        "led_display",
+        "led_accessories"
+      ],
+      "primaryCategoryId": "led_accessories",
+      "titleEn": "R-732 Receiving Card",
+      "titleKm": "R-732 កាតទទួលសញ្ញា",
+      "shortDescEn": "High-performance receiver card with 8x HUB320 and 256 x 1024 pixel capacity.",
+      "shortDescKm": "High-performance receiver card with 8x HUB320 and 256 x 1024 pixel capacity.",
+      "heroImage": "/images/products/r-732-top.webp",
+      "tagsEn": [
+        "Receiving Card",
+        "Huidu",
+        "HUB320",
+        "LED Accessories"
+      ],
+      "tagsKm": [
+        "កាតទទួលសញ្ញា",
+        "Huidu",
+        "HUB320",
+        "LED Accessories"
+      ]
+    },
+    {
+      "id": "r-712-receiving-card",
+      "slug": "r-712-receiving-card",
+      "categoryIds": [
+        "led_display",
+        "led_accessories"
+      ],
+      "primaryCategoryId": "led_accessories",
+      "titleEn": "R-712 Receiving Card",
+      "titleKm": "R-712 កាតទទួលសញ្ញា",
+      "shortDescEn": "12 HUB75E port receiving card with 131,072 pixel load and wide scan compatibility.",
+      "shortDescKm": "12 HUB75E port receiving card with 131,072 pixel load and wide scan compatibility.",
+      "heroImage": "/images/products/r-712.webp",
+      "tagsEn": [
+        "Receiving Card",
+        "Huidu",
+        "HUB75E",
+        "LED Accessories"
+      ],
+      "tagsKm": [
+        "កាតទទួលសញ្ញា",
+        "Huidu",
+        "HUB75E",
+        "LED Accessories"
+      ]
+    },
+    {
+      "id": "g-energy-5v-30a-power-supply",
+      "slug": "g-energy-5v-30a-power-supply",
+      "categoryIds": [
+        "led_display",
+        "power_supply"
+      ],
+      "primaryCategoryId": "power_supply",
+      "titleEn": "G-Energy 5V 30A Power Supply",
+      "titleKm": "G-Energy 5V 30A ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
+      "shortDescEn": "5V 30A (150W) LED display power supply for stable output.",
+      "shortDescKm": "5V 30A (150W) LED display ឧបករណ៍ផ្គត់ផ្គង់ថាមពល for stable output.",
+      "heroImage": "/images/products/g-energy-5v-30a.webp",
+      "tagsEn": [
+        "Power Supply",
+        "5V 30A",
+        "G-Energy",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
+        "5V 30A",
+        "G-Energy",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "smps-5v-20a-power-supply",
+      "slug": "5v-20a-dc-switch-mode-power-supply-smps",
+      "categoryIds": [
+        "led_display",
+        "power_supply"
+      ],
+      "primaryCategoryId": "power_supply",
+      "titleEn": "5V 20A DC Switch Mode Power Supply (SMPS)",
+      "titleKm": "5V 20A DC Switch Mode ឧបករណ៍ផ្គត់ផ្គង់ថាមពល (SMPS)",
+      "shortDescEn": "5V 20A (100W) SMPS for LED displays and signage.",
+      "shortDescKm": "5V 20A (100W) SMPS for LED displays and signage.",
+      "heroImage": "/images/products/smps-5v-20a.webp",
+      "tagsEn": [
+        "Power Supply",
+        "5V 20A",
+        "SMPS",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
+        "5V 20A",
+        "SMPS",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "g-energy-5v-40a-power-supply",
+      "slug": "g-energy-5v-40a-led-display-power-supply",
+      "categoryIds": [
+        "led_display",
+        "power_supply"
+      ],
+      "primaryCategoryId": "power_supply",
+      "titleEn": "G-Energy 5V 40A LED Display Power Supply",
+      "titleKm": "G-Energy 5V 40A LED Display ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
+      "shortDescEn": "5V 40A (200W) power supply for LED display cabinets.",
+      "shortDescKm": "5V 40A (200W) ឧបករណ៍ផ្គត់ផ្គង់ថាមពល for LED display កាប៊ីណេតs.",
+      "heroImage": "/images/products/g-energy-5v-40a.webp",
+      "tagsEn": [
+        "Power Supply",
+        "5V 40A",
+        "G-Energy",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
+        "5V 40A",
+        "G-Energy",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "hd-vp-210h-video-processor",
+      "slug": "led-video-processor",
+      "categoryIds": [
+        "led_display",
+        "video_processor"
+      ],
+      "primaryCategoryId": "video_processor",
+      "titleEn": "LED Video Processor (HD-VP-210H)",
+      "titleKm": "LED ឧបករណ៍ដំណើរការវីដេអូ (HD-VP-210H)",
+      "shortDescEn": "4K-capable LED video processor with multi-input switching for LED walls.",
+      "shortDescKm": "4K-capable LED video processor with multi-input switching for LED walls.",
+      "heroImage": "/images/products/hd-vp-210h.webp",
+      "tagsEn": [
+        "Video Processor",
+        "4K",
+        "Huidu",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "ឧបករណ៍ដំណើរការវីដេអូ",
+        "4K",
+        "Huidu",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "hd-vp-620-video-processor",
+      "slug": "huidu-hd-vp-620",
+      "categoryIds": [
+        "led_display",
+        "video_processor"
+      ],
+      "primaryCategoryId": "video_processor",
+      "titleEn": "Huidu HD-VP620 LED Video Processor",
+      "titleKm": "Huidu HD-VP620 LED ឧបករណ៍ដំណើរការវីដេអូ",
+      "shortDescEn": "6-channel input video processor with 4K output and multi-window display.",
+      "shortDescKm": "6-channel input video processor with 4K output and multi-window display.",
+      "heroImage": "/images/products/hd-vp-620.webp",
+      "tagsEn": [
+        "Video Processor",
+        "4K",
+        "Huidu",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "ឧបករណ៍ដំណើរការវីដេអូ",
+        "4K",
+        "Huidu",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "hd-vp-820-video-processor",
+      "slug": "hd-vp820-huidu-video-processor",
+      "categoryIds": [
+        "led_display",
+        "video_processor"
+      ],
+      "primaryCategoryId": "video_processor",
+      "titleEn": "HD-VP820 Huidu Video Processor",
+      "titleKm": "HD-VP820 Huidu ឧបករណ៍ដំណើរការវីដេអូ",
+      "shortDescEn": "8-channel input video processor with 4K output for large LED walls.",
+      "shortDescKm": "8-channel input video processor with 4K output for large LED walls.",
+      "heroImage": "/images/products/hd-vp-820.webp",
+      "tagsEn": [
+        "Video Processor",
+        "4K",
+        "Huidu",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "ឧបករណ៍ដំណើរការវីដេអូ",
+        "4K",
+        "Huidu",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "hd-vp-410-video-processor",
+      "slug": "hd-vp-410-video-processor",
+      "categoryIds": [
+        "led_display",
+        "video_processor"
+      ],
+      "primaryCategoryId": "video_processor",
+      "titleEn": "HD-VP410 LED Video Processor",
+      "titleKm": "HD-VP410 LED ឧបករណ៍ដំណើរការវីដេអូ",
+      "shortDescEn": "4-input LED video processor for medium LED screens and rentals.",
+      "shortDescKm": "4-input LED video processor for medium LED screens and rentals.",
+      "heroImage": "/images/products/hd-vp-410.webp",
+      "tagsEn": [
+        "Video Processor",
+        "Huidu",
+        "LED Display"
+      ],
+      "tagsKm": [
+        "ឧបករណ៍ដំណើរការវីដេអូ",
+        "Huidu",
+        "LED Display"
+      ]
+    },
+    {
+      "id": "ifp-18-55",
+      "slug": "ingscreen-interactive-panel-18-series-55",
+      "categoryIds": [
+        "interactive_panel"
+      ],
+      "primaryCategoryId": "interactive_panel",
+      "titleEn": "Ingscreen Interactive Panel 18 Series 55 Inch",
+      "titleKm": "Ingscreen Interactive Panel 18 Series 55 Inch",
+      "shortDescEn": "55-inch 4K UHD interactive flat panel with 20-point touch for classrooms and meeting rooms.",
+      "shortDescKm": "55-inch 4K UHD interactive flat panel with 20-point touch for classrooms and meeting rooms.",
+      "heroImage": "/images/products/ifp-18-55.webp",
+      "tagsEn": [
+        "Smart Board",
+        "55 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ],
+      "tagsKm": [
+        "Smart Board",
+        "55 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ]
+    },
+    {
+      "id": "ifp-18-65",
+      "slug": "ingscreen-interactive-panel-18-series-65",
+      "categoryIds": [
+        "interactive_panel"
+      ],
+      "primaryCategoryId": "interactive_panel",
+      "titleEn": "Ingscreen Interactive Panel 18 Series 65 Inch",
+      "titleKm": "Ingscreen Interactive Panel 18 Series 65 Inch",
+      "shortDescEn": "65-inch 4K UHD smart board with 20-point touch and Android OS for classrooms and offices.",
+      "shortDescKm": "65-inch 4K UHD smart board with 20-point touch and Android OS for classrooms and offices.",
+      "heroImage": "/images/products/ifp-18-65.webp",
+      "tagsEn": [
+        "Smart Board",
+        "65 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ],
+      "tagsKm": [
+        "Smart Board",
+        "65 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ]
+    },
+    {
+      "id": "ifp-18-75",
+      "slug": "interactive-panel-18-series-75",
+      "categoryIds": [
+        "interactive_panel"
+      ],
+      "primaryCategoryId": "interactive_panel",
+      "titleEn": "Interactive Panel 18 Series 75 Inch",
+      "titleKm": "Interactive Panel 18 Series 75 Inch",
+      "shortDescEn": "75-inch 4K smart board with 20/40-point touch for training rooms and classrooms.",
+      "shortDescKm": "75-inch 4K smart board with 20/40-point touch for training rooms and classrooms.",
+      "heroImage": "/images/products/ifp-18-75.webp",
+      "tagsEn": [
+        "Smart Board",
+        "75 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ],
+      "tagsKm": [
+        "Smart Board",
+        "75 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ]
+    },
+    {
+      "id": "ifp-18-86",
+      "slug": "ingscreen-interactive-panel-18-series-86",
+      "categoryIds": [
+        "interactive_panel"
+      ],
+      "primaryCategoryId": "interactive_panel",
+      "titleEn": "Ingscreen Interactive Panel 18 Series 86 Inch",
+      "titleKm": "Ingscreen Interactive Panel 18 Series 86 Inch",
+      "shortDescEn": "86-inch 4K interactive flat panel for large classrooms and boardrooms.",
+      "shortDescKm": "86-inch 4K interactive flat panel for large classrooms and boardrooms.",
+      "heroImage": "/images/products/ifp-18-86.webp",
+      "tagsEn": [
+        "Smart Board",
+        "86 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ],
+      "tagsKm": [
+        "Smart Board",
+        "86 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ]
+    },
+    {
+      "id": "ifp-18-96",
+      "slug": "ingscreen-interactive-panel-18-series-96",
+      "categoryIds": [
+        "interactive_panel"
+      ],
+      "primaryCategoryId": "interactive_panel",
+      "titleEn": "Ingscreen Interactive Panel 18 Series 96 Inch",
+      "titleKm": "Ingscreen Interactive Panel 18 Series 96 Inch",
+      "shortDescEn": "96-inch 4K interactive flat panel for large classrooms and training halls.",
+      "shortDescKm": "96-inch 4K interactive flat panel for large classrooms and training halls.",
+      "heroImage": "/images/products/ifp-18-96.webp",
+      "tagsEn": [
+        "Smart Board",
+        "96 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ],
+      "tagsKm": [
+        "Smart Board",
+        "96 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ]
+    },
+    {
+      "id": "ifp-18-110",
+      "slug": "ingscreen-interactive-panel-18-series-110",
+      "categoryIds": [
+        "interactive_panel"
+      ],
+      "primaryCategoryId": "interactive_panel",
+      "titleEn": "Ingscreen Interactive Panel 18 Series 110 Inch",
+      "titleKm": "Ingscreen Interactive Panel 18 Series 110 Inch",
+      "shortDescEn": "110-inch 4K interactive flat panel for auditoriums and premium boardrooms.",
+      "shortDescKm": "110-inch 4K interactive flat panel for auditoriums and premium boardrooms.",
+      "heroImage": "/images/products/ifp-18-110.webp",
+      "tagsEn": [
+        "Smart Board",
+        "110 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ],
+      "tagsKm": [
+        "Smart Board",
+        "110 inch",
+        "4K",
+        "Interactive Flat Panel"
+      ]
+    },
+    {
+      "id": "pa-network-audio-management-software",
+      "slug": "network-audio-management-software",
+      "categoryIds": [
+        "pa_system",
+        "pa_software"
+      ],
+      "primaryCategoryId": "pa_software",
+      "titleEn": "Network Audio Management Software",
+      "titleKm": "Network Audio Management Software",
+      "shortDescEn": "Centralized network audio management software for multi-zone PA systems in Cambodia.",
+      "shortDescKm": "Centralized network audio management software for multi-zone PA systems in Cambodia.",
+      "heroImage": "/images/products/pa-network-audio-management-software.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-ir-transmitters-receivers",
+      "slug": "ir-transmitters-receivers",
+      "categoryIds": [
+        "pa_system",
+        "pa_accessories"
+      ],
+      "primaryCategoryId": "pa_accessories",
+      "titleEn": "IR Transmitter & Receiver",
+      "titleKm": "IR Transmitter & Receiver",
+      "shortDescEn": "IR Transmitter & Receiver for PA system installations in Cambodia.",
+      "shortDescKm": "IR Transmitter & Receiver for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-ir-transmitters-receivers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-voting-recording-systems",
+      "slug": "voting-recording-systems",
+      "categoryIds": [
+        "pa_system",
+        "pa_accessories"
+      ],
+      "primaryCategoryId": "pa_accessories",
+      "titleEn": "Voting & Recording systems",
+      "titleKm": "Voting & Recording systems",
+      "shortDescEn": "Voting & Recording systems for PA system installations in Cambodia.",
+      "shortDescKm": "Voting & Recording systems for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-voting-recording-systems.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-central-control-units",
+      "slug": "central-control-units",
+      "categoryIds": [
+        "pa_system",
+        "pa_controllers"
+      ],
+      "primaryCategoryId": "pa_controllers",
+      "titleEn": "Central Control units",
+      "titleKm": "Central Control units",
+      "shortDescEn": "Central Control units for PA system installations in Cambodia.",
+      "shortDescKm": "Central Control units for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-central-control-units.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-gooseneck-microphones",
+      "slug": "gooseneck-microphones",
+      "categoryIds": [
+        "pa_system",
+        "pa_microphones"
+      ],
+      "primaryCategoryId": "pa_microphones",
+      "titleEn": "Gooseneck Microphones",
+      "titleKm": "Gooseneck Microphones",
+      "shortDescEn": "Gooseneck Microphones for PA system installations in Cambodia.",
+      "shortDescKm": "Gooseneck Microphones for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-gooseneck-microphones.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-desktop-broadcast-microphones",
+      "slug": "desktop-broadcast-microphones",
+      "categoryIds": [
+        "pa_system",
+        "pa_microphones"
+      ],
+      "primaryCategoryId": "pa_microphones",
+      "titleEn": "Desktop Broadcast Microphones",
+      "titleKm": "Desktop Broadcast Microphones",
+      "shortDescEn": "Desktop Broadcast Microphones for PA system installations in Cambodia.",
+      "shortDescKm": "Desktop Broadcast Microphones for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-desktop-broadcast-microphones.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-pendant-projection-speakers",
+      "slug": "pendant-projection-speakers",
+      "categoryIds": [
+        "pa_system",
+        "pa_speakers"
+      ],
+      "primaryCategoryId": "pa_speakers",
+      "titleEn": "Pendant/Projection Speakers",
+      "titleKm": "Pendant/Projection Speakers",
+      "shortDescEn": "Pendant/Projection Speakers for PA system installations in Cambodia.",
+      "shortDescKm": "Pendant/Projection Speakers for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-pendant-projection-speakers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-column-speakers",
+      "slug": "column-speakers",
+      "categoryIds": [
+        "pa_system",
+        "pa_speakers"
+      ],
+      "primaryCategoryId": "pa_speakers",
+      "titleEn": "Column Speakers",
+      "titleKm": "Column Speakers",
+      "shortDescEn": "Column Speakers for PA system installations in Cambodia.",
+      "shortDescKm": "Column Speakers for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-column-speakers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-horn-speakers",
+      "slug": "horn-speakers",
+      "categoryIds": [
+        "pa_system",
+        "pa_speakers"
+      ],
+      "primaryCategoryId": "pa_speakers",
+      "titleEn": "Horn Speakers",
+      "titleKm": "Horn Speakers",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-horn-speakers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-wall-mounted-speakers",
+      "slug": "wall-mounted-speakers",
+      "categoryIds": [
+        "pa_system",
+        "pa_speakers"
+      ],
+      "primaryCategoryId": "pa_speakers",
+      "titleEn": "Wall Mounted Speakers",
+      "titleKm": "Wall Mounted Speakers",
+      "shortDescEn": "Wall Mounted Speakers for PA system installations in Cambodia.",
+      "shortDescKm": "Wall Mounted Speakers for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-wall-mounted-speakers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-mixer-amplifiers",
+      "slug": "mixer-amplifiers",
+      "categoryIds": [
+        "pa_system",
+        "pa_amplifiers"
+      ],
+      "primaryCategoryId": "pa_amplifiers",
+      "titleEn": "Mixer amplifiers",
+      "titleKm": "Mixer amplifiers",
+      "shortDescEn": "Mixer amplifiers for PA system installations in Cambodia.",
+      "shortDescKm": "Mixer amplifiers for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-mixer-amplifiers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-multi-zone-amplifiers",
+      "slug": "multi-zone-amplifiers",
+      "categoryIds": [
+        "pa_system",
+        "pa_amplifiers"
+      ],
+      "primaryCategoryId": "pa_amplifiers",
+      "titleEn": "Multi-zone amplifiers",
+      "titleKm": "Multi-zone amplifiers",
+      "shortDescEn": "Multi-zone amplifiers for PA system installations in Cambodia.",
+      "shortDescKm": "Multi-zone amplifiers for PA system installations in Cambodia.",
+      "heroImage": "/images/products/pa-multi-zone-amplifiers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-portable-pa-setups",
+      "slug": "portable-pa-setups",
+      "categoryIds": [
+        "pa_system",
+        "pa_accessories"
+      ],
+      "primaryCategoryId": "pa_accessories",
+      "titleEn": "Portable PA Setups",
+      "titleKm": "Portable PA Setups",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-portable-pa-setups.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-dante-ceiling-wall-speakers",
+      "slug": "dante-ceiling-wall-speakers",
+      "categoryIds": [
+        "pa_system",
+        "pa_network",
+        "pa_speakers"
+      ],
+      "primaryCategoryId": "pa_network",
+      "titleEn": "Dante Ceiling | Wall Speakers",
+      "titleKm": "Dante Ceiling | Wall Speakers",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-dante-ceiling-wall-speakers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-dante-i-o-interfaces",
+      "slug": "dante-i-o-interfaces",
+      "categoryIds": [
+        "pa_system",
+        "pa_network"
+      ],
+      "primaryCategoryId": "pa_network",
+      "titleEn": "Dante I/O Interfaces",
+      "titleKm": "Dante I/O Interfaces",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-dante-i-o-interfaces.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-dante-audio-processors",
+      "slug": "dante-audio-processors",
+      "categoryIds": [
+        "pa_system",
+        "pa_network"
+      ],
+      "primaryCategoryId": "pa_network",
+      "titleEn": "Dante Audio Processors",
+      "titleKm": "Dante Audio Processors",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-dante-audio-processors.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-ip-paging-microphones",
+      "slug": "ip-paging-microphones",
+      "categoryIds": [
+        "pa_system",
+        "pa_network",
+        "pa_microphones"
+      ],
+      "primaryCategoryId": "pa_network",
+      "titleEn": "IP paging microphones",
+      "titleKm": "IP paging microphones",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-ip-paging-microphones.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-ip-based-amplifiers-terminals-2",
+      "slug": "ip-based-amplifiers-terminals-2",
+      "categoryIds": [
+        "pa_system",
+        "pa_network",
+        "pa_amplifiers"
+      ],
+      "primaryCategoryId": "pa_network",
+      "titleEn": "IP based amplifiers & terminals",
+      "titleKm": "IP based amplifiers & terminals",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-ip-based-amplifiers-terminals-2.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-scheduler-based-audio-control-system",
+      "slug": "scheduler-based-audio-control-system",
+      "categoryIds": [
+        "pa_system",
+        "pa_software"
+      ],
+      "primaryCategoryId": "pa_software",
+      "titleEn": "Scheduler Based Audio Control System",
+      "titleKm": "Scheduler Based Audio Control System",
+      "shortDescEn": "Key Features • Function: Automatic Audio Playback &amp; Zone Scheduling • Scheduling Options: Daily, Weekly, Monthly Event Schedules • Control Interface: Touchscreen LCD Display • Playback Support: MP3/WAV via USB &amp; Internal Storage • Zone Control: Supports Up to 8 Output Zones • Internal Storage: Built-in Flash Memory (Up to 16GB) • External Storage: USB Port for Additional Audio Files • Audio Outputs: 100V Line or RCA Outputs • Connectivity: RS-485 / TCP-IP / USB • Power Supply: AC 110V–240V, 50/60Hz • Mount Type: Standard 1U Rack-Mountable • Warranty: 1 Year",
+      "shortDescKm": "Key Features • Function: Automatic Audio Playback &amp; Zone Scheduling • Scheduling Options: Daily, Weekly, Monthly Event Schedules • Control Interface: Touchscreen LCD Display • Playback Support: MP3/WAV via USB &amp; Internal Storage • Zone Control: Supports Up to 8 Output Zones • Internal Storage: Built-in Flash Memory (Up to 16GB) • External Storage: USB Port for Additional Audio Files • Audio Outputs: 100V Line or RCA Outputs • Connectivity: RS-485 / TCP-IP / USB • Power Supply: AC 110V–240V, 50/60Hz • Mount Type: Standard 1U Rack-Mountable • Warranty: 1 Year",
+      "heroImage": "/images/products/pa-scheduler-based-audio-control-system.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-remote-control-wall-panel",
+      "slug": "remote-control-wall-panel",
+      "categoryIds": [
+        "pa_system",
+        "pa_controllers"
+      ],
+      "primaryCategoryId": "pa_controllers",
+      "titleEn": "Remote Control Wall Panel",
+      "titleKm": "Remote Control Wall Panel",
+      "shortDescEn": "Key Features Function: Zone Volume &amp; Source Selection Control Compatibility: Works with Lucky Tone Matrix Controllers (e.g., DPM-8000) User Interface: Rotary Encoder Knob + LCD Display Zones: Assignable to Specific Zones or Global Control Control Type: Digital Communication via RS-485 Display Type: Backlit LCD with Real-Time Feedback Panel Design: Wall-Mountable Standard EU/US Box Size Material: High-Grade ABS Plastic with Glass or Acrylic Faceplate Power Supply: 24V DC (Provided by Matrix Controller or External Adapter) Wiring: Uses Standard CAT5/CAT6 Cabling Warranty: 1 Year",
+      "shortDescKm": "Key Features Function: Zone Volume &amp; Source Selection Control Compatibility: Works with Lucky Tone Matrix Controllers (e.g., DPM-8000) User Interface: Rotary Encoder Knob + LCD Display Zones: Assignable to Specific Zones or Global Control Control Type: Digital Communication via RS-485 Display Type: Backlit LCD with Real-Time Feedback Panel Design: Wall-Mountable Standard EU/US Box Size Material: High-Grade ABS Plastic with Glass or Acrylic Faceplate Power Supply: 24V DC (Provided by Matrix Controller or External Adapter) Wiring: Uses Standard CAT5/CAT6 Cabling Warranty: 1 Year",
+      "heroImage": "/images/products/pa-remote-control-wall-panel.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-pa-matrix-controller",
+      "slug": "pa-matrix-controller",
+      "categoryIds": [
+        "pa_system",
+        "pa_controllers"
+      ],
+      "primaryCategoryId": "pa_controllers",
+      "titleEn": "PA Matrix Controller",
+      "titleKm": "PA Matrix ឧបករណ៍បញ្ជា",
+      "shortDescEn": "Key Features •Matrix Routing: 8 Audio Inputs × 8 Zone Outputs •Digital Control: Full Matrix DSP with Zone Assignment •Control Options: Front Panel, Remote Paging Mic, or PC Software •Input Types: MIC/LINE Selectable Inputs with Phantom Power •Output Types: Balanced Line Outputs (Zone Selectable) •Audio Processing: Built-in DSP for EQ, Gain, Priority, Delay •Display: LCD Display with Navigation Buttons •Communication Port: RS-232 / RS-485 / TCP/IP •Remote Control: Compatible with Wall Controllers &amp; Paging Stations •Power Supply: AC 110V–240V, 50/60Hz •Mount Type: Standard 2U Rack-Mount •Warranty: 2 Years",
+      "shortDescKm": "Key Features •Matrix Routing: 8 Audio Inputs × 8 Zone Outputs •Digital Control: Full Matrix DSP with Zone Assignment •Control Options: Front Panel, Remote Paging Mic, or PC Software •Input Types: MIC/LINE Selectable Inputs with Phantom Power •Output Types: Balanced Line Outputs (Zone Selectable) •Audio Processing: Built-in DSP for EQ, Gain, Priority, Delay •Display: LCD Display with Navigation Buttons •Communication Port: RS-232 / RS-485 / TCP/IP •Remote Control: Compatible with Wall Controllers &amp; Paging Stations •Power Supply: AC 110V–240V, 50/60Hz •Mount Type: Standard 2U Rack-Mount •Warranty: 2 Years",
+      "heroImage": "/images/products/pa-pa-matrix-controller.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-zone-selector",
+      "slug": "zone-selector",
+      "categoryIds": [
+        "pa_system",
+        "pa_controllers"
+      ],
+      "primaryCategoryId": "pa_controllers",
+      "titleEn": "Zone Selector",
+      "titleKm": "Zone Selector",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-zone-selector.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-source-player-usb-fm-mp3",
+      "slug": "source-player-usb-fm-mp3",
+      "categoryIds": [
+        "pa_system",
+        "pa_accessories"
+      ],
+      "primaryCategoryId": "pa_accessories",
+      "titleEn": "Source Player (USB/FM/MP3)",
+      "titleKm": "Source Player (USB/FM/MP3)",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-source-player-usb-fm-mp3.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-paging-microphones",
+      "slug": "paging-microphones",
+      "categoryIds": [
+        "pa_system",
+        "pa_microphones"
+      ],
+      "primaryCategoryId": "pa_microphones",
+      "titleEn": "Paging Microphones",
+      "titleKm": "Paging Microphones",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-paging-microphones.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-ceiling-speakers",
+      "slug": "ceiling-speakers",
+      "categoryIds": [
+        "pa_system",
+        "pa_speakers"
+      ],
+      "primaryCategoryId": "pa_speakers",
+      "titleEn": "Ceiling Speakers",
+      "titleKm": "Ceiling Speakers",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-ceiling-speakers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-all-in-one-amplifier-speaker-units",
+      "slug": "all-in-one-amplifier-speaker-units",
+      "categoryIds": [
+        "pa_system",
+        "pa_amplifiers"
+      ],
+      "primaryCategoryId": "pa_amplifiers",
+      "titleEn": "All-in-one amplifier-speaker units",
+      "titleKm": "All-in-one amplifier-speaker units",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-all-in-one-amplifier-speaker-units.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-dante-control-panels",
+      "slug": "dante-control-panels",
+      "categoryIds": [
+        "pa_system",
+        "pa_network",
+        "pa_controllers"
+      ],
+      "primaryCategoryId": "pa_network",
+      "titleEn": "Dante Control Panels",
+      "titleKm": "Dante Control Panels",
+      "shortDescEn": "Key Features",
+      "shortDescKm": "Key Features",
+      "heroImage": "/images/products/pa-dante-control-panels.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-ip-based-amplifiers-terminals",
+      "slug": "ip-based-amplifiers-terminals",
+      "categoryIds": [
+        "pa_system",
+        "pa_network",
+        "pa_amplifiers"
+      ],
+      "primaryCategoryId": "pa_network",
+      "titleEn": "IP-based amplifiers & terminals",
+      "titleKm": "IP-based amplifiers & terminals",
+      "shortDescEn": "Key Features of IP Network Audio System:",
+      "shortDescKm": "Key Features of IP Network Audio System:",
+      "heroImage": "/images/products/pa-ip-based-amplifiers-terminals.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-digitally-managed-pa-matrix-controllers-2",
+      "slug": "digitally-managed-pa-matrix-controllers-2",
+      "categoryIds": [
+        "pa_system",
+        "pa_controllers"
+      ],
+      "primaryCategoryId": "pa_controllers",
+      "titleEn": "Digitally managed PA matrix controllers",
+      "titleKm": "Digitally managed PA matrix ឧបករណ៍បញ្ជាs",
+      "shortDescEn": "Key Features:",
+      "shortDescKm": "Key Features:",
+      "heroImage": "/images/products/pa-digitally-managed-pa-matrix-controllers-2.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "pa-traditional-pa-amplifiers",
+      "slug": "traditional-pa-amplifiers",
+      "categoryIds": [
+        "pa_system",
+        "pa_amplifiers"
+      ],
+      "primaryCategoryId": "pa_amplifiers",
+      "titleEn": "Traditional PA amplifiers",
+      "titleKm": "Traditional PA amplifiers",
+      "shortDescEn": "Key Features:",
+      "shortDescKm": "Key Features:",
+      "heroImage": "/images/products/pa-traditional-pa-amplifiers.webp",
+      "tagsEn": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "PA System",
+        "PA Products",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-ds-q20-turnstile-gate-advanced-access-control-system",
+      "slug": "ds-q20-turnstile-gate-advanced-access-control-system",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "DS-Q20 Turnstile Gate Advanced Access Control System",
+      "titleKm": "DS-Q20 Turnstile Gate Advanced ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ System",
+      "shortDescEn": "Turnstile gate for secure access control.",
+      "shortDescKm": "Turnstile gate for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-ds-q20-turnstile-gate-advanced-access-control-system.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-quantum-tripod-turnstile-ds-q50s",
+      "slug": "quantum-tripod-turnstile-ds-q50s",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "Quantum Tripod Turnstile DS-Q50S for Secure Access",
+      "titleKm": "Quantum ច្រកទ្វារបីដង DS-Q50S for Secure Access",
+      "shortDescEn": "Tripod turnstile for secure access control.",
+      "shortDescKm": "ច្រកទ្វារបីដង for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-quantum-tripod-turnstile-ds-q50s.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-ds2000-turnstile-gate-price-in-cambodia",
+      "slug": "ds2000-turnstile-gate-price-in-cambodia",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_tripod"
+      ],
+      "primaryCategoryId": "turnstile_tripod",
+      "titleEn": "DS2000 Swing Turnstile Gate Price in Cambodia",
+      "titleKm": "DS2000 Swing Turnstile Gate Price in Cambodia",
+      "shortDescEn": "Turnstile gate for secure access control.",
+      "shortDescKm": "Turnstile gate for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-ds2000-turnstile-gate-price-in-cambodia.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-flap-barrier-turnstile-gate-ds318",
+      "slug": "flap-barrier-turnstile-gate-ds318",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "Flap Barrier Turnstile Gate DS318 with Stainless Steel Body",
+      "titleKm": "ច្រកស្លាបបិទបើក Turnstile Gate DS318 with Stainless Steel Body",
+      "shortDescEn": "Flap barrier for secure access control.",
+      "shortDescKm": "ច្រកស្លាបបិទបើក for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-flap-barrier-turnstile-gate-ds318.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-turnstile-gate-ds-q30",
+      "slug": "turnstile-gate-ds-q30",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_flap_barrier"
+      ],
+      "primaryCategoryId": "turnstile_flap_barrier",
+      "titleEn": "Quantum Optical Flap Turnstile Gate DS-Q30",
+      "titleKm": "Quantum Optical Flap Turnstile Gate DS-Q30",
+      "shortDescEn": "Turnstile gate for secure access control.",
+      "shortDescKm": "Turnstile gate for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-turnstile-gate-ds-q30.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-ds212-turnstile-gate",
+      "slug": "ds212-turnstile-gate",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_flap_barrier"
+      ],
+      "primaryCategoryId": "turnstile_flap_barrier",
+      "titleEn": "DS212 Swing Turnstile Gate",
+      "titleKm": "DS212 Swing Turnstile Gate",
+      "shortDescEn": "Turnstile gate for secure access control.",
+      "shortDescKm": "Turnstile gate for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-ds212-turnstile-gate.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-tripod-turnstile-gate-ds112",
+      "slug": "tripod-turnstile-gate-ds112",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "Tripod Turnstile Gate DS112 for Secure Access Control",
+      "titleKm": "ច្រកទ្វារបីដង Gate DS112 for Secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+      "shortDescEn": "Tripod turnstile for secure access control.",
+      "shortDescKm": "ច្រកទ្វារបីដង for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-tripod-turnstile-gate-ds112.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-turnstile-gate-dsn-30",
+      "slug": "turnstile-gate-dsn-30",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_tripod"
+      ],
+      "primaryCategoryId": "turnstile_tripod",
+      "titleEn": "Optical Flap Turnstile Gate DSN-30",
+      "titleKm": "Optical Flap Turnstile Gate DSN-30",
+      "shortDescEn": "Turnstile gate for secure access control.",
+      "shortDescKm": "Turnstile gate for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-turnstile-gate-dsn-30.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-ds7300-speed-gate-turnstile",
+      "slug": "ds7300-speed-gate-turnstile",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_flap_barrier"
+      ],
+      "primaryCategoryId": "turnstile_flap_barrier",
+      "titleEn": "DS7300 Speed Gate Turnstile for Secure Access",
+      "titleKm": "DS7300 ច្រកល្បឿនលឿន Turnstile for Secure Access",
+      "shortDescEn": "Speed gate for secure access control.",
+      "shortDescKm": "ច្រកល្បឿនលឿន for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-ds7300-speed-gate-turnstile.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-dsn-20-swing-turnstile-gate",
+      "slug": "dsn-20-swing-turnstile-gate",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_speed_gate"
+      ],
+      "primaryCategoryId": "turnstile_speed_gate",
+      "titleEn": "DSN-20 Swing Turnstile Gate Price in Cambodia",
+      "titleKm": "DSN-20 Swing Turnstile Gate",
+      "shortDescEn": "Swing gate for secure access control.",
+      "shortDescKm": "ច្រកបើកបិទបង្វិល for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-dsn-20-swing-turnstile-gate.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-full-height-turnstile-ds413-triple-lane-gate",
+      "slug": "full-height-turnstile-ds413-triple-lane-gate",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "Full Height Turnstile DS413 Triple Lane Gate",
+      "titleKm": "ច្រកទ្វារកម្ពស់ពេញ DS413 Triple Lane Gate",
+      "shortDescEn": "Full-height turnstile for secure access control.",
+      "shortDescKm": "Full-height turnstile for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-full-height-turnstile-ds413-triple-lane-gate.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-full-height-turnstile-ds403",
+      "slug": "full-height-turnstile-ds403",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_full_height"
+      ],
+      "primaryCategoryId": "turnstile_full_height",
+      "titleEn": "Full Height Turnstile DS403 Triple Lane Gate",
+      "titleKm": "ច្រកទ្វារកម្ពស់ពេញ DS403 Triple Lane Gate",
+      "shortDescEn": "Full-height turnstile for secure access control.",
+      "shortDescKm": "Full-height turnstile for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-full-height-turnstile-ds403.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-full-height-turnstile-ds412",
+      "slug": "full-height-turnstile-ds412",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_full_height"
+      ],
+      "primaryCategoryId": "turnstile_full_height",
+      "titleEn": "Full Height Turnstile DS412 Dual Lane Gate",
+      "titleKm": "ច្រកទ្វារកម្ពស់ពេញ DS412 Dual Lane Gate",
+      "shortDescEn": "Full-height turnstile for secure access control.",
+      "shortDescKm": "Full-height turnstile for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-full-height-turnstile-ds412.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-full-height-turnstile-gate-ds411",
+      "slug": "full-height-turnstile-gate-ds411",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_full_height"
+      ],
+      "primaryCategoryId": "turnstile_full_height",
+      "titleEn": "Full Height Turnstile  DS411 with Stainless Steel",
+      "titleKm": "ច្រកទ្វារកម្ពស់ពេញ  DS411 with Stainless Steel",
+      "shortDescEn": "Full-height turnstile for secure access control.",
+      "shortDescKm": "Full-height turnstile for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-full-height-turnstile-gate-ds411.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-flap-barrier-turnstile-ds312",
+      "slug": "flap-barrier-turnstile-ds312",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_full_height"
+      ],
+      "primaryCategoryId": "turnstile_full_height",
+      "titleEn": "Flap Barrier Turnstile DS312 with Stainless Steel Body",
+      "titleKm": "ច្រកស្លាបបិទបើក Turnstile DS312 with Stainless Steel Body",
+      "shortDescEn": "Flap barrier for secure access control.",
+      "shortDescKm": "ច្រកស្លាបបិទបើក for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-flap-barrier-turnstile-ds312.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-tripod-turnstile-gate-ds1000",
+      "slug": "tripod-turnstile-gate-ds1000",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_flap_barrier"
+      ],
+      "primaryCategoryId": "turnstile_flap_barrier",
+      "titleEn": "Tripod Turnstile Gate DS1000 for Secure Access Control",
+      "titleKm": "ច្រកទ្វារបីដង Gate DS1000 for Secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+      "shortDescEn": "Tripod turnstile for secure access control.",
+      "shortDescKm": "ច្រកទ្វារបីដង for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-tripod-turnstile-gate-ds1000.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-quantum-tripod-turnstile-ds-q50",
+      "slug": "quantum-tripod-turnstile-ds-q50",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_tripod"
+      ],
+      "primaryCategoryId": "turnstile_tripod",
+      "titleEn": "Quantum Tripod Turnstile DS-Q50 for Secure Access",
+      "titleKm": "Quantum ច្រកទ្វារបីដង DS-Q50 for Secure Access",
+      "shortDescEn": "Tripod turnstile for secure access control.",
+      "shortDescKm": "ច្រកទ្វារបីដង for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-quantum-tripod-turnstile-ds-q50.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-quantum-speed-gate-ds-q60",
+      "slug": "quantum-speed-gate-ds-q60",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_tripod"
+      ],
+      "primaryCategoryId": "turnstile_tripod",
+      "titleEn": "Quantum Speed Gate DS-Q60 for Secure Access Control",
+      "titleKm": "Quantum ច្រកល្បឿនលឿន DS-Q60 for Secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+      "shortDescEn": "Speed gate for secure access control.",
+      "shortDescKm": "ច្រកល្បឿនលឿន for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-quantum-speed-gate-ds-q60.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-ds7200-speed-gate-turnstile",
+      "slug": "ds7200-speed-gate-turnstile",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_speed_gate"
+      ],
+      "primaryCategoryId": "turnstile_speed_gate",
+      "titleEn": "DS7200 Speed Gate Turnstile for Secure Access",
+      "titleKm": "DS7200 ច្រកល្បឿនលឿន Turnstile for Secure Access",
+      "shortDescEn": "Speed gate for secure access control.",
+      "shortDescKm": "ច្រកល្បឿនលឿន for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-ds7200-speed-gate-turnstile.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-ds7100-automatic-speed-gate",
+      "slug": "ds7100-automatic-speed-gate",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_speed_gate"
+      ],
+      "primaryCategoryId": "turnstile_speed_gate",
+      "titleEn": "DS7100 Automatic Speed Gate Turnstile for Access Control",
+      "titleKm": "DS7100 Automatic ច្រកល្បឿនលឿន Turnstile for ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+      "shortDescEn": "Speed gate for secure access control.",
+      "shortDescKm": "ច្រកល្បឿនលឿន for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-ds7100-automatic-speed-gate.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-speed-lane-turnstile-automatic-pedestrian-access-gate",
+      "slug": "speed-lane-turnstile-automatic-pedestrian-access-gate",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_speed_gate"
+      ],
+      "primaryCategoryId": "turnstile_speed_gate",
+      "titleEn": "Speed Lane Turnstile – Automatic Pedestrian Access Gate",
+      "titleKm": "Speed Lane Turnstile – Automatic Pedestrian Access Gate",
+      "shortDescEn": "Speed gate for secure access control.",
+      "shortDescKm": "ច្រកល្បឿនលឿន for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-speed-lane-turnstile-automatic-pedestrian-access-gate.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-flap-turnstile-stainless-steel-double-wing-pedestrian-gate",
+      "slug": "flap-turnstile-stainless-steel-double-wing-pedestrian-gate",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_speed_gate"
+      ],
+      "primaryCategoryId": "turnstile_speed_gate",
+      "titleEn": "Flap Turnstile – Stainless Steel Double Wing Pedestrian Gate",
+      "titleKm": "Flap Turnstile – Stainless Steel Double Wing Pedestrian Gate",
+      "shortDescEn": "Flap barrier for secure access control.",
+      "shortDescKm": "ច្រកស្លាបបិទបើក for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-flap-turnstile-stainless-steel-double-wing-pedestrian-gate.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-tgw-pt020-counter-sliding-gate-turnstile",
+      "slug": "tgw-pt020-counter-sliding-gate-turnstile",
+      "categoryIds": [
+        "turnstile_gate",
+        "turnstile_flap_barrier"
+      ],
+      "primaryCategoryId": "turnstile_flap_barrier",
+      "titleEn": "TGW-PT020 Counter Sliding Gate Turnstile",
+      "titleKm": "TGW-PT020 Counter ច្រករុញរំកិល Turnstile",
+      "shortDescEn": "Sliding gate for secure access control.",
+      "shortDescKm": "ច្រករុញរំកិល for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-tgw-pt020-counter-sliding-gate-turnstile.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-swing-turnstile-mechanical-automatic-barrier-gate",
+      "slug": "swing-turnstile-mechanical-automatic-barrier-gate",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "Swing Turnstile – Mechanical Automatic Barrier Gate",
+      "titleKm": "Swing Turnstile – Mechanical Automatic Barrier Gate",
+      "shortDescEn": "Swing gate for secure access control.",
+      "shortDescKm": "ច្រកបើកបិទបង្វិល for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-swing-turnstile-mechanical-automatic-barrier-gate.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    },
+    {
+      "id": "turnstile-tripod-turnstiles-2",
+      "slug": "tripod-turnstiles-2",
+      "categoryIds": [
+        "turnstile_gate"
+      ],
+      "primaryCategoryId": "turnstile_gate",
+      "titleEn": "Tripod Turnstiles Gate",
+      "titleKm": "ច្រកទ្វារបីដងs Gate",
+      "shortDescEn": "Tripod turnstile for secure access control.",
+      "shortDescKm": "ច្រកទ្វារបីដង for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ.",
+      "heroImage": "/images/products/tg-tripod-turnstiles-2.webp",
+      "tagsEn": [
+        "Turnstile",
+        "Access Control",
+        "Cambodia"
+      ],
+      "tagsKm": [
+        "Turnstile",
+        "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ",
+        "Cambodia"
+      ]
+    }
+  ]
+}

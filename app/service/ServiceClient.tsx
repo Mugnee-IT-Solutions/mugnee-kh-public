@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useLang } from "../components/layout/LanguageProvider";
 
 const pillars = [
   {
@@ -353,8 +350,7 @@ const faqsKm = [
 ];
 
 export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
-  const { lang: contextLang } = useLang();
-  const lang = forcedLang ?? contextLang;
+  const lang = forcedLang ?? "en";
   const toLangHref = (href: string) =>
     lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const isKm = lang === "km";

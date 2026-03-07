@@ -1,6 +1,7 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import HomeClient from "./components/home/HomeClient";
+import { BUSINESS_PHONE_E164, BUSINESS_SAME_AS } from "./lib/nap";
 
 type IconProps = { className?: string };
 
@@ -90,7 +91,14 @@ export const metadata: Metadata = {
   title: "Digital Signage, Smart Board & Access Control in Cambodia | Mugnee Cambodia",
   description:
     "Mugnee Cambodia delivers digital signage, interactive smart boards, turnstile gates, PA systems, and access control solutions in Cambodia. Get site survey, system design, installation, commissioning, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      "en-kh": "/",
+      "km-kh": "/km/",
+      "x-default": "/",
+    },
+  },
   openGraph: {
     type: "website",
     url: PAGE_URL,
@@ -313,14 +321,12 @@ export default function HomePage() {
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
     areaServed: { "@type": "Country", name: "Cambodia" },
-    sameAs: [
-      // Add official pages later
-    ],
+    sameAs: BUSINESS_SAME_AS,
     contactPoint: [
       {
         "@type": "ContactPoint",
         contactType: "sales",
-        telephone: "+855-XXX-XXX-XXX",
+        telephone: BUSINESS_PHONE_E164,
         availableLanguage: ["English", "Khmer"],
       },
     ],

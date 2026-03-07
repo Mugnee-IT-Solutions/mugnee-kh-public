@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import { LanguageProvider } from "./components/layout/LanguageProvider";
 import SiteHeader from "./components/layout/Header";
 import SiteFooter from "./components/layout/Footer";
@@ -39,24 +38,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="h-screen w-full overflow-hidden">
-        <Suspense fallback={null}>
-          <LanguageProvider>
-            <SitewideJsonLd />
-            <WebVitalsReporter />
-            <ChunkRecovery />
-            <ScrollToTopOnRoute />
-            <SiteHeader />
-            <main
-              id="app-scroll-root"
-              className="mt-[var(--header-height)] h-[calc(100vh-var(--header-height))] overflow-y-auto overflow-x-hidden"
-            >
-              {children}
-              <SiteFooter />
-            </main>
-            <FloatingContactChat />
-            <GlobalBackToTop />
-          </LanguageProvider>
-        </Suspense>
+        <LanguageProvider>
+          <SitewideJsonLd />
+          <WebVitalsReporter />
+          <ChunkRecovery />
+          <ScrollToTopOnRoute />
+          <SiteHeader />
+          <main
+            id="app-scroll-root"
+            className="mt-[var(--header-height)] h-[calc(100vh-var(--header-height))] overflow-y-auto overflow-x-hidden"
+          >
+            {children}
+            <SiteFooter />
+          </main>
+          <FloatingContactChat />
+          <GlobalBackToTop />
+        </LanguageProvider>
       </body>
     </html>
   );

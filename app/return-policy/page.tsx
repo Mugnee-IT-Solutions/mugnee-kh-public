@@ -11,7 +11,7 @@ const LAST_UPDATED = "2026-03-05";
 export const metadata: Metadata = {
   title: "Return Policy Cambodia | Mugnee Cambodia",
   description:
-    "Detailed company return policy in Cambodia, including return window, RMA process, exclusions, and refund timeline.",
+    "Mugnee Cambodia no return and no refund policy for supplied products, with clear after-sales support guidance.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Return Policy Cambodia | Mugnee Cambodia",
     description:
-      "Clear Cambodia-focused return policy with RMA steps, eligibility criteria, project-item exclusions, and refund/replacement workflow.",
+      "No return and no refund policy in Cambodia with issue reporting and technical support process.",
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "article",
@@ -32,136 +32,109 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Return Policy Cambodia | Mugnee Cambodia",
     description:
-      "RMA process, eligibility, exclusions, and refund timeline for project-based systems in Cambodia.",
+      "No return and no refund policy for company-supplied products in Cambodia.",
   },
   robots: { index: true, follow: true },
 };
 
 const POLICY_HIGHLIGHTS = [
   {
-    label: "Return Request Window",
-    value: "Within 7 Calendar Days",
-    detail: "From delivery date or signed handover date, whichever applies.",
+    label: "Return Option",
+    value: "Not Available",
+    detail: "All delivered products are final sale and cannot be returned.",
   },
   {
-    label: "Initial Response",
-    value: "Within 48 Working Hours",
-    detail: "Technical triage starts after required documents are received.",
+    label: "Refund Option",
+    value: "Not Available",
+    detail: "Payments are non-refundable after confirmed order and delivery.",
   },
   {
-    label: "Project Site Coverage",
-    value: "Cambodia-Wide",
-    detail: "Phnom Penh, Siem Reap, Sihanoukville, and other provinces by scope.",
+    label: "Support Response",
+    value: "Within 24 Hours",
+    detail: "Our team provides technical troubleshooting for reported issues.",
   },
 ];
 
-const RETURN_STEPS: Array<{ title: string; detail: string }> = [
+const SUPPORT_STEPS: Array<{ title: string; detail: string }> = [
   {
-    title: "Submit a return request",
+    title: "Report the issue",
     detail:
-      "Notify Mugnee Cambodia within 7 calendar days and share invoice number, installation/handover date, and project location.",
+      "Contact our support team and share your invoice number, delivery date, and site location.",
   },
   {
-    title: "Share technical evidence",
+    title: "Submit issue evidence",
     detail:
-      "Provide clear photos/videos, serial label, and issue description (power status, controller status, symptom timeline).",
+      "Provide clear photos/videos, model/serial label, and a short description of the problem.",
   },
   {
-    title: "Remote diagnostics and eligibility review",
+    title: "Technical diagnostics",
     detail:
-      "Our support engineer runs remote troubleshooting first, then confirms whether onsite inspection is required.",
+      "Our engineers run remote checks first and arrange onsite support if required by scope.",
   },
   {
-    title: "RMA approval and return instruction",
+    title: "Resolution and follow-up",
     detail:
-      "If approved, we issue written return authorization with packaging, logistics, and receiving instructions.",
-  },
-  {
-    title: "Inspection, resolution, and closure",
-    detail:
-      "After inspection, resolution may be repair, replacement, or refund/partial credit depending on root cause and stock availability.",
+      "We provide the applicable service action under warranty and signed commercial terms.",
   },
 ];
 
 const REQUIRED_DOCUMENTS = [
   "Purchase invoice or quotation reference",
-  "Delivery note or commissioning/handover record",
+  "Delivery note or commissioning/handover record (if applicable)",
   "Item model and serial number photo",
   "Issue photos/videos and brief failure description",
   "Site contact person and phone number",
 ];
 
-const ELIGIBLE_ITEMS = [
-  "Manufacturing defect confirmed under normal operating conditions",
-  "Wrong item/model delivered against approved quotation",
-  "DOA (dead on arrival) item reported within policy timeline",
-  "Unopened standard-stock item in original condition (subject to approval)",
+const SUPPORT_SCOPE = [
+  "Troubleshooting and technical guidance for installed or delivered products",
+  "Warranty service based on product condition and signed agreement",
+  "Onsite technical visit when remote support cannot resolve the issue",
+  "Commercial follow-up through official support channel with case reference",
 ];
 
-const NON_RETURNABLE_ITEMS = [
-  "Custom-configured, made-to-order, or project-cut materials (except verified factory defect)",
-  "Damage from misuse, wrong voltage, water ingress, impact, or unauthorized modification",
-  "Items with missing serial labels, altered parts, or incomplete accessories",
-  "Consumables and software/license-based components once activated",
-];
-
-const REFUND_AND_REPLACEMENT_NOTES = [
-  "Replacement is prioritized for business-critical project continuity where stock is available.",
-  "Refunds are processed after final technical validation and approval.",
-  "Transport and banking charges may be deducted depending on return reason and commercial terms.",
-  "Labor already consumed for completed installation is generally non-refundable unless contractually stated.",
+const NOT_AVAILABLE = [
+  "Return of delivered products",
+  "Refund after order confirmation, processing, or delivery",
+  "Cash refund for completed installation or consumed labor",
+  "Refund request for custom-configured, made-to-order, or project-cut items",
 ];
 
 const FAQ_ITEMS = [
   {
-    question: "How many days do I have to request a return in Cambodia?",
+    question: "Do you offer product return in Cambodia?",
     answer:
-      "Please submit your return request within 7 calendar days from delivery or signed handover date. Early reporting helps us validate and close the case faster.",
+      "No. Mugnee Cambodia does not offer product return. All delivered products are treated as final sale.",
   },
   {
-    question: "Can custom-configured or made-to-order items be returned?",
+    question: "Do you offer refund for delivered products?",
     answer:
-      "Custom-configured or made-to-order items are normally non-returnable. If a verified manufacturing fault is confirmed, we may process repair, replacement, or another approved resolution under contract terms.",
+      "No. We do not provide refunds for delivered products. Payment is non-refundable once order and delivery are completed.",
   },
   {
-    question: "What documents are required for return approval?",
+    question: "What if my product has a technical issue?",
     answer:
-      "Please share invoice details, delivery or handover proof, item model and serial photo, and clear issue photos or video. Incomplete documents can delay approval.",
+      "Please contact support with invoice details, serial information, and issue evidence. Our team will provide troubleshooting and service support under warranty terms.",
   },
   {
-    question: "Who pays return transport cost?",
+    question: "Can I get refund for installation charge or service labor?",
     answer:
-      "Transport responsibility depends on root cause and contract terms. If the issue is validated as supplier or manufacturing fault, cost handling is decided during approval.",
+      "No. Completed installation and consumed labor are non-refundable unless explicitly stated in a signed contract.",
   },
   {
-    question: "How long does refund processing usually take after approval?",
+    question: "Can I cancel and refund after order processing starts?",
     answer:
-      "After final approval, refund processing usually takes 5 to 15 working days depending on payment method, banking cycle, and document completeness.",
+      "Cancellation and refund are not available once processing has started. Please contact support immediately if you need urgent order status help.",
   },
   {
-    question: "Can I request a return without an invoice?",
+    question: "What documents should I share for support?",
     answer:
-      "Invoice or purchase proof is required for policy verification. If the invoice is missing, share available transaction details so our team can attempt internal verification.",
+      "Please share invoice or purchase proof, delivery/handover reference, model and serial photo, and clear issue photos or videos.",
   },
   {
-    question: "Are opened items eligible for return?",
+    question: "How can I escalate a delayed support case?",
     answer:
-      "Opened items may be accepted only when a genuine fault or delivery mismatch is verified. Items with signs of misuse, missing parts, or altered condition are usually rejected.",
-  },
-  {
-    question: "Do you offer exchange instead of refund?",
-    answer:
-      "Yes, exchange or replacement may be offered when appropriate and available. Resolution type is selected after technical validation, stock check, and contractual scope review.",
-  },
-  {
-    question: "Can I cancel an order before delivery and get a refund?",
-    answer:
-      "Cancellation and refund before delivery depend on order stage, procurement status, and contract terms. Please contact support quickly so the team can check eligibility.",
-  },
-  {
-    question: "How can I escalate a delayed return or refund case?",
-    answer:
-      "If your case is delayed, contact us with your reference number through the official contact page. We will review status, identify blockers, and provide the next timeline update.",
+      "If your case is delayed, contact us via the official contact page with your case reference number for follow-up.",
   },
 ];
 
@@ -174,12 +147,12 @@ const RELATED_PAGES = [
   {
     href: "/terms-and-conditions/",
     title: "Terms & Conditions",
-    detail: "Commercial terms, project scope, and warranty limitations.",
+    detail: "Commercial terms, final-sale policy, and warranty limitations.",
   },
   {
     href: "/contact/",
     title: "Contact Support",
-    detail: "Submit return details with photos/video for faster triage.",
+    detail: "Submit technical issue details with photos/video for faster triage.",
   },
 ];
 
@@ -195,7 +168,7 @@ export default function ReturnPolicyPage() {
           url: PAGE_URL,
           inLanguage: "en",
           dateModified: LAST_UPDATED,
-          about: "Return and replacement policy for company projects and supplied items in Cambodia",
+          about: "No return and no refund policy with technical support guidance for supplied products in Cambodia",
           areaServed: {
             "@type": "Country",
             name: "Cambodia",
@@ -206,17 +179,16 @@ export default function ReturnPolicyPage() {
 
       <section className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-100">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">
-          <div className="max-w-4xl">
+          <div className="w-full max-w-none">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-sky-700">Policy</p>
             <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              Return Policy in Cambodia
+              Final Sale and Support Policy in Cambodia
             </h1>
-            <p className="mt-4 text-base leading-relaxed text-slate-700">
-              This return policy is designed for project-based supply and installation in Cambodia. It defines return
-              eligibility, RMA workflow, exclusions, and refund or replacement conditions for company-supplied items and
-              project deliverables handled by Mugnee Cambodia.
+            <p className="mt-4 text-justify text-base leading-relaxed text-slate-700">
+              Mugnee Cambodia follows a strict no return and no refund policy for all company-supplied products. Once an
+              order is confirmed and delivered, return and refund options are not available. For any technical issue, our
+              support team provides troubleshooting and service guidance based on warranty and signed commercial terms.
             </p>
-            <p className="mt-4 text-sm font-medium text-slate-500">Last updated: March 5, 2026</p>
           </div>
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -234,18 +206,18 @@ export default function ReturnPolicyPage() {
       <section className="mx-auto max-w-6xl space-y-8 px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
-            <h2 className="text-xl font-bold text-slate-900">Eligible for Return Review</h2>
+            <h2 className="text-xl font-bold text-slate-900">What We Provide</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
-              {ELIGIBLE_ITEMS.map((item) => (
+              {SUPPORT_SCOPE.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
           </div>
 
           <div className="rounded-2xl border border-rose-200 bg-rose-50 p-6">
-            <h2 className="text-xl font-bold text-slate-900">Normally Not Returnable</h2>
+            <h2 className="text-xl font-bold text-slate-900">What Is Not Available</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
-              {NON_RETURNABLE_ITEMS.map((item) => (
+              {NOT_AVAILABLE.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -253,9 +225,9 @@ export default function ReturnPolicyPage() {
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-bold text-slate-900">Return Process (RMA Workflow)</h2>
+          <h2 className="text-xl font-bold text-slate-900">Issue Support Process</h2>
           <ol className="mt-4 space-y-4">
-            {RETURN_STEPS.map((step, index) => (
+            {SUPPORT_STEPS.map((step, index) => (
               <li key={step.title} className="flex gap-3">
                 <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white">
                   {index + 1}
@@ -280,9 +252,9 @@ export default function ReturnPolicyPage() {
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-900">Refund and Replacement Notes</h2>
+            <h2 className="text-xl font-bold text-slate-900">Final-Sale Notes</h2>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
-              {REFUND_AND_REPLACEMENT_NOTES.map((item) => (
+              {NOT_AVAILABLE.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -290,7 +262,7 @@ export default function ReturnPolicyPage() {
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-bold text-slate-900">Expected Timeline</h2>
+          <h2 className="text-xl font-bold text-slate-900">Expected Support Timeline</h2>
           <div className="mt-4 overflow-x-auto rounded-xl border border-slate-200">
             <table className="min-w-full divide-y divide-slate-200 text-left text-sm">
               <thead className="bg-slate-100">
@@ -302,19 +274,19 @@ export default function ReturnPolicyPage() {
               <tbody className="divide-y divide-slate-200 bg-white">
                 <tr>
                   <td className="px-4 py-3 text-slate-700">Initial acknowledgment</td>
-                  <td className="px-4 py-3 text-slate-700">Within 48 working hours</td>
+                  <td className="px-4 py-3 text-slate-700">Within 24 hours</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 text-slate-700">Technical validation</td>
                   <td className="px-4 py-3 text-slate-700">2-5 working days (depends on evidence/site access)</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 text-slate-700">RMA decision and next action</td>
+                  <td className="px-4 py-3 text-slate-700">Service action and next steps</td>
                   <td className="px-4 py-3 text-slate-700">After validation and availability confirmation</td>
                 </tr>
                 <tr>
-                  <td className="px-4 py-3 text-slate-700">Refund processing (if approved)</td>
-                  <td className="px-4 py-3 text-slate-700">5-15 working days by payment channel</td>
+                  <td className="px-4 py-3 text-slate-700">Policy note</td>
+                  <td className="px-4 py-3 text-slate-700">No return and no refund for delivered products</td>
                 </tr>
               </tbody>
             </table>
@@ -325,9 +297,9 @@ export default function ReturnPolicyPage() {
         </div>
 
         <div className="rounded-2xl border border-slate-700 bg-gradient-to-r from-slate-900 to-slate-800 p-6 text-white shadow-sm">
-          <h2 className="text-xl font-bold text-white">Need Return Approval Support?</h2>
+          <h2 className="text-xl font-bold text-white">Need Technical Support?</h2>
           <p className="mt-3 text-sm leading-relaxed text-slate-100">
-            For return request and technical validation, submit details from our{" "}
+            Since return and refund are not available, please submit technical issue details from our{" "}
             <Link href="/contact/" className="font-semibold text-sky-300 no-underline hover:text-sky-200 hover:no-underline">
               contact page
             </Link>{" "}
@@ -339,7 +311,7 @@ export default function ReturnPolicyPage() {
               href="/contact/"
               className="inline-flex rounded-xl bg-white px-4 py-2 text-xs font-semibold text-slate-900 no-underline transition hover:bg-slate-100 hover:no-underline"
             >
-              Request Return Assistance
+              Request Technical Assistance
             </Link>
             <Link
               href="/service/"
@@ -381,10 +353,6 @@ export default function ReturnPolicyPage() {
               </details>
             ))}
           </div>
-          <p className="mt-4 text-xs leading-relaxed text-slate-500">
-            This page provides operational policy guidance for customers and project teams. Final commercial handling may
-            vary by signed quotation, contract, and warranty scope.
-          </p>
         </div>
       </section>
     </div>

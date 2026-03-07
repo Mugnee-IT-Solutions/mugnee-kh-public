@@ -7,7 +7,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useLang } from "../layout/LanguageProvider";
 
 const ProductGrid = dynamic(() => import("../sections/ProductGrid"), {
-  ssr: false,
   loading: () => <div className="h-32 w-full animate-pulse rounded-2xl bg-slate-100" />,
 });
 
@@ -418,6 +417,8 @@ export default function HomeClient({
             alt={slide.alt}
             fill
             loading={idx === 0 ? "eager" : "lazy"}
+            priority={idx === 0}
+            fetchPriority={idx === 0 ? "high" : "auto"}
             sizes="100vw"
             className="object-cover object-center"
           />

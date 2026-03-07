@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 type Lang = "en" | "km";
 
@@ -15,7 +15,6 @@ const LanguageContext = createContext<LangCtx | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const initialLang: Lang = pathname?.startsWith("/km") ? "km" : "en";
   // Keep first client render equal to SSR to avoid hydration mismatch.
   const [lang, setLangState] = useState<Lang>(initialLang);
@@ -32,7 +31,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       } else if (path.startsWith("/en")) {
         nextLang = "en";
       } else {
-        const queryLang = searchParams.get("lang");
+        const queryLang = new URLSearchParams(window.location.search).get("lang");
         if (queryLang === "km" || queryLang === "en") {
           nextLang = queryLang;
         } else {
@@ -47,7 +46,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       setLangState((prev) => (prev === nextLang ? prev : nextLang));
     }, 0);
     return () => window.clearTimeout(id);
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   // Persist and keep <html lang=""> in sync.
   useEffect(() => {

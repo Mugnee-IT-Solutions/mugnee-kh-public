@@ -2,13 +2,23 @@
 
 import ProductGrid from "../components/sections/ProductGrid";
 import { useLang } from "../components/layout/LanguageProvider";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function ProductsClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
   const { lang: contextLang } = useLang();
   const lang = forcedLang ?? contextLang;
-  const searchParams = useSearchParams();
-  const searchTerm = searchParams.get("search") ?? "";
+  const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const readSearchTerm = () => {
+      const next = new URLSearchParams(window.location.search).get("search") ?? "";
+      setSearchTerm((prev) => (prev === next ? prev : next));
+    };
+
+    readSearchTerm();
+    window.addEventListener("popstate", readSearchTerm);
+    return () => window.removeEventListener("popstate", readSearchTerm);
+  }, []);
 
   return (
     <main className="bg-white text-slate-900">

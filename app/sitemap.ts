@@ -30,7 +30,7 @@ function stripLocalePrefix(route: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const includeKmProductRoutes = false;
+  const includeKmProductRoutes = true;
   const coreRoutes = [
     "/",
     "/products",

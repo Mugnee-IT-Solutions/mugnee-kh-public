@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +16,10 @@ type SearchProduct = {
   tagsKm: string[];
 };
 
+type ProductSearchIndex = {
+  products: SearchProduct[];
+};
+
 type DropdownProps = {
   id: string;
   title: string;
@@ -30,6 +34,10 @@ type DropdownProps = {
   toLangHref: (href: string) => string;
   lang: Lang;
 };
+
+function NavLink(props: React.ComponentProps<typeof Link>) {
+  return <Link prefetch={false} {...props} />;
+}
 
 function Dropdown({
   id,
@@ -70,7 +78,7 @@ function Dropdown({
           isOpen || isActive ? "bg-white/10" : "hover:bg-white/10",
         ].join(" ")}
       >
-        <Link
+        <NavLink
           href={toLangHref(parentHref)}
           className={desktopNavLinkClass(isActive)}
           onClick={() => {
@@ -79,7 +87,7 @@ function Dropdown({
           }}
         >
           {title}
-        </Link>
+        </NavLink>
 
         <button
           type="button"
@@ -127,7 +135,7 @@ function Dropdown({
               {items.map((it) => {
                 const itemIsActive = activeItemHref === it.href;
                 return (
-                  <Link
+                  <NavLink
                     key={it.href}
                     href={toLangHref(it.href)}
                     aria-current={itemIsActive ? "page" : undefined}
@@ -152,7 +160,7 @@ function Dropdown({
                         itemIsActive ? "bg-sky-300" : "bg-transparent",
                       ].join(" ")}
                     />
-                  </Link>
+                  </NavLink>
                 );
               })}
             </div>
@@ -171,7 +179,7 @@ export default function SiteHeader() {
   const [openMobile, setOpenMobile] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [q, setQ] = useState("");
-  const [searchResults, setSearchResults] = useState<SearchProduct[]>([]);
+  const [searchIndex, setSearchIndex] = useState<SearchProduct[] | null>(null);
   const [searchOpenDesktop, setSearchOpenDesktop] = useState(false);
   const [searchOpenMobile, setSearchOpenMobile] = useState(false);
   const [showQuotePhone, setShowQuotePhone] = useState(false);
@@ -427,15 +435,29 @@ export default function SiteHeader() {
   };
 
   useEffect(() => {
-    const term = q.trim().toLowerCase();
-    if (term.length < 2) {
-      setSearchResults([]);
-      return;
-    }
+    let active = true;
+    const loadSearchIndex = async () => {
+      try {
+        const response = await fetch("/data/products-search-index.json", { cache: "force-cache" });
+        if (!response.ok) return;
+        const data = (await response.json()) as ProductSearchIndex;
+        if (active) setSearchIndex(data.products);
+      } catch {
+        // Keep search usable even when index cannot be loaded.
+      }
+    };
+    loadSearchIndex();
+    return () => {
+      active = false;
+    };
+  }, []);
 
-    const timer = window.setTimeout(async () => {
-      const { PRODUCTS } = await import("../../data/products");
-      const results = PRODUCTS.filter((product) => {
+  const searchResults = useMemo(() => {
+    const term = q.trim().toLowerCase();
+    if (term.length < 2) return [];
+    const pool = searchIndex ?? [];
+    return pool
+      .filter((product) => {
         const haystack = [
           product.titleEn,
           product.titleKm,
@@ -447,19 +469,8 @@ export default function SiteHeader() {
           .toLowerCase();
         return haystack.includes(term);
       })
-        .slice(0, 8)
-        .map((product) => ({
-          slug: product.slug,
-          titleEn: product.titleEn,
-          titleKm: product.titleKm,
-          tagsEn: product.tagsEn,
-          tagsKm: product.tagsKm,
-        }));
-      setSearchResults(results);
-    }, 120);
-
-    return () => window.clearTimeout(timer);
-  }, [q]);
+      .slice(0, 8);
+  }, [q, searchIndex]);
 
   useEffect(() => {
     const onPointerDown = (event: MouseEvent) => {
@@ -480,8 +491,6 @@ export default function SiteHeader() {
         ? root
         : document.scrollingElement || document.documentElement;
     scrollingEl.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   };
 
@@ -500,7 +509,7 @@ export default function SiteHeader() {
     <header ref={headerRef} className="fixed top-0 z-50 w-full">
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-3 sm:px-6 lg:px-8">
-          <Link
+          <NavLink
             href={toLangHref("/")}
             onClick={forceScrollTop}
             className="flex shrink-0 items-center gap-2 font-semibold text-slate-900"
@@ -512,7 +521,7 @@ export default function SiteHeader() {
               height={64}
               className="h-9 w-auto"
             />
-          </Link>
+          </NavLink>
 
           <form onSubmit={onSearch} className="hidden flex-1 lg:block">
             <div ref={desktopSearchRef} className="relative">
@@ -589,13 +598,13 @@ export default function SiteHeader() {
               </button>
             </div>
 
-            <Link
+            <NavLink
               href="tel:+85586817907"
               className="cta-attract hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 lg:inline-flex"
               aria-label="Call Mugnee Cambodia at +855 86 817 907"
             >
               {quoteCtaLabel}
-            </Link>
+            </NavLink>
 
             <button
               type="button"
@@ -680,13 +689,13 @@ export default function SiteHeader() {
                 </button>
               </div>
 
-              <Link
+              <NavLink
                 href="tel:+85586817907"
                 className="cta-attract rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
                 aria-label="Call Mugnee Cambodia at +855 86 817 907"
               >
                 {quoteCtaLabel}
-              </Link>
+              </NavLink>
             </div>
           </form>
         </div>
@@ -712,27 +721,27 @@ export default function SiteHeader() {
               lang={lang}
             />
 
-            <Link
+            <NavLink
               href={toLangHref("/interactive-flat-panel")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/interactive-flat-panel"))}
             >
               {t.ifp}
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               href={toLangHref("/pa-system")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/pa-system"))}
             >
               {t.paSystem}
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               href={toLangHref("/turnstile-gate")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/turnstile-gate"))}
             >
               {t.turnstile}
-            </Link>
+            </NavLink>
             <Dropdown
               id="solutions"
               title={t.solutions}
@@ -747,13 +756,13 @@ export default function SiteHeader() {
               toLangHref={toLangHref}
               lang={lang}
             />
-            <Link
+            <NavLink
               href={toLangHref("/service")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/service"))}
             >
               {t.service}
-            </Link>
+            </NavLink>
             <Dropdown
               id="about"
               title={t.about}
@@ -768,13 +777,13 @@ export default function SiteHeader() {
               toLangHref={toLangHref}
               lang={lang}
             />
-            <Link
+            <NavLink
               href={toLangHref("/contact")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/contact"))}
             >
               {t.contact}
-            </Link>
+            </NavLink>
           </nav>
 
         </div>
@@ -784,7 +793,7 @@ export default function SiteHeader() {
             <div className="mx-auto w-full max-w-7xl px-4 py-3 sm:px-6 lg:px-8">
               <div className="grid gap-2">
                 <div className="mt-1">
-                  <Link
+                  <NavLink
                     href={toLangHref("/led-display")}
                     className={[
                       "inline-flex rounded-lg px-3 pb-1 pt-1 text-xs font-semibold transition",
@@ -796,9 +805,9 @@ export default function SiteHeader() {
                     }}
                   >
                     {t.ledDisplay}
-                  </Link>
+                  </NavLink>
                   <div className="grid gap-1">
-                    <Link
+                    <NavLink
                       href={toLangHref("/led-display")}
                       aria-current={ledMobileActiveHref === "/led-display" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display")}
@@ -808,8 +817,8 @@ export default function SiteHeader() {
                       }}
                     >
                       {lang === "en" ? "All LED Display" : t.ledDisplay}
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       href={toLangHref("/led-display/indoor-led-display")}
                       aria-current={ledMobileActiveHref === "/led-display/indoor-led-display" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/indoor-led-display")}
@@ -819,8 +828,8 @@ export default function SiteHeader() {
                       }}
                     >
                       {t.indoorLed}
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       href={toLangHref("/led-display/outdoor-led-display")}
                       aria-current={ledMobileActiveHref === "/led-display/outdoor-led-display" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/outdoor-led-display")}
@@ -830,8 +839,8 @@ export default function SiteHeader() {
                       }}
                     >
                       {t.outdoorLed}
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       href={toLangHref("/led-display")}
                       className="hidden rounded-xl px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
                       onClick={() => {
@@ -840,8 +849,8 @@ export default function SiteHeader() {
                       }}
                     >
                       {lang === "en" ? "All LED Display" : "មើលអេក្រង់ LED ទាំងអស់"}
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       href={toLangHref("/led-display/receiving-card")}
                       aria-current={ledMobileActiveHref === "/led-display/receiving-card" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/receiving-card")}
@@ -851,8 +860,8 @@ export default function SiteHeader() {
                       }}
                     >
                       {lang === "en" ? "Receiving Card" : "កាតទទួលសញ្ញា"}
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       href={toLangHref("/led-display/video-processor")}
                       aria-current={ledMobileActiveHref === "/led-display/video-processor" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/video-processor")}
@@ -862,8 +871,8 @@ export default function SiteHeader() {
                       }}
                     >
                       {lang === "en" ? "Video Processor" : "ឧបករណ៍ដំណើរការវីដេអូ"}
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       href={toLangHref("/led-display/power-supply")}
                       aria-current={ledMobileActiveHref === "/led-display/power-supply" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/power-supply")}
@@ -873,11 +882,11 @@ export default function SiteHeader() {
                       }}
                     >
                       {lang === "en" ? "Power Supply" : "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល"}
-                    </Link>
+                    </NavLink>
                   </div>
                 </div>
 
-                <Link
+                <NavLink
                   href={toLangHref("/interactive-flat-panel")}
                   aria-current={isPathActive("/interactive-flat-panel") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/interactive-flat-panel"))}
@@ -887,8 +896,8 @@ export default function SiteHeader() {
                   }}
                 >
                   {t.ifp}
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href={toLangHref("/pa-system")}
                   aria-current={isPathActive("/pa-system") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/pa-system"))}
@@ -898,8 +907,8 @@ export default function SiteHeader() {
                   }}
                 >
                   {t.paSystem}
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href={toLangHref("/turnstile-gate")}
                   aria-current={isPathActive("/turnstile-gate") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/turnstile-gate"))}
@@ -909,7 +918,7 @@ export default function SiteHeader() {
                   }}
                 >
                   {t.turnstile}
-                </Link>
+                </NavLink>
                 <div className="mt-1">
                   <p
                     className={[
@@ -923,7 +932,7 @@ export default function SiteHeader() {
                     {solutionsMenu.map((item) => {
                       const itemIsActive = solutionsMobileActiveHref === item.href;
                       return (
-                        <Link
+                        <NavLink
                           key={item.href}
                           href={toLangHref(item.href)}
                           aria-current={itemIsActive ? "page" : undefined}
@@ -934,12 +943,12 @@ export default function SiteHeader() {
                           }}
                         >
                           {lang === "en" ? item.labelEn : item.labelKm}
-                        </Link>
+                        </NavLink>
                       );
                     })}
                   </div>
                 </div>
-                <Link
+                <NavLink
                   href={toLangHref("/service")}
                   aria-current={isPathActive("/service") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/service"))}
@@ -949,8 +958,8 @@ export default function SiteHeader() {
                   }}
                 >
                   {t.service}
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href={toLangHref("/about")}
                   aria-current={aboutMobileActiveHref === "/about" ? "page" : undefined}
                   className={mobileItemClass(aboutMobileActiveHref === "/about")}
@@ -960,8 +969,8 @@ export default function SiteHeader() {
                   }}
                 >
                   {t.about}
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href={toLangHref("/about/message-from-ceo")}
                   aria-current={aboutMobileActiveHref === "/about/message-from-ceo" ? "page" : undefined}
                   className={mobileItemClass(aboutMobileActiveHref === "/about/message-from-ceo")}
@@ -971,8 +980,8 @@ export default function SiteHeader() {
                   }}
                 >
                   {lang === "en" ? "Message from CEO" : "សារពីនាយកប្រតិបត្តិ"}
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   href={toLangHref("/contact")}
                   aria-current={isPathActive("/contact") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/contact"))}
@@ -982,7 +991,7 @@ export default function SiteHeader() {
                   }}
                 >
                   {t.contact}
-                </Link>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -991,5 +1000,6 @@ export default function SiteHeader() {
     </header>
   );
 }
+
 
 

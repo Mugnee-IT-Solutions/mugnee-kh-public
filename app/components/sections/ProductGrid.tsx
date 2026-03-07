@@ -2,14 +2,37 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLang } from "../layout/LanguageProvider";
-import {
-  PRODUCT_CATEGORIES,
-  PRODUCTS,
-  Product,
-  getCategoryById,
-} from "../../data/products";
+
+type ProductLite = {
+  id: string;
+  slug: string;
+  categoryIds: string[];
+  primaryCategoryId: string;
+  titleEn: string;
+  titleKm: string;
+  shortDescEn: string;
+  shortDescKm: string;
+  heroImage: string;
+  tagsEn: string[];
+  tagsKm: string[];
+};
+
+type ProductCategoryLite = {
+  id: string;
+  parentId?: string;
+  labelEn: string;
+  labelKm: string;
+  slug: string;
+  descriptionEn: string;
+  descriptionKm: string;
+};
+
+type ProductGridIndex = {
+  categories: ProductCategoryLite[];
+  products: ProductLite[];
+};
 
 type ProductGridProps = {
   forcedLang?: "en" | "km";
@@ -178,17 +201,17 @@ function localizedKhmer(valueKm: string, fallbackEn: string) {
   return autoTranslateToKhmer(cleaned);
 }
 
-function getProductTitle(product: Product, lang: "en" | "km") {
+function getProductTitle(product: ProductLite, lang: "en" | "km") {
   if (lang === "en") return product.titleEn;
   return localizedKhmer(product.titleKm, product.titleEn);
 }
 
-function getProductDesc(product: Product, lang: "en" | "km") {
+function getProductDesc(product: ProductLite, lang: "en" | "km") {
   if (lang === "en") return product.shortDescEn;
   return localizedKhmer(product.shortDescKm, product.shortDescEn);
 }
 
-function getTags(product: Product, lang: "en" | "km") {
+function getTags(product: ProductLite, lang: "en" | "km") {
   if (lang === "en") return product.tagsEn;
   return product.tagsKm.map((tag, i) => localizedKhmer(tag, product.tagsEn[i] || tag));
 }
@@ -229,9 +252,28 @@ export default function ProductGrid({
 }: ProductGridProps) {
   const { lang: contextLang } = useLang();
   const lang = forcedLang ?? contextLang;
+  const [indexData, setIndexData] = useState<ProductGridIndex | null>(null);
   const [activeCategory, setActiveCategory] = useState(categoryId || "all");
   const [sortOrder, setSortOrder] = useState<"az" | "za">("az");
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    let active = true;
+    const load = async () => {
+      try {
+        const response = await fetch("/data/products-grid-index.json", { cache: "force-cache" });
+        if (!response.ok) return;
+        const data = (await response.json()) as ProductGridIndex;
+        if (active) setIndexData(data);
+      } catch {
+        // Keep UI stable even if the index cannot be loaded.
+      }
+    };
+    load();
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const effectiveCategory = useMemo(() => {
     if (activeCategory === "all") return "all";
@@ -248,8 +290,10 @@ export default function ProductGrid({
   }, [activeCategory, allowedCategoryIds, filterCategoryIds]);
 
   const availableCategories = useMemo(() => {
-    const ids = new Set(PRODUCTS.flatMap((p) => p.categoryIds));
-    let list = PRODUCT_CATEGORIES.filter((c) => ids.has(c.id));
+    const products = indexData?.products ?? [];
+    const categories = indexData?.categories ?? [];
+    const ids = new Set(products.flatMap((p) => p.categoryIds));
+    let list = categories.filter((c) => ids.has(c.id));
 
     if (filterCategoryIds?.length) {
       const filterSet = new Set(filterCategoryIds);
@@ -259,10 +303,10 @@ export default function ProductGrid({
     }
 
     return list;
-  }, [filterCategoryIds]);
+  }, [filterCategoryIds, indexData]);
 
   const filtered = useMemo(() => {
-    let list = PRODUCTS;
+    let list = indexData?.products ?? [];
     const normalizedQuery = (searchTerm || "").trim().toLowerCase();
 
     if (excludeSlugs?.length) {
@@ -280,7 +324,7 @@ export default function ProductGrid({
     }
 
     if (normalizedQuery) {
-      const scoreProduct = (p: Product) => {
+      const scoreProduct = (p: ProductLite) => {
         const titleEn = p.titleEn.toLowerCase();
         const titleKm = localizedKhmer(p.titleKm, p.titleEn).toLowerCase();
         const descEn = p.shortDescEn.toLowerCase();
@@ -292,7 +336,7 @@ export default function ProductGrid({
           .toLowerCase();
         const categories = p.categoryIds
           .map((id) => {
-            const cat = PRODUCT_CATEGORIES.find((c) => c.id === id);
+            const cat = indexData?.categories.find((c) => c.id === id);
             if (!cat) return "";
             return `${cat.labelEn} ${localizedKhmer(cat.labelKm, cat.labelEn)}`;
           })
@@ -356,6 +400,7 @@ export default function ProductGrid({
     categoryOrderIds,
     excludeSlugs,
     searchTerm,
+    indexData,
   ]);
 
   const totalPages = useMemo(() => {
@@ -377,6 +422,7 @@ export default function ProductGrid({
   }, [totalPages]);
 
   const showControlsRow = showCategoryFilters || showSort || Boolean(topLeftContent);
+  const isLoading = !indexData;
 
   return (
     <div>
@@ -464,16 +510,33 @@ export default function ProductGrid({
       ) : null}
 
       <div className={`mt-6 grid gap-4 ${getGridCols(columns)}`}>
-        {paginated.length === 0 ? (
+        {isLoading ? (
+          Array.from({ length: Math.max(3, Math.min(pageSize, 6)) }).map((_, i) => (
+            <div
+              key={`product-skeleton-${i}`}
+              className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+            >
+              <div className="aspect-[4/3] w-full animate-pulse bg-slate-100" />
+              <div className="space-y-2 p-4">
+                <div className="h-4 w-2/3 animate-pulse rounded bg-slate-100" />
+                <div className="h-3 w-full animate-pulse rounded bg-slate-100" />
+                <div className="h-3 w-5/6 animate-pulse rounded bg-slate-100" />
+              </div>
+            </div>
+          ))
+        ) : null}
+        {!isLoading && paginated.length === 0 ? (
           <div className="col-span-full rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600">
             {lang === "en"
               ? `No results found${searchTerm?.trim() ? ` for "${searchTerm.trim()}"` : ""}.`
               : `រកមិនឃើញលទ្ធផល${searchTerm?.trim() ? ` សម្រាប់ "${searchTerm.trim()}"` : ""}។`}
           </div>
         ) : null}
-        {paginated.map((product) => {
+        {!isLoading && paginated.map((product) => {
           const detailHref = toLocalizedHref(`${detailBasePath}/${product.slug}`, lang);
-          const primaryCategory = getCategoryById(product.primaryCategoryId);
+          const primaryCategory =
+            indexData?.categories.find((category) => category.id === product.primaryCategoryId) ??
+            null;
           const primaryLabel = primaryCategory
             ? lang === "en"
               ? primaryCategory.labelEn
