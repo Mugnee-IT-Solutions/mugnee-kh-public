@@ -49,7 +49,7 @@ export const metadata: Metadata = {
       "Reliable LED power supplies for video walls and signage with stable output, safety protections, and professional support.",
     images: [OG_IMAGE],
   },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 };
 
 export { default } from "../../../led-display/power-supply/page";

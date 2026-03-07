@@ -37,16 +37,16 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "mri.co.jp" },
     ],
   },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-    ];
-  },
   ...(!isStaticExport
     ? {
+        async headers() {
+          return [
+            {
+              source: "/:path*",
+              headers: securityHeaders,
+            },
+          ];
+        },
         async redirects() {
           return [
             {

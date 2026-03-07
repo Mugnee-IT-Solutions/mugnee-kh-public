@@ -30,6 +30,7 @@ function stripLocalePrefix(route: string) {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const includeKmProductRoutes = false;
   const coreRoutes = [
     "/",
     "/products",
@@ -65,7 +66,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/km",
     ...coreRoutes.filter((route) => route !== "/").map((route) => `/km${route}`),
   ].map(toCanonicalRoute);
-  const kmProductRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/km/products/${p.slug}`));
+  const kmProductRoutes = includeKmProductRoutes
+    ? PRODUCTS.map((p) => toCanonicalRoute(`/km/products/${p.slug}`))
+    : [];
   const allRoutes = Array.from(
     new Set([...coreRoutes.map(toCanonicalRoute), ...productRoutes, ...kmCoreRoutes, ...kmProductRoutes])
   );

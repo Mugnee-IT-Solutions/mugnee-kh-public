@@ -1,15 +1,5 @@
-/*
-  Developer Signature:
-  This website was developed by Mugnee IT Solutions.
-  Developer Name: Ankur Datta
-  Email: ankurdatta.official@gmail.com
-  Github: https://github.com/ankur-datta-official
-*/
-import type { Metadata } from "next";
-import { buildLegacyAliasMetadata } from "../lib/seoLegacy";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata: Metadata = buildLegacyAliasMetadata({
-  canonicalPath: "/led-display/receiving-card/",
-});
-
-export { default } from "../led-display/receiving-card/page";
+export default function LegacyAliasRedirectPage() {
+  permanentRedirect("/led-display/receiving-card/");
+}

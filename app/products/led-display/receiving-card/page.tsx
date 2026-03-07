@@ -49,7 +49,7 @@ export const metadata: Metadata = {
       "Reliable receiving cards for LED video walls with stable data transfer, wide module compatibility, and expert configuration support.",
     images: [OG_IMAGE],
   },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 };
 
 export { default } from "../../../led-display/receiving-card/page";

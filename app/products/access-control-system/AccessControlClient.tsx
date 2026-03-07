@@ -162,7 +162,8 @@ export default function AccessControlClient() {
     return lang === "en" ? en : km;
   }, [lang]);
 
-  const faqs: FAQ[] = [
+  const faqs: FAQ[] = useMemo(
+    () => [
     {
       qEn: "Which access control is better—RFID or Face recognition?",
       aEn:
@@ -195,7 +196,9 @@ export default function AccessControlClient() {
       aKm:
         "ចំនួនទ្វារ, ប្រភេទទ្វារ (កញ្ចក់/ឈើ/ដែក), credential, ចំនួនអ្នកប្រើ និងតម្រូវការ online reporting។",
     },
-  ];
+    ],
+    []
+  );
 
   const jsonLd = useMemo(() => {
     const site =
@@ -360,7 +363,6 @@ export default function AccessControlClient() {
                   v: lang === "en" ? s.vEn : s.vKm,
                 }))}
                 tags={lang === "en" ? p.tagsEn : p.tagsKm}
-                img={p.img}
                 ctaLabel={t.getQuote}
               />
             ))}
@@ -492,7 +494,6 @@ function ProductCard({
   highlights,
   specs,
   tags,
-  img,
   ctaLabel,
 }: {
   title: string;
@@ -501,7 +502,6 @@ function ProductCard({
   highlights: string[];
   specs: { k: string; v: string }[];
   tags: string[];
-  img?: string;
   ctaLabel: string;
 }) {
   return (

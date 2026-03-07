@@ -197,6 +197,21 @@ export default function SiteFooter() {
                   </Link>
                 </li>
                 <li>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/led-display/indoor-led-display">
+                    <LangText en="Indoor LED Display" km="អេក្រង់ LED ខាងក្នុង" />
+                  </Link>
+                </li>
+                <li>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/led-display/outdoor-led-display">
+                    <LangText en="Outdoor LED Display" km="អេក្រង់ LED ខាងក្រៅ" />
+                  </Link>
+                </li>
+                <li>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/led-display/video-processor">
+                    <LangText en="Video Processor" km="ឧបករណ៍កែច្នៃវីដេអូ" />
+                  </Link>
+                </li>
+                <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/interactive-flat-panel">
                     <LangText en="Interactive Flat Panel" km="អេក្រង់អន្តរកម្ម" />
                   </Link>

@@ -49,7 +49,7 @@ export const metadata: Metadata = {
       "Reliable video processors for LED walls with multi-input switching, clean scaling, and stable output. Expert configuration & support by Mugnee Cambodia.",
     images: [OG_IMAGE],
   },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 };
 
 export { default } from "../../../led-display/video-processor/page";

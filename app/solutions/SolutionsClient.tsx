@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useLang } from "../components/layout/LanguageProvider";
@@ -187,7 +187,7 @@ const intentClustersEn = [
     links: [
       { label: "Office Access Control Solutions", href: "/solutions/office-access-control-cambodia" },
       { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
-      { label: "Access Control Catalog", href: "/products/access-control" },
+      { label: "Access Control Catalog", href: "/solutions/office-access-control-cambodia" },
     ],
   },
   {
@@ -195,7 +195,7 @@ const intentClustersEn = [
     links: [
       { label: "Education Smart Classroom Solutions", href: "/solutions/education-smart-classroom-cambodia" },
       { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
-      { label: "Smart Board Catalog", href: "/products/smart-board" },
+      { label: "Smart Board Catalog", href: "/interactive-flat-panel" },
     ],
   },
   {
@@ -203,7 +203,7 @@ const intentClustersEn = [
     links: [
       { label: "Factory PA Announcement Solutions", href: "/solutions/factory-pa-announcement-cambodia" },
       { label: "PA System Hub", href: "/pa-system" },
-      { label: "IP Paging Microphones", href: "/products/ip-paging-microphones" },
+      { label: "IP Paging Microphones", href: "/pa-system" },
     ],
   },
 ];
@@ -224,7 +224,7 @@ const intentClustersKm = [
     links: [
       { label: "ដំណោះស្រាយ ការិយាល័យ ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", href: "/solutions/office-access-control-cambodia" },
       { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
-      { label: "Access Control Catalog", href: "/products/access-control" },
+      { label: "Access Control Catalog", href: "/solutions/office-access-control-cambodia" },
     ],
   },
   {
@@ -232,7 +232,7 @@ const intentClustersKm = [
     links: [
       { label: "ដំណោះស្រាយ អប់រំ ថ្នាក់រៀនឆ្លាតវៃ", href: "/solutions/education-smart-classroom-cambodia" },
       { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
-      { label: "Smart Board Catalog", href: "/products/smart-board" },
+      { label: "Smart Board Catalog", href: "/interactive-flat-panel" },
     ],
   },
   {
@@ -240,7 +240,7 @@ const intentClustersKm = [
     links: [
       { label: "ដំណោះស្រាយ ប្រព័ន្ធផ្សាយសំឡេងរោងចក្រ", href: "/solutions/factory-pa-announcement-cambodia" },
       { label: "PA System Hub", href: "/pa-system" },
-      { label: "IP Paging Microphones", href: "/products/ip-paging-microphones" },
+      { label: "IP Paging Microphones", href: "/pa-system" },
     ],
   },
 ];
