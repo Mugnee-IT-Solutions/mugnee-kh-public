@@ -1,6 +1,9 @@
-﻿import Link from "next/link";
+﻿"use client";
+
+import Link from "next/link";
 import Image from "next/image";
 import LangText from "./LangText";
+import { useLang } from "./LanguageProvider";
 import { BUSINESS_EMAIL, BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_E164, SERVICE_AREAS } from "../../lib/nap";
 
 type FooterSocialPlatform = "facebook" | "youtube" | "linkedin" | "x" | "instagram" | "telegram";
@@ -62,6 +65,22 @@ function FooterSocialIcon({ platform }: { platform: FooterSocialPlatform }) {
 }
 
 export default function SiteFooter() {
+  const { lang } = useLang();
+
+  const stripLangPrefix = (value: string) => {
+    if (value === "/km") return "/";
+    if (value.startsWith("/km/")) return value.slice(3);
+    return value;
+  };
+
+  const toLangHref = (href: string) => {
+    if (!href || href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("#")) {
+      return href;
+    }
+
+    const normalized = stripLangPrefix(href);
+    return lang === "km" ? (normalized === "/" ? "/km/" : `/km${normalized}`) : normalized;
+  };
   return (
     <footer className="border-t border-slate-200 bg-gradient-to-b from-slate-100 to-slate-50">
       <div className="h-1 w-full bg-gradient-to-r from-sky-500 via-blue-600 to-slate-900" />
@@ -149,37 +168,37 @@ export default function SiteFooter() {
               </p>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/about">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/about")}>
                     <LangText en="About Us" km="អំពីយើង" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/solutions">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/solutions")}>
                     <LangText en="Solutions" km="ដំណោះស្រាយ" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/blog">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/blog")}>
                     <LangText en="Blog" km="ប្លក់" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/service">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/service")}>
                     <LangText en="Service & Support" km="សេវាកម្ម និងគាំទ្រ" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/return-policy">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/return-policy")}>
                     <LangText en="Return Policy" km="គោលការណ៍ត្រឡប់ទំនិញ" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/terms-and-conditions">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/terms-and-conditions")}>
                     <LangText en="Terms & Conditions" km="លក្ខខណ្ឌ និងកិច្ចព្រមព្រៀង" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/contact">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/contact")}>
                     <LangText en="Contact" km="ទាក់ទង" />
                   </Link>
                 </li>
@@ -192,42 +211,42 @@ export default function SiteFooter() {
               </p>
               <ul className="mt-3 space-y-2 text-sm">
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/led-display">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display")}>
                     <LangText en="LED Display" km="អេក្រង់ LED" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/led-display/indoor-led-display">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/indoor-led-display")}>
                     <LangText en="Indoor LED Display" km="អេក្រង់ LED ខាងក្នុង" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/led-display/outdoor-led-display">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/outdoor-led-display")}>
                     <LangText en="Outdoor LED Display" km="អេក្រង់ LED ខាងក្រៅ" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/led-display/video-processor">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/video-processor")}>
                     <LangText en="Video Processor" km="ឧបករណ៍កែច្នៃវីដេអូ" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/interactive-flat-panel">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/interactive-flat-panel")}>
                     <LangText en="Interactive Flat Panel" km="អេក្រង់អន្តរកម្ម" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/pa-system">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/pa-system")}>
                     <LangText en="PA System" km="ប្រព័ន្ធ PA" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/turnstile-gate">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/turnstile-gate")}>
                     <LangText en="Turnstile Gate" km="ច្រក Turnstile" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href="/products">
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/products")}>
                     <LangText en="View All Products" km="មើលផលិតផលទាំងអស់" />
                   </Link>
                 </li>
@@ -245,13 +264,13 @@ export default function SiteFooter() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Link
-                    href="/contact"
+                    href={toLangHref("/contact")}
                     className="inline-flex rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white no-underline transition hover:-translate-y-0.5 hover:bg-slate-800 hover:no-underline"
                   >
                     <LangText en="Contact Mugnee Cambodia" km="ទាក់ទង Mugnee Cambodia" />
                   </Link>
                   <Link
-                    href="/products"
+                    href={toLangHref("/products")}
                     className="inline-flex rounded-xl border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 no-underline transition hover:-translate-y-0.5 hover:border-slate-400 hover:text-slate-900 hover:no-underline"
                   >
                     <LangText en="Explore Products" km="ស្វែងរកផលិតផល" />
@@ -276,25 +295,25 @@ export default function SiteFooter() {
               .
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/about">
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/about")}>
                 <LangText en="About" km="អំពីយើង" />
               </Link>
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/solutions">
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/solutions")}>
                 <LangText en="Solutions" km="ដំណោះស្រាយ" />
               </Link>
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/service">
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/service")}>
                 <LangText en="Service" km="សេវាកម្ម" />
               </Link>
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/contact">
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/contact")}>
                 <LangText en="Contact" km="ទាក់ទង" />
               </Link>
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/blog">
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/blog")}>
                 <LangText en="Blog" km="ប្លក់" />
               </Link>
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/return-policy">
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/return-policy")}>
                 <LangText en="Return Policy" km="គោលការណ៍ត្រឡប់ទំនិញ" />
               </Link>
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href="/terms-and-conditions">
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/terms-and-conditions")}>
                 <LangText en="Terms" km="លក្ខខណ្ឌ" />
               </Link>
             </div>
@@ -305,6 +324,9 @@ export default function SiteFooter() {
     </footer>
   );
 }
+
+
+
 
 
 

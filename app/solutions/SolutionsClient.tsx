@@ -556,9 +556,11 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
               >
                 <h3 className="text-sm font-semibold text-slate-900">{cluster.title}</h3>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {cluster.links.filter((item) => typeof item.href === "string" && item.href.length > 0).map((item) => (
+                  {cluster.links
+                    .filter((item) => typeof item.href === "string" && item.href.length > 0)
+                    .map((item, itemIndex) => (
                     <Link
-                      key={item.href}
+                      key={`${cluster.title}-${item.href}-${item.label}-${itemIndex}`}
                       href={toLangHref(item.href)}
                       className={[
                         "rounded-full border px-3 py-2 text-sm font-semibold transition hover:-translate-y-0.5",

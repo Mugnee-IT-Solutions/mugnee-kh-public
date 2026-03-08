@@ -2,14 +2,15 @@ import type { BlogFAQ } from "@/app/content/blog/posts";
 
 type FAQAccordionProps = {
   items?: BlogFAQ[];
+  title?: string;
 };
 
-export default function FAQAccordion({ items }: FAQAccordionProps) {
+export default function FAQAccordion({ items, title = "FAQ" }: FAQAccordionProps) {
   if (!items?.length) return null;
 
   return (
     <section id="faq" className="mt-10">
-      <h2 className="text-2xl font-bold tracking-tight text-slate-900">FAQ</h2>
+      <h2 className="text-2xl font-bold tracking-tight text-slate-900">{title}</h2>
       <div className="mt-4 grid gap-3">
         {items.map((item) => (
           <details
@@ -29,4 +30,3 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
     </section>
   );
 }
-

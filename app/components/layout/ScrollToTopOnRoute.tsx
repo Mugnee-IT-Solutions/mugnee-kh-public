@@ -13,6 +13,8 @@ export default function ScrollToTopOnRoute() {
   }, []);
 
   useLayoutEffect(() => {
+    document.documentElement.lang = pathname?.startsWith("/km") ? "km" : "en";
+
     const scrollTop = () => {
       const root = document.getElementById("app-scroll-root");
       if (root instanceof HTMLElement) {

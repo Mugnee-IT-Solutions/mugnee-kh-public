@@ -124,6 +124,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       canonical,
       languages: {
         "en-kh": canonical,
+        "km-kh": `/km/blog/${post.slug}/`,
         "x-default": canonical,
       },
     },
