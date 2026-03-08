@@ -164,7 +164,7 @@ const FAQS = [
 
 export default function KmBlogPage() {
   return (
-    <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <main className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <JsonLd
         id="km-blog-page-jsonld"
         data={{
@@ -205,7 +205,7 @@ export default function KmBlogPage() {
           ],
         }}
       />
-      <FAQJsonLd id="km-blog-faq-jsonld" items={FAQS.map((item) => ({ ...item, language: "km" as const }))} />
+      <FAQJsonLd id="km-blog-faq-jsonld" pageLanguage="km" items={FAQS.map((item) => ({ ...item, language: "km" as const }))} />
 
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <div className="pointer-events-none absolute inset-0">

@@ -9,13 +9,14 @@ type FAQItem = {
 type FAQJsonLdProps = {
   items: FAQItem[];
   id?: string;
+  pageLanguage?: "en" | "km";
 };
 
-export default function FAQJsonLd({ items, id = "faq-jsonld" }: FAQJsonLdProps) {
+export default function FAQJsonLd({ items, id = "faq-jsonld", pageLanguage = "en" }: FAQJsonLdProps) {
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    inLanguage: ["en", "km"],
+    inLanguage: pageLanguage,
     about: {
       "@type": "Place",
       name: "Cambodia",
@@ -37,5 +38,4 @@ export default function FAQJsonLd({ items, id = "faq-jsonld" }: FAQJsonLdProps) 
 
   return <JsonLd id={id} data={faqData} />;
 }
-
 

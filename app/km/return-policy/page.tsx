@@ -167,7 +167,7 @@ export default function KmReturnPolicyPage() {
           },
         }}
       />
-      <FAQJsonLd id="km-return-policy-faq-jsonld" items={FAQ_ITEMS.map((item) => ({ ...item, language: "km" }))} />
+      <FAQJsonLd id="km-return-policy-faq-jsonld" pageLanguage="km" items={FAQ_ITEMS.map((item) => ({ ...item, language: "km" }))} />
 
       <section className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-100">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-14">

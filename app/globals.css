@@ -80,3 +80,11 @@ a {
     animation: none !important;
   }
 }
+
+/* Blog reading alignment */
+.blog-justified p,
+.blog-justified li,
+.blog-justified blockquote {
+  text-align: justify;
+  text-justify: inter-word;
+}

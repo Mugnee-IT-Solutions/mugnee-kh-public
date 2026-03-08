@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { existsSync, statSync } from "fs";
 import path from "path";
 import { PRODUCTS } from "./data/products";
+import { getAllBlogSlugs } from "./content/blog/posts";
 import { SITE_URL } from "./lib/site";
 
 export const dynamic = "force-static";
@@ -62,6 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const productRoutes = PRODUCTS.map((p) => toCanonicalRoute(`/products/${p.slug}`));
+  const blogRoutes = getAllBlogSlugs().map((slug) => toCanonicalRoute(`/blog/${slug}`));
   const kmCoreRoutes = [
     "/km",
     ...coreRoutes.filter((route) => route !== "/").map((route) => `/km${route}`),
@@ -70,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ? PRODUCTS.map((p) => toCanonicalRoute(`/km/products/${p.slug}`))
     : [];
   const allRoutes = Array.from(
-    new Set([...coreRoutes.map(toCanonicalRoute), ...productRoutes, ...kmCoreRoutes, ...kmProductRoutes])
+    new Set([...coreRoutes.map(toCanonicalRoute), ...productRoutes, ...blogRoutes, ...kmCoreRoutes, ...kmProductRoutes])
   );
   const fallbackLastModified =
     getFileModified("app/layout.tsx") || getFileModified("app/page.tsx") || new Date("2026-01-01");
@@ -94,6 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/about/message-from-ceo", "app/about/message-from-ceo/page.tsx"],
     ["/contact", "app/contact/page.tsx"],
     ["/blog", "app/blog/page.tsx"],
+    ...getAllBlogSlugs().map((slug) => [`/blog/${slug}`, "app/content/blog/posts.ts"] as const),
     ["/return-policy", "app/return-policy/page.tsx"],
     ["/terms-and-conditions", "app/terms-and-conditions/page.tsx"],
     ["/solutions/indoor-communication-solutions-cambodia", "app/content/solutions/digital-signage-cambodia.ts"],
