@@ -245,7 +245,7 @@ export default function SiteHeader() {
       about: "About",
       contact: "Contact",
       quote: "Get a Free Quotation",
-      quotePhone: "ហៅ +855 86 817 907",
+      quotePhone: "ហៅ +85581580802",
       close: "Close",
       menu: "Menu",
       searchPlaceholder: "Search products, solutions...",
@@ -266,7 +266,7 @@ export default function SiteHeader() {
       about: "អំពីយើង",
       contact: "ទាក់ទងយើង",
       quote: "ស្នើសុំតម្លៃ (Free)",
-      quotePhone: "ហៅ +855 86 817 907",
+      quotePhone: "ហៅ +85581580802",
       close: "បិទ",
       menu: "ម៉ឺនុយ",
       searchPlaceholder: "ស្វែងរកផលិតផល/ដំណោះស្រាយ...",
@@ -282,7 +282,7 @@ export default function SiteHeader() {
     return lang === "en" ? en : km;
   }, [lang]);
 
-  const quotePhoneLabel = lang === "en" ? "Call +855 86 817 907" : "ហៅ +855 86 817 907";
+  const quotePhoneLabel = lang === "en" ? "Call +85581580802" : "ហៅ +85581580802";
   const quoteCtaLabel = showQuotePhone ? quotePhoneLabel : t.quote;
 
   const ledDisplayMenu: NavItem[] = [
@@ -599,9 +599,9 @@ export default function SiteHeader() {
             </div>
 
             <NavLink
-              href="tel:+85586817907"
+              href="tel:+85581580802"
               className="cta-attract hidden rounded-xl bg-slate-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-800 lg:inline-flex"
-              aria-label="Call Mugnee Cambodia at +855 86 817 907"
+              aria-label="Call Mugnee Cambodia at +85581580802"
             >
               {quoteCtaLabel}
             </NavLink>
@@ -690,9 +690,9 @@ export default function SiteHeader() {
               </div>
 
               <NavLink
-                href="tel:+85586817907"
+                href="tel:+85581580802"
                 className="cta-attract rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800"
-                aria-label="Call Mugnee Cambodia at +855 86 817 907"
+                aria-label="Call Mugnee Cambodia at +85581580802"
               >
                 {quoteCtaLabel}
               </NavLink>

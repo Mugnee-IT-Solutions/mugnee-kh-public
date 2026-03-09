@@ -960,7 +960,7 @@ export default function HomeClient({
                     : "ជាន់ទី១, 11E0, ផ្លូវ 108, តំបន់ Night Market, Doun Penh, Phnom Penh, Cambodia"}
                 </p>
                 <p className="mt-2">
-                  {lang === "en" ? "Phone: +85586817907" : "ទូរស័ព្ទ: +85586817907"}
+                  {lang === "en" ? "Phone: +85581580802" : "ទូរស័ព្ទ: +85581580802"}
                 </p>
                 <p className="mt-2">
                   {lang === "en"

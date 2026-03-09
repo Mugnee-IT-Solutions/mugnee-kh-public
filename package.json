@@ -10,7 +10,7 @@
     "dev:webpack": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next dev --webpack",
     "dev:turbo": "node --max-old-space-size=4096 ./node_modules/next/dist/bin/next dev --turbopack",
     "build": "npm run gen:data && npm run optimize:critical-images && npm run lint:encoding && npm run lint:i18n && next build --webpack",
-    "postbuild": "node scripts/sync-htaccess.cjs",
+    "postbuild": "node scripts/sync-htaccess.cjs && node scripts/fix-km-html-lang.cjs && node scripts/verify-html-lang-output.cjs",
     "start": "next start",
     "lint": "eslint",
     "lint:encoding": "node scripts/check-encoding-mojibake.cjs",

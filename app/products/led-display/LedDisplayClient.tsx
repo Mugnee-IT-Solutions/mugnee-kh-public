@@ -680,7 +680,7 @@ export default function LedDisplayClient({
 
           <div className="mt-5 flex flex-wrap gap-2.5">
             <a
-              href="https://wa.me/85586817907"
+              href="https://wa.me/85581580802"
               target="_blank"
               rel="noopener"
               onClick={() => trackLeadClick("whatsapp", "hero")}
@@ -1897,7 +1897,7 @@ export default function LedDisplayClient({
               {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
             </a>
             <a
-              href="https://wa.me/85586817907"
+              href="https://wa.me/85581580802"
               target="_blank"
               rel="noopener"
               onClick={() => trackLeadClick("whatsapp", "final_cta")}
@@ -2175,7 +2175,6 @@ export default function LedDisplayClient({
     </main>
   );
 }
-
 
 
 

@@ -6,7 +6,7 @@ import LangText from "./LangText";
 import { useLang } from "./LanguageProvider";
 import { BUSINESS_EMAIL, BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_E164, SERVICE_AREAS } from "../../lib/nap";
 
-type FooterSocialPlatform = "facebook" | "youtube" | "linkedin" | "x" | "instagram" | "telegram";
+type FooterSocialPlatform = "facebook" | "youtube" | "linkedin" | "x" | "instagram" | "telegram" | "whatsapp";
 
 const FOOTER_SOCIAL_LINKS: Array<{
   label: string;
@@ -19,6 +19,7 @@ const FOOTER_SOCIAL_LINKS: Array<{
   { label: "X (Twitter)", platform: "x", href: "https://x.com/mugneeml" },
   { label: "Instagram", platform: "instagram", href: "https://www.instagram.com/sm.mugnee/" },
   { label: "Telegram", platform: "telegram", href: "https://t.me/mugneemultiple" },
+  { label: "WhatsApp", platform: "whatsapp", href: "https://wa.me/85581580802" },
 ];
 
 function FooterSocialIcon({ platform }: { platform: FooterSocialPlatform }) {
@@ -57,6 +58,12 @@ function FooterSocialIcon({ platform }: { platform: FooterSocialPlatform }) {
       return (
         <svg viewBox="0 0 24 24" className="h-[17px] w-[17px] fill-current" aria-hidden="true">
           <path d="M9.6 15.5 9.2 20c.6 0 .9-.3 1.3-.6l3.1-3 6.5 4.8c1.2.6 2 .3 2.3-1.1L24 3.2v-.1c.4-1.7-.6-2.3-1.8-1.9L1.2 9.3c-1.7.6-1.7 1.5-.3 2l5.4 1.7L19 5.1c.6-.4 1.1-.2.6.2" />
+        </svg>
+      );
+    case "whatsapp":
+      return (
+        <svg viewBox="0 0 448 512" className="h-[17px] w-[17px] fill-current" aria-hidden="true">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32 101.5 32 2 131.5 2 253.9c0 39.1 10.2 77.3 29.6 111L0 480l118.7-31.2c32.7 17.9 69.6 27.3 107.4 27.3h.1c122.3 0 221.9-99.6 221.9-221.9 0-59.3-23.1-115-65.2-157.1zM223.9 438.7h-.1c-33.1 0-65.5-8.9-93.7-25.7l-6.7-4-70.4 18.5 18.8-68.6-4.4-7.1c-18.7-29.7-28.6-64-28.6-99.2C38.8 154 125 67.8 223.9 67.8c48 0 93.1 18.7 127 52.6 33.9 33.9 52.6 79 52.6 127 0 98.9-86.2 191.3-179.6 191.3zm101.8-138.2c-5.5-2.7-32.8-16.1-37.9-18-5.1-1.9-8.8-2.7-12.5 2.7-3.7 5.5-14.3 18-17.6 21.7-3.2 3.7-6.5 4.1-12 1.4-32.6-16.3-54-29.1-75.5-65.9-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.6-1.4-2.7-12.5-30-17.1-41-4.5-10.8-9.1-9.4-12.5-9.6-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.6 1.4-14.6 6.9-5.1 5.5-19.3 18.8-19.3 45.7 0 26.9 19.8 52.9 22.5 56.6 2.7 3.7 39 59.5 94.4 83.4 35 15.1 48.7 16.4 66.2 14 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.3-5-3.7-10.5-6.4z" />
         </svg>
       );
     default:
@@ -139,6 +146,8 @@ export default function SiteFooter() {
                               ? "bg-black text-white"
                               : item.platform === "telegram"
                                 ? "bg-[#229ED9] text-white"
+                                : item.platform === "whatsapp"
+                                  ? "bg-[#25D366] text-white"
                               : "bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white";
 
                     return (
