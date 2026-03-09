@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/led-display/power-supply/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "ផ្គត់ផ្គង់ថាមពលសម្រាប់អេក្រង់ LED នៅកម្ពុជា | ជ្រើសរើស និងគាំទ្រ",
+  title: "Power Supply សម្រាប់អេក្រង់ LED នៅកម្ពុជា | ជ្រើសរើស តម្លៃ និងគាំទ្រ",
   description:
-    "ការជ្រើសរើស និងកំណត់ប្រព័ន្ធផ្គត់ផ្គង់ថាមពលសម្រាប់អេក្រង់ LED នៅកម្ពុជា ដើម្បីរក្សាស្ថិរភាព និងអាយុកាលប្រព័ន្ធ។",
+    "ជ្រើសរើស Power Supply ត្រឹមត្រូវសម្រាប់ LED Module នៅកម្ពុជា ដើម្បីធានាស្ថិរភាព ប្រសិទ្ធភាពថាមពល និងអាយុកាលប្រព័ន្ធ ជាមួយសេវាបច្ចេកទេសពី Mugnee Cambodia។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

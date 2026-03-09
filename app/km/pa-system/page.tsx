@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/pa-system/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "ប្រព័ន្ធសំឡេងសាធារណៈនៅកម្ពុជា | រចនា ផ្គត់ផ្គង់ និងដំឡើង",
+  title: "PA System នៅកម្ពុជា | រចនា តម្លៃ និងដំឡើងប្រព័ន្ធសំឡេងសាធារណៈ",
   description:
-    "ដំណោះស្រាយប្រព័ន្ធសំឡេងសាធារណៈនៅកម្ពុជា ជាមួយការរចនា ផ្គត់ផ្គង់ ដំឡើង បើកប្រើប្រាស់ និងគាំទ្របច្ចេកទេស។",
+    "Mugnee Cambodia ផ្តល់ PA System សម្រាប់សាលារៀន អគារការិយាល័យ ហាង និងរោងចក្រ នៅកម្ពុជា ជាមួយការរចនា BOQ ផ្គត់ផ្គង់ ដំឡើង និងថែទាំប្រព័ន្ធ។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

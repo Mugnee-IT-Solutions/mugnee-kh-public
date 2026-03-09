@@ -10,7 +10,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 export const metadata: Metadata = {
   title: "លក្ខខណ្ឌ និងកិច្ចព្រមព្រៀង 2026 | Mugnee Cambodia",
   description:
-    "អានលក្ខខណ្ឌ និងកិច្ចព្រមព្រៀងរបស់ Mugnee Cambodia សម្រាប់ការបញ្ជាទិញ ការទូទាត់ ការដឹកជញ្ជូន ការធានា និងសេវាគាំទ្រនៅកម្ពុជា។",
+    "អានលក្ខខណ្ឌ និងកិច្ចព្រមព្រៀងរបស់ Mugnee Cambodia សម្រាប់ការបញ្ជាទិញ ការទូទាត់ ការដឹកជញ្ជូន ការធានា និងសេវាគាំទ្រផលិតផលបច្ចេកវិទ្យានៅកម្ពុជា។",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "លក្ខខណ្ឌ និងកិច្ចព្រមព្រៀង 2026 | Mugnee Cambodia",
     description:
-      "គោលការណ៍ក្រុមហ៊ុនសម្រាប់ការទូទាត់ ការធានា និងសេវាបច្ចេកទេសសម្រាប់គម្រោងនៅកម្ពុជា។",
+      "គោលការណ៍ក្រុមហ៊ុនសម្រាប់ការទូទាត់ ការធានា និងសេវាបច្ចេកទេសសម្រាប់គម្រោងអាជីវកម្មនៅកម្ពុជា។",
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "article",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "លក្ខខណ្ឌ និងកិច្ចព្រមព្រៀង 2026 | Mugnee Cambodia",
-    description: "លក្ខខណ្ឌពាណិជ្ជកម្ម និងគោលការណ៍ធានារបស់ Mugnee Cambodia។",
+    description: "លក្ខខណ្ឌពាណិជ្ជកម្ម និងគោលការណ៍ធានារបស់ Mugnee Cambodia សម្រាប់ទីផ្សារកម្ពុជា។",
   },
   robots: { index: true, follow: true },
 };

@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/solutions/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "ដំណោះស្រាយនៅកម្ពុជា | អេក្រង់ LED ស្លាកឌីជីថល និងគ្រប់គ្រងចូលចេញ",
+  title: "ដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា | LED Display, Digital Signage និង Access Control",
   description:
-    "ស្វែងរកដំណោះស្រាយសមស្របទីផ្សារកម្ពុជា ពី Mugnee Cambodia ជាមួយសេវារចនា ដំឡើង និងគាំទ្ររយៈពេលវែង។",
+    "ស្វែងរកដំណោះស្រាយសម្រាប់ហាងលក់ សាលារៀន ក្រុមហ៊ុន និងរោងចក្រ នៅកម្ពុជា ពី Mugnee Cambodia ជាមួយសេវាប្រឹក្សា តម្លៃគម្រោង ដំឡើង និងគាំទ្របន្ទាប់ពីលក់។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

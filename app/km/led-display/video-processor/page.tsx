@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/led-display/video-processor/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "ឧបករណ៍កែច្នៃវីដេអូសម្រាប់ LED នៅកម្ពុជា | ជ្រើសរើស និងដំឡើង",
+  title: "Video Processor សម្រាប់ LED នៅកម្ពុជា | តម្លៃ ជ្រើសរើស និងដំឡើង",
   description:
-    "សេវាជ្រើសរើសឧបករណ៍កែច្នៃវីដេអូ កំណត់រចនាសម្ព័ន្ធ និងបើកប្រើប្រាស់នៅកម្ពុជា សម្រាប់គម្រោងអេក្រង់ LED ក្នុងអគារ និងក្រៅអគារ។",
+    "Mugnee Cambodia ផ្តល់ Video Processor សម្រាប់ LED Display ជាមួយសេវាប្រឹក្សាជ្រើសម៉ូដែល កំណត់រចនាសម្ព័ន្ធ និងដំឡើងសម្រាប់គម្រោងក្នុងអគារ និងក្រៅអគារ។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

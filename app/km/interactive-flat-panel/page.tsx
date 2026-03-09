@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/interactive-flat-panel/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "អេក្រង់អន្តរកម្មនៅកម្ពុជា | បន្ទះឆ្លាតវៃសម្រាប់សាលា និងការិយាល័យ",
+  title: "Interactive Flat Panel នៅកម្ពុជា | តម្លៃ និងដំឡើងសម្រាប់សាលា ការិយាល័យ",
   description:
-    "ដំណោះស្រាយអេក្រង់អន្តរកម្មនៅកម្ពុជា សម្រាប់ថ្នាក់រៀន បន្ទប់ប្រជុំ និងមជ្ឈមណ្ឌលបណ្តុះបណ្តាល ជាមួយសេវាដំឡើង និងគាំទ្រក្នុងស្រុក។",
+    "ទិញ Interactive Flat Panel សម្រាប់ Smart Classroom និង Meeting Room នៅកម្ពុជា ជាមួយសេវាប្រឹក្សា ជ្រើសម៉ូដែល តម្លៃប្រកួតប្រជែង និងដំឡើងដោយ Mugnee Cambodia។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

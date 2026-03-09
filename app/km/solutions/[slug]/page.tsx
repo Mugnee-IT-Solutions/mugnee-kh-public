@@ -35,10 +35,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const override = getSolutionMetaOverride(solution.slug, "km");
   const kmTitle = hasKhmer(override?.title)
     ? override!.title
-    : "ដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា";
+    : "ដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា សម្រាប់ LED Display និងប្រព័ន្ធឆ្លាតវៃ";
   const description = hasKhmer(override?.description)
     ? override!.description
-    : "ទំព័រដំណោះស្រាយនេះផ្តល់ព័ត៌មានអំពីការរៀបចំគម្រោង ដំឡើង និងគាំទ្របច្ចេកទេសក្នុងស្រុក សម្រាប់អាជីវកម្មនៅកម្ពុជា។";
+    : "ទំព័រដំណោះស្រាយនេះផ្តល់ព័ត៌មានសម្រាប់ទីផ្សារកម្ពុជា អំពីតម្លៃគម្រោង ការរៀបចំ BOQ ការដំឡើង និងសេវាគាំទ្របន្ទាប់ពីលក់ សម្រាប់អាជីវកម្ម។";
 
   return {
     title: `${kmTitle} | Mugnee Cambodia`,

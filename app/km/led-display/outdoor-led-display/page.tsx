@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/led-display/outdoor-led-display/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា | តម្លៃប៊ីលបត និងដំឡើង",
+  title: "Outdoor LED Display នៅកម្ពុជា | តម្លៃប៊ីលបត ផ្គត់ផ្គង់ និងដំឡើង",
   description:
-    "ដំណោះស្រាយអេក្រង់ LED ខាងក្រៅ និងប៊ីលបតផ្សព្វផ្សាយនៅកម្ពុជា ជាមួយការរៀបចំពន្លឺ រចនាសំណង់ ដំឡើង និងសេវាបន្ទាប់ពីលក់។",
+    "សេវា Outdoor LED Display និងប៊ីលបតផ្សព្វផ្សាយនៅកម្ពុជា សម្រាប់ផ្លូវធំ ផ្សារ និងអាជីវកម្ម ដោយមានតម្លៃគម្រោង សំណង់ដំឡើង និងសេវាបន្ទាប់ពីលក់។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/led-display/receiving-card/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "កាតទទួលសញ្ញាអេក្រង់ LED នៅកម្ពុជា | រចនា និងគាំទ្រ",
+  title: "Receiving Card សម្រាប់អេក្រង់ LED នៅកម្ពុជា | ជ្រើសរើស និងដំឡើង",
   description:
-    "ដំណោះស្រាយកាតទទួលសញ្ញា LED នៅកម្ពុជា ជាមួយការណែនាំកំណត់រចនាសម្ព័ន្ធ ការភ្ជាប់ប្រព័ន្ធ និងអនុសាសន៍ដំឡើងជាក់ស្តែង។",
+    "សេវា Receiving Card សម្រាប់ LED Display នៅកម្ពុជា ជាមួយការប្រឹក្សាតម្លៃ កំណត់រចនាសម្ព័ន្ធ Mapping និងការដំឡើងសម្រាប់គម្រោង Indoor/Outdoor។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

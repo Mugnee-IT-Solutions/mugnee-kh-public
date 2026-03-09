@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/products/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "ផលិតផលបច្ចេកវិទ្យានៅកម្ពុជា | Mugnee Cambodia",
+  title: "ផលិតផលបច្ចេកវិទ្យាសម្រាប់អាជីវកម្មនៅកម្ពុជា | តម្លៃ និងសេវាដំឡើង",
   description:
-    "ស្វែងរកផលិតផលរបស់ Mugnee Cambodia សម្រាប់អេក្រង់ LED អេក្រង់អន្តរកម្ម ប្រព័ន្ធសំឡេង ច្រកសុវត្ថិភាព និងគ្រឿងបន្លាស់ពាក់ព័ន្ធ។",
+    "ជ្រើសរើសផលិតផលពី Mugnee Cambodia រួមមាន LED Display, Video Wall, Interactive Flat Panel, PA System, Turnstile Gate និងគ្រឿងបន្លាស់ LED ដោយមានតម្លៃល្អ និងសេវាបន្ទាប់ពីលក់នៅកម្ពុជា។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

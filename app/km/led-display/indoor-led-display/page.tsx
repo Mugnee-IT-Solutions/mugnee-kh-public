@@ -6,9 +6,9 @@ const PAGE_PATH = "/km/led-display/indoor-led-display/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "អេក្រង់ LED ក្នុងអគារ នៅកម្ពុជា | តម្លៃ និងដំឡើង",
+  title: "Indoor LED Display នៅកម្ពុជា | តម្លៃ ទិញ និងដំឡើង",
   description:
-    "ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារនៅកម្ពុជា សម្រាប់បន្ទប់ប្រជុំ បន្ទប់បង្ហាញ និងហាងលក់ ជាមួយការរៀបចំផែនការ ដំឡើង និងកែតម្រូវប្រព័ន្ធ។",
+    "ទិញអេក្រង់ LED ក្នុងអគារ សម្រាប់ហាង បន្ទប់ប្រជុំ Showroom និងសាលារៀន នៅកម្ពុជា ជាមួយការស្ទង់ទីតាំង តម្លៃ BOQ ដំឡើង និងកែតម្រូវដោយអ្នកជំនាញ។",
   alternates: {
     canonical: PAGE_URL,
     languages: {

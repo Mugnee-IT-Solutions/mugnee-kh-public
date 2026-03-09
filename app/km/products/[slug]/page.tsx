@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const seoTitle = hasKhmer(seoTitleRaw) ? seoTitleRaw : `${productName} | Mugnee Cambodia`;
   const seoDesc = hasKhmer(seoDescRaw)
     ? seoDescRaw
-    : `ព័ត៌មានអំពី ${productName} នៅកម្ពុជា រួមមានលក្ខណៈបច្ចេកទេស ការប្រើប្រាស់ និងសេវាគាំទ្រពីក្រុម Mugnee Cambodia។`;
+    : `ព័ត៌មានអំពី ${productName} នៅកម្ពុជា រួមមានលក្ខណៈបច្ចេកទេស តម្លៃប្រហាក់ប្រហែល ជម្រើសដំឡើង និងសេវាបន្ទាប់ពីលក់ពី Mugnee Cambodia។`;
 
   return {
     title: seoTitle,

@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: KmBlogPostPageProps): Promise
   const post = getKmBlogPostBySlug(slug);
   if (!post) return {};
 
-  const canonical = `/km/blog/${post.slug}/`;
+  const canonical = `${SITE_URL}/km/blog/${post.slug}/`;
   return {
     title: `${post.title} | Mugnee Cambodia`,
     description: post.description,
@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: KmBlogPostPageProps): Promise
       canonical,
       languages: {
         "en-kh": `/blog/${post.slug}/`,
-        "km-kh": canonical,
+        "km-kh": `/km/blog/${post.slug}/`,
         "x-default": `/blog/${post.slug}/`,
       },
     },

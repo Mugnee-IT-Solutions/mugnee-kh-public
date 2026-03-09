@@ -10,11 +10,11 @@ const PAGE_PATH = "/km/blog/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "ប្លក់បច្ចេកវិទ្យា និងមគ្គុទេសក៍ទិញ | Mugnee Cambodia",
+  title: "ប្លក់បច្ចេកវិទ្យាភាសាខ្មែរ | មគ្គុទេសក៍ទិញ LED Display នៅកម្ពុជា",
   description:
-    "ប្លក់ភាសាខ្មែរ សម្រាប់ទីផ្សារកម្ពុជា អំពី LED Display, Digital Signage, ការដំឡើង, តម្លៃ, និងការធ្វើផែនការគម្រោងអាជីវកម្ម។",
+    "អត្ថបទភាសាខ្មែរ សម្រាប់អតិថិជនកម្ពុជា អំពីតម្លៃ LED Display, Digital Signage, Interactive Flat Panel, PA System, គន្លឹះជ្រើសរើសផលិតផល និងផែនការដំឡើងសម្រាប់អាជីវកម្ម។",
   alternates: {
-    canonical: PAGE_PATH,
+    canonical: PAGE_URL,
     languages: {
       "en-kh": "/blog/",
       "km-kh": PAGE_PATH,
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ប្លក់បច្ចេកវិទ្យា និងមគ្គុទេសក៍ទិញ | Mugnee Cambodia",
+    title: "ប្លក់បច្ចេកវិទ្យាភាសាខ្មែរ | មគ្គុទេសក៍ទិញ LED Display នៅកម្ពុជា",
     description:
-      "ស្វែងយល់អត្ថបទជាក់ស្តែង សម្រាប់ការសម្រេចចិត្តទិញ និងអនុវត្តគម្រោងបច្ចេកវិទ្យាអាជីវកម្មនៅកម្ពុជា។",
-    url: PAGE_PATH,
+      "ស្វែងយល់អត្ថបទជាក់ស្តែង ដើម្បីសម្រេចចិត្តទិញផលិតផលបច្ចេកវិទ្យា និងអនុវត្តគម្រោងអាជីវកម្មបានមានប្រសិទ្ធភាពនៅកម្ពុជា។",
+    url: PAGE_URL,
     type: "website",
     images: [
       {

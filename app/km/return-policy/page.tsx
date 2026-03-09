@@ -11,7 +11,7 @@ const LAST_UPDATED = "2026-03-05";
 export const metadata: Metadata = {
   title: "គោលការណ៍មិនអាចត្រឡប់ និងមិនសងប្រាក់ | Mugnee Cambodia",
   description:
-    "Mugnee Cambodia អនុវត្តគោលការណ៍មិនអាចត្រឡប់ទំនិញ និងមិនសងប្រាក់ ជាមួយដំណើរការគាំទ្របច្ចេកទេសច្បាស់លាស់។",
+    "Mugnee Cambodia អនុវត្តគោលការណ៍មិនអាចត្រឡប់ទំនិញ និងមិនសងប្រាក់នៅកម្ពុជា ជាមួយដំណើរការគាំទ្របច្ចេកទេសច្បាស់លាស់សម្រាប់អតិថិជន។",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "គោលការណ៍មិនអាចត្រឡប់ និងមិនសងប្រាក់ | Mugnee Cambodia",
     description:
-      "គោលការណ៍មិនអាចត្រឡប់ទំនិញ និងមិនសងប្រាក់នៅកម្ពុជា ជាមួយជំហានគាំទ្របច្ចេកទេស។",
+      "គោលការណ៍មិនអាចត្រឡប់ទំនិញ និងមិនសងប្រាក់នៅកម្ពុជា ជាមួយជំហានគាំទ្របច្ចេកទេស និងដំណោះស្រាយបញ្ហាបន្ទាប់ពីលក់។",
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "article",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "គោលការណ៍មិនអាចត្រឡប់ និងមិនសងប្រាក់ | Mugnee Cambodia",
-    description: "គោលការណ៍មិនអាចត្រឡប់ទំនិញ និងមិនសងប្រាក់ សម្រាប់ផលិតផលដែលបានប្រគល់។",
+    description: "គោលការណ៍មិនអាចត្រឡប់ទំនិញ និងមិនសងប្រាក់ សម្រាប់ផលិតផលដែលបានប្រគល់នៅកម្ពុជា។",
   },
   robots: { index: true, follow: true },
 };
