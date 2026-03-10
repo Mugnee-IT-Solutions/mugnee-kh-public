@@ -9,13 +9,14 @@ const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 export const metadata: Metadata = {
   title: "តម្លៃអេក្រង់ LED នៅកម្ពុជា | ទិញ ដំឡើង និងសេវាបន្ទាប់ពីលក់",
   description:
-    "ស្វែងរកអេក្រង់ LED សម្រាប់ Indoor, Outdoor, Billboard និង Video Wall នៅកម្ពុជា ជាមួយតម្លៃច្បាស់លាស់ BOQ ដំឡើងតាមស្តង់ដារ និងសេវាបន្ទាប់ពីលក់ពី Mugnee Cambodia។",
+    "ស្វែងរកអេក្រង់ LED សម្រាប់ Indoor, Outdoor, Billboard, LED advertising screen និង Video Wall នៅកម្ពុជា ជាមួយតម្លៃច្បាស់លាស់ BOQ ដំឡើងតាមស្តង់ដារ និងសេវាបន្ទាប់ពីលក់ពី Mugnee Cambodia។",
   keywords: [
     "តម្លៃអេក្រង់ LED នៅកម្ពុជា",
     "អេក្រង់ LED កម្ពុជា",
     "អេក្រង់ LED ភ្នំពេញ",
     "អេក្រង់វីដេអូជញ្ជាំង",
     "ប៊ីលបត LED ខាងក្រៅ",
+    "LED advertising screen Cambodia",
     "ទិញអេក្រង់ LED កម្ពុជា",
     "ដំឡើងអេក្រង់ LED ភ្នំពេញ",
   ],
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "តម្លៃអេក្រង់ LED នៅកម្ពុជា | ទិញ ដំឡើង និងសេវាបន្ទាប់ពីលក់",
     description:
-      "អេក្រង់ LED ក្នុងអគារ និងក្រៅអគារនៅកម្ពុជា ជាមួយ BOQ តម្លៃ ដំឡើងតាមស្តង់ដារ និងសេវាគាំទ្របន្ទាប់ពីលក់។",
+      "អេក្រង់ LED ក្នុងអគារ និងក្រៅអគារនៅកម្ពុជា រួមមាន LED advertising screen ជាមួយ BOQ តម្លៃ ដំឡើងតាមស្តង់ដារ និងសេវាគាំទ្របន្ទាប់ពីលក់។",
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "website",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "តម្លៃអេក្រង់ LED នៅកម្ពុជា | ទិញ ដំឡើង និងសេវាបន្ទាប់ពីលក់",
     description:
-      "ស្នើសុំតម្លៃអេក្រង់ LED នៅកម្ពុជា ជាមួយ BOQ តម្លាភាព ការដំឡើង និងសេវាគាំទ្រក្នុងស្រុក។",
+      "ស្នើសុំតម្លៃអេក្រង់ LED និង LED advertising screen នៅកម្ពុជា ជាមួយ BOQ តម្លាភាព ការដំឡើង និងសេវាគាំទ្រក្នុងស្រុក។",
     images: [OG_IMAGE],
   },
 };

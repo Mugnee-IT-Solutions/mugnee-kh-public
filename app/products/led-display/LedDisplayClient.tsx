@@ -428,7 +428,7 @@ export default function LedDisplayClient({
         timeZone: "Asia/Phnom_Penh",
       }).format(new Date())}`,
       intro:
-        "Looking for a trusted LED screen supplier in Phnom Penh, Cambodia? Mugnee Cambodia is a market-leading LED display company and a preferred market leader for indoor LED display, outdoor LED billboard, LED video wall, and digital advertising display projects. From indoor LED display planning to outdoor LED billboard proposals, we support shops, showrooms, hotels, corporate offices, and public projects with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready options and dependable Cambodia-based after-sales support for stable long-term performance.",
+        "Looking for a trusted LED screen supplier in Phnom Penh, Cambodia? Mugnee Cambodia is a market-leading LED display company and a preferred market leader for indoor LED display, outdoor LED billboard, LED video wall, and digital advertising display projects, including LED advertising screen requirements for commercial visibility. From indoor LED display planning to outdoor LED billboard proposals, we support shops, showrooms, hotels, corporate offices, and public projects with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready options and dependable Cambodia-based after-sales support for stable long-term performance.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
@@ -441,7 +441,7 @@ export default function LedDisplayClient({
       breadcrumb: "ផលិតផល",
       h1: "តម្លៃអេក្រង់ LED នៅកម្ពុជា",
       intro:
-        "កំពុងស្វែងរកអ្នកផ្គត់ផ្គង់អេក្រង់ LED ដែលអាចទុកចិត្តបាននៅភ្នំពេញ កម្ពុជា មែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារ អេក្រង់ប៊ីលបត LED ខាងក្រៅ និង LED Video Wall ជាមួយសេវាស្ទង់ទីតាំង គណនា Pixel Pitch រៀបចំ BOQ រៀបចំរចនាសម្ព័ន្ធដែក និង Cabinet ការដំឡើង ការធ្វើតេស្ត និងការធ្វើ Commissioning ដោយវិជ្ជាជីវៈ។ ទទួលបានតម្លៃតាមគម្រោង ជម្រើស IP65 សម្រាប់ខាងក្រៅ និងសេវាបន្ទាប់ពីលក់ក្នុងស្រុកកម្ពុជា ដើម្បីធានាដំណើរការមានស្ថិរភាពរយៈពេលវែង។",
+        "កំពុងស្វែងរកអ្នកផ្គត់ផ្គង់អេក្រង់ LED ដែលអាចទុកចិត្តបាននៅភ្នំពេញ កម្ពុជា មែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារ អេក្រង់ប៊ីលបត LED ខាងក្រៅ LED advertising screen និង LED Video Wall ជាមួយសេវាស្ទង់ទីតាំង គណនា Pixel Pitch រៀបចំ BOQ រៀបចំរចនាសម្ព័ន្ធដែក និង Cabinet ការដំឡើង ការធ្វើតេស្ត និងការធ្វើ Commissioning ដោយវិជ្ជាជីវៈ។ ទទួលបានតម្លៃតាមគម្រោង ជម្រើស IP65 សម្រាប់ខាងក្រៅ និងសេវាបន្ទាប់ពីលក់ក្នុងស្រុកកម្ពុជា ដើម្បីធានាដំណើរការមានស្ថិរភាពរយៈពេលវែង។",
       cta1: "WhatsApp ស្នើសុំតម្លៃ",
       cta2: "ស្នើសុំសំណើបញ្ជីបរិមាណការងារ",
       cta3: "ចូលទៅផលិតផល",
@@ -2175,7 +2175,5 @@ export default function LedDisplayClient({
     </main>
   );
 }
-
-
 
 

@@ -16,7 +16,7 @@ const currentYear = new Intl.DateTimeFormat("en-US", {
 const LED_DISPLAY_META_TITLE =
   "LED Display Cambodia | LED Screen Supplier Phnom Penh";
 const LED_DISPLAY_META_DESCRIPTION =
-  "Looking for a reliable LED display supplier in Cambodia? Mugnee Multiple Co., Ltd provides indoor & outdoor LED screens, video walls and installation services in Phnom Penh.";
+  "Looking for a reliable LED display supplier in Cambodia? Mugnee Multiple Co., Ltd provides indoor & outdoor LED screens, LED advertising screen solutions, video walls and installation services in Phnom Penh.";
 
 export function generateMetadata(): Metadata {
   return {
@@ -32,6 +32,7 @@ export function generateMetadata(): Metadata {
       "Indoor LED Video Wall Cambodia",
       "LED Display Phnom Penh",
       "LED Screen Phnom Penh",
+      "LED advertising screen Cambodia",
       "indoor LED display Cambodia",
       "outdoor LED billboard Cambodia",
       "LED video wall Cambodia",
