@@ -519,6 +519,8 @@ export default function SiteHeader() {
               alt="Mugnee Cambodia"
               width={210}
               height={64}
+              loading="eager"
+              fetchPriority="high"
               className="h-9 w-auto"
             />
           </NavLink>
@@ -528,6 +530,7 @@ export default function SiteHeader() {
             <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
                 name="site_search_desktop"
+                autoComplete="off"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 onFocus={() => setSearchOpenDesktop(true)}
@@ -623,6 +626,7 @@ export default function SiteHeader() {
             <div className="flex items-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-1.5">
               <input
                 name="site_search_mobile"
+                autoComplete="off"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 onFocus={() => setSearchOpenMobile(true)}

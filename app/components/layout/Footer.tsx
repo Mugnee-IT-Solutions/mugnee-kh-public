@@ -102,6 +102,7 @@ export default function SiteFooter() {
                   alt="Mugnee Cambodia"
                   width={210}
                   height={64}
+                  loading="eager"
                   className="h-9 w-auto"
                 />
               </div>

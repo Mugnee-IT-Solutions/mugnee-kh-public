@@ -145,7 +145,7 @@ function SocialIcon({ platform }: { platform: string }) {
     case "pinterest":
       return (
         <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current" aria-hidden="true">
-          <path d="M12 2a10 10 0 0 0-3.6 19.3c0-.8 0-2 .2-2.9l1.4-5.8s-.3-.6-.3-1.4c0-1.3.8-2.3 1.8-2.3.8 0 1.2.6 1.2 1.3 0 .8-.5 2- .8 3-.3.9.7 1.6 1.6 1.6 1.9 0 3.4-2 3.4-4.8 0-2.5-1.8-4.3-4.4-4.3A4.6 4.6 0 0 0 9.2 10c0 .9.3 1.8.8 2.3.1.1.1.2.1.4l-.3 1.2c0 .2-.2.3-.4.2-1.5-.6-2.4-2.4-2.4-3.9 0-3.2 2.3-6.1 6.7-6.1 3.5 0 6.2 2.5 6.2 5.8 0 3.5-2.2 6.3-5.2 6.3-1 0-2-.5-2.3-1.2l-.6 2.3c-.2.8-.7 1.9-1 2.6.8.2 1.5.3 2.3.3A10 10 0 1 0 12 2z" />
+          <path d="M12 2a10 10 0 0 0-3.6 19.3c0-.8 0-2 .2-2.9l1.4-5.8s-.3-.6-.3-1.4c0-1.3.8-2.3 1.8-2.3.8 0 1.2.6 1.2 1.3 0 .8-.5 2-.8 3-.3.9.7 1.6 1.6 1.6 1.9 0 3.4-2 3.4-4.8 0-2.5-1.8-4.3-4.4-4.3A4.6 4.6 0 0 0 9.2 10c0 .9.3 1.8.8 2.3.1.1.1.2.1.4l-.3 1.2c0 .2-.2.3-.4.2-1.5-.6-2.4-2.4-2.4-3.9 0-3.2 2.3-6.1 6.7-6.1 3.5 0 6.2 2.5 6.2 5.8 0 3.5-2.2 6.3-5.2 6.3-1 0-2-.5-2.3-1.2l-.6 2.3c-.2.8-.7 1.9-1 2.6.8.2 1.5.3 2.3.3A10 10 0 1 0 12 2z" />
         </svg>
       );
     case "telegram":
@@ -286,6 +286,7 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
                 <input
                   type="text"
                   name="name"
+                  autoComplete="name"
                   value={form.name}
                   onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
                   placeholder={isKm ? uiKm.name : "Your Name"}
@@ -296,6 +297,7 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
                 <input
                   type="email"
                   name="email"
+                  autoComplete="email"
                   value={form.email}
                   onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
                   placeholder={isKm ? uiKm.email : "Your Email"}
@@ -305,6 +307,7 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
                 <input
                   type="tel"
                   name="phone"
+                  autoComplete="tel"
                   value={form.phone}
                   onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
                   placeholder={isKm ? uiKm.phone : "Phone Number"}
@@ -315,6 +318,7 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
                 <input
                   type="text"
                   name="subject"
+                  autoComplete="off"
                   value={form.subject}
                   onChange={(e) => setForm((prev) => ({ ...prev, subject: e.target.value }))}
                   placeholder={isKm ? uiKm.subject : "Subject"}
@@ -324,6 +328,7 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
                 />
                 <textarea
                   name="message"
+                  autoComplete="off"
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}

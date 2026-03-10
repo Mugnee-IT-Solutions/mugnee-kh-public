@@ -417,8 +417,7 @@ export default function HomeClient({
             alt={slide.alt}
             fill
             loading={idx === 0 ? "eager" : "lazy"}
-            priority={idx === 0}
-            fetchPriority={idx === 0 ? "high" : "auto"}
+            fetchPriority={idx === 0 ? "high" : undefined}
             sizes="100vw"
             className="object-cover object-center"
           />

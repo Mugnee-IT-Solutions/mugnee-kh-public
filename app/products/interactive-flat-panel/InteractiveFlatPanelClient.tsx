@@ -821,10 +821,11 @@ export default function InteractiveFlatPanelClient() {
                   ? "Enter the approximate viewing distance (meters). We will suggest a screen size range."
                   : "បញ្ចូលចម្ងាយមើលប្រហាក់ប្រហែល (ម៉ែត្រ)។ យើងនឹងណែនាំជួរទំហំអេក្រង់សមស្រប។"}
               </p>
-              <label className="mt-4 block text-xs font-semibold text-slate-700">
+              <label htmlFor="view_distance_m" className="mt-4 block text-xs font-semibold text-slate-700">
                 {lang === "en" ? "Viewing distance (m)" : "ចម្ងាយមើល (m)"}
               </label>
               <input
+                id="view_distance_m"
                 name="view_distance_m"
                 value={viewDistance}
                 onChange={(e) => setViewDistance(e.target.value)}
@@ -1115,7 +1116,6 @@ function StepCard({
     </div>
   );
 }
-
 
 
 
