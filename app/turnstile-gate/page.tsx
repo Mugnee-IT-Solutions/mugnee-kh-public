@@ -18,7 +18,7 @@ const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 export const metadata: Metadata = {
   title: "Turnstile Gate Cambodia | Supply & Installation",
   description:
-    "Professional turnstile gate solutions in Cambodia for offices, factories, schools, and public venues. Flap, tripod, speed, and full-height turnstiles with RFID, QR, biometric integration, and installation support.",
+    "Turnstile gate solutions in Cambodia for offices, factories, schools, and venues with flap, tripod, speed, and biometric-ready options.",
   alternates: {
     canonical: PAGE_URL,
     languages: {

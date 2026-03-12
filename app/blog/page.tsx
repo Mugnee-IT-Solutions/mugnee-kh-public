@@ -15,7 +15,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 export const metadata: Metadata = {
   title: "Cambodia Technology Blog & Buying Guides | Mugnee",
   description:
-    "Cambodia-focused technology blog from Mugnee with buying guides on LED display, digital signage, PA system, interactive flat panel, installation, pricing, and project planning.",
+    "Cambodia-focused buying guides on LED display, digital signage, PA systems, smart boards, pricing, and installation.",
   alternates: {
     canonical: PAGE_PATH,
     languages: {
@@ -46,18 +46,6 @@ export const metadata: Metadata = {
       "Read Cambodia-targeted buying guides across LED display, digital signage, PA system, and implementation planning.",
     images: [`${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`],
   },
-  keywords: [
-    "cambodia technology blog",
-    "business technology cambodia",
-    "led display cambodia",
-    "pa system cambodia",
-    "interactive flat panel cambodia",
-    "access control cambodia",
-    "led display price cambodia",
-    "digital signage cambodia",
-    "led installation phnom penh",
-    "outdoor led billboard cambodia",
-  ],
 };
 
 export default function BlogIndexPage() {
@@ -65,7 +53,7 @@ export default function BlogIndexPage() {
   const allPosts = getAllBlogPosts();
 
   return (
-    <main className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <JsonLd
         id="blog-index-jsonld"
         data={{
@@ -125,6 +113,6 @@ export default function BlogIndexPage() {
           <BlogIndexContent allPosts={allPosts} />
         </div>
       </section>
-    </main>
+    </div>
   );
 }

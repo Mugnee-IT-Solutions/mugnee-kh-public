@@ -27,12 +27,14 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "article",
+    images: [{ url: `${SITE_URL}/images/hero/cambodia-led-hero.webp`, width: 1200, height: 630, alt: "Return policy of Mugnee Cambodia" }],
   },
   twitter: {
     card: "summary",
     title: "Return Policy Cambodia | Mugnee Cambodia",
     description:
       "No return and no refund policy for company-supplied products in Cambodia.",
+    images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
   },
   robots: { index: true, follow: true },
 };

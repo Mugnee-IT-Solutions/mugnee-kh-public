@@ -1,8 +1,6 @@
-﻿"use client";
-
+﻿
 import Link from "next/link";
 import Image from "next/image";
-import { useLang } from "../../components/layout/LanguageProvider";
 
 const EN = {
   eyebrow: "Leadership Message",
@@ -43,15 +41,13 @@ const KM = {
   cta1: "ទាក់ទងយើង",
   cta2: "មើលដំណោះស្រាយ",
 };
-export default function MessageFromCeoClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
-  const { lang: contextLang } = useLang();
-  const lang = forcedLang ?? contextLang;
+export default function MessageFromCeoClient({ lang = "en" }: { lang?: "en" | "km" }) {
   const toLangHref = (href: string) =>
     lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const t = lang === "km" ? KM : EN;
 
   return (
-    <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <section className="border-b border-slate-200 bg-slate-50/70">
         <div className="mx-auto max-w-5xl px-4 py-5 sm:px-6 sm:py-6 lg:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
@@ -113,7 +109,7 @@ export default function MessageFromCeoClient({ forcedLang }: { forcedLang?: "en"
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

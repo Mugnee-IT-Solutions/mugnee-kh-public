@@ -2487,7 +2487,7 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["P6", "Outdoor LED", "LED Display"],
     tagsKm: ["P6", "អេក្រង់ LED ខាងក្រៅ", "LED Display"],
     seoTitleEn: "P6 Outdoor LED Display | High Brightness & Weatherproof",
-    seoTitleKm: "P6 អេក្រង់ LED ខាងក្រៅ Display | High កម្រិតពន្លឺ & Weatherproof",
+    seoTitleKm: "P6 អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា",
     seoDescEn:
       "P6 outdoor LED display with SMD2727 LEDs, 192 x 192 mm module size, and 4,500-5,000 cd/m2 brightness.",
     seoDescKm:
@@ -3086,8 +3086,8 @@ export const PRODUCTS: Product[] = [
     ],
     tagsEn: ["P10", "Outdoor LED", "LED Sign Board"],
     tagsKm: ["P10", "អេក្រង់ LED ខាងក្រៅ", "LED Sign Board"],
-    seoTitleEn: "P10 Outdoor LED Sign Board Price in Cambodia",
-    seoTitleKm: "P10 អេក្រង់ LED ខាងក្រៅ Sign Board Price in Cambodia",
+    seoTitleEn: "P6 Outdoor LED Display in Cambodia",
+    seoTitleKm: "P6 អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា",
     seoDescEn:
       "P10 outdoor LED sign board with SMD3535 LEDs, 320 x 160 mm size, and 4,000-4,500 cd/m2 brightness.",
     seoDescKm:
@@ -3132,7 +3132,7 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["Smart Board", "Education"],
     tagsKm: ["ស្មាតបូដ", "ការអប់រំ"],
     seoTitleEn: "98\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ស្មាតបូដ 98\" នៅកម្ពុជា",
+    seoTitleKm: "អេក្រង់អន្តរកម្ម 98\" នៅកម្ពុជា",
     seoDescEn:
       "Premium 98-inch interactive screen for smart classrooms and meeting rooms in Cambodia.",
     seoDescKm:
@@ -3177,7 +3177,7 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["Smart Board", "Education"],
     tagsKm: ["ស្មាតបូដ", "ការអប់រំ"],
     seoTitleEn: "85\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ស្មាតបូដ 85\" នៅកម្ពុជា",
+    seoTitleKm: "អេក្រង់អន្តរកម្ម 85\" នៅកម្ពុជា",
     seoDescEn:
       "Premium 85-inch interactive screen for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
@@ -3222,7 +3222,7 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["Smart Board", "Education"],
     tagsKm: ["ស្មាតបូដ", "ការអប់រំ"],
     seoTitleEn: "75\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ស្មាតបូដ 75\" នៅកម្ពុជា",
+    seoTitleKm: "អេក្រង់អន្តរកម្មគុណភាពខ្ពស់ 75\" នៅកម្ពុជា",
     seoDescEn:
       "Premium 75-inch interactive screen for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
@@ -3267,7 +3267,7 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["Smart Board", "Education"],
     tagsKm: ["ស្មាតបូដ", "ការអប់រំ"],
     seoTitleEn: "65\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ស្មាតបូដ 65\" នៅកម្ពុជា",
+    seoTitleKm: "អេក្រង់អន្តរកម្មគុណភាពខ្ពស់ 65\" នៅកម្ពុជា",
     seoDescEn:
       "Premium 65-inch interactive screen for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
@@ -3312,7 +3312,7 @@ export const PRODUCTS: Product[] = [
     tagsEn: ["Smart Board", "Education"],
     tagsKm: ["ស្មាតបូដ", "ការអប់រំ"],
     seoTitleEn: "55\" Interactive Smart Board in Cambodia",
-    seoTitleKm: "ស្មាតបូដ 55\" នៅកម្ពុជា",
+    seoTitleKm: "អេក្រង់អន្តរកម្មគុណភាពខ្ពស់ 55\" នៅកម្ពុជា",
     seoDescEn:
       "Premium 55-inch interactive screen for classrooms and meeting rooms in Cambodia.",
     seoDescKm:
@@ -5359,9 +5359,9 @@ export const PRODUCTS: Product[] = [
     seoTitleEn: "Voting & Recording systems | PA System Cambodia",
     seoTitleKm: "Voting & Recording systems | PA System Cambodia",
     seoDescEn:
-      "Voting & Recording systems for PA system installations in Cambodia.",
+      "Voting and recording systems for PA installations in Cambodia with reliable operation and easy integration.",
     seoDescKm:
-      "Voting & Recording systems for PA system installations in Cambodia.",
+      "ប្រព័ន្ធ Voting និង Recording សម្រាប់ការដំឡើង PA នៅកម្ពុជា ជាមួយការរួមបញ្ចូលងាយស្រួល។",
   },
   {
     id: "pa-central-control-units",
@@ -7016,8 +7016,8 @@ export const PRODUCTS: Product[] = [
     tagsKm: ["Turnstile", "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", "Cambodia"],
     seoTitleEn: "Flap Barrier Turnstile Gate DS318 with Stainless Steel Body in Cambodia",
     seoTitleKm: "ច្រកស្លាបបិទបើក Turnstile Gate DS318 with Stainless Steel Body in Cambodia",
-    seoDescEn: "Flap Barrier Turnstile gate DS318 with stainless steel body, wide passage option, infrared sensors, and bi-directional access for secure indoor &amp; outdoor use.",
-    seoDescKm: "ច្រកស្លាបបិទបើក Turnstile gate DS318 with stainless steel body, wide passage option, infrared sensors, and bi-directional access for secure ក្នុងអគារ &amp; ខាងក្រៅ use.",
+    seoDescEn: "Flap Barrier Turnstile DS318 with stainless steel body, infrared sensors, and bi-directional access for secure entry control.",
+    seoDescKm: "ច្រកស្លាបបិទបើក DS318 ជាមួយ stainless steel body, infrared sensors និង bi-directional access សម្រាប់សុវត្ថិភាព។",
   },
   {
     id: "turnstile-turnstile-gate-ds-q30",
@@ -7044,8 +7044,8 @@ export const PRODUCTS: Product[] = [
     tagsKm: ["Turnstile", "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", "Cambodia"],
     seoTitleEn: "Quantum Optical Flap Turnstile Gate DS-Q30 in Cambodia",
     seoTitleKm: "Quantum Optical Flap Turnstile Gate DS-Q30",
-    seoDescEn: "Quantum Optical Flap Turnstile gate DS-Q30 for secure access control. Supports bi-directional flow, tempered glass, infrared sensors, and indoor &amp; outdoor use.",
-    seoDescKm: "Quantum Optical Flap Turnstile gate DS-Q30 for secure ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ. Supports bi-directional flow, tempered glass, infrared sensors, and ក្នុងអគារ &amp; ខាងក្រៅ use.",
+    seoDescEn: "Quantum Optical Flap Turnstile DS-Q30 with tempered glass, infrared sensors, and bi-directional flow for secure access control.",
+    seoDescKm: "Quantum Optical Flap Turnstile DS-Q30 ជាមួយ tempered glass, infrared sensors និង bi-directional flow សម្រាប់សុវត្ថិភាព។",
   },
   {
     id: "turnstile-ds212-turnstile-gate",
@@ -7324,8 +7324,8 @@ export const PRODUCTS: Product[] = [
     tagsKm: ["Turnstile", "ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", "Cambodia"],
     seoTitleEn: "Flap Barrier Turnstile DS312 with Stainless Steel Body in Cambodia",
     seoTitleKm: "ច្រកស្លាបបិទបើក Turnstile DS312 with Stainless Steel Body in Cambodia",
-    seoDescEn: "Flap Barrier Turnstile DS312 with stainless steel body, infrared sensors, bi-directional access, and fast flow rate for indoor &amp; outdoor security control.",
-    seoDescKm: "ច្រកស្លាបបិទបើក Turnstile DS312 with stainless steel body, infrared sensors, bi-directional access, and fast flow rate for ក្នុងអគារ &amp; ខាងក្រៅ security control.",
+    seoDescEn: "Flap Barrier Turnstile DS312 with stainless steel body, infrared sensors, and fast bi-directional access for security control.",
+    seoDescKm: "ច្រកស្លាបបិទបើក DS312 ជាមួយ stainless steel body, infrared sensors និង bi-directional access សម្រាប់សុវត្ថិភាព។",
   },
   {
     id: "turnstile-tripod-turnstile-gate-ds1000",

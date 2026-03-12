@@ -88,9 +88,9 @@ const WEBSITE_ID = `${SITE_URL}#website`;
 const FAQ_PAGE_ID = `${PAGE_URL}#faq`;
 
 export const metadata: Metadata = {
-  title: "Digital Signage, Smart Board & Access Control in Cambodia | Mugnee Cambodia",
+  title: "Digital Signage & Smart Board Cambodia | Mugnee Cambodia",
   description:
-    "Mugnee Cambodia delivers digital signage, interactive smart boards, turnstile gates, PA systems, and access control solutions in Cambodia. Get site survey, system design, installation, commissioning, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
+    "Mugnee Cambodia supplies digital signage, smart boards, PA systems, and access control in Cambodia with site survey, installation, and local support.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -102,9 +102,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    title: "Digital Signage, Smart Board & Access Control in Cambodia | Mugnee Cambodia",
+    title: "Digital Signage & Smart Board Cambodia | Mugnee Cambodia",
     description:
-      "End-to-end digital signage, smart board, turnstile gate, PA system, and access control solutions in Cambodia with local installation and support.",
+      "Digital signage, smart board, PA system, and access control solutions in Cambodia with local installation and support.",
     siteName: "Mugnee Cambodia",
     images: [
       {
@@ -117,9 +117,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Signage, Smart Board & Access Control in Cambodia | Mugnee Cambodia",
+    title: "Digital Signage & Smart Board Cambodia | Mugnee Cambodia",
     description:
-      "Digital Signage, Smart Boards, Turnstile Gates, PA Systems, and Access Control solutions in Cambodia.",
+      "Digital signage, smart boards, PA systems, and access control solutions in Cambodia.",
     images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
   },
 };
@@ -386,7 +386,7 @@ export default function HomePage() {
   };
 
   return (
-    <main className="bg-white text-slate-900">
+    <div className="bg-white text-slate-900">
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -405,11 +405,9 @@ export default function HomePage() {
         categoryTiles={CATEGORY_TILES}
         faq={FAQ}
       />
-    </main>
+    </div>
   );
 }
-
-
 
 
 

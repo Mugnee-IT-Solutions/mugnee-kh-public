@@ -18,6 +18,13 @@ function hasKhmer(text: string | null | undefined) {
   return Boolean(text && KHMER_RE.test(text));
 }
 
+function trimMetaTitle(title: string, maxLength = 56) {
+  if (title.length <= maxLength) return title;
+  const sliced = title.slice(0, maxLength + 1);
+  const boundary = Math.max(sliced.lastIndexOf("|"), sliced.lastIndexOf(" "), sliced.lastIndexOf("៖"));
+  return (boundary > 20 ? sliced.slice(0, boundary) : title.slice(0, maxLength)).replace(/[|៖\s]+$/g, "").trim();
+}
+
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
@@ -40,8 +47,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ? override!.description
     : "ទំព័រដំណោះស្រាយនេះផ្តល់ព័ត៌មានសម្រាប់ទីផ្សារកម្ពុជា អំពីតម្លៃគម្រោង ការរៀបចំ BOQ ការដំឡើង និងសេវាគាំទ្របន្ទាប់ពីលក់ សម្រាប់អាជីវកម្ម។";
 
+  const seoTitle = trimMetaTitle(kmTitle);
   return {
-    title: `${kmTitle} | Mugnee Cambodia`,
+    title: seoTitle,
     description,
     alternates: {
       canonical: pageUrl,
@@ -53,7 +61,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     robots: { index: true, follow: true },
     openGraph: {
-      title: `${kmTitle} | Mugnee Cambodia`,
+      title: seoTitle,
       description,
       url: pageUrl,
       siteName: "Mugnee Cambodia",
@@ -63,13 +71,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: `${kmTitle} | Mugnee Cambodia`,
+          alt: seoTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${kmTitle} | Mugnee Cambodia`,
+      title: seoTitle,
       description,
       images: [ogImage],
     },

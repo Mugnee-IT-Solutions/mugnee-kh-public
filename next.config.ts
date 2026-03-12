@@ -95,6 +95,21 @@ const nextConfig: NextConfig = {
               destination: "/led-display/power-supply/",
               permanent: true,
             },
+            {
+              source: "/products/indoor-led-display",
+              destination: "/led-display/indoor-led-display/",
+              permanent: true,
+            },
+            {
+              source: "/products/outdoor-led-display",
+              destination: "/led-display/outdoor-led-display/",
+              permanent: true,
+            },
+            {
+              source: "/products/led-controller",
+              destination: "/led-display/",
+              permanent: true,
+            },
             { source: "/products/interactive-flat-panel", destination: "/interactive-flat-panel/", permanent: true },
             { source: "/products/pa-system", destination: "/pa-system/", permanent: true },
             { source: "/products/turnstile-gate", destination: "/turnstile-gate/", permanent: true },

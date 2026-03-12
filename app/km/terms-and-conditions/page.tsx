@@ -26,11 +26,13 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "article",
+    images: [{ url: `${SITE_URL}/images/hero/cambodia-led-hero.webp`, width: 1200, height: 630, alt: "Terms and conditions of Mugnee Cambodia in Khmer" }],
   },
   twitter: {
     card: "summary",
     title: "លក្ខខណ្ឌ និងកិច្ចព្រមព្រៀង 2026 | Mugnee Cambodia",
     description: "លក្ខខណ្ឌពាណិជ្ជកម្ម និងគោលការណ៍ធានារបស់ Mugnee Cambodia សម្រាប់ទីផ្សារកម្ពុជា។",
+    images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
   },
   robots: { index: true, follow: true },
 };

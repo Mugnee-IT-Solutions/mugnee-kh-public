@@ -18,7 +18,7 @@ const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 export const metadata: Metadata = {
   title: "Contact Mugnee Cambodia | Sales & Support",
   description:
-    "Contact Mugnee Cambodia for LED display, digital signage, smart classroom, PA system, and access control solutions. Get quotation, installation support, or service assistance.",
+    "Contact Mugnee Cambodia for quotation, installation support, and service assistance for LED display and business technology projects.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ContactClient />;
+  return <ContactClient lang="en" />;
 }
 
 

@@ -77,16 +77,32 @@ export function generateStaticParams() {
   return getAllKmBlogSlugs().map((slug) => ({ slug }));
 }
 
+function trimMetaTitle(title: string, maxLength = 58) {
+  if (title.length <= maxLength) {
+    if (title.length >= 30) return title;
+    if (/vs/i.test(title)) return `${title} Guide`;
+    if (/តម្លៃ/.test(title)) return `${title} 2026`;
+    return `${title} Guide`;
+  }
+  const sliced = title.slice(0, maxLength + 1);
+  const boundary = Math.max(sliced.lastIndexOf(":"), sliced.lastIndexOf(" "), sliced.lastIndexOf("៖"));
+  const trimmed = (boundary > 24 ? sliced.slice(0, boundary) : title.slice(0, maxLength)).replace(/[:៖\s]+$/g, "").trim();
+  if (trimmed.length >= 30) return trimmed;
+  if (/vs/i.test(trimmed)) return `${trimmed} Guide`;
+  if (/តម្លៃ/.test(trimmed)) return `${trimmed} 2026`;
+  return `${trimmed} Guide`;
+}
+
 export async function generateMetadata({ params }: KmBlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = getKmBlogPostBySlug(slug);
   if (!post) return {};
 
   const canonical = `${SITE_URL}/km/blog/${post.slug}/`;
+  const seoTitle = trimMetaTitle(post.title);
   return {
-    title: `${post.title} | Mugnee Cambodia`,
+    title: seoTitle,
     description: post.description,
-    keywords: post.keywords,
     alternates: {
       canonical,
       languages: {
@@ -96,11 +112,17 @@ export async function generateMetadata({ params }: KmBlogPostPageProps): Promise
       },
     },
     openGraph: {
-      title: `${post.title} | Mugnee Cambodia`,
+      title: seoTitle,
       description: post.description,
       url: canonical,
       type: "article",
       images: [{ url: `${SITE_URL}${post.coverImage}`, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seoTitle,
+      description: post.description,
+      images: [`${SITE_URL}${post.coverImage}`],
     },
   };
 }
@@ -117,7 +139,7 @@ export default async function KmBlogPostPage({ params }: KmBlogPostPageProps) {
     .filter((item) => !/^សេចក្តីសន្និដ្ឋាន/i.test(item.label));
 
   return (
-    <main className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <JsonLd
         id={`km-blog-post-jsonld-${post.slug}`}
         data={{
@@ -269,6 +291,6 @@ export default async function KmBlogPostPage({ params }: KmBlogPostPageProps) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

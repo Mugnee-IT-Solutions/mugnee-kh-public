@@ -16,9 +16,9 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
-  title: "Solutions in Cambodia | LED Display, Digital Signage, Access Control",
+  title: "Cambodia Solutions | LED Display & Access Control",
   description:
-    "Explore Cambodia-ready solutions from Mugnee Cambodia: LED display, digital signage, smart classroom, access control, PA systems, and turnstile gates. Local design, installation, and long-term support.",
+    "Cambodia-ready solutions for LED display, digital signage, smart classrooms, access control, PA systems, and turnstile gates.",
   alternates: {
     canonical: PAGE_URL,
     languages: {

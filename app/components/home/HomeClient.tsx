@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLang } from "../layout/LanguageProvider";
 
 const ProductGrid = dynamic(() => import("../sections/ProductGrid"), {
@@ -216,12 +216,6 @@ export default function HomeClient({
   const [activeSlide, setActiveSlide] = useState(0);
   const [isHeroPaused, setIsHeroPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const [showCatalog, setShowCatalog] = useState(false);
-  const [showMap, setShowMap] = useState(false);
-  const [showLowerSections, setShowLowerSections] = useState(false);
-  const catalogSectionRef = useRef<HTMLElement | null>(null);
-  const mapSectionRef = useRef<HTMLDivElement | null>(null);
-  const lowerSectionsRef = useRef<HTMLElement | null>(null);
   const totalSlides = HERO_SLIDES.length;
   const prevSlide = (activeSlide - 1 + totalSlides) % totalSlides;
   const nextSlide = (activeSlide + 1) % totalSlides;
@@ -254,65 +248,6 @@ export default function HomeClient({
     }, 4000);
     return () => window.clearInterval(id);
   }, [reduceMotion, isHeroPaused, totalSlides]);
-
-  useEffect(() => {
-    const section = catalogSectionRef.current;
-    if (!section || showCatalog) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setShowCatalog(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "320px 0px" },
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, [showCatalog]);
-
-  useEffect(() => {
-    if (!showLowerSections) return;
-    const section = mapSectionRef.current;
-    if (!section || showMap) return;
-    if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
-      const timer = setTimeout(() => setShowMap(true), 0);
-      return () => clearTimeout(timer);
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setShowMap(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "200px 0px" },
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, [showMap, showLowerSections]);
-
-  useEffect(() => {
-    const section = lowerSectionsRef.current;
-    if (!section || showLowerSections) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setShowLowerSections(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "700px 0px" },
-    );
-
-    observer.observe(section);
-    return () => observer.disconnect();
-  }, [showLowerSections]);
 
   const { lang } = useLang();
   const toLangHref = (href: string) =>
@@ -602,42 +537,34 @@ export default function HomeClient({
       {/* =========================
           PRODUCT RANGE
          ========================= */}
-      <section
-        ref={catalogSectionRef}
-        className="border-t border-slate-100 bg-slate-50/70 py-12 sm:py-14"
-      >
+      <section className="border-t border-slate-100 bg-slate-50/70 py-12 sm:py-14">
         <Container>
           <SectionTitle
             title={t.secCatalogEyebrow}
           />
 
-          {showCatalog ? (
-            <ProductGrid
-              columns={3}
-              pageSize={12}
-              showPagination
-              showCategoryFilters={false}
-              showSort={false}
-            />
-          ) : (
-            <div className="mt-6 h-40 w-full animate-pulse rounded-2xl bg-slate-100" />
-          )}
+          <ProductGrid
+            columns={3}
+            pageSize={12}
+            showPagination
+            showCategoryFilters={false}
+            showSort={false}
+          />
         </Container>
       </section>
 
       {/* =========================
           PARTNERSHIPS
          ========================= */}
-      <section ref={lowerSectionsRef} className="border-t border-slate-100 bg-white py-12 sm:py-14">
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
-          {showLowerSections ? (
-            <>
-              <SectionTitle
-                eyebrow={t.secPartnersEyebrow}
-                title={t.secPartnersTitle}
-                desc={t.secPartnersDesc}
-                descClassName="max-w-none"
-              />
+          <>
+            <SectionTitle
+              eyebrow={t.secPartnersEyebrow}
+              title={t.secPartnersTitle}
+              desc={t.secPartnersDesc}
+              descClassName="max-w-none"
+            />
 
               <div className="relative mt-5 overflow-hidden rounded-3xl border border-slate-200/90 bg-gradient-to-br from-slate-50 via-white to-slate-100/60 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] sm:p-4">
                 <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-14 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent" />
@@ -741,26 +668,22 @@ export default function HomeClient({
                 {t.secPartnersDisclosure}
               </p>
 
-              <div className="mt-4">
-                <a
-                  href={toLangHref("/contact")}
-                  className="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
-                >
-                  {lang === "en" ? "Explore Collaboration Opportunities" : "ស្វែងរកឱកាសសហការ"}
-                </a>
-              </div>
-            </>
-          ) : (
-            <div className="h-48 w-full animate-pulse rounded-2xl bg-slate-100" />
-          )}
+            <div className="mt-4">
+              <a
+                href={toLangHref("/contact")}
+                className="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+              >
+                {lang === "en" ? "Explore Collaboration Opportunities" : "ស្វែងរកឱកាសសហការ"}
+              </a>
+            </div>
+          </>
         </Container>
       </section>
 
       {/* =========================
           AUTHORIZED PARTNER
          ========================= */}
-      {showLowerSections ? (
-        <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
           <SectionTitle
             eyebrow={t.secAuthEyebrow}
@@ -841,14 +764,12 @@ export default function HomeClient({
             ))}
           </div>
         </Container>
-        </section>
-      ) : null}
+      </section>
 
       {/* =========================
           SERVICE AREAS
          ========================= */}
-      {showLowerSections ? (
-        <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
           <SectionTitle
             eyebrow={t.secServiceEyebrow}
@@ -878,14 +799,12 @@ export default function HomeClient({
             ))}
           </div>
         </Container>
-        </section>
-      ) : null}
+      </section>
 
       {/* =========================
           LOCAL CONTACT
          ========================= */}
-      {showLowerSections ? (
-        <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
+      <section className="border-t border-slate-100 bg-white py-12 sm:py-14">
         <Container>
           <SectionTitle
             eyebrow={t.secContactEyebrow}
@@ -969,10 +888,10 @@ export default function HomeClient({
               </div>
             </div>
 
-            <div ref={mapSectionRef} className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
+            <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200">
               <iframe
                 title="Mugnee Cambodia Office Map"
-                src={showMap ? MAP_EMBED_SRC : undefined}
+                src={MAP_EMBED_SRC}
                 width="100%"
                 height="360"
                 style={{ border: 0 }}
@@ -983,14 +902,12 @@ export default function HomeClient({
             </div>
           </div>
         </Container>
-        </section>
-      ) : null}
+      </section>
 
       {/* =========================
           FAQ
          ========================= */}
-      {showLowerSections ? (
-        <section className="border-t border-slate-100 bg-white py-14 sm:py-16">
+      <section className="border-t border-slate-100 bg-white py-14 sm:py-16">
         <Container>
           <SectionTitle
             eyebrow={t.secFaqEyebrow}
@@ -1027,8 +944,7 @@ export default function HomeClient({
           </div>
 
         </Container>
-        </section>
-      ) : null}
+      </section>
 
       {/* footer spacer */}
       <div className="h-10" />

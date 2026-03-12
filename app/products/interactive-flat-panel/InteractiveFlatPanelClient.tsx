@@ -305,9 +305,14 @@ export default function InteractiveFlatPanelClient() {
   );
 
   const jsonLd = useMemo(() => {
-    const base =
-      (process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-        "https://mugneekh.com") + "/interactive-flat-panel";
+    const site =
+      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+      "https://mugneekh.com";
+    const base = `${site}/interactive-flat-panel`;
+    const serviceAreas = ["Phnom Penh", "Siem Reap", "Sihanoukville"].map((name) => ({
+      "@type": "AdministrativeArea",
+      name,
+    }));
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -341,13 +346,15 @@ export default function InteractiveFlatPanelClient() {
     const orgSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": `${site}#organization`,
       name: "Mugnee Cambodia",
-      url: base,
-      areaServed: ["Phnom Penh", "Siem Reap", "Sihanoukville"],
+      url: site,
+      areaServed: serviceAreas,
       contactPoint: [
         {
           "@type": "ContactPoint",
           contactType: "sales",
+          telephone: "+85581580802",
           availableLanguage: ["en", "km"],
         },
       ],
@@ -358,10 +365,11 @@ export default function InteractiveFlatPanelClient() {
       "@type": "Service",
       name: "Interactive Flat Panel Installation",
       serviceType: "Interactive Flat Panel Solutions",
-      areaServed: ["Phnom Penh", "Siem Reap", "Sihanoukville"],
+      url: base,
+      description: lang === "en" ? t.sub : t.seoText,
+      areaServed: serviceAreas,
       provider: {
-        "@type": "Organization",
-        name: "Mugnee Cambodia",
+        "@id": `${site}#organization`,
       },
     };
 
@@ -369,7 +377,7 @@ export default function InteractiveFlatPanelClient() {
   }, [faqs, lang]);
 
   return (
-    <main className="bg-white text-slate-900">
+    <div className="bg-white text-slate-900">
       <style jsx global>{`
         .quick-link {
           position: relative;
@@ -1091,7 +1099,7 @@ export default function InteractiveFlatPanelClient() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 
@@ -1116,8 +1124,6 @@ function StepCard({
     </div>
   );
 }
-
-
 
 
 

@@ -411,7 +411,7 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
   const intentClusters = isKhmer ? intentClustersKm : intentClustersEn;
 
   return (
-    <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -646,7 +646,7 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

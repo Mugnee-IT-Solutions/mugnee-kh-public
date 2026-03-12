@@ -16,9 +16,9 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
-  title: "Commercial PA System Cambodia | Design Supply & Installation",
+  title: "PA System Cambodia | Design, Supply & Installation",
   description:
-    "Professional PA system solutions in Cambodia: amplifiers, mixers, speakers, microphones, and accessories. Designed for clear announcements in factories, schools, malls, and offices with expert installation support.",
+    "PA system solutions in Cambodia with amplifiers, mixers, speakers, microphones, and installation support for schools, factories, malls, and offices.",
   alternates: {
     canonical: PAGE_URL,
     languages: {

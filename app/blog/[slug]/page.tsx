@@ -119,7 +119,6 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title,
     description,
-    keywords: post.keywords,
     alternates: {
       canonical,
       languages: {
@@ -168,7 +167,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .map((item) => ({ ...item, label: compactTocLabel(item.label) }));
 
   return (
-    <main className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <JsonLd
         id={`blog-post-jsonld-${post.slug}`}
         data={{
@@ -302,6 +301,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

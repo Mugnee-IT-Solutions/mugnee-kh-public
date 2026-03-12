@@ -5,9 +5,52 @@
   Email: ankurdatta.official@gmail.com
   Github: https://github.com/ankur-datta-official
 */
-export { metadata } from "../../products/led-display/video-processor/page";
+import type { Metadata } from "next";
 import LedDisplayClient from "../../products/led-display/LedDisplayClient";
 import { PRODUCTS } from "../../data/products";
+import { SITE_URL } from "../../lib/site";
+
+const PAGE_PATH = "/led-display/video-processor/";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
+
+export const metadata: Metadata = {
+  title: "LED Video Processor Cambodia | Best Price & Installation",
+  description:
+    "LED video processors in Cambodia for smooth scaling, input switching, and stable LED wall output with setup support.",
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      "en-kh": "/led-display/video-processor/",
+      "km-kh": "/km/led-display/video-processor/",
+      "x-default": "/led-display/video-processor/",
+    },
+  },
+  openGraph: {
+    title: "LED Video Processor Cambodia | Best Price & Installation",
+    description:
+      "Reliable video processors for LED walls with multi-input switching, clean scaling, and stable output. Expert configuration & support by Mugnee Cambodia.",
+    url: PAGE_URL,
+    siteName: "Mugnee Cambodia",
+    type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "LED Video Processor in Cambodia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LED Video Processor Cambodia | Best Price & Installation",
+    description:
+      "Reliable video processors for LED walls with multi-input switching, clean scaling, and stable output. Expert configuration & support by Mugnee Cambodia.",
+    images: [OG_IMAGE],
+  },
+  robots: { index: true, follow: true },
+};
 
 export default function VideoProcessorPage() {
   const accessoryProducts = PRODUCTS.filter((p) =>

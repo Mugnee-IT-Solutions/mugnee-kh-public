@@ -10,9 +10,9 @@ const PAGE_PATH = "/km/blog/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "ប្លក់បច្ចេកវិទ្យាភាសាខ្មែរ | មគ្គុទេសក៍ទិញ LED Display នៅកម្ពុជា",
+  title: "ប្លក់បច្ចេកវិទ្យាភាសាខ្មែរ | LED Display កម្ពុជា",
   description:
-    "អត្ថបទភាសាខ្មែរ សម្រាប់អតិថិជនកម្ពុជា អំពីតម្លៃ LED Display, Digital Signage, Interactive Flat Panel, PA System, គន្លឹះជ្រើសរើសផលិតផល និងផែនការដំឡើងសម្រាប់អាជីវកម្ម។",
+    "អត្ថបទភាសាខ្មែរអំពី LED Display, Digital Signage, Smart Board, PA System និងគន្លឹះជ្រើសរើសផលិតផលនៅកម្ពុជា។",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "ប្លក់បច្ចេកវិទ្យាភាសាខ្មែរ | មគ្គុទេសក៍ទិញ LED Display នៅកម្ពុជា",
+    title: "ប្លក់បច្ចេកវិទ្យាភាសាខ្មែរ | LED Display កម្ពុជា",
     description:
       "ស្វែងយល់អត្ថបទជាក់ស្តែង ដើម្បីសម្រេចចិត្តទិញផលិតផលបច្ចេកវិទ្យា និងអនុវត្តគម្រោងអាជីវកម្មបានមានប្រសិទ្ធភាពនៅកម្ពុជា។",
     url: PAGE_URL,
@@ -43,7 +43,7 @@ export default function KmBlogPage() {
   const allPosts = getAllKmBlogPosts();
 
   return (
-    <main className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="blog-justified bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <JsonLd
         id="km-blog-index-jsonld"
         data={{
@@ -126,6 +126,6 @@ export default function KmBlogPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

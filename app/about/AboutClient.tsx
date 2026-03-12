@@ -1,8 +1,6 @@
-﻿"use client";
-
+﻿
 import Link from "next/link";
 import Image from "next/image";
-import { useLang } from "../components/layout/LanguageProvider";
 
 const heroTags = [
   "LED Display",
@@ -378,9 +376,7 @@ const uiKm = {
   sec11c: "ទាក់ទង Mugnee Cambodia",
   note: "ចំណាំ៖ ការចែកចាយ ការអនុវត្តគម្រោង និងការសម្របសម្រួលគាំទ្រនៅកម្ពុជា ត្រូវបានគ្រប់គ្រងក្នុងតំបន់ដោយ Mugnee Multiple Co., Ltd.",
 };
-export default function AboutClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
-  const { lang: contextLang } = useLang();
-  const lang = forcedLang ?? contextLang;
+export default function AboutClient({ lang = "en" }: { lang?: "en" | "km" }) {
   const toLangHref = (href: string) =>
     lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const isKm = lang === "km";
@@ -398,7 +394,7 @@ export default function AboutClient({ forcedLang }: { forcedLang?: "en" | "km" }
   const faqsData = isKm ? faqsKmClean : faqs;
 
   return (
-    <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-28 top-8 h-56 w-56 rounded-full bg-cyan-300/15 blur-3xl" />
@@ -695,7 +691,7 @@ export default function AboutClient({ forcedLang }: { forcedLang?: "en" | "km" }
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

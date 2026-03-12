@@ -344,6 +344,10 @@ export default function PaSystemClient() {
     const site =
       process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
     const url = site + "/pa-system";
+    const serviceAreas = ["Phnom Penh", "Siem Reap", "Sihanoukville"].map((name) => ({
+      "@type": "AdministrativeArea",
+      name,
+    }));
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -367,11 +371,25 @@ export default function PaSystemClient() {
       })),
     };
 
-    return { breadcrumb, faqSchema };
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: lang === "en" ? "PA System Solutions in Cambodia" : "ដំណោះស្រាយប្រព័ន្ធ PA នៅកម្ពុជា",
+      serviceType: "Public Address System Installation",
+      url,
+      description: lang === "en" ? t.sub : t.quickSub,
+      areaServed: serviceAreas,
+      provider: {
+        "@id": `${site}#organization`,
+      },
+    };
+
+    return { breadcrumb, faqSchema, serviceSchema };
   }, [faqs, lang]);
 
   return (
-    <main className="bg-white text-slate-900">
+    <div className="bg-white text-slate-900">
       <style jsx global>{`
         .quick-link {
           position: relative;
@@ -438,6 +456,10 @@ export default function PaSystemClient() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.serviceSchema) }}
       />
       {/* HERO */}
       <section className="relative isolate overflow-hidden border-b border-slate-200">
@@ -812,7 +834,7 @@ export default function PaSystemClient() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 
@@ -852,9 +874,6 @@ function StepCard({ n, title, desc }: { n: string; title: string; desc: string }
     </div>
   );
 }
-
-
-
 
 
 

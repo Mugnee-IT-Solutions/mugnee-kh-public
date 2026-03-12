@@ -16,14 +16,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 export const metadata: Metadata = {
   title: "Indoor LED Display Cambodia | Best Price & Installation",
   description:
-    "Indoor LED display solutions in Cambodia for boardrooms, control rooms, showrooms, retail, and hospitality with fine-pitch planning, installation, calibration, and local support.",
-  keywords: [
-    "indoor LED display Cambodia",
-    "fine pitch LED Cambodia",
-    "indoor LED video wall Phnom Penh",
-    "conference room LED display Cambodia",
-    "control room LED display Cambodia",
-  ],
+    "Indoor LED display in Cambodia for boardrooms, control rooms, showrooms, and retail with fine-pitch planning and local support.",
   alternates: {
     canonical: PAGE_URL,
     languages: {

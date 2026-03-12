@@ -5,9 +5,9 @@ type MetaOverride = {
 
 const SOLUTION_META_OVERRIDES_EN: Record<string, MetaOverride> = {
   "indoor-communication-solutions-cambodia": {
-    title: "Indoor Communication Solutions Cambodia | LED & Digital Signage",
+    title: "Indoor Communication Cambodia | LED & Signage",
     description:
-      "Indoor communication solution in Cambodia with LED display, digital signage, CMS planning, installation, and ongoing support for offices, hotels, and public spaces.",
+      "Indoor communication in Cambodia with LED display, digital signage, CMS planning, installation, and local support for offices and hotels.",
   },
   "outdoor-campaign-solutions-cambodia": {
     title: "Outdoor Campaign Solutions Cambodia | LED Billboard Planning",
@@ -15,17 +15,17 @@ const SOLUTION_META_OVERRIDES_EN: Record<string, MetaOverride> = {
       "Outdoor campaign solutions in Cambodia for LED billboard visibility, roadside placement strategy, installation workflow, and maintenance support.",
   },
   "retail-digital-signage-cambodia": {
-    title: "Retail Digital Signage Cambodia | Store & Mall Display Solutions",
+    title: "Retail Digital Signage Cambodia | Store Display",
     description:
       "Retail digital signage solutions for Cambodia stores and malls with content workflow, LED display selection, installation, and local support.",
   },
   "hotel-display-solutions-cambodia": {
-    title: "Hotel Display Solutions Cambodia | Guest Communication Systems",
+    title: "Hotel Display Cambodia | Guest Communication",
     description:
       "Hotel display solutions in Cambodia for lobby communication, event schedules, wayfinding, and branded digital display deployment.",
   },
   "factory-pa-announcement-cambodia": {
-    title: "Factory PA Announcement Solutions Cambodia | Industrial Audio",
+    title: "Factory PA Cambodia | Industrial Audio",
     description:
       "Factory PA announcement systems in Cambodia with zone planning, amplifier and speaker design, installation, and service support.",
   },
@@ -35,7 +35,7 @@ const SOLUTION_META_OVERRIDES_EN: Record<string, MetaOverride> = {
       "Office access control solutions in Cambodia with RFID, biometric, turnstile integration, deployment planning, and ongoing support.",
   },
   "education-smart-classroom-cambodia": {
-    title: "Education Smart Classroom Cambodia | Interactive Learning Setup",
+    title: "Smart Classroom Cambodia | Interactive Learning",
     description:
       "Smart classroom solutions in Cambodia with interactive flat panels, classroom AV planning, installation, and training support.",
   },
@@ -116,7 +116,7 @@ const CATALOG_META_OVERRIDES_EN: Record<string, MetaOverride> = {
       "P2.5 outdoor LED display for Cambodia projects requiring high clarity, strong brightness, and reliable weather-ready performance.",
   },
   "p3-outdoor-led-display-module": {
-    title: "P3 Outdoor LED Display Module in Cambodia | Brightness & Durability",
+    title: "P3 Outdoor LED Module Cambodia | Brightness",
     description:
       "P3 outdoor LED display module for Cambodia with strong brightness and durable cabinet compatibility for commercial advertising screens.",
   },
@@ -196,4 +196,3 @@ export function getCatalogMetaOverride(slug: string, lang: "en" | "km") {
     ? CATALOG_META_OVERRIDES_KM[slug]
     : CATALOG_META_OVERRIDES_EN[slug];
 }
-

@@ -18,7 +18,7 @@ const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 export const metadata: Metadata = {
   title: "About Mugnee Cambodia | Mission, Vision & Company Story",
   description:
-    "Mugnee Cambodia, an affiliate company of Mugnee Multiple, delivers LED display, digital signage, smart classroom, PA system, and access control solutions with end-to-end service across Cambodia.",
+    "Learn about Mugnee Cambodia, our mission, values, and experience delivering LED display and business technology solutions across Cambodia.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Mugnee Cambodia",
     description:
-      "Mugnee Cambodia is an affiliate company of Mugnee Multiple with mission, vision, values, and service capabilities for LED display, signage, smart classroom, PA, and access control in Cambodia.",
+      "Learn about Mugnee Cambodia, our mission, values, and service capability for LED display and business technology solutions.",
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "website",
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Mugnee Cambodia",
     description:
-      "Mugnee Cambodia is an affiliate company of Mugnee Multiple with mission, vision, values, and service capabilities for LED display, signage, smart classroom, PA, and access control in Cambodia.",
+      "Learn about Mugnee Cambodia, our mission, values, and service capability for LED display and business technology solutions.",
     images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },
 };
 
 export default function Page() {
-  return <AboutClient />;
+  return <AboutClient lang="en" />;
 }
 
 

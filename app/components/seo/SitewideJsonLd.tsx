@@ -10,10 +10,10 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
 
 export default function SitewideJsonLd() {
-  const orgJsonLd = {
+  const organizationJsonLd = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
     "@id": `${SITE_URL}#organization`,
+    "@type": "Organization",
     name: BUSINESS_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
@@ -29,6 +29,38 @@ export default function SitewideJsonLd() {
       streetAddress: BUSINESS_ADDRESS.streetAddress,
       addressLocality: BUSINESS_ADDRESS.addressLocality,
       addressCountry: BUSINESS_ADDRESS.addressCountry,
+    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        telephone: BUSINESS_PHONE_E164,
+        availableLanguage: ["English", "Khmer"],
+      },
+    ],
+  };
+
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@id": `${SITE_URL}#localbusiness`,
+    "@type": "LocalBusiness",
+    name: BUSINESS_NAME,
+    url: SITE_URL,
+    image: `${SITE_URL}/images/logo.png`,
+    telephone: BUSINESS_PHONE_E164,
+    sameAs: BUSINESS_SAME_AS,
+    areaServed: {
+      "@type": "Country",
+      name: "Cambodia",
+    },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: BUSINESS_ADDRESS.streetAddress,
+      addressLocality: BUSINESS_ADDRESS.addressLocality,
+      addressCountry: BUSINESS_ADDRESS.addressCountry,
+    },
+    parentOrganization: {
+      "@id": `${SITE_URL}#organization`,
     },
   };
 
@@ -51,7 +83,8 @@ export default function SitewideJsonLd() {
 
   return (
     <>
-      <JsonLd id="site-org-jsonld" data={orgJsonLd} />
+      <JsonLd id="site-org-jsonld" data={organizationJsonLd} />
+      <JsonLd id="site-localbusiness-jsonld" data={localBusinessJsonLd} />
       <JsonLd id="site-website-jsonld" data={websiteJsonLd} />
     </>
   );

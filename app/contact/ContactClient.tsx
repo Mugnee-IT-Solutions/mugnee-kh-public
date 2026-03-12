@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { FormEvent, useState } from "react";
-import { useLang } from "../components/layout/LanguageProvider";
+import ContactForm from "./ContactForm";
 
 const socialLinks = [
   { label: "Facebook", platform: "facebook", href: "https://www.facebook.com/mugneemultiple/" },
@@ -57,7 +54,7 @@ const officesKm = [
     lines: ["ជាន់ទី 4, 102/1, West Agargaon, Dhaka"],
   },
   {
-    title: "ការិយាល័យកណ្ដាល (បង់ក្លាដែស)",
+    title: "ការិយាល័យកណ្តាល (បង់ក្លាដែស)",
     subtitle: "មជ្ឈមណ្ឌលលក់ ដំឡើង និងប្រតិបត្តិការ",
     lines: ["ជាន់ទី 3, 36-37 Umesh Datta Road, Bakshibazar, Dhaka - 1211"],
   },
@@ -73,19 +70,18 @@ const uiKm = {
   eyebrow: "ទាក់ទងយើង",
   h1: "ទាក់ទងមកយើង",
   heroDesc:
-    "មានគម្រោងក្នុងចិត្តមែនទេ? សូមទាក់ទង Mugnee Cambodia សម្រាប់ដំណោះស្រាយ LED display, digital signage, smart classroom, PA system និង access control ជាមួយការគាំទ្របច្ចេកទេសបែប end-to-end។ សូមចែករំលែកទីតាំង ប្រភេទការប្រើប្រាស់ ថវិកា និងពេលវេលា ដើម្បីឱ្យក្រុមយើងរៀបចំផែនការតម្លៃ និងដំណោះស្រាយសមស្រប។",
+    "មានគម្រោងក្នុងចិត្តមែនទេ? សូមទាក់ទង Mugnee Cambodia សម្រាប់ដំណោះស្រាយ LED display, digital signage, smart classroom, PA system និង access control ជាមួយការគាំទ្របច្ចេកទេសបែប end-to-end។ សូមចែករំលែកទីតាំង ប្រភេទការប្រើប្រាស់ ថវិកា និងពេលវេលា ដើម្បីឲ្យក្រុមយើងរៀបចំផែនការតម្លៃ និងដំណោះស្រាយសមស្រប។",
   ctaContact: "ទាក់ទងយើង",
   ctaExplore: "មើលដំណោះស្រាយ",
   serving: "បម្រើសេវា៖ ភ្នំពេញ - សៀមរាប - ព្រះសីហនុ",
   formTitle: "ទម្រង់ទំនាក់ទំនង",
-  formDesc: "សូមបំពេញទម្រង់ ហើយក្រុមយើងនឹងទាក់ទងអ្នកឱ្យបានឆាប់តាមដែលអាចធ្វើបាន។",
+  formDesc: "សូមបំពេញទម្រង់ ហើយក្រុមយើងនឹងទាក់ទងអ្នកឲ្យបានឆាប់តាមដែលអាចធ្វើបាន។",
   name: "ឈ្មោះរបស់អ្នក",
   email: "អ៊ីមែលរបស់អ្នក",
   phone: "លេខទូរស័ព្ទ",
   subject: "ប្រធានបទ",
   message: "សាររបស់អ្នក",
   submit: "ផ្ញើ",
-  formNote: "ទម្រង់នេះអាចភ្ជាប់ទៅអ៊ីមែល ឬ CRM របស់អ្នកនៅពេលរៀបចំរួច។",
   getInTouch: "ព័ត៌មានទំនាក់ទំនង",
   follow: "តាមដានយើង",
   officeLocations: "ទីតាំងការិយាល័យ",
@@ -102,12 +98,15 @@ const uiKm = {
   officeKh: "ការិយាល័យ (កម្ពុជា)",
   phoneLabel: "ទូរស័ព្ទ",
   hoursLabel: "ម៉ោងធ្វើការ",
-  hoursValue: "ច័ន្ទ-សៅរ៍, 8:30am-6:00pm",
+  hoursValue: "ចន្ទ-សៅរ៍, 8:30am-6:00pm",
   fastTitle: "ត្រូវការសំណើរហ័សមែនទេ?",
   fastDesc:
     "ផ្ញើព័ត៌មានទីតាំង និងតម្រូវការរបស់អ្នក។ យើងនឹងចែករំលែកផ្លូវដំណោះស្រាយជាក់ស្តែង និងវិសាលភាពតម្លៃ។",
   viewSolutions: "មើលដំណោះស្រាយ",
   viewProducts: "មើលផលិតផល",
+  sendError: "មិនអាចផ្ញើសារបានទេ។ សូមព្យាយាមម្ដងទៀត។",
+  serverError: "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេបានទេ។ សូមព្យាយាមម្ដងទៀត។",
+  success: "សាររបស់អ្នកត្រូវបានផ្ញើជោគជ័យ។ ក្រុមការងារយើងនឹងទាក់ទងត្រឡប់វិញឆាប់ៗនេះ។",
 };
 
 function SocialIcon({ platform }: { platform: string }) {
@@ -166,110 +165,49 @@ function SocialIcon({ platform }: { platform: string }) {
 }
 
 type ContactClientProps = {
-  forcedLang?: "en" | "km";
+  lang?: "en" | "km";
 };
 
-export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
-  const { lang: contextLang } = useLang();
-  const lang = forcedLang ?? contextLang;
+export default function ContactClient({ lang = "en" }: ContactClientProps = {}) {
   const isKm = lang === "km";
   const officesData = isKm ? officesKm : offices;
   const contactsData = isKm ? contactsKm : contacts;
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-  const [sending, setSending] = useState(false);
-  const [status, setStatus] = useState<{ type: "idle" | "success" | "error"; text: string }>({
-    type: "idle",
-    text: "",
-  });
-
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (sending) return;
-    setStatus({ type: "idle", text: "" });
-    setSending(true);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      const data = (await res.json()) as { ok?: boolean; message?: string };
-
-      if (!res.ok || !data.ok) {
-        setStatus({
-          type: "error",
-          text:
-            data.message ||
-            (isKm
-              ? "មិនអាចផ្ញើសារបានទេ។ សូមព្យាយាមម្តងទៀត។"
-              : "Unable to send your message. Please try again."),
-        });
-        return;
-      }
-
-      setStatus({
-        type: "success",
-        text: isKm
-          ? "សាររបស់អ្នកត្រូវបានផ្ញើជោគជ័យ។ ក្រុមការងារយើងនឹងទាក់ទងត្រឡប់វិញឆាប់ៗនេះ។"
-          : "Your message was sent successfully. Our team will contact you soon.",
-      });
-      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
-    } catch {
-      setStatus({
-        type: "error",
-        text: isKm
-          ? "មិនអាចភ្ជាប់ទៅម៉ាស៊ីនមេបានទេ។ សូមព្យាយាមម្តងទៀត។"
-          : "Could not connect to server. Please try again.",
-      });
-    } finally {
-      setSending(false);
-    }
-  }
 
   return (
-    <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-28 top-8 h-56 w-56 rounded-full bg-cyan-300/15 blur-3xl" />
           <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div>
-            <div>
-              <div className="text-xs text-slate-500">
-                <span className="font-semibold text-slate-700">{isKm ? uiKm.eyebrow : "Contact Us"}</span>
-              </div>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{isKm ? uiKm.h1 : "Get in Touch"}</h1>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-                {isKm
-                  ? uiKm.heroDesc
-                  : "Have a project in mind? Contact Mugnee Cambodia for LED display, digital signage, smart classroom, PA system, and access control solutions with end-to-end technical support. Share your site location, use case, budget range, and timeline, and our team will provide a practical quotation plan, site survey guidance, and deployment recommendations tailored for Cambodia business environments."}
-              </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href="tel:+85581580802"
-                  className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
-                >
-                  {isKm ? uiKm.ctaContact : "Contact Us"}
-                </a>
-                <Link
-                  href="/solutions"
-                  className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
-                >
-                  {isKm ? uiKm.ctaExplore : "Explore Solutions"}
-                </Link>
-              </div>
-              <div className="mt-4 text-xs text-slate-500">
-                {isKm ? uiKm.serving : "Serving Phnom Penh - Siem Reap - Sihanoukville"}
-              </div>
-            </div>
+          <div className="text-xs text-slate-500">
+            <span className="font-semibold text-slate-700">{isKm ? uiKm.eyebrow : "Contact Us"}</span>
+          </div>
+          <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+            {isKm ? uiKm.h1 : "Get in Touch"}
+          </h1>
+          <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+            {isKm
+              ? uiKm.heroDesc
+              : "Have a project in mind? Contact Mugnee Cambodia for LED display, digital signage, smart classroom, PA system, and access control solutions with end-to-end technical support. Share your site location, use case, budget range, and timeline, and our team will provide a practical quotation plan, site survey guidance, and deployment recommendations tailored for Cambodia business environments."}
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <a
+              href="tel:+85581580802"
+              className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
+            >
+              {isKm ? uiKm.ctaContact : "Contact Us"}
+            </a>
+            <Link
+              href="/solutions"
+              className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
+            >
+              {isKm ? uiKm.ctaExplore : "Explore Solutions"}
+            </Link>
+          </div>
+          <div className="mt-4 text-xs text-slate-500">
+            {isKm ? uiKm.serving : "Serving Phnom Penh - Siem Reap - Sihanoukville"}
           </div>
         </div>
       </section>
@@ -277,87 +215,31 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-bold tracking-tight text-slate-900">{isKm ? uiKm.formTitle : "Contact Form"}</h2>
-              <p className="mt-2 text-sm text-slate-600">
-                {isKm ? uiKm.formDesc : "Fill out the form and our team will contact you as soon as possible with the next steps."}
-              </p>
-              <form className="mt-5 grid gap-3 sm:grid-cols-2" onSubmit={onSubmit}>
-                <input
-                  type="text"
-                  name="name"
-                  autoComplete="name"
-                  value={form.name}
-                  onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
-                  placeholder={isKm ? uiKm.name : "Your Name"}
-                  required
-                  minLength={2}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  autoComplete="email"
-                  value={form.email}
-                  onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-                  placeholder={isKm ? uiKm.email : "Your Email"}
-                  required
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  autoComplete="tel"
-                  value={form.phone}
-                  onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
-                  placeholder={isKm ? uiKm.phone : "Phone Number"}
-                  required
-                  minLength={6}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
-                />
-                <input
-                  type="text"
-                  name="subject"
-                  autoComplete="off"
-                  value={form.subject}
-                  onChange={(e) => setForm((prev) => ({ ...prev, subject: e.target.value }))}
-                  placeholder={isKm ? uiKm.subject : "Subject"}
-                  required
-                  minLength={2}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-1"
-                />
-                <textarea
-                  name="message"
-                  autoComplete="off"
-                  rows={5}
-                  value={form.message}
-                  onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
-                  placeholder={isKm ? uiKm.message : "Your Message"}
-                  required
-                  minLength={10}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 outline-none transition-all duration-200 focus:border-sky-400 focus:ring-2 focus:ring-sky-100 sm:col-span-2"
-                />
-                <button
-                  type="submit"
-                  disabled={sending}
-                  className="mt-1 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-md disabled:cursor-not-allowed disabled:opacity-70 sm:col-span-2"
-                >
-                  {sending ? (isKm ? "កំពុងផ្ញើ..." : "Sending...") : isKm ? uiKm.submit : "Submit"}
-                </button>
-                {status.type !== "idle" ? (
-                  <p
-                    className={`text-sm sm:col-span-2 ${
-                      status.type === "success" ? "text-emerald-700" : "text-red-600"
-                    }`}
-                  >
-                    {status.text}
-                  </p>
-                ) : null}
-              </form>
-            </div>
+            <ContactForm
+              labels={{
+                title: isKm ? uiKm.formTitle : "Contact Form",
+                desc: isKm
+                  ? uiKm.formDesc
+                  : "Fill out the form and our team will contact you as soon as possible with the next steps.",
+                name: isKm ? uiKm.name : "Your Name",
+                email: isKm ? uiKm.email : "Your Email",
+                phone: isKm ? uiKm.phone : "Phone Number",
+                subject: isKm ? uiKm.subject : "Subject",
+                message: isKm ? uiKm.message : "Your Message",
+                submit: isKm ? uiKm.submit : "Submit",
+                sending: isKm ? "កំពុងផ្ញើ..." : "Sending...",
+                sendError: isKm ? uiKm.sendError : "Unable to send your message. Please try again.",
+                serverError: isKm ? uiKm.serverError : "Could not connect to server. Please try again.",
+                success: isKm
+                  ? uiKm.success
+                  : "Your message was sent successfully. Our team will contact you soon.",
+              }}
+            />
 
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h2 className="text-2xl font-bold tracking-tight text-slate-900">{isKm ? uiKm.getInTouch : "Get In Touch"}</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+                {isKm ? uiKm.getInTouch : "Get In Touch"}
+              </h2>
               <ul className="mt-4 space-y-3 text-sm text-slate-700">
                 {contactsData.map((c) => (
                   <li key={c.label} className="flex items-center justify-between gap-3">
@@ -369,44 +251,42 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
               <div className="mt-5">
                 <h3 className="text-sm font-semibold text-slate-900">{isKm ? uiKm.follow : "Follow Us"}</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  {socialLinks.map((s) => (
-                    (() => {
-                      const toneClass =
-                        s.platform === "facebook"
-                          ? "bg-[#1877F2] text-white"
-                          : s.platform === "youtube"
-                            ? "bg-[#FF0000] text-white"
-                            : s.platform === "linkedin"
-                              ? "bg-[#0A66C2] text-white"
-                              : s.platform === "x"
-                                ? "bg-black text-white"
+                  {socialLinks.map((s) => {
+                    const toneClass =
+                      s.platform === "facebook"
+                        ? "bg-[#1877F2] text-white"
+                        : s.platform === "youtube"
+                          ? "bg-[#FF0000] text-white"
+                          : s.platform === "linkedin"
+                            ? "bg-[#0A66C2] text-white"
+                            : s.platform === "x"
+                              ? "bg-black text-white"
                               : s.platform === "instagram"
                                 ? "bg-gradient-to-br from-[#FEDA75] via-[#D62976] to-[#4F5BD5] text-white"
                                 : s.platform === "telegram"
                                   ? "bg-[#229ED9] text-white"
                                   : s.platform === "whatsapp"
                                     ? "bg-[#25D366] text-white"
-                                  : "bg-[#E60023] text-white";
+                                    : "bg-[#E60023] text-white";
 
-                      return (
-                        <a
-                          key={s.label}
-                          href={s.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={s.label}
-                          title={s.label}
-                          className={[
-                            "inline-flex h-10 w-10 items-center justify-center rounded-full no-underline shadow-sm transition-all duration-300",
-                            "hover:-translate-y-0.5 hover:shadow-md hover:no-underline",
-                            toneClass,
-                          ].join(" ")}
-                        >
-                          <SocialIcon platform={s.platform} />
-                        </a>
-                      );
-                    })()
-                  ))}
+                    return (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={s.label}
+                        title={s.label}
+                        className={[
+                          "inline-flex h-10 w-10 items-center justify-center rounded-full no-underline shadow-sm transition-all duration-300",
+                          "hover:-translate-y-0.5 hover:shadow-md hover:no-underline",
+                          toneClass,
+                        ].join(" ")}
+                      >
+                        <SocialIcon platform={s.platform} />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -416,7 +296,9 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
 
       <section className="border-t border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">{isKm ? uiKm.officeLocations : "Office Locations"}</h2>
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            {isKm ? uiKm.officeLocations : "Office Locations"}
+          </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {officesData.map((o) => (
               <div
@@ -486,7 +368,9 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
                   Cambodia
                 </p>
                 <p className="mt-2">{isKm ? `${uiKm.phoneLabel}: +85581580802` : "Phone: +85581580802"}</p>
-                <p className="mt-2">{isKm ? `${uiKm.hoursLabel}: ${uiKm.hoursValue}` : "Hours: Mon-Sat, 8:30am-6:00pm"}</p>
+                <p className="mt-2">
+                  {isKm ? `${uiKm.hoursLabel}: ${uiKm.hoursValue}` : "Hours: Mon-Sat, 8:30am-6:00pm"}
+                </p>
               </div>
             </div>
 
@@ -509,7 +393,9 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
       <section className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">{isKm ? uiKm.fastTitle : "Need a Fast Proposal?"}</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              {isKm ? uiKm.fastTitle : "Need a Fast Proposal?"}
+            </h2>
             <p className="mt-2 text-slate-600">
               {isKm
                 ? uiKm.fastDesc
@@ -532,6 +418,6 @@ export default function ContactClient({ forcedLang }: ContactClientProps = {}) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

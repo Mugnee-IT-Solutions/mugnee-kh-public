@@ -556,12 +556,11 @@ export default function IndustrySolutionPage({ solution }: Props) {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${pageUrl}#service`,
     name: solution.title,
     serviceType: "Business Technology Solution",
     provider: {
-      "@type": "Organization",
-      name: "Mugnee Cambodia",
-      url: SITE_URL,
+      "@id": `${SITE_URL}#organization`,
     },
     areaServed: { "@type": "Country", name: "Cambodia" },
     url: pageUrl,
@@ -569,7 +568,7 @@ export default function IndustrySolutionPage({ solution }: Props) {
   };
 
   return (
-    <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -777,7 +776,7 @@ export default function IndustrySolutionPage({ solution }: Props) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

@@ -5,9 +5,52 @@
   Email: ankurdatta.official@gmail.com
   Github: https://github.com/ankur-datta-official
 */
-export { metadata } from "../../products/led-display/power-supply/page";
+import type { Metadata } from "next";
 import LedDisplayClient from "../../products/led-display/LedDisplayClient";
 import { PRODUCTS } from "../../data/products";
+import { SITE_URL } from "../../lib/site";
+
+const PAGE_PATH = "/led-display/power-supply/";
+const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
+const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
+
+export const metadata: Metadata = {
+  title: "LED Power Supply Cambodia | Best Price & Installation",
+  description:
+    "LED power supplies in Cambodia for indoor and outdoor displays with stable voltage, safety protection, and setup guidance.",
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      "en-kh": "/led-display/power-supply/",
+      "km-kh": "/km/led-display/power-supply/",
+      "x-default": "/led-display/power-supply/",
+    },
+  },
+  openGraph: {
+    title: "LED Power Supply Cambodia | Best Price & Installation",
+    description:
+      "Reliable LED power supplies for video walls and signage with stable output, safety protections, and professional support.",
+    url: PAGE_URL,
+    siteName: "Mugnee Cambodia",
+    type: "website",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "LED Power Supply in Cambodia",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LED Power Supply Cambodia | Best Price & Installation",
+    description:
+      "Reliable LED power supplies for video walls and signage with stable output, safety protections, and professional support.",
+    images: [OG_IMAGE],
+  },
+  robots: { index: true, follow: true },
+};
 
 export default function PowerSupplyPage() {
   const accessoryProducts = PRODUCTS.filter((p) =>

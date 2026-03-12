@@ -16,14 +16,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 export const metadata: Metadata = {
   title: "Outdoor LED Display Cambodia | Best Price & Installation",
   description:
-    "Outdoor LED display solutions in Cambodia for roadside billboards, facade screens, and public signage with IP-rated panels, structure planning, installation, and local support.",
-  keywords: [
-    "outdoor LED display Cambodia",
-    "LED billboard Cambodia",
-    "outdoor digital signage Cambodia",
-    "IP65 LED screen Cambodia",
-    "roadside LED billboard Phnom Penh",
-  ],
+    "Outdoor LED display in Cambodia for billboards, facade screens, and public signage with structure planning and local support.",
   alternates: {
     canonical: PAGE_URL,
     languages: {

@@ -9,15 +9,7 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 export const metadata: Metadata = {
   title: "Terms and Conditions Cambodia 2026 | Mugnee Cambodia",
   description:
-    "Read Mugnee Cambodia terms and conditions for LED display, PA system, interactive flat panel, and access control projects across Cambodia, including payment, delivery, warranty, and legal terms.",
-  keywords: [
-    "terms and conditions Cambodia",
-    "LED display terms Cambodia",
-    "digital signage contract Cambodia",
-    "project payment terms Cambodia",
-    "warranty terms Cambodia",
-    "Mugnee Cambodia legal policy",
-  ],
+    "Read Mugnee Cambodia terms for LED display, PA system, smart board, and access control projects, including payment, warranty, and legal terms.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -33,12 +25,14 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     siteName: "Mugnee Cambodia",
     type: "article",
+    images: [{ url: `${SITE_URL}/images/hero/cambodia-led-hero.webp`, width: 1200, height: 630, alt: "Terms and conditions of Mugnee Cambodia" }],
   },
   twitter: {
     card: "summary",
     title: "Terms and Conditions Cambodia 2026 | Mugnee Cambodia",
     description:
       "Commercial, legal, and warranty terms for Mugnee Cambodia projects and product supply.",
+    images: [`${SITE_URL}/images/hero/cambodia-led-hero.webp`],
   },
   robots: { index: true, follow: true },
 };

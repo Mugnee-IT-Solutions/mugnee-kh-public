@@ -202,8 +202,12 @@ export default function AccessControlClient() {
 
   const jsonLd = useMemo(() => {
     const site =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "http://localhost:3000";
+      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
     const url = site + "/products/access-control-system";
+    const serviceAreas = ["Phnom Penh", "Siem Reap", "Sihanoukville"].map((name) => ({
+      "@type": "AdministrativeArea",
+      name,
+    }));
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -228,12 +232,25 @@ export default function AccessControlClient() {
       })),
     };
 
-    // ✅ Safe ItemList (no pricing)
-    return { breadcrumb, faqSchema };
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: lang === "en" ? "Access Control System Solutions in Cambodia" : "ដំណោះស្រាយប្រព័ន្ធ Access Control នៅកម្ពុជា",
+      serviceType: "Access Control System Installation",
+      url,
+      description: lang === "en" ? t.sub : t.kSub,
+      areaServed: serviceAreas,
+      provider: {
+        "@id": `${site}#organization`,
+      },
+    };
+
+    return { breadcrumb, faqSchema, serviceSchema };
   }, [faqs, lang]);
 
   return (
-    <main className="bg-white text-slate-900">
+    <div className="bg-white text-slate-900">
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -242,6 +259,10 @@ export default function AccessControlClient() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.serviceSchema) }}
       />
       {/* HERO */}
       <section className="relative isolate overflow-hidden border-b border-slate-200">
@@ -443,7 +464,7 @@ export default function AccessControlClient() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

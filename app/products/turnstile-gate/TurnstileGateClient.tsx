@@ -393,6 +393,10 @@ export default function TurnstileGateClient() {
     const site =
       process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
     const url = site + "/turnstile-gate";
+    const serviceAreas = ["Phnom Penh", "Siem Reap", "Sihanoukville"].map((name) => ({
+      "@type": "AdministrativeArea",
+      name,
+    }));
 
     const breadcrumb = {
       "@context": "https://schema.org",
@@ -416,11 +420,25 @@ export default function TurnstileGateClient() {
       })),
     };
 
-    return { breadcrumb, faqSchema };
+    const serviceSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: lang === "en" ? "Turnstile Gate Solutions in Cambodia" : "ដំណោះស្រាយច្រកទ្វារ Turnstile នៅកម្ពុជា",
+      serviceType: "Turnstile Gate Installation",
+      url,
+      description: lang === "en" ? t.sub : t.quickSub,
+      areaServed: serviceAreas,
+      provider: {
+        "@id": `${site}#organization`,
+      },
+    };
+
+    return { breadcrumb, faqSchema, serviceSchema };
   }, [faqs, lang]);
 
   return (
-    <main className="bg-white text-slate-900">
+    <div className="bg-white text-slate-900">
       <style jsx global>{`
         .quick-link {
           position: relative;
@@ -488,6 +506,10 @@ export default function TurnstileGateClient() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd.serviceSchema) }}
       />
       <section className="relative isolate overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0">
@@ -854,7 +876,7 @@ export default function TurnstileGateClient() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 

@@ -1,11 +1,7 @@
-﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useMemo } from "react";
-import { useLang } from "../../components/layout/LanguageProvider";
-import { trackEvent } from "../../lib/analytics";
+import { Suspense } from "react";
 import { BUSINESS_ADDRESS, BUSINESS_PHONE_E164, BUSINESS_SAME_AS, BUSINESS_NAME, SERVICE_AREAS } from "../../lib/nap";
 import { SITE_URL } from "../../lib/site";
 import ProductGrid from "../../components/sections/ProductGrid";
@@ -382,9 +378,7 @@ export default function LedDisplayClient({
   breadcrumbOverride?: string;
   breadcrumbOverrideKm?: string;
 }) {
-  const pathname = usePathname();
-  const { lang: contextLang } = useLang();
-  const lang = forcedLang ?? contextLang;
+  const lang = forcedLang ?? (schemaPathOverride?.startsWith("/km") ? "km" : "en");
   const toLangHref = (href: string) =>
     lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const faqItems =
@@ -406,29 +400,19 @@ export default function LedDisplayClient({
     lang === "en" ? DEFAULT_TRUST_PROOF_CHIPS_EN : DEFAULT_TRUST_PROOF_CHIPS_KM;
   const trustSignalTitles =
     lang === "en" ? TRUST_SIGNAL_TITLES_EN : TRUST_SIGNAL_TITLES_KM;
-  const schemaPath = schemaPathOverride ?? pathname ?? "/led-display";
+  const schemaPath =
+    schemaPathOverride ?? (lang === "km" ? "/km/led-display" : "/led-display");
   const schemaName = schemaNameOverride ?? "LED Display";
   const schemaServiceName = schemaServiceNameOverride ?? "LED Display in Cambodia";
   const schemaServiceDesc =
     schemaServiceDescOverride ??
     "Indoor LED video walls, outdoor LED billboards, installation, commissioning and after-sales support in Cambodia.";
-  const trackLeadClick = (cta: string, section: string) => {
-    trackEvent("lead_cta_click", {
-      cta,
-      section,
-      page: schemaPath,
-      lang,
-    });
-  };
-  const t = useMemo(() => {
+  const t = (() => {
     const en = {
-      breadcrumb: "Products",
-      h1: `LED Display Price in Cambodia ${currentYearEn ?? new Intl.DateTimeFormat("en-US", {
-        year: "numeric",
-        timeZone: "Asia/Phnom_Penh",
-      }).format(new Date())}`,
+      breadcrumb: "LED Display",
+      h1: "LED Display Price in Cambodia - Indoor & Outdoor LED Screen",
       intro:
-        "Looking for a trusted LED screen supplier in Phnom Penh, Cambodia? Mugnee Cambodia is a market-leading LED display company and a preferred market leader for indoor LED display, outdoor LED billboard, LED video wall, and digital advertising display projects, including LED advertising screen requirements for commercial visibility. From indoor LED display planning to outdoor LED billboard proposals, we support shops, showrooms, hotels, corporate offices, and public projects with site survey, pixel-pitch planning, video processor setup, steel structure and cabinet planning, installation, testing, and commissioning. Choose fine-pitch indoor LED screens or high-brightness outdoor LED panels with IP65-ready options and dependable Cambodia-based after-sales support for stable long-term performance.",
+        "Looking for a trusted LED display supplier in Cambodia and a reliable LED screen supplier in Phnom Penh? Mugnee Cambodia supports indoor LED display, outdoor LED billboard, LED video wall, and LED advertising screen projects for retail, hospitality, corporate, education, worship, and public communication use. From site survey and pixel-pitch planning to BOQ preparation, video processor setup, structure planning, installation, testing, and commissioning, we help buyers compare the right indoor and outdoor LED screen options for long-term performance in Cambodia.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
@@ -438,10 +422,10 @@ export default function LedDisplayClient({
     };
 
     const km = {
-      breadcrumb: "ផលិតផល",
-      h1: "តម្លៃអេក្រង់ LED នៅកម្ពុជា",
+      breadcrumb: "អេក្រង់ LED",
+      h1: "អេក្រង់ LED នៅកម្ពុជា | អ្នកផ្គត់ផ្គង់ Indoor និង Outdoor LED នៅភ្នំពេញ",
       intro:
-        "កំពុងស្វែងរកអ្នកផ្គត់ផ្គង់អេក្រង់ LED ដែលអាចទុកចិត្តបាននៅភ្នំពេញ កម្ពុជា មែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារ អេក្រង់ប៊ីលបត LED ខាងក្រៅ LED advertising screen និង LED Video Wall ជាមួយសេវាស្ទង់ទីតាំង គណនា Pixel Pitch រៀបចំ BOQ រៀបចំរចនាសម្ព័ន្ធដែក និង Cabinet ការដំឡើង ការធ្វើតេស្ត និងការធ្វើ Commissioning ដោយវិជ្ជាជីវៈ។ ទទួលបានតម្លៃតាមគម្រោង ជម្រើស IP65 សម្រាប់ខាងក្រៅ និងសេវាបន្ទាប់ពីលក់ក្នុងស្រុកកម្ពុជា ដើម្បីធានាដំណើរការមានស្ថិរភាពរយៈពេលវែង។",
+        "កំពុងស្វែងរកអ្នកផ្គត់ផ្គង់អេក្រង់ LED ដែលអាចទុកចិត្តបាននៅកម្ពុជា និងអ្នកផ្គត់ផ្គង់ LED screen នៅភ្នំពេញ មែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយសម្រាប់ indoor LED display, outdoor LED billboard, LED video wall និង LED advertising screen ជាមួយសេវាស្ទង់ទីតាំង គណនា pixel pitch រៀបចំ BOQ រៀបចំរចនាសម្ព័ន្ធ ការដំឡើង ការធ្វើតេស្ត និង commissioning ដោយវិជ្ជាជីវៈ។ យើងជួយអាជីវកម្ម ប្រៀបធៀបជម្រើសអេក្រង់ LED ក្នុងអគារ និងខាងក្រៅឱ្យសមស្របនឹងទីតាំង ការប្រើប្រាស់ និងថវិកាជាក់ស្តែង។",
       cta1: "WhatsApp ស្នើសុំតម្លៃ",
       cta2: "ស្នើសុំសំណើបញ្ជីបរិមាណការងារ",
       cta3: "ចូលទៅផលិតផល",
@@ -451,7 +435,7 @@ export default function LedDisplayClient({
     };
 
     return lang === "en" ? en : km;
-  }, [currentYearEn, lang]);
+  })();
 
   const quickLinks =
     lang === "en"
@@ -491,88 +475,92 @@ export default function LedDisplayClient({
         ];
 
   return (
-    <main className="bg-white text-slate-900">
-      <style jsx global>{`
-        .quick-link {
-          position: relative;
-          border: 1px solid rgb(203 213 225);
-          background: #fff;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .quick-link:hover {
-          border-color: transparent;
-          background:
-            linear-gradient(#fff, #fff) padding-box,
-            linear-gradient(
-              90deg,
-              rgba(14, 116, 144, 0),
-              rgba(14, 116, 144, 0.85),
-              rgba(2, 132, 199, 0.9),
-              rgba(14, 116, 144, 0)
-            )
-              border-box;
-          background-size: 100% 100%, 240% 240%;
-          animation: quickLinkBorder 1.2s linear infinite;
-          box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
-        }
-        @keyframes quickLinkBorder {
-          0% {
-            background-position: 0 0, 0 0;
-          }
-          100% {
-            background-position: 0 0, 220% 0;
-          }
-        }
+    <div className="bg-white text-slate-900">
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .quick-link {
+              position: relative;
+              border: 1px solid rgb(203 213 225);
+              background: #fff;
+              transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .quick-link:hover {
+              border-color: transparent;
+              background:
+                linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(
+                  90deg,
+                  rgba(14, 116, 144, 0),
+                  rgba(14, 116, 144, 0.85),
+                  rgba(2, 132, 199, 0.9),
+                  rgba(14, 116, 144, 0)
+                )
+                  border-box;
+              background-size: 100% 100%, 240% 240%;
+              animation: quickLinkBorder 1.2s linear infinite;
+              box-shadow: 0 10px 24px rgba(2, 6, 23, 0.08);
+            }
+            @keyframes quickLinkBorder {
+              0% {
+                background-position: 0 0, 0 0;
+              }
+              100% {
+                background-position: 0 0, 220% 0;
+              }
+            }
 
-        .spec-card {
-          position: relative;
-          border: 1px solid transparent;
-          background:
-            linear-gradient(#fff, #fff) padding-box,
-            linear-gradient(
-              120deg,
-              rgba(14, 116, 144, 0.1),
-              rgba(2, 132, 199, 0.45),
-              rgba(59, 130, 246, 0.45),
-              rgba(14, 116, 144, 0.1)
-            )
-              border-box;
-          background-size: 100% 100%, 260% 260%;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .spec-card:hover {
-          animation: specBorder 2s linear infinite;
-          box-shadow: 0 12px 28px rgba(2, 6, 23, 0.12);
-        }
-        @keyframes specBorder {
-          0% {
-            background-position: 0 0, 0 0;
-          }
-          100% {
-            background-position: 0 0, 260% 0;
-          }
-        }
-        @keyframes home-partner-marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .home-partner-marquee-track {
-          animation: home-partner-marquee 24s linear infinite;
-          will-change: transform;
-        }
-        .home-partner-marquee-track:hover {
-          animation-play-state: paused;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .home-partner-marquee-track {
-            animation: none;
-          }
-        }
-      `}</style>
+            .spec-card {
+              position: relative;
+              border: 1px solid transparent;
+              background:
+                linear-gradient(#fff, #fff) padding-box,
+                linear-gradient(
+                  120deg,
+                  rgba(14, 116, 144, 0.1),
+                  rgba(2, 132, 199, 0.45),
+                  rgba(59, 130, 246, 0.45),
+                  rgba(14, 116, 144, 0.1)
+                )
+                  border-box;
+              background-size: 100% 100%, 260% 260%;
+              transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .spec-card:hover {
+              animation: specBorder 2s linear infinite;
+              box-shadow: 0 12px 28px rgba(2, 6, 23, 0.12);
+            }
+            @keyframes specBorder {
+              0% {
+                background-position: 0 0, 0 0;
+              }
+              100% {
+                background-position: 0 0, 260% 0;
+              }
+            }
+            @keyframes home-partner-marquee {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+            .home-partner-marquee-track {
+              animation: home-partner-marquee 24s linear infinite;
+              will-change: transform;
+            }
+            .home-partner-marquee-track:hover {
+              animation-play-state: paused;
+            }
+            @media (prefers-reduced-motion: reduce) {
+              .home-partner-marquee-track {
+                animation: none;
+              }
+            }
+          `,
+        }}
+      />
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -683,14 +671,12 @@ export default function LedDisplayClient({
               href="https://wa.me/85581580802"
               target="_blank"
               rel="noopener"
-              onClick={() => trackLeadClick("whatsapp", "hero")}
               className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
             >
               {t.cta1}
             </a>
             <Link
               href={toLangHref("/contact")}
-              onClick={() => trackLeadClick("request_boq", "hero")}
               className="rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-100"
             >
               {t.cta2}
@@ -709,47 +695,77 @@ export default function LedDisplayClient({
       {/* PRODUCT GRID */}
       <section id="products" className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <ProductGrid
-            columns={3}
-            pageSize={9}
-            allowedCategoryIds={[
-              "led_display",
-              "indoor_led_display",
-              "outdoor_led_display",
-              "rental_led_display",
-              "led_accessories",
-            ]}
-            filterCategoryIds={[
-              "indoor_led_display",
-              "outdoor_led_display",
-              "rental_led_display",
-              "led_accessories",
-            ]}
-            categoryOrderIds={[
-              "indoor_led_display",
-              "outdoor_led_display",
-              "rental_led_display",
-              "led_accessories",
-            ]}
-            topLeftContent={
-              productQuickChips && productQuickChips.length > 0 ? (
+          <Suspense
+            fallback={
+              <div className="space-y-6">
                 <div className="flex flex-wrap gap-2">
-                  {productQuickChips.map((chip, index) => (
-                    <Link
+                  {(productQuickChips ?? []).slice(0, 6).map((chip, index) => (
+                    <span
                       key={`${chip.href}-${chip.label}-${index}`}
-                      href={chip.href}
-                      className="quick-link rounded-full px-3 py-1 text-xs font-semibold text-slate-700 hover:text-slate-900"
+                      className="quick-link rounded-full px-3 py-1 text-xs font-semibold text-slate-700"
                     >
                       {lang === "en" ? chip.label : (chip.labelKm ?? chip.label)}
-                    </Link>
+                    </span>
                   ))}
                 </div>
-              ) : (
-                <div />
-              )
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {Array.from({ length: 6 }).map((_, index) => (
+                    <div
+                      key={index}
+                      className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+                    >
+                      <div className="h-40 rounded-xl bg-slate-100" />
+                      <div className="mt-4 h-4 w-40 rounded bg-slate-200" />
+                      <div className="mt-3 h-3 w-full rounded bg-slate-200" />
+                      <div className="mt-2 h-3 w-5/6 rounded bg-slate-200" />
+                    </div>
+                  ))}
+                </div>
+              </div>
             }
-            {...productGridOverride}
-          />
+          >
+            <ProductGrid
+              columns={3}
+              pageSize={9}
+              allowedCategoryIds={[
+                "led_display",
+                "indoor_led_display",
+                "outdoor_led_display",
+                "rental_led_display",
+                "led_accessories",
+              ]}
+              filterCategoryIds={[
+                "indoor_led_display",
+                "outdoor_led_display",
+                "rental_led_display",
+                "led_accessories",
+              ]}
+              categoryOrderIds={[
+                "indoor_led_display",
+                "outdoor_led_display",
+                "rental_led_display",
+                "led_accessories",
+              ]}
+              topLeftContent={
+                productQuickChips && productQuickChips.length > 0 ? (
+                  <div className="flex flex-wrap gap-2">
+                    {productQuickChips.map((chip, index) => (
+                      <Link
+                        key={`${chip.href}-${chip.label}-${index}`}
+                        href={chip.href}
+                        className="quick-link rounded-full px-3 py-1 text-xs font-semibold text-slate-700 hover:text-slate-900"
+                      >
+                        {lang === "en" ? chip.label : (chip.labelKm ?? chip.label)}
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <div />
+                )
+              }
+              {...productGridOverride}
+            />
+          </Suspense>
         </div>
       </section>
 
@@ -1604,7 +1620,6 @@ export default function LedDisplayClient({
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href={toLangHref("/contact")}
-                onClick={() => trackLeadClick("request_boq", "price_boq")}
                 className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white no-underline hover:bg-slate-800 hover:no-underline"
               >
                 {lang === "en" ? "Request BOQ & Quotation" : "ស្នើសុំ BOQ និងសំណើតម្លៃ"}
@@ -1891,7 +1906,6 @@ export default function LedDisplayClient({
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href={toLangHref("/contact")}
-              onClick={() => trackLeadClick("contact", "final_cta")}
               className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
             >
               {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
@@ -1900,7 +1914,6 @@ export default function LedDisplayClient({
               href="https://wa.me/85581580802"
               target="_blank"
               rel="noopener"
-              onClick={() => trackLeadClick("whatsapp", "final_cta")}
               className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
             >
               {lang === "en" ? "WhatsApp for Quotation" : "WhatsApp ស្នើសុំតម្លៃ"}
@@ -2172,8 +2185,6 @@ export default function LedDisplayClient({
         </div>
       </DeferredSection>
 
-    </main>
+    </div>
   );
 }
-
-

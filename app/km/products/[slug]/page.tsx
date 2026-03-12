@@ -19,6 +19,62 @@ function hasKhmer(text: string | null | undefined) {
   return Boolean(text && KHMER_RE.test(text));
 }
 
+function isWeakDescription(text: string | null | undefined) {
+  if (!text) return true;
+  const normalized = text.trim().toLowerCase();
+  return normalized.length < 40 || normalized === "key features";
+}
+
+function normalizeWhitespace(text: string) {
+  return text.replace(/\s+/g, " ").trim();
+}
+
+function trimMetaText(text: string, maxLength: number) {
+  const normalized = normalizeWhitespace(text);
+  if (normalized.length <= maxLength) return normalized;
+
+  const sliced = normalized.slice(0, maxLength + 1);
+  const boundary = Math.max(sliced.lastIndexOf("។"), sliced.lastIndexOf(" "), sliced.lastIndexOf(", "));
+  const trimmed = boundary > 80 ? sliced.slice(0, boundary) : normalized.slice(0, maxLength);
+  return trimmed.replace(/[,\s]+$/, "").trim();
+}
+
+function normalizeMetaTitle(title: string, fallbackTitle: string) {
+  const normalized = normalizeWhitespace(title || fallbackTitle);
+  const enriched =
+    normalized.length < 30 ? `${fallbackTitle} តម្លៃ និងព័ត៌មាន` : normalized.length < 20 ? `${fallbackTitle} | Mugnee Cambodia` : normalized;
+  return trimMetaText(enriched, 58);
+}
+
+function normalizeMetaDescription(text: string, fallbackText: string) {
+  const base = normalizeWhitespace(text || fallbackText);
+  const enriched =
+    base.length < 90
+      ? `${base} មានសេវាប្រឹក្សាតម្លៃ ការដំឡើង និងការគាំទ្រក្នុងស្រុកពី Mugnee Cambodia។`
+      : base;
+  return trimMetaText(enriched, 158);
+}
+
+function buildKhmerProductDescription(slug: string) {
+  const product = getProductBySlug(slug);
+  if (!product) return "";
+
+  const categoryName = hasKhmer(getCategoryById(product.primaryCategoryId)?.labelKm)
+    ? getCategoryById(product.primaryCategoryId)?.labelKm
+    : product.titleKm || product.titleEn;
+  const applications = (product.applicationsKm || []).slice(0, 2).join(" និង ");
+  const features = (product.featuresKm || []).slice(0, 2).join(" និង ");
+
+  return [
+    `ព័ត៌មានអំពី ${product.titleKm || product.titleEn} នៅកម្ពុជា ពី Mugnee Cambodia។`,
+    categoryName ? `សមស្របសម្រាប់ប្រភេទ ${categoryName}។` : "",
+    features ? `ចំណុចសំខាន់រួមមាន ${features}។` : "",
+    applications ? `អាចប្រើបានសម្រាប់ ${applications}។` : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
 export function generateStaticParams() {
   return getAllProducts()
     .filter((product) => Boolean(product.slug))
@@ -39,12 +95,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     : defaultImageUrl;
   const override = getCatalogMetaOverride(product.slug, "km");
   const productName = hasKhmer(product.titleKm) ? product.titleKm : product.titleEn;
+  const categoryLabelKm = getCategoryById(product.primaryCategoryId)?.labelKm;
+  const fallbackTitle = hasKhmer(categoryLabelKm)
+    ? `${productName} ${categoryLabelKm} នៅកម្ពុជា`
+    : `${productName} នៅកម្ពុជា`;
   const seoTitleRaw = override?.title || product.seoTitleKm || product.titleKm;
   const seoDescRaw = override?.description || product.seoDescKm;
-  const seoTitle = hasKhmer(seoTitleRaw) ? seoTitleRaw : `${productName} | Mugnee Cambodia`;
-  const seoDesc = hasKhmer(seoDescRaw)
-    ? seoDescRaw
-    : `ព័ត៌មានអំពី ${productName} នៅកម្ពុជា រួមមានលក្ខណៈបច្ចេកទេស តម្លៃប្រហាក់ប្រហែល ជម្រើសដំឡើង និងសេវាបន្ទាប់ពីលក់ពី Mugnee Cambodia។`;
+  const seoTitle = normalizeMetaTitle(
+    hasKhmer(seoTitleRaw) ? seoTitleRaw : fallbackTitle,
+    fallbackTitle,
+  );
+  const seoDesc = normalizeMetaDescription(
+    hasKhmer(seoDescRaw) && !isWeakDescription(seoDescRaw)
+      ? seoDescRaw
+      : buildKhmerProductDescription(product.slug),
+    buildKhmerProductDescription(product.slug),
+  );
 
   return {
     title: seoTitle,
@@ -111,9 +177,9 @@ export default async function ProductDetailPage({ params }: PageProps) {
   }
 
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <ProductDetailClient product={product} relatedProducts={relatedProducts.slice(0, 8)} />
-    </main>
+    </div>
   );
 }
 

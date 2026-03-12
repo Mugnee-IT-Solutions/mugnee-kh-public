@@ -419,7 +419,7 @@ export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km"
   const faqData = isKm ? faqsKm : faqs;
 
   return (
-    <main className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+    <div className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-28 top-8 h-56 w-56 rounded-full bg-cyan-300/15 blur-3xl" />
@@ -741,6 +741,6 @@ export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km"
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
