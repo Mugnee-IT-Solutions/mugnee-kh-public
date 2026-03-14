@@ -1,4 +1,4 @@
-
+﻿
 import Link from "next/link";
 import Image from "next/image";
 import { Suspense } from "react";
@@ -410,9 +410,9 @@ export default function LedDisplayClient({
   const t = (() => {
     const en = {
       breadcrumb: "LED Display",
-      h1: "LED Display Price in Cambodia - Indoor & Outdoor LED Screen",
+      h1: "LED Display in Cambodia - Indoor & Outdoor LED Screen",
       intro:
-        "Looking for a trusted LED display supplier in Cambodia and a reliable LED screen supplier in Phnom Penh? Mugnee Cambodia supports indoor LED display, outdoor LED billboard, LED video wall, and LED advertising screen projects for retail, hospitality, corporate, education, worship, and public communication use. From site survey and pixel-pitch planning to BOQ preparation, video processor setup, structure planning, installation, testing, and commissioning, we help buyers compare the right indoor and outdoor LED screen options for long-term performance in Cambodia.",
+        "Looking for LED display price in Cambodia from a trusted LED display supplier and LED screen supplier in Phnom Penh? Mugnee Cambodia provides indoor LED display, outdoor LED screen, LED billboard, LED video wall, digital signage, and LED advertising screen solutions for retail shops, hotels, showrooms, corporate offices, education campuses, churches, and public communication projects. From site survey, pixel-pitch selection, screen size planning, and BOQ preparation to receiving card and video processor setup, power and structure planning, installation, calibration, commissioning, and local after-sales support, we help buyers compare the right indoor and outdoor LED display solution for long-term performance in Cambodia.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
@@ -423,7 +423,7 @@ export default function LedDisplayClient({
 
     const km = {
       breadcrumb: "អេក្រង់ LED",
-      h1: "អេក្រង់ LED នៅកម្ពុជា | អ្នកផ្គត់ផ្គង់ Indoor និង Outdoor LED នៅភ្នំពេញ",
+      h1: "អេក្រង់ LED នៅកម្ពុជា - អេក្រង់ LED ក្នុងអគារ និងខាងក្រៅ",
       intro:
         "កំពុងស្វែងរកអ្នកផ្គត់ផ្គង់អេក្រង់ LED ដែលអាចទុកចិត្តបាននៅកម្ពុជា និងអ្នកផ្គត់ផ្គង់ LED screen នៅភ្នំពេញ មែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយសម្រាប់ indoor LED display, outdoor LED billboard, LED video wall និង LED advertising screen ជាមួយសេវាស្ទង់ទីតាំង គណនា pixel pitch រៀបចំ BOQ រៀបចំរចនាសម្ព័ន្ធ ការដំឡើង ការធ្វើតេស្ត និង commissioning ដោយវិជ្ជាជីវៈ។ យើងជួយអាជីវកម្ម ប្រៀបធៀបជម្រើសអេក្រង់ LED ក្នុងអគារ និងខាងក្រៅឱ្យសមស្របនឹងទីតាំង ការប្រើប្រាស់ និងថវិកាជាក់ស្តែង។",
       cta1: "WhatsApp ស្នើសុំតម្លៃ",
@@ -1992,7 +1992,7 @@ export default function LedDisplayClient({
                   "វិស្វករដែលមានវិញ្ញាបនបត្រ ABC",
                   "ភាពជាអ្នកនាំមុខក្នុងឧស្សាហកម្ម",
                   "ការគាំទ្រអតិថិជន 24/7",
-                  "សេវាកម្ម On-site",
+                  "សេវាកម្មនៅទីតាំង",
                 ]
             ).map((x) => (
               <span
@@ -2022,16 +2022,28 @@ export default function LedDisplayClient({
           </p>
 
           <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-            {[
-              "Phnom Penh",
-              "Siem Reap",
-              "Sihanoukville",
-              "Battambang",
-              "Kampong Cham",
-              "Kampot",
-              "Koh Kong",
-              "Banteay Meanchey",
-            ].map((x) => (
+            {(lang === "en"
+              ? [
+                  "Phnom Penh",
+                  "Siem Reap",
+                  "Sihanoukville",
+                  "Battambang",
+                  "Kampong Cham",
+                  "Kampot",
+                  "Koh Kong",
+                  "Banteay Meanchey",
+                ]
+              : [
+                  "ភ្នំពេញ",
+                  "សៀមរាប",
+                  "ព្រះសីហនុ",
+                  "បាត់ដំបង",
+                  "កំពង់ចាម",
+                  "កំពត",
+                  "កោះកុង",
+                  "បន្ទាយមានជ័យ",
+                ]
+            ).map((x) => (
               <span
                 key={x}
                 className="rounded-full border border-slate-200 bg-white px-3 py-1"
@@ -2137,7 +2149,7 @@ export default function LedDisplayClient({
                 return (
                   <Link
                     key={`${item.href}-${item.title}-${index}`}
-                    href={item.href}
+                    href={toLangHref(item.href)}
                     className="group rounded-2xl border border-slate-200 bg-white p-4 text-slate-800 no-underline shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-900 hover:bg-slate-900 hover:text-white hover:shadow-md hover:no-underline"
                   >
                     <div className="flex items-center justify-between gap-2">
@@ -2146,7 +2158,7 @@ export default function LedDisplayClient({
                       >
                         {hint?.tag ?? (lang === "en" ? "LED Resource" : "ធនធានអេក្រង់ LED")}
                       </span>
-                      <span className="text-sm text-slate-400 group-hover:text-slate-100">→</span>
+                      <span className="text-sm text-slate-400 group-hover:text-slate-100">â†’</span>
                     </div>
                     <h3 className="mt-3 text-sm font-semibold leading-snug text-slate-900 group-hover:text-white">{item.title}</h3>
                     <p className="mt-2 text-xs leading-relaxed text-slate-600 group-hover:text-slate-200">

@@ -16,9 +16,9 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
-  title: "PA System Cambodia | Design, Supply & Installation",
+  title: "PA System Cambodia | Price, Design & Installation",
   description:
-    "PA system solutions in Cambodia with amplifiers, mixers, speakers, microphones, and installation support for schools, factories, malls, and offices.",
+    "PA system Cambodia with amplifiers, speakers, paging microphones, zone planning, installation, and quotation support for schools, factories, malls, and offices.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "PA System in Cambodia",
+    title: "PA System Cambodia | Price, Design & Installation",
     description:
-      "Clear, reliable public address systems for factories, schools, malls, and offices. Complete supply, design, and installation support by Mugnee Cambodia.",
+      "Public address system solutions in Cambodia with speakers, amplifiers, paging, zone design, installation, and local support by Mugnee Cambodia.",
     url: PAGE_URL,
     type: "website",
     images: [
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PA System in Cambodia",
+    title: "PA System Cambodia | Price, Design & Installation",
     description:
-      "Clear, reliable public address systems for factories, schools, malls, and offices. Complete supply, design, and installation support by Mugnee Cambodia.",
+      "Public address system solutions in Cambodia with speakers, amplifiers, paging, installation, and quotation support.",
     images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },

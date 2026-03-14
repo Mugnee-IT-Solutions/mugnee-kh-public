@@ -1,8 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import SiteHeader from "./components/layout/Header";
 import SiteFooter from "./components/layout/Footer";
+import DeferredClientEnhancements from "./components/layout/DeferredClientEnhancements";
 import SitewideJsonLd from "./components/seo/SitewideJsonLd";
 import { SITE_URL } from "./lib/site";
 
@@ -13,8 +13,6 @@ import { SITE_URL } from "./lib/site";
   Email: ankurdatta.official@gmail.com
   Github: https://github.com/ankur-datta-official
 */
-const ClientEnhancements = dynamic(() => import("./components/layout/ClientEnhancements"));
-
 export const metadata: Metadata = {
   title: "Mugnee Cambodia",
   description: "LED Display & Smart Solutions in Cambodia",
@@ -34,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="h-screen w-full overflow-hidden">
         <SitewideJsonLd />
-        <ClientEnhancements />
+        <DeferredClientEnhancements />
         <SiteHeader />
         <main
           id="app-scroll-root"

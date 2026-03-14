@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import productGridIndex from "../../../public/data/products-grid-index.json";
 import { useLang } from "../layout/LanguageProvider";
 
 type ProductLite = {
@@ -252,28 +253,10 @@ export default function ProductGrid({
 }: ProductGridProps) {
   const { lang: contextLang } = useLang();
   const lang = forcedLang ?? contextLang;
-  const [indexData, setIndexData] = useState<ProductGridIndex | null>(null);
+  const [indexData] = useState<ProductGridIndex>(productGridIndex as ProductGridIndex);
   const [activeCategory, setActiveCategory] = useState(categoryId || "all");
   const [sortOrder, setSortOrder] = useState<"az" | "za">("az");
   const [page, setPage] = useState(1);
-
-  useEffect(() => {
-    let active = true;
-    const load = async () => {
-      try {
-        const response = await fetch("/data/products-grid-index.json", { cache: "force-cache" });
-        if (!response.ok) return;
-        const data = (await response.json()) as ProductGridIndex;
-        if (active) setIndexData(data);
-      } catch {
-        // Keep UI stable even if the index cannot be loaded.
-      }
-    };
-    load();
-    return () => {
-      active = false;
-    };
-  }, []);
 
   const effectiveCategory = useMemo(() => {
     if (activeCategory === "all") return "all";
@@ -422,7 +405,7 @@ export default function ProductGrid({
   }, [totalPages]);
 
   const showControlsRow = showCategoryFilters || showSort || Boolean(topLeftContent);
-  const isLoading = !indexData;
+  const isLoading = false;
 
   return (
     <div>

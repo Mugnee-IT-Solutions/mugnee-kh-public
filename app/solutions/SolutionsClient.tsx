@@ -396,6 +396,8 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
     lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const isKhmer = lang === "km";
   const t = isKhmer ? KM : EN;
+  const pagePath = isKhmer ? "/km/solutions/" : "/solutions/";
+  const pageUrl = `${SITE_URL}${pagePath}`;
 
   const solutionLinks = isKhmer ? solutionLinksKm : solutionLinksEn;
   const summaryBullets = isKhmer ? summaryBulletsKm : summaryBulletsEn;
@@ -409,6 +411,10 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
   const reasons = isKhmer ? reasonsKm : reasonsEn;
   const faqs = isKhmer ? faqsKm : faqsEn;
   const intentClusters = isKhmer ? intentClustersKm : intentClustersEn;
+  const areaServed = ["Phnom Penh", "Siem Reap", "Sihanoukville", "Cambodia"].map((name) => ({
+    "@type": "AdministrativeArea",
+    name,
+  }));
 
   return (
     <div className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
@@ -420,15 +426,52 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Mugnee Cambodia",
-              url: PAGE_URL,
+              url: pageUrl,
+              "@id": `${SITE_URL}/#localbusiness`,
             },
             {
               "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: t.breadcrumbHome, item: SITE_URL },
-                { "@type": "ListItem", position: 2, name: t.breadcrumb, item: PAGE_URL },
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: t.breadcrumbHome,
+                  item: isKhmer ? `${SITE_URL}/km/` : `${SITE_URL}/`,
+                },
+                { "@type": "ListItem", position: 2, name: t.breadcrumb, item: pageUrl },
               ],
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "@id": `${pageUrl}#service`,
+              name: isKhmer
+                ? "ដំណោះស្រាយអាជីវកម្ម LED Signage និង Access Control នៅកម្ពុជា"
+                : "Cambodia LED, Signage & Access Control Solutions",
+              serviceType: isKhmer
+                ? "សេវាប្រឹក្សា រៀបចំ BOQ ផ្គត់ផ្គង់ ដំឡើង និងបញ្ចូលប្រព័ន្ធ"
+                : "Consulting, BOQ planning, supply, installation, and system integration",
+              description: t.heroDesc,
+              provider: { "@id": `${SITE_URL}/#organization` },
+              areaServed,
+              url: pageUrl,
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: isKhmer ? "ប្រភេទដំណោះស្រាយ" : "Solution Categories",
+                itemListElement: solutionLinks
+                  .filter((item) => typeof item.href === "string" && item.href.length > 0)
+                  .slice(0, 8)
+                  .map((item) => ({
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: item.title,
+                      description: item.desc,
+                      url: `${SITE_URL}${toLangHref(item.href)}`,
+                    },
+                  })),
+              },
             },
             {
               "@context": "https://schema.org",

@@ -36,4 +36,6 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default HomePage;
+export default function KmHomePage() {
+  return <HomePage />;
+}

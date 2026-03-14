@@ -17,9 +17,9 @@ export default function TurnstileGateClient() {
     const en = {
       breadcrumb: "" ,
       badge: "Cambodia - Turnstile Gate - Access Control",
-      h1: "Turnstile Gate Solutions in Cambodia by Mugnee",
+      h1: "Turnstile Gate in Cambodia",
       sub:
-        "Mugnee Cambodia provides professional turnstile gate and access control solutions in Cambodia for offices, factories, schools, transport hubs, and public venues. We supply tripod turnstile gates, flap barriers, speed gates, and full-height turnstiles with RFID card, QR code, and biometric integration, including on-site installation, commissioning, and local after-sales support.",
+        "Looking for turnstile gate price in Cambodia from a trusted access control supplier? Mugnee Cambodia provides turnstile gate, access gate, speed gate, flap barrier, tripod turnstile, and full-height turnstile solutions for offices, factories, schools, transport hubs, stadiums, and public venues. We support RFID card, QR code, fingerprint, face recognition, ticketing, and attendance integration, with lane planning, controller setup, safety logic, on-site installation, commissioning, and local after-sales support in Cambodia.",
       cta1: "Get a Free Quotation",
       cta2: "View Turnstile Products",
 
@@ -160,9 +160,9 @@ export default function TurnstileGateClient() {
     const km = {
       breadcrumb: "" ,
       badge: "កម្ពុជា - ច្រកទ្វារ Turnstile - គ្រប់គ្រងការចូលចេញ",
-      h1: "ដំណោះស្រាយច្រកទ្វារ Turnstile នៅកម្ពុជា ដោយ Mugnee",
+      h1: "ច្រកទ្វារ Turnstile នៅកម្ពុជា",
       sub:
-        "Mugnee Cambodia ផ្តល់ប្រព័ន្ធច្រកទ្វារ turnstile ដោយវិជ្ជាជីវៈ សម្រាប់គ្រប់គ្រងការចូលចេញឱ្យមានសុវត្ថិភាព នៅការិយាល័យ រោងចក្រ សាលារៀន មជ្ឈមណ្ឌលដឹកជញ្ជូន និងទីតាំងសាធារណៈ។ យើងផ្គត់ផ្គង់ flap barrier, tripod turnstile, speed gate និង full-height turnstile ដែលអាចរួមបញ្ចូល RFID, QR និង biometric ព្រមទាំងសេវាដំឡើង commissioning និង after-sales support ក្នុងស្រុក។",
+        "កំពុងស្វែងរកតម្លៃ Turnstile Gate នៅកម្ពុជា ពីអ្នកផ្គត់ផ្គង់ access control ដែលអាចទុកចិត្តបានមែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយ turnstile gate, access gate, speed gate, flap barrier, tripod turnstile និង full-height turnstile សម្រាប់ការិយាល័យ រោងចក្រ សាលារៀន មជ្ឈមណ្ឌលដឹកជញ្ជូន កីឡដ្ឋាន និងទីតាំងសាធារណៈ។ យើងគាំទ្រការរួមបញ្ចូល RFID card, QR code, fingerprint, face recognition, ticketing និង attendance system ជាមួយការរៀបចំ lane, controller setup, safety logic, ការដំឡើងនៅទីតាំង, commissioning និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុកនៅកម្ពុជា។",
       cta1: "ស្នើសុំតម្លៃឥតគិតថ្លៃ",
       cta2: "មើលផលិតផល Turnstile",
 

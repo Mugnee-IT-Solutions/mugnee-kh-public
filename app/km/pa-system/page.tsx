@@ -7,9 +7,9 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
-  title: "PA System នៅកម្ពុជា | រចនា តម្លៃ និងដំឡើង",
+  title: "តម្លៃ PA System នៅកម្ពុជា | រចនា និងដំឡើង",
   description:
-    "Mugnee Cambodia ផ្តល់ PA System សម្រាប់សាលារៀន អគារការិយាល័យ ហាង និងរោងចក្រ នៅកម្ពុជា ជាមួយការរចនា BOQ ផ្គត់ផ្គង់ ដំឡើង និងថែទាំប្រព័ន្ធ។",
+    "PA System នៅកម្ពុជា សម្រាប់សាលារៀន ការិយាល័យ ហាង និងរោងចក្រ ជាមួយការរៀបចំ BOQ រចនា ដំឡើង និងសម្រង់តម្លៃគម្រោង។",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "PA System នៅកម្ពុជា | រចនា តម្លៃ និងដំឡើង",
+    title: "តម្លៃ PA System នៅកម្ពុជា | រចនា និងដំឡើង",
     description:
-      "PA System សម្រាប់សាលារៀន អគារ ហាង និងរោងចក្រ នៅកម្ពុជា ជាមួយការរចនា BOQ ផ្គត់ផ្គង់ និងដំឡើង។",
+      "ដំណោះស្រាយ PA System នៅកម្ពុជា ជាមួយ speaker amplifier paging BOQ ការរចនា និងការដំឡើងក្នុងស្រុក។",
     url: PAGE_URL,
     type: "website",
     siteName: "Mugnee Cambodia",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PA System នៅកម្ពុជា | Mugnee Cambodia",
-    description: "រចនា ផ្គត់ផ្គង់ និងដំឡើងប្រព័ន្ធ PA System នៅកម្ពុជា។",
+    title: "តម្លៃ PA System នៅកម្ពុជា | Mugnee Cambodia",
+    description: "PA System នៅកម្ពុជា ជាមួយ BOQ ការរចនា ដំឡើង និងសម្រង់តម្លៃគម្រោង។",
     images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },

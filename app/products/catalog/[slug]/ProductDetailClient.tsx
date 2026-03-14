@@ -107,10 +107,16 @@ function localizedKhmerStrict(valueKm: string, fallbackEn: string) {
 type ProductDetailClientProps = {
   product: Product;
   relatedProducts: Product[];
+  forcedLang?: "en" | "km";
 };
 
-export default function ProductDetailClient({ product, relatedProducts }: ProductDetailClientProps) {
-  const { lang } = useLang();
+export default function ProductDetailClient({
+  product,
+  relatedProducts,
+  forcedLang,
+}: ProductDetailClientProps) {
+  const { lang: contextLang } = useLang();
+  const lang = forcedLang ?? contextLang;
   const toLangHref = (href: string) =>
     lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
   const ui =

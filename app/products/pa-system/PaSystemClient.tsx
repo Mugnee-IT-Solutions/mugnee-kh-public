@@ -16,9 +16,9 @@ export default function PaSystemClient() {
     const en = {
       breadcrumb: "" ,
       badge: "Cambodia - PA System - Public Address",
-      h1: "Commercial PA System Solutions in Cambodia by Mugnee",
+      h1: "PA System in Cambodia",
       sub:
-        "Mugnee Cambodia provides professional PA system and public address system solutions in Cambodia for factories, schools, hospitals, malls, hotels, offices, and public venues. We supply PA speakers, amplifiers, paging microphones, mixers, and accessories with zone planning, cabling, installation, commissioning, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
+        "Looking for PA system price in Cambodia from a trusted public address system supplier? Mugnee Cambodia provides commercial PA system, paging system, background music system, and voice evacuation ready audio solutions for factories, schools, hospitals, malls, hotels, offices, warehouses, and public venues. We supply PA speakers, ceiling speakers, horn speakers, amplifiers, mixer amplifiers, paging microphones, zone controllers, and accessories with zone planning, coverage design, cabling, rack setup, installation, tuning, commissioning, and local after-sales support in Phnom Penh, Siem Reap, and Sihanoukville.",
       cta1: "Get a Free Quotation",
       cta2: "View PA System Products",
       serving: "Serving: Phnom Penh - Siem Reap - Sihanoukville",
@@ -143,9 +143,9 @@ export default function PaSystemClient() {
     const km = {
       breadcrumb: "" ,
       badge: "កម្ពុជា - ប្រព័ន្ធ PA - សំឡេងសាធារណៈ",
-      h1: "ដំណោះស្រាយប្រព័ន្ធ PA របស់ Mugnee នៅកម្ពុជា",
+      h1: "ប្រព័ន្ធ PA នៅកម្ពុជា",
       sub:
-        "Mugnee Cambodia ផ្តល់ដំណោះស្រាយប្រព័ន្ធផ្សាយសំឡេងសាធារណៈ (PA) ដោយវិជ្ជាជីវៈ សមស្របសម្រាប់រោងចក្រ សាលារៀន មន្ទីរពេទ្យ ផ្សារ សណ្ឋាគារ ការិយាល័យ និងទីតាំងសាធារណៈនៅកម្ពុជា។ យើងរចនា និងផ្គត់ផ្គង់ mixer, power amplifier, paging microphone, speaker ក្នុង/ក្រៅអគារ និងគ្រឿងបន្លាស់ ព្រមទាំងការធ្វើផែនការ zone, ដាក់ខ្សែ, ដំឡើង, commissioning និង after-sales support នៅភ្នំពេញ សៀមរាប និងព្រះសីហនុ។",
+        "កំពុងស្វែងរកតម្លៃ PA System នៅកម្ពុជា ពីអ្នកផ្គត់ផ្គង់ public address system ដែលអាចទុកចិត្តបានមែនទេ? Mugnee Cambodia ផ្តល់ដំណោះស្រាយ commercial PA system, paging system, background music system និងប្រព័ន្ធសំឡេងសម្រាប់សារជូនដំណឹងបន្ទាន់ សម្រាប់រោងចក្រ សាលារៀន មន្ទីរពេទ្យ ផ្សារ សណ្ឋាគារ ការិយាល័យ ឃ្លាំង និងទីតាំងសាធារណៈ។ យើងផ្គត់ផ្គង់ PA speakers, ceiling speakers, horn speakers, amplifiers, mixer amplifiers, paging microphones, zone controllers និងគ្រឿងបន្លាស់ ជាមួយការរៀបចំ zone, គណនាតំបន់គ្របដណ្តប់សំឡេង, ដាក់ខ្សែ, rack setup, ដំឡើង, tuning, commissioning និងសេវាកម្មបន្ទាប់ពីលក់ក្នុងស្រុកនៅភ្នំពេញ សៀមរាប និងព្រះសីហនុ។",
       cta1: "ស្នើសុំតម្លៃឥតគិតថ្លៃ",
       cta2: "មើលផលិតផលប្រព័ន្ធ PA",
       serving: "សេវាកម្ម៖ ភ្នំពេញ - សៀមរាប - ព្រះសីហនុ",
@@ -874,8 +874,6 @@ function StepCard({ n, title, desc }: { n: string; title: string; desc: string }
     </div>
   );
 }
-
-
 
 
 

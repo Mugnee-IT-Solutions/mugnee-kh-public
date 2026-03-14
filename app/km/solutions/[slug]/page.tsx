@@ -88,5 +88,5 @@ export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const solution = INDUSTRY_SOLUTIONS_BY_SLUG[slug];
   if (!solution) notFound();
-  return <IndustrySolutionPage solution={solution} />;
+  return <IndustrySolutionPage solution={solution} forcedLang="km" />;
 }

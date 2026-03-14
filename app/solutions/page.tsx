@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <SolutionsClient />;
+  return <SolutionsClient forcedLang="en" />;
 }
 
 

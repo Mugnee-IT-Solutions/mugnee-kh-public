@@ -24,6 +24,16 @@ export default function ProjectsClient({ lang = "en" }: { lang?: "en" | "km" }) 
             ? "This archive will include project type, application environment, installation scope, and support details so buyers can evaluate real references before requesting a quotation."
             : "បណ្ណសារនេះនឹងបង្ហាញប្រភេទគម្រោង បរិយាកាសប្រើប្រាស់ វិសាលភាពដំឡើង និងព័ត៌មានសេវាកម្មបន្ទាប់ពីលក់ ដើម្បីជួយអតិថិជនវាយតម្លៃគម្រោងយោងមុនពេលស្នើសុំតម្លៃ។"}
         </p>
+        <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-700">
+          {lang === "en"
+            ? "Planned case studies will cover project objectives, installation workflow, system size, location context, and after-sales support so business buyers can compare real deployment scenarios."
+            : "ករណីសិក្សាដែលនឹងបន្ថែមបន្តទៀត នឹងរួមមានគោលបំណងគម្រោង លំហូរការងារដំឡើង ទំហំប្រព័ន្ធ បរិបទទីតាំង និងការគាំទ្របន្ទាប់ពីលក់ ដើម្បីជួយអតិថិជនអាជីវកម្មប្រៀបធៀបការដំឡើងជាក់ស្តែងបានច្បាស់។"}
+        </p>
+        <p className="mt-2 max-w-3xl text-sm leading-7 text-slate-700">
+          {lang === "en"
+            ? "If you need project references right now, our team can share relevant examples by industry, city, and solution type including LED display, smart board, PA, and access control deployments in Cambodia."
+            : "ប្រសិនបើអ្នកត្រូវការគម្រោងយោងភ្លាមៗ ក្រុមការងាររបស់យើងអាចផ្តល់ឧទាហរណ៍ដែលពាក់ព័ន្ធតាមវិស័យ ទីក្រុង និងប្រភេទដំណោះស្រាយ រួមមានអេក្រង់ LED ស្មាតបូដ ប្រព័ន្ធ PA និង Access Control នៅកម្ពុជា។"}
+        </p>
       </section>
     </div>
   );

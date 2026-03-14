@@ -217,8 +217,6 @@ export default function HomeClient({
   const [isHeroPaused, setIsHeroPaused] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
   const totalSlides = HERO_SLIDES.length;
-  const prevSlide = (activeSlide - 1 + totalSlides) % totalSlides;
-  const nextSlide = (activeSlide + 1) % totalSlides;
 
   const goToPrevSlide = () => {
     setActiveSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
@@ -346,7 +344,7 @@ export default function HomeClient({
         ].join(" ")}
         aria-hidden={idx !== activeSlide}
       >
-        {idx === activeSlide || idx === prevSlide || idx === nextSlide ? (
+        {idx === activeSlide ? (
           <Image
             src={slide.src}
             alt={slide.alt}

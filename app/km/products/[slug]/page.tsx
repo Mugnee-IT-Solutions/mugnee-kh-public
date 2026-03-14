@@ -6,6 +6,7 @@ import {
   getCategoryById,
   getProductBySlug,
 } from "../../../data/products";
+import type { Product } from "../../../data/products";
 import { SITE_URL } from "../../../lib/site";
 import { getCatalogMetaOverride } from "../../../lib/seoCtrOverrides";
 
@@ -73,6 +74,27 @@ function buildKhmerProductDescription(slug: string) {
   ]
     .filter(Boolean)
     .join(" ");
+}
+
+function buildKhmerClientProduct(product: Product): Product {
+  return {
+    ...product,
+    titleEn: hasKhmer(product.titleKm) ? product.titleKm : product.titleEn,
+    shortDescEn: hasKhmer(product.shortDescKm) ? product.shortDescKm : product.shortDescEn,
+    descriptionEn: hasKhmer(product.descriptionKm) ? product.descriptionKm : product.descriptionEn,
+    tagsEn: product.tagsKm.map((item, i) => (hasKhmer(item) ? item : product.tagsEn[i] || item)),
+    featuresEn: product.featuresKm.map((item, i) =>
+      hasKhmer(item) ? item : product.featuresEn[i] || item,
+    ),
+    applicationsEn: product.applicationsKm.map((item, i) =>
+      hasKhmer(item) ? item : product.applicationsEn[i] || item,
+    ),
+    specs: product.specs.map((spec) => ({
+      ...spec,
+      labelEn: hasKhmer(spec.labelKm) ? spec.labelKm : spec.labelEn,
+      valueEn: hasKhmer(spec.valueKm) ? spec.valueKm : spec.valueEn,
+    })),
+  };
 }
 
 export function generateStaticParams() {
@@ -176,9 +198,18 @@ export default async function ProductDetailPage({ params }: PageProps) {
     relatedProducts = merged;
   }
 
+  const localizedProduct = buildKhmerClientProduct(product);
+  const localizedRelatedProducts = relatedProducts
+    .slice(0, 8)
+    .map((item) => buildKhmerClientProduct(item));
+
   return (
     <div className="bg-white">
-      <ProductDetailClient product={product} relatedProducts={relatedProducts.slice(0, 8)} />
+      <ProductDetailClient
+        product={localizedProduct}
+        relatedProducts={localizedRelatedProducts}
+        forcedLang="km"
+      />
     </div>
   );
 }

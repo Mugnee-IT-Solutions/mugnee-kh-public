@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
+
 const pillars = [
   {
     title: "Site Survey, Audit, and Service Planning",
@@ -417,9 +420,63 @@ export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km"
   const outcomesData = isKm ? outcomesKm : outcomes;
   const checklistData = isKm ? checklistKm : checklist;
   const faqData = isKm ? faqsKm : faqs;
+  const pagePath = isKm ? "/km/service/" : "/service/";
+  const pageUrl = `${SITE_URL}${pagePath}`;
+  const areaServed = ["Phnom Penh", "Siem Reap", "Sihanoukville", "Cambodia"].map((name) => ({
+    "@type": "AdministrativeArea",
+    name,
+  }));
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: isKm ? "ទំព័រដើម" : "Home",
+          item: isKm ? `${SITE_URL}/km/` : `${SITE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: isKm ? "សេវា" : "Service",
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      name: isKm
+        ? "សេវាដំឡើង AMC ថែទាំ និងគាំទ្របច្ចេកទេសនៅកម្ពុជា"
+        : "Cambodia Installation, AMC, Repair & Support Service",
+      serviceType: isKm
+        ? "សេវាដំឡើង ថែទាំ AMC ជួសជុល និងគាំទ្របច្ចេកទេស"
+        : "Installation, AMC, maintenance, repair, and technical support",
+      description: t.heroDesc,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed,
+      url: pageUrl,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqData.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    },
+  ];
 
   return (
     <div className="bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <section className="relative overflow-hidden border-b border-slate-200 bg-slate-50">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute -left-28 top-8 h-56 w-56 rounded-full bg-cyan-300/15 blur-3xl" />

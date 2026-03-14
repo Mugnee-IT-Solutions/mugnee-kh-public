@@ -16,9 +16,9 @@ const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
-  title: "Turnstile Gate Cambodia | Supply & Installation",
+  title: "Turnstile Gate Cambodia | Price & Installation",
   description:
-    "Turnstile gate solutions in Cambodia for offices, factories, schools, and venues with flap, tripod, speed, and biometric-ready options.",
+    "Turnstile gate Cambodia with speed gate, flap barrier, tripod turnstile, RFID, biometric integration, installation, and quotation support.",
   alternates: {
     canonical: PAGE_URL,
     languages: {
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Turnstile Gate in Cambodia",
+    title: "Turnstile Gate Cambodia | Price & Installation",
     description:
-      "Secure entry control with flap, tripod, speed, and full-height turnstiles. Integration with access control and attendance systems.",
+      "Turnstile gate and access control solutions in Cambodia with speed gate, flap barrier, RFID, biometric integration, and local installation.",
     url: PAGE_URL,
     type: "website",
     images: [
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Turnstile Gate in Cambodia",
+    title: "Turnstile Gate Cambodia | Price & Installation",
     description:
-      "Secure entry control with flap, tripod, speed, and full-height turnstiles. Integration with access control and attendance systems.",
+      "Turnstile gate solutions in Cambodia with RFID, biometric integration, installation, and quotation support.",
     images: [OG_IMAGE],
   },
   robots: { index: true, follow: true },

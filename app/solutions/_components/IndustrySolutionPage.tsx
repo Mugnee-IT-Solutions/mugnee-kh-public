@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import { SITE_URL } from "../../lib/site";
@@ -7,15 +5,14 @@ import {
   INDUSTRY_SOLUTIONS,
   type IndustrySolution,
 } from "../_data/industrySolutions";
-import { useLang } from "../../components/layout/LanguageProvider";
 
 type Props = {
   solution: IndustrySolution;
+  forcedLang?: "en" | "km";
 };
 
-export default function IndustrySolutionPage({ solution }: Props) {
-  const { lang } = useLang();
-  const isKm = lang === "km";
+export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Props) {
+  const isKm = forcedLang === "km";
   const toLangHref = (href: string) =>
     isKm && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
 

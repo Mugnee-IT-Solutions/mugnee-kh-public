@@ -7,14 +7,16 @@ const OG_IMAGE = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export const metadata: Metadata = {
   title: "404 Page Not Found | Mugnee Cambodia",
-  description: "The page you are looking for could not be found on Mugnee Cambodia.",
+  description:
+    "The page you are looking for could not be found on Mugnee Cambodia. Return to the homepage to explore products, solutions, and support information.",
   robots: { index: false, follow: false },
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "404 Page Not Found | Mugnee Cambodia",
-    description: "The requested page could not be found on Mugnee Cambodia.",
+    description:
+      "The requested page could not be found on Mugnee Cambodia. Return to the homepage to browse products, solutions, and support information.",
     url: PAGE_URL,
     type: "website",
     siteName: "Mugnee Cambodia",
@@ -23,7 +25,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "404 Page Not Found | Mugnee Cambodia",
-    description: "The requested page could not be found on Mugnee Cambodia.",
+    description:
+      "The requested page could not be found on Mugnee Cambodia. Return to the homepage to browse products, solutions, and support information.",
     images: [OG_IMAGE],
   },
 };

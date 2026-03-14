@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ServiceClient />;
+  return <ServiceClient forcedLang="en" />;
 }
 
 
