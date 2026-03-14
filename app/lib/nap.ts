@@ -19,4 +19,3 @@ export const BUSINESS_SAME_AS = [
   "https://www.instagram.com/sm.mugnee/",
   "https://t.me/mugneemultiple",
 ] as const;
-

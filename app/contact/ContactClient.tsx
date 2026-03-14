@@ -35,7 +35,7 @@ const offices = [
 
 const contacts = [
   { label: "Sales", value: "+85581580802" },
-  { label: "Support", value: "+85581580802" },
+  { label: "Support", value: "+85510927445" },
   { label: "Email", value: "info.mugnee@gmail.com" },
 ];
 
@@ -62,7 +62,7 @@ const officesKm = [
 
 const contactsKm = [
   { label: "ផ្នែកលក់", value: "+85581580802" },
-  { label: "ផ្នែកគាំទ្រ", value: "+85581580802" },
+  { label: "ផ្នែកគាំទ្រ", value: "+85510927445" },
   { label: "អ៊ីមែល", value: "info.mugnee@gmail.com" },
 ];
 
@@ -367,7 +367,11 @@ export default function ContactClient({ lang = "en" }: ContactClientProps = {}) 
                   1st Floor, 11E0, Street 108, Night Market Area, Doun Penh, Phnom Penh,
                   Cambodia
                 </p>
-                <p className="mt-2">{isKm ? `${uiKm.phoneLabel}: +85581580802` : "Phone: +85581580802"}</p>
+                <p className="mt-2">
+                  {isKm
+                    ? `${uiKm.phoneLabel}: +85581580802 / +85510927445`
+                    : "Phone: +85581580802 / +85510927445"}
+                </p>
                 <p className="mt-2">
                   {isKm ? `${uiKm.hoursLabel}: ${uiKm.hoursValue}` : "Hours: Mon-Sat, 8:30am-6:00pm"}
                 </p>
