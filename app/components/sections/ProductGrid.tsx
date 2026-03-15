@@ -229,9 +229,10 @@ function getCategoryLabel(
 
 function toLocalizedHref(href: string, lang: "en" | "km") {
   if (!href.startsWith("/")) return href;
-  if (lang === "km" && !href.startsWith("/km/")) return `/km${href}`;
-  if (lang === "en" && href.startsWith("/km/")) return href.slice(3);
-  return href;
+  const normalized = href === "/" ? href : href.endsWith("/") ? href : `${href}/`;
+  if (lang === "km" && !normalized.startsWith("/km/")) return `/km${normalized}`;
+  if (lang === "en" && normalized.startsWith("/km/")) return normalized.slice(3);
+  return normalized;
 }
 
 export default function ProductGrid({

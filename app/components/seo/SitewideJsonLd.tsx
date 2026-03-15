@@ -1,6 +1,7 @@
 import JsonLd from "./JsonLd";
 import {
   BUSINESS_ADDRESS,
+  BUSINESS_EMAIL,
   BUSINESS_NAME,
   BUSINESS_PHONE_E164,
   BUSINESS_SAME_AS,
@@ -18,6 +19,7 @@ export default function SitewideJsonLd() {
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
     image: `${SITE_URL}/images/logo.png`,
+    email: BUSINESS_EMAIL,
     telephone: BUSINESS_PHONE_E164,
     sameAs: BUSINESS_SAME_AS,
     areaServed: {
@@ -34,6 +36,7 @@ export default function SitewideJsonLd() {
       {
         "@type": "ContactPoint",
         contactType: "sales",
+        email: BUSINESS_EMAIL,
         telephone: BUSINESS_PHONE_E164,
         availableLanguage: ["English", "Khmer"],
       },
@@ -47,6 +50,7 @@ export default function SitewideJsonLd() {
     name: BUSINESS_NAME,
     url: SITE_URL,
     image: `${SITE_URL}/images/logo.png`,
+    email: BUSINESS_EMAIL,
     telephone: BUSINESS_PHONE_E164,
     sameAs: BUSINESS_SAME_AS,
     areaServed: {

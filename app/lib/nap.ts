@@ -1,7 +1,7 @@
 export const BUSINESS_NAME = "Mugnee Cambodia";
 export const BUSINESS_PHONE_E164 = "+85581580802";
 export const BUSINESS_PHONE_DISPLAY = "+85581580802";
-export const BUSINESS_EMAIL = "info.mugnee@gmail.com";
+export const BUSINESS_EMAIL = "info@mugneekh.com";
 
 export const BUSINESS_ADDRESS = {
   streetAddress: "1st Floor, 11E0, Street 108, Night Market Area, Doun Penh",

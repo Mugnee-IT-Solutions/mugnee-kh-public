@@ -392,8 +392,16 @@ const faqsKm = [
 
 export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
   const lang = forcedLang ?? "en";
-  const toLangHref = (href: string) =>
-    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
+  const normalizeInternalHref = (href: string) => {
+    if (!href || href === "/" || !href.startsWith("/")) return href;
+    return href.endsWith("/") ? href : `${href}/`;
+  };
+  const toLangHref = (href: string) => {
+    const normalized = normalizeInternalHref(href);
+    return lang === "km" && normalized.startsWith("/") && !normalized.startsWith("/km/")
+      ? `/km${normalized}`
+      : normalized;
+  };
   const isKhmer = lang === "km";
   const t = isKhmer ? KM : EN;
   const pagePath = isKhmer ? "/km/solutions/" : "/solutions/";

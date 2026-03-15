@@ -128,7 +128,7 @@ export default function OutdoorLedDisplayPage() {
   const outdoorCluster = [
     { title: "Parent LED Display Page", href: "/led-display" },
     { title: "Indoor LED Display in Cambodia", href: "/led-display/indoor-led-display" },
-    { title: "Outdoor LED Product Catalog", href: "/products/outdoor-led-display" },
+    { title: "Outdoor LED Product Catalog", href: "/led-display/outdoor-led-display" },
     { title: "LED Video Processor Guide", href: "/led-display/video-processor" },
     { title: "Installation and Service Support", href: "/service" },
     { title: "Cambodia Industry Solutions", href: "/solutions" },
@@ -138,7 +138,7 @@ export default function OutdoorLedDisplayPage() {
   const outdoorClusterKm = [
     { title: "ទំព័រមេអេក្រង់ LED", href: "/led-display" },
     { title: "អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា", href: "/led-display/indoor-led-display" },
-    { title: "កាតាឡុកផលិតផល LED ខាងក្រៅ", href: "/products/outdoor-led-display" },
+    { title: "កាតាឡុកផលិតផល LED ខាងក្រៅ", href: "/led-display/outdoor-led-display" },
     { title: "មគ្គុទ្ទេសក៍ Video Processor សម្រាប់ LED", href: "/led-display/video-processor" },
     { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស", href: "/service" },
     { title: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា", href: "/solutions" },

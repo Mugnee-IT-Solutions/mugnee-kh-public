@@ -354,8 +354,16 @@ const faqsKm = [
 
 export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km" }) {
   const lang = forcedLang ?? "en";
-  const toLangHref = (href: string) =>
-    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
+  const normalizeInternalHref = (href: string) => {
+    if (!href || href === "/" || !href.startsWith("/")) return href;
+    return href.endsWith("/") ? href : `${href}/`;
+  };
+  const toLangHref = (href: string) => {
+    const normalized = normalizeInternalHref(href);
+    return lang === "km" && normalized.startsWith("/") && !normalized.startsWith("/km/")
+      ? `/km${normalized}`
+      : normalized;
+  };
   const isKm = lang === "km";
   const t = isKm
     ? uiKm

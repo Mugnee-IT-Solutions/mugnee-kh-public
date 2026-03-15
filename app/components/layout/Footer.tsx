@@ -19,7 +19,11 @@ const FOOTER_SOCIAL_LINKS: Array<{
   { label: "X (Twitter)", platform: "x", href: "https://x.com/mugneeml" },
   { label: "Instagram", platform: "instagram", href: "https://www.instagram.com/sm.mugnee/" },
   { label: "Telegram", platform: "telegram", href: "https://t.me/mugneemultiple" },
-  { label: "WhatsApp", platform: "whatsapp", href: "https://wa.me/85581580802" },
+  {
+    label: "WhatsApp",
+    platform: "whatsapp",
+    href: "https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0",
+  },
 ];
 
 function FooterSocialIcon({ platform }: { platform: FooterSocialPlatform }) {
@@ -80,12 +84,17 @@ export default function SiteFooter() {
     return value;
   };
 
+  const normalizeInternalHref = (href: string) => {
+    if (!href || href === "/") return href;
+    return href.endsWith("/") ? href : `${href}/`;
+  };
+
   const toLangHref = (href: string) => {
     if (!href || href.startsWith("http://") || href.startsWith("https://") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("#")) {
       return href;
     }
 
-    const normalized = stripLangPrefix(href);
+    const normalized = normalizeInternalHref(stripLangPrefix(href));
     return lang === "km" ? (normalized === "/" ? "/km/" : `/km${normalized}`) : normalized;
   };
   return (

@@ -379,8 +379,16 @@ export default function LedDisplayClient({
   breadcrumbOverrideKm?: string;
 }) {
   const lang = forcedLang ?? (schemaPathOverride?.startsWith("/km") ? "km" : "en");
-  const toLangHref = (href: string) =>
-    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
+  const normalizeInternalHref = (href: string) => {
+    if (!href || href === "/" || !href.startsWith("/")) return href;
+    return href.endsWith("/") ? href : `${href}/`;
+  };
+  const toLangHref = (href: string) => {
+    const normalized = normalizeInternalHref(href);
+    return lang === "km" && normalized.startsWith("/") && !normalized.startsWith("/km/")
+      ? `/km${normalized}`
+      : normalized;
+  };
   const faqItems =
     (lang === "en" ? faqItemsOverride : (faqItemsOverrideKm ?? faqItemsOverride)) ??
     (lang === "en" ? LED_FAQS_EN : LED_FAQS_KM);
@@ -401,7 +409,7 @@ export default function LedDisplayClient({
   const trustSignalTitles =
     lang === "en" ? TRUST_SIGNAL_TITLES_EN : TRUST_SIGNAL_TITLES_KM;
   const schemaPath =
-    schemaPathOverride ?? (lang === "km" ? "/km/led-display" : "/led-display");
+    schemaPathOverride ?? (lang === "km" ? "/km/led-display/" : "/led-display/");
   const schemaName = schemaNameOverride ?? "LED Display";
   const schemaServiceName = schemaServiceNameOverride ?? "LED Display in Cambodia";
   const schemaServiceDesc =
@@ -668,7 +676,7 @@ export default function LedDisplayClient({
 
           <div className="mt-5 flex flex-wrap gap-2.5">
             <a
-              href="https://wa.me/85581580802"
+              href="https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener"
               className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
@@ -1911,7 +1919,7 @@ export default function LedDisplayClient({
               {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
             </a>
             <a
-              href="https://wa.me/85581580802"
+              href="https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0"
               target="_blank"
               rel="noopener"
               className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"

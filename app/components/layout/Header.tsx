@@ -192,6 +192,11 @@ export default function SiteHeader() {
     return value;
   };
 
+  const normalizeInternalHref = (href: string) => {
+    if (!href || href === "/") return href;
+    return href.endsWith("/") ? href : `${href}/`;
+  };
+
   const toLangHref = (href: string) => {
     if (!href) return href;
     if (
@@ -203,7 +208,7 @@ export default function SiteHeader() {
     ) {
       return href;
     }
-    const normalized = stripLangPrefix(href);
+    const normalized = normalizeInternalHref(stripLangPrefix(href));
     if (lang === "km") return normalized === "/" ? "/km/" : `/km${normalized}`;
     return normalized;
   };
@@ -423,7 +428,7 @@ export default function SiteHeader() {
     if (!query) return;
     const params = new URLSearchParams();
     params.set("search", query);
-    window.location.href = `${toLangHref("/products")}?${params.toString()}`;
+    window.location.href = `${toLangHref("/products/")}?${params.toString()}`;
   };
 
   const onSearchItemClick = (slug: string) => {

@@ -127,7 +127,7 @@ export default function IndoorLedDisplayPage() {
   const indoorCluster = [
     { title: "Parent LED Display Page", href: "/led-display" },
     { title: "Outdoor LED Display in Cambodia", href: "/led-display/outdoor-led-display" },
-    { title: "Indoor LED Product Catalog", href: "/products/indoor-led-display" },
+    { title: "Indoor LED Product Catalog", href: "/led-display/indoor-led-display" },
     { title: "Pixel Pitch Buying Guide", href: "/led-display" },
     { title: "Installation & Service Support", href: "/service" },
     { title: "Cambodia Industry Solutions", href: "/solutions" },
@@ -137,7 +137,7 @@ export default function IndoorLedDisplayPage() {
   const indoorClusterKm = [
     { title: "ទំព័រមេអេក្រង់ LED", href: "/led-display" },
     { title: "អេក្រង់ LED ខាងក្រៅនៅកម្ពុជា", href: "/led-display/outdoor-led-display" },
-    { title: "កាតាឡុកផលិតផល LED ក្នុងអគារ", href: "/products/indoor-led-display" },
+    { title: "កាតាឡុកផលិតផល LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
     { title: "មគ្គុទ្ទេសក៍ទិញ Pixel Pitch", href: "/led-display" },
     { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស", href: "/service" },
     { title: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា", href: "/solutions" },

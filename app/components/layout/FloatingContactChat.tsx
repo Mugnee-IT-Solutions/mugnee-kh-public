@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const CONTACT_LINKS = {
-  whatsapp: "https://wa.me/85581580802",
+  whatsapp: "https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0",
   messenger: "https://m.me/mugneemultiple",
   telegram: "https://t.me/mugneemultiple",
   call: "tel:+85581580802",

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { BUSINESS_EMAIL } from "../../lib/nap";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -227,11 +228,17 @@ export async function POST(req: Request) {
     const smtpPort = Number(process.env.SMTP_PORT || process.env.MAIL_PORT || 465);
     const smtpSecure =
       String(process.env.SMTP_SECURE || process.env.MAIL_SECURE || "true") === "true";
+    const smtpTlsRejectUnauthorized =
+      String(
+        process.env.SMTP_TLS_REJECT_UNAUTHORIZED ||
+          process.env.MAIL_TLS_REJECT_UNAUTHORIZED ||
+          "true"
+      ) === "true";
     const smtpUser =
       process.env.SMTP_USER || process.env.MAIL_USER || process.env.GMAIL_USER;
     const smtpPass =
       process.env.SMTP_PASS || process.env.MAIL_PASS || process.env.GMAIL_APP_PASSWORD;
-    const toEmail = process.env.CONTACT_TO_EMAIL || "info.mugnee@gmail.com";
+    const toEmail = process.env.CONTACT_TO_EMAIL || BUSINESS_EMAIL;
     const fromEmail = process.env.CONTACT_FROM_EMAIL || smtpUser;
 
     if (!smtpUser || !smtpPass || !fromEmail) {
@@ -253,6 +260,9 @@ export async function POST(req: Request) {
       port: smtpPort,
       secure: smtpSecure,
       auth: { user: smtpUser, pass: smtpPass },
+      tls: {
+        rejectUnauthorized: smtpTlsRejectUnauthorized,
+      },
     });
 
     const { name, email, phone, subject, message } = parsed.data;

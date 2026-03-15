@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BUSINESS_EMAIL } from "../lib/nap";
 import ContactForm from "./ContactForm";
 
 const socialLinks = [
@@ -8,7 +9,11 @@ const socialLinks = [
   { label: "Instagram", platform: "instagram", href: "https://www.instagram.com/sm.mugnee/" },
   { label: "LinkedIn", platform: "linkedin", href: "https://www.linkedin.com/company/mugnee-multiple-limited/" },
   { label: "Telegram", platform: "telegram", href: "https://t.me/mugneemultiple" },
-  { label: "WhatsApp", platform: "whatsapp", href: "https://wa.me/85581580802" },
+  {
+    label: "WhatsApp",
+    platform: "whatsapp",
+    href: "https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0",
+  },
   { label: "Pinterest", platform: "pinterest", href: "https://www.pinterest.com/mugneeml/" },
 ];
 
@@ -36,7 +41,7 @@ const offices = [
 const contacts = [
   { label: "Sales", value: "+85581580802" },
   { label: "Support", value: "+85510927445" },
-  { label: "Email", value: "info.mugnee@gmail.com" },
+  { label: "Email", value: BUSINESS_EMAIL },
 ];
 
 const officesKm = [
@@ -63,7 +68,7 @@ const officesKm = [
 const contactsKm = [
   { label: "ផ្នែកលក់", value: "+85581580802" },
   { label: "ផ្នែកគាំទ្រ", value: "+85510927445" },
-  { label: "អ៊ីមែល", value: "info.mugnee@gmail.com" },
+  { label: "អ៊ីមែល", value: BUSINESS_EMAIL },
 ];
 
 const uiKm = {
@@ -200,7 +205,7 @@ export default function ContactClient({ lang = "en" }: ContactClientProps = {}) 
               {isKm ? uiKm.ctaContact : "Contact Us"}
             </a>
             <Link
-              href="/solutions"
+              href="/solutions/"
               className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
             >
               {isKm ? uiKm.ctaExplore : "Explore Solutions"}
@@ -347,7 +352,7 @@ export default function ContactClient({ lang = "en" }: ContactClientProps = {}) 
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
-                    href="/contact"
+                    href="/contact/"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(15,23,42,0.45)]"
                   >
                     {isKm ? uiKm.requestQuote : "Request a Quotation"}
@@ -407,13 +412,13 @@ export default function ContactClient({ lang = "en" }: ContactClientProps = {}) 
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="/solutions"
+                href="/solutions/"
                 className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {isKm ? uiKm.viewSolutions : "View Solutions"}
               </Link>
               <Link
-                href="/products"
+                href="/products/"
                 className="inline-flex rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
               >
                 {isKm ? uiKm.viewProducts : "View Products"}

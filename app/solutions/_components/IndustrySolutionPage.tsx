@@ -13,8 +13,16 @@ type Props = {
 
 export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Props) {
   const isKm = forcedLang === "km";
-  const toLangHref = (href: string) =>
-    isKm && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
+  const normalizeInternalHref = (href: string) => {
+    if (!href || href === "/" || !href.startsWith("/")) return href;
+    return href.endsWith("/") ? href : `${href}/`;
+  };
+  const toLangHref = (href: string) => {
+    const normalized = normalizeInternalHref(href);
+    return isKm && normalized.startsWith("/") && !normalized.startsWith("/km/")
+      ? `/km${normalized}`
+      : normalized;
+  };
 
   const indoorCommunicationKm =
     solution.slug === "indoor-communication-solutions-cambodia"
@@ -455,7 +463,7 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
         faqFor: "FAQ for",
       };
 
-  const pageUrl = `${SITE_URL}/solutions/${solution.slug}`;
+  const pageUrl = `${SITE_URL}/solutions/${solution.slug}/`;
   const currentPath = `/solutions/${solution.slug}`;
 
   const solutionClusters: Record<string, "display" | "audio" | "security" | "education"> = {
@@ -535,7 +543,7 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-      { "@type": "ListItem", position: 2, name: "Solutions", item: `${SITE_URL}/solutions` },
+      { "@type": "ListItem", position: 2, name: "Solutions", item: `${SITE_URL}/solutions/` },
       { "@type": "ListItem", position: 3, name: solution.title, item: pageUrl },
     ],
   };

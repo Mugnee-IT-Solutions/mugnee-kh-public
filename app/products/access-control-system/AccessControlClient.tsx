@@ -293,7 +293,7 @@ export default function AccessControlClient() {
 
               <div className="mt-4 flex flex-wrap items-center gap-2.5">
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                 >
                   {t.cta1}
@@ -336,7 +336,7 @@ export default function AccessControlClient() {
 
                 <div className="mt-4">
                   <Link
-                    href="/contact"
+                    href="/contact/"
                     className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                   >
                     {t.finalCta}
@@ -417,13 +417,13 @@ export default function AccessControlClient() {
 
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href="/contact"
+                href="/contact/"
                 className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
               >
                 {t.finalCta}
               </Link>
               <Link
-                href="/projects"
+                href="/projects/"
                 className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-100"
               >
                 {t.seeProjects}
@@ -564,7 +564,7 @@ function ProductCard({
 
         <div className="mt-5 flex gap-2">
           <Link
-            href="/contact"
+            href="/contact/"
             className="inline-flex flex-1 items-center justify-center rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
           >
             {ctaLabel}

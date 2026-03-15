@@ -248,8 +248,16 @@ export default function HomeClient({
   }, [reduceMotion, isHeroPaused, totalSlides]);
 
   const { lang } = useLang();
-  const toLangHref = (href: string) =>
-    lang === "km" && href.startsWith("/") && !href.startsWith("/km/") ? `/km${href}` : href;
+  const normalizeInternalHref = (href: string) => {
+    if (!href || href === "/" || !href.startsWith("/")) return href;
+    return href.endsWith("/") ? href : `${href}/`;
+  };
+  const toLangHref = (href: string) => {
+    const normalized = normalizeInternalHref(href);
+    return lang === "km" && normalized.startsWith("/") && !normalized.startsWith("/km/")
+      ? `/km${normalized}`
+      : normalized;
+  };
 
   const t = useMemo(() => {
     const en = {
@@ -570,7 +578,7 @@ export default function HomeClient({
                 <div className="home-partner-marquee-track flex w-max gap-3 py-1">
                   {[
                     { short: "ADB", label: "Asian Development Bank", href: "https://www.adb.org/", logo: "/images/partners/adb-official.png" },
-                    { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/", logo: "/images/partners/ifc-official.svg" },
+                    { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/en/home", logo: "/images/partners/ifc-official.svg" },
                     { short: "JICA", label: "Japan International Cooperation Agency", href: "https://www.jica.go.jp/english/", logo: "/images/partners/jica-official.png" },
                     { short: "USAID", label: "USAID", href: "https://www.usaid.gov/", logo: "/images/partners/usaid-official.png" },
                     { short: "EU", label: "EU Development Programs", href: "https://international-partnerships.ec.europa.eu/index_en", logo: "/images/partners/eu-official.svg" },
@@ -578,7 +586,7 @@ export default function HomeClient({
                     { short: "UNCTAD", label: "UNCTAD", href: "https://unctad.org/", logo: "/images/partners/unctad-official.png" },
                     { short: "MCC", label: "Millennium Challenge Corporation (MCC)", href: "https://www.mcc.gov/", logo: "/images/partners/mcc-official.svg" },
                     { short: "ADB", label: "Asian Development Bank", href: "https://www.adb.org/", logo: "/images/partners/adb-official.png" },
-                    { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/", logo: "/images/partners/ifc-official.svg" },
+                    { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/en/home", logo: "/images/partners/ifc-official.svg" },
                     { short: "JICA", label: "Japan International Cooperation Agency", href: "https://www.jica.go.jp/english/", logo: "/images/partners/jica-official.png" },
                     { short: "USAID", label: "USAID", href: "https://www.usaid.gov/", logo: "/images/partners/usaid-official.png" },
                     { short: "EU", label: "EU Development Programs", href: "https://international-partnerships.ec.europa.eu/index_en", logo: "/images/partners/eu-official.svg" },

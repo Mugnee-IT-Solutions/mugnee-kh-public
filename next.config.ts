@@ -101,8 +101,18 @@ const nextConfig: NextConfig = {
               permanent: true,
             },
             {
+              source: "/km/products/indoor-led-display",
+              destination: "/km/led-display/indoor-led-display/",
+              permanent: true,
+            },
+            {
               source: "/products/outdoor-led-display",
               destination: "/led-display/outdoor-led-display/",
+              permanent: true,
+            },
+            {
+              source: "/km/products/outdoor-led-display",
+              destination: "/km/led-display/outdoor-led-display/",
               permanent: true,
             },
             {
