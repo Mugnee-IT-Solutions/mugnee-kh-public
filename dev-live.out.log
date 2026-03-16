@@ -1,0 +1,20 @@
+
+> mugnee-kh@0.1.0 dev
+> node --max-old-space-size=4096 ./node_modules/next/dist/bin/next dev --webpack
+
+▲ Next.js 16.1.6 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.68.85:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 4.9s
+○ Compiling / ...
+ GET / 200 in 9.4s (compile: 9.1s, render: 286ms)
+ GET /about/ 200 in 2.3s (compile: 2.2s, render: 110ms)
+ GET /km/about/ 200 in 671ms (compile: 597ms, render: 74ms)
+ GET /contact/ 200 in 569ms (compile: 497ms, render: 72ms)
+○ Compiling /api/contact ...
+ POST /api/contact/ 400 in 8.5s (compile: 8.4s, render: 91ms)
+ POST /api/contact/ 200 in 2.2s (compile: 151ms, render: 2.0s)
+[?25h

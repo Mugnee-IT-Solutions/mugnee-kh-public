@@ -1,0 +1,32 @@
+<?php
+/**
+ * Contact form SMTP config (STATIC_EXPORT / PHP endpoint).
+ *
+ * IMPORTANT:
+ * - Put the real file as `.contact-config.php` OUTSIDE your docroot (public_html) to keep secrets private.
+ * - Do NOT commit `.contact-config.php` to git.
+ */
+
+return [
+  // SMTP
+  "SMTP_HOST" => "145.79.11.196",
+  "SMTP_PORT" => 465,
+  "SMTP_SECURE" => "true",
+  "SMTP_USER" => "info@mugneekh.com",
+  "SMTP_PASS" => "REPLACE_WITH_REAL_PASSWORD",
+
+  // Contact routing
+  "CONTACT_TO_EMAIL" => "info@mugneekh.com",
+  "CONTACT_FROM_EMAIL" => "info@mugneekh.com",
+
+  // Anti-abuse
+  "CONTACT_RATE_LIMIT_WINDOW_MS" => 600000,
+  "CONTACT_RATE_LIMIT_MAX" => 5,
+
+  // Optional: origin/referrer hardening (comma-separated hosts).
+  // Example: "mugneekh.com,www.mugneekh.com"
+  "CONTACT_ALLOWED_HOSTS" => "mugneekh.com,www.mugneekh.com",
+  // Set to "true" to block requests that don't match allowed hosts.
+  "CONTACT_ENFORCE_ORIGIN" => "true",
+];
+

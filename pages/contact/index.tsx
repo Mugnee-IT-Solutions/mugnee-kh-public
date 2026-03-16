@@ -1,0 +1,65 @@
+import Head from "next/head";
+import dynamic from "next/dynamic";
+import SiteHeader from "../../app/components/layout/Header";
+import SiteFooter from "../../app/components/layout/Footer";
+import SitewideJsonLd from "../../app/components/seo/SitewideJsonLd";
+import ContactClient from "../../app/contact/ContactClient";
+import { SITE_URL } from "../../app/lib/site";
+
+const ClientEnhancements = dynamic(
+  () => import("../../app/components/layout/ClientEnhancements"),
+  { ssr: false },
+);
+
+const title = "Contact Mugnee Cambodia | Sales & Support";
+const description =
+  "Contact Mugnee Cambodia for quotation, installation support, and service assistance for LED display and business technology projects.";
+
+export default function ContactPage() {
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`${SITE_URL}/contact/`} />
+        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/contact/`} />
+        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/contact/`} />
+        <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/contact/`} />
+        <meta property="og:title" content="Contact Mugnee Cambodia" />
+        <meta
+          property="og:description"
+          content="Reach Mugnee Cambodia for sales, service, and project inquiries with local support and fast response."
+        />
+        <meta property="og:url" content={`${SITE_URL}/contact/`} />
+        <meta property="og:site_name" content="Mugnee Cambodia" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${SITE_URL}/images/hero/cambodia-led-hero.webp`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Contact Mugnee Cambodia" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Mugnee Cambodia" />
+        <meta
+          name="twitter:description"
+          content="Reach Mugnee Cambodia for sales, service, and project inquiries with local support and fast response."
+        />
+        <meta name="twitter:image" content={`${SITE_URL}/images/hero/cambodia-led-hero.webp`} />
+      </Head>
+
+      <div className="h-screen w-full overflow-hidden">
+        <SitewideJsonLd />
+        <ClientEnhancements />
+        <SiteHeader />
+        <main
+          id="app-scroll-root"
+          className="mt-[var(--header-height)] h-[calc(100vh-var(--header-height))] overflow-y-auto overflow-x-hidden"
+        >
+          <ContactClient lang="en" />
+          <SiteFooter />
+        </main>
+      </div>
+    </>
+  );
+}
+

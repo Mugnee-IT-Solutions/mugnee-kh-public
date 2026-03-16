@@ -3,6 +3,26 @@
 # CyberPanel / Apache / LiteSpeed friendly
 # =========================================
 
+<IfModule mod_authz_core.c>
+  # Never allow the private contact config file to be served (defense-in-depth).
+  <Files ".contact-config.php">
+    Require all denied
+  </Files>
+  <Files ".contact-config.php.example">
+    Require all denied
+  </Files>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  <Files ".contact-config.php">
+    Order allow,deny
+    Deny from all
+  </Files>
+  <Files ".contact-config.php.example">
+    Order allow,deny
+    Deny from all
+  </Files>
+</IfModule>
+
 <IfModule mod_alias.c>
   # Enforce legacy catalog URLs to canonical product URLs.
   RedirectMatch 301 ^/products/catalog/(.+)/?$ /products/$1/
@@ -79,6 +99,12 @@
 </IfModule>
 
 <IfModule mod_headers.c>
+  # Contact endpoint should never be indexed/cached.
+  <Files "contact-submit.php">
+    Header always set X-Robots-Tag "noindex, nofollow"
+    Header always set Cache-Control "no-store, max-age=0"
+  </Files>
+
   # Prevent stale HTML from referencing deleted hashed JS chunks after deploy.
   <FilesMatch "\.(html|htm)$">
     Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"

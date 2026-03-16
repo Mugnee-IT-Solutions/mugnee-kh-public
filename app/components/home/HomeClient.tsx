@@ -577,7 +577,6 @@ export default function HomeClient({
                 <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent" />
                 <div className="home-partner-marquee-track flex w-max gap-3 py-1">
                   {[
-                    { short: "ADB", label: "Asian Development Bank", href: "https://www.adb.org/", logo: "/images/partners/adb-official.png" },
                     { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/en/home", logo: "/images/partners/ifc-official.svg" },
                     { short: "JICA", label: "Japan International Cooperation Agency", href: "https://www.jica.go.jp/english/", logo: "/images/partners/jica-official.png" },
                     { short: "USAID", label: "USAID", href: "https://www.usaid.gov/", logo: "/images/partners/usaid-official.png" },
@@ -585,7 +584,6 @@ export default function HomeClient({
                     { short: "UNDP", label: "UNDP", href: "https://www.undp.org/", logo: "/images/partners/undp-official.svg" },
                     { short: "UNCTAD", label: "UNCTAD", href: "https://unctad.org/", logo: "/images/partners/unctad-official.png" },
                     { short: "MCC", label: "Millennium Challenge Corporation (MCC)", href: "https://www.mcc.gov/", logo: "/images/partners/mcc-official.svg" },
-                    { short: "ADB", label: "Asian Development Bank", href: "https://www.adb.org/", logo: "/images/partners/adb-official.png" },
                     { short: "IFC", label: "IFC (World Bank Group)", href: "https://www.ifc.org/en/home", logo: "/images/partners/ifc-official.svg" },
                     { short: "JICA", label: "Japan International Cooperation Agency", href: "https://www.jica.go.jp/english/", logo: "/images/partners/jica-official.png" },
                     { short: "USAID", label: "USAID", href: "https://www.usaid.gov/", logo: "/images/partners/usaid-official.png" },

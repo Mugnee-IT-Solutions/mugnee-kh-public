@@ -1,7 +1,6 @@
 ﻿
 import Link from "next/link";
 import Image from "next/image";
-import { Suspense } from "react";
 import { BUSINESS_ADDRESS, BUSINESS_PHONE_E164, BUSINESS_SAME_AS, BUSINESS_NAME, SERVICE_AREAS } from "../../lib/nap";
 import { SITE_URL } from "../../lib/site";
 import ProductGrid from "../../components/sections/ProductGrid";
@@ -703,77 +702,47 @@ export default function LedDisplayClient({
       {/* PRODUCT GRID */}
       <section id="products" className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <Suspense
-            fallback={
-              <div className="space-y-6">
+          <ProductGrid
+            columns={3}
+            pageSize={9}
+            allowedCategoryIds={[
+              "led_display",
+              "indoor_led_display",
+              "outdoor_led_display",
+              "rental_led_display",
+              "led_accessories",
+            ]}
+            filterCategoryIds={[
+              "indoor_led_display",
+              "outdoor_led_display",
+              "rental_led_display",
+              "led_accessories",
+            ]}
+            categoryOrderIds={[
+              "indoor_led_display",
+              "outdoor_led_display",
+              "rental_led_display",
+              "led_accessories",
+            ]}
+            topLeftContent={
+              productQuickChips && productQuickChips.length > 0 ? (
                 <div className="flex flex-wrap gap-2">
-                  {(productQuickChips ?? []).slice(0, 6).map((chip, index) => (
-                    <span
+                  {productQuickChips.map((chip, index) => (
+                    <Link
                       key={`${chip.href}-${chip.label}-${index}`}
-                      className="quick-link rounded-full px-3 py-1 text-xs font-semibold text-slate-700"
+                      href={chip.href}
+                      className="quick-link rounded-full px-3 py-1 text-xs font-semibold text-slate-700 hover:text-slate-900"
                     >
                       {lang === "en" ? chip.label : (chip.labelKm ?? chip.label)}
-                    </span>
+                    </Link>
                   ))}
                 </div>
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {Array.from({ length: 6 }).map((_, index) => (
-                    <div
-                      key={index}
-                      className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-                    >
-                      <div className="h-40 rounded-xl bg-slate-100" />
-                      <div className="mt-4 h-4 w-40 rounded bg-slate-200" />
-                      <div className="mt-3 h-3 w-full rounded bg-slate-200" />
-                      <div className="mt-2 h-3 w-5/6 rounded bg-slate-200" />
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ) : (
+                <div />
+              )
             }
-          >
-            <ProductGrid
-              columns={3}
-              pageSize={9}
-              allowedCategoryIds={[
-                "led_display",
-                "indoor_led_display",
-                "outdoor_led_display",
-                "rental_led_display",
-                "led_accessories",
-              ]}
-              filterCategoryIds={[
-                "indoor_led_display",
-                "outdoor_led_display",
-                "rental_led_display",
-                "led_accessories",
-              ]}
-              categoryOrderIds={[
-                "indoor_led_display",
-                "outdoor_led_display",
-                "rental_led_display",
-                "led_accessories",
-              ]}
-              topLeftContent={
-                productQuickChips && productQuickChips.length > 0 ? (
-                  <div className="flex flex-wrap gap-2">
-                    {productQuickChips.map((chip, index) => (
-                      <Link
-                        key={`${chip.href}-${chip.label}-${index}`}
-                        href={chip.href}
-                        className="quick-link rounded-full px-3 py-1 text-xs font-semibold text-slate-700 hover:text-slate-900"
-                      >
-                        {lang === "en" ? chip.label : (chip.labelKm ?? chip.label)}
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <div />
-                )
-              }
-              {...productGridOverride}
-            />
-          </Suspense>
+            {...productGridOverride}
+          />
         </div>
       </section>
 
