@@ -50,13 +50,28 @@ const nextConfig: NextConfig = {
         async redirects() {
           return [
             {
+              source: "/products/catalog/:slug/",
+              destination: "/products/:slug/",
+              permanent: true,
+            },
+            {
               source: "/products/catalog/:slug",
               destination: "/products/:slug/",
               permanent: true,
             },
             {
+              source: "/km/products/catalog/:slug/",
+              destination: "/km/products/:slug/",
+              permanent: true,
+            },
+            {
               source: "/km/products/catalog/:slug",
               destination: "/km/products/:slug/",
+              permanent: true,
+            },
+            {
+              source: "/products/p10-outdoor-led-sign-board-price-in-bd/",
+              destination: "/products/p10-outdoor-led-sign-board-price-in-cambodia/",
               permanent: true,
             },
             {

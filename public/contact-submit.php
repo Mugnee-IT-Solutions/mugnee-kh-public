@@ -1,6 +1,58 @@
 <?php
 declare(strict_types=1);
 
+// Always return JSON (even on PHP fatals) and avoid leaking stack traces to clients.
+@ini_set('display_errors', '0');
+@ini_set('log_errors', '1');
+
+// Buffer output so fatals don't leak HTML into the response body.
+if (!ob_get_level()) {
+  ob_start();
+}
+
+// Track whether we've already sent a JSON response.
+$GLOBALS['__MUGNEE_CONTACT_RESP_SENT'] = false;
+
+function _contact_emit_json(int $status, array $payload): void {
+  if (headers_sent()) return;
+  http_response_code($status);
+  header('Content-Type: application/json; charset=utf-8');
+  header('X-Content-Type-Options: nosniff');
+  header('X-Robots-Tag: noindex, nofollow');
+  header('Cache-Control: no-store, max-age=0');
+  // Clear any buffered output (e.g. warnings/notices/HTML).
+  while (ob_get_level() > 0) {
+    ob_end_clean();
+  }
+  echo json_encode($payload);
+}
+
+function _contact_log_fatal(string $message): void {
+  $dir = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR);
+  $path = $dir . DIRECTORY_SEPARATOR . 'mugnee-contact-submit.log';
+  $line = '[' . gmdate('c') . '] ' . str_replace(["\r", "\n"], ' ', $message) . "\n";
+  @file_put_contents($path, $line, FILE_APPEND);
+}
+
+// Catch PHP fatals and ensure we still respond with JSON.
+register_shutdown_function(function () {
+  if (!empty($GLOBALS['__MUGNEE_CONTACT_RESP_SENT'])) return;
+  $err = error_get_last();
+  if (!is_array($err)) return;
+  $type = (int)($err['type'] ?? 0);
+  $fatalTypes = [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR];
+  if (!in_array($type, $fatalTypes, true)) return;
+  $msg = 'PHP fatal: ' . ($err['message'] ?? 'unknown') . ' @ ' . ($err['file'] ?? '?') . ':' . ($err['line'] ?? 0);
+  _contact_log_fatal($msg);
+  _contact_emit_json(500, ['ok' => false, 'message' => 'Unable to send message right now.']);
+});
+
+// Turn warnings/notices into exceptions so our try/catch can handle them.
+set_error_handler(function ($severity, $message, $file, $line) {
+  if (!(error_reporting() & $severity)) return false;
+  throw new ErrorException((string)$message, 0, (int)$severity, (string)$file, (int)$line);
+});
+
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 header('X-Robots-Tag: noindex, nofollow');
@@ -18,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 function json_response(int $status, array $payload): void {
   http_response_code($status);
   echo json_encode($payload);
+  $GLOBALS['__MUGNEE_CONTACT_RESP_SENT'] = true;
   exit;
 }
 
@@ -132,6 +185,36 @@ function smtp_cmd($fp, string $cmd, array $expectCodes): string {
   return $resp;
 }
 
+function smtp_auth_login($fp, string $user, string $pass): void {
+  smtp_cmd($fp, 'AUTH LOGIN', [334]);
+  smtp_cmd($fp, base64_encode($user), [334]);
+  smtp_cmd($fp, base64_encode($pass), [235]);
+}
+
+function smtp_auth_plain($fp, string $user, string $pass): void {
+  $token = base64_encode("\0" . $user . "\0" . $pass);
+  smtp_cmd($fp, 'AUTH PLAIN ' . $token, [235]);
+}
+
+function smtp_authenticate($fp, string $user, string $pass): void {
+  $errors = [];
+  try {
+    smtp_auth_login($fp, $user, $pass);
+    return;
+  } catch (Exception $e) {
+    $errors[] = $e->getMessage();
+  }
+
+  try {
+    smtp_auth_plain($fp, $user, $pass);
+    return;
+  } catch (Exception $e) {
+    $errors[] = $e->getMessage();
+  }
+
+  throw new Exception('SMTP auth failed: ' . implode(' | ', array_slice($errors, 0, 2)));
+}
+
 function smtp_send_mail(array $cfg, array $mail): void {
   $host = $cfg['SMTP_HOST'] ?? '';
   $port = (int)($cfg['SMTP_PORT'] ?? 465);
@@ -141,10 +224,12 @@ function smtp_send_mail(array $cfg, array $mail): void {
   // - true/"true"/"ssl"  => implicit TLS (ssl://)
   // - "starttls"/"tls"   => STARTTLS upgrade after EHLO (tcp:// + STARTTLS)
   // - false/"false"      => plain tcp://
-  $secureMode =
-    ($secureRaw === true || $secureRaw === 1 || $secureStr === 'true' || $secureStr === 'ssl') ? 'ssl' :
-    ($secureStr === 'starttls' || $secureStr === 'tls') ? 'starttls' :
-    'none';
+  $secureMode = 'none';
+  if ($secureRaw === true || $secureRaw === 1 || $secureStr === 'true' || $secureStr === 'ssl') {
+    $secureMode = 'ssl';
+  } elseif ($secureStr === 'starttls' || $secureStr === 'tls') {
+    $secureMode = 'starttls';
+  }
   $user = $cfg['SMTP_USER'] ?? '';
   $pass = $cfg['SMTP_PASS'] ?? '';
 
@@ -186,10 +271,8 @@ function smtp_send_mail(array $cfg, array $mail): void {
     smtp_cmd($fp, 'EHLO mugneekh.com', [250]);
   }
 
-  // AUTH LOGIN
-  smtp_cmd($fp, 'AUTH LOGIN', [334]);
-  smtp_cmd($fp, base64_encode($user), [334]);
-  smtp_cmd($fp, base64_encode($pass), [235]);
+  // AUTH (try LOGIN first, then PLAIN)
+  smtp_authenticate($fp, (string)$user, (string)$pass);
 
   $from = $mail['from'];
   $to = $mail['to'];
@@ -225,6 +308,19 @@ function smtp_send_mail(array $cfg, array $mail): void {
   // Quit politely
   try { smtp_cmd($fp, 'QUIT', [221]); } catch (Exception $e) {}
   fclose($fp);
+}
+
+function classify_mail_error(string $msg): string {
+  $m = strtolower($msg);
+  if (strpos($m, 'smtp connect failed') !== false) return 'smtp_connect';
+  if (strpos($m, 'smtp greeting failed') !== false) return 'smtp_greeting';
+  if (strpos($m, 'starttls negotiation failed') !== false) return 'smtp_starttls';
+  if (strpos($m, 'smtp auth failed') !== false) return 'smtp_auth';
+  if (preg_match('/smtp error\\s+535/', $m)) return 'smtp_auth';
+  if (preg_match('/smtp error\\s+534/', $m)) return 'smtp_auth';
+  if (preg_match('/smtp error\\s+530/', $m)) return 'smtp_tls_required';
+  if (preg_match('/smtp error\\s+5\\d\\d/', $m)) return 'smtp_rejected';
+  return 'smtp_unknown';
 }
 
 function log_contact_error(array $cfg, string $message): void {
@@ -271,6 +367,8 @@ foreach (['SMTP_HOST','SMTP_PORT','SMTP_SECURE','SMTP_USER','SMTP_PASS','CONTACT
   $v = getenv($k);
   if ($v !== false && $v !== '') $cfg[$k] = $v;
 }
+
+$debug = (string)($cfg['CONTACT_DEBUG'] ?? 'false') === 'true';
 
 $allowedHostsRaw = (string)($cfg['CONTACT_ALLOWED_HOSTS'] ?? '');
 $allowedHosts = array_values(array_filter(array_map('trim', explode(',', $allowedHostsRaw))));
@@ -379,6 +477,17 @@ try {
 
   json_response(200, ['ok' => true, 'message' => 'Message sent successfully.']);
 } catch (Exception $e) {
-  log_contact_error($cfg, $e->getMessage());
-  json_response(500, ['ok' => false, 'message' => 'Unable to send message right now.']);
+  $msg = $e->getMessage();
+  log_contact_error($cfg, $msg);
+  $payload = [
+    'ok' => false,
+    'message' => 'Unable to send message right now.',
+    // Safe debugging hint (does not expose secrets).
+    'errorCode' => classify_mail_error($msg),
+  ];
+  if ($debug) {
+    // Helpful while setting up; disable after fix.
+    $payload['debug'] = substr(str_replace(["\r", "\n"], ' ', $msg), 0, 260);
+  }
+  json_response(500, $payload);
 }
