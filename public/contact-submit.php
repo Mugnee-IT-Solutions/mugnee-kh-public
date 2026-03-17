@@ -135,7 +135,16 @@ function smtp_cmd($fp, string $cmd, array $expectCodes): string {
 function smtp_send_mail(array $cfg, array $mail): void {
   $host = $cfg['SMTP_HOST'] ?? '';
   $port = (int)($cfg['SMTP_PORT'] ?? 465);
-  $secure = (string)($cfg['SMTP_SECURE'] ?? 'true') === 'true';
+  $secureRaw = $cfg['SMTP_SECURE'] ?? 'true';
+  $secureStr = strtolower(trim((string)$secureRaw));
+  // Supported modes:
+  // - true/"true"/"ssl"  => implicit TLS (ssl://)
+  // - "starttls"/"tls"   => STARTTLS upgrade after EHLO (tcp:// + STARTTLS)
+  // - false/"false"      => plain tcp://
+  $secureMode =
+    ($secureRaw === true || $secureRaw === 1 || $secureStr === 'true' || $secureStr === 'ssl') ? 'ssl' :
+    ($secureStr === 'starttls' || $secureStr === 'tls') ? 'starttls' :
+    'none';
   $user = $cfg['SMTP_USER'] ?? '';
   $pass = $cfg['SMTP_PASS'] ?? '';
 
@@ -143,7 +152,7 @@ function smtp_send_mail(array $cfg, array $mail): void {
     throw new Exception('Mail server is not configured.');
   }
 
-  $transport = $secure ? 'ssl' : 'tcp';
+  $transport = $secureMode === 'ssl' ? 'ssl' : 'tcp';
   $remote = $transport . '://' . $host . ':' . $port;
   $ctx = stream_context_create([
     'ssl' => [
@@ -165,6 +174,17 @@ function smtp_send_mail(array $cfg, array $mail): void {
   }
 
   smtp_cmd($fp, 'EHLO mugneekh.com', [250]);
+
+  // Optional STARTTLS upgrade (common on port 587).
+  if ($secureMode === 'starttls') {
+    smtp_cmd($fp, 'STARTTLS', [220]);
+    $cryptoOk = @stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+    if ($cryptoOk !== true) {
+      fclose($fp);
+      throw new Exception('STARTTLS negotiation failed.');
+    }
+    smtp_cmd($fp, 'EHLO mugneekh.com', [250]);
+  }
 
   // AUTH LOGIN
   smtp_cmd($fp, 'AUTH LOGIN', [334]);
@@ -205,6 +225,33 @@ function smtp_send_mail(array $cfg, array $mail): void {
   // Quit politely
   try { smtp_cmd($fp, 'QUIT', [221]); } catch (Exception $e) {}
   fclose($fp);
+}
+
+function log_contact_error(array $cfg, string $message): void {
+  $path = (string)($cfg['CONTACT_LOG_PATH'] ?? '');
+  if ($path === '') {
+    $candidateDir = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'logs');
+    if ($candidateDir && is_dir($candidateDir)) {
+      $path = $candidateDir . DIRECTORY_SEPARATOR . 'contact-submit.log';
+    } else {
+      $path = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'mugnee-contact-submit.log';
+    }
+  }
+
+  $line =
+    '[' . gmdate('c') . '] ' .
+    'ip=' . client_ip() . ' host=' . request_host() . ' ' .
+    str_replace(["\r", "\n"], ' ', $message) .
+    "\n";
+
+  $ok = @file_put_contents($path, $line, FILE_APPEND);
+  if ($ok === false) {
+    // In some panels (open_basedir), writing outside docroot fails. Always try /tmp as a last resort.
+    $fallback = rtrim(sys_get_temp_dir(), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'mugnee-contact-submit.log';
+    if ($fallback !== $path) {
+      @file_put_contents($fallback, $line, FILE_APPEND);
+    }
+  }
 }
 
 // Load optional external config (recommended: outside docroot).
@@ -332,5 +379,6 @@ try {
 
   json_response(200, ['ok' => true, 'message' => 'Message sent successfully.']);
 } catch (Exception $e) {
+  log_contact_error($cfg, $e->getMessage());
   json_response(500, ['ok' => false, 'message' => 'Unable to send message right now.']);
 }
