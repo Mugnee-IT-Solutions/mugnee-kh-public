@@ -3,8 +3,23 @@ const fs = require("fs");
 const path = require("path");
 
 function normalizeSiteUrl(raw) {
-  const url = (raw || "https://mugneekh.com").trim();
-  return url.endsWith("/") ? url.slice(0, -1) : url;
+  const value = (raw || "https://mugneekh.com").trim();
+  const candidate = /^https?:\/\//i.test(value) ? value : `https://${value}`;
+
+  try {
+    const url = new URL(candidate);
+    if (url.hostname.toLowerCase() === "www.mugneekh.com") url.hostname = "mugneekh.com";
+
+    url.protocol = "https:";
+    url.search = "";
+    url.hash = "";
+
+    // Always return a base URL with NO trailing slash.
+    // This prevents sitemap entries like `https://mugneekh.com//path/` if the env is misconfigured.
+    return url.origin;
+  } catch {
+    return "https://mugneekh.com";
+  }
 }
 
 function toRouteFromHtml(outDir, htmlFilePath) {
@@ -152,4 +167,3 @@ function run() {
 }
 
 run();
-

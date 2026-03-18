@@ -18,7 +18,11 @@ function normalizeSiteUrl(raw: string) {
     url.search = "";
     url.hash = "";
 
-    const pathPart = url.pathname === "/" ? "" : url.pathname.replace(/\/$/, "");
+    // Some deployments accidentally set `NEXT_PUBLIC_SITE_URL` like `https://mugneekh.com//`.
+    // Ensure the returned base URL never ends with a trailing slash to avoid `//path/` in canonicals.
+    const normalizedPathname = url.pathname.replace(/\/{2,}/g, "/").replace(/\/+$/, "");
+    const pathPart = normalizedPathname === "" || normalizedPathname === "/" ? "" : normalizedPathname;
+
     return `${url.origin}${pathPart}`;
   } catch {
     return FALLBACK_SITE_URL;

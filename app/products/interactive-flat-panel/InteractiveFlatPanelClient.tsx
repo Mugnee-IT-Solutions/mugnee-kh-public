@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
 import ProductGrid from "../../components/sections/ProductGrid";
+import { SITE_URL } from "../../lib/site";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 type IfpProduct = {
@@ -305,10 +306,8 @@ export default function InteractiveFlatPanelClient() {
   );
 
   const jsonLd = useMemo(() => {
-    const site =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-      "https://mugneekh.com";
-    const base = `${site}/interactive-flat-panel`;
+    const site = SITE_URL;
+    const base = `${site}/interactive-flat-panel/`;
     const serviceAreas = ["Phnom Penh", "Siem Reap", "Sihanoukville"].map((name) => ({
       "@type": "AdministrativeArea",
       name,
@@ -322,9 +321,7 @@ export default function InteractiveFlatPanelClient() {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item:
-            process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-            "https://mugneekh.com",
+          item: `${site}/`,
         },
         { "@type": "ListItem", position: 2, name: "Interactive Flat Panel", item: base },
       ],
@@ -1124,7 +1121,6 @@ function StepCard({
     </div>
   );
 }
-
 
 
 

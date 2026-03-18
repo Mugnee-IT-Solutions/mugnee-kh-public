@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
 import { ACCESS_CONTROL_ITEMS } from "./accessControlData";
+import { SITE_URL } from "../../lib/site";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
@@ -201,9 +202,8 @@ export default function AccessControlClient() {
   );
 
   const jsonLd = useMemo(() => {
-    const site =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
-    const url = site + "/products/access-control-system";
+    const site = SITE_URL;
+    const url = `${site}/products/access-control-system/`;
     const serviceAreas = ["Phnom Penh", "Siem Reap", "Sihanoukville"].map((name) => ({
       "@type": "AdministrativeArea",
       name,
@@ -214,7 +214,7 @@ export default function AccessControlClient() {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site },
-        { "@type": "ListItem", position: 2, name: "Products", item: site + "/products" },
+        { "@type": "ListItem", position: 2, name: "Products", item: `${site}/products/` },
         { "@type": "ListItem", position: 3, name: "Access Control System", item: url },
       ],
     };

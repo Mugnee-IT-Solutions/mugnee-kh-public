@@ -1,7 +1,5 @@
 import Link from "next/link";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
+import { SITE_URL } from "../lib/site";
 
 const PAGE_PATH = "/solutions";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;

@@ -6,9 +6,7 @@ import {
   BUSINESS_PHONE_E164,
   BUSINESS_SAME_AS,
 } from "../../lib/nap";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
+import { SITE_URL } from "../../lib/site";
 
 export default function SitewideJsonLd() {
   const organizationJsonLd = {

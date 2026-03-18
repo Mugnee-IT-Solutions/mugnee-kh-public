@@ -3,9 +3,7 @@
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import JsonLd from "./JsonLd";
-
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
+import { SITE_URL } from "../../lib/site";
 
 const SEGMENT_LABELS: Record<string, { en: string; km: string }> = {
   products: { en: "Products", km: "ផលិតផល" },

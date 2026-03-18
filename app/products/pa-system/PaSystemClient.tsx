@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 import ProductGrid from "../../components/sections/ProductGrid";
 import { useLang } from "../../components/layout/LanguageProvider";
+import { SITE_URL } from "../../lib/site";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
@@ -341,9 +342,8 @@ export default function PaSystemClient() {
   );
 
   const jsonLd = useMemo(() => {
-    const site =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
-    const url = site + "/pa-system";
+    const site = SITE_URL;
+    const url = `${site}/pa-system/`;
     const serviceAreas = ["Phnom Penh", "Siem Reap", "Sihanoukville"].map((name) => ({
       "@type": "AdministrativeArea",
       name,
@@ -874,7 +874,6 @@ function StepCard({ n, title, desc }: { n: string; title: string; desc: string }
     </div>
   );
 }
-
 
 
 

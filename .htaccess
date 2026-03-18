@@ -41,11 +41,17 @@
   RewriteRule ^ https://mugneekh.com%{REQUEST_URI} [R=301,L]
 
   # 2) Remove duplicate slashes in the URL path (including leading //)
-  RewriteCond %{REQUEST_URI} ^//+(.*)$
+  # LiteSpeed/OpenLiteSpeed normalizes multiple slashes internally before rewrite, so REQUEST_URI may not match.
+  # ORG_REQ_URI preserves the original request URI on LiteSpeed, which allows a clean 301 redirect.
+  RewriteCond %{ORG_REQ_URI} ^//+(.+)$
   RewriteRule ^ /%1 [R=301,L]
 
-  RewriteCond %{REQUEST_URI} ^(.+)//+(.+)$
+  RewriteCond %{ORG_REQ_URI} ^(.+)//+(.+)$
   RewriteRule ^ %1/%2 [R=301,L]
+
+  # 2b) Drop junk root query `?Q` (seen in audits) to keep home URL clean.
+  RewriteCond %{QUERY_STRING} ^Q(?:=|$) [NC]
+  RewriteRule ^$ /? [R=301,L]
 
   # 3) Enforce trailing slash for “pages” (skip real files/folders)
   RewriteCond %{REQUEST_FILENAME} !-f

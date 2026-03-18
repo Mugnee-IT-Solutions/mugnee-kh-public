@@ -191,6 +191,11 @@ export default function SiteFooter() {
                     <LangText en="About Us" km="អំពីយើង" />
                   </Link>
                 </li>
+                <li className="sr-only">
+                  <Link href={toLangHref("/about/message-from-ceo")}>
+                    <LangText en="Message from CEO" km="សារពី CEO" />
+                  </Link>
+                </li>
                 <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/solutions")}>
                     <LangText en="Solutions" km="ដំណោះស្រាយ" />
@@ -222,6 +227,11 @@ export default function SiteFooter() {
                   </Link>
                 </li>
               </ul>
+
+              <div className="sr-only" aria-hidden="true">
+                <Link href={toLangHref("/products/smart-board-75")}>Smart Board 75</Link>
+                <Link href={toLangHref("/products/smart-board-86")}>Smart Board 86</Link>
+              </div>
             </div>
 
             <div className="lg:col-span-3">

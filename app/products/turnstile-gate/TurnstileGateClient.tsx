@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 import ProductGrid from "../../components/sections/ProductGrid";
 import { useLang } from "../../components/layout/LanguageProvider";
+import { SITE_URL } from "../../lib/site";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
 
@@ -390,9 +391,8 @@ export default function TurnstileGateClient() {
   );
 
   const jsonLd = useMemo(() => {
-    const site =
-      process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://mugneekh.com";
-    const url = site + "/turnstile-gate";
+    const site = SITE_URL;
+    const url = `${site}/turnstile-gate/`;
     const serviceAreas = ["Phnom Penh", "Siem Reap", "Sihanoukville"].map((name) => ({
       "@type": "AdministrativeArea",
       name,
