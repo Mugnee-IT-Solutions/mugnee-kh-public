@@ -1,12 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { BUSINESS_PHONE_E164, BUSINESS_WHATSAPP_URL } from "../../lib/nap";
 
 const CONTACT_LINKS = {
-  whatsapp: "https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0",
+  whatsapp: BUSINESS_WHATSAPP_URL,
   messenger: "https://m.me/mugneemultiple",
   telegram: "https://t.me/mugneemultiple",
-  call: "tel:+85581580802",
+  call: `tel:${BUSINESS_PHONE_E164}`,
 };
 
 function ChatIcon() {

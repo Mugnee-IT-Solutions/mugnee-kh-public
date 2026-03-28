@@ -1,7 +1,7 @@
 ﻿
 import Link from "next/link";
 import Image from "next/image";
-import { BUSINESS_ADDRESS, BUSINESS_PHONE_E164, BUSINESS_SAME_AS, BUSINESS_NAME, SERVICE_AREAS } from "../../lib/nap";
+import { BUSINESS_ADDRESS, BUSINESS_PHONE_E164, BUSINESS_SAME_AS, BUSINESS_NAME, BUSINESS_WHATSAPP_URL, SERVICE_AREAS } from "../../lib/nap";
 import { SITE_URL } from "../../lib/site";
 import ProductGrid from "../../components/sections/ProductGrid";
 
@@ -675,7 +675,7 @@ export default function LedDisplayClient({
 
           <div className="mt-5 flex flex-wrap gap-2.5">
             <a
-              href="https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0"
+              href={BUSINESS_WHATSAPP_URL}
               target="_blank"
               rel="noopener"
               className="rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
@@ -1888,7 +1888,7 @@ export default function LedDisplayClient({
               {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
             </a>
             <a
-              href="https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0"
+              href={BUSINESS_WHATSAPP_URL}
               target="_blank"
               rel="noopener"
               className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"

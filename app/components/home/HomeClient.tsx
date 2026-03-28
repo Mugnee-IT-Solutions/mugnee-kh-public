@@ -5,6 +5,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import { useLang } from "../layout/LanguageProvider";
+import { BUSINESS_PHONE_DISPLAY } from "../../lib/nap";
 
 const ProductGrid = dynamic(() => import("../sections/ProductGrid"), {
   loading: () => <div className="h-32 w-full animate-pulse rounded-2xl bg-slate-100" />,
@@ -882,7 +883,7 @@ export default function HomeClient({
                     : "ជាន់ទី១, 11E0, ផ្លូវ 108, តំបន់ Night Market, Doun Penh, Phnom Penh, Cambodia"}
                 </p>
                 <p className="mt-2">
-                  {lang === "en" ? "Phone: +85581580802" : "ទូរស័ព្ទ: +85581580802"}
+                  {lang === "en" ? `Phone: ${BUSINESS_PHONE_DISPLAY}` : `ទូរស័ព្ទ: ${BUSINESS_PHONE_DISPLAY}`}
                 </p>
                 <p className="mt-2">
                   {lang === "en"

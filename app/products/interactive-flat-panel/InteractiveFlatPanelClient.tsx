@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useLang } from "../../components/layout/LanguageProvider";
 import ProductGrid from "../../components/sections/ProductGrid";
+import { BUSINESS_PHONE_E164 } from "../../lib/nap";
 import { SITE_URL } from "../../lib/site";
 
 type FAQ = { qEn: string; aEn: string; qKm: string; aKm: string };
@@ -351,7 +352,7 @@ export default function InteractiveFlatPanelClient() {
         {
           "@type": "ContactPoint",
           contactType: "sales",
-          telephone: "+85581580802",
+          telephone: BUSINESS_PHONE_E164,
           availableLanguage: ["en", "km"],
         },
       ],
@@ -1121,7 +1122,6 @@ function StepCard({
     </div>
   );
 }
-
 
 
 

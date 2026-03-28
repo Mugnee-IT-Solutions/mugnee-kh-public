@@ -1,6 +1,8 @@
 export const BUSINESS_NAME = "Mugnee Cambodia";
-export const BUSINESS_PHONE_E164 = "+85581580802";
-export const BUSINESS_PHONE_DISPLAY = "+85581580802";
+export const BUSINESS_PHONE_E164 = "+85510927445";
+export const BUSINESS_PHONE_DISPLAY = "+85510927445";
+export const BUSINESS_PHONE_E164_NO_PLUS = "85510927445";
+export const BUSINESS_WHATSAPP_URL = `https://api.whatsapp.com/send/?phone=${BUSINESS_PHONE_E164_NO_PLUS}&text&type=phone_number&app_absent=0`;
 export const BUSINESS_EMAIL = "info@mugneekh.com";
 
 export const BUSINESS_ADDRESS = {

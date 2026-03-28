@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BUSINESS_EMAIL } from "../lib/nap";
+import { BUSINESS_EMAIL, BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_E164, BUSINESS_WHATSAPP_URL } from "../lib/nap";
 import ContactForm from "./ContactForm";
 
 const socialLinks = [
@@ -12,7 +12,7 @@ const socialLinks = [
   {
     label: "WhatsApp",
     platform: "whatsapp",
-    href: "https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0",
+    href: BUSINESS_WHATSAPP_URL,
   },
   { label: "Pinterest", platform: "pinterest", href: "https://www.pinterest.com/mugneeml/" },
 ];
@@ -39,8 +39,7 @@ const offices = [
 ];
 
 const contacts = [
-  { label: "Sales", value: "+85581580802" },
-  { label: "Support", value: "+85510927445" },
+  { label: "Phone", value: BUSINESS_PHONE_DISPLAY },
   { label: "Email", value: BUSINESS_EMAIL },
 ];
 
@@ -66,8 +65,7 @@ const officesKm = [
 ];
 
 const contactsKm = [
-  { label: "ផ្នែកលក់", value: "+85581580802" },
-  { label: "ផ្នែកគាំទ្រ", value: "+85510927445" },
+  { label: "ទូរស័ព្ទ", value: BUSINESS_PHONE_DISPLAY },
   { label: "អ៊ីមែល", value: BUSINESS_EMAIL },
 ];
 
@@ -199,7 +197,7 @@ export default function ContactClient({ lang = "en" }: ContactClientProps = {}) 
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a
-              href="tel:+85581580802"
+              href={`tel:${BUSINESS_PHONE_E164}`}
               className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
             >
               {isKm ? uiKm.ctaContact : "Contact Us"}
@@ -358,7 +356,7 @@ export default function ContactClient({ lang = "en" }: ContactClientProps = {}) 
                     {isKm ? uiKm.requestQuote : "Request a Quotation"}
                   </Link>
                   <a
-                    href="tel:+85581580802"
+                    href={`tel:${BUSINESS_PHONE_E164}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
                   >
                     {isKm ? uiKm.contactOffice : "Contact Cambodia Office"}
@@ -374,8 +372,8 @@ export default function ContactClient({ lang = "en" }: ContactClientProps = {}) 
                 </p>
                 <p className="mt-2">
                   {isKm
-                    ? `${uiKm.phoneLabel}: +85581580802 / +85510927445`
-                    : "Phone: +85581580802 / +85510927445"}
+                    ? `${uiKm.phoneLabel}: ${BUSINESS_PHONE_DISPLAY}`
+                    : `Phone: ${BUSINESS_PHONE_DISPLAY}`}
                 </p>
                 <p className="mt-2">
                   {isKm ? `${uiKm.hoursLabel}: ${uiKm.hoursValue}` : "Hours: Mon-Sat, 8:30am-6:00pm"}

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import LangText from "./LangText";
 import { useLang } from "./LanguageProvider";
-import { BUSINESS_EMAIL, BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_E164, SERVICE_AREAS } from "../../lib/nap";
+import { BUSINESS_EMAIL, BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_E164, BUSINESS_WHATSAPP_URL, SERVICE_AREAS } from "../../lib/nap";
 
 type FooterSocialPlatform = "facebook" | "youtube" | "linkedin" | "x" | "instagram" | "telegram" | "whatsapp";
 
@@ -22,7 +22,7 @@ const FOOTER_SOCIAL_LINKS: Array<{
   {
     label: "WhatsApp",
     platform: "whatsapp",
-    href: "https://api.whatsapp.com/send/?phone=85581580802&text&type=phone_number&app_absent=0",
+    href: BUSINESS_WHATSAPP_URL,
   },
 ];
 
