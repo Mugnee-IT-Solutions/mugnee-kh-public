@@ -4,6 +4,10 @@ import SiteHeader from "../../app/components/layout/Header";
 import SiteFooter from "../../app/components/layout/Footer";
 import SitewideJsonLd from "../../app/components/seo/SitewideJsonLd";
 import HomeClient from "../../app/components/home/HomeClient";
+import {
+  BUSINESS_BRAND_NAME,
+  BUSINESS_LEGAL_NAME,
+} from "../../app/lib/nap";
 import { SITE_URL } from "../../app/lib/site";
 import { HOME_CATEGORY_TILES, HOME_FAQ } from "../../lib/homeData";
 
@@ -17,7 +21,36 @@ const title = "Digital Signage & Smart Board Cambodia | Mugnee Cambodia (KM)";
 const description =
   "Mugnee Cambodia supplies digital signage, smart boards, PA systems, and access control in Cambodia with site survey, installation, and local support.";
 
+const PAGE_URL = `${SITE_URL}/km/`;
+const ORG_ID = `${SITE_URL}#organization`;
+const WEBSITE_ID = `${SITE_URL}#website`;
+const FAQ_PAGE_ID = `${PAGE_URL}#faq`;
+
 export default function KmHomePage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@id": FAQ_PAGE_ID,
+    "@type": "FAQPage",
+    url: PAGE_URL,
+    name: "Mugnee Cambodia Company FAQ KM",
+    inLanguage: ["km", "en"],
+    isPartOf: { "@id": WEBSITE_ID },
+    publisher: { "@id": ORG_ID },
+    about: {
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: BUSINESS_LEGAL_NAME,
+      alternateName: BUSINESS_BRAND_NAME,
+    },
+    spatialCoverage: { "@type": "Country", name: "Cambodia" },
+    mainEntity: HOME_FAQ.map((f) => ({
+      "@type": "Question",
+      name: f.qEn,
+      inLanguage: "en",
+      acceptedAnswer: { "@type": "Answer", text: f.aEn, inLanguage: "en" },
+    })),
+  };
+
   return (
     <>
       <Head>
@@ -36,7 +69,7 @@ export default function KmHomePage() {
         <meta property="og:image" content={`${SITE_URL}/images/hero/cambodia-led-hero.webp`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Mugnee Cambodia" />
+        <meta property="og:image:alt" content="Mugnee Cambodia company homepage" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
@@ -45,6 +78,11 @@ export default function KmHomePage() {
 
       <div className="h-screen w-full overflow-hidden">
         <SitewideJsonLd />
+        <script
+          id="km-home-faq-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
         <ClientEnhancements />
         <SiteHeader />
         <main
@@ -58,4 +96,3 @@ export default function KmHomePage() {
     </>
   );
 }
-

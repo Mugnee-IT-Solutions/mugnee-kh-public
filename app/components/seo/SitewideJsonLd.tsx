@@ -1,7 +1,9 @@
 import JsonLd from "./JsonLd";
 import {
   BUSINESS_ADDRESS,
+  BUSINESS_BRAND_NAME,
   BUSINESS_EMAIL,
+  BUSINESS_LEGAL_NAME,
   BUSINESS_NAME,
   BUSINESS_PHONE_E164,
   BUSINESS_SAME_AS,
@@ -14,6 +16,8 @@ export default function SitewideJsonLd() {
     "@id": `${SITE_URL}#organization`,
     "@type": "Organization",
     name: BUSINESS_NAME,
+    legalName: BUSINESS_LEGAL_NAME,
+    alternateName: [BUSINESS_BRAND_NAME, BUSINESS_LEGAL_NAME],
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.png`,
     image: `${SITE_URL}/images/logo.png`,
@@ -46,6 +50,8 @@ export default function SitewideJsonLd() {
     "@id": `${SITE_URL}#localbusiness`,
     "@type": "LocalBusiness",
     name: BUSINESS_NAME,
+    legalName: BUSINESS_LEGAL_NAME,
+    alternateName: [BUSINESS_BRAND_NAME, BUSINESS_LEGAL_NAME],
     url: SITE_URL,
     image: `${SITE_URL}/images/logo.png`,
     email: BUSINESS_EMAIL,

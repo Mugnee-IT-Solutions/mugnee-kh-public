@@ -290,8 +290,9 @@ export default function HomeClient({
       secContactDesc:
         "Talk to our local team for project scoping, timeline planning, and quotation support.",
       secFaqEyebrow: "FAQs",
-      secFaqTitle: "Common Questions from Cambodia Buyers",
-      secFaqDesc: "Short, clear answers to help customers make confident decisions.",
+      secFaqTitle: "Frequently Asked Questions About Mugnee Cambodia",
+      secFaqDesc:
+        "Company-focused answers about our registered business identity, Cambodia office, service coverage, project support, and contact process.",
     };
 
     const km = {
@@ -323,8 +324,9 @@ export default function HomeClient({
       secContactDesc:
         "ទំនាក់ទំនងក្រុមការងារក្នុងស្រុករបស់យើង សម្រាប់កំណត់ Scope គម្រោង រៀបចំកាលវិភាគ និងស្នើសុំតម្លៃ។",
       secFaqEyebrow: "សំណួរញឹកញាប់",
-      secFaqTitle: "សំណួរញឹកញាប់ពីអតិថិជននៅកម្ពុជា",
-      secFaqDesc: "ចម្លើយខ្លីៗ ច្បាស់ៗ ដើម្បីជួយអ្នកសម្រេចចិត្តបានកាន់តែជាក់ច្បាស់។",
+      secFaqTitle: "សំណួរញឹកញាប់អំពី Mugnee Cambodia",
+      secFaqDesc:
+        "ចម្លើយផ្តោតលើក្រុមហ៊ុន អត្តសញ្ញាណអាជីវកម្មដែលបានចុះបញ្ជី ការិយាល័យនៅកម្ពុជា តំបន់សេវាកម្ម ការគាំទ្រគម្រោង និងវិធីទំនាក់ទំនង។",
     };
 
     return lang === "en" ? en : sanitizeLocaleText(km, en);

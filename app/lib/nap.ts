@@ -1,4 +1,6 @@
 export const BUSINESS_NAME = "Mugnee Cambodia";
+export const BUSINESS_BRAND_NAME = "Mugnee Cambodia";
+export const BUSINESS_LEGAL_NAME = "Mugnee Multiple Co., Ltd";
 export const BUSINESS_PHONE_E164 = "+85510927445";
 export const BUSINESS_PHONE_DISPLAY = "+85510927445";
 export const BUSINESS_PHONE_E164_NO_PLUS = "85510927445";

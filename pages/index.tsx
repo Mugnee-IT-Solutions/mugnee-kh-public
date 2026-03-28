@@ -4,7 +4,11 @@ import SiteHeader from "../app/components/layout/Header";
 import SiteFooter from "../app/components/layout/Footer";
 import SitewideJsonLd from "../app/components/seo/SitewideJsonLd";
 import HomeClient from "../app/components/home/HomeClient";
-import { BUSINESS_PHONE_E164 } from "../app/lib/nap";
+import {
+  BUSINESS_BRAND_NAME,
+  BUSINESS_LEGAL_NAME,
+  BUSINESS_PHONE_E164,
+} from "../app/lib/nap";
 import { SITE_URL } from "../app/lib/site";
 import { HOME_CATEGORY_TILES, HOME_FAQ } from "../lib/homeData";
 
@@ -28,11 +32,16 @@ export default function HomePage() {
     "@id": FAQ_PAGE_ID,
     "@type": "FAQPage",
     url: PAGE_URL,
-    name: "Mugnee Cambodia Homepage FAQ",
+    name: "Mugnee Cambodia Company FAQ",
     inLanguage: ["en", "km"],
     isPartOf: { "@id": WEBSITE_ID },
     publisher: { "@id": ORG_ID },
-    about: { "@type": "Country", name: "Cambodia" },
+    about: {
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: BUSINESS_LEGAL_NAME,
+      alternateName: BUSINESS_BRAND_NAME,
+    },
     spatialCoverage: { "@type": "Country", name: "Cambodia" },
     mainEntity: HOME_FAQ.flatMap((f) => {
       const entities = [
@@ -68,7 +77,7 @@ export default function HomePage() {
         <meta property="og:title" content={title} />
         <meta
           property="og:description"
-          content="Digital signage, smart board, PA system, and access control solutions in Cambodia with local installation and support."
+          content="Company profile, Cambodia office details, project support process, and trusted local business identity for Mugnee Cambodia."
         />
         <meta property="og:url" content={`${SITE_URL}/`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
@@ -76,12 +85,12 @@ export default function HomePage() {
         <meta property="og:image" content={`${SITE_URL}/images/hero/cambodia-led-hero.webp`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Mugnee Cambodia LED display and smart technology solutions" />
+        <meta property="og:image:alt" content="Mugnee Cambodia company homepage" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta
           name="twitter:description"
-          content="Digital signage, smart boards, PA systems, and access control solutions in Cambodia."
+          content="Official company homepage of Mugnee Cambodia and Mugnee Multiple Co., Ltd in Cambodia."
         />
         <meta name="twitter:image" content={`${SITE_URL}/images/hero/cambodia-led-hero.webp`} />
         <meta name="telephone" content={BUSINESS_PHONE_E164} />
@@ -92,7 +101,6 @@ export default function HomePage() {
         <script
           id="home-faq-jsonld"
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
         <ClientEnhancements />
