@@ -11,7 +11,7 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "Outdoor LED Display Cambodia | Price & Installation";
+const title = "LED Display in Cambodia - Outdoor LED Billboard";
 const description =
   "Outdoor LED display Cambodia for billboards, facade screens, and digital signage with structure planning, installation, and local support.";
 const ogImage = `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`;
@@ -63,4 +63,3 @@ export default function OutdoorLedDisplayPage() {
     </>
   );
 }
-

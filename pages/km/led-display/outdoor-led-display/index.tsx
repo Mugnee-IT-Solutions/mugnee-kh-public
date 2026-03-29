@@ -11,7 +11,7 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "Outdoor LED Display នៅកម្ពុជា | តម្លៃ និងដំឡើង";
+const title = "LED Display in Cambodia - Outdoor LED Billboard";
 const description =
   "សេវា Outdoor LED Display និងប៊ីលបតផ្សព្វផ្សាយនៅកម្ពុជា សម្រាប់ផ្លូវធំ ផ្សារ និងអាជីវកម្ម ដោយមានតម្លៃគម្រោង សំណង់ដំឡើង និងសេវាបន្ទាប់ពីលក់។";
 const ogImage = `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`;
@@ -40,7 +40,7 @@ export default function KmOutdoorLedDisplayPage() {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Outdoor LED display and billboard in Cambodia" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Outdoor LED Display នៅកម្ពុជា | Mugnee Cambodia" />
+        <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content="អេក្រង់ LED ខាងក្រៅ ប៊ីលបត និងសេវាដំឡើងនៅកម្ពុជា។" />
         <meta name="twitter:image" content={ogImage} />
       </Head>
@@ -60,4 +60,3 @@ export default function KmOutdoorLedDisplayPage() {
     </>
   );
 }
-

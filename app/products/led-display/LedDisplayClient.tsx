@@ -2135,7 +2135,9 @@ export default function LedDisplayClient({
                       >
                         {hint?.tag ?? (lang === "en" ? "LED Resource" : "ធនធានអេក្រង់ LED")}
                       </span>
-                      <span className="text-sm text-slate-400 group-hover:text-slate-100">â†’</span>
+                      <span className="text-sm text-slate-400 group-hover:text-slate-100">
+                        {"\u2192"}
+                      </span>
                     </div>
                     <h3 className="mt-3 text-sm font-semibold leading-snug text-slate-900 group-hover:text-white">{item.title}</h3>
                     <p className="mt-2 text-xs leading-relaxed text-slate-600 group-hover:text-slate-200">

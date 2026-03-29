@@ -11,7 +11,7 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "Indoor LED Display នៅកម្ពុជា | តម្លៃ ទិញ និងដំឡើង";
+const title = "LED Display in Cambodia - Indoor LED Screen";
 const description =
   "ទិញអេក្រង់ LED ក្នុងអគារ សម្រាប់ហាង បន្ទប់ប្រជុំ Showroom និងសាលារៀន នៅកម្ពុជា ជាមួយការស្ទង់ទីតាំង តម្លៃ BOQ ដំឡើង និងកែតម្រូវដោយអ្នកជំនាញ។";
 const ogImage = `${SITE_URL}/images/cambodia/indoor-led-hero.webp`;
@@ -40,7 +40,7 @@ export default function KmIndoorLedDisplayPage() {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Indoor LED display in Cambodia" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Indoor LED Display នៅកម្ពុជា | Mugnee Cambodia" />
+        <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content="អេក្រង់ LED ក្នុងអគារ ជាមួយតម្លៃ និងដំឡើងនៅកម្ពុជា។" />
         <meta name="twitter:image" content={ogImage} />
       </Head>
@@ -60,4 +60,3 @@ export default function KmIndoorLedDisplayPage() {
     </>
   );
 }
-

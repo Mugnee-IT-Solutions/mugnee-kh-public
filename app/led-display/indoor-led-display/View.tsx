@@ -14,7 +14,7 @@ const PAGE_PATH = "/led-display/indoor-led-display/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Indoor LED Display Cambodia | Price & Installation",
+  title: "LED Display in Cambodia - Indoor LED Screen",
   description:
     "Indoor LED display Cambodia for video walls, boardrooms, showrooms, retail, and control rooms with fine-pitch planning, installation, and support.",
   alternates: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Indoor LED Display Cambodia | Price & Installation",
+    title: "LED Display in Cambodia - Indoor LED Screen",
     description:
       "Indoor LED video wall and fine-pitch display solutions in Cambodia with local installation, calibration, BOQ planning, and after-sales support.",
     url: PAGE_URL,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Indoor LED Display Cambodia | Price & Installation",
+    title: "LED Display in Cambodia - Indoor LED Screen",
     description:
       "Indoor LED display solutions in Cambodia with local installation, calibration, BOQ planning, and support.",
     images: [`${SITE_URL}/images/cambodia/indoor-led-hero.webp`],
@@ -186,8 +186,8 @@ export default function IndoorLedDisplayPage() {
         schemaServiceDescOverride="Fine-pitch indoor LED display solutions in Cambodia with survey, design, installation, calibration, and local after-sales support."
         breadcrumbOverride="Indoor LED Display"
         breadcrumbOverrideKm="អេក្រង់ LED ក្នុងអគារ"
-        heroTitleOverride="Indoor LED Display in Cambodia"
-        heroTitleOverrideKm="អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា"
+        heroTitleOverride="LED Display in Cambodia - Indoor LED Screen"
+        heroTitleOverrideKm="LED Display in Cambodia - Indoor LED Screen"
         heroIntroOverride="Looking for indoor LED display price in Cambodia from a trusted indoor LED supplier? Mugnee provides indoor LED display, indoor LED video wall, and fine-pitch LED screen solutions for boardrooms, showrooms, retail shops, control rooms, corporate offices, and hospitality venues. From pixel-pitch planning, custom screen size layout, controller and power integration, and BOQ preparation to installation, calibration, commissioning, and local after-sales support, we help buyers compare P1.25 to P4 indoor LED display options for reliable long-term performance."
         heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារនៅកម្ពុជា សម្រាប់បន្ទប់ប្រជុំ ហាងលក់រាយ បន្ទប់បង្ហាញ បន្ទប់បញ្ជា ការិយាល័យ និងទីតាំងបដិសណ្ឋារកិច្ច។ យើងផ្គត់ផ្គង់ប្រព័ន្ធជញ្ជាំងវីដេអូ LED fine-pitch ដែលមានរូបភាពច្បាស់ល្អ ការរៀបចំទំហំអេក្រង់តាមតម្រូវការ ការរួមបញ្ចូល controller និងប្រព័ន្ធថាមពល ការដំឡើងវិជ្ជាជីវៈ ការកែតម្រូវ និងសេវាគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុក។ ចាប់ពីជម្រើស P1.25 ដល់ P4 ក្រុមការងារយើងគាំទ្រការរចនាតាមគម្រោង ការរៀបចំ BOQ និងសម្រង់តម្លៃ ដើម្បីធានាបានប្រសិទ្ធភាពយូរអង្វែង។"
         afterSpecsContent={

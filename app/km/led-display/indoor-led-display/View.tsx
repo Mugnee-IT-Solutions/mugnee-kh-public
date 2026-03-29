@@ -14,7 +14,7 @@ const PAGE_PATH = "/km/led-display/indoor-led-display/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Indoor LED Display នៅកម្ពុជា | តម្លៃ ទិញ និងដំឡើង",
+  title: "LED Display in Cambodia - Indoor LED Screen",
   description:
     "ទិញអេក្រង់ LED ក្នុងអគារ សម្រាប់ហាង បន្ទប់ប្រជុំ Showroom និងសាលារៀន នៅកម្ពុជា ជាមួយការស្ទង់ទីតាំង តម្លៃ BOQ ដំឡើង និងកែតម្រូវដោយអ្នកជំនាញ។",
   alternates: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Indoor LED Display នៅកម្ពុជា | តម្លៃ ទិញ និងដំឡើង",
+    title: "LED Display in Cambodia - Indoor LED Screen",
     description:
       "អេក្រង់ LED ក្នុងអគារ សម្រាប់ហាង បន្ទប់ប្រជុំ និង showroom នៅកម្ពុជា ជាមួយតម្លៃ BOQ និងដំឡើង។",
     url: PAGE_URL,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Indoor LED Display នៅកម្ពុជា | Mugnee Cambodia",
+    title: "LED Display in Cambodia - Indoor LED Screen",
     description: "អេក្រង់ LED ក្នុងអគារ ជាមួយតម្លៃ និងដំឡើងនៅកម្ពុជា។",
     images: [`${SITE_URL}/images/cambodia/indoor-led-hero.webp`],
   },
@@ -186,7 +186,7 @@ export default function IndoorLedDisplayPage() {
         schemaServiceDescOverride="ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារនៅកម្ពុជា ជាមួយការស្ទង់ទីតាំង ការរចនា ការដំឡើង ការកែតម្រូវ និងសេវាគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុក។"
         breadcrumbOverride="អេក្រង់ LED ក្នុងអគារ"
         breadcrumbOverrideKm="អេក្រង់ LED ក្នុងអគារ"
-        heroTitleOverride="Indoor LED Display in Cambodia"
+        heroTitleOverride="LED Display in Cambodia - Indoor LED Screen"
         heroTitleOverrideKm="អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា"
         heroIntroOverride="Mugnee provides indoor LED display solutions in Cambodia for boardrooms, retail shops, showrooms, control rooms, corporate offices, and hospitality venues. We deliver fine-pitch indoor LED video wall systems with high brightness, seamless visuals, custom screen size planning, controller and power integration, professional installation, calibration, and local after-sales support. From P1.25 to P4 indoor LED display options, our team supports project-based design, BOQ preparation, and quotation for reliable long-term performance."
         heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ក្នុងអគារនៅកម្ពុជា សម្រាប់បន្ទប់ប្រជុំ ហាងលក់រាយ បន្ទប់បង្ហាញ បន្ទប់បញ្ជា ការិយាល័យ និងទីតាំងបដិសណ្ឋារកិច្ច។ យើងផ្គត់ផ្គង់ប្រព័ន្ធជញ្ជាំងវីដេអូ LED fine-pitch ដែលមានរូបភាពច្បាស់ល្អ ការរៀបចំទំហំអេក្រង់តាមតម្រូវការ ការរួមបញ្ចូល controller និងប្រព័ន្ធថាមពល ការដំឡើងវិជ្ជាជីវៈ ការកែតម្រូវ និងសេវាគាំទ្របន្ទាប់ពីលក់ក្នុងស្រុក។ ចាប់ពីជម្រើស P1.25 ដល់ P4 ក្រុមការងារយើងគាំទ្រការរចនាតាមគម្រោង ការរៀបចំ BOQ និងសម្រង់តម្លៃ ដើម្បីធានាបានប្រសិទ្ធភាពយូរអង្វែង។"

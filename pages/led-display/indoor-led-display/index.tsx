@@ -11,7 +11,7 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "Indoor LED Display Cambodia | Price & Installation";
+const title = "LED Display in Cambodia - Indoor LED Screen";
 const description =
   "Indoor LED display Cambodia for video walls, boardrooms, showrooms, retail, and control rooms with fine-pitch planning, installation, and support.";
 const ogImage = `${SITE_URL}/images/cambodia/indoor-led-hero.webp`;
@@ -63,4 +63,3 @@ export default function IndoorLedDisplayPage() {
     </>
   );
 }
-

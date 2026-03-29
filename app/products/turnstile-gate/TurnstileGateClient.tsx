@@ -67,19 +67,19 @@ export default function TurnstileGateClient() {
       typesTitle: "Types of Turnstile Gates",
       typesSub:
         "Choose the right turnstile gate type by security level, traffic volume, lane width, and the look of your site in Cambodia.",
-      t1: "ច្រកទ្វារបីដង",
+      t1: "Tripod Turnstile",
       t1d:
         "Budget-friendly tripod turnstiles for staff entrances, schools, and factories. Reliable one-at-a-time control with RFID or QR access and low maintenance.",
-      t2: "ច្រកស្លាបបិទបើក",
+      t2: "Flap Barrier Gate",
       t2d:
         "Elegant flap barrier gates for office lobbies, hotels, and public buildings. Faster passage, sensor safety, and premium aesthetics for modern spaces.",
-      t3: "ច្រកល្បឿនលឿន",
+      t3: "Speed Gate",
       t3d:
         "High-throughput speed gates for metro stations, airports, and corporate HQs. Smooth glass panels, anti-tailgating logic, and fast flow control.",
-      t4: "ច្រកកម្ពស់ពេញ",
+      t4: "Full-Height Turnstile",
       t4d:
         "Full-height turnstiles for maximum security at factories, stadiums, and restricted areas. Rugged construction for outdoor and 24/7 use.",
-      t5: "ច្រកស្វ៊ីង / អុបទិក",
+      t5: "Swing/Optical Gate",
       t5d:
         "Swing/optical gates for accessible wide lanes and stroller or wheelchair access. Ideal for mixed-traffic entrances and visitor-friendly sites.",
 

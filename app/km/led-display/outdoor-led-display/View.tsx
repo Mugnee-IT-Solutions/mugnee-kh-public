@@ -14,7 +14,7 @@ const PAGE_PATH = "/km/led-display/outdoor-led-display/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Outdoor LED Display នៅកម្ពុជា | តម្លៃ និងដំឡើង",
+  title: "LED Display in Cambodia - Outdoor LED Billboard",
   description:
     "សេវា Outdoor LED Display និងប៊ីលបតផ្សព្វផ្សាយនៅកម្ពុជា សម្រាប់ផ្លូវធំ ផ្សារ និងអាជីវកម្ម ដោយមានតម្លៃគម្រោង សំណង់ដំឡើង និងសេវាបន្ទាប់ពីលក់។",
   alternates: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Outdoor LED Display នៅកម្ពុជា | តម្លៃប៊ីលបត និងដំឡើង",
+    title: "LED Display in Cambodia - Outdoor LED Billboard",
     description:
       "Outdoor LED Display និងប៊ីលបតផ្សព្វផ្សាយនៅកម្ពុជា សម្រាប់ផ្លូវធំ ផ្សារ និងអាជីវកម្ម ជាមួយសេវាដំឡើង។",
     url: PAGE_URL,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Outdoor LED Display នៅកម្ពុជា | Mugnee Cambodia",
+    title: "LED Display in Cambodia - Outdoor LED Billboard",
     description: "អេក្រង់ LED ខាងក្រៅ ប៊ីលបត និងសេវាដំឡើងនៅកម្ពុជា។",
     images: [`${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`],
   },
@@ -187,7 +187,7 @@ export default function OutdoorLedDisplayPage() {
         schemaServiceDescOverride="ដំណោះស្រាយអេក្រង់ LED ខាងក្រៅ និងប៊ីលបត្រផ្សព្វផ្សាយនៅកម្ពុជា ជាមួយការរចនារចនាសម្ព័ន្ធ ការដំឡើង ការត្រួតពិនិត្យដំណើរការ និងសេវាបន្ទាប់ពីលក់។"
         breadcrumbOverride="អេក្រង់ LED ខាងក្រៅ"
         breadcrumbOverrideKm="អេក្រង់ LED ខាងក្រៅ"
-        heroTitleOverride="Outdoor LED Display in Cambodia"
+        heroTitleOverride="LED Display in Cambodia - Outdoor LED Billboard"
         heroTitleOverrideKm="អេក្រង់ LED ខាងក្រៅនៅកម្ពុជា"
         heroIntroOverride="Mugnee delivers outdoor LED display solutions in Cambodia for roadside billboards, facade screens, DOOH advertising, and public digital signage projects. We provide high-brightness outdoor LED billboard systems with weatherproof IP65-ready cabinet options, pixel-pitch planning, viewing-distance optimization, and steel structure safety design for long-term reliability. From P2.5 to P10 outdoor LED display models, our team supports site survey, controller and power system integration, installation, commissioning, and local after-sales support with project-based BOQ and quotation."
         heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ខាងក្រៅនៅកម្ពុជា សម្រាប់ប៊ីលបត្រតាមដងផ្លូវ អេក្រង់ Facade ការផ្សព្វផ្សាយ DOOH និងគម្រោង Digital Signage សាធារណៈ។ យើងផ្គត់ផ្គង់ប្រព័ន្ធប៊ីលបត្រ LED ខាងក្រៅដែលមានពន្លឺខ្ពស់ ជាមួយជម្រើសកាប៊ីណេតការពារអាកាសធាតុ IP65-ready ការរៀបចំ Pixel Pitch ការបង្កើនប្រសិទ្ធភាពចម្ងាយមើល និងការរចនាសុវត្ថិភាពរចនាសម្ព័ន្ធដែកសម្រាប់ភាពទុកចិត្តរយៈពេលវែង។ ចាប់ពីម៉ូដែល P2.5 ដល់ P10 ក្រុមការងារយើងគាំទ្រស្ទង់ទីតាំង ការរួមបញ្ចូល controller និងប្រព័ន្ធថាមពល ការដំឡើង ការត្រួតពិនិត្យដំណើរការ និងសេវាបន្ទាប់ពីលក់ក្នុងស្រុក ជាមួយ BOQ និងសម្រង់តម្លៃផ្អែកលើគម្រោង។"

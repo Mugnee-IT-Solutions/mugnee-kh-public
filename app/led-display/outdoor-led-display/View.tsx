@@ -14,7 +14,7 @@ const PAGE_PATH = "/led-display/outdoor-led-display/";
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 export const metadata: Metadata = {
-  title: "Outdoor LED Display Cambodia | Price & Installation",
+  title: "LED Display in Cambodia - Outdoor LED Billboard",
   description:
     "Outdoor LED display Cambodia for billboards, facade screens, and digital signage with structure planning, installation, and local support.",
   alternates: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Outdoor LED Display Cambodia | Price & Installation",
+    title: "LED Display in Cambodia - Outdoor LED Billboard",
     description:
       "Outdoor LED billboard and digital signage solutions in Cambodia with structure design, installation, commissioning, and after-sales support.",
     url: PAGE_URL,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Outdoor LED Display Cambodia | Price & Installation",
+    title: "LED Display in Cambodia - Outdoor LED Billboard",
     description:
       "Outdoor LED billboard solutions in Cambodia with local installation, structure planning, commissioning, and support.",
     images: [`${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`],
@@ -187,8 +187,8 @@ export default function OutdoorLedDisplayPage() {
         schemaServiceDescOverride="Outdoor LED billboard and digital signage solutions in Cambodia with structure design, installation, commissioning, and after-sales support."
         breadcrumbOverride="Outdoor LED Display"
         breadcrumbOverrideKm="អេក្រង់ LED ខាងក្រៅ"
-        heroTitleOverride="Outdoor LED Display in Cambodia"
-        heroTitleOverrideKm="អេក្រង់ LED ខាងក្រៅនៅកម្ពុជា"
+        heroTitleOverride="LED Display in Cambodia - Outdoor LED Billboard"
+        heroTitleOverrideKm="LED Display in Cambodia - Outdoor LED Billboard"
         heroIntroOverride="Looking for outdoor LED display price in Cambodia from a reliable outdoor LED supplier? Mugnee delivers outdoor LED display, outdoor LED billboard, and digital signage solutions for roadside billboards, facade screens, DOOH advertising, and public information projects. We provide high-brightness outdoor LED screen systems with weatherproof IP65-ready cabinet options, pixel-pitch planning, viewing-distance optimization, steel structure safety design, and BOQ preparation, with local installation, commissioning, and after-sales support for P2.5 to P10 outdoor LED display projects."
         heroIntroOverrideKm="Mugnee ផ្តល់ដំណោះស្រាយអេក្រង់ LED ខាងក្រៅនៅកម្ពុជា សម្រាប់ប៊ីលបត្រតាមដងផ្លូវ អេក្រង់ Facade ការផ្សព្វផ្សាយ DOOH និងគម្រោង Digital Signage សាធារណៈ។ យើងផ្គត់ផ្គង់ប្រព័ន្ធប៊ីលបត្រ LED ខាងក្រៅដែលមានពន្លឺខ្ពស់ ជាមួយជម្រើសកាប៊ីណេតការពារអាកាសធាតុ IP65-ready ការរៀបចំ Pixel Pitch ការបង្កើនប្រសិទ្ធភាពចម្ងាយមើល និងការរចនាសុវត្ថិភាពរចនាសម្ព័ន្ធដែកសម្រាប់ភាពទុកចិត្តរយៈពេលវែង។ ចាប់ពីម៉ូដែល P2.5 ដល់ P10 ក្រុមការងារយើងគាំទ្រស្ទង់ទីតាំង ការរួមបញ្ចូល controller និងប្រព័ន្ធថាមពល ការដំឡើង ការត្រួតពិនិត្យដំណើរការ និងសេវាបន្ទាប់ពីលក់ក្នុងស្រុក ជាមួយ BOQ និងសម្រង់តម្លៃផ្អែកលើគម្រោង។"
         afterSpecsContent={

@@ -10,6 +10,8 @@ body {
   padding: 0;
   overflow-x: hidden;
   overscroll-behavior-y: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 html {
@@ -93,4 +95,10 @@ a {
 .blog-justified blockquote {
   text-align: justify;
   text-justify: inter-word;
+}
+#html::-webkit-scrollbar,
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
