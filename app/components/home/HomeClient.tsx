@@ -411,7 +411,7 @@ export default function HomeClient({
         {/* CTAs: stronger contrast */}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <Link
-            href={toLangHref("/contact")}
+            href={toLangHref("/contact/")}
             className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100"
           >
             {t.ctaQuote}
@@ -677,7 +677,7 @@ export default function HomeClient({
 
             <div className="mt-4">
               <a
-                href={toLangHref("/contact")}
+                href={toLangHref("/contact/")}
                 className="inline-flex items-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
               >
                 {lang === "en" ? "Explore Collaboration Opportunities" : "ស្វែងរកឱកាសសហការ"}
@@ -830,7 +830,7 @@ export default function HomeClient({
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <a
-                    href={toLangHref("/contact")}
+                    href={toLangHref("/contact/")}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 px-6 py-3 text-base font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.35)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(15,23,42,0.45)]"
                   >
                     <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/15">
@@ -853,7 +853,7 @@ export default function HomeClient({
                     {lang === "en" ? "Request a Quotation" : "ស្នើសុំតម្លៃ"}
                   </a>
                   <a
-                    href={toLangHref("/contact")}
+                    href={toLangHref("/contact/")}
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md"
                   >
                     <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-slate-700">

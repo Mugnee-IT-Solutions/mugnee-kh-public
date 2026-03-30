@@ -469,6 +469,7 @@ export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km"
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+              inLanguage: isKm ? "km" : "en",
       mainEntity: faqData.map((item) => ({
         "@type": "Question",
         name: item.q,
@@ -501,7 +502,7 @@ export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km"
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                href={toLangHref("/contact")}
+                href={toLangHref("/contact/")}
                 className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {t.cta1}
@@ -541,7 +542,7 @@ export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km"
                   {isKm ? "អេក្រង់ LED ក្នុងអគារ" : "Indoor LED Display Guide"}
                 </Link>
                 <Link
-                  href={toLangHref("/led-display/outdoor-led-display")}
+                  href={toLangHref("/led-display/outdoor-led-display/")}
                   className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
                 >
                   {isKm ? "អេក្រង់ LED ខាងក្រៅ" : "Outdoor LED Billboard Guide"}
@@ -789,7 +790,7 @@ export default function ServiceClient({ forcedLang }: { forcedLang?: "en" | "km"
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href={toLangHref("/contact")}
+                href={toLangHref("/contact/")}
                 className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {t.finalCta1}

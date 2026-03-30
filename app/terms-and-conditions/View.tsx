@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      "en-kh": PAGE_PATH,
-      "km-kh": "/km/terms-and-conditions/",
+      "en-KH": PAGE_PATH,
+      "km-KH": "/km/terms-and-conditions/",
       "x-default": PAGE_PATH,
     },
   },

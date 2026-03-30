@@ -167,11 +167,18 @@ export const BLOG_POSTS: BlogPost[] = [
   mkPost({
     slug: "led-display-price-cambodia",
     title: "LED Display Price in Cambodia: What Affects the Cost in 2026",
-    excerpt: "Understand what truly drives LED display price in Cambodia.",
-    description: "Learn the real cost factors behind LED display pricing in Cambodia for business projects.",
+    excerpt: "A practical guide to LED display price in Cambodia, quotation structure, and BOQ cost drivers.",
+    description:
+      "Understand LED display price in Cambodia with a buyer-first breakdown of quotation and BOQ cost drivers: pixel pitch, indoor vs outdoor specs, installation scope, commissioning, and after-sales support.",
     category: "pricing",
     coverImage: "/images/blog/phnom-penh-outdoor-led-billboard-highway-advertising-cambodia.webp",
-    keywords: ["led display price cambodia", "led screen price per sqm", "led quotation cambodia"],
+    keywords: [
+      "led display price cambodia",
+      "led display cambodia price",
+      "led screen price per sqm",
+      "led quotation cambodia",
+      "led display quotation phnom penh",
+    ],
     publishedAt: "2026-03-02",
     updatedAt: "2026-03-02",
     featured: true,
@@ -644,7 +651,7 @@ const BLOG_SEO_META_BY_SLUG: Record<string, BlogSeoMeta> = {
   "led-display-price-cambodia": {
     title: "LED Display Price in Cambodia (2026) | Mugnee Blog",
     description:
-      "Understand what affects LED display pricing in Cambodia, including BOQ scope, installation complexity, and support cost.",
+      "Understand LED display pricing in Cambodia with a buyer-first breakdown of BOQ scope, installation complexity, commissioning, and after-sales support cost.",
   },
   "indoor-vs-outdoor-led-display": {
     title: "Indoor vs Outdoor LED Display Guide | Mugnee Cambodia",

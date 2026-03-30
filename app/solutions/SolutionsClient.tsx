@@ -120,7 +120,7 @@ const solutionLinksEn = [
     desc: "Industry page for school and training environments.",
     href: "/solutions/education-smart-classroom-cambodia",
   },
-  { title: "Interactive Flat Panel", desc: "Dedicated product hub for classroom systems.", href: "/interactive-flat-panel" },
+  { title: "Interactive Flat Panel", desc: "Dedicated product hub for classroom systems.", href: "/interactive-flat-panel/" },
 ];
 
 const solutionLinksKm = [
@@ -162,7 +162,7 @@ const solutionLinksKm = [
   {
     title: "Interactive Flat Panel",
     desc: "ទំព័រផលិតផលសម្រាប់ប្រព័ន្ធថ្នាក់រៀន។",
-    href: "/interactive-flat-panel",
+    href: "/interactive-flat-panel/",
   },
 ];
 
@@ -181,7 +181,7 @@ const intentClustersEn = [
     title: "Security & Access Intent",
     links: [
       { label: "Office Access Control Solutions", href: "/solutions/office-access-control-cambodia" },
-      { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
+      { label: "Turnstile Gate Hub", href: "/turnstile-gate/" },
       { label: "Access Control Catalog", href: "/solutions/office-access-control-cambodia" },
     ],
   },
@@ -189,8 +189,8 @@ const intentClustersEn = [
     title: "Education & Collaboration Intent",
     links: [
       { label: "Education Smart Classroom Solutions", href: "/solutions/education-smart-classroom-cambodia" },
-      { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
-      { label: "Smart Board Catalog", href: "/interactive-flat-panel" },
+      { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel/" },
+      { label: "Smart Board Catalog", href: "/interactive-flat-panel/" },
     ],
   },
   {
@@ -218,7 +218,7 @@ const intentClustersKm = [
     title: "Intent: Security & Access",
     links: [
       { label: "ដំណោះស្រាយ ការិយាល័យ ប្រព័ន្ធគ្រប់គ្រងការចូលចេញ", href: "/solutions/office-access-control-cambodia" },
-      { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
+      { label: "Turnstile Gate Hub", href: "/turnstile-gate/" },
       { label: "Access Control Catalog", href: "/solutions/office-access-control-cambodia" },
     ],
   },
@@ -226,8 +226,8 @@ const intentClustersKm = [
     title: "Intent: Education & Collaboration",
     links: [
       { label: "ដំណោះស្រាយ អប់រំ ថ្នាក់រៀនឆ្លាតវៃ", href: "/solutions/education-smart-classroom-cambodia" },
-      { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
-      { label: "Smart Board Catalog", href: "/interactive-flat-panel" },
+      { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel/" },
+      { label: "Smart Board Catalog", href: "/interactive-flat-panel/" },
     ],
   },
   {
@@ -482,6 +482,7 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
             {
               "@context": "https://schema.org",
               "@type": "FAQPage",
+              inLanguage: isKhmer ? "km" : "en",
               mainEntity: faqs.map((item) => ({
                 "@type": "Question",
                 name: item.q,
@@ -515,7 +516,7 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{t.heroTitle}</h1>
           <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base [text-align:justify]">{t.heroDesc}</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href={toLangHref("/contact")} className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.ctaQuote}</Link>
+            <Link href={toLangHref("/contact/")} className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.ctaQuote}</Link>
             <Link href={toLangHref("/products")} className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md">{t.ctaProducts}</Link>
           </div>
           <div className="mt-4 text-xs text-slate-500">{t.heroFoot}</div>
@@ -544,7 +545,7 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
                 {isKhmer ? "អេក្រង់ LED ខាងក្នុង" : "Indoor LED Display"}
               </Link>
               <Link
-                href={toLangHref("/led-display/outdoor-led-display")}
+                href={toLangHref("/led-display/outdoor-led-display/")}
                 className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
               >
                 {isKhmer ? "អេក្រង់ LED ខាងក្រៅ" : "Outdoor LED Billboard"}
@@ -689,7 +690,7 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
             <h2 className="text-2xl font-bold tracking-tight text-slate-900">{t.finalTitle}</h2>
             <p className="mt-2 text-slate-600">{t.finalDesc}</p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <Link href={toLangHref("/contact")} className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.finalCta1}</Link>
+              <Link href={toLangHref("/contact/")} className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg">{t.finalCta1}</Link>
               <Link href={toLangHref("/products")} className="inline-flex rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-md">{t.finalCta2}</Link>
             </div>
           </div>

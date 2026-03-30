@@ -356,7 +356,7 @@ export default function ProductDetailClient({
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href={toLangHref("/contact")}
+                  href={toLangHref("/contact/")}
                   className="cta-anim relative rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white no-underline hover:bg-slate-800"
                 >
                   {ui.getQuotation}
@@ -389,7 +389,7 @@ export default function ProductDetailClient({
                     {ui.indoorLink}
                   </Link>
                   <Link
-                    href={toLangHref("/led-display/outdoor-led-display")}
+                    href={toLangHref("/led-display/outdoor-led-display/")}
                     className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-100"
                   >
                     {ui.outdoorLink}

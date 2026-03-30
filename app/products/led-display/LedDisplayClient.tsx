@@ -1,4 +1,4 @@
-﻿
+
 import Link from "next/link";
 import Image from "next/image";
 import { BUSINESS_ADDRESS, BUSINESS_PHONE_E164, BUSINESS_SAME_AS, BUSINESS_NAME, BUSINESS_WHATSAPP_URL, SERVICE_AREAS } from "../../lib/nap";
@@ -120,25 +120,25 @@ const LED_FAQS_KM: Array<{ q: string; a: string }> = [
 ];
 
 const INTERNAL_LINK_CLUSTER_EN = [
-  { title: "Indoor LED Display in Cambodia", href: "/led-display/indoor-led-display" },
-  { title: "Outdoor LED Billboard in Cambodia", href: "/led-display/outdoor-led-display" },
-  { title: "LED Receiving Card Guide", href: "/led-display/receiving-card" },
-  { title: "LED Video Processor Selection", href: "/led-display/video-processor" },
-  { title: "LED Power Supply & Parts", href: "/led-display/power-supply" },
-  { title: "LED Installation & Service Support", href: "/service" },
-  { title: "Cambodia Solutions by Industry", href: "/solutions" },
-  { title: "Get LED Project Quotation", href: "/contact" },
+  { title: "Indoor LED Display in Cambodia", href: "/led-display/indoor-led-display/" },
+  { title: "Outdoor LED Billboard in Cambodia", href: "/led-display/outdoor-led-display/" },
+  { title: "LED Receiving Card Guide", href: "/led-display/receiving-card/" },
+  { title: "LED Video Processor Selection", href: "/led-display/video-processor/" },
+  { title: "LED Power Supply & Parts", href: "/led-display/power-supply/" },
+  { title: "LED Installation & Service Support", href: "/service/" },
+  { title: "Cambodia Solutions by Industry", href: "/solutions/" },
+  { title: "Get LED Project Quotation", href: "/contact/" },
 ];
 
 const INTERNAL_LINK_CLUSTER_KM = [
-  { title: "អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា", href: "/led-display/indoor-led-display" },
-  { title: "ប៊ីលបត្រ LED ខាងក្រៅនៅកម្ពុជា", href: "/led-display/outdoor-led-display" },
-  { title: "មគ្គុទ្ទេសក៍កាតទទួលសញ្ញា LED", href: "/led-display/receiving-card" },
-  { title: "មគ្គុទ្ទេសក៍ជ្រើសរើសឧបករណ៍ដំណើរការវីដេអូ LED", href: "/led-display/video-processor" },
-  { title: "ប្រព័ន្ធផ្គត់ផ្គង់ថាមពល LED និងគ្រឿងបន្លាស់", href: "/led-display/power-supply" },
-  { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស LED", href: "/service" },
-  { title: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា", href: "/solutions" },
-  { title: "ស្នើសុំតម្លៃគម្រោង LED", href: "/contact" },
+  { title: "អេក្រង់ LED ក្នុងអគារនៅកម្ពុជា", href: "/led-display/indoor-led-display/" },
+  { title: "ប៊ីលបត្រ LED ខាងក្រៅនៅកម្ពុជា", href: "/led-display/outdoor-led-display/" },
+  { title: "មគ្គុទ្ទេសក៍កាតទទួលសញ្ញា LED", href: "/led-display/receiving-card/" },
+  { title: "មគ្គុទ្ទេសក៍ជ្រើសរើសឧបករណ៍ដំណើរការវីដេអូ LED", href: "/led-display/video-processor/" },
+  { title: "ប្រព័ន្ធផ្គត់ផ្គង់ថាមពល LED និងគ្រឿងបន្លាស់", href: "/led-display/power-supply/" },
+  { title: "សេវាដំឡើង និងគាំទ្របច្ចេកទេស LED", href: "/service/" },
+  { title: "ដំណោះស្រាយតាមវិស័យនៅកម្ពុជា", href: "/solutions/" },
+  { title: "ស្នើសុំតម្លៃគម្រោង LED", href: "/contact/" },
 ];
 
 const INTERNAL_LINK_HINTS_EN = [
@@ -332,7 +332,6 @@ export default function LedDisplayClient({
   schemaNameOverride,
   schemaServiceNameOverride,
   schemaServiceDescOverride,
-  currentYearEn,
   heroTitleOverride,
   heroTitleOverrideKm,
   heroIntroOverride,
@@ -369,7 +368,6 @@ export default function LedDisplayClient({
   schemaNameOverride?: string;
   schemaServiceNameOverride?: string;
   schemaServiceDescOverride?: string;
-  currentYearEn?: string;
   heroTitleOverride?: string;
   heroTitleOverrideKm?: string;
   heroIntroOverride?: string;
@@ -419,7 +417,7 @@ export default function LedDisplayClient({
       breadcrumb: "LED Display",
       h1: "LED Display in Cambodia - Indoor & Outdoor LED Screen",
       intro:
-        "Looking for LED display price in Cambodia from a trusted LED display supplier and LED screen supplier in Phnom Penh? Mugnee Cambodia provides indoor LED display, outdoor LED screen, LED billboard, LED video wall, digital signage, and LED advertising screen solutions for retail shops, hotels, showrooms, corporate offices, education campuses, churches, and public communication projects. From site survey, pixel-pitch selection, screen size planning, and BOQ preparation to receiving card and video processor setup, power and structure planning, installation, calibration, commissioning, and local after-sales support, we help buyers compare the right indoor and outdoor LED display solution for long-term performance in Cambodia.",
+        "Looking for LED display price in Cambodia from a trusted LED display supplier and LED screen supplier in Phnom Penh? Mugnee Cambodia provides indoor LED display, outdoor LED screen, LED billboard, LED video wall, LED signage, digital signage, and LED advertising screen solutions for retail shops, hotels, showrooms, corporate offices, education campuses, churches, and public communication projects. From site survey, pixel-pitch selection, screen size planning, and BOQ preparation to receiving card and video processor setup, power and structure planning, installation, calibration, commissioning, and local after-sales support, we help buyers compare the right indoor and outdoor LED display solution for long-term performance in Cambodia.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
@@ -683,7 +681,7 @@ export default function LedDisplayClient({
               {t.cta1}
             </a>
             <Link
-              href={toLangHref("/contact")}
+              href={toLangHref("/contact/")}
               className="rounded-full border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 hover:bg-slate-100"
             >
               {t.cta2}
@@ -850,19 +848,19 @@ export default function LedDisplayClient({
 
           <div className="mt-5 flex flex-wrap gap-2">
             <Link
-              href={toLangHref("/contact")}
+              href={toLangHref("/contact/")}
               className="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white no-underline hover:bg-slate-800 hover:no-underline"
             >
               {lang === "en" ? "Request LED BOQ & Quotation" : "ស្នើសុំ BOQ និងតម្លៃ LED"}
             </Link>
             <Link
-              href={toLangHref("/led-display/indoor-led-display")}
+              href={toLangHref("/led-display/indoor-led-display/")}
               className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Compare Indoor LED Display" : "ប្រៀបធៀប LED ក្នុងអគារ"}
             </Link>
             <Link
-              href={toLangHref("/led-display/outdoor-led-display")}
+              href={toLangHref("/led-display/outdoor-led-display/")}
               className="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Compare Outdoor LED Billboard" : "ប្រៀបធៀប LED ខាងក្រៅ"}
@@ -1596,13 +1594,13 @@ export default function LedDisplayClient({
             </div>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href={toLangHref("/contact")}
+                href={toLangHref("/contact/")}
                 className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white no-underline hover:bg-slate-800 hover:no-underline"
               >
                 {lang === "en" ? "Request BOQ & Quotation" : "ស្នើសុំ BOQ និងសំណើតម្លៃ"}
               </Link>
               <Link
-                href={toLangHref("/service")}
+                href={toLangHref("/service/")}
                 className="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 no-underline hover:bg-slate-100 hover:no-underline"
               >
                 {lang === "en" ? "View Installation Service Scope" : "មើលវិសាលភាពសេវាដំឡើង"}
@@ -1882,7 +1880,7 @@ export default function LedDisplayClient({
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href={toLangHref("/contact")}
+              href={toLangHref("/contact/")}
               className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
             >
               {lang === "en" ? "Contact Mugnee Cambodia" : "ទំនាក់ទំនង Mugnee Cambodia"}
@@ -2078,19 +2076,19 @@ export default function LedDisplayClient({
           </div>
           <div className="mt-5 flex flex-wrap gap-2">
             <Link
-              href={toLangHref("/led-display/indoor-led-display")}
+              href={toLangHref("/led-display/indoor-led-display/")}
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Explore Indoor LED Displays" : "មើលអេក្រង់ LED ក្នុងអគារ"}
             </Link>
             <Link
-              href={toLangHref("/led-display/outdoor-led-display")}
+              href={toLangHref("/led-display/outdoor-led-display/")}
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Explore Outdoor LED Displays" : "មើលអេក្រង់ LED ខាងក្រៅ"}
             </Link>
             <Link
-              href={toLangHref("/contact")}
+              href={toLangHref("/contact/")}
               className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 no-underline hover:border-slate-400 hover:text-slate-900 hover:no-underline"
             >
               {lang === "en" ? "Request LED Quotation" : "ស្នើសុំតម្លៃអេក្រង់ LED"}

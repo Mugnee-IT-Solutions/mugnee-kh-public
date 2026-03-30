@@ -2,6 +2,39 @@
 const fs = require("fs");
 const path = require("path");
 
+function loadDotEnvLocalIntoProcessEnv() {
+  // This script is executed from npm lifecycle hooks.
+  // Next.js may not automatically inject .env.local into a plain Node process,
+  // so we load it here to keep STATIC_EXPORT-based behavior consistent.
+  const envPath = path.join(process.cwd(), ".env.local");
+  if (!fs.existsSync(envPath)) return;
+
+  const raw = fs.readFileSync(envPath, "utf8");
+  for (const lineRaw of raw.split(/\r?\n/)) {
+    const line = lineRaw.trim();
+    if (!line || line.startsWith("#")) continue;
+
+    const eqIdx = line.indexOf("=");
+    if (eqIdx === -1) continue;
+
+    const key = line.slice(0, eqIdx).trim();
+    let value = line.slice(eqIdx + 1).trim();
+    if (!key) continue;
+
+    // Strip surrounding quotes: FOO="bar" or FOO='bar'
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+
+    if (process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
+}
+
 function normalizeSiteUrl(raw) {
   const value = (raw || "https://mugneekh.com").trim();
   const candidate = /^https?:\/\//i.test(value) ? value : `https://${value}`;
@@ -118,6 +151,7 @@ function generateManifestJson() {
 }
 
 function run() {
+  loadDotEnvLocalIntoProcessEnv();
   const isStaticExport = process.env.STATIC_EXPORT === "true";
   if (!isStaticExport) {
     console.log("[generate-static-export-meta] STATIC_EXPORT!=true, skipping.");

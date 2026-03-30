@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "LED Display in Cambodia - Indoor LED Screen";
+const title = "អេក្រង់ LED ក្នុងអគារ នៅកម្ពុជា | Fine-Pitch LED Video Wall & LED Screen";
 const description =
-  "ទិញអេក្រង់ LED ក្នុងអគារ សម្រាប់ហាង បន្ទប់ប្រជុំ Showroom និងសាលារៀន នៅកម្ពុជា ជាមួយការស្ទង់ទីតាំង តម្លៃ BOQ ដំឡើង និងកែតម្រូវដោយអ្នកជំនាញ។";
+  "អេក្រង់ LED ក្នុងអគារ (indoor) នៅកម្ពុជា សម្រាប់ video wall និង LED screen ក្នុង boardroom, showroom, retail និង control room។ ទទួលបានការណែនាំ pixel pitch, BOQ, ដំឡើង, calibration និង quotation guidance។";
 const ogImage = `${SITE_URL}/images/cambodia/indoor-led-hero.webp`;
 
 export default function KmIndoorLedDisplayPage() {
@@ -24,13 +24,13 @@ export default function KmIndoorLedDisplayPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/km/led-display/indoor-led-display/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/led-display/indoor-led-display/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/led-display/indoor-led-display/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/led-display/indoor-led-display/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/led-display/indoor-led-display/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/led-display/indoor-led-display/`} />
         <meta property="og:title" content={title} />
         <meta
           property="og:description"
-          content="អេក្រង់ LED ក្នុងអគារ សម្រាប់ហាង បន្ទប់ប្រជុំ និង showroom នៅកម្ពុជា ជាមួយតម្លៃ BOQ និងដំឡើង។"
+          content="អេក្រង់ LED ក្នុងអគារ នៅកម្ពុជា សម្រាប់ fine-pitch LED video wall ជាមួយការណែនាំ pixel pitch, BOQ, ដំឡើង, calibration និងសេវាបន្ទាប់ពីលក់។"
         />
         <meta property="og:url" content={`${SITE_URL}/km/led-display/indoor-led-display/`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
@@ -41,7 +41,10 @@ export default function KmIndoorLedDisplayPage() {
         <meta property="og:image:alt" content="Indoor LED display in Cambodia" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content="អេក្រង់ LED ក្នុងអគារ ជាមួយតម្លៃ និងដំឡើងនៅកម្ពុជា។" />
+        <meta
+          name="twitter:description"
+          content="អេក្រង់ LED ក្នុងអគារ នៅកម្ពុជា សម្រាប់ fine-pitch LED video wall ជាមួយ BOQ, ដំឡើង, calibration និង quotation guidance។"
+        />
         <meta name="twitter:image" content={ogImage} />
       </Head>
 

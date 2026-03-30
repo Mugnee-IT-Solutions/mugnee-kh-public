@@ -424,13 +424,13 @@ export default function AboutClient({ lang = "en" }: { lang?: "en" | "km" }) {
               </div>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
-                  href={toLangHref("/contact")}
+                  href={toLangHref("/contact/")}
                   className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
                 >
                   {isKm ? uiKm.ctaContact : "Contact Us"}
                 </Link>
                 <Link
-                  href={toLangHref("/service")}
+                  href={toLangHref("/service/")}
                   className="rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white hover:shadow-md"
                 >
                   {isKm ? uiKm.ctaService : "Service & Support"}
@@ -682,7 +682,7 @@ export default function AboutClient({ lang = "en" }: { lang?: "en" | "km" }) {
             </p>
             <div className="mt-4">
               <Link
-                href={toLangHref("/contact")}
+                href={toLangHref("/contact/")}
                 className="inline-flex rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-lg"
               >
                 {isKm ? uiKm.sec11c : "Contact Mugnee Cambodia"}

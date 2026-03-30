@@ -70,10 +70,10 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
           ],
           internalLinks: [
             { label: "ដំណោះស្រាយអេក្រង់សណ្ឋាគារ", href: "/solutions/hotel-display-solutions-cambodia" },
-            { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
+            { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display/" },
             { label: "ផលិតផល Digital Signage", href: "/led-display" },
-            { label: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
-            { label: "ស្នើសុំតម្លៃ", href: "/contact" },
+            { label: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel/" },
+            { label: "ស្នើសុំតម្លៃ", href: "/contact/" },
           ],
         }
       : null;
@@ -124,10 +124,10 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
           ],
           internalLinks: [
             { label: "ដំណោះស្រាយ Digital Signage សម្រាប់លក់រាយ", href: "/solutions/retail-digital-signage-cambodia" },
-            { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display" },
+            { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display/" },
             { label: "ទំព័រមេ LED Display", href: "/led-display" },
-            { label: "Video Processor", href: "/led-display/video-processor" },
-            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
+            { label: "Video Processor", href: "/led-display/video-processor/" },
+            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact/" },
           ],
         }
       : null;
@@ -177,11 +177,11 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
             },
           ],
           internalLinks: [
-            { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
-            { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display" },
+            { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display/" },
+            { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display/" },
             { label: "ផលិតផល Digital Signage", href: "/led-display" },
-            { label: "ជម្រើស Video Processor", href: "/led-display/video-processor" },
-            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
+            { label: "ជម្រើស Video Processor", href: "/led-display/video-processor/" },
+            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact/" },
           ],
         }
       : null;
@@ -231,11 +231,11 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
             },
           ],
           internalLinks: [
-            { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
-            { label: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel" },
+            { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display/" },
+            { label: "អេក្រង់អន្តរកម្ម (IFP)", href: "/interactive-flat-panel/" },
             { label: "ប្រព័ន្ធ PA", href: "/pa-system" },
             { label: "ផលិតផល Digital Signage", href: "/led-display" },
-            { label: "ស្នើសុំតម្លៃ", href: "/contact" },
+            { label: "ស្នើសុំតម្លៃ", href: "/contact/" },
           ],
         }
       : null;
@@ -288,8 +288,8 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
             { label: "ទំព័រមេ PA System", href: "/pa-system" },
             { label: "កាតាឡុកផលិតផល PA System", href: "/pa-system" },
             { label: "IP Paging Microphones", href: "/pa-system" },
-            { label: "ការរួមបញ្ចូល Turnstile Gate", href: "/turnstile-gate" },
-            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
+            { label: "ការរួមបញ្ចូល Turnstile Gate", href: "/turnstile-gate/" },
+            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact/" },
           ],
         }
       : null;
@@ -339,11 +339,11 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
             },
           ],
           internalLinks: [
-            { label: "Turnstile Gate", href: "/turnstile-gate" },
+            { label: "Turnstile Gate", href: "/turnstile-gate/" },
             { label: "ផលិតផល Access Control", href: "/solutions/office-access-control-cambodia" },
-            { label: "កាតាឡុកផលិតផល Turnstile", href: "/turnstile-gate" },
-            { label: "សេវា និងគាំទ្រ", href: "/service" },
-            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
+            { label: "កាតាឡុកផលិតផល Turnstile", href: "/turnstile-gate/" },
+            { label: "សេវា និងគាំទ្រ", href: "/service/" },
+            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact/" },
           ],
         }
       : null;
@@ -393,11 +393,11 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
             },
           ],
           internalLinks: [
-            { label: "ទំព័រមេ Interactive Flat Panel", href: "/interactive-flat-panel" },
-            { label: "កាតាឡុកផលិតផល Interactive Panel", href: "/interactive-flat-panel" },
-            { label: "កាតាឡុក Smart Board", href: "/interactive-flat-panel" },
+            { label: "ទំព័រមេ Interactive Flat Panel", href: "/interactive-flat-panel/" },
+            { label: "កាតាឡុកផលិតផល Interactive Panel", href: "/interactive-flat-panel/" },
+            { label: "កាតាឡុក Smart Board", href: "/interactive-flat-panel/" },
             { label: "ដំណោះស្រាយ Indoor Communication", href: "/solutions/indoor-communication-solutions-cambodia" },
-            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact" },
+            { label: "ទាក់ទងក្រុមគម្រោង", href: "/contact/" },
           ],
         }
       : null;
@@ -481,9 +481,9 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
     { label: string; href: string }[]
   > = {
     display: [
-      { label: "LED Display Hub", href: "/led-display" },
-      { label: "Indoor LED Display", href: "/led-display/indoor-led-display" },
-      { label: "Outdoor LED Display", href: "/led-display/outdoor-led-display" },
+      { label: "LED Display Hub", href: "/led-display/" },
+      { label: "Indoor LED Display", href: "/led-display/indoor-led-display/" },
+      { label: "Outdoor LED Display", href: "/led-display/outdoor-led-display/" },
     ],
     audio: [
       { label: "PA System Hub", href: "/pa-system" },
@@ -491,14 +491,14 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
       { label: "IP Paging Microphones", href: "/pa-system" },
     ],
     security: [
-      { label: "Turnstile Gate Hub", href: "/turnstile-gate" },
+      { label: "Turnstile Gate Hub", href: "/turnstile-gate/" },
       { label: "Access Control Catalog", href: "/solutions/office-access-control-cambodia" },
-      { label: "Turnstile Catalog", href: "/turnstile-gate" },
+      { label: "Turnstile Catalog", href: "/turnstile-gate/" },
     ],
     education: [
-      { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel" },
-      { label: "Interactive Panel Catalog", href: "/interactive-flat-panel" },
-      { label: "Smart Board Catalog", href: "/interactive-flat-panel" },
+      { label: "Interactive Flat Panel Hub", href: "/interactive-flat-panel/" },
+      { label: "Interactive Panel Catalog", href: "/interactive-flat-panel/" },
+      { label: "Smart Board Catalog", href: "/interactive-flat-panel/" },
     ],
   };
 
@@ -507,9 +507,9 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
     { label: string; href: string }[]
   > = {
     display: [
-      { label: "ទំព័រមេ LED Display", href: "/led-display" },
-      { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display" },
-      { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display" },
+      { label: "ទំព័រមេ LED Display", href: "/led-display/" },
+      { label: "អេក្រង់ LED ក្នុងអគារ", href: "/led-display/indoor-led-display/" },
+      { label: "អេក្រង់ LED ខាងក្រៅ", href: "/led-display/outdoor-led-display/" },
     ],
     audio: [
       { label: "ទំព័រមេ PA System", href: "/pa-system" },
@@ -517,14 +517,14 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
       { label: "មីក្រូហ្វូន IP Paging", href: "/pa-system" },
     ],
     security: [
-      { label: "ទំព័រមេ Turnstile Gate", href: "/turnstile-gate" },
+      { label: "ទំព័រមេ Turnstile Gate", href: "/turnstile-gate/" },
       { label: "កាតាឡុក Access Control", href: "/solutions/office-access-control-cambodia" },
-      { label: "កាតាឡុក Turnstile", href: "/turnstile-gate" },
+      { label: "កាតាឡុក Turnstile", href: "/turnstile-gate/" },
     ],
     education: [
-      { label: "ទំព័រមេ Interactive Flat Panel", href: "/interactive-flat-panel" },
-      { label: "កាតាឡុក Interactive Panel", href: "/interactive-flat-panel" },
-      { label: "កាតាឡុក Smart Board", href: "/interactive-flat-panel" },
+      { label: "ទំព័រមេ Interactive Flat Panel", href: "/interactive-flat-panel/" },
+      { label: "កាតាឡុក Interactive Panel", href: "/interactive-flat-panel/" },
+      { label: "កាតាឡុក Smart Board", href: "/interactive-flat-panel/" },
     ],
   };
 
@@ -551,6 +551,7 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    inLanguage: isKm ? "km" : "en",
     mainEntity: solution.faqs.map((item) => ({
       "@type": "Question",
       name: item.q,
@@ -617,7 +618,7 @@ export default function IndustrySolutionPage({ solution, forcedLang = "en" }: Pr
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href={toLangHref("/contact")}
+              href={toLangHref("/contact/")}
               className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               {ui.requestQuotation}

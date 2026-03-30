@@ -31,7 +31,7 @@ const KM_TITLES: Record<string, string> = {
 
 const KM_EXCERPTS: Record<string, string> = {
   "led-display-cambodia-guide": "មគ្គុទេសក៍ជាក់ស្តែងសម្រាប់ជ្រើសរើស និងអនុវត្តគម្រោង LED Display នៅកម្ពុជា។",
-  "led-display-price-cambodia": "ស្វែងយល់ពីកត្តាចម្បងដែលកំណត់តម្លៃ LED Display នៅកម្ពុជា។",
+  "led-display-price-cambodia": "ស្វែងយល់ពីតម្លៃ LED Display នៅកម្ពុជា ដោយផ្តោតលើ BOQ, quotation និងកត្តាចំណាយសំខាន់ៗ។",
   "indoor-vs-outdoor-led-display": "ប្រៀបធៀប Indoor និង Outdoor LED ដោយផ្អែកលើលក្ខខណ្ឌអនុវត្តជាក់ស្តែង។",
   "pixel-pitch-led-display-guide": "ជ្រើស Pixel Pitch ដោយផ្អែកលើចម្ងាយមើល ប្រភេទមាតិកា និងថវិកា។",
   "led-screen-installation-phnom-penh": "មគ្គុទេសក៍ដំឡើង LED Screen នៅភ្នំពេញជាចំណុចជាក់ស្តែង។",
@@ -48,7 +48,7 @@ const KM_DESCRIPTIONS: Record<string, string> = {
   "led-display-cambodia-guide":
     "មគ្គុទេសក៍ជ្រើសរើស LED Display នៅកម្ពុជា ដោយផ្តោតលើបច្ចេកទេស ថវិកា និងការអនុវត្តជាក់ស្តែង។",
   "led-display-price-cambodia":
-    "ពន្យល់កត្តាដែលប៉ះពាល់តម្លៃ LED Display នៅកម្ពុជា រួមទាំង BOQ ការដំឡើង និងសេវាកម្មក្រោយលក់។",
+    "ពន្យល់តម្លៃ LED Display នៅកម្ពុជា ដោយបំបែកកត្តាចំណាយសំខាន់ៗក្នុង BOQ និង quotation: pixel pitch, indoor vs outdoor specs, installation scope, commissioning និងសេវាកម្មក្រោយលក់។",
   "indoor-vs-outdoor-led-display":
     "ប្រៀបធៀប Indoor និង Outdoor LED Display តាមបរិយាកាស កម្រិតពន្លឺ និងថ្លៃដំណើរការ។",
   "pixel-pitch-led-display-guide":

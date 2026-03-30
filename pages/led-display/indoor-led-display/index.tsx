@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "LED Display in Cambodia - Indoor LED Screen";
+const title = "Indoor LED Display Cambodia | Fine-Pitch LED Video Wall & LED Screen";
 const description =
-  "Indoor LED display Cambodia for video walls, boardrooms, showrooms, retail, and control rooms with fine-pitch planning, installation, and support.";
+  "Indoor LED display in Cambodia for fine-pitch LED video walls and LED screens in boardrooms, showrooms, retail, and control rooms. Get pixel-pitch planning, BOQ support, installation, calibration, and quotation guidance.";
 const ogImage = `${SITE_URL}/images/cambodia/indoor-led-hero.webp`;
 
 export default function IndoorLedDisplayPage() {
@@ -24,13 +24,13 @@ export default function IndoorLedDisplayPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/led-display/indoor-led-display/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/led-display/indoor-led-display/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/led-display/indoor-led-display/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/led-display/indoor-led-display/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/led-display/indoor-led-display/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/led-display/indoor-led-display/`} />
         <meta property="og:title" content={title} />
         <meta
           property="og:description"
-          content="Indoor LED video wall and fine-pitch display solutions in Cambodia with local installation, calibration, BOQ planning, and after-sales support."
+          content="Indoor LED display in Cambodia for fine-pitch LED video walls with pixel-pitch planning, BOQ support, installation, calibration, and after-sales service."
         />
         <meta property="og:url" content={`${SITE_URL}/led-display/indoor-led-display/`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
@@ -43,7 +43,7 @@ export default function IndoorLedDisplayPage() {
         <meta name="twitter:title" content={title} />
         <meta
           name="twitter:description"
-          content="Indoor LED display solutions in Cambodia with local installation, calibration, BOQ planning, and support."
+          content="Indoor LED display in Cambodia for fine-pitch LED video walls with planning, BOQ support, installation, calibration, and quotation guidance."
         />
         <meta name="twitter:image" content={ogImage} />
       </Head>

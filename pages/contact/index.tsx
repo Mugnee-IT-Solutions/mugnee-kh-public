@@ -23,8 +23,8 @@ export default function ContactPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/contact/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/contact/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/contact/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/contact/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/contact/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/contact/`} />
         <meta property="og:title" content="Contact Mugnee Cambodia" />
         <meta

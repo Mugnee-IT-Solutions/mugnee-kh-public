@@ -1,4 +1,4 @@
-﻿
+
 "use client";
 
 import Link from "next/link";
@@ -410,6 +410,7 @@ export default function TurnstileGateClient() {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      inLanguage: lang,
       mainEntity: faqs.map((f) => ({
         "@type": "Question",
         name: lang === "en" ? f.qEn : f.qKm,
@@ -567,7 +568,7 @@ export default function TurnstileGateClient() {
 
               <div className="mt-4 flex flex-wrap items-center gap-2.5">
                 <Link
-                  href={toLangHref("/contact")}
+                  href={toLangHref("/contact/")}
                   className="rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                 >
                   {t.cta1}
@@ -796,7 +797,7 @@ export default function TurnstileGateClient() {
                 </ul>
                 <div className="mt-4">
                   <Link
-                    href={toLangHref("/contact")}
+                    href={toLangHref("/contact/")}
                     className="inline-flex w-full items-center justify-center rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
                   >
                     {t.finalCta}
@@ -861,7 +862,7 @@ export default function TurnstileGateClient() {
 
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
-                href={toLangHref("/contact")}
+                href={toLangHref("/contact/")}
                 className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
               >
                 {t.finalCta}

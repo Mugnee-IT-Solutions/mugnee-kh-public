@@ -23,8 +23,8 @@ export default function KmProjectsPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/km/projects/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/projects/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/projects/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/projects/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/projects/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/projects/`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

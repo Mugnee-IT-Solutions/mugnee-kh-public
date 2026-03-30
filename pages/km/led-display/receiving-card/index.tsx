@@ -24,8 +24,8 @@ export default function KmReceivingCardPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/km/led-display/receiving-card/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/led-display/receiving-card/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/led-display/receiving-card/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/led-display/receiving-card/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/led-display/receiving-card/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/led-display/receiving-card/`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

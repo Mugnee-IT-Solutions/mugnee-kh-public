@@ -33,8 +33,8 @@ export default function BlogIndexPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}${PAGE_PATH}`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}${PAGE_PATH}`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/blog/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}${PAGE_PATH}`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/blog/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${PAGE_PATH}`} />
         <meta property="og:title" content={title} />
         <meta

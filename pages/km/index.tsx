@@ -16,10 +16,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-// Keep KM page metadata ASCII-safe to avoid mojibake issues.
-const title = "Digital Signage & Smart Board Cambodia | Mugnee Cambodia (KM)";
+const title = "Digital Signage និង Smart Board នៅកម្ពុជា | Mugnee Cambodia (KM)";
 const description =
-  "Mugnee Cambodia supplies digital signage, smart boards, PA systems, and access control in Cambodia with site survey, installation, and local support.";
+  "Mugnee Cambodia ផ្គត់ផ្គង់ Digital Signage, Smart Board, PA System និង Access Control នៅកម្ពុជា ជាមួយសេវាស្ទង់ទីតាំង ដំឡើង និងគាំទ្រក្នុងស្រុក។";
 
 const PAGE_URL = `${SITE_URL}/km/`;
 const ORG_ID = `${SITE_URL}#organization`;
@@ -58,8 +57,8 @@ export default function KmHomePage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/km/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />

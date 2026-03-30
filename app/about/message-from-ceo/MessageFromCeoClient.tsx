@@ -93,7 +93,7 @@ export default function MessageFromCeoClient({ lang = "en" }: { lang?: "en" | "k
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href={toLangHref("/contact")}
+                  href={toLangHref("/contact/")}
                   className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-800"
                 >
                   {t.cta1}

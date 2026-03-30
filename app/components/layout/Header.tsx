@@ -295,27 +295,27 @@ export default function SiteHeader() {
     {
       labelEn: "Indoor LED Display",
       labelKm: "អេក្រង់ LED ក្នុងអគារ",
-      href: "/led-display/indoor-led-display",
+      href: "/led-display/indoor-led-display/",
     },
     {
       labelEn: "Outdoor LED Display",
       labelKm: "អេក្រង់ LED ក្រៅអគារ",
-      href: "/led-display/outdoor-led-display",
+      href: "/led-display/outdoor-led-display/",
     },
     {
       labelEn: "Receiving Card",
       labelKm: "កាតទទួលសញ្ញា",
-      href: "/led-display/receiving-card",
+      href: "/led-display/receiving-card/",
     },
     {
       labelEn: "Video Processor",
       labelKm: "ឧបករណ៍ដំណើរការវីដេអូ",
-      href: "/led-display/video-processor",
+      href: "/led-display/video-processor/",
     },
     {
       labelEn: "Power Supply",
       labelKm: "ឧបករណ៍ផ្គត់ផ្គង់ថាមពល",
-      href: "/led-display/power-supply",
+      href: "/led-display/power-supply/",
     },
   ];
 
@@ -732,7 +732,7 @@ export default function SiteHeader() {
             />
 
             <NavLink
-              href={toLangHref("/interactive-flat-panel")}
+              href={toLangHref("/interactive-flat-panel/")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/interactive-flat-panel"))}
             >
@@ -746,7 +746,7 @@ export default function SiteHeader() {
               {t.paSystem}
             </NavLink>
             <NavLink
-              href={toLangHref("/turnstile-gate")}
+              href={toLangHref("/turnstile-gate/")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/turnstile-gate"))}
             >
@@ -767,7 +767,7 @@ export default function SiteHeader() {
               lang={lang}
             />
             <NavLink
-              href={toLangHref("/service")}
+              href={toLangHref("/service/")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/service"))}
             >
@@ -788,7 +788,7 @@ export default function SiteHeader() {
               lang={lang}
             />
             <NavLink
-              href={toLangHref("/contact")}
+              href={toLangHref("/contact/")}
               onClick={forceScrollTop}
               className={desktopNavLinkClass(isPathActive("/contact"))}
             >
@@ -829,7 +829,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "All LED Display" : t.ledDisplay}
                     </NavLink>
                     <NavLink
-                      href={toLangHref("/led-display/indoor-led-display")}
+                      href={toLangHref("/led-display/indoor-led-display/")}
                       aria-current={ledMobileActiveHref === "/led-display/indoor-led-display" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/indoor-led-display")}
                       onClick={() => {
@@ -840,7 +840,7 @@ export default function SiteHeader() {
                       {t.indoorLed}
                     </NavLink>
                     <NavLink
-                      href={toLangHref("/led-display/outdoor-led-display")}
+                      href={toLangHref("/led-display/outdoor-led-display/")}
                       aria-current={ledMobileActiveHref === "/led-display/outdoor-led-display" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/outdoor-led-display")}
                       onClick={() => {
@@ -861,7 +861,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "All LED Display" : "មើលអេក្រង់ LED ទាំងអស់"}
                     </NavLink>
                     <NavLink
-                      href={toLangHref("/led-display/receiving-card")}
+                      href={toLangHref("/led-display/receiving-card/")}
                       aria-current={ledMobileActiveHref === "/led-display/receiving-card" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/receiving-card")}
                       onClick={() => {
@@ -872,7 +872,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "Receiving Card" : "កាតទទួលសញ្ញា"}
                     </NavLink>
                     <NavLink
-                      href={toLangHref("/led-display/video-processor")}
+                      href={toLangHref("/led-display/video-processor/")}
                       aria-current={ledMobileActiveHref === "/led-display/video-processor" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/video-processor")}
                       onClick={() => {
@@ -883,7 +883,7 @@ export default function SiteHeader() {
                       {lang === "en" ? "Video Processor" : "ឧបករណ៍ដំណើរការវីដេអូ"}
                     </NavLink>
                     <NavLink
-                      href={toLangHref("/led-display/power-supply")}
+                      href={toLangHref("/led-display/power-supply/")}
                       aria-current={ledMobileActiveHref === "/led-display/power-supply" ? "page" : undefined}
                       className={mobileItemClass(ledMobileActiveHref === "/led-display/power-supply")}
                       onClick={() => {
@@ -897,7 +897,7 @@ export default function SiteHeader() {
                 </div>
 
                 <NavLink
-                  href={toLangHref("/interactive-flat-panel")}
+                  href={toLangHref("/interactive-flat-panel/")}
                   aria-current={isPathActive("/interactive-flat-panel") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/interactive-flat-panel"))}
                   onClick={() => {
@@ -919,7 +919,7 @@ export default function SiteHeader() {
                   {t.paSystem}
                 </NavLink>
                 <NavLink
-                  href={toLangHref("/turnstile-gate")}
+                  href={toLangHref("/turnstile-gate/")}
                   aria-current={isPathActive("/turnstile-gate") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/turnstile-gate"))}
                   onClick={() => {
@@ -959,7 +959,7 @@ export default function SiteHeader() {
                   </div>
                 </div>
                 <NavLink
-                  href={toLangHref("/service")}
+                  href={toLangHref("/service/")}
                   aria-current={isPathActive("/service") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/service"))}
                   onClick={() => {
@@ -992,7 +992,7 @@ export default function SiteHeader() {
                   {lang === "en" ? "Message from CEO" : "សារពីនាយកប្រតិបត្តិ"}
                 </NavLink>
                 <NavLink
-                  href={toLangHref("/contact")}
+                  href={toLangHref("/contact/")}
                   aria-current={isPathActive("/contact") ? "page" : undefined}
                   className={mobileItemClass(isPathActive("/contact"))}
                   onClick={() => {

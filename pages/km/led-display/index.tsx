@@ -11,13 +11,13 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "តម្លៃអេក្រង់ LED នៅកម្ពុជា - អេក្រង់ LED ក្នុងអគារ និងខាងក្រៅ";
+const title = "អេក្រង់ LED នៅកម្ពុជា: តម្លៃ, LED Signage និងអេក្រង់ក្នុង/ក្រៅអគារ";
 const description =
-  "អេក្រង់ LED នៅកម្ពុជា សម្រាប់ក្នុងអគារ ខាងក្រៅ ប៊ីលបត្រ ការរៀបចំ BOQ ការដំឡើង និងសេវាបន្ទាប់ពីលក់ពី Mugnee Cambodia។";
+  "ស្វែងរកអេក្រង់ LED នៅកម្ពុជា (LED signage, indoor/outdoor) ជាមួយការណែនាំតម្លៃ, BOQ, ស្ទង់ទីតាំង, ដំឡើង, commissioning និងសេវាបន្ទាប់ពីលក់ពី Mugnee Cambodia។";
 const ogDescription =
-  "ស្វែងរកដំណោះស្រាយអេក្រង់ LED ក្នុងអគារ និងខាងក្រៅ ជាមួយ BOQ ការដំឡើង និងសេវាគាំទ្រនៅកម្ពុជា។";
+  "ស្វែងរកដំណោះស្រាយអេក្រង់ LED នៅកម្ពុជា រួមមាន LED signage, BOQ, ការដំឡើង និងសេវាគាំទ្របន្ទាប់ពីលក់។";
 const twitterDescription =
-  "ស្នើសុំតម្លៃអេក្រង់ LED នៅកម្ពុជា ជាមួយ BOQ ការដំឡើង និងសេវាបន្ទាប់ពីលក់ពី Mugnee Cambodia។";
+  "អេក្រង់ LED នៅកម្ពុជា: តម្លៃ, LED signage, BOQ, ការដំឡើង និងសេវាបន្ទាប់ពីលក់ពី Mugnee Cambodia។";
 
 export default function KmLedDisplayPage() {
   return (
@@ -27,8 +27,8 @@ export default function KmLedDisplayPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/km/led-display/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/led-display/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/led-display/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/led-display/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/led-display/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/led-display/`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={ogDescription} />

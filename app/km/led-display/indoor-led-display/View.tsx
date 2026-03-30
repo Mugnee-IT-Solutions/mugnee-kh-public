@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      "en-kh": "/led-display/indoor-led-display/",
-      "km-kh": "/km/led-display/indoor-led-display/",
+      "en-KH": "/led-display/indoor-led-display/",
+      "km-KH": "/km/led-display/indoor-led-display/",
       "x-default": "/led-display/indoor-led-display/",
     },
   },
@@ -125,13 +125,13 @@ export default function IndoorLedDisplayPage() {
 
   const indoorCluster = [
     { title: "Parent LED Display Page", href: "/led-display" },
-    { title: "Outdoor LED Display in Cambodia", href: "/led-display/outdoor-led-display" },
+    { title: "Outdoor LED Display in Cambodia", href: "/led-display/outdoor-led-display/" },
     { title: "Indoor LED Product Catalog", href: "/led-display/indoor-led-display" },
     { title: "Pixel Pitch Buying Guide", href: "/led-display" },
-    { title: "Installation & Service Support", href: "/service" },
+    { title: "Installation & Service Support", href: "/service/" },
     { title: "Cambodia Industry Solutions", href: "/solutions" },
     { title: "Project References", href: "/projects" },
-    { title: "Request Indoor LED Quotation", href: "/contact" },
+    { title: "Request Indoor LED Quotation", href: "/contact/" },
   ];
   const indoorClusterKm = [
     { title: "ទំព័រមេអេក្រង់ LED", href: "/km/led-display" },

@@ -29,7 +29,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
-    unoptimized: true,
+    // Keep unoptimized images for static export to avoid relying on /_next/image optimizer route.
+    // When not doing static export, allow Next.js to generate optimized responsive images.
+    unoptimized: isStaticExport,
     remotePatterns: [
       { protocol: "https", hostname: "www.mugneekh.com" },
       { protocol: "https", hostname: "mugneekh.com" },

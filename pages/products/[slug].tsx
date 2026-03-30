@@ -166,8 +166,8 @@ export default function ProductDetailPage({
         <meta name="description" content={seoDesc} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}${canonicalPath}`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}${canonicalPath}`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/products/${product.slug}/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}${canonicalPath}`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/products/${product.slug}/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${canonicalPath}`} />
         <meta property="og:title" content={seoTitle} />
         <meta property="og:description" content={seoDesc} />

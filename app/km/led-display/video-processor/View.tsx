@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      "en-kh": "/led-display/video-processor/",
-      "km-kh": PAGE_PATH,
+      "en-KH": "/led-display/video-processor/",
+      "km-KH": PAGE_PATH,
       "x-default": "/led-display/video-processor/",
     },
   },

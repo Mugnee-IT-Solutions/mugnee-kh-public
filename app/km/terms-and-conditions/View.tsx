@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      "en-kh": "/terms-and-conditions/",
-      "km-kh": PAGE_PATH,
+      "en-KH": "/terms-and-conditions/",
+      "km-KH": PAGE_PATH,
       "x-default": "/terms-and-conditions/",
     },
   },

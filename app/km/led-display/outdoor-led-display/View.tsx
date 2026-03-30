@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
     languages: {
-      "en-kh": "/led-display/outdoor-led-display/",
-      "km-kh": "/km/led-display/outdoor-led-display/",
+      "en-KH": "/led-display/outdoor-led-display/",
+      "km-KH": "/km/led-display/outdoor-led-display/",
       "x-default": "/led-display/outdoor-led-display/",
     },
   },
@@ -127,12 +127,12 @@ export default function OutdoorLedDisplayPage() {
   const outdoorCluster = [
     { title: "Parent LED Display Page", href: "/led-display" },
     { title: "Indoor LED Display in Cambodia", href: "/led-display/indoor-led-display" },
-    { title: "Outdoor LED Product Catalog", href: "/led-display/outdoor-led-display" },
+    { title: "Outdoor LED Product Catalog", href: "/led-display/outdoor-led-display/" },
     { title: "LED Video Processor Guide", href: "/led-display/video-processor" },
-    { title: "Installation and Service Support", href: "/service" },
+    { title: "Installation and Service Support", href: "/service/" },
     { title: "Cambodia Industry Solutions", href: "/solutions" },
     { title: "Project References", href: "/projects" },
-    { title: "Request Outdoor LED Quotation", href: "/contact" },
+    { title: "Request Outdoor LED Quotation", href: "/contact/" },
   ];
   const outdoorClusterKm = [
     { title: "ទំព័រមេអេក្រង់ LED", href: "/km/led-display" },

@@ -11,14 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const currentYear = new Intl.DateTimeFormat("en-US", {
-  year: "numeric",
-  timeZone: "Asia/Phnom_Penh",
-}).format(new Date());
-
-const title = "LED Display Price in Cambodia - Indoor & Outdoor LED Screen";
+const title = "LED Display Cambodia: Price, Indoor & Outdoor LED Screen | Mugnee";
 const description =
-  "LED display supplier in Cambodia for indoor video walls, outdoor billboards, installation, maintenance, and quotation support in Phnom Penh.";
+  "LED display supplier in Cambodia for indoor LED video walls, outdoor LED billboards, and LED signage. Get LED display price guidance, BOQ planning, installation, commissioning, and quotation support in Phnom Penh.";
 
 export default function LedDisplayPage() {
   return (
@@ -28,13 +23,13 @@ export default function LedDisplayPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/led-display/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/led-display/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/led-display/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/led-display/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/led-display/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/led-display/`} />
         <meta property="og:title" content={title} />
         <meta
           property="og:description"
-          content="Explore indoor LED video walls, outdoor LED billboards, BOQ planning, installation, and after-sales support from Mugnee Cambodia."
+          content="Explore LED display Cambodia solutions: indoor LED video walls, outdoor LED billboards, LED signage, BOQ planning, installation, and after-sales support from Mugnee Cambodia."
         />
         <meta property="og:url" content={`${SITE_URL}/led-display/`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
@@ -50,7 +45,7 @@ export default function LedDisplayPage() {
         <meta name="twitter:title" content={title} />
         <meta
           name="twitter:description"
-          content="Indoor and outdoor LED display solutions in Cambodia with planning, installation, commissioning, and quotation support."
+          content="LED display in Cambodia: indoor and outdoor solutions plus LED signage with planning, installation, commissioning, and quotation support."
         />
         <meta
           name="twitter:image"
@@ -66,7 +61,7 @@ export default function LedDisplayPage() {
           id="app-scroll-root"
           className="mt-[var(--header-height)] h-[calc(100vh-var(--header-height))] overflow-y-auto overflow-x-hidden"
         >
-          <LedDisplayClient currentYearEn={currentYear} />
+          <LedDisplayClient />
           <SiteFooter />
         </main>
       </div>

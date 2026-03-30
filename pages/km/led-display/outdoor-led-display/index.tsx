@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "LED Display in Cambodia - Outdoor LED Billboard";
+const title = "អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា | LED Billboard, LED Signage & Digital Screen";
 const description =
-  "សេវា Outdoor LED Display និងប៊ីលបតផ្សព្វផ្សាយនៅកម្ពុជា សម្រាប់ផ្លូវធំ ផ្សារ និងអាជីវកម្ម ដោយមានតម្លៃគម្រោង សំណង់ដំឡើង និងសេវាបន្ទាប់ពីលក់។";
+  "អេក្រង់ LED ខាងក្រៅ (outdoor) នៅកម្ពុជា សម្រាប់ LED billboard, facade screen និង LED signage។ មាន structure planning, BOQ, ដំឡើង, commissioning និងសេវាបន្ទាប់ពីលក់ សម្រាប់ការផ្សព្វផ្សាយដែលអាចទុកចិត្តបាន។";
 const ogImage = `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`;
 
 export default function KmOutdoorLedDisplayPage() {
@@ -24,13 +24,13 @@ export default function KmOutdoorLedDisplayPage() {
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}/km/led-display/outdoor-led-display/`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/led-display/outdoor-led-display/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}/km/led-display/outdoor-led-display/`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/led-display/outdoor-led-display/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/led-display/outdoor-led-display/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/led-display/outdoor-led-display/`} />
         <meta property="og:title" content={title} />
         <meta
           property="og:description"
-          content="Outdoor LED Display និងប៊ីលបតផ្សព្វផ្សាយនៅកម្ពុជា សម្រាប់ផ្លូវធំ ផ្សារ និងអាជីវកម្ម ជាមួយសេវាដំឡើង។"
+          content="អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា សម្រាប់ LED billboard និង LED signage ជាមួយ structure design, BOQ, ដំឡើង, commissioning និងសេវាបន្ទាប់ពីលក់។"
         />
         <meta property="og:url" content={`${SITE_URL}/km/led-display/outdoor-led-display/`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
@@ -41,7 +41,10 @@ export default function KmOutdoorLedDisplayPage() {
         <meta property="og:image:alt" content="Outdoor LED display and billboard in Cambodia" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content="អេក្រង់ LED ខាងក្រៅ ប៊ីលបត និងសេវាដំឡើងនៅកម្ពុជា។" />
+        <meta
+          name="twitter:description"
+          content="អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា សម្រាប់ LED billboard និង LED signage ជាមួយ BOQ, ដំឡើង, commissioning និងសេវាបន្ទាប់ពីលក់។"
+        />
         <meta name="twitter:image" content={ogImage} />
       </Head>
 

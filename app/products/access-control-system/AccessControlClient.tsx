@@ -222,6 +222,7 @@ export default function AccessControlClient() {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      inLanguage: lang,
       mainEntity: faqs.map((f) => ({
         "@type": "Question",
         name: lang === "en" ? f.qEn : f.qKm,

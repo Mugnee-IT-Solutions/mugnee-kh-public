@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -207,7 +207,7 @@ export default function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/service")}>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/service/")}>
                     <LangText en="Service & Support" km="សេវាកម្ម និងគាំទ្រ" />
                   </Link>
                 </li>
@@ -222,7 +222,7 @@ export default function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/contact")}>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/contact/")}>
                     <LangText en="Contact" km="ទាក់ទង" />
                   </Link>
                 </li>
@@ -245,22 +245,22 @@ export default function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/indoor-led-display")}>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/indoor-led-display/")}>
                     <LangText en="Indoor LED Display" km="អេក្រង់ LED ខាងក្នុង" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/outdoor-led-display")}>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/outdoor-led-display/")}>
                     <LangText en="Outdoor LED Display" km="អេក្រង់ LED ខាងក្រៅ" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/video-processor")}>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/led-display/video-processor/")}>
                     <LangText en="Video Processor" km="ឧបករណ៍កែច្នៃវីដេអូ" />
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/interactive-flat-panel")}>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/interactive-flat-panel/")}>
                     <LangText en="Interactive Flat Panel" km="អេក្រង់អន្តរកម្ម" />
                   </Link>
                 </li>
@@ -270,7 +270,7 @@ export default function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/turnstile-gate")}>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/turnstile-gate/")}>
                     <LangText en="Turnstile Gate" km="ច្រក Turnstile" />
                   </Link>
                 </li>
@@ -293,7 +293,7 @@ export default function SiteFooter() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Link
-                    href={toLangHref("/contact")}
+                    href={toLangHref("/contact/")}
                     className="inline-flex rounded-xl bg-slate-900 px-4 py-2 text-xs font-semibold text-white no-underline transition hover:-translate-y-0.5 hover:bg-slate-800 hover:no-underline"
                   >
                     <LangText en="Contact Mugnee Cambodia" km="ទាក់ទង Mugnee Cambodia" />
@@ -330,10 +330,10 @@ export default function SiteFooter() {
               <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/solutions")}>
                 <LangText en="Solutions" km="ដំណោះស្រាយ" />
               </Link>
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/service")}>
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/service/")}>
                 <LangText en="Service" km="សេវាកម្ម" />
               </Link>
-              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/contact")}>
+              <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/contact/")}>
                 <LangText en="Contact" km="ទាក់ទង" />
               </Link>
               <Link className="no-underline hover:text-slate-700 hover:no-underline" href={toLangHref("/blog")}>

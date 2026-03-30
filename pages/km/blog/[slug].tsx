@@ -38,8 +38,10 @@ function sectionId(text: string) {
 function trimTitle(value: string, max = 58) {
   if (value.length <= max) return value;
   const sliced = value.slice(0, max + 1);
-  const boundary = Math.max(sliced.lastIndexOf(" "), sliced.lastIndexOf(":"));
-  return (boundary > 24 ? sliced.slice(0, boundary) : value.slice(0, max)).replace(/[:\s]+$/g, "").trim();
+  const boundary = Math.max(sliced.lastIndexOf(" "), sliced.lastIndexOf(":"), sliced.lastIndexOf(","));
+  return (boundary > 24 ? sliced.slice(0, boundary) : value.slice(0, max))
+    .replace(/[,:\s]+$/g, "")
+    .trim();
 }
 
 function renderParagraphs(content: string) {
@@ -126,8 +128,8 @@ export default function KmBlogPostPage({ post }: InferGetStaticPropsType<typeof 
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`${SITE_URL}${canonicalPath}`} />
-        <link rel="alternate" hrefLang="en-kh" href={`${SITE_URL}/blog/${post.slug}/`} />
-        <link rel="alternate" hrefLang="km-kh" href={`${SITE_URL}${canonicalPath}`} />
+        <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/blog/${post.slug}/`} />
+        <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}${canonicalPath}`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/blog/${post.slug}/`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
@@ -193,6 +195,7 @@ export default function KmBlogPostPage({ post }: InferGetStaticPropsType<typeof 
             {post.faq?.length ? (
               <FAQJsonLd
                 id={`km-blog-faq-jsonld-${post.slug}`}
+                pageLanguage="km"
                 items={post.faq.map((item) => ({ question: item.q, answer: item.a, language: "km" as const }))}
               />
             ) : null}
