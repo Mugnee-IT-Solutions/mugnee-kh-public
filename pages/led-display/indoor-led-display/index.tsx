@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "Indoor LED Display Cambodia | Fine-Pitch LED Video Wall & LED Screen";
+const title = "Indoor LED Display Cambodia | Video Wall & LED Screen";
 const description =
-  "Indoor LED display in Cambodia for fine-pitch LED video walls and LED screens in boardrooms, showrooms, retail, and control rooms. Get pixel-pitch planning, BOQ support, installation, calibration, and quotation guidance.";
+  "Indoor LED display in Cambodia for fine-pitch video walls and LED screens. Get pixel-pitch planning, BOQ support, installation, calibration, and quotation guidance.";
 const ogImage = `${SITE_URL}/images/cambodia/indoor-led-hero.webp`;
 
 export default function IndoorLedDisplayPage() {

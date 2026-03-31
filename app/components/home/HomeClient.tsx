@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -263,7 +263,7 @@ export default function HomeClient({
   const t = useMemo(() => {
     const en = {
       badge: "Cambodia • Mugnee Cambodia • Project Delivery",
-      heroTitle: "Premium Digital Signage & Smart AV Solutions in Cambodia",
+      heroTitle: "Premium Digital Signage & Smart Technology Solutions in Cambodia",
       heroDesc:
         "Mugnee is a multinational technology company, and Mugnee Cambodia serves as its local multinational operation for Cambodia with project planning, delivery, installation, commissioning, and long-term support for commercial and institutional clients.",
       ctaQuote: "Get Quotation",

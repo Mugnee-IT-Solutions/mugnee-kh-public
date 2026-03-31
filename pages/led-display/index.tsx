@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "LED Display Cambodia: Price, Indoor & Outdoor LED Screen | Mugnee";
+const title = "LED Display Cambodia - Indoor & Outdoor Signage | Mugnee";
 const description =
-  "LED display supplier in Cambodia for indoor LED video walls, outdoor LED billboards, and LED signage. Get LED display price guidance, BOQ planning, installation, commissioning, and quotation support in Phnom Penh.";
+  "LED display supplier in Cambodia for indoor video walls, outdoor billboards, and LED signage. Get BOQ planning, installation, commissioning, and quotation support.";
 
 export default function LedDisplayPage() {
   return (

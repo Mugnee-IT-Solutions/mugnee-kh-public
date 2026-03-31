@@ -197,7 +197,10 @@ export default function KmTermsAndConditionsPage() {
           url: PAGE_URL,
           inLanguage: "km",
           dateModified: "2026-03-07",
-          about: "លក្ខខណ្ឌបញ្ជាទិញ ការទូទាត់ ការធានា និងសេវាគាំទ្រនៅកម្ពុជា",
+          about: {
+            "@type": "Thing",
+            name: "លក្ខខណ្ឌបញ្ជាទិញ ការទូទាត់ ការធានា និងសេវាគាំទ្រនៅកម្ពុជា",
+          },
           areaServed: {
             "@type": "Country",
             name: "Cambodia",

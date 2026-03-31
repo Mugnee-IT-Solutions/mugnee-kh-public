@@ -39,6 +39,29 @@ function sectionId(text: string) {
     .replace(/\s+/g, "-");
 }
 
+function normalizeWhitespace(text: string) {
+  return text.replace(/\s+/g, " ").trim();
+}
+
+function trimMetaText(text: string, maxLength: number) {
+  const normalized = normalizeWhitespace(text);
+  if (normalized.length <= maxLength) return normalized;
+
+  const sliced = normalized.slice(0, maxLength + 1);
+  const boundary = Math.max(sliced.lastIndexOf(". "), sliced.lastIndexOf(", "), sliced.lastIndexOf(" "));
+  const trimmed = boundary > 80 ? sliced.slice(0, boundary) : normalized.slice(0, maxLength);
+  return trimmed.replace(/[,\s]+$/, "").trim();
+}
+
+function normalizeMetaDescription(text: string, fallbackText: string) {
+  const base = normalizeWhitespace(text || fallbackText);
+  const enriched =
+    base.length < 110
+      ? `${base} Get quotation guidance, BOQ planning, installation, and local support from Mugnee Cambodia.`
+      : base;
+  return trimMetaText(enriched, 158);
+}
+
 function compactTocLabel(label: string) {
   const withoutPrefix = label.includes(":") ? label.split(":").slice(1).join(":").trim() : label;
   return withoutPrefix
@@ -133,9 +156,9 @@ export default function BlogPostPage({ post }: InferGetStaticPropsType<typeof ge
   const canonicalPath = `/blog/${post.slug}/`;
   const seoMeta = getBlogSeoMeta(post);
   const title = seoMeta.title;
-  const description = seoMeta.description;
+  const description = normalizeMetaDescription(seoMeta.description, post.description);
   const ogTitle = seoMeta.ogTitle || title;
-  const ogDescription = seoMeta.ogDescription || description;
+  const ogDescription = normalizeMetaDescription(seoMeta.ogDescription || description, description);
 
   const pageUrl = `${SITE_URL}${canonicalPath}`;
   const relatedPosts = getRelatedBlogPosts(post, 3);

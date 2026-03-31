@@ -35,6 +35,29 @@ function sectionId(text: string) {
     .replace(/\s+/g, "-");
 }
 
+function normalizeWhitespace(text: string) {
+  return text.replace(/\s+/g, " ").trim();
+}
+
+function trimMetaText(text: string, maxLength: number) {
+  const normalized = normalizeWhitespace(text);
+  if (normalized.length <= maxLength) return normalized;
+
+  const sliced = normalized.slice(0, maxLength + 1);
+  const boundary = Math.max(sliced.lastIndexOf("។"), sliced.lastIndexOf(" "), sliced.lastIndexOf(", "));
+  const trimmed = boundary > 80 ? sliced.slice(0, boundary) : normalized.slice(0, maxLength);
+  return trimmed.replace(/[,\s]+$/, "").trim();
+}
+
+function normalizeMetaDescription(text: string, fallbackText: string) {
+  const base = normalizeWhitespace(text || fallbackText);
+  const enriched =
+    base.length < 110
+      ? `${base} មានការណែនាំតម្លៃ BOQ ការដំឡើង និងការគាំទ្រក្នុងស្រុកពី Mugnee Cambodia។`
+      : base;
+  return trimMetaText(enriched, 158);
+}
+
 function trimTitle(value: string, max = 58) {
   if (value.length <= max) return value;
   const sliced = value.slice(0, max + 1);
@@ -112,7 +135,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async (ctx) => {
 export default function KmBlogPostPage({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
   const canonicalPath = `/km/blog/${post.slug}/`;
   const title = trimTitle(post.title);
-  const description = post.description;
+  const description = normalizeMetaDescription(post.description, post.excerpt || post.description);
   const pageUrl = `${SITE_URL}${canonicalPath}`;
 
   const relatedPosts = getRelatedKmBlogPosts(post, 3);

@@ -13,7 +13,7 @@ const ClientEnhancements = dynamic(
 
 const title = "សារពីអគ្គនាយក Mugnee Cambodia | គុណភាព និងសេវាកម្ម";
 const description =
-  "អានសារពីអគ្គនាយកអំពីគុណភាព សេវាកម្ម និងការប្តេជ្ញាចិត្តរបស់ Mugnee Cambodia ចំពោះអតិថិជននៅកម្ពុជា។";
+  "អានសារពីអគ្គនាយកអំពីគុណភាព សេវាកម្ម និងការប្តេជ្ញាចិត្តរបស់ Mugnee Cambodia ចំពោះអតិថិជននៅកម្ពុជា។ ស្វែងយល់ពីទស្សនវិស័យ ការអនុវត្តគម្រោង និងការគាំទ្ររយៈពេលវែងសម្រាប់អាជីវកម្ម និងស្ថាប័ន។";
 const ogImage = `${SITE_URL}/images/hero/cambodia-led-hero.webp`;
 
 export default function KmMessageFromCeoPage() {

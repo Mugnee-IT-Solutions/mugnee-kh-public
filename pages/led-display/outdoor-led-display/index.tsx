@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "Outdoor LED Display Cambodia | LED Billboard, LED Signage & Digital Screen";
+const title = "Outdoor LED Display Cambodia | LED Billboard & Signage";
 const description =
-  "Outdoor LED display in Cambodia for LED billboards, facade screens, and LED signage. Get structure planning, BOQ support, installation, commissioning, and local after-sales service for reliable campaigns.";
+  "Outdoor LED display in Cambodia for LED billboards and signage. Get structure planning, BOQ support, installation, commissioning, and local after-sales service.";
 const ogImage = `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`;
 
 export default function OutdoorLedDisplayPage() {

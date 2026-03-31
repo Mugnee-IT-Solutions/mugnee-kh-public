@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "អេក្រង់ LED ក្នុងអគារ នៅកម្ពុជា | Fine-Pitch LED Video Wall & LED Screen";
+const title = "អេក្រង់ LED ក្នុងអគារ នៅកម្ពុជា | Video Wall & LED Screen";
 const description =
-  "អេក្រង់ LED ក្នុងអគារ (indoor) នៅកម្ពុជា សម្រាប់ video wall និង LED screen ក្នុង boardroom, showroom, retail និង control room។ ទទួលបានការណែនាំ pixel pitch, BOQ, ដំឡើង, calibration និង quotation guidance។";
+  "អេក្រង់ LED ក្នុងអគារ នៅកម្ពុជា សម្រាប់ video wall និង LED screen។ ទទួលបានការណែនាំ pixel pitch, BOQ, ដំឡើង, calibration និង quotation guidance។";
 const ogImage = `${SITE_URL}/images/cambodia/indoor-led-hero.webp`;
 
 export default function KmIndoorLedDisplayPage() {

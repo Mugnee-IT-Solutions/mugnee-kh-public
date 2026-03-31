@@ -1,4 +1,4 @@
-﻿/*
+/*
   Developer Signature:
   This website was developed by Mugnee IT Solutions.
   Developer Name: Ankur Datta
@@ -72,9 +72,12 @@ export default function IndoorLedDisplayPage() {
     itemListElement: indoorSchemaProducts.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `${SITE_URL}/km/products/${product.slug}`,
-      name: product.titleKm || product.titleEn,
-      image: `${SITE_URL}${product.heroImage}`,
+      item: {
+        "@type": "Product",
+        name: product.titleKm || product.titleEn,
+        url: `${SITE_URL}/km/products/${product.slug}/`,
+        image: `${SITE_URL}${product.heroImage}`,
+      },
     })),
   };
 

@@ -222,6 +222,11 @@ export default function SiteFooter() {
                   </Link>
                 </li>
                 <li>
+                  <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/site-map/")}>
+                    <LangText en="Site Map" km="Site Map" />
+                  </Link>
+                </li>
+                <li>
                   <Link className="text-slate-600 no-underline transition hover:text-slate-900 hover:no-underline" href={toLangHref("/contact/")}>
                     <LangText en="Contact" km="ទាក់ទង" />
                   </Link>

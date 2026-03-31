@@ -59,7 +59,7 @@ function normalizeMetaTitle(title: string, fallbackTitle: string) {
 function normalizeMetaDescription(text: string, fallbackText: string) {
   const base = normalizeWhitespace(text || fallbackText);
   const enriched =
-    base.length < 90
+    base.length < 110
       ? `${base} មានសេវាប្រឹក្សាតម្លៃ ការដំឡើង និងការគាំទ្រក្នុងស្រុកពី Mugnee Cambodia។`
       : base;
   return trimMetaText(enriched, 158);

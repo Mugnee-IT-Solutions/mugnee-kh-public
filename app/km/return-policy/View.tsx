@@ -162,7 +162,10 @@ export default function KmReturnPolicyPage() {
           url: PAGE_URL,
           inLanguage: "km",
           dateModified: LAST_UPDATED,
-          about: "គោលការណ៍មិនអាចត្រឡប់ទំនិញ និងមិនសងប្រាក់ ជាមួយដំណើរការគាំទ្របច្ចេកទេស",
+          about: {
+            "@type": "Thing",
+            name: "គោលការណ៍មិនអាចត្រឡប់ទំនិញ និងមិនសងប្រាក់ ជាមួយដំណើរការគាំទ្របច្ចេកទេស",
+          },
           areaServed: {
             "@type": "Country",
             name: "Cambodia",

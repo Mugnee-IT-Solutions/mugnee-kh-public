@@ -105,7 +105,7 @@ export default function BlogIndexPage() {
                       "@type": "ListItem",
                       position: index + 1,
                       name: post.title,
-                      url: `${SITE_URL}/blog/${post.slug}/`,
+                      item: `${SITE_URL}/blog/${post.slug}/`,
                     })),
                   },
                 ],

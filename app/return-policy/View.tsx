@@ -170,7 +170,10 @@ export default function ReturnPolicyPage() {
           url: PAGE_URL,
           inLanguage: "en",
           dateModified: LAST_UPDATED,
-          about: "No return and no refund policy with technical support guidance for supplied products in Cambodia",
+          about: {
+            "@type": "Thing",
+            name: "No return and no refund policy with technical support guidance for supplied products in Cambodia",
+          },
           areaServed: {
             "@type": "Country",
             name: "Cambodia",

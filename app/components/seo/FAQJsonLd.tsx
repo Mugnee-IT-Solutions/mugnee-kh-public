@@ -34,11 +34,12 @@ function inferPageLanguage(items: FAQItem[], fallback: "en" | "km" = "en"): "en"
 
 export default function FAQJsonLd({ items, id = "faq-jsonld", pageLanguage }: FAQJsonLdProps) {
   const inferredPageLanguage = pageLanguage ?? inferPageLanguage(items, "en");
+  const faqInLanguage = inferredPageLanguage === "km" ? "km-KH" : "en-KH";
 
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    inLanguage: inferredPageLanguage,
+    inLanguage: faqInLanguage,
     about: {
       "@type": "Place",
       name: "Cambodia",
@@ -50,7 +51,6 @@ export default function FAQJsonLd({ items, id = "faq-jsonld", pageLanguage }: FA
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
-      inLanguage: item.language || "en",
       acceptedAnswer: {
         "@type": "Answer",
         text: item.answer,

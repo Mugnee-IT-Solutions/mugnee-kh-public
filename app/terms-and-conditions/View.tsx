@@ -201,8 +201,10 @@ export default function TermsAndConditionsPage() {
           url: PAGE_URL,
           inLanguage: "en",
           dateModified: "2026-03-07",
-          about:
-            "Terms and conditions for product supply, installation, warranty, and legal responsibilities in Cambodia.",
+          about: {
+            "@type": "Thing",
+            name: "Terms and conditions for product supply, installation, warranty, and legal responsibilities in Cambodia.",
+          },
           areaServed: {
             "@type": "Country",
             name: "Cambodia",

@@ -405,8 +405,9 @@ export default function LedDisplayClient({
     lang === "en" ? DEFAULT_TRUST_PROOF_CHIPS_EN : DEFAULT_TRUST_PROOF_CHIPS_KM;
   const trustSignalTitles =
     lang === "en" ? TRUST_SIGNAL_TITLES_EN : TRUST_SIGNAL_TITLES_KM;
-  const schemaPath =
+  const rawSchemaPath =
     schemaPathOverride ?? (lang === "km" ? "/km/led-display/" : "/led-display/");
+  const schemaPath = rawSchemaPath === "/" ? rawSchemaPath : `${rawSchemaPath.replace(/\/$/, "")}/`;
   const schemaName = schemaNameOverride ?? "LED Display";
   const schemaServiceName = schemaServiceNameOverride ?? "LED Display in Cambodia";
   const schemaServiceDesc =
@@ -621,17 +622,7 @@ export default function LedDisplayClient({
               "@context": "https://schema.org",
               "@type": "FAQPage",
               "@id": `${SITE_URL}${schemaPath}#faq`,
-              url: `${SITE_URL}${schemaPath}#faq`,
-              name: lang === "en" ? "LED Display FAQ - Cambodia" : "សំណួរញឹកញាប់អំពីអេក្រង់ LED - កម្ពុជា",
               inLanguage: lang === "en" ? "en-KH" : "km-KH",
-              about: {
-                "@type": "Country",
-                name: "Cambodia",
-              },
-              spatialCoverage: {
-                "@type": "Country",
-                name: "Cambodia",
-              },
               mainEntity: faqItems.map((item) => ({
                 "@type": "Question",
                 name: item.q,

@@ -1,4 +1,4 @@
-﻿/*
+/*
   Developer Signature:
   This website was developed by Mugnee IT Solutions.
   Developer Name: Ankur Datta
@@ -74,9 +74,12 @@ export default function OutdoorLedDisplayPage() {
     itemListElement: outdoorSchemaProducts.map((product, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `${SITE_URL}/products/${product.slug}`,
-      name: product.titleEn,
-      image: `${SITE_URL}${product.heroImage}`,
+      item: {
+        "@type": "Product",
+        name: product.titleEn,
+        url: `${SITE_URL}/products/${product.slug}/`,
+        image: `${SITE_URL}${product.heroImage}`,
+      },
     })),
   };
 

@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា | LED Billboard, LED Signage & Digital Screen";
+const title = "អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា | LED Billboard & Signage";
 const description =
-  "អេក្រង់ LED ខាងក្រៅ (outdoor) នៅកម្ពុជា សម្រាប់ LED billboard, facade screen និង LED signage។ មាន structure planning, BOQ, ដំឡើង, commissioning និងសេវាបន្ទាប់ពីលក់ សម្រាប់ការផ្សព្វផ្សាយដែលអាចទុកចិត្តបាន។";
+  "អេក្រង់ LED ខាងក្រៅ នៅកម្ពុជា សម្រាប់ LED billboard និង LED signage។ មាន BOQ, structure planning, ដំឡើង, commissioning និងសេវាបន្ទាប់ពីលក់។";
 const ogImage = `${SITE_URL}/images/hero/cambodia-led-billboard-advertising.webp`;
 
 export default function KmOutdoorLedDisplayPage() {
