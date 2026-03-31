@@ -75,10 +75,9 @@ export default function OutdoorLedDisplayPage() {
       "@type": "ListItem",
       position: index + 1,
       item: {
-        "@type": "Product",
+        "@type": "WebPage",
         name: product.titleEn,
         url: `${SITE_URL}/products/${product.slug}/`,
-        image: `${SITE_URL}${product.heroImage}`,
       },
     })),
   };

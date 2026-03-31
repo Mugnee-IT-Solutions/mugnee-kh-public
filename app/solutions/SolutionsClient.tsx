@@ -462,15 +462,16 @@ export default function SolutionsClient({ forcedLang }: { forcedLang?: "en" | "k
               provider: { "@id": `${SITE_URL}/#organization` },
               areaServed,
               url: pageUrl,
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
+              mainEntity: {
+                "@type": "ItemList",
                 name: isKhmer ? "ប្រភេទដំណោះស្រាយ" : "Solution Categories",
                 itemListElement: solutionLinks
                   .filter((item) => typeof item.href === "string" && item.href.length > 0)
                   .slice(0, 8)
-                  .map((item) => ({
-                    "@type": "Offer",
-                    itemOffered: {
+                  .map((item, index) => ({
+                    "@type": "ListItem",
+                    position: index + 1,
+                    item: {
                       "@type": "Service",
                       name: item.title,
                       description: item.desc,
