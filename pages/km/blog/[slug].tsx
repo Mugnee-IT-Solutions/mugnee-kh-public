@@ -59,6 +59,7 @@ function normalizeMetaDescription(text: string, fallbackText: string) {
 }
 
 function trimTitle(value: string, max = 58) {
+  if (/[\u1780-\u17FF]/.test(value)) return value;
   if (value.length <= max) return value;
   const sliced = value.slice(0, max + 1);
   const boundary = Math.max(sliced.lastIndexOf(" "), sliced.lastIndexOf(":"), sliced.lastIndexOf(","));
@@ -159,6 +160,8 @@ export default function KmBlogPostPage({ post }: InferGetStaticPropsType<typeof 
         <meta property="og:url" content={`${SITE_URL}${canonicalPath}`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
         <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.publishedAt} />
+        <meta property="article:modified_time" content={post.updatedAt || post.publishedAt} />
         <meta property="og:image" content={`${SITE_URL}${post.coverImage}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -314,6 +317,9 @@ export default function KmBlogPostPage({ post }: InferGetStaticPropsType<typeof 
                     posts={relatedPosts}
                     title="អត្ថបទពាក់ព័ន្ធ"
                     description="បន្តអានអត្ថបទដែលពាក់ព័ន្ធក្នុងប្រធានបទដូចគ្នា ដើម្បីសម្រេចចិត្តបានច្បាស់ជាងមុន។"
+                    hrefPrefix="/km/blog"
+                    categoryLabelMap={BLOG_CATEGORY_LABELS_KM}
+                    readMoreLabel="អានបន្ថែម"
                   />
                 </article>
 

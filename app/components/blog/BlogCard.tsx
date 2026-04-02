@@ -8,9 +8,15 @@ type BlogCardProps = {
   post: BlogPost;
   hrefPrefix?: string;
   categoryLabelMap?: Record<BlogCategory, string>;
+  readMoreLabel?: string;
 };
 
-export default function BlogCard({ post, hrefPrefix = "/blog", categoryLabelMap = BLOG_CATEGORY_LABELS }: BlogCardProps) {
+export default function BlogCard({
+  post,
+  hrefPrefix = "/blog",
+  categoryLabelMap = BLOG_CATEGORY_LABELS,
+  readMoreLabel = "Read More",
+}: BlogCardProps) {
   return (
     <article className="h-full">
       <Link
@@ -35,7 +41,7 @@ export default function BlogCard({ post, hrefPrefix = "/blog", categoryLabelMap 
           </div>
           <h3 className="mt-3 text-lg font-bold leading-snug text-slate-900">{post.title}</h3>
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-600">{post.excerpt}</p>
-          <span className="mt-4 inline-flex text-sm font-semibold text-sky-700">Read More</span>
+          <span className="mt-4 inline-flex text-sm font-semibold text-sky-700">{readMoreLabel}</span>
         </div>
       </Link>
     </article>

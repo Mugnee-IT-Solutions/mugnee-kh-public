@@ -137,7 +137,12 @@ export default function KmBlogIndexPage() {
                   ចាប់ផ្តើមពីអត្ថបទដែលមាន intent ខ្ពស់ សម្រាប់ជួយការសម្រេចចិត្តទិញ និងអនុវត្តគម្រោងនៅកម្ពុជា។
                 </p>
                 <div className="mt-5">
-                  <BlogGrid posts={featuredPosts} hrefPrefix="/km/blog" categoryLabelMap={BLOG_CATEGORY_LABELS_KM} />
+                  <BlogGrid
+                    posts={featuredPosts}
+                    hrefPrefix="/km/blog"
+                    categoryLabelMap={BLOG_CATEGORY_LABELS_KM}
+                    readMoreLabel="អានបន្ថែម"
+                  />
                 </div>
               </div>
             </section>
@@ -149,7 +154,12 @@ export default function KmBlogIndexPage() {
                   មើលអត្ថបទទាំងអស់តាមប្រធានបទ ដើម្បីរៀបចំផែនការគម្រោងបានល្អជាងមុន។
                 </p>
                 <div className="mt-6">
-                  <BlogGrid posts={allPosts} hrefPrefix="/km/blog" categoryLabelMap={BLOG_CATEGORY_LABELS_KM} />
+                  <BlogGrid
+                    posts={allPosts}
+                    hrefPrefix="/km/blog"
+                    categoryLabelMap={BLOG_CATEGORY_LABELS_KM}
+                    readMoreLabel="អានបន្ថែម"
+                  />
                 </div>
               </div>
             </section>

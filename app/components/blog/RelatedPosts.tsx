@@ -1,20 +1,35 @@
-import type { BlogPost } from "@/app/content/blog/posts";
+import type { BlogCategory, BlogPost } from "@/app/content/blog/posts";
 import BlogGrid from "./BlogGrid";
 
 type RelatedPostsProps = {
   posts: BlogPost[];
   title?: string;
   description?: string;
+  hrefPrefix?: string;
+  categoryLabelMap?: Record<BlogCategory, string>;
+  readMoreLabel?: string;
 };
 
-export default function RelatedPosts({ posts, title = "Related Articles", description = "Continue with related buyer guides from the same topic cluster." }: RelatedPostsProps) {
+export default function RelatedPosts({
+  posts,
+  title = "Related Articles",
+  description = "Continue with related buyer guides from the same topic cluster.",
+  hrefPrefix,
+  categoryLabelMap,
+  readMoreLabel,
+}: RelatedPostsProps) {
   if (!posts.length) return null;
   return (
     <section className="mt-12 border-t border-slate-200 pt-10">
       <h2 className="text-2xl font-bold tracking-tight text-slate-900">{title}</h2>
       <p className="mt-2 text-sm text-slate-600">{description}</p>
       <div className="mt-5">
-        <BlogGrid posts={posts} />
+        <BlogGrid
+          posts={posts}
+          hrefPrefix={hrefPrefix}
+          categoryLabelMap={categoryLabelMap}
+          readMoreLabel={readMoreLabel}
+        />
       </div>
     </section>
   );
