@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "LED Display Cambodia - Indoor & Outdoor Signage | Mugnee";
+const title = "LED Display & LED Screen Cambodia | Prices & Quotes | Mugnee";
 const description =
-  "LED display supplier in Cambodia for indoor video walls, outdoor billboards, and LED signage. Get BOQ planning, installation, commissioning, and quotation support.";
+  "LED display & LED screen in Cambodia—Clear LED display price via BOQ for indoor & outdoor, install & local after-sales. WhatsApp Mugnee—request quotes now.";
 
 export default function LedDisplayPage() {
   return (
@@ -27,10 +27,7 @@ export default function LedDisplayPage() {
         <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/led-display/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/led-display/`} />
         <meta property="og:title" content={title} />
-        <meta
-          property="og:description"
-          content="Explore LED display Cambodia solutions: indoor LED video walls, outdoor LED billboards, LED signage, BOQ planning, installation, and after-sales support from Mugnee Cambodia."
-        />
+        <meta property="og:description" content={description} />
         <meta property="og:url" content={`${SITE_URL}/led-display/`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
         <meta property="og:type" content="website" />
@@ -43,10 +40,7 @@ export default function LedDisplayPage() {
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta
-          name="twitter:description"
-          content="LED display in Cambodia: indoor and outdoor solutions plus LED signage with planning, installation, commissioning, and quotation support."
-        />
+        <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
           content={`${SITE_URL}/images/hero/cambodia-led-hero.webp`}

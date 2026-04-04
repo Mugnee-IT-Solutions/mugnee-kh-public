@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "Contact Mugnee Cambodia | Sales & Support";
+const title = "Contact Mugnee Cambodia | Fast Quote & Local Support—Today";
 const description =
-  "Contact Mugnee Cambodia for quotation, installation support, and service assistance for LED display and business technology projects.";
+  "Contact Mugnee Cambodia—get fast, local reply on LED, IFP, PA & turnstile projects. Same-day response when possible. Trusted install & support nationwide.";
 
 export default function ContactPage() {
   return (
@@ -26,11 +26,8 @@ export default function ContactPage() {
         <link rel="alternate" hrefLang="en-KH" href={`${SITE_URL}/contact/`} />
         <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/contact/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/contact/`} />
-        <meta property="og:title" content="Contact Mugnee Cambodia" />
-        <meta
-          property="og:description"
-          content="Reach Mugnee Cambodia for sales, service, and project inquiries with local support and fast response."
-        />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:url" content={`${SITE_URL}/contact/`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
         <meta property="og:type" content="website" />
@@ -39,11 +36,8 @@ export default function ContactPage() {
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Contact Mugnee Cambodia" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Mugnee Cambodia" />
-        <meta
-          name="twitter:description"
-          content="Reach Mugnee Cambodia for sales, service, and project inquiries with local support and fast response."
-        />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={`${SITE_URL}/images/hero/cambodia-led-hero.webp`} />
       </Head>
 

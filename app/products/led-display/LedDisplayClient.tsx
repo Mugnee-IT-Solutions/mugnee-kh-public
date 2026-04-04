@@ -19,16 +19,24 @@ type ProductGridConfig = {
 
 const LED_FAQS_EN: Array<{ q: string; a: string }> = [
   {
-    q: "How much does an LED display project cost in Cambodia?",
-    a: "LED project cost depends on pixel pitch, total screen size (sqm), brightness, cabinet type, structure, controller, power setup, and site access. That is why accurate pricing in Cambodia is usually provided through a project BOQ, not a single fixed list price.",
+    q: "What is LED display price in Cambodia?",
+    a: "There is no single list price. LED display price in Cambodia is calculated from pixel pitch, total screen area (sqm), brightness class, cabinet and structure design, controller and video processing, power and cabling, plus site access and installation scope. Request a project BOQ so every line item is transparent and comparable.",
+  },
+  {
+    q: "Indoor vs Outdoor LED display?",
+    a: "Indoor LED displays favor finer pixel pitch, balanced brightness, and low glare for close viewing. Outdoor LED displays need much higher nits (often 4,500-7,000+ for daylight), IP-rated weatherproof cabinets, stronger structures, and heat management for Cambodia sun, rain, and dust.",
+  },
+  {
+    q: "Installation cost?",
+    a: "Installation cost depends on screen size and weight, mounting height and access, structure or wall type, cable routes, power readiness, and project location. It is normally quoted as part of the BOQ (labor, lifting equipment, frames, and commissioning time) rather than a flat fee.",
+  },
+  {
+    q: "Warranty?",
+    a: "Expect written warranty terms covering modules, power, and control hardware for a defined period, plus clarity on spare parts, onsite support, and exclusions (misuse, power surge without protection, water ingress from poor maintenance). Confirm response process and after-sales scope before purchase.",
   },
   {
     q: "Which pixel pitch is right for my viewing distance?",
     a: "For close viewing (about 1.5-4m), finer pitch such as P1.5-P2.5 is common. Mid-distance use often fits P2.5-P4. Larger outdoor roadside viewing often uses P4-P10. Final selection should match real viewer distance, content type, and budget.",
-  },
-  {
-    q: "What is the best LED display type for indoor and outdoor use in Cambodia?",
-    a: "Indoor environments usually prioritize finer pixel pitch and color consistency. Outdoor screens prioritize high brightness, weather protection, and strong cabinet durability for sun, rain, and dust conditions in Cambodia.",
   },
   {
     q: "What brightness (nits) is recommended for outdoor LED billboards in Cambodia?",
@@ -47,14 +55,6 @@ const LED_FAQS_EN: Array<{ q: string; a: string }> = [
     a: "Power use depends on screen size, brightness settings, content, and operating hours. A proper quotation should include estimated max and average consumption so you can plan monthly electricity cost before purchase.",
   },
   {
-    q: "How long does delivery and installation usually take in Cambodia?",
-    a: "Timeline depends on model availability, structure complexity, and site readiness. A typical process includes survey, BOQ confirmation, fabrication/procurement, installation, calibration, and commissioning.",
-  },
-  {
-    q: "What warranty and after-sales support should I expect?",
-    a: "A reliable LED supplier should provide clear warranty terms, spare-part support, onsite troubleshooting, and preventive maintenance options. Ask for written scope, response process, and exclusions before confirming.",
-  },
-  {
     q: "Should I rent LED screens or buy a permanent installation?",
     a: "Rental LED is suitable for temporary events and short campaigns. Permanent installation is usually better for daily branding, retail, corporate communication, and long-term cost efficiency.",
   },
@@ -70,16 +70,24 @@ const LED_FAQS_EN: Array<{ q: string; a: string }> = [
 
 const LED_FAQS_KM: Array<{ q: string; a: string }> = [
   {
-    q: "គម្រោងអេក្រង់ LED នៅកម្ពុជា តម្លៃប្រហែលប៉ុន្មាន?",
-    a: "តម្លៃអាស្រ័យលើ Pixel Pitch ទំហំអេក្រង់ (sqm) កម្រិតពន្លឺ ប្រភេទកាប៊ីណេត រចនាសម្ព័ន្ធ Controller ប្រព័ន្ធភ្លើង និងលក្ខខណ្ឌទីតាំង។ ដូច្នេះការគណនាត្រឹមត្រូវគួរធ្វើតាម BOQ គម្រោង មិនមែនតារាងតម្លៃថេរតែមួយទេ។",
+    q: "តើតម្លៃអេក្រង់ LED នៅកម្ពុជា គឺប៉ុន្មាន?",
+    a: "មិនមានតារាងតម្លៃថេរតែមួយទេ។ តម្លៃអេក្រង់ LED នៅកម្ពុជា គណនាពី Pixel Pitch ផ្ទៃអេក្រង់ (sqm) កម្រិតពន្លឺ ការរចនាកាប៊ីណេត និងរចនាសម្ព័ន្ធ ឧបករណ៍បញ្ជា និងដំណើរការវីដេអូ ប្រព័ន្ធភ្លើង និងខ្សែ ការចូលទីតាំង និងវិសាលភាពដំឡើង។ សូមស្នើសុំ BOQ គម្រោង ដើម្បីឃើញរាល់ធាតុច្បាស់លាស់ និងប្រៀបធៀបបានត្រឹមត្រូវ។",
+  },
+  {
+    q: "អេក្រង់ LED ក្នុងអគារ ទល់នឹង ខាងក្រៅ?",
+    a: "អេក្រង់ LED ក្នុងអគារភាគច្រើនប្រើ Pixel Pitch ល្អិត កម្រិតពន្លឺសមរម្យ និងពន្លឺមិនចាំង សម្រាប់ការមើលជិត។ អេក្រង់ LED ខាងក្រៅត្រូវការពន្លឺ nits ខ្ពស់ជាងច្រើន (ជាញឹកញាប់ 4,500-7,000+ សម្រាប់ពន្លឺថ្ងៃ) កាប៊ីណេតការពារអាកាសធាតុតាម IP រចនាសម្ព័ន្ធរឹងមាំ និងការគ្រប់គ្រងកំដៅ សម្រាប់កំដៅថ្ងៃ ភ្លៀង និងធូលីនៅកម្ពុជា។",
+  },
+  {
+    q: "តម្លៃដំឡើង?",
+    a: "តម្លៃដំឡើងអាស្រ័យលើទំហំ និងទម្ងន់អេក្រង់ កម្ពស់ដំឡើង និងភាពងាយស្រួលចូលទីតាំង ប្រភេទជញ្ជាំង ឬរចនាសម្ព័ន្ធ ផ្លូវខ្សែ ស្ថានភាពថាមពល និងទីតាំងគម្រោង។ ជាធម្មតាដាក់ក្នុង BOQ (ថ្លៃពលកម្លាំង ឧបករណ៍លើក ស៊ុម និងពេលវេលា commissioning) មិនមែនថ្លៃថេរតែមួយទេ។",
+  },
+  {
+    q: "Warranty?",
+    a: "គួរមានលក្ខខណ្ឌ Warranty ជាលាយលក្ខណ៍អក្សរ គ្របដណ្តប់ម៉ូឌុល ថាមពល និងឧបករណ៍បញ្ជា រយៈពេលកំណត់ រួមភាពច្បាស់លាស់អំពីគ្រឿងបន្លាស់ សេវាជួសជុលនៅទីតាំង និងករណីមិនគ្របដណ្តប់ (ប្រើមិនត្រឹមត្រូវ រលកភ្លើងគ្មានការពារ ទឹកចូលពីការថែទាំមិនល្អ)។ សូមបញ្ជាក់ដំណើរការឆ្លើយតប និងវិសាលភាពបន្ទាប់ពីលក់ មុនបញ្ជាទិញ។",
   },
   {
     q: "តើត្រូវជ្រើស Pixel Pitch ដូចម្តេចឱ្យសមនឹងចម្ងាយមើល?",
     a: "បើមើលជិត (ប្រហែល 1.5-4m) ជាទូទៅសមស្របជាមួយ P1.5-P2.5។ ចម្ងាយមធ្យមជាញឹកញាប់ប្រើ P2.5-P4។ សម្រាប់ការមើលឆ្ងាយខាងក្រៅភាគច្រើនប្រើ P4-P10។ ជម្រើសចុងក្រោយត្រូវអាស្រ័យលើចម្ងាយមើលពិត មាតិកា និងថវិកា។",
-  },
-  {
-    q: "អេក្រង់ LED ប្រភេទណាល្អសម្រាប់ក្នុងអគារ និងក្រៅអគារនៅកម្ពុជា?",
-    a: "ក្នុងអគារត្រូវផ្តោតលើ Pixel Pitch ល្អិត និងពណ៌មានស្ថេរភាព។ ខាងក្រៅត្រូវផ្តោតលើពន្លឺខ្ពស់ ការការពារអាកាសធាតុ និងកាប៊ីណេតរឹងមាំ ដើម្បីទប់ទល់កំដៅ ភ្លៀង និងធូលីនៅកម្ពុជា។",
   },
   {
     q: "សម្រាប់ប៊ីលបត LED ខាងក្រៅនៅកម្ពុជា ត្រូវការពន្លឺប៉ុន្មាន nits?",
@@ -96,14 +104,6 @@ const LED_FAQS_KM: Array<{ q: string; a: string }> = [
   {
     q: "អេក្រង់ LED ប្រើអគ្គិសនីប៉ុន្មាន?",
     a: "ការប្រើអគ្គិសនីអាស្រ័យលើទំហំអេក្រង់ កម្រិតពន្លឺ ប្រភេទមាតិកា និងម៉ោងដំណើរការ។ Quotation ល្អគួរបង្ហាញទាំងកម្រិតប្រើប្រាស់អតិបរមា និងមធ្យម ដើម្បីគណនាចំណាយភ្លើងប្រចាំខែបានមុនពេលទិញ។",
-  },
-  {
-    q: "ការដឹកជញ្ជូន និងដំឡើងនៅកម្ពុជា ជាទូទៅចំណាយពេលប៉ុន្មាន?",
-    a: "រយៈពេលអាស្រ័យលើស្តុកម៉ូដែល ភាពស្មុគស្មាញរចនាសម្ព័ន្ធ និងភាពរួចរាល់ទីតាំង។ ដំណើរការធម្មតារួមមានស្ទង់ទីតាំង អនុម័ត BOQ ផលិត/ផ្គត់ផ្គង់ ដំឡើង កំណត់រចនា និងបើកប្រើប្រាស់។",
-  },
-  {
-    q: "តើ Warranty និងសេវាបន្ទាប់ពីលក់គួរមានអ្វីខ្លះ?",
-    a: "អ្នកផ្គត់ផ្គង់ដែលអាចទុកចិត្តបានគួរផ្តល់លក្ខខណ្ឌ Warranty ច្បាស់លាស់ គ្រឿងបន្លាស់ជំនួស សេវាជួសជុល Onsite និងផែនការថែទាំជាប្រចាំ។ មុនបញ្ជាក់គម្រោង គួរស្នើសុំឯកសារកំណត់វិសាលភាព និងករណីមិនគ្របដណ្តប់។",
   },
   {
     q: "គួរជួលអេក្រង់ LED ឬទិញដំឡើងអចិន្ត្រៃយ៍?",
@@ -210,8 +210,11 @@ const DEFAULT_TRUST_PROOF_CHIPS_KM = [
 ];
 
 const SEO_STRONG_TERMS_EN = [
-  "LED display price in Cambodia",
+  "LED display price Cambodia",
   "LED screen solutions in Cambodia",
+  "LED display Cambodia",
+  "LED screen Cambodia",
+  "LED display price in Cambodia",
   "indoor LED display solutions in Cambodia",
   "outdoor LED display solutions in Cambodia",
   "outdoor LED display price",
@@ -412,17 +415,17 @@ export default function LedDisplayClient({
   const schemaServiceName = schemaServiceNameOverride ?? "LED Display in Cambodia";
   const schemaServiceDesc =
     schemaServiceDescOverride ??
-    "Indoor LED video walls, outdoor LED billboards, installation, commissioning and after-sales support in Cambodia.";
+    "LED display Cambodia and LED screen Cambodia projects with transparent LED display price via BOQ, supply, install, commissioning, and after-sales support.";
   const t = (() => {
     const en = {
       breadcrumb: "LED Display",
-      h1: "LED Display in Cambodia - Indoor & Outdoor LED Screen",
+      h1: "LED Display & LED Screen Cambodia—Prices, BOQ Quotes & Full Install",
       intro:
-        "Looking for LED display price in Cambodia from a trusted LED display supplier and LED screen supplier in Phnom Penh? Mugnee Cambodia provides indoor LED display, outdoor LED screen, LED billboard, LED video wall, LED signage, digital signage, and LED advertising screen solutions for retail shops, hotels, showrooms, corporate offices, education campuses, churches, and public communication projects. From site survey, pixel-pitch selection, screen size planning, and BOQ preparation to receiving card and video processor setup, power and structure planning, installation, calibration, commissioning, and local after-sales support, we help buyers compare the right indoor and outdoor LED display solution for long-term performance in Cambodia.",
+        "Need LED display Cambodia supply and LED screen Cambodia expertise—with a clear LED display price Cambodia roadmap before you sign? Mugnee is your commercial partner for indoor LED display, outdoor LED screen, LED billboard, LED video wall, LED signage, and DOOH projects across Phnom Penh and nationwide. We turn site survey, pixel-pitch selection, and BOQ preparation into transparent quotations, then deliver installation, calibration, commissioning, and local after-sales support so your screen performs—not just ships.",
       cta1: "WhatsApp for Quotation",
       cta2: "Request BOQ Proposal",
       cta3: "Jump to Products",
-      quickTitle: "Browse LED display categories and related services",
+      quickTitle: "Jump to LED products, pricing & buying steps",
       quickSub:
         "Use quick links to jump directly to each section of this LED display page.",
     };
@@ -772,7 +775,7 @@ export default function LedDisplayClient({
             </p>
             <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
               {lang === "en"
-                ? "How to Buy LED Display in Cambodia Without Confusion"
+                ? "How to Buy LED Display & LED Screen in Cambodia—BOQ, Price & Go-Live"
                 : "របៀបទិញអេក្រង់ LED នៅកម្ពុជា ឲ្យច្បាស់លាស់មិនច្របូកច្របល់"}
             </h2>
             <p className="mt-3 w-full text-justify text-sm leading-relaxed text-slate-600">
@@ -870,7 +873,7 @@ export default function LedDisplayClient({
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
-                  ? "LED Display Technology Basics & Buying Guide"
+                  ? "LED Display & LED Screen Basics—Buy Smarter in Cambodia"
                   : "មូលដ្ឋានបច្ចេកវិទ្យាអេក្រង់ LED និងមគ្គុទ្ទេសក៍ទិញ"}
               </h2>
 
@@ -1127,7 +1130,7 @@ export default function LedDisplayClient({
               </p>
               <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
                 {lang === "en"
-                  ? "Types of LED Displays for Different Use Cases"
+                  ? "Pick the Right LED Display & LED Screen for Your Cambodia Project"
                   : "ប្រភេទអេក្រង់ LED សម្រាប់ការប្រើប្រាស់ផ្សេងៗ"}
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-600">
@@ -1264,7 +1267,7 @@ export default function LedDisplayClient({
             </p>
             <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900">
               {lang === "en"
-                ? "LED Display Benefits for Advertising & Brand Visibility"
+                ? "LED Display & LED Screen Benefits—Visibility That Converts in Cambodia"
                 : "អត្ថប្រយោជន៍អេក្រង់ LED សម្រាប់ការផ្សព្វផ្សាយ និងការមើលឃើញម៉ាក"}
             </h2>
             <p className="mt-3 w-full text-justify text-sm leading-relaxed text-slate-600">
@@ -1346,7 +1349,7 @@ export default function LedDisplayClient({
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
-              ? "LED Display Specifications Guide (Indoor & Outdoor)"
+              ? "LED Display & LED Screen Specs—Plan Indoor or Outdoor in Cambodia"
               : "មគ្គុទ្ទេសក៍លក្ខណៈបច្ចេកទេសអេក្រង់ LED (ក្នុងអគារ និងខាងក្រៅ)"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -1519,7 +1522,7 @@ export default function LedDisplayClient({
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
-              ? "LED Display Price in Cambodia: Key Cost Factors & BOQ Process"
+              ? "LED Display Price Cambodia—Cost Drivers, BOQ & Apples-to-Apples Quotes"
               : "តម្លៃអេក្រង់ LED នៅកម្ពុជា៖ កត្តាចំណាយសំខាន់ និងដំណើរការ BOQ"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -1606,7 +1609,7 @@ export default function LedDisplayClient({
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
-              ? "LED Display Use-Cases by Industry in Cambodia"
+              ? "LED Display & LED Screen Wins by Industry—Cambodia Playbook"
               : "ករណីប្រើប្រាស់អេក្រង់ LED តាមវិស័យនៅកម្ពុជា"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -1728,7 +1731,7 @@ export default function LedDisplayClient({
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
-              ? "LED Display Solutions: Installation & After-Sales Support"
+              ? "Certified Install, Commissioning & After-Sales for Your LED Screen"
               : "ដំណើរការដំឡើងអេក្រង់ LED និងសេវាកម្មបន្ទាប់ពីលក់"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -1813,7 +1816,7 @@ export default function LedDisplayClient({
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
             {lang === "en"
-              ? "Why Businesses Choose Mugnee for LED Display Solutions"
+              ? "Why Mugnee for LED Display Price, Supply & Install in Cambodia"
               : "ហេតុអ្វីគួរជ្រើស Mugnee សម្រាប់អេក្រង់ LED"}
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -2097,7 +2100,7 @@ export default function LedDisplayClient({
                 <h2 className="text-2xl font-bold tracking-tight text-slate-900">
                   {(lang === "en" ? internalLinkTitleOverride : (internalLinkTitleOverrideKm ?? internalLinkTitleOverride)) ??
                     (lang === "en"
-                      ? "Related LED Resources & Buying Paths in Cambodia"
+                      ? "More LED Display Cambodia Resources—Shop, Compare & Quote"
                       : "ធនធាន LED ពាក់ព័ន្ធ និងផ្លូវសម្រេចចិត្តទិញ")}
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
@@ -2147,7 +2150,7 @@ export default function LedDisplayClient({
       <DeferredSection id="faq" className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold tracking-tight text-slate-900">
-            {lang === "en" ? "Frequently Asked Question (FAQ)" : "សំណួរដែលសួរញឹកញាប់"}
+            {lang === "en" ? "LED Display Price & LED Screen FAQs—Cambodia" : "សំណួរដែលសួរញឹកញាប់"}
           </h2>
           <div className="mt-6 grid gap-3 md:grid-cols-2">
             {faqItems.map(({ q, a }, index) => (

@@ -59,6 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about/message-from-ceo",
     "/contact",
     "/blog",
+    "/site-map",
     "/return-policy",
     "/terms-and-conditions",
   ];
@@ -105,6 +106,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/about/message-from-ceo", "app/about/message-from-ceo/page.tsx"],
     ["/contact", "app/contact/page.tsx"],
     ["/blog", "app/blog/page.tsx"],
+    ["/site-map", "pages/site-map/index.tsx"],
     ...getAllBlogSlugs().map((slug) => [`/blog/${slug}`, "app/content/blog/posts.ts"] as const),
     ...getAllKmBlogSlugs().map((slug) => [`/km/blog/${slug}`, "app/content/blog/posts.km.ts"] as const),
     ["/return-policy", "app/return-policy/page.tsx"],

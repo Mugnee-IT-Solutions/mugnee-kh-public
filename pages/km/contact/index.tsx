@@ -11,9 +11,9 @@ const ClientEnhancements = dynamic(
   { ssr: false },
 );
 
-const title = "ទាក់ទង Mugnee Cambodia | ស្នើសុំតម្លៃ និងប្រឹក្សា";
+const title = "ទាក់ទង Mugnee Cambodia | ឆ្លើយតបរហ័ស ស្នើសុំតម្លៃថ្ងៃនេះ";
 const description =
-  "ទាក់ទងក្រុមលក់ Mugnee Cambodia ដើម្បីស្នើសុំតម្លៃអេក្រង់ LED, Digital Signage, IFP, PA System និង Turnstile Gate នៅកម្ពុជា ជាមួយសេវាវាស់វែងគម្រោង និងដំឡើង។";
+  "ទាក់ទងក្រុមក្នុងស្រុក Mugnee Cambodia សម្រាប់តម្លៃរហ័សលើ LED, IFP, PA និង Turnstile—ឆ្លើយតបឆាប់រហ័សពេលអាច។ ដំឡើងទុកចិត្ត និងសេវាបន្ទាប់ពីលក់ទូទាំងកម្ពុជា។";
 
 export default function KmContactPage() {
   return (
@@ -27,14 +27,8 @@ export default function KmContactPage() {
         <link rel="alternate" hrefLang="km-KH" href={`${SITE_URL}/km/contact/`} />
         <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}/contact/`} />
 
-        <meta
-          property="og:title"
-          content="ទាក់ទង Mugnee Cambodia | ស្នើសុំតម្លៃ និងប្រឹក្សាដំណោះស្រាយ"
-        />
-        <meta
-          property="og:description"
-          content="ទាក់ទងក្រុមលក់ Mugnee Cambodia ដើម្បីស្នើសុំតម្លៃ និងប្រឹក្សាគម្រោងសម្រាប់ LED Display និងដំណោះស្រាយអាជីវកម្មនៅកម្ពុជា។"
-        />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:url" content={`${SITE_URL}/km/contact/`} />
         <meta property="og:site_name" content="Mugnee Cambodia" />
         <meta property="og:type" content="website" />
@@ -45,10 +39,7 @@ export default function KmContactPage() {
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta
-          name="twitter:description"
-          content="ស្នើសុំតម្លៃ និងប្រឹក្សាគម្រោងពី Mugnee Cambodia នៅកម្ពុជា។"
-        />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={`${SITE_URL}/images/hero/cambodia-led-hero.webp`} />
       </Head>
 

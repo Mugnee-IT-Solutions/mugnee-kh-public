@@ -53,6 +53,22 @@
   RewriteCond %{QUERY_STRING} ^Q(?:=|$) [NC]
   RewriteRule ^$ /? [R=301,L]
 
+  # 2c) Legacy `?lang=` duplicates: move to locale path and strip query (canonicals omit ?lang=)
+  #     Note: strips the entire query string when `lang` is present (avoid mixed duplicate URLs).
+  RewriteCond %{QUERY_STRING} (^|&)lang=en(&|$) [NC]
+  RewriteRule ^km/?$ /? [R=301,L]
+
+  RewriteCond %{QUERY_STRING} (^|&)lang=en(&|$) [NC]
+  RewriteRule ^km/(.+)$ /$1? [R=301,L]
+
+  RewriteCond %{QUERY_STRING} (^|&)lang=km(&|$) [NC]
+  RewriteCond %{REQUEST_URI} !^/km/
+  RewriteRule ^$ /km/? [R=301,L]
+
+  RewriteCond %{QUERY_STRING} (^|&)lang=km(&|$) [NC]
+  RewriteCond %{REQUEST_URI} !^/km/
+  RewriteRule ^(.+)$ /km/$1? [R=301,L]
+
   # 3) Enforce trailing slash for “pages” (skip real files/folders)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
