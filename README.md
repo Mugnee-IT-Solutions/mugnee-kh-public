@@ -6,6 +6,8 @@
 
 **A premium, bilingual digital flagship for AV, LED, smart collaboration, and integrated security—engineered to earn trust before the first call.**
 
+**[Visit the live website → mugneekh.com](https://mugneekh.com/)**
+
 [Visual tour](#visual-tour) · [Who this is for](#who-this-is-for) · [Mugnee IT Solution](https://mugneeit.com)
 
 </div>
@@ -26,6 +28,7 @@
 |:---|:---|
 | **The opportunity** | Buyers research deeply before they ever email. Your site must explain depth *and* reduce risk—fast. |
 | **What this delivers** | A **polished, enterprise-grade web experience** in **English and Khmer**, structured for products, solutions, education, and lead capture. |
+| **See it live** | The production experience is public at **[mugneekh.com](https://mugneekh.com/)** — digital signage, smart boards, LED, PA, turnstiles, and project support for Cambodia. |
 | **What you should feel** | **Premium.** Organized. Credible. The digital equivalent of a well-run showroom—not a cluttered PDF pasted online. |
 
 ---
@@ -175,9 +178,10 @@ If you are evaluating a similar initiative, Mugnee can provide a **controlled wa
 
 ## Build a digital flagship—not just a website
 
+**Mugnee Cambodia (live)** · [mugneekh.com](https://mugneekh.com/)  
 **Mugnee IT Solution** · [mugneeit.com](https://mugneeit.com)
 
-If you are planning a **new corporate platform**, a **bilingual regional launch**, or a **performance and visibility upgrade** for an existing site, start a conversation with Mugnee.
+If you are planning a **new corporate platform**, a **bilingual regional launch**, or a **performance and visibility upgrade** for an existing site, start a conversation with Mugnee—or explore how this case study presents on **[mugneekh.com](https://mugneekh.com/)** today.
 
 *We design and deliver digital experiences that are **clear for leadership**, **convincing for buyers**, and **sustainable for the teams who run them**.*
 
