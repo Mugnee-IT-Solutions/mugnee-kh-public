@@ -1,14 +1,47 @@
 <div align="center">
 
+<br/>
+
+<!-- Primary CTAs -->
+<p>
+  <a href="https://mugneekh.com/"><img src="https://img.shields.io/badge/OPEN%20LIVE%20SITE-mugneekh.com-DA1F26?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Open live website mugneekh.com" /></a>
+  &nbsp;&nbsp;
+  <a href="https://mugneeit.com"><img src="https://img.shields.io/badge/MUGNEE%20IT%20SOLUTION-mugneeit.com-0D2240?style=for-the-badge" alt="Mugnee IT Solution mugneeit.com" /></a>
+</p>
+
+<!-- Context strip -->
+<p>
+  <img src="https://img.shields.io/badge/Bilingual-English_%7C_Khmer-37474F?style=flat-square" alt="English and Khmer" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Focus-LED_%C2%B7_AV_%C2%B7_Smart_Board_%C2%B7_Security-455A64?style=flat-square" alt="Business focus" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Format-Client%20case%20study-546E7A?style=flat-square" alt="Portfolio case study" />
+</p>
+
+<sub><strong>PORTFOLIO SHOWCASE</strong> · Enterprise web platform · Cambodia &amp; regional buyers</sub>
+
+<br/><br/>
+
 # When your catalog is complex, your website should still feel effortless.
 
 ### Mugnee Cambodia — Corporate Web Platform
 
-**A premium, bilingual digital flagship for AV, LED, smart collaboration, and integrated security—engineered to earn trust before the first call.**
+<p>
+  <em>A premium, bilingual digital flagship for AV, LED, smart collaboration, and integrated security—engineered to earn trust before the first call.</em>
+</p>
 
-**[Visit the live website → mugneekh.com](https://mugneekh.com/)**
+<p>
+  <strong>Explore this README</strong><br/>
+  <a href="#visual-tour">Visual tour</a>
+  &nbsp;·&nbsp;
+  <a href="#who-this-is-for">Who this is for</a>
+  &nbsp;·&nbsp;
+  <a href="https://mugneekh.com/">Live website</a>
+  &nbsp;·&nbsp;
+  <a href="https://mugneeit.com">Mugnee IT Solution</a>
+</p>
 
-[Visual tour](#visual-tour) · [Who this is for](#who-this-is-for) · [Mugnee IT Solution](https://mugneeit.com)
+<br/>
 
 </div>
 
