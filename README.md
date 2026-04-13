@@ -1,242 +1,126 @@
-<div align="center">
+# Mugnee Cambodia — Corporate Web Platform
 
-# Mugnee Cambodia — Corporate Website
+A bilingual, enterprise-grade digital presence for professional AV, LED, and security solutions—designed for clarity, trust, and measurable business outcomes.
 
-**Digital signage, smart boards, PA systems & access control — bilingual (English / Khmer) marketing site for Cambodia.**
+---
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js&logoColor=white)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Node](https://img.shields.io/badge/node-%3E%3D20%20%3C24-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+## Short description
 
-[Live site](https://mugneekh.com/) · [Khmer home](https://mugneekh.com/km/)
-
-</div>
+A modern, fast, and SEO-aware corporate website that presents complex product lines and industry solutions to regional buyers in English and Khmer—built for credibility, lead generation, and long-term maintainability.
 
 ---
 
 ## Overview
 
-This repository powers the public website for **Mugnee Cambodia** (legal entity: **Mugnee Multiple Co., Ltd**): product and solution pages, blog, projects, policies, and a contact flow with SEO-oriented structure (canonical URLs, `hreflang`, JSON-LD).
+Organizations that sell specialized equipment and integrated solutions need more than a brochure online. Buyers compare vendors across product depth, proof of delivery, and how confidently a brand presents its expertise—often before a first conversation.
 
-| | |
-| :--- | :--- |
-| **Brand** | Mugnee Cambodia |
-| **Focus** | LED displays, interactive flat panels, PA systems, turnstile / access solutions, professional AV in Cambodia |
-| **Languages** | English (`/`) and Khmer (`/km/`) |
-| **Canonical domain** | [mugneekh.com](https://mugneekh.com/) (configurable via `NEXT_PUBLIC_SITE_URL`) |
+This project delivers a **polished, client-facing web platform** that organizes extensive product and solution content, supports **English and Khmer** audiences, and reinforces **brand trust** through structured information architecture, consistent storytelling, and performance-oriented delivery. The experience is tuned for **discovery** (search and referrals), **education** (clear explanations without overwhelming detail), and **conversion** (purposeful calls-to-action and secure inquiry flows).
 
 ---
 
-## Table of contents
+## Key features
 
-- [Features](#features)
-- [Tech stack](#tech-stack)
-- [Repository layout](#repository-layout)
-- [Getting started](#getting-started)
-- [Environment variables](#environment-variables)
-- [Scripts](#scripts)
-- [Build modes](#build-modes)
-- [Content & data](#content--data)
-- [Security & quality checks](#security--quality-checks)
-- [Deployment notes](#deployment-notes)
-- [Credits](#credits)
+- **Bilingual experience (English & Khmer)** — Consistent messaging and navigation for local and international stakeholders.
+- **Solution-oriented storytelling** — Industry pages and narratives that connect products to real business outcomes.
+- **Rich product catalog presentation** — Structured browsing for LED displays, interactive panels, access control, and related categories.
+- **Trust and credibility signals** — Partner proof, leadership messaging, and policy transparency where buyers expect it.
+- **Performance-first delivery** — Fast page loads and optimized assets to support SEO, mobile usage, and professional first impressions.
+- **Search-friendly structure** — Thoughtful metadata and structured content patterns to improve visibility and click relevance.
+- **Lead capture workflow** — Contact experiences designed to qualify interest while respecting user time.
+- **Operational maintainability** — Content and build workflows suitable for ongoing marketing updates at scale.
 
 ---
 
-## Features
+## Industry & use case
 
-| Area | What visitors get |
-| :--- | :--- |
-| **Marketing pages** | Home, about (incl. CEO message), service, contact, projects, blog |
-| **Product catalog** | Dynamic product pages, category hubs, search/grid indices under `public/data/` |
-| **Solutions** | Dedicated solution pages (e.g. office access control) |
-| **LED ecosystem** | Indoor / outdoor LED, receiving cards, video processors, power supplies |
-| **Other lines** | Interactive flat panel, PA system, turnstile gate |
-| **Policies** | Terms, return policy, site map |
-| **SEO** | Sitewide JSON-LD, FAQ schema on home, canonical + `hreflang` alternates |
-| **Contact** | API route with optional rate limiting, Turnstile, SMTP (see [Environment variables](#environment-variables)) |
+**Industries:** Professional audiovisual (Pro AV), LED display systems, interactive collaboration hardware, physical security and access solutions, integrated building technology, and related B2B distribution.
+
+**Primary use cases:**
+
+- Regional manufacturers, distributors, and integrators presenting **multi-category catalogs** online.
+- Teams that must communicate **technical credibility** to non-technical decision-makers.
+- Organizations expanding in **Cambodia and Southeast Asia** with a need for **localized presentation** without sacrificing brand standards.
 
 ---
 
-## Tech stack
+## System workflow (how the experience works for visitors)
 
-```text
-Next.js 16 (App Router layout + Pages Router routes) · React 19 · TypeScript
-Tailwind CSS 3 · PostCSS · ESLint (next/core-web-vitals)
-Nodemailer (contact) · Sharp (image tooling in scripts)
-```
-
-Hybrid routing:
-
-- **`app/`** — root layout, shared UI (header/footer), SEO helpers, `/api/contact`
-- **`pages/`** — most user-facing routes (mirrored under `/km/` for Khmer)
+1. **Arrive** — Visitors land from search, referrals, or campaigns and immediately understand what the business offers.
+2. **Explore** — Users navigate solutions and product families aligned to their industry or project type.
+3. **Validate** — Trust elements (partners, leadership, policies, proof) reduce perceived risk early in the journey.
+4. **Decide** — Clear product organization helps buyers shortlist options and compare categories confidently.
+5. **Connect** — Visitors submit inquiries through a guided contact flow suited to commercial follow-up.
+6. **Handoff** — Sales and operations receive structured interest signals that support faster, higher-quality responses.
 
 ---
 
-## Repository layout
+## Tech stack (high level)
 
-```text
-mugnee-kh/
-├── app/                    # Root layout, components, lib, API routes
-├── pages/                  # Page routes (EN + /km/)
-├── public/                 # Static assets + generated JSON indices
-├── scripts/                # Data generation, image optimize, lint, export helpers
-├── lib/                    # Shared data/helpers used by pages
-├── next.config.ts          # CSP headers, redirects, static export toggle
-└── package.json
-```
+This platform was engineered with a modern web stack focused on reliability and speed:
+
+- **Next.js** — Application framework and routing model optimized for production websites.
+- **React** — Component-driven UI for consistent layouts and scalable page composition.
+- **TypeScript** — Stronger engineering discipline for long-term maintainability.
+- **Tailwind CSS** — Efficient styling system for a cohesive visual language across pages.
+- **Static export & performance tooling** — Build-time optimizations and asset workflows aligned with SEO and Core Web Vitals goals.
+- **Email delivery integration** — Secure server-side handling for inquiry notifications (implementation details are not disclosed in this showcase).
 
 ---
 
-## Getting started
+## Screenshots
 
-### Prerequisites
+Add representative visuals to the `screenshots/` folder. Suggested filenames:
 
-- **Node.js** `>= 20` and `< 24` (see `package.json` → `engines`)
-- **npm** (or compatible client)
+| Suggested file | What to show |
+|----------------|--------------|
+| `screenshots/01-home-hero.png` | Homepage hero and primary positioning |
+| `screenshots/02-product-catalog.png` | Product browsing or category overview |
+| `screenshots/03-solutions-industry.png` | Industry or solution storytelling page |
+| `screenshots/04-bilingual-km.png` | Khmer experience (layout + typography) |
+| `screenshots/05-contact-lead.png` | Contact or inquiry flow |
+| `screenshots/06-mobile-responsive.png` | Mobile navigation and readability |
 
-### Install
+**Placeholder references (replace after you add images):**
 
-```bash
-npm install
-```
+![Homepage hero](./screenshots/01-home-hero.png)
 
-### Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000). For a clean dev lock on Windows:
-
-```bash
-npm run dev:clean
-```
-
-### Production build
-
-```bash
-npm run build
-npm start
-```
-
-The default `build` pipeline runs data generation, image optimization, encoding/i18n checks, then `next build`. See [Scripts](#scripts) for details.
+![Product catalog](./screenshots/02-product-catalog.png)
 
 ---
 
-## Environment variables
+## Architecture summary
 
-Create a **`.env.local`** (never commit secrets; `.gitignore` already ignores `.env*`).
+At a high level, the platform separates **content structure**, **presentation**, and **distribution**:
 
-### Public (browser / build)
+- **Presentation layer** delivers fast, accessible pages with consistent branding and reusable layout patterns.
+- **Content layer** organizes products, solutions, and editorial pages so marketing teams can evolve messaging over time.
+- **Distribution layer** outputs a production-ready site suitable for global CDN delivery, with SEO-oriented outputs and operational safeguards in the build process.
 
-| Variable | Purpose |
-| :--- | :--- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical site base URL (defaults align with production host in code) |
-| `NEXT_PUBLIC_CONTACT_ENDPOINT` | Override contact API path (default: `/api/contact`) |
-
-### Server (contact API)
-
-| Variable | Purpose |
-| :--- | :--- |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE` | SMTP server (aliases: `MAIL_*`) |
-| `SMTP_USER`, `SMTP_PASS` | Auth (aliases: `MAIL_*`, `GMAIL_*`) |
-| `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL` | Inbox / From |
-| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile verification |
-| `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | Optional rate limiting |
-| `CONTACT_RATE_LIMIT_WINDOW_MS`, `CONTACT_RATE_LIMIT_MAX` | Rate limit tuning |
-
-### Build / export
-
-| Variable | Purpose |
-| :--- | :--- |
-| `STATIC_EXPORT` | Set to `true` for static HTML export (`output: "export"` in `next.config.ts`) |
-
-<details>
-<summary>Optional verification scripts</summary>
-
-- `VERIFY_SITE_URL`, `VERIFY_PRODUCT_SLUG` — used by `verify:gsc:product-fix` (see `scripts/verify-gsc-product-fix.cjs`).
-
-</details>
+No implementation details, credentials, or proprietary integration logic are included in this repository.
 
 ---
 
-## Scripts
+## Source code notice
 
-| Command | Description |
-| :--- | :--- |
-| `npm run dev` | Dev server (webpack, increased Node heap) |
-| `npm run dev:clean` | Windows: clear dev lock then dev |
-| `npm run dev:turbo` | Dev with Turbopack |
-| `npm run build` | `gen:data` → image optimize → encoding + Khmer checks → `next build` |
-| `npm run start` | Start production server |
-| `npm run lint` | ESLint |
-| `npm run gen:data` | Regenerate product JSON indices |
-| `npm run gen:products` | PowerShell helper for product pages |
-| `npm run optimize:critical-images` | Critical image optimization |
-| `npm run lint:encoding` | Detect encoding / mojibake issues |
-| `npm run lint:i18n` | Khmer integrity checks |
-| `npm run verify:gsc:product-fix` | Sample URL verification for product fixes |
+The **full source code, internal repositories, and deployment configuration are private** to protect **client confidentiality**, **commercial interests**, and **system security**. This public repository exists solely as a **portfolio showcase** summarizing outcomes, capabilities, and the business value delivered.
+
+If you are evaluating a similar initiative, we are happy to walk through a **controlled demo**, share **sanitized artifacts**, and discuss delivery under an appropriate **NDA**.
 
 ---
 
-## Build modes
+## Company
 
-| Mode | Behavior |
-| :--- | :--- |
-| **Default (`STATIC_EXPORT` unset / not `true`)** | Server build: security headers, redirects, optimized images (not `unoptimized`) |
-| **Static export (`STATIC_EXPORT=true`)** | `output: "export"` — static HTML; `postbuild` runs export meta, `.htaccess` sync, Khmer HTML lang fixes |
+**Mugnee IT Solution**  
+Website: [https://mugneeit.com](https://mugneeit.com)
 
-Trailing slashes are enabled (`trailingSlash: true`).
+Mugnee partners with organizations to design and deliver **professional web platforms**, **digital product experiences**, and **technical implementations** that balance business goals, brand standards, and operational reality.
 
 ---
 
-## Content & data
+## Contact & next steps
 
-- **Product discovery** — generated files such as `public/data/products-grid-index.json` and `public/data/products-search-index.json` (from `npm run gen:data`).
-- **Khmer** — parallel routes under `pages/km/**` with `inLanguage` metadata where applicable.
+If you are planning a **new corporate website**, a **multilingual regional launch**, or a **performance and SEO modernization** of an existing platform, contact Mugnee IT Solution to discuss scope, timeline, and a pragmatic delivery approach tailored to your team.
 
----
+We build solutions that are **clear for stakeholders**, **credible for buyers**, and **sustainable for the teams who operate them**.
 
-## Security & quality checks
-
-- **CSP and security headers** on dynamic/server deployments (`next.config.ts`).
-- **Contact endpoint** supports Turnstile + optional Redis-backed rate limiting.
-- **Build-time** encoding and Khmer text integrity scripts reduce silent corruption in content.
-
----
-
-## Deployment notes
-
-- **Vercel / Node host** — typical path: set env vars, `npm run build`, `npm start` (or platform defaults).
-- **Static hosting** — use `STATIC_EXPORT=true`, then deploy the export output per your host (postbuild adjusts static meta and language attributes).
-
----
-
-## Credits
-
-- **Developed by:** Mugnee IT Solutions  
-- **Developer:** [Ankur Datta](https://github.com/ankur-datta-official) · ankurdatta.official@gmail.com  
-
----
-
-## Business snapshot (on-site NAP)
-
-| | |
-| :--- | :--- |
-| **Phone / WhatsApp** | +855 10 927 445 |
-| **Email** | info@mugneekh.com |
-| **Address** | 1st Floor, 11E0, Street 108, Night Market Area, Doun Penh, Phnom Penh, Cambodia |
-| **Service areas** | Phnom Penh, Siem Reap, Sihanoukville |
-
-Social links used in structured data include [Facebook](https://www.facebook.com/mugneemultiple/), [YouTube](https://www.youtube.com/@MugneeTech), [LinkedIn](https://www.linkedin.com/company/mugnee-multiple-limited/), and other profiles referenced in `app/lib/nap.ts`.
-
----
-
-<div align="center">
-
-**Built with Next.js · Bilingual by design · Production-minded tooling**
-
-</div>
+# mugnee-kh-public
